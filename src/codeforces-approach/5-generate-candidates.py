@@ -63,6 +63,25 @@ def build_prompt(assembly_o0: str) -> str:
     )
 
 
+def clean_candidate_assembly(text: str) -> str:
+    cleaned = text.strip()
+    if "<OPTIMIZED_ASSEMBLY>" in cleaned:
+        cleaned = cleaned.split("<OPTIMIZED_ASSEMBLY>", 1)[1]
+    if "</OPTIMIZED_ASSEMBLY>" in cleaned:
+        cleaned = cleaned.split("</OPTIMIZED_ASSEMBLY>", 1)[0]
+    cleaned = cleaned.strip()
+
+    if cleaned.startswith("```"):
+        lines = cleaned.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip().startswith("```"):
+            lines = lines[:-1]
+        cleaned = "\n".join(lines).strip()
+
+    return cleaned
+
+
 def map_local_path_to_remote(path_str: str) -> str:
     if path_str.startswith(f"{REMOTE_OUTPUT_ROOT}/"):
         return path_str
@@ -145,7 +164,8 @@ def generate_candidates(config_dict: dict) -> dict:
             prompt_length = encoded["input_ids"].shape[1]
             seen_candidates: set[str] = set()
             for output_ids in generated:
-                candidate = tokenizer.decode(output_ids[prompt_length:], skip_special_tokens=True).strip()
+                raw_candidate = tokenizer.decode(output_ids[prompt_length:], skip_special_tokens=True)
+                candidate = clean_candidate_assembly(raw_candidate)
                 if not candidate or candidate in seen_candidates:
                     continue
                 seen_candidates.add(candidate)

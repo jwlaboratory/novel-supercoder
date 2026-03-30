@@ -272,3 +272,13 @@ In future miht be smth i work on ill put these in my notes
 
 That usually helps because the policy keeps adapting to fresher data instead of waiting for one giant delayed update.
 
+
+issue is when generating assembly candidates they are have 
+
+
+idea for future is to have a differnet prompt for both SFT and RL?
+--> ie, imagine:
+ --"you are to mimick o3" for SFT
+ --"earlier you where trained to mimick o3, now you are to use that knowldege of assmebly but also generate even above that o4" for RL
+
+how would that perform

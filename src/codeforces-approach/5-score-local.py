@@ -109,6 +109,25 @@ def infer_correct(score: dict) -> bool | None:
     return None
 
 
+def clean_candidate_assembly(text: str) -> str:
+    cleaned = str(text).strip()
+    if "<OPTIMIZED_ASSEMBLY>" in cleaned:
+        cleaned = cleaned.split("<OPTIMIZED_ASSEMBLY>", 1)[1]
+    if "</OPTIMIZED_ASSEMBLY>" in cleaned:
+        cleaned = cleaned.split("</OPTIMIZED_ASSEMBLY>", 1)[0]
+    cleaned = cleaned.strip()
+
+    if cleaned.startswith("```"):
+        lines = cleaned.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip().startswith("```"):
+            lines = lines[:-1]
+        cleaned = "\n".join(lines).strip()
+
+    return cleaned
+
+
 def main() -> None:
     args = parse_args()
     candidates = load_candidates(Path(args.input_path), args.max_records)
@@ -130,7 +149,7 @@ def main() -> None:
             "accepted_cpp_solution": item.get("accepted_cpp_solution", ""),
             "assembly_o0": item.get("assembly_o0", ""),
             "assembly_o3": item.get("assembly_o3", ""),
-            "candidate_assembly": item.get("candidate_assembly", ""),
+            "candidate_assembly": clean_candidate_assembly(item.get("candidate_assembly", "")),
         }
         if not str(payload["candidate_assembly"]).strip():
             continue
