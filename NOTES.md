@@ -260,3 +260,15 @@ you can also optimize for size
 some assemblers "-Oz is an optimization level flag that tells LLVM to prioritize minimizing code size over raw performance."
 
 maybe it would make sense to the first step have like a strong model like Opus do the SFT part .... this would be (*better than o3?*)
+
+
+the only problem with this is that it generates fully for each rwo then i score then it learns
+
+whereas itd prob be best to generate like 50, then i scoere, tehn it learns right
+
+just a thought
+In future miht be smth i work on ill put these in my notes 
+
+
+That usually helps because the policy keeps adapting to fresher data instead of waiting for one giant delayed update.
+

@@ -5,6 +5,7 @@ import ast
 import json
 import math
 import os
+import shlex
 import statistics
 import subprocess
 import tempfile
@@ -18,6 +19,8 @@ DEFAULT_TIMEOUT_SECONDS = 2.0
 DEFAULT_BENCHMARK_TEST_LIMIT = 5
 DEFAULT_COMPILE_FAILURE_REWARD = -1500.0
 DEFAULT_CORRECTNESS_FAILURE_REWARD = -1000.0
+DEFAULT_DOCKER_IMAGE = "gcc:13"
+DEFAULT_DOCKER_PLATFORM = "linux/arm64"
 
 
 def parse_args() -> argparse.Namespace:
@@ -60,6 +63,21 @@ def parse_args() -> argparse.Namespace:
         "--cpp-std",
         default=DEFAULT_CPP_STD,
         help="C++ standard to use when compiling source fallbacks.",
+    )
+    parser.add_argument(
+        "--use-docker",
+        action="store_true",
+        help="Compile and execute inside a Docker Linux toolchain for reproducibility.",
+    )
+    parser.add_argument(
+        "--docker-image",
+        default=DEFAULT_DOCKER_IMAGE,
+        help="Docker image used when --use-docker is enabled.",
+    )
+    parser.add_argument(
+        "--docker-platform",
+        default=DEFAULT_DOCKER_PLATFORM,
+        help="Docker platform used when --use-docker is enabled.",
     )
     return parser.parse_args()
 
@@ -108,9 +126,15 @@ def parse_official_tests(raw_value: object) -> list[dict[str, str]]:
     return tests
 
 
-def run_command(command: list[str], timeout: float | None = None) -> subprocess.CompletedProcess[str]:
+def run_command(
+    command: list[str],
+    *,
+    timeout: float | None = None,
+    input_text: str | None = None,
+) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         command,
+        input=input_text,
         text=True,
         capture_output=True,
         timeout=timeout,
@@ -118,43 +142,148 @@ def run_command(command: list[str], timeout: float | None = None) -> subprocess.
     )
 
 
-def compile_assembly_text(assembly_text: str, output_path: Path, compiler: str) -> tuple[bool, str]:
+def _docker_run_shell(
+    *,
+    args: argparse.Namespace,
+    work_dir: Path,
+    shell_script: str,
+    timeout: float | None = None,
+    input_text: str | None = None,
+) -> subprocess.CompletedProcess[str]:
+    return run_command(
+        [
+            "docker",
+            "run",
+            "--rm",
+            "--platform",
+            args.docker_platform,
+            "-v",
+            f"{work_dir}:/work",
+            "-w",
+            "/work",
+            args.docker_image,
+            "bash",
+            "-lc",
+            shell_script,
+        ],
+        timeout=timeout,
+        input_text=input_text,
+    )
+
+
+def _ensure_docker_access(args: argparse.Namespace) -> tuple[bool, str]:
+    if not args.use_docker:
+        return True, ""
+    result = run_command(["docker", "info"])
+    if result.returncode == 0:
+        return True, ""
+    error = result.stderr.strip() or result.stdout.strip() or "docker info failed"
+    return False, error
+
+
+def compile_assembly_text(
+    assembly_text: str,
+    output_path: Path,
+    compiler: str,
+    *,
+    args: argparse.Namespace,
+    work_dir: Path,
+) -> tuple[bool, str]:
     assembly_path = output_path.with_suffix(".s")
     assembly_path.write_text(assembly_text)
-    result = run_command([compiler, str(assembly_path), "-o", str(output_path)])
+    if args.use_docker:
+        compiler_q = shlex.quote(compiler)
+        assembly_q = shlex.quote(assembly_path.name)
+        output_q = shlex.quote(output_path.name)
+        result = _docker_run_shell(
+            args=args,
+            work_dir=work_dir,
+            shell_script=f"{compiler_q} {assembly_q} -o {output_q}",
+        )
+    else:
+        result = run_command([compiler, str(assembly_path), "-o", str(output_path)])
     error_text = result.stderr.strip() or result.stdout.strip()
     return result.returncode == 0, error_text
 
 
-def compile_source_text(source_text: str, output_path: Path, compiler: str, cpp_std: str, opt_level: str) -> tuple[bool, str]:
+def compile_source_text(
+    source_text: str,
+    output_path: Path,
+    compiler: str,
+    cpp_std: str,
+    opt_level: str,
+    *,
+    args: argparse.Namespace,
+    work_dir: Path,
+) -> tuple[bool, str]:
     source_path = output_path.with_suffix(".cpp")
     source_path.write_text(source_text)
-    result = run_command(
-        [compiler, f"-std={cpp_std}", opt_level, str(source_path), "-o", str(output_path)]
-    )
+    if args.use_docker:
+        compiler_q = shlex.quote(compiler)
+        std_q = shlex.quote(f"-std={cpp_std}")
+        opt_q = shlex.quote(opt_level)
+        source_q = shlex.quote(source_path.name)
+        output_q = shlex.quote(output_path.name)
+        result = _docker_run_shell(
+            args=args,
+            work_dir=work_dir,
+            shell_script=f"{compiler_q} {std_q} {opt_q} {source_q} -o {output_q}",
+        )
+    else:
+        result = run_command(
+            [compiler, f"-std={cpp_std}", opt_level, str(source_path), "-o", str(output_path)]
+        )
     error_text = result.stderr.strip() or result.stdout.strip()
     return result.returncode == 0, error_text
 
 
-def execute_binary(binary_path: Path, test_input: str, timeout_seconds: float) -> tuple[bool, str, str, int, float]:
+def execute_binary(
+    binary_path: Path,
+    test_input: str,
+    timeout_seconds: float,
+    *,
+    args: argparse.Namespace,
+    work_dir: Path,
+) -> tuple[bool, str, str, int, float]:
     started = time.perf_counter()
     try:
-        result = subprocess.run(
-            [str(binary_path)],
-            input=test_input,
-            text=True,
-            capture_output=True,
-            timeout=timeout_seconds,
-            check=False,
-        )
+        if args.use_docker:
+            binary_q = shlex.quote(f"./{binary_path.name}")
+            timeout_value = max(timeout_seconds, 0.1)
+            shell_script = f"timeout {timeout_value}s {binary_q}"
+            result = _docker_run_shell(
+                args=args,
+                work_dir=work_dir,
+                shell_script=shell_script,
+                timeout=timeout_seconds + 5.0,
+                input_text=test_input,
+            )
+        else:
+            result = subprocess.run(
+                [str(binary_path)],
+                input=test_input,
+                text=True,
+                capture_output=True,
+                timeout=timeout_seconds,
+                check=False,
+            )
         elapsed = time.perf_counter() - started
+        if args.use_docker and result.returncode == 124:
+            return False, result.stdout, result.stderr or "Execution timed out", 124, elapsed
         return True, result.stdout, result.stderr, result.returncode, elapsed
     except subprocess.TimeoutExpired:
         elapsed = time.perf_counter() - started
         return False, "", "Execution timed out", 124, elapsed
 
 
-def evaluate_correctness(binary_path: Path, tests: list[dict[str, str]], timeout_seconds: float) -> dict[str, object]:
+def evaluate_correctness(
+    binary_path: Path,
+    tests: list[dict[str, str]],
+    timeout_seconds: float,
+    *,
+    args: argparse.Namespace,
+    work_dir: Path,
+) -> dict[str, object]:
     mismatches: list[dict[str, object]] = []
     passed = 0
 
@@ -163,6 +292,8 @@ def evaluate_correctness(binary_path: Path, tests: list[dict[str, str]], timeout
             binary_path=binary_path,
             test_input=test["input"],
             timeout_seconds=timeout_seconds,
+            args=args,
+            work_dir=work_dir,
         )
         expected_output = normalize_output(test["output"])
         actual_output = normalize_output(stdout)
@@ -198,6 +329,9 @@ def benchmark_binary(
     tests: list[dict[str, str]],
     trials: int,
     timeout_seconds: float,
+    *,
+    args: argparse.Namespace,
+    work_dir: Path,
 ) -> dict[str, object]:
     trial_totals: list[float] = []
     for _ in range(trials):
@@ -207,6 +341,8 @@ def benchmark_binary(
                 binary_path=binary_path,
                 test_input=test["input"],
                 timeout_seconds=timeout_seconds,
+                args=args,
+                work_dir=work_dir,
             )
             if not ok or returncode != 0:
                 return {
@@ -258,13 +394,38 @@ def build_or_fallback_binary(
     source_text: str,
     cpp_std: str,
     fallback_opt_level: str,
+    args: argparse.Namespace,
+    work_dir: Path,
 ) -> tuple[bool, str]:
     if preferred_assembly.strip():
-        return compile_assembly_text(preferred_assembly, output_path, compiler)
-    return compile_source_text(source_text, output_path, compiler, cpp_std, fallback_opt_level)
+        return compile_assembly_text(
+            preferred_assembly,
+            output_path,
+            compiler,
+            args=args,
+            work_dir=work_dir,
+        )
+    return compile_source_text(
+        source_text,
+        output_path,
+        compiler,
+        cpp_std,
+        fallback_opt_level,
+        args=args,
+        work_dir=work_dir,
+    )
 
 
 def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[str, object]:
+    docker_ok, docker_error = _ensure_docker_access(args)
+    if not docker_ok:
+        return {
+            "reward": DEFAULT_COMPILE_FAILURE_REWARD,
+            "status": "docker_unavailable",
+            "candidate_compile_ok": False,
+            "candidate_compile_error": docker_error,
+        }
+
     tests = parse_official_tests(payload.get("official_tests", ""))
     if not tests:
         return {
@@ -288,6 +449,8 @@ def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[
             candidate_assembly,
             candidate_binary,
             args.compiler,
+            args=args,
+            work_dir=temp_dir,
         )
         if not candidate_ok:
             return {
@@ -304,6 +467,8 @@ def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[
             source_text=source_text,
             cpp_std=args.cpp_std,
             fallback_opt_level="-O0",
+            args=args,
+            work_dir=temp_dir,
         )
         o3_ok, o3_error = build_or_fallback_binary(
             preferred_assembly=assembly_o3,
@@ -312,12 +477,16 @@ def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[
             source_text=source_text,
             cpp_std=args.cpp_std,
             fallback_opt_level="-O3",
+            args=args,
+            work_dir=temp_dir,
         )
 
         correctness = evaluate_correctness(
             candidate_binary,
             tests,
             args.execution_timeout_seconds,
+            args=args,
+            work_dir=temp_dir,
         )
 
         benchmark_tests = tests[: args.benchmark_test_limit] if args.benchmark_test_limit > 0 else tests
@@ -331,6 +500,8 @@ def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[
                 benchmark_tests,
                 args.benchmark_trials,
                 args.benchmark_timeout_seconds,
+                args=args,
+                work_dir=temp_dir,
             )
             if o0_ok:
                 o0_benchmark = benchmark_binary(
@@ -338,6 +509,8 @@ def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[
                     benchmark_tests,
                     args.benchmark_trials,
                     args.benchmark_timeout_seconds,
+                    args=args,
+                    work_dir=temp_dir,
                 )
             if o3_ok:
                 o3_benchmark = benchmark_binary(
@@ -345,6 +518,8 @@ def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[
                     benchmark_tests,
                     args.benchmark_trials,
                     args.benchmark_timeout_seconds,
+                    args=args,
+                    work_dir=temp_dir,
                 )
 
         candidate_size = os.path.getsize(candidate_binary) if candidate_binary.exists() else None
@@ -389,6 +564,12 @@ def score_payload(payload: dict[str, object], args: argparse.Namespace) -> dict[
                 "candidate_bytes": candidate_size,
                 "o0_bytes": o0_size,
                 "o3_bytes": o3_size,
+            },
+            "toolchain": {
+                "use_docker": args.use_docker,
+                "docker_image": args.docker_image if args.use_docker else "",
+                "docker_platform": args.docker_platform if args.use_docker else "",
+                "compiler": args.compiler,
             },
         }
 
