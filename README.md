@@ -22,3 +22,25 @@ Drawback:
 
 
 
+### iteration 1:
+-- Leetcode questions have a lot of code + test cases that are pretty short
+-- compile them with 0 optimize
+-- compile them with max optimize
+-- train model to take compiled 0 optimize, and to generate max optimized
+
+RL part
+-- we have leetcodes that have all sorts of test cases 
+
+
+active questions
+ - can we do for c++ or is the assembly to complex? 
+ - should v1 be taking in assmebly unoptimized code and training to get to v3
+ - start with only compiler
+ARM64 gcc 15.2.0        1764
+armv8-a clang 21.1.0    1764
+
+
+
+# 
+
+issue 1: we need a way 
