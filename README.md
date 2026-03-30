@@ -7,6 +7,20 @@
 - Jupyter / Cursor notebooks: pick kernel **Python 3.11 (gen-optimize-assembly)** (`.venv`); if missing, run  
   `uv run python -m ipykernel install --user --name gen-optimize-assembly --display-name "Python 3.11 (gen-optimize-assembly)"`
 
+  ```bash
+  cd /Users/shreybirmiwal/projects/gen-optimize-assembly
+    uv sync                    
+    # install / update env from lockfile
+    uv add <package>           
+    # add a dependency and refresh the lock
+    uv run python ...         
+    # run with project env without activating
+  ```
+
+
+
+
+
 ARM
 
 Idea is that we either C code or assembly code and try to generate a more optimized assembly binary using a fine tuned LLM
@@ -114,3 +128,18 @@ more ideas
 --  what if we got a dataset of exactly when o3 is poorly optimized and then we use reasoning model to just identify that 
 
 
+
+
+
+# sft approach
+
+both pretraining and SFT use next token prediction as their underlying training objective!
+
+q: differences with SFT and geniric fine tuning?
+ - 
+
+q: why is SFT so much cheaper than pretraining?
+- cuz small dataset
+
+
+q should we start w a base model or a small, fully postrained model and sft on that?
