@@ -143,3 +143,31 @@ q: why is SFT so much cheaper than pretraining?
 
 
 q should we start w a base model or a small, fully postrained model and sft on that?
+
+
+issue: the code was compiled on linux machien so the assembly code generated is speicifc to the linux machines...
+we need to run on linux through doccer or smth
+
+or what if we recompile eveyrhting on teh mac machine? 
+---> we will need to create a driver (main) and also include stdio in the original C file
+
+this complicates things bc its not as straight forward, need to add a main method to each C file aswell.
+
+potential solution:
+To actually do training:
+ -- Take each C file, compile it with gcc -O0, and gcc -O3.
+ -- Fine 
+
+
+--> can u formally prove the behavior (programs are the same)? no cuz of rice theorum, we cant we can only prove using lots of test cases good enough
+
+--> lets just RL approach SFt doesnt make sense (immitaiton issue) 
+
+
+ wait why not use python as base language
+ ---> we would need to compile the python code to assembly
+ https://www.perplexity.ai/search/python-how-does-python-get-com-oYwFKdzTRVKvXsNd8Sml5w
+ thought: can we do optimization on PVM instead...
+ *** Q for later **
+
+ 
