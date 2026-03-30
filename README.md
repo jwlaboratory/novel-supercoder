@@ -93,4 +93,17 @@ SFT alone → good at imitating a specific assembly string (e.g. “be like this
 ie how does it know (to SECRETLY) in the assembly pass in both the array size and the array itself but only show the function the array it self (its cuz of the api)
 
 
-// leads to me to wonder how would 
+// leads to me to wonder how would it perform with SFT first then RL?  or just RL first
+-- intuiton tells me RL would be better, but if it knows a little bit of SFT it might learn to do better first, with base knowledge of optimizing for o3? but it might also get steered in teh wrong direction, have conflicitng throughts.
+
+lets just try SFT first to see how it does.
+
+
+more ideas
+-- try a reasoning model
+-- try putting hte inptu query / assmebly in 2 x back to back to see if it can reason abt the whole thing as once as well as not just line by line 
+ 
+
+--  what if we got a dataset of exactly when o3 is poorly optimized and then we use reasoning model to just identify that 
+
+
