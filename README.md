@@ -1,5 +1,12 @@
 # gen-optimize-assembly
 
+## Python (uv)
+
+- Install: [uv](https://docs.astral.sh/uv/)
+- Create the venv and install deps: `uv sync` (uses `.python-version` → 3.11)
+- Jupyter / Cursor notebooks: pick kernel **Python 3.11 (gen-optimize-assembly)** (`.venv`); if missing, run  
+  `uv run python -m ipykernel install --user --name gen-optimize-assembly --display-name "Python 3.11 (gen-optimize-assembly)"`
+
 ARM
 
 Idea is that we either C code or assembly code and try to generate a more optimized assembly binary using a fine tuned LLM
