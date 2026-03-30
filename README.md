@@ -195,4 +195,3 @@ modal run "src/codeforces-approach/4-sft.py" --max-train-rows 200 --max-val-rows
 3. Implement `5-RL.py` for offline RL on the `RL` split.
 4. Benchmark on `VAL`.
 5. Run one final untouched evaluation on `TEST`.
-

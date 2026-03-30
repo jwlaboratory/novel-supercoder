@@ -5,8 +5,9 @@ from pathlib import Path
 
 import modal
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
 REMOTE_PROJECT_ROOT = Path("/workspace")
+_THIS_FILE = Path(__file__).resolve()
+PROJECT_ROOT = _THIS_FILE.parents[2] if len(_THIS_FILE.parents) > 2 else REMOTE_PROJECT_ROOT
 DEFAULT_CSV_PATH = PROJECT_ROOT / "src" / "codeforces-approach" / "data" / "codeforces_join.csv"
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-Coder-0.5B"
 DEFAULT_SPLIT_COLUMN = "dataset_split"
@@ -24,8 +25,8 @@ image = (
         "torch",
         "transformers",
     )
+    .add_local_dir(str(PROJECT_ROOT), remote_path=str(REMOTE_PROJECT_ROOT), copy=True)
 )
-project_mount = modal.Mount.from_local_dir(str(PROJECT_ROOT), remote_path=str(REMOTE_PROJECT_ROOT))
 output_volume = modal.Volume.from_name("gen-optimize-assembly-artifacts", create_if_missing=True)
 REMOTE_OUTPUT_ROOT = "/vol"
 
@@ -79,7 +80,6 @@ def map_local_path_to_remote(path_str: str) -> str:
     image=image,
     gpu="h100",
     timeout=24 * 60 * 60,
-    mounts=[project_mount],
     volumes={REMOTE_OUTPUT_ROOT: output_volume},
 )
 def train_sft(config_dict: dict) -> dict:
@@ -167,7 +167,6 @@ def train_sft(config_dict: dict) -> dict:
 
     training_args = TrainingArguments(
         output_dir=str(output_dir),
-        overwrite_output_dir=True,
         num_train_epochs=config.num_train_epochs,
         per_device_train_batch_size=config.per_device_train_batch_size,
         per_device_eval_batch_size=config.per_device_eval_batch_size,
@@ -178,7 +177,7 @@ def train_sft(config_dict: dict) -> dict:
         logging_steps=config.logging_steps,
         save_steps=config.save_steps,
         eval_steps=config.eval_steps,
-        evaluation_strategy="steps" if eval_dataset is not None else "no",
+        eval_strategy="steps" if eval_dataset is not None else "no",
         save_strategy="steps",
         report_to=[],
         bf16=use_bf16,
@@ -191,7 +190,7 @@ def train_sft(config_dict: dict) -> dict:
         args=training_args,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         data_collator=default_data_collator,
     )
 

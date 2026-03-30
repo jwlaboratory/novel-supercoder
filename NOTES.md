@@ -241,3 +241,22 @@ we shoudl probably split into SFT/RL/Test
 
 when we run our script 3 marking, we make it only mark rows not already marked
 - > this is so new rows we add from datagen again maintain ratio of SFT/RL/Test
+
+
+
+
+
+
+2 issues rn with our generate assembly
+1 - it does it all in mem before writing to the csv
+so it can fial and its cooked
+
+2 - it also creates new docker containser for each row
+lets do in batches of like 50 where we write to csv after each batch but also do one contaienr for all 50
+
+
+
+you can also optimize for size
+some assemblers "-Oz is an optimization level flag that tells LLVM to prioritize minimizing code size over raw performance."
+
+maybe it would make sense to the first step have like a strong model like Opus do the SFT part .... this would be (*better than o3?*)
