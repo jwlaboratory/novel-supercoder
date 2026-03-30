@@ -1,10 +1,16 @@
 # Gen Optimize Assembly
 
 ## Motivation
+<img width="775" height="375" alt="Screenshot 2026-03-30 at 1 51 07 AM" src="https://github.com/user-attachments/assets/7213ef77-8579-4ca8-94d3-9ef86f6059c8" />
 
-In https://x.com/xai/status/2021667200885829667?s=20, xAI's all hands, Elon states that one day AI will directly generate optimized binaries of programs. This repo is a small research prototype in that direction.
+#
 
-This project explores whether a small coding model can learn to take low-optimization assembly and generate a faster equivalent program.
+> "By the end of this year, [we'll get to] a point you don't even bother coding, the AI just creates the binary directly and it can create a much more efficient binary than by any compiler. So just say create optimized binary for this particular outcome and you actually bypass even traditional coding. [Coding] is an intermediate step that actually will not be needed"
+Elon Musk, 11:50 https://www.youtube.com/watch?v=aOVnB88Cd1A
+
+#
+
+Elon states that one day AI will directly generate optimized binaries of programs. This repo is a small research prototype in that direction.
 
 ## Core Idea
 We compile accepted competitive-programming solutions at two optimization levels:
