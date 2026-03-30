@@ -77,7 +77,7 @@ def map_local_path_to_remote(path_str: str) -> str:
 
 @app.function(
     image=image,
-    gpu="T4",
+    gpu="h100",
     timeout=24 * 60 * 60,
     mounts=[project_mount],
     volumes={REMOTE_OUTPUT_ROOT: output_volume},

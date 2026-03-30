@@ -14,6 +14,7 @@ DEFAULT_STD = "gnu++17"
 DEFAULT_DOCKER_IMAGE = "gcc:13"
 DEFAULT_DOCKER_PLATFORM = "linux/arm64"
 DEFAULT_LIMIT = None
+DEFAULT_BATCH_SIZE = 50
 
 ASSEMBLY_O0_COLUMN = "assembly_o0"
 ASSEMBLY_O3_COLUMN = "assembly_o3"
@@ -66,6 +67,12 @@ def parse_args() -> argparse.Namespace:
         "--force",
         action="store_true",
         help="Recompile rows even if assembly columns are already populated.",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=DEFAULT_BATCH_SIZE,
+        help="Number of rows to compile per Docker container and checkpoint write.",
     )
     return parser.parse_args()
 
@@ -143,23 +150,38 @@ def print_reproducibility_info(args: argparse.Namespace, toolchain: dict[str, st
     print()
 
 
-def compile_source_to_assembly(
-    source_code: str,
+def compile_batch_to_assembly(
+    batch_rows: list[tuple[int, str]],
     docker_image: str,
     docker_platform: str,
     cpp_std: str,
-) -> tuple[bool, str, str, str]:
+) -> dict[int, tuple[bool, str, str, str]]:
     with tempfile.TemporaryDirectory() as temp_dir_str:
         temp_dir = Path(temp_dir_str)
-        source_path = temp_dir / "submission.cpp"
-        o0_path = temp_dir / "submission_O0.s"
-        o3_path = temp_dir / "submission_O3.s"
-        source_path.write_text(source_code)
+
+        batch_entries: list[tuple[int, str]] = []
+        for offset, (row_index, source_code) in enumerate(batch_rows):
+            base_name = f"submission_{offset:04d}"
+            source_path = temp_dir / f"{base_name}.cpp"
+            source_path.write_text(source_code)
+            batch_entries.append((row_index, base_name))
 
         container_script = (
-            "set -euo pipefail; "
-            f"g++ -std={cpp_std} -O0 -S submission.cpp -o submission_O0.s; "
-            f"g++ -std={cpp_std} -O3 -S submission.cpp -o submission_O3.s"
+            "set -uo pipefail; "
+            "shopt -s nullglob; "
+            "for source in submission_*.cpp; do "
+            'base="${source%.cpp}"; '
+            f'g++ -std={cpp_std} -O0 -S "$source" -o "${{base}}_O0.s" 2>"${{base}}_O0.err"; '
+            "status_o0=$?; "
+            f'g++ -std={cpp_std} -O3 -S "$source" -o "${{base}}_O3.s" 2>"${{base}}_O3.err"; '
+            "status_o3=$?; "
+            'if [ "$status_o0" -eq 0 ] && [ "$status_o3" -eq 0 ]; then '
+            'touch "${base}.ok"; '
+            'rm -f "${base}_O0.err" "${base}_O3.err"; '
+            "else "
+            'cat "${base}_O0.err" "${base}_O3.err" > "${base}.err"; '
+            "fi; "
+            "done"
         )
         result = run_command(
             [
@@ -180,10 +202,159 @@ def compile_source_to_assembly(
         )
 
         if result.returncode != 0:
-            error_text = result.stderr.strip() or result.stdout.strip() or "Unknown compile error"
-            return False, "", "", error_text
+            batch_error = result.stderr.strip() or result.stdout.strip() or "Unknown Docker batch compile error"
+            return {
+                row_index: (False, "", "", batch_error)
+                for row_index, _ in batch_rows
+            }
 
-        return True, o0_path.read_text(), o3_path.read_text(), ""
+        compiled_results: dict[int, tuple[bool, str, str, str]] = {}
+        for row_index, base_name in batch_entries:
+            ok_marker = temp_dir / f"{base_name}.ok"
+            o0_path = temp_dir / f"{base_name}_O0.s"
+            o3_path = temp_dir / f"{base_name}_O3.s"
+            error_path = temp_dir / f"{base_name}.err"
+
+            if ok_marker.exists():
+                compiled_results[row_index] = (True, o0_path.read_text(), o3_path.read_text(), "")
+                continue
+
+            error_text = "Unknown compile error"
+            if error_path.exists():
+                error_text = error_path.read_text().strip() or error_text
+            compiled_results[row_index] = (False, "", "", error_text)
+
+        return compiled_results
+
+
+def write_checkpoint_csv(dataframe: pd.DataFrame, csv_path: Path) -> None:
+    temp_path = csv_path.with_name(f"{csv_path.name}.tmp")
+    dataframe.to_csv(temp_path, index=False)
+    temp_path.replace(csv_path)
+
+
+def iter_batches(items: list[int], batch_size: int) -> list[list[int]]:
+    return [items[start : start + batch_size] for start in range(0, len(items), batch_size)]
+
+
+def update_row_with_compile_result(
+    dataframe: pd.DataFrame,
+    index: int,
+    command_o0: str,
+    command_o3: str,
+    result: tuple[bool, str, str, str],
+) -> tuple[bool, str]:
+    ok, assembly_o0, assembly_o3, error_text = result
+
+    dataframe.at[index, COMMAND_O0_COLUMN] = command_o0
+    dataframe.at[index, COMMAND_O3_COLUMN] = command_o3
+    dataframe.at[index, COMPILE_OK_COLUMN] = "true" if ok else "false"
+    dataframe.at[index, COMPILE_ERROR_COLUMN] = error_text
+
+    if ok:
+        dataframe.at[index, ASSEMBLY_O0_COLUMN] = assembly_o0
+        dataframe.at[index, ASSEMBLY_O3_COLUMN] = assembly_o3
+    else:
+        dataframe.at[index, ASSEMBLY_O0_COLUMN] = ""
+        dataframe.at[index, ASSEMBLY_O3_COLUMN] = ""
+
+    return ok, error_text
+
+
+def generate_assembly(args: argparse.Namespace) -> None:
+    if args.batch_size <= 0:
+        raise ValueError("--batch-size must be a positive integer.")
+
+    ensure_docker_access()
+    toolchain = collect_toolchain_info(args.docker_image, args.docker_platform)
+    print_reproducibility_info(args, toolchain)
+
+    dataframe = pd.read_csv(args.csv_path, keep_default_na=False)
+    command_o0, command_o3 = populate_metadata_columns(dataframe, args, toolchain)
+
+    for column in [ASSEMBLY_O0_COLUMN, ASSEMBLY_O3_COLUMN, COMPILE_OK_COLUMN, COMPILE_ERROR_COLUMN]:
+        if column not in dataframe.columns:
+            dataframe[column] = ""
+
+    total_rows = len(dataframe) if args.limit is None else min(len(dataframe), args.limit)
+    compiled_rows = 0
+    skipped_rows = 0
+    failed_rows = 0
+    pending_indices: list[int] = []
+
+    for index in range(total_rows):
+        contest_id = dataframe.at[index, "contest_id"]
+        problem_index = dataframe.at[index, "index"]
+
+        already_compiled = bool(dataframe.at[index, ASSEMBLY_O0_COLUMN]) and bool(
+            dataframe.at[index, ASSEMBLY_O3_COLUMN]
+        )
+        if already_compiled and not args.force:
+            skipped_rows += 1
+            print(f"[{index + 1}/{total_rows}] {contest_id}/{problem_index}: skipped existing assembly")
+            continue
+
+        pending_indices.append(index)
+
+    if not pending_indices:
+        print("No rows need compilation.")
+        print()
+        print("Summary")
+        print(f"CSV written to: {args.csv_path}")
+        print(f"Rows considered: {total_rows}")
+        print(f"Rows compiled this run: {compiled_rows}")
+        print(f"Rows skipped with existing assembly: {skipped_rows}")
+        print(f"Rows failed: {failed_rows}")
+        return
+
+    pending_batches = iter_batches(pending_indices, args.batch_size)
+    total_batches = len(pending_batches)
+
+    for batch_number, batch_indices in enumerate(pending_batches, start=1):
+        batch_rows = [
+            (index, dataframe.at[index, SOURCE_COLUMN])
+            for index in batch_indices
+        ]
+        batch_results = compile_batch_to_assembly(
+            batch_rows=batch_rows,
+            docker_image=args.docker_image,
+            docker_platform=args.docker_platform,
+            cpp_std=args.cpp_std,
+        )
+
+        for index in batch_indices:
+            contest_id = dataframe.at[index, "contest_id"]
+            problem_index = dataframe.at[index, "index"]
+            ok, error_text = update_row_with_compile_result(
+                dataframe=dataframe,
+                index=index,
+                command_o0=command_o0,
+                command_o3=command_o3,
+                result=batch_results[index],
+            )
+
+            if ok:
+                compiled_rows += 1
+                print(f"[{index + 1}/{total_rows}] {contest_id}/{problem_index}: compiled")
+            else:
+                failed_rows += 1
+                print(f"[{index + 1}/{total_rows}] {contest_id}/{problem_index}: failed")
+                if error_text:
+                    print(error_text)
+
+        write_checkpoint_csv(dataframe, args.csv_path)
+        print(
+            f"Checkpoint written after batch {batch_number}/{total_batches} "
+            f"({len(batch_indices)} rows)."
+        )
+
+    print()
+    print("Summary")
+    print(f"CSV written to: {args.csv_path}")
+    print(f"Rows considered: {total_rows}")
+    print(f"Rows compiled this run: {compiled_rows}")
+    print(f"Rows skipped with existing assembly: {skipped_rows}")
+    print(f"Rows failed: {failed_rows}")
 
 
 def populate_metadata_columns(
@@ -202,70 +373,6 @@ def populate_metadata_columns(
     dataframe[COMMAND_O0_COLUMN] = command_o0
     dataframe[COMMAND_O3_COLUMN] = command_o3
     return command_o0, command_o3
-
-
-def generate_assembly(args: argparse.Namespace) -> None:
-    ensure_docker_access()
-    toolchain = collect_toolchain_info(args.docker_image, args.docker_platform)
-    print_reproducibility_info(args, toolchain)
-
-    dataframe = pd.read_csv(args.csv_path, keep_default_na=False)
-    command_o0, command_o3 = populate_metadata_columns(dataframe, args, toolchain)
-
-    for column in [ASSEMBLY_O0_COLUMN, ASSEMBLY_O3_COLUMN, COMPILE_OK_COLUMN, COMPILE_ERROR_COLUMN]:
-        if column not in dataframe.columns:
-            dataframe[column] = ""
-
-    total_rows = len(dataframe) if args.limit is None else min(len(dataframe), args.limit)
-    compiled_rows = 0
-    skipped_rows = 0
-    failed_rows = 0
-
-    for index in range(total_rows):
-        source_code = dataframe.at[index, SOURCE_COLUMN]
-        contest_id = dataframe.at[index, "contest_id"]
-        problem_index = dataframe.at[index, "index"]
-
-        already_compiled = bool(dataframe.at[index, ASSEMBLY_O0_COLUMN]) and bool(
-            dataframe.at[index, ASSEMBLY_O3_COLUMN]
-        )
-        if already_compiled and not args.force:
-            skipped_rows += 1
-            print(f"[{index + 1}/{total_rows}] {contest_id}/{problem_index}: skipped existing assembly")
-            continue
-
-        ok, assembly_o0, assembly_o3, error_text = compile_source_to_assembly(
-            source_code=source_code,
-            docker_image=args.docker_image,
-            docker_platform=args.docker_platform,
-            cpp_std=args.cpp_std,
-        )
-
-        dataframe.at[index, COMMAND_O0_COLUMN] = command_o0
-        dataframe.at[index, COMMAND_O3_COLUMN] = command_o3
-        dataframe.at[index, COMPILE_OK_COLUMN] = "true" if ok else "false"
-        dataframe.at[index, COMPILE_ERROR_COLUMN] = error_text
-
-        if ok:
-            dataframe.at[index, ASSEMBLY_O0_COLUMN] = assembly_o0
-            dataframe.at[index, ASSEMBLY_O3_COLUMN] = assembly_o3
-            compiled_rows += 1
-            print(f"[{index + 1}/{total_rows}] {contest_id}/{problem_index}: compiled")
-        else:
-            failed_rows += 1
-            print(f"[{index + 1}/{total_rows}] {contest_id}/{problem_index}: failed")
-            if error_text:
-                print(error_text)
-
-    dataframe.to_csv(args.csv_path, index=False)
-
-    print()
-    print("Summary")
-    print(f"CSV written to: {args.csv_path}")
-    print(f"Rows considered: {total_rows}")
-    print(f"Rows compiled this run: {compiled_rows}")
-    print(f"Rows skipped with existing assembly: {skipped_rows}")
-    print(f"Rows failed: {failed_rows}")
 
 
 def main() -> None:
