@@ -13,6 +13,7 @@ TARGET_LANGUAGE_LABEL = "C++"
 TARGET_VERDICT = "OK"
 DEFAULT_LIMIT = 100
 DEFAULT_OUTPUT_FILENAME = "codeforces_join.csv"
+KEY_COLUMNS = ["contest_id", "index"]
 
 
 def load_problem_frame(split: str = "train", subset: str = "default") -> pd.DataFrame:
@@ -109,6 +110,56 @@ def build_codeforces_dataframe(
     return pd.DataFrame(rows).reset_index(drop=True), skipped_rows
 
 
+def merge_with_existing_output(
+    dataframe: pd.DataFrame,
+    output_path: Path,
+) -> tuple[pd.DataFrame, int, int]:
+    """
+    Preserve previously saved rows and append only truly new problems.
+
+    Existing rows win by default so downstream columns like dataset splits,
+    generated assembly, scores, or other annotations are not wiped out by a
+    future rebuild of the base Codeforces join.
+    """
+    if not output_path.exists():
+        return dataframe, 0, 0
+
+    existing = pd.read_csv(output_path, keep_default_na=False)
+    if existing.empty:
+        return dataframe, 0, 0
+
+    for column in KEY_COLUMNS:
+        if column not in existing.columns:
+            raise ValueError(
+                f"Existing output is missing required key column {column!r}: {output_path}"
+            )
+
+    existing = existing.copy()
+    dataframe = dataframe.copy()
+    for column in KEY_COLUMNS:
+        existing[column] = existing[column].astype(str)
+        dataframe[column] = dataframe[column].astype(str)
+
+    existing_duplicate_count = int(existing.duplicated(subset=KEY_COLUMNS, keep="first").sum())
+    if existing_duplicate_count:
+        existing = existing.drop_duplicates(subset=KEY_COLUMNS, keep="first").reset_index(drop=True)
+
+    new_duplicate_count = int(dataframe.duplicated(subset=KEY_COLUMNS, keep="first").sum())
+    if new_duplicate_count:
+        dataframe = dataframe.drop_duplicates(subset=KEY_COLUMNS, keep="first").reset_index(drop=True)
+
+    existing_keys = existing.loc[:, KEY_COLUMNS].drop_duplicates()
+    new_rows = dataframe.merge(
+        existing_keys.assign(_existing_row=True),
+        on=KEY_COLUMNS,
+        how="left",
+    )
+    new_rows = new_rows[new_rows["_existing_row"] != True].drop(columns="_existing_row").reset_index(drop=True)
+
+    combined = pd.concat([existing, new_rows], ignore_index=True, sort=False)
+    return combined, len(new_rows), existing_duplicate_count + new_duplicate_count
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -171,8 +222,14 @@ def main() -> None:
     if args.output is not None:
         output_path = resolve_output_path(args.output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
+        dataframe, appended_rows, dropped_duplicate_rows = merge_with_existing_output(
+            dataframe=dataframe,
+            output_path=output_path,
+        )
         dataframe.to_csv(output_path, index=False)
         print(f"Saved CSV to: {output_path}")
+        print(f"Rows appended to existing CSV: {appended_rows}")
+        print(f"Duplicate rows dropped during merge: {dropped_duplicate_rows}")
 
     print(dataframe.head())
     print(f"\nRows: {len(dataframe)}")

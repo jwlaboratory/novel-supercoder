@@ -210,3 +210,34 @@ uv run python "src/codeforces-approach/2-generate_assembly.py"
 -->  after that 
 
 # 
+
+
+
+i think if we shd do SFT warm start so it knows what correct assembly syntax and ABI and shi looks like 
+
+the issue with just doing RL straight up is that itll keep getting huge negative reward at start bc itll keep generating incorrect assembly code and get negative. so it wont know what it got right or wrong and wotn learn
+
+
+lets just try it w RL directly tho just to see.
+
+for now, lets skip the SFT even tho its probably smart. lets jump straight into RL. Lets go row by row and run RL  on a tiny coding model. lets have it generate assembly code for each row by row
+
+Lets make a seperate script for scoring. this will take a generated assembly code and then run it for correctness through input/output examples and also for efficiency benchmarked over like 30 trials against the 0o and 03 code
+
+what are ur thoughts? iron out each tradeoff and shi in this
+ig it matters if we go row by row and RL or do at end? we also dont wanat it to test on training data at end?
+
+
+
+lets start with offline RL first
+
+
+we shoudl probably split into SFT/RL/Test 
+60% SFT --> cheap and stabalizes syntax/abi learning
+15% RL --> expensive cuz need to be benchmarj
+10% val
+15% test
+
+
+when we run our script 3 marking, we make it only mark rows not already marked
+- > this is so new rows we add from datagen again maintain ratio of SFT/RL/Test
