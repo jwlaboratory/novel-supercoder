@@ -170,4 +170,43 @@ To actually do training:
  thought: can we do optimization on PVM instead...
  *** Q for later **
 
- 
+
+
+ --> do we want the  compiler to optimize the user code or to still deterministically take each assembly line and (allowed to optimize that)
+
+ say if u right a n^2 sort, will it rewrite ot a nlog n sort bc the i/o is correct
+
+
+
+
+
+ ------------------------------------------
+ @src/codeforces-approach go into this folder.
+
+use this https://huggingface.co/datasets/open-r1/codeforces  (dataset card https://huggingface.co/datasets/open-r1/codeforces-submissions )
+
+and then use https://huggingface.co/datasets/open-r1/codeforces-submissions  (dataset card https://huggingface.co/datasets/open-r1/codeforces-submissions )
+
+Create a pandas file that has the first (100 lines) that contain:
+1. 'contest_id' , 'index' 
+2. 'official_tests'
+3. FROM OTHER 2nd dataset the paired solution , use the 'contestId' and  'problem_index' for a solutuon that passes , filter GNU C11 on programmingLanguage and column verdict = OK
+------------------------------------------
+
+
+running data pipelines
+```bash
+
+uv run python "src/codeforces-approach/1-build_codeforces_dataframe.py" --limit 1000 --output /Users/shreybirmiwal/projects/gen-optimize-assembly/src/codeforces-approach/data
+
+uv run python "src/codeforces-approach/2-generate_assembly.py"
+
+```
+
+
+# RL scoring mechanism
+
+-->  weight in correctness (0 points efficinecy, -999 points for correctness)
+-->  after that 
+
+# 
