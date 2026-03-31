@@ -1,284 +1,109 @@
-# gen-optimize-assembly
+# Research notes — generative assembly optimization
 
-## Python (uv)
 
-- Install: [uv](https://docs.astral.sh/uv/)
-- Create the venv and install deps: `uv sync` (uses `.python-version` → 3.11)
-- Jupyter / Cursor notebooks: pick kernel **Python 3.11 (gen-optimize-assembly)** (`.venv`); if missing, run  
-  `uv run python -m ipykernel install --user --name gen-optimize-assembly --display-name "Python 3.11 (gen-optimize-assembly)"`
 
-  ```bash
-  cd /Users/shreybirmiwal/projects/gen-optimize-assembly
-    uv sync                    
-    # install / update env from lockfile
-    uv add <package>           
-    # add a dependency and refresh the lock
-    uv run python ...         
-    # run with project env without activating
-  ```
+### improvemnet plan / questions to be answers
 
+ - fix the data movement and pipeline. rn we store and read/write to big csvs, and go row by row. investigate the industry way to do this and understand the tradeoffs.... should we split raw vs derived data, better storage (parquet?), have better data processign pipelines (ie, if one part fails, should we retry? allow it to continue? skip row for next step? etc) should we have a way to query the data and see statistics on the data?
 
+ - the pipeline part for the RL is super hacky. what is the best way to do this? how should we do the scoring? what should the score function be? right now we do some wonky stuff where we send it to modal to create the candidates then we send it to locally to do the scoring then send it back to modal to update the model. should be a better way to do this
 
+ - rn we do the scoring by compiling / running the assembly locally. assembly is hardware specifici. can we fix this to not just work on mac hardware but standarized on some like linux toolchain?
 
+ - the problem with RL rn is the sparse rewards. we don't even have a good enough SFT model that can generate valid assembly so we need to fix this. should we start with a better base model? should we do more SFT? investigate this. maybe we add more immediate signals (cheap, dese signals (ie, assembles but fails this abi/syntax issue) so it gets better intution)
 
-ARM
+  - the problem with SFT is that it generates code that looks like valid code. but it must match o3 exactly for points. this might confuse the model learning direction. maybe we change objective to RL to 1. reward actual good code that assembles from the start? with more dense / more stepped' discrete rewards?
 
-Idea is that we either C code or assembly code and try to generate a more optimized assembly binary using a fine tuned LLM
 
-Strategy
- - Take a tiny, easily RL'd tiny open source model
- - SFT:
- a) take a dataset of assembly programs
- b) use opus 4.6 or a strong model to generate a plausable optimized assembly code
- c) check that this assembly code is actually correct by running through input/output?
- d) if it is correct, keep it and SFT on this
+ - the scoring is poor. we score it by running the assembly many times and seeing how fast it takes and if it passes the test cases. this doesnt check the edge cases and it depends on how fast the hardware is. how should we fix this? benchmark against some baseline and see a %? what is other ways to think about this? lines of code, size? heuristic based on how much each line takes? does LDUR take longe than certain other operations etc?
 
- - RL:
- a) have lots of assembly programs
- b) try to optimize them with our model
- c) if succesful, (correctness check with i/o), (score how much more optimized w/size/efficiency) and RL on this
 
-Drawback:
- - not determinstic compiler anymore (huge issue)
+ - investigate: read about when o3 is actually not optimized maximially. can we find a dataset of code that is not maximally optimized? can we humanlly identify code that can be better optimized? ** this might be one of the most important questions to answer
 
 
+- read papers on similar projects peopel have already done. what was their appraoch? what tradeoffs did they consider? what worked what didnt work? what did they list as future work?
 
-### iteration 1:
--- Leetcode questions have a lot of code + test cases that are pretty short
--- compile them with 0 optimize
--- compile them with max optimize
--- train model to take compiled 0 optimize, and to generate max optimized
 
-RL part
--- we have leetcodes that have all sorts of test cases 
+- data issue: should we do synthetic data gen? can go multiple ways: 1. model that generates us valid C code for us to generate assembly for. or a stronger model to generate assembly directly. or maybe even generate the more optimized assembly directly that we manaully check? not sure... can we investigate this and think of how we can use this?
 
+---
 
-active questions
- - can we do for c++ or is the assembly to complex? 
- - should v1 be taking in assmebly unoptimized code and training to get to v3
- - start with only compiler
-ARM64 gcc 15.2.0        1764
-armv8-a clang 21.1.0    1764
+## Open questions
 
+- C++ vs C: is the assembly too complex for v1?
+- Should v1 take unoptimized assembly as input and train toward an `-O3`-class output?
+- Should we scope to “compiler-only” behavior (what transformations are in-bounds)?
+- How do we reliably invoke generated assembly in our harness (parameters, ABI), end to end?
+- How do SFT and RL work under the hood? *(still filling in)*
+- What is the difference between SFT and generic fine-tuning?
+- Start from a base model only, or from a small post-trained model and then SFT?
+- For SFT, do we need to have … ? *(original note was incomplete)*
+- Should the stack be allowed to rewrite algorithms (e.g. \(O(n^2)\) sort → \(O(n \log n)\)) when I/O matches, or only optimize locally?
+- Python as the source language, or optimize at the PVM level instead?
+- Is Opus-scale (or similar) labeling for SFT better than `-O3` dumps—and what batch size between generate / score / update?
+- Different system prompts for SFT vs RL: worth it?
+- Exact RL reward mix after correctness is nailed down (beyond “correctness first”).
+- Row-by-row RL vs batch-at-end; avoiding evaluation on training rows. *(iron out tradeoffs)*
+- Overall data flow: CSVs, row-by-row loops, and whether the training loop design still feels wrong once a pipeline exists.
 
 
-# 
+---
 
-issue 1: we need a way to get all the test cases / or a different way to check correctness
-issue for later
-we can try this later
+**What is the goal and strategy**
+Start from C or assembly and use a fine-tuned LLM to produce a more optimized assembly binary.
+- Use a small open model that is feasible to train with RL.
+- **SFT:** (a) dataset of assembly programs; (b) strong model (e.g. Opus) proposes plausibly optimized assembly; (c) verify correctness with I/O tests; (d) keep correct pairs and SFT on them.
+- **RL:** (a) many assembly programs; (b) model tries to optimize them; (c) reward if correct (I/O) and better on size/efficiency.
+The drawback is The pipeline is no longer a deterministic compiler.
 
-rn lets just fine tune on the current model
+Iteration 1: ? Lots of short code plus test cases: compile with `-O0` and with max optimization; train the model to map the `-O0` assembly toward the highly optimized assembly. RL can use the varied test cases.
 
 
+** general ways to improve a model **
 
+1. Prompting  
+2. RAG  
+3. **SFT** — you often do not have a single “best” target, so labels may be suboptimal.  
+4. **Preference optimization** — revisit later.  
+5. **RL** — fits when correctness is easy to check but the best policy is unknown.
 
-# ideas
--- use 00 as base, predict 03
--- use 03 and (mayeb the entire question as context) try to predict new 04
---
+Pretraining and SFT both use next-token prediction as the training objective.
+SFT: teach a `-O3`-style target. RL: try to beat that target.
 
 
-# learning
-ways to improve model
+**What “API” means for assembly and parameters.** In architecture / systems, the API is what you program against (OS, ABI, libc). Assembly can pass both array size and pointer while the C function only names the array because of the **calling convention / ABI**, not magic in the source. The remaining work is operational: wiring a harness that runs generated assembly with the right inputs.
 
-1. prompting
-2. rag
-3. supervised fine tuning (SFT)
-issue is we don't usually have examples of BEST optimal decision (so we have to resort to teaching model some suboptimal decision)
-4. preference optimization (come back to this)
-5. reinforcement learning (when correctness can be evaluated easily, but most optimal decisions are unknown)
+**Why is SFT so much cheaper than pretraining?** Mostly much smaller datasets and far fewer steps than full pretraining.
 
-So let's try 2 differnet approaches
+**Correct but not byte-identical to the teacher assembly.** Standard SFT with cross-entropy penalizes token mismatch: a semantically equivalent program still looks wrong at many positions. Getting “any correct, strong assembly” fits **RL, preferences, or search** better, unless you change the representation (IR, graphs, multiple references). Plain SFT on one assembly string is imitation of a single surface form.
 
-approach 1:
-SFT -- well teach it to do 03
-RL -- well try to beat 03
+**SFT first, then RL, or RL only?** Intuition: RL may win long term; a little SFT could teach syntax/ABI and speed early learning, or it could bias the policy badly. RL from scratch can mean mostly invalid assembly at first—huge negative reward and a weak signal for what was “almost right.” You left several parallel plans: try SFT first; try RL directly; skip SFT for now and do row-by-row RL on a tiny model; start with **offline RL**; **SFT warm start** still sounds sensible for syntax/ABI. Resolve with experiments rather than picking one note to delete.
 
+**Formal equivalence of two programs or assemblies.** No general proof (Rice’s theorem). In practice you lean on **many tests**, not a proof.
 
-// question: for SFT do we need to have 
+**Does SFT make sense if the goal is not imitation?** There is real tension: one line of thought was RL-only because imitation misaligns with “best” assembly; another was SFT warm start for valid syntax/ABI. Treat both as hypotheses until metrics exist.
 
-can we somehow also penalize / reward if the answer it produces is still correct even tho it doesnt match exactly the otuput ? bc we don't just want SFT to learn to do 03, we want it to learn to do the best possible 03
-or is taht in the RL direction only
+**How to get test cases or check correctness.** Full coverage is a blocker for rigorous training. **Deferred:** get all tests or another correctness story. **Near term:** fine-tune on current data; revisit when you can enforce stronger checks.
 
-//answer: no because SFT is just doing cross entropy loss
-----  different but semantically equivalent program is still treated as wrong at many positions.
+**Codeforces merge spec** *(see README for commands).* Under `src/codeforces-approach`, join [open-r1/codeforces](https://huggingface.co/datasets/open-r1/codeforces) with [open-r1/codeforces-submissions](https://huggingface.co/datasets/open-r1/codeforces-submissions). Build a table (you originally said first ~100 rows) with: (1) `contest_id`, `index`; (2) `official_tests`; (3) from submissions, a **passing** solution (`verdict == OK`), `programmingLanguage` **GNU C11**, matched on `contestId` and `problem_index`.
 
-SFT alone → good at imitating a specific assembly string (e.g. “be like this -O3 dump”), not at “any assembly that is optimal and correct.”
-“Best possible -O3-class behavior” (many valid assemblies, optimize a metric) is naturally an RL / preference / search story, or you change the training target (see below).
+**RL reward (draft).** Correctness should dominate (e.g. large negative score if wrong; no efficiency credit until correct). Fine-grained weighting after that is still to be decided.
 
-// how does SFT / RL actually work under the hood
+**Scoring script.** One script: take generated assembly, run **I/O correctness**, benchmark **efficiency** (e.g. ~30 trials) against **`-O0` and `-O3`** baselines.
 
+**Train / val / test split and marking.** Working plan: **60%** SFT (cheap, stabilizes syntax/ABI), **15%** RL (expensive, needs benchmarking), **10%** val, **15%** test. When running “script 3” marking, only mark rows **not yet marked** so new datagen keeps the ratios.
 
-// question: what does it mean by api / how do we run the actual assembly code with our function parameters: api in comp arch is how u program against (what os/lib exposes) 
-ie how does it know (to SECRETLY) in the assembly pass in both the array size and the array itself but only show the function the array it self (its cuz of the api)
+**Opus (or similar) for SFT labels vs `-O3` dumps.** Strong models may beat a single flag, but generating and scoring **per row** before any update slows the loop. **Future:** generate a batch (e.g. 50), score, then update so the policy sees fresher feedback; policies that update on fresher data often learn better than one giant delayed batch.
 
+**Different prompts for SFT vs RL.** Example: SFT — “mimic `-O3`.” RL — “you were trained to mimic `-O3`; now beat it while staying correct.” Hypothesis to try later.
 
-// leads to me to wonder how would it perform with SFT first then RL?  or just RL first
--- intuiton tells me RL would be better, but if it knows a little bit of SFT it might learn to do better first, with base knowledge of optimizing for o3? but it might also get steered in teh wrong direction, have conflicitng throughts.
+**Generate-assembly pipeline (CSV + Docker).** Two problems: (1) holding everything in memory before writing the CSV loses progress on failure; (2) one new Docker container per row is too slow. Prefer batches (~50), flush the CSV after each batch, one container per batch.
 
-lets just try SFT first to see how it does.
+**Optimize for size as well as speed.** LLVM’s **`-Oz`** favors minimum code size over raw speed; rewards could be multi-objective.
 
+**Method ideas not tied to one experiment yet.** Reasoning model for hard cases; put **prompt + assembly** back-to-back so the model sees the whole program; dataset where **`-O3` is known weak** and a reasoning model spots it; targets like **`-O0` → `-O3`** or **`-O3` + full problem → stronger variant.**
 
-more ideas
--- try a reasoning model
--- try putting hte inptu query / assmebly in 2 x back to back to see if it can reason abt the whole thing as once as well as not just line by line 
- 
+**Meta: incomplete sentence in original notes.** “When generating assembly candidates they are have …” — sentence was cut off. Together with the broader worry that **CSV + row-by-row** may be the wrong shape for how you want to train; revisit after something runs end-to-end.
 
---  what if we got a dataset of exactly when o3 is poorly optimized and then we use reasoning model to just identify that 
 
-
-
-
-
-# sft approach
-
-both pretraining and SFT use next token prediction as their underlying training objective!
-
-q: differences with SFT and geniric fine tuning?
- - 
-
-q: why is SFT so much cheaper than pretraining?
-- cuz small dataset
-
-
-q should we start w a base model or a small, fully postrained model and sft on that?
-
-
-issue: the code was compiled on linux machien so the assembly code generated is speicifc to the linux machines...
-we need to run on linux through doccer or smth
-
-or what if we recompile eveyrhting on teh mac machine? 
----> we will need to create a driver (main) and also include stdio in the original C file
-
-this complicates things bc its not as straight forward, need to add a main method to each C file aswell.
-
-potential solution:
-To actually do training:
- -- Take each C file, compile it with gcc -O0, and gcc -O3.
- -- Fine 
-
-
---> can u formally prove the behavior (programs are the same)? no cuz of rice theorum, we cant we can only prove using lots of test cases good enough
-
---> lets just RL approach SFt doesnt make sense (immitaiton issue) 
-
-
- wait why not use python as base language
- ---> we would need to compile the python code to assembly
- https://www.perplexity.ai/search/python-how-does-python-get-com-oYwFKdzTRVKvXsNd8Sml5w
- thought: can we do optimization on PVM instead...
- *** Q for later **
-
-
-
- --> do we want the  compiler to optimize the user code or to still deterministically take each assembly line and (allowed to optimize that)
-
- say if u right a n^2 sort, will it rewrite ot a nlog n sort bc the i/o is correct
-
-
-
-
-
- ------------------------------------------
- @src/codeforces-approach go into this folder.
-
-use this https://huggingface.co/datasets/open-r1/codeforces  (dataset card https://huggingface.co/datasets/open-r1/codeforces-submissions )
-
-and then use https://huggingface.co/datasets/open-r1/codeforces-submissions  (dataset card https://huggingface.co/datasets/open-r1/codeforces-submissions )
-
-Create a pandas file that has the first (100 lines) that contain:
-1. 'contest_id' , 'index' 
-2. 'official_tests'
-3. FROM OTHER 2nd dataset the paired solution , use the 'contestId' and  'problem_index' for a solutuon that passes , filter GNU C11 on programmingLanguage and column verdict = OK
-------------------------------------------
-
-
-running data pipelines
-```bash
-
-uv run python "src/codeforces-approach/1-build_codeforces_dataframe.py" --limit 1000000 --output /Users/shreybirmiwal/projects/gen-optimize-assembly/src/codeforces-approach/data
-
-uv run python "src/codeforces-approach/2-generate_assembly.py"
-
-```
-
-
-# RL scoring mechanism
-
--->  weight in correctness (0 points efficinecy, -999 points for correctness)
--->  after that 
-
-# 
-
-
-
-i think if we shd do SFT warm start so it knows what correct assembly syntax and ABI and shi looks like 
-
-the issue with just doing RL straight up is that itll keep getting huge negative reward at start bc itll keep generating incorrect assembly code and get negative. so it wont know what it got right or wrong and wotn learn
-
-
-lets just try it w RL directly tho just to see.
-
-for now, lets skip the SFT even tho its probably smart. lets jump straight into RL. Lets go row by row and run RL  on a tiny coding model. lets have it generate assembly code for each row by row
-
-Lets make a seperate script for scoring. this will take a generated assembly code and then run it for correctness through input/output examples and also for efficiency benchmarked over like 30 trials against the 0o and 03 code
-
-what are ur thoughts? iron out each tradeoff and shi in this
-ig it matters if we go row by row and RL or do at end? we also dont wanat it to test on training data at end?
-
-
-
-lets start with offline RL first
-
-
-we shoudl probably split into SFT/RL/Test 
-60% SFT --> cheap and stabalizes syntax/abi learning
-15% RL --> expensive cuz need to be benchmarj
-10% val
-15% test
-
-
-when we run our script 3 marking, we make it only mark rows not already marked
-- > this is so new rows we add from datagen again maintain ratio of SFT/RL/Test
-
-
-
-
-
-
-2 issues rn with our generate assembly
-1 - it does it all in mem before writing to the csv
-so it can fial and its cooked
-
-2 - it also creates new docker containser for each row
-lets do in batches of like 50 where we write to csv after each batch but also do one contaienr for all 50
-
-
-
-you can also optimize for size
-some assemblers "-Oz is an optimization level flag that tells LLVM to prioritize minimizing code size over raw performance."
-
-maybe it would make sense to the first step have like a strong model like Opus do the SFT part .... this would be (*better than o3?*)
-
-
-the only problem with this is that it generates fully for each rwo then i score then it learns
-
-whereas itd prob be best to generate like 50, then i scoere, tehn it learns right
-
-just a thought
-In future miht be smth i work on ill put these in my notes 
-
-
-That usually helps because the policy keeps adapting to fresher data instead of waiting for one giant delayed update.
-
-
-issue is when generating assembly candidates they are have 
-
-
-idea for future is to have a differnet prompt for both SFT and RL?
---> ie, imagine:
- --"you are to mimick o3" for SFT
- --"earlier you where trained to mimick o3, now you are to use that knowldege of assmebly but also generate even above that o4" for RL
-
-how would that perform
+---

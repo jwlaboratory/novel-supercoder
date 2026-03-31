@@ -123,3 +123,7 @@ Current penalties:
   - candidate text format
   - scorer status counts from `5-score-local.py`
   - docker toolchain consistency (`gcc:13`, `linux/arm64`)
+
+
+### Active research questions
+-- find in NOTES.md for now
