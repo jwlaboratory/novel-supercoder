@@ -1,6 +1,72 @@
 # Research notes — generative assembly optimization
 
 
+### thinking abt ideas...
+GNN https://distill.pub/2021/gnn-intro/
+
+— graphs are edges nodes
+— we can represent as adjacency matrix or a adjacency list (more memory efficient then giant mostly empty adjacency matrix)
+— issue: graphs can represent things info about each node, each edge, or global attributes. adjacency matrixes don’t represent this well. when you change up the order, the underlying graph hasn’t changed but the LLM is confused
+— we find new way of represent by doing sum of neighbors
+
+???
+
+open key question: how can we represent graphs in neural networks
+
+programl  https://proceedings.mlr.press/v139/cummins21a/cummins21a.pdf
+graph based
+
+paired with a neural network (MPNN)
+
+we need to ignore the differences in each code (tried noramlizing)
+graphs create dby standard copuler tool that traverses code structure mapping out edges nodes 
+
+improved device prediction (better on gpu vs cpu), improved (predicting if sorting / searching / what algo),, checking livelines, reacchability, etc, compilzer puzzles 
+
+open question: can we use graph to predict better compiler flag ordering 
+open q: these graphs dont work well with understandign stuff runtime representations like polymorphism
+
+
+this was used to use GNNs on program graphs to predict optimal flag sets 
+https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1731740/full
+—> though did not do phase ordering
+—> did not did sequence
+—> did which flags to turn on / off (only 8 flags tho)… still took a lot to train
+
+autophase to determine phase orderings with RL https://arxiv.org/pdf/2003.00671
+— ordering matters
+— use DRL
+— use random forest to figure out what features actually correlate with passes, then ignore irrelevant data 
+
+what if you tried chess playing algorithm here?
+—> yea some ppl tried this
+alphaZero: monte Carlo tree search
+
+or what about a greedy algorithm?
+
+
+https://arxiv.org/html/2505.11480v1
+superoptimization: try all strategigies but search space grows exponentially
+but grows too much
+they got a really nice dataset we can query later — 8mil c code
+pass in C code and assembly. noticed with just C code, and no more o3 assembly it performs poorly
+what if we combine this with graph representation? so graph + c + assembly through RL?
+tool called hyperfine to measure execution time…. read more
+check validity through passing test case 
+q: so does this papers optmize the actual assembly whilst maintaining oriignal C code, or does it change the entire c code logic itself when optimizing ykwim?
+a: yeah it can rewrite whatever it wants maintaining input/ouput the same
+
+*** how did their model , qwen2.5-coder-7b-instruct was getting 61% on assembly task before any RL
+
+huh how
+
+
+- can we use auto research on reinformcement compilergym
+  - how can we formally verify otimized code
+- can we fine grain teh optimizations to just certain regions to programs (certain regins need x, certain regions need y)
+-  - space is unbounded: you can unrol then vectorize then unrol again
+
+
 
 ### improvemnet plan / questions to be answers
 
@@ -12,8 +78,7 @@
 
  - the problem with RL rn is the sparse rewards. we don't even have a good enough SFT model that can generate valid assembly so we need to fix this. should we start with a better base model? should we do more SFT? investigate this. maybe we add more immediate signals (cheap, dese signals (ie, assembles but fails this abi/syntax issue) so it gets better intution)
 
-  - the problem with SFT is that it generates code that looks like valid code. but it must match o3 exactly for points. this might confuse the model learning direction. maybe we change objective to RL to 1. reward actual good code that assembles from the start? with more dense / more stepped' discrete rewards?
-
+ - the problem with SFT is that it generates code that looks like valid code. but it must match o3 exactly for points. this might confuse the model learning direction. maybe we change objective to RL to 1. reward actual good code that assembles from the start? with more dense / more stepped' discrete rewards?
 
  - the scoring is poor. we score it by running the assembly many times and seeing how fast it takes and if it passes the test cases. this doesnt check the edge cases and it depends on how fast the hardware is. how should we fix this? benchmark against some baseline and see a %? what is other ways to think about this? lines of code, size? heuristic based on how much each line takes? does LDUR take longe than certain other operations etc?
 
@@ -26,6 +91,14 @@
 
 - data issue: should we do synthetic data gen? can go multiple ways: 1. model that generates us valid C code for us to generate assembly for. or a stronger model to generate assembly directly. or maybe even generate the more optimized assembly directly that we manaully check? not sure... can we investigate this and think of how we can use this?
 
+- base model: what is instruct version of qwen2.5-coder-0.5b? is the base model too bad? i feel the base model should answer some % of questions correctly... if its answering 0% its too poor of a base model.
+
+
+- what about alpha go typa "chess solving equation" problem ? can we convert assembly code optimization to a game it has to play and play the best move?
+
+- https://gemini.google.com/share/57dcfd0dc9c0
+
+- 
 ---
 
 ## Open questions

@@ -127,3 +127,34 @@ Current penalties:
 
 ### Active research questions
 -- find in NOTES.md for now
+
+
+### pre req knowledege
+
+You should know all of the following concepts and explain them
+
+-- model training
+
+pretraining:
+ - how does it work
+ - what is a base model
+ 
+sft:
+ - how does it work
+ - what is pros / cons
+
+rl:
+ - how does it work
+ - what is pros / cons
+ - how does it change the pretrained model
+
+
+ -- assembly / compiler
+
+  - what is assembly
+  - what is a compiler
+  - what is o0, o3 etc, what does compiler optimization do?
+
+
+
+
