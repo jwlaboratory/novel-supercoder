@@ -65,8 +65,11 @@ huh how
   - how can we formally verify otimized code
 - can we fine grain teh optimizations to just certain regions to programs (certain regins need x, certain regions need y)
 -  - space is unbounded: you can unrol then vectorize then unrol again
+-how can we make it work on any hardware, ie even hardware that is changing,
+. Cross-Hardware Generalization
+An optimization that makes code 1.47x faster on an NVIDIA GPU might make it slower on an AMD chip due to differences in cache sizes and hardware-level instructions.
 
-
+The Research Goal: Models that are "Hardware-Aware"—meaning they can take the hardware's technical specs (cache size, register count) as an input to their optimization logic.
 
 ### improvemnet plan / questions to be answers
 
@@ -98,7 +101,30 @@ huh how
 
 - https://gemini.google.com/share/57dcfd0dc9c0
 
-- 
+General
+get everyone compute
+start documenting current experiments + thoughts
+manually find / do examples assembly optimize
+read new papers
+SFT team:
+Issues: RL needs model that is somewhat competent, rn it’s not producing valid code [investigate]
+Can/ should we use better base model?
+Can we do SFT with thinking traces in between, ie “I see we can optimize xyz”
+Do we need SFT at all?
+Should we start with providing it o3 code asking it to further optimize that? Do we use like opus4.6 to gen the output training data for this?
+RL
+Can we improve the reward function: less sparse, more sparse (trade offs?)
+Swap out policy, training data split etc (trade offs?)
+Can we add rewards to the thinking traces from SFT as well?
+Better scoring method: it stinks rn -- runs locally and benchmarks speed. Can we use smth like 
+Flag optimization
+Try RL?
+Try chess optimizer? Think this is promising and potentially novel?
+Random ideas
+Can we use autoresearch to hyper parameter optimize?
+Can we use the graph neural networks to help us ? can someone investigate how GNNs can represent code and if that would be better
+
+
 ---
 
 ## Open questions
