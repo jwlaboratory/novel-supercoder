@@ -144,8 +144,8 @@ def _ensure_hyperfine_imports() -> tuple[Any, Any, Any, Any]:
     if str(HYPERFINE_ROOT) not in sys.path:
         sys.path.insert(0, str(HYPERFINE_ROOT))
     try:
-        from hyperfine_bench.bench import BenchConfig, finish, run_benchmark
-        from hyperfine_bench.parse_tests import parse_tests_payload
+        from hyperfine_bench.bench import BenchConfig, finish, run_benchmark  # pyright: ignore[reportMissingImports]
+        from hyperfine_bench.parse_tests import parse_tests_payload  # pyright: ignore[reportMissingImports]
     except ImportError as exc:
         raise RuntimeError(
             "Unable to import hyperfine_bench from infra/hyperfine. "
@@ -205,6 +205,15 @@ def _checkpoint_write(dataframe: pd.DataFrame, output_csv: Path) -> None:
 def _has_existing_result(row: pd.Series, target: str) -> bool:
     marker = row.get(f"benchmark_{target}_mean_s", "")
     return bool(str(marker).strip())
+
+
+def _is_missing_assembly(value: Any) -> bool:
+    if pd.isna(value):
+        return True
+    text = str(value).strip()
+    if not text:
+        return True
+    return text.lower() in {"nan", "none", "null"}
 
 
 def _run_single_benchmark(
@@ -284,6 +293,9 @@ def main() -> None:
 
     active_targets = [target for target in targets if target in target_column_map]
     _ensure_output_columns(dataframe, active_targets)
+    target_stats: dict[str, dict[str, int]] = {
+        target: {"ok": 0, "skipped": 0, "failed": 0} for target in active_targets
+    }
 
     if args.limit is not None:
         row_indices = list(range(min(len(dataframe), max(args.limit, 0))))
@@ -303,21 +315,25 @@ def main() -> None:
         for target in active_targets:
             completed_jobs += 1
             source_col = target_column_map[target]
-            asm_code = str(dataframe.at[row_idx, source_col])
+            asm_value = dataframe.at[row_idx, source_col]
+            asm_code = str(asm_value)
 
             print(f"[{completed_jobs}/{total_jobs}] {problem_id} target={target}")
 
             dataframe.at[row_idx, f"benchmark_{target}_source_column"] = source_col
 
-            if not asm_code.strip():
-                dataframe.at[row_idx, f"benchmark_{target}_ok"] = "false"
+            if _is_missing_assembly(asm_value):
+                dataframe.at[row_idx, f"benchmark_{target}_ok"] = ""
                 dataframe.at[row_idx, f"benchmark_{target}_correctness_passed"] = ""
                 dataframe.at[row_idx, f"benchmark_{target}_reason"] = "missing_assembly"
                 dataframe.at[row_idx, f"benchmark_{target}_error"] = "Assembly column is empty."
+                target_stats[target]["skipped"] += 1
+                print("  -> skipped: missing/nan assembly")
                 continue
 
             if _has_existing_result(dataframe.loc[row_idx], target) and not args.force:
                 print(f"  -> skipped existing benchmark_{target}_mean_s (use --force to rerun)")
+                target_stats[target]["skipped"] += 1
                 continue
 
             try:
@@ -331,10 +347,12 @@ def main() -> None:
                     parse_tests_payload=parse_tests_payload,
                 )
             except Exception as exc:
-                dataframe.at[row_idx, f"benchmark_{target}_ok"] = "false"
-                dataframe.at[row_idx, f"benchmark_{target}_reason"] = "benchmark_exception"
-                dataframe.at[row_idx, f"benchmark_{target}_error"] = str(exc)
-                print(f"  -> exception: {exc}")
+                # Broken candidate (invalid asm/tests/runtime issue): skip this target only.
+                dataframe.at[row_idx, f"benchmark_{target}_ok"] = ""
+                dataframe.at[row_idx, f"benchmark_{target}_reason"] = "broken_or_exception"
+                dataframe.at[row_idx, f"benchmark_{target}_error"] = str(exc)[:1000]
+                target_stats[target]["skipped"] += 1
+                print(f"  -> skipped broken candidate: {exc}")
                 continue
 
             timing = report.get("timing", {})
@@ -373,10 +391,21 @@ def main() -> None:
             )
             script_stderr = str(report.get("script_stderr", ""))
             dataframe.at[row_idx, f"benchmark_{target}_error"] = script_stderr[:1000]
+            if report.get("ok"):
+                target_stats[target]["ok"] += 1
+            else:
+                target_stats[target]["failed"] += 1
 
         _checkpoint_write(dataframe, output_csv)
         print(f"  -> checkpoint saved: {output_csv}")
 
+    print("\nPer-target summary")
+    for target in active_targets:
+        stats = target_stats[target]
+        print(
+            f"- {target}: ok={stats['ok']} skipped={stats['skipped']} failed={stats['failed']} "
+            f"(source={target_column_map[target]})"
+        )
     print(f"Benchmarking complete. Updated CSV: {output_csv}")
 
 
