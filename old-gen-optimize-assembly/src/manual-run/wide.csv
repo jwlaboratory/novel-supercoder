@@ -1,0 +1,531 @@
+0
+1
+Two Sum
+Easy
+"/*
+1. Two Sum
+
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+
+Example:
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+*/
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+typedef struct data_s {
+    int val;
+    int idx;
+} data_t;
+int cmp(const void *a, const void *b) {
+    return ((data_t *)a)->val - ((data_t *)b)->val;
+}
+int* twoSum(int* nums, int numsSize, int target) {
+    int *indices;
+    int i, j, k;
+    
+#if 0
+    for (i = 0; i < numsSize - 1; i ++) {
+        for (j = i + 1; j < numsSize; j ++) {
+            if (nums[i] + nums[j] == target) {
+                indices = malloc(2 * sizeof(int));
+                //assert(indices);
+                indices[0] = i;
+                indices[1] = j;
+                return indices;
+            }
+        }
+    }
+#else
+    data_t *array;
+    array = malloc((numsSize + 1) * sizeof(data_t));
+    //assert(array);
+    for (i = 0; i < numsSize; i ++) {
+        array[i].val = nums[i];
+        array[i].idx = i;
+    }
+    qsort(array, numsSize, sizeof(data_t), cmp);
+    i = 0;
+    j = numsSize - 1;
+    while (i < j) {
+        k = array[i].val + array[j].val;
+        if (k == target) {
+            indices = malloc(2 * sizeof(int));
+            //assert(indices);
+            indices[0] = array[i].idx;
+            indices[1] = array[j].idx;
+            free(array);
+            return indices;
+        } else if (k < target) {
+            i ++;
+        } else {
+            j --;
+        }
+    }
+    free(array);
+#endif
+    
+    return NULL;
+}
+
+
+/*
+Difficulty:Easy
+Total Accepted:586.7K
+Total Submissions:1.7M
+
+
+Companies LinkedIn Uber Airbnb Facebook Amazon Microsoft Apple Yahoo Dropbox Bloomberg Yelp Adobe
+Related Topics Array Hash Table
+Similar Questions 
+                
+                  
+                    3Sum
+                  
+                    4Sum
+                  
+                    Two Sum II - Input array is sorted
+                  
+                    Two Sum III - Data structure design
+                  
+                    Subarray Sum Equals K
+                  
+                    Two Sum IV - Input is a BST
+*/
+"
+"cmp:
+        sub     sp, sp, #16
+        str     x0, [sp, 8]
+        str     x1, [sp]
+        ldr     x0, [sp, 8]
+        ldr     w1, [x0]
+        ldr     x0, [sp]
+        ldr     w0, [x0]
+        sub     w0, w1, w0
+        add     sp, sp, 16
+        ret
+twoSum:
+        stp     x29, x30, [sp, -64]!
+        mov     x29, sp
+        str     x0, [sp, 24]
+        str     w1, [sp, 20]
+        str     w2, [sp, 16]
+        ldr     w0, [sp, 20]
+        add     w0, w0, 1
+        sxtw    x0, w0
+        lsl     x0, x0, 3
+        bl      malloc
+        str     x0, [sp, 48]
+        str     wzr, [sp, 60]
+        b       .L4
+.L5:
+        ldrsw   x0, [sp, 60]
+        lsl     x0, x0, 2
+        ldr     x1, [sp, 24]
+        add     x1, x1, x0
+        ldrsw   x0, [sp, 60]
+        lsl     x0, x0, 3
+        ldr     x2, [sp, 48]
+        add     x0, x2, x0
+        ldr     w1, [x1]
+        str     w1, [x0]
+        ldrsw   x0, [sp, 60]
+        lsl     x0, x0, 3
+        ldr     x1, [sp, 48]
+        add     x0, x1, x0
+        ldr     w1, [sp, 60]
+        str     w1, [x0, 4]
+        ldr     w0, [sp, 60]
+        add     w0, w0, 1
+        str     w0, [sp, 60]
+.L4:
+        ldr     w1, [sp, 60]
+        ldr     w0, [sp, 20]
+        cmp     w1, w0
+        blt     .L5
+        ldrsw   x1, [sp, 20]
+        adrp    x0, cmp
+        add     x3, x0, :lo12:cmp
+        mov     x2, 8
+        ldr     x0, [sp, 48]
+        bl      qsort
+        str     wzr, [sp, 60]
+        ldr     w0, [sp, 20]
+        sub     w0, w0, #1
+        str     w0, [sp, 56]
+        b       .L6
+.L10:
+        ldrsw   x0, [sp, 60]
+        lsl     x0, x0, 3
+        ldr     x1, [sp, 48]
+        add     x0, x1, x0
+        ldr     w1, [x0]
+        ldrsw   x0, [sp, 56]
+        lsl     x0, x0, 3
+        ldr     x2, [sp, 48]
+        add     x0, x2, x0
+        ldr     w0, [x0]
+        add     w0, w1, w0
+        str     w0, [sp, 44]
+        ldr     w1, [sp, 44]
+        ldr     w0, [sp, 16]
+        cmp     w1, w0
+        bne     .L7
+        mov     x0, 8
+        bl      malloc
+        str     x0, [sp, 32]
+        ldrsw   x0, [sp, 60]
+        lsl     x0, x0, 3
+        ldr     x1, [sp, 48]
+        add     x0, x1, x0
+        ldr     w1, [x0, 4]
+        ldr     x0, [sp, 32]
+        str     w1, [x0]
+        ldrsw   x0, [sp, 56]
+        lsl     x0, x0, 3
+        ldr     x1, [sp, 48]
+        add     x1, x1, x0
+        ldr     x0, [sp, 32]
+        add     x0, x0, 4
+        ldr     w1, [x1, 4]
+        str     w1, [x0]
+        ldr     x0, [sp, 48]
+        bl      free
+        ldr     x0, [sp, 32]
+        b       .L8
+.L7:
+        ldr     w1, [sp, 44]
+        ldr     w0, [sp, 16]
+        cmp     w1, w0
+        bge     .L9
+        ldr     w0, [sp, 60]
+        add     w0, w0, 1
+        str     w0, [sp, 60]
+        b       .L6
+.L9:
+        ldr     w0, [sp, 56]
+        sub     w0, w0, #1
+        str     w0, [sp, 56]
+.L6:
+        ldr     w1, [sp, 60]
+        ldr     w0, [sp, 56]
+        cmp     w1, w0
+        blt     .L10
+        ldr     x0, [sp, 48]
+        bl      free
+        mov     x0, 0
+.L8:
+        ldp     x29, x30, [sp], 64
+        ret"
+"cmp:
+        ldr     w2, [x0]
+        ldr     w0, [x1]
+        sub     w0, w2, w0
+        ret
+twoSum:
+        stp     x29, x30, [sp, -48]!
+        mov     x29, sp
+        stp     x19, x20, [sp, 16]
+        stp     x21, x22, [sp, 32]
+        mov     x22, x0
+        mov     w20, w1
+        mov     w21, w2
+        add     w0, w1, 1
+        sbfiz   x0, x0, 3, 32
+        bl      malloc
+        mov     x19, x0
+        cmp     w20, 0
+        ble     .L3
+        mov     x3, x0
+        sxtw    x0, w20
+        mov     x1, 0
+.L4:
+        ldr     w2, [x22, x1, lsl 2]
+        stp     w2, w1, [x3], 8
+        add     x1, x1, 1
+        cmp     x1, x0
+        bne     .L4
+        adrp    x3, cmp
+        add     x3, x3, :lo12:cmp
+        mov     x2, 8
+        mov     x0, x19
+        bl      qsort
+        sub     w0, w20, #1
+        cmp     w0, 0
+        ble     .L5
+        mov     w2, 0
+        b       .L10
+.L14:
+        mov     x0, 8
+        bl      malloc
+        mov     x21, x0
+        ldr     w0, [x22, 4]
+        ldr     w1, [x20, 4]
+        stp     w0, w1, [x21]
+        mov     x0, x19
+        bl      free
+        b       .L2
+.L8:
+        sub     w0, w0, #1
+.L9:
+        cmp     w2, w0
+        bge     .L5
+.L10:
+        sbfiz   x1, x2, 3, 32
+        add     x22, x19, x1
+        sbfiz   x3, x0, 3, 32
+        add     x20, x19, x3
+        ldr     w1, [x19, x1]
+        ldr     w3, [x19, x3]
+        add     w1, w1, w3
+        cmp     w1, w21
+        beq     .L14
+        bge     .L8
+        add     w2, w2, 1
+        b       .L9
+.L3:
+        adrp    x3, cmp
+        add     x3, x3, :lo12:cmp
+        mov     x2, 8
+        sxtw    x1, w20
+        bl      qsort
+.L5:
+        mov     x0, x19
+        bl      free
+        mov     x21, 0
+.L2:
+        mov     x0, x21
+        ldp     x19, x20, [sp, 16]
+        ldp     x21, x22, [sp, 32]
+        ldp     x29, x30, [sp], 48
+        ret"
+"cmp:
+        ldr     w2, [x0]
+        ldr     w0, [x1]
+        sub     w0, w2, w0
+        ret
+twoSum:
+        stp     x29, x30, [sp, -48]!
+        mov     x29, sp
+        stp     x21, x22, [sp, 32]
+        mov     x22, x0
+        add     w0, w1, 1
+        stp     x19, x20, [sp, 16]
+        mov     w20, w1
+        mov     w21, w2
+        sbfiz   x0, x0, 3, 32
+        bl      malloc
+        sxtw    x4, w20
+        mov     x19, x0
+        cmp     w20, 0
+        ble     .L4
+        mov     x1, 0
+.L5:
+        ldr     w2, [x22, x1, lsl 2]
+        stp     w2, w1, [x0], 8
+        add     x1, x1, 1
+        cmp     x1, x4
+        bne     .L5
+        mov     x0, x19
+        adrp    x3, cmp
+        mov     x2, 8
+        add     x3, x3, :lo12:cmp
+        bl      qsort
+        subs    w1, w20, #1
+        beq     .L7
+        mov     w3, 0
+        b       .L12
+.L21:
+        add     w3, w3, 1
+        cmp     w1, w3
+        ble     .L7
+.L12:
+        ubfiz   x0, x3, 3, 32
+        ubfiz   x2, x1, 3, 32
+        add     x22, x19, x0
+        add     x20, x19, x2
+        ldr     w0, [x19, x0]
+        ldr     w2, [x19, x2]
+        add     w0, w0, w2
+        cmp     w0, w21
+        beq     .L20
+        blt     .L21
+        sub     w1, w1, #1
+        cmp     w1, w3
+        bgt     .L12
+.L7:
+        mov     x0, x19
+        mov     x21, 0
+        bl      free
+        mov     x0, x21
+        ldp     x19, x20, [sp, 16]
+        ldp     x21, x22, [sp, 32]
+        ldp     x29, x30, [sp], 48
+        ret
+.L20:
+        mov     x0, 8
+        bl      malloc
+        mov     x21, x0
+        ldr     w1, [x20, 4]
+        ldr     w0, [x22, 4]
+        stp     w0, w1, [x21]
+        mov     x0, x19
+        bl      free
+        mov     x0, x21
+        ldp     x19, x20, [sp, 16]
+        ldp     x21, x22, [sp, 32]
+        ldp     x29, x30, [sp], 48
+        ret
+.L4:
+        mov     x1, x4
+        adrp    x3, cmp
+        mov     x2, 8
+        add     x3, x3, :lo12:cmp
+        bl      qsort
+        b       .L7"
+"cmp:
+        ldr     w2, [x0]
+        ldr     w0, [x1]
+        sub     w0, w2, w0
+        ret
+twoSum:
+        stp     x29, x30, [sp, -64]!
+        mov     x29, sp
+        str     x23, [sp, 48]
+        mov     x23, x0
+        add     w0, w1, 1
+        stp     x21, x22, [sp, 32]
+        mov     w22, w1
+        mov     w21, w2
+        sbfiz   x0, x0, 3, 32
+        stp     x19, x20, [sp, 16]
+        bl      malloc
+        sxtw    x1, w22
+        mov     x19, x0
+        cmp     w22, 0
+        ble     .L4
+        sub     w20, w22, #1
+        cmp     w20, 2
+        bls     .L16
+        adrp    x2, .LC0
+        lsr     w3, w22, 2
+        movi    v29.4s, 0x4
+        mov     x0, x23
+        ldr     q31, [x2, #:lo12:.LC0]
+        add     x3, x23, w3, uxtw 4
+        mov     x2, x19
+.L6:
+        ldr     q30, [x0], 16
+        st2     {v30.4s - v31.4s}, [x2], 32
+        add     v31.4s, v31.4s, v29.4s
+        cmp     x3, x0
+        bne     .L6
+        and     w0, w22, -4
+        tst     x22, 3
+        beq     .L7
+.L5:
+        ubfiz   x2, x0, 3, 32
+        add     x3, x19, w0, uxtw 3
+        ldr     w5, [x23, w0, uxtw 2]
+        add     w4, w0, 1
+        str     w5, [x19, x2]
+        str     w0, [x3, 4]
+        cmp     w22, w4
+        ble     .L8
+        add     x23, x23, w0, uxtw 2
+        add     x3, x2, 8
+        add     x5, x19, x3
+        add     w0, w0, 2
+        ldr     w6, [x23, 4]
+        str     w6, [x19, x3]
+        str     w4, [x5, 4]
+        cmp     w22, w0
+        ble     .L7
+        add     x2, x2, 16
+        ldr     w4, [x23, 8]
+        add     x3, x19, x2
+        str     w4, [x19, x2]
+        str     w0, [x3, 4]
+.L7:
+        mov     x0, x19
+        adrp    x3, cmp
+        mov     x2, 8
+        add     x3, x3, :lo12:cmp
+        bl      qsort
+        mov     w3, w20
+.L15:
+        mov     w4, 0
+        b       .L14
+.L27:
+        add     w4, w4, 1
+        cmp     w3, w4
+        ble     .L9
+.L14:
+        ubfiz   x2, x4, 3, 32
+        ubfiz   x1, x3, 3, 32
+        add     x20, x19, x1
+        add     x22, x19, x2
+        ldr     w0, [x19, x2]
+        ldr     w1, [x19, x1]
+        add     w0, w0, w1
+        cmp     w0, w21
+        beq     .L26
+        blt     .L27
+        sub     w3, w3, #1
+        cmp     w3, w4
+        bgt     .L14
+.L9:
+        mov     x0, x19
+        mov     x21, 0
+        bl      free
+        ldr     x23, [sp, 48]
+        mov     x0, x21
+        ldp     x19, x20, [sp, 16]
+        ldp     x21, x22, [sp, 32]
+        ldp     x29, x30, [sp], 64
+        ret
+.L8:
+        mov     x0, x19
+        adrp    x3, cmp
+        mov     x2, 8
+        add     x3, x3, :lo12:cmp
+        bl      qsort
+        mov     w3, w20
+        cbnz    w20, .L15
+        b       .L9
+.L26:
+        mov     x0, 8
+        bl      malloc
+        mov     x21, x0
+        ldr     w2, [x20, 4]
+        ldr     w1, [x22, 4]
+        mov     x0, x19
+        stp     w1, w2, [x21]
+        bl      free
+        ldr     x23, [sp, 48]
+        mov     x0, x21
+        ldp     x19, x20, [sp, 16]
+        ldp     x21, x22, [sp, 32]
+        ldp     x29, x30, [sp], 64
+        ret
+.L4:
+        adrp    x3, cmp
+        mov     x2, 8
+        add     x3, x3, :lo12:cmp
+        bl      qsort
+        b       .L9
+.L16:
+        mov     w0, 0
+        b       .L5
+.LC0:
+        .word   0
+        .word   1
+        .word   2
+        .word   3"
