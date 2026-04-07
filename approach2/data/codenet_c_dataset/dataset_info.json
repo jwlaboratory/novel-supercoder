@@ -1,0 +1,28 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "problem_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "submission_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "code": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "test_cases": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "num_test_cases": {
+      "dtype": "int64",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}
