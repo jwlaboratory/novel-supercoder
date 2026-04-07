@@ -25,5 +25,10 @@ approach2/data/Project_CodeNet.tar.gz.download/
 approach2/data/merged_test_cases/
 approach2/data/filtered_codenet_c/
 
+# Generated dataset outputs
+approach2/data/codenet_c_dataset/
+approach2/data/codenet_c_dataset.parquet
+approach2/data/codenet_c_dataset.csv
+
 # Cursor
 .cursorignore
