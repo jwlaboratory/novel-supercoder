@@ -155,7 +155,9 @@ do_filter() {
         cmd+=(--max-problems "$MAX_PROBLEMS")
     fi
 
-    cmd+=("${EXTRA_ARGS[@]}")
+    if [ ${#EXTRA_ARGS[@]} -gt 0 ]; then
+        cmd+=("${EXTRA_ARGS[@]}")
+    fi
 
     log "Running: ${cmd[*]}"
     "${cmd[@]}"
