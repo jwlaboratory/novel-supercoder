@@ -9,37 +9,39 @@ uv run build-cpp-dataset --steps compile              # fill assembly_o0..o3
 
 ## Approach 2 (CodeNet — Accepted C + test cases)
 
-### Data setup
-Download the two archives into `approach2/data/`:
-1. **Project CodeNet** (~8 GB compressed / ~40 GB tar): https://developer.ibm.com/exchanges/data/all/project-codenet/
-2. **Merged test cases** (~1.4 GB tar): https://zenodo.org/records/7665808
-
+### One-liner setup (downloads everything + filters)
 ```bash
-# Place files so you have:
-#   approach2/data/Project_CodeNet.tar.gz.download/Project_CodeNet.tar
-#   approach2/data/merged_testcases.tar
+cd approach2/data
+./setup.sh
 ```
 
-### Filter & extract
+This will:
+1. Download **Project CodeNet** (~7.8 GB `.tar.gz` → ~40 GB uncompressed)
+2. Download **merged test cases** (~1.4 GB) from Google Drive
+3. Run `filter.py` to extract accepted C solutions + test I/O → JSONL
+
+### Manual / partial runs
 ```bash
 cd approach2/data
 
 # Preview a small sample (3 problems)
 python3 filter.py --preview 3 --max-problems 10
 
-# Full extraction to directory tree
-python3 filter.py
-
-# Full extraction + JSONL export (one JSON object per problem)
+# Full extraction + JSONL export
 python3 filter.py --format jsonl
 
-# Partial run (first 100 problems, faster)
-python3 filter.py --format jsonl --max-problems 100
+# Pass extra args through setup.sh
+./setup.sh --max-problems 100
 ```
 
-Output lands in `approach2/data/filtered_codenet_c/` with:
+### Data sources
+- **Project CodeNet**: https://codait-cos-dax.s3.us.cloud-object-storage.appdomain.cloud/dax-project-codenet/1.0.0/Project_CodeNet.tar.gz
+- **Merged test cases**: https://drive.google.com/file/d/1evBDJapwRvCQK6VUCTV8ZE9WG2k3QJQr/view
+
+### Output
+`approach2/data/filtered_codenet_c/` with:
 - `{problem_id}/solutions/*.c` — accepted C source files
 - `{problem_id}/test_cases/input.N.txt` / `output.N.txt` — test I/O
 - `manifest.json` — summary stats
-- `codenet_accepted_c.jsonl` — (if `--format jsonl`) single file for ML pipelines
+- `codenet_accepted_c.jsonl` — single-file JSONL for ML pipelines
 
