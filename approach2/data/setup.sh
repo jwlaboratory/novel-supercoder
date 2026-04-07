@@ -13,6 +13,56 @@ TESTCASES_GDRIVE_ID="1evBDJapwRvCQK6VUCTV8ZE9WG2k3QJQr"
 TESTCASES_GZ="merged_testcases.tar.gz"
 TESTCASES_TAR="merged_testcases.tar"
 
+# ── defaults ────────────────────────────────────────────────────────────────
+
+MODE="all"          # all | download | filter
+MAX_PROBLEMS=0      # 0 = no limit
+MAX_SOLUTIONS=5
+FORMAT="jsonl"
+EXTRA_ARGS=()
+
+# ── usage ───────────────────────────────────────────────────────────────────
+
+usage() {
+    cat <<'HELP'
+Usage: ./setup.sh [OPTIONS]
+
+Modes:
+  --download          Only download & decompress the datasets (no filtering)
+  --filter            Only run the filter (assumes data already downloaded)
+  (default)           Do both: download then filter
+
+Filter options:
+  -n, --max-problems N    Number of problems to process (0 = all, default: all)
+  -s, --max-solutions N   Solutions kept per problem (default: 5)
+  --format FORMAT         Output format: dir | jsonl (default: jsonl)
+  --preview N             Extract N problems and print a preview
+
+Examples:
+  ./setup.sh                          # download + full filter + jsonl
+  ./setup.sh --download               # just download the datasets
+  ./setup.sh --filter -n 100          # filter first 100 problems (skip download)
+  ./setup.sh -n 50 --preview 3        # download + filter 50 problems + preview 3
+  ./setup.sh --filter --format dir    # filter to directory only (no jsonl)
+HELP
+    exit 0
+}
+
+# ── parse args ──────────────────────────────────────────────────────────────
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --download)   MODE="download"; shift ;;
+        --filter)     MODE="filter";   shift ;;
+        -n|--max-problems)  MAX_PROBLEMS="$2"; shift 2 ;;
+        -s|--max-solutions) MAX_SOLUTIONS="$2"; shift 2 ;;
+        --format)     FORMAT="$2"; shift 2 ;;
+        --preview)    EXTRA_ARGS+=("--preview" "$2"); shift 2 ;;
+        -h|--help)    usage ;;
+        *)            EXTRA_ARGS+=("$1"); shift ;;
+    esac
+done
+
 # ── helpers ─────────────────────────────────────────────────────────────────
 
 log()  { echo -e "\n\033[1;34m==>\033[0m \033[1m$*\033[0m"; }
@@ -30,13 +80,11 @@ download_gdrive() {
     if command -v gdown &>/dev/null; then
         gdown "https://drive.google.com/uc?id=$file_id" -O "$dest"
     elif command -v curl &>/dev/null; then
-        # two-step cookie dance for large Drive files
         local confirm cookie
         cookie=$(mktemp)
         curl -sc "$cookie" "https://drive.google.com/uc?export=download&id=$file_id" -o /dev/null
         confirm=$(grep -o 'download_warning_[^=]*=[^;]*' "$cookie" | head -1 | cut -d= -f2 || true)
         if [ -z "$confirm" ]; then
-            # try the newer confirm token approach
             curl -L "https://drive.google.com/uc?export=download&id=$file_id&confirm=t" -o "$dest"
         else
             curl -Lb "$cookie" "https://drive.google.com/uc?export=download&confirm=$confirm&id=$file_id" -o "$dest"
@@ -47,61 +95,92 @@ download_gdrive() {
     fi
 }
 
-# ── preflight ───────────────────────────────────────────────────────────────
+# ── download step ───────────────────────────────────────────────────────────
 
-check_cmd python3
-log "Working directory: $SCRIPT_DIR"
+do_download() {
+    log "Working directory: $SCRIPT_DIR"
 
-# ── 1. Project CodeNet ──────────────────────────────────────────────────────
+    # -- Project CodeNet --
+    mkdir -p "$CODENET_DIR"
 
-mkdir -p "$CODENET_DIR"
+    if [ -f "$CODENET_DIR/$CODENET_TAR" ]; then
+        log "Project CodeNet tar already exists, skipping download."
+    elif [ -f "$CODENET_DIR/$CODENET_GZ" ]; then
+        log "Project CodeNet .tar.gz found, skipping download."
+    else
+        log "Downloading Project CodeNet (~7.8 GB) …"
+        check_cmd curl
+        curl -L --progress-bar "$CODENET_URL" -o "$CODENET_DIR/$CODENET_GZ"
+    fi
 
-if [ -f "$CODENET_DIR/$CODENET_TAR" ]; then
-    log "Project CodeNet tar already exists, skipping download."
-elif [ -f "$CODENET_DIR/$CODENET_GZ" ]; then
-    log "Project CodeNet .tar.gz found, skipping download."
-else
-    log "Downloading Project CodeNet (~7.8 GB) …"
-    check_cmd curl
-    curl -L --progress-bar "$CODENET_URL" -o "$CODENET_DIR/$CODENET_GZ"
-fi
+    if [ ! -f "$CODENET_DIR/$CODENET_TAR" ]; then
+        log "Decompressing $CODENET_GZ → $CODENET_TAR (keeps .gz) …"
+        gunzip -k "$CODENET_DIR/$CODENET_GZ" || gzip -dk "$CODENET_DIR/$CODENET_GZ"
+        log "Decompressed. Tar is $(du -h "$CODENET_DIR/$CODENET_TAR" | cut -f1)."
+    fi
 
-if [ ! -f "$CODENET_DIR/$CODENET_TAR" ]; then
-    log "Decompressing $CODENET_GZ → $CODENET_TAR (keeps .gz) …"
-    gunzip -k "$CODENET_DIR/$CODENET_GZ" || gzip -dk "$CODENET_DIR/$CODENET_GZ"
-    log "Decompressed. Tar is $(du -h "$CODENET_DIR/$CODENET_TAR" | cut -f1)."
-fi
+    # -- Merged test cases --
+    if [ -f "$TESTCASES_TAR" ]; then
+        log "Merged test cases tar already exists, skipping download."
+    elif [ -f "$TESTCASES_GZ" ]; then
+        log "Merged test cases .tar.gz found, skipping download."
+    else
+        download_gdrive "$TESTCASES_GDRIVE_ID" "$TESTCASES_GZ"
+    fi
 
-# ── 2. Merged test cases ───────────────────────────────────────────────────
+    if [ ! -f "$TESTCASES_TAR" ] && [ -f "$TESTCASES_GZ" ]; then
+        log "Decompressing $TESTCASES_GZ → $TESTCASES_TAR …"
+        gunzip -k "$TESTCASES_GZ" || gzip -dk "$TESTCASES_GZ"
+    fi
 
-if [ -f "$TESTCASES_TAR" ]; then
-    log "Merged test cases tar already exists, skipping download."
-elif [ -f "$TESTCASES_GZ" ]; then
-    log "Merged test cases .tar.gz found, skipping download."
-else
-    download_gdrive "$TESTCASES_GDRIVE_ID" "$TESTCASES_GZ"
-fi
+    # -- verify --
+    [ -f "$CODENET_DIR/$CODENET_TAR" ] || die "Missing $CODENET_DIR/$CODENET_TAR"
+    [ -f "$TESTCASES_TAR" ]            || die "Missing $TESTCASES_TAR"
 
-if [ ! -f "$TESTCASES_TAR" ] && [ -f "$TESTCASES_GZ" ]; then
-    log "Decompressing $TESTCASES_GZ → $TESTCASES_TAR …"
-    gunzip -k "$TESTCASES_GZ" || gzip -dk "$TESTCASES_GZ"
-fi
+    log "Files ready:"
+    ls -lh "$CODENET_DIR/$CODENET_TAR" "$TESTCASES_TAR"
+}
 
-# ── 3. Verify files ────────────────────────────────────────────────────────
+# ── filter step ─────────────────────────────────────────────────────────────
 
-[ -f "$CODENET_DIR/$CODENET_TAR" ] || die "Missing $CODENET_DIR/$CODENET_TAR"
-[ -f "$TESTCASES_TAR" ]            || die "Missing $TESTCASES_TAR"
+do_filter() {
+    check_cmd python3
+    [ -f "$CODENET_DIR/$CODENET_TAR" ] || die "Missing $CODENET_DIR/$CODENET_TAR — run with --download first"
+    [ -f "$TESTCASES_TAR" ]            || die "Missing $TESTCASES_TAR — run with --download first"
 
-log "Files ready:"
-ls -lh "$CODENET_DIR/$CODENET_TAR" "$TESTCASES_TAR"
+    local cmd=(python3 filter.py --format "$FORMAT"
+               --max-solutions-per-problem "$MAX_SOLUTIONS")
 
-# ── 4. Run the filter ──────────────────────────────────────────────────────
+    if [ "$MAX_PROBLEMS" -gt 0 ]; then
+        cmd+=(--max-problems "$MAX_PROBLEMS")
+    fi
 
-log "Running filter.py (accepted C submissions + test cases + JSONL) …"
-python3 filter.py --format jsonl "$@"
+    cmd+=("${EXTRA_ARGS[@]}")
 
-log "Done! Output is in: $SCRIPT_DIR/filtered_codenet_c/"
-echo "  - manifest.json              → summary stats"
-echo "  - {problem}/solutions/*.c    → accepted C source"
-echo "  - {problem}/test_cases/*     → input/output pairs"
-echo "  - codenet_accepted_c.jsonl   → single-file JSONL for ML"
+    log "Running: ${cmd[*]}"
+    "${cmd[@]}"
+
+    log "Done! Output is in: $SCRIPT_DIR/filtered_codenet_c/"
+    echo "  - manifest.json              → summary stats"
+    echo "  - {problem}/solutions/*.c    → accepted C source"
+    echo "  - {problem}/test_cases/*     → input/output pairs"
+    if [ "$FORMAT" = "jsonl" ]; then
+        echo "  - codenet_accepted_c.jsonl   → single-file JSONL for ML"
+    fi
+}
+
+# ── main ────────────────────────────────────────────────────────────────────
+
+case "$MODE" in
+    download)
+        do_download
+        log "Download complete. Run './setup.sh --filter' to process."
+        ;;
+    filter)
+        do_filter
+        ;;
+    all)
+        do_download
+        do_filter
+        ;;
+esac
