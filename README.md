@@ -1,19 +1,34 @@
-# novel-supercoder
+
+# Novel super coder
+
+1. src/data:
+this generates the dataset
+The dataset can be found https://huggingface.co/datasets/KrishPS/codenet-accepted-c
+
+more info on how it was created is in the README.md file in the src/data folder
+
+
+2. rl 
+
+
+
+# OLD
+
+```bash
+novel-supercoder
 
 ## Approach 1 (Codeforces C++)
-```bash
+
 cd novel-supercoder
 uv run build-cpp-dataset --steps fetch --limit 100    # HF join + tests column
 uv run build-cpp-dataset --steps compile              # fill assembly_o0..o3
-```
+
 
 ## Approach 2 (CodeNet — Accepted C + test cases)
 
 ### One-liner setup (downloads everything + filters)
-```bash
 cd approach2/data
 ./setup.sh
-```
 
 This will:
 1. Download **Project CodeNet** (~7.8 GB `.tar.gz` → ~40 GB uncompressed)
@@ -21,7 +36,6 @@ This will:
 3. Run `filter.py` to extract accepted C solutions + test I/O → JSONL
 
 ### Manual / partial runs
-```bash
 cd approach2/data
 
 # Preview a small sample (3 problems)
@@ -32,7 +46,6 @@ python3 filter.py --format jsonl
 
 # Pass extra args through setup.sh
 ./setup.sh --max-problems 100
-```
 
 ### Data sources
 - **Project CodeNet**: https://codait-cos-dax.s3.us.cloud-object-storage.appdomain.cloud/dax-project-codenet/1.0.0/Project_CodeNet.tar.gz
@@ -45,3 +58,4 @@ python3 filter.py --format jsonl
 - `manifest.json` — summary stats
 - `codenet_accepted_c.jsonl` — single-file JSONL for ML pipelines
 
+```

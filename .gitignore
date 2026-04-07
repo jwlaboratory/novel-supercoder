@@ -20,15 +20,13 @@ env/
 *.tar.bz2
 *.zip
 
-# Extracted data dirs
-approach2/data/Project_CodeNet.tar.gz.download/
-approach2/data/merged_test_cases/
-approach2/data/filtered_codenet_c/
-
-# Generated dataset outputs
-approach2/data/codenet_c_dataset/
-approach2/data/codenet_c_dataset.parquet
-approach2/data/codenet_c_dataset.csv
+# Extracted / generated data (pipeline output — same layout under approach2/data or src/data)
+**/Project_CodeNet.tar.gz.download/
+**/merged_test_cases/
+**/filtered_codenet_c/
+**/codenet_c_dataset/
+**/codenet_c_dataset.parquet
+**/codenet_c_dataset.csv
 
 # Cursor
 .cursorignore
