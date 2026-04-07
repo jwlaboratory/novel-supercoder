@@ -22,11 +22,11 @@ DEFAULT_MAX_BASELINE_ASM_CHARS = 12000
 OVERLONG_POLICIES = {"skip", "truncate"}
 
 MODEL_ALIASES = {
-    "gemma4": "google/gemma-3-4b-it",
+    "gemma4": "google/gemma-4-26b-a4b-it",
     "qwen2.5-coder-7b": "Qwen/Qwen2.5-Coder-7B-Instruct",
 }
 
-PROMPT_TEMPLATE = """Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+PROMPT_TEMPLATE = """Given the following C code and assembly code, your task is to generate highly optimized linux/arm64	g++ (GCC) 13.4.0	aarch64-linux-gnu assembly code.
 
 C Code: {c_code}
 
@@ -36,10 +36,7 @@ Only output the optimized assembly code. Do not include any other text. Do not w
 
 Optimized Assembly Code:"""
 
-ARM_BASELINE_NOTE = (
-    "\n\nNote: The baseline assembly may use ARM64 syntax. "
-    "Use the C code semantics and still output x86-64 assembly."
-)
+
 
 app = modal.App("novel-supercoder-generate-w-base")
 hf_secret = modal.Secret.from_name("huggingface")
@@ -83,8 +80,7 @@ def baseline_looks_arm64(target: str) -> bool:
 
 def build_prompt(c_code: str, baseline_asm: str, append_arm_note: bool) -> str:
     prompt = PROMPT_TEMPLATE.format(c_code=c_code, baseline_asm=baseline_asm)
-    if append_arm_note:
-        prompt += ARM_BASELINE_NOTE
+
     return prompt
 
 

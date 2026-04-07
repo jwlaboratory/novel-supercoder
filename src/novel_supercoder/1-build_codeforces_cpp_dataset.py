@@ -15,7 +15,7 @@ PROBLEMS_DATASET = "open-r1/codeforces"
 SUBMISSIONS_DATASET = "open-r1/codeforces-submissions"
 TARGET_VERDICT = "OK"
 DEFAULT_LIMIT = 100
-DEFAULT_OUTPUT_FILENAME = "codeforces_cpp_assembly.csv"
+DEFAULT_OUTPUT_FILENAME = "codeforces_c_assembly.csv"
 KEY_COLUMNS = ["contest_id", "index"]
 OFFICIAL_TESTS_COLUMN = "official_tests"
 
@@ -33,7 +33,7 @@ COMMAND_COLUMNS = [
     "assembly_command_o2",
     "assembly_command_o3",
 ]
-SOURCE_COLUMN = "accepted_cpp_solution"
+SOURCE_COLUMN = "accepted_c_solution"
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -51,10 +51,11 @@ def load_submission_frame(
     return load_dataset(SUBMISSIONS_DATASET, name=subset, split=split, streaming=True)
 
 
-def is_cpp_submission(programming_language: str | None) -> bool:
+def is_c_submission(programming_language: str | None) -> bool:
     if programming_language is None:
         return False
-    return "C++" in programming_language
+    # Keep only C language entries and explicitly exclude C++ variants.
+    return "C" in programming_language and "C++" not in programming_language
 
 
 def pick_one_solution_per_problem(
@@ -64,7 +65,7 @@ def pick_one_solution_per_problem(
     paired: dict[tuple[str, str], str] = {}
 
     for submission in submissions:
-        if not is_cpp_submission(submission.get("programmingLanguage")):
+        if not is_c_submission(submission.get("programmingLanguage")):
             continue
         if submission.get("verdict") != TARGET_VERDICT:
             continue
@@ -109,7 +110,7 @@ def official_tests_to_cell(value: Any) -> str:
     return json.dumps(_json_safe(value), ensure_ascii=False)
 
 
-def build_codeforces_cpp_dataframe(
+def build_codeforces_c_dataframe(
     limit: int = DEFAULT_LIMIT,
     problems_split: str = "train",
     problems_subset: str = "default",
@@ -231,8 +232,8 @@ def ensure_docker_access() -> None:
 def collect_toolchain_info(docker_image: str, docker_platform: str) -> dict[str, str]:
     script = (
         "set -euo pipefail; "
-        "printf 'COMPILER_VERSION='; g++ --version | head -n 1; "
-        "printf 'COMPILER_TARGET='; g++ -dumpmachine; "
+        "printf 'COMPILER_VERSION='; gcc --version | head -n 1; "
+        "printf 'COMPILER_TARGET='; gcc -dumpmachine; "
         "printf 'CONTAINER_UNAME='; uname -a"
     )
     result = run_command(
@@ -250,7 +251,7 @@ def collect_toolchain_info(docker_image: str, docker_platform: str) -> dict[str,
     )
     if result.returncode != 0:
         raise RuntimeError(
-            "Unable to inspect the Linux g++ toolchain.\n\n"
+            "Unable to inspect the Linux gcc toolchain.\n\n"
             f"stdout:\n{result.stdout}\n\nstderr:\n{result.stderr}"
         )
 
@@ -263,15 +264,15 @@ def collect_toolchain_info(docker_image: str, docker_platform: str) -> dict[str,
     return info
 
 
-def build_container_compile_script(cpp_std: str) -> str:
+def build_container_compile_script(c_std: str) -> str:
     return (
         "set -uo pipefail; "
         "shopt -s nullglob; "
-        "for source in submission_*.cpp; do "
-        'base="${source%.cpp}"; '
+        "for source in submission_*.c; do "
+        'base="${source%.c}"; '
         "ok_all=1; "
         "for opt in 0 1 2 3; do "
-        f'g++ -std={cpp_std} -O$opt -S "$source" -o "${{base}}_O$opt.s" 2>"${{base}}_O$opt.err" || ok_all=0; '
+        f'gcc -std={c_std} -O$opt -S "$source" -o "${{base}}_O$opt.s" 2>"${{base}}_O$opt.err" || ok_all=0; '
         "done; "
         'if [ "$ok_all" -eq 1 ]; then '
         'touch "${base}.ok"; '
@@ -287,16 +288,16 @@ def compile_batch_to_assembly(
     batch_rows: list[tuple[int, str]],
     docker_image: str,
     docker_platform: str,
-    cpp_std: str,
+    c_std: str,
 ) -> dict[int, tuple[bool, str, str, str, str, str]]:
-    container_script = build_container_compile_script(cpp_std)
+    container_script = build_container_compile_script(c_std)
     with tempfile.TemporaryDirectory() as temp_dir_str:
         temp_dir = Path(temp_dir_str)
 
         batch_entries: list[tuple[int, str]] = []
         for offset, (row_index, source_code) in enumerate(batch_rows):
             base_name = f"submission_{offset:04d}"
-            source_path = temp_dir / f"{base_name}.cpp"
+            source_path = temp_dir / f"{base_name}.c"
             source_path.write_text(source_code)
             batch_entries.append((row_index, base_name))
 
@@ -368,7 +369,7 @@ def populate_metadata_columns(
     docker_image: str,
     docker_platform: str,
     toolchain: dict[str, str],
-    cpp_std: str,
+    c_std: str,
 ) -> None:
     dataframe[COMPILER_IMAGE_COLUMN] = docker_image
     dataframe[COMPILER_PLATFORM_COLUMN] = docker_platform
@@ -376,7 +377,7 @@ def populate_metadata_columns(
     dataframe[COMPILER_TARGET_COLUMN] = toolchain.get("COMPILER_TARGET", "")
     dataframe[CONTAINER_UNAME_COLUMN] = toolchain.get("CONTAINER_UNAME", "")
     for opt, column in zip((0, 1, 2, 3), COMMAND_COLUMNS, strict=True):
-        dataframe[column] = f"g++ -std={cpp_std} -O{opt} -S submission.cpp -o submission_O{opt}.s"
+        dataframe[column] = f"gcc -std={c_std} -O{opt} -S submission.c -o submission_O{opt}.s"
 
 
 def update_row_with_compile_result(
@@ -402,7 +403,7 @@ def update_row_with_compile_result(
 
 
 def run_fetch(args: argparse.Namespace) -> Path:
-    dataframe, skipped_rows = build_codeforces_cpp_dataframe(
+    dataframe, skipped_rows = build_codeforces_c_dataframe(
         limit=args.limit,
         problems_split=args.problems_split,
         problems_subset=args.problems_subset,
@@ -424,7 +425,7 @@ def run_fetch(args: argparse.Namespace) -> Path:
     print(f"Total rows in CSV after save: {n}")
     print(f"Rows appended to existing CSV: {appended_rows}")
     print(f"Duplicate rows dropped during merge: {dropped_dupes}")
-    print(f"Skipped problems (no accepted C++) while building this fetch batch: {skipped_rows}")
+    print(f"Skipped problems (no accepted C) while building this fetch batch: {skipped_rows}")
     preview_n = min(5, n)
     print(
         f"\nPreview: first {preview_n} of {n} rows "
@@ -453,7 +454,7 @@ def run_compile(args: argparse.Namespace) -> None:
     print(f"Compiler target: {toolchain.get('COMPILER_TARGET', 'unknown')}")
     print(f"Container uname: {toolchain.get('CONTAINER_UNAME', 'unknown')}")
     for opt in (0, 1, 2, 3):
-        print(f"Compile command O{opt}: g++ -std={args.cpp_std} -O{opt} -S submission.cpp -o submission_O{opt}.s")
+        print(f"Compile command O{opt}: gcc -std={args.c_std} -O{opt} -S submission.c -o submission_O{opt}.s")
     print()
 
     dataframe = pd.read_csv(csv_path, keep_default_na=False)
@@ -463,7 +464,7 @@ def run_compile(args: argparse.Namespace) -> None:
         docker_image=args.docker_image,
         docker_platform=args.docker_platform,
         toolchain=toolchain,
-        cpp_std=args.cpp_std,
+        c_std=args.c_std,
     )
 
     total_rows = len(dataframe) if args.limit is None else min(len(dataframe), args.limit)
@@ -501,7 +502,7 @@ def run_compile(args: argparse.Namespace) -> None:
             batch_rows=batch_rows,
             docker_image=args.docker_image,
             docker_platform=args.docker_platform,
-            cpp_std=args.cpp_std,
+            c_std=args.c_std,
         )
 
         for idx in batch_indices:
@@ -550,7 +551,7 @@ def _print_compile_summary(
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Build a Codeforces dataset: official tests, accepted C++, and g++ assembly "
+            "Build a Codeforces dataset: official tests, accepted C, and gcc assembly "
             "at -O0..-O3 (Docker), aligned with gen-optimize-assembly."
         )
     )
@@ -602,7 +603,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--docker-image",
         default="gcc:13",
-        help="Docker image that provides g++.",
+        help="Docker image that provides gcc.",
     )
     parser.add_argument(
         "--docker-platform",
@@ -610,9 +611,11 @@ def parse_args() -> argparse.Namespace:
         help="Docker platform to compile for.",
     )
     parser.add_argument(
+        "--c-std",
         "--cpp-std",
-        default="gnu++17",
-        help="C++ standard flag, without the -std= prefix.",
+        dest="c_std",
+        default="gnu17",
+        help="C standard flag, without the -std= prefix.",
     )
     parser.add_argument(
         "--force",
