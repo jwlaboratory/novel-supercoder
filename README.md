@@ -10,6 +10,8 @@ more info on how it was created is in the README.md file in the src/data folder
 
 2. rl 
 
+3. experiment
+random experiments to see if we can improve the model
 
 
 # OLD
