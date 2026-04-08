@@ -26,3 +26,22 @@ hyperfine-bench out/deepseekv3.s \
   --timing-chart \
   --pretty
 ```
+
+
+run automatically:
+```bash
+cd src/manual-llm
+./run_openrouter_bench.sh \
+  --c-file ./example2/inputC.c \
+  --tests ./example2/input_tests.json \
+  --models "openai/gpt-4.1-mini,deepseek/deepseek-chat-v3-0324"
+  ```
+  OR 
+
+random from HuggingFace dataset (N rows):
+```bash
+cd src/LLM-experiment
+./run_openrouter_bench.sh \
+  --hf-random 3 \
+  --models "openai/gpt-4.1-mini,deepseek/deepseek-chat-v3-0324"
+```
