@@ -1,0 +1,207 @@
+	.p2align 3
+.L74:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L74
+.L84:
+	movl	%ebx, %edx
+	leaq	400(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L75:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L75
+.L85:
+	movl	%ebx, %edx
+	leaq	800(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L76:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L76
+.L86:
+	movl	%ebx, %edx
+	leaq	160(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L77:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L77
+.L87:
+	movl	%ebx, %edx
+	leaq	208(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L78:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L78
+.L88:
+	movl	%ebx, %edx
+	leaq	256(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L79:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L79
+.L89:
+	movl	%ebx, %edx
+	leaq	304(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L80:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L80
+.L90:
+	movl	%ebx, %edx
+	leaq	160(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L91:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L91
+.L92:
+	movl	%ebx, %edx
+	leaq	208(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L93:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L93
+.L94:
+	movl	%ebx, %edx
+	leaq	256(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L95:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L95
+.L96:
+	movl	%ebx, %edx
+	leaq	304(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L97:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L97
+.L98:
+	movl	%ebx, %edx
+	leaq	160(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L99:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L99
+.L100:
+	movl	%ebx, %edx
+	leaq	208(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L101:
+	movq	(%rdx), %rax
+	movq	%rax, (%rdx,%rbx)
+	movq	%rax, (%rdx,%rbx,%rbx)
+	addq	$8, %rdx
+	cmpl	%r15d, %rdx
+	jne	.L101
+.L102:
+	movl	%ebx, %edx
+	leaq	256(%rsp), %rax
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	salq	$4, %rdx
+	addq	%rax, %rdx

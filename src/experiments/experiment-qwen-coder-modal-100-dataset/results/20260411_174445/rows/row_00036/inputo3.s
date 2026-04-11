@@ -1,0 +1,76 @@
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB3:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 48
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	xorl	%eax, %eax
+	leaq	12(%rsp), %rsi
+	movl	$.LC0, %edi
+	call	__isoc99_scanf
+	cmpl	$-1, %eax
+	je	.L16
+	movl	$10, %ebp
+	xorl	%edx, %edx
+	movl	$1, %ebx
+	jmp	.L5
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movl	%ebx, %esi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	call	printf
+	movl	$1, %edx
+.L3:
+	addl	%ebx, %ebx
+	subl	$1, %ebp
+	je	.L17
+.L5:
+	movl	%ebx, %eax
+	andl	12(%rsp), %eax
+	je	.L3
+	testl	%edx, %edx
+	je	.L4
+	movl	$32, %edi
+	call	putchar
+	jmp	.L4
+	.p2align 4,,10
+	.p2align 3
+.L17:
+	movl	$10, %edi
+	call	putchar
+	jmp	.L2
+	.p2align 4,,10
+	.p2align 3
+.L16:
+	addq	$24, %rsp
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	main, .-main
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

@@ -1,0 +1,410 @@
+[
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nYES\nNO\n4\nYES\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nYES\nNO\n4\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nYES\nNO\n5\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nYES\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\nijusodiM-oj1\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nYES\nNO\n4\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadeg`wa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nYES\nNO\n5\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawamamachi-Iradegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nYES\nNO\n5\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jn\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nYES\nNO\n8\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n4\nYES\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nojukoR-uramiroT\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n5\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nawagedamI-amusarbK\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jn\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nYES\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imaeegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\nijusodiM-oj1\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nYES\nNO\n4\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadeg`wa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Kauasrma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nNO\nNO\n5\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNjshioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2oo-Omjtesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nYES\nNO\n7\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawamamachi-Iradegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karbsuma\n6\nShijo-Karasuma\nijoihsiN-awagedamI\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\nNO\nNO\n5\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1do-Mijosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n4\nYES\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n1\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimart-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNjshioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2oo-Omjtesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n7\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKaras-mauGojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosiju\nMidosuji-Omotesando\n1jo-1jn\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n8\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nMishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n3\nSiijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1oj-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n0\nMidosuji-1jo\n1do-Mijosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n4\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Kmrasuaa\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1ko\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n5\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nMishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nojoG-ijoihsiN\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\noj1-ijusodiM\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nYES\nNO\n4\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nojihS-ijoihsiN\nKaras-mauGojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosiju\nMidosuji-Omotesando\n1jo-1jn\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nNO\nNO\n8\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShija-Kaworamachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nMishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n3\nSiijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1oj-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jp\n2jo-Omotesando\nOmotesando-1jo\n0\nMidosuji-1jo\n1do-Mijosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n5\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n2\nShijo-Kmrasuaa\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1ko\n0\n",
+    "output": "9\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-rawaKamachi\nKbrasuma-Imaeegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nSuijo-Karashma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jn-Omotesaodo\nOmotesando-1jo\n4\nMido-ujis1jo\nijusodiM-oj1\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nYES\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Rhijo\nKarasuma-Gojo\nTorimart-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNjshioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShujo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2oo-Omjtesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n7\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nawagedamI-amusarbK\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gnjo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\naiabawaK-ojthS\n4\n0jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\noj1-odnasetomN\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omntesando\n1jo-1jn\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nMishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nojoG-ijoihsiN\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmoterando-1jo\n4\noj1-ijusodiM\n1jo-Midosuji\nMidosvji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nYES\nNO\n5\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-rawaKamachi\nKbrasuma-Imaeegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nSuijo-Karashma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-joGo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jn-Omotesaodo\nOmotesando-1jo\n4\nMido-ujis1jo\nijusodiM-oj1\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nNO\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nMishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nojoG-ijoihsiN\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\nOmoterando-1jo\n4\noj1-ijusodiM\n1jo-Midosuji\nMidosvji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nYES\nNO\n7\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nojihS-ijoihsiN\nKaras-mauGojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShtjo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\nodnasetomO-oj2\noj1-odnasetolO\n4\nMido-ujis1jo\n1jo-Midosiju\nMidosuji-Omotesando\n1jo-1jn\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nNO\nNO\n7\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nMishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nSokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nojoG-ijoihsiN\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\nOmoterando-1jo\n4\noj1-ijusodiM\n1jo-Midosuji\nMidosvji-Omotesando\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\nNO\nNO\n7\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadeg`wa\nKawaramachi-Imadegawa\nNirhioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nSjiho-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jp\n1jo-Omotesando\nOmotesando-1jo\n0\nMidosuji-1jo\n1do-Mijosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n4\n\n"
+  },
+  {
+    "input": "7\nihcamarowaK-ajihS\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nojihS-ijoihsiM\nKarasuma-Gojo\nTorimaru-Rokujo\nuokujo-KarasRma\n3\nSiijo-Karastma\nijoihsiN-awagedamI\nNishioji-Gojo\nShijo-Torjmaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1oj-1jo\n0\n",
+    "output": "13\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n0\nShijo-Kmrasuaa\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nThtko-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1ko\n1\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Rhijo\nKarasuma-Fojo\nTorimart-Rokujo\nRokujo-Karasuma\n5\nShijo-Karasuma\nImadegawa-Nishioji\nNjshioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShujo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2oo-Omjtesando\noj1-odnasetomO\n4\noj1siju-odiM\n1jo-Midosuji\nMidosuji-Omotesaneo\noj1-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawasamachi\nawagedamI-amusarbK\nawagedamI-ihcamarawaK\nojihS-hjoihsiN\nKaaasumr-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nojoG-ijoihsiN\nuramirnT-ojihS\nToromaru-Gijo\nShijo-Kawabata\n4\n1jo-Mieosuji\noj2-ijusodiM\n2jo-Omotesando\nOmotesando-1jo\n4\nMido-ujis1jo\nijusodiM-oj1\nMidosuji-Omotesando\n1jo-j1o\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\nNO\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegaw`\nKawaramachi-Imadegawa\nNishioji-Rhijo\nKarasuma-Fojo\nTorimart-Rokujo\nRokujo-Karasuma\n5\nShijo-Karasuma\nijoihsiN-awagedamI\nNjshioii-Gojo\nuramiroT-ojihS\nTorimaru-Gojo\nShujo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2oo-Omjtesando\n-j1oodnasetomO\n4\noj1siju-odiM\n1jo-Midosuji\nMidosuji-Omotesaneo\noj1-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNirhioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Kararuma\n0\nShijo-Kmrasuaa\nImadegawa-Nishinji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nThtko-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\noj1-odnasetomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omoteasndo\nok1-oi1\n1\n",
+    "output": "10\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegaw`\nKawaramachi-Imadegawa\nNishioji-Rhijo\nKarasuFa-mojo\nTorimart-Rokujo\nRokujo-Karasuma\n5\nShijo-Karasuma\nijoihsiN-awagedamI\nNjshioii-Gojo\nuramiroT-ojihS\nTorimaru-Gojo\nShujo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2oo-Omjtesando\n-j1oodnasetomO\n3\noo1siju-jdiM\n1jo-Midosuji\nMidomuji-Osotesaneo\noj1-1jo\n0\n",
+    "output": "13\nNO\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadegawa\nNirhio-ijShijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Kararuma\n0\nShijo-Kmrasuaa\nijnihsiN-awagecamI\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nThtko-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\noe1-odnasjtomO\n4\nMido-ujis1jo\n1jo-Midosuji\nMidosuji-Omoteasndo\nok1-oi1\n1\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "7\nihcamarawaK-ojihS\nKbrasuma-Imadegaw`\nKawaramachi-Imadegawa\nNishioji-Rhijo\nojom-aFusaraK\nTorimart-Rokujo\naokujo-KarasumR\n5\nShijo-Karasuma\niioihsiN-awagedamI\nNjshioii-Gojo\nuramiroT-ojihS\nTorimaru-Gojn\nShujo-Kawabaia\n4\n0jo-Midosuji\nMidosuji-2jo\n2oo-Omjtesando\n-j1oodnasetomO\n3\noo1siju-jdiM\n1jo-Midosuji\nMidomuji-Osotesaneo\noj1-2jo\n0\n",
+    "output": "14\nNO\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nKawaramachi-Imadehawa\nNirhio-ijShijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Kararuma\n0\nShijo-Kmrasuaa\nijnihsiN-awagecamI\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nThtko-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n2jo-Omotesaneo\noe1-odnasjtomP\n0\nMido.ujis1jo\n1jo-Midosuji\nodnsaetomO-ijusodiM\nok1-oi1\n0\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nawahedamI-ihcamarawaK\nNirhio-ijShijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Kararuma\n0\nShijo-Kmrasuaa\nijnihsiN-awagecamI\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nThtko-Kawabaia\n4\n0jo-Midosuji\noj2-ijusodiM\n3jo-Omotesaneo\noe1-odnasjtomP\n0\nMido.ujis1jo\n1jo-Midosuji\nodnsaetomO-ijusodiM\nok1-oi1\n0\n",
+    "output": "13\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nawahedamI-ihcbmarawaK\nNirhio-ijShijo\nKarasuma-Goio\nTorimaru-Rokujo\nRokuio-Kararuma\n0\nShijo-Kmraruaa\nijnihsiN-ewagacamI\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nThtko-Kawabaia\n6\n0jo-Midosuji\noj2-ijusodiM\n3jo-Omotesaneo\noe1-odnasjtomP\n0\nMido.ujis1jo\n1jo-Midosuji\nndnsaetomO-ijusodiM\nok1-oi1\n0\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKbrasuma-Imadegawa\nawahedamI-ihcbmasawaK\nNirhio-ijShijo\nKarasuma-Goio\nTorimaru-Rokujo\nRokuio-Kararuma\n1\nShijo-Kmraruaa\nijnihsiN-ewag`camI\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nUhtko-Kawabaia\n0\n0jo-Midosuji\noj2-ijusodiM\n3jo-Omotesaneo\noe1-odnasjtomP\n0\nMido.ujis1jo\n1io-Lidosuji\nndnsaetomO-ijusodiM\nok1-oi1\n0\n",
+    "output": "14\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosvji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nYES\nNO\nYES\nNO\nYES\nNO\n4\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nYES\nNO\nYES\nNO\nNO\nNO\n4\nYES\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosvji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n4\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nYES\nNO\nNO\nNO\n4\nYES\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nYES\nNO\nNO\nNO\n4\nYES\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nodnasetomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nYES\nNO\nNO\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimarv-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesando-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n5\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijm-Torioaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\noj2-ijusodiM\nodnaseto-Omoj2\nOmotesando-1jo\n4\n1idosuji-Mjo\n1jo-Midusoji\nodnasetomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nYES\nNO\nNO\nNO\n7\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimarv-Rokujo\nRokujo-Karasuma\n4\nShijo-Karasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nuramiroT-ojihS\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesando-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimarv-Sokujo\nRokujo-Karasuma\n4\nShijo-Karasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nuramiroT-ojihS\nojoG-uramiroT\nShijo-Kawabata\n3\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesando-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimarv-Sokujo\nRskujo-Karaouma\n4\nShijo-Karasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nuramiroT-ojihS\nojoG-uramjroT\nShijo-Kawabata\n3\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesanod-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-aawaramKchi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorjmarv-Sokuio\nRskujo-Karaouma\n4\nShi-ojKarasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nuramiroT-ojihS\nojoG-uramjroT\nShijo-Kawabata\n3\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesanod-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1joo1j-\n-1\n",
+    "output": "13\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nYES\nNO\nYES\nNO\nNO\nNO\n4\nYES\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2io-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nYES\nNO\nYES\nNO\nNO\nNO\n5\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n1\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosvji-1jo\n1jo-Midosuji\nMidoeuji-Omotssando\n1jo-1jo\n0\n",
+    "output": "8\nYES\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n3jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nYES\nNO\nNO\nNO\n5\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujp\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nYES\nNO\nNO\nNO\n4\nYES\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n5\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimarv-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMioosuji-2jd\n2jo-Omotesaodo\nOmotesando-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n7\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimarv-Sokujo\nRskujo-Karaouma\n1\nShijo-Karasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nuramiroT-ojihS\nojoG-uramjroT\nShijo-Kawabata\n3\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesanod-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1joo1j-\n-1\n",
+    "output": "12\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijosKara-uma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nNO\nNO\nYES\nNO\nNO\nNO\n4\nYES\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawbbata\n4\n1jo-Midosuji\nMidosuji-2jo\nodnasetomO-oj2\nOmotesando-1jo\n4\nMidosvji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nYES\nNO\nYES\nNO\nYES\nNO\n6\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Kurasama\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosvji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n4\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nojukoR-uramiroT\nRokujo-Jarasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2io-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nYES\nNO\nYES\nNO\nNO\nNO\n5\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujp\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midsouji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nYES\nNO\nNO\nNO\n5\nYES\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Jarasuma\n5\namusaraK-ojihS\nImadegawa-Nishioji\nNishioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujn\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\noj2-ijusodiM\n2jo-Omotesando\nOmotesando-1jo\n4\n1idosuji-Mjo\n1jo-Midusoji\nodnasetomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nYES\nNO\nNO\nNO\n6\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijosKara-uma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n0\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nNO\nNO\nYES\nNO\nNO\nNO\n4\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n3\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawbbata\n4\n1jo-Midosuji\nMidosuji-2jo\nodnasetomO-oj2\nOmotesando-1jo\n4\nMidosvji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nYES\nNO\nYES\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nojukoR-uramiroT\nRokujo-Jarasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2io-Omotesando\nOmotesandn-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nYES\nNO\nYES\nNO\nNO\nNO\n6\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nijoihsiN-awagedamI\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosoji-2ju\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosvj-i1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "9\nNO\nNO\nNO\nNO\nNO\nNO\n6\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujp\nRokujo-Jarasuma\n3\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midsouji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nYES\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasoma-Goju\nTorimaru-Rokujo\nRokujo-Jarasuma\n5\namusaraK-ojihS\nImadegawa-Nishioji\nNishioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-Kawaramachi\nKarasumI-amacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasum`\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishiojh-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\nijusodiM-oj1\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesando-1jp\n4\nMidosvji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\nNO\nNO\n7\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\namusaraJ-ojukoR\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimart\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n3jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuja-Omotesindo\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nYES\nNO\nNO\nNO\n5\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasoma-Goju\nTorimaru-Rokujo\nRokujo-Jarasuma\n5\nShijo-Karasuma\nImadegawa-Nishioji\nNishioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nYES\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nSgijo-aawaramKchi\nKarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorjmarv-Sokuio\nRskujo-Karaouma\n2\nShi-mjKarasuoa\nImadegawa-Nishioji\nNishiojh-Gojo\nuramiroT-ojihS\nTorjmaru-Gojo\nShijo-Kawabata\n3\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesaodo\nOmotesanod-1jo\n4\nMidosvji-0jo\n1jo-Midosuji\nMidosuji-Omotesando\n1joo1j-\n-2\n",
+    "output": "13\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nojoG-amusaraK\nojukoR-uramiroT\nRokujo-Jarasum`\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2io-Omotesando\nOmotesandn-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "11\nYES\nNO\nNO\nNO\nNO\nNO\n6\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nLarasuma-Imacegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nijoihsiN-awagedamI\nNishioji-Gojo\nShijo-Torimaru\nojoG-uramiroT\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosoji-2ju\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosvj-i1jo\n1jo-Midosuji\nMidosvji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n6\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Im`degawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nojoG-amusaraK\nojukoR-uramiroT\nRokujo-Jarasum`\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2io-Omotesando\nOmotesandn-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\nNO\nNO\n6\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rnkujo\nRokujo-Karasuma\n1\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Mhdosuji\nMidosuji-2jo\nodnasetomO-oj2\nOmotesando-1jo\n7\nMidosvji-1jo\n1jo-Midosuji\nMidoeuji-Omotssando\n1jo-1jo\n0\n",
+    "output": "9\nYES\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nojoG-amusaraK\nTorimaru-Rokujo\nRouujo-Jaraskma\n2\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\nodnasetomO-oj2\nOmotesando-1jo\n4\nMidosuji-1jo\nijosudiM-oj1\nodnaseuomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "11\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaram`chj\nKarasuma-Inadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nojukoR-uramiroT\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishjoji\nNishioji-Gojo\nShijm-Torioaru\nojoG-uramiroT\natabawaK-ojihS\n4\n1jo-Midosuji\noj2-ijusodiM\nodnaseto-Omoj2\nNmooesando-1jt\n4\nojM-ijusodi1\n1jo-Midusoji\nodnasetomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\nNO\nNO\nNO\n8\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imacegawa\nKawaramachi-Imaeegawa\nNithioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Kurasama\n6\namusaraK-ojihS\nijoihsiN-awagedamI\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n2jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosvji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "10\nNO\nNO\nNO\nNO\nNO\nNO\n4\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nojihS-ijoihsiN\nKarasoma-Goju\nTorimaru-Rokujo\nRokujo-Jarasuma\n5\nShijo-Karasuma\nImadegawa-Nishioji\nNishioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nbtabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omosesando\n1jo-1jo\n0\n",
+    "output": "11\nYES\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShiio-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nojoG-amusaraK\nTorimaru-Rokujo\nRouujo-Jaraskma\n2\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\natabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\nodnasetomO-oj2\nOmotesando-1jo\n4\nMidosuji-1jo\nijosudiM-oj1\nodnaseuomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachj\nawagedamI-amusaraK\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Roktjo\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijm-Torioaru\nTorimaru-Gojo\natbbjwaK-oaihS\n4\n1jo-Midosuji\noj2-ijtsodiM\noonaseto-Omdj2\nOmotesando-1jo\n4\n1iMosuji-djo\n1jo-Midusoji\nodnasetomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "13\nNO\nNO\nNO\nNO\nNO\nNO\n7\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasumb-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Siijo\nKarasuma-Gojo\nTorimaru-Rokujp\nRokujo-Jarasuma\n3\namusaraK-ojihS\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midsouji\nMidosuji-2jo\n2jo-Omotesando\noj1-odnasetomO\n4\nMidos1ji-ujo\n1jM-oidusoji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "12\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nojihS-ijoihsiN\nKarasoma-Goju\nTorimaru-Rokujo\namusaraJ-ojukoR\n5\nShijo-Karasuma\nImadegawa-Nishioji\nNishioii-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nbtabawaK-ojihS\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midusoji\nMidosuji-Omosesando\n1jo-1jo\n0\n",
+    "output": "12\nYES\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaram`chj\nKarasuma-Inadegawa\nKawaramachi-Imadefawa\nNishioji-Shijo\nKa-asumarGojo\nojukoR-uramiroT\nRokujo-Jarasuma\n6\namusaraK-ojihS\nImadegawa-Nishjoji\nNishioji-Gojo\nShijm-Torioaru\nojoG-uramiroT\natabawaK-ojihS\n4\n1jo-Midosuji\noj2-ijusodiM\nodnaseto-Omoj2\nNmooesando-1jt\n4\nojM-ijusodi1\n1jo-Midusoji\nodnasetomO-ijusodiM\n1jo-1jo\n0\n",
+    "output": "13\nNO\nNO\nNO\nNO\nNO\nNO\n8\nNO\nNO\nNO\nNO\n\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nYES\nNO\nYES\nNO\nYES\nNO\n4\nYES\nYES\nNO\nNO\n"
+  },
+  {
+    "input": "7\nShijo-Kawaramachi\nKarasuma-Imadegawa\nKawaramachi-Imadegawa\nNishioji-Shijo\nKarasuma-Gojo\nTorimaru-Rokujo\nRokujo-Karasuma\n6\nShijo-Karasuma\nImadegawa-Nishioji\nNishioji-Gojo\nShijo-Torimaru\nTorimaru-Gojo\nShijo-Kawabata\n4\n1jo-Midosuji\nMidosuji-2jo\n2jo-Omotesando\nOmotesando-1jo\n4\nMidosuji-1jo\n1jo-Midosuji\nMidosuji-Omotesando\n1jo-1jo\n0\n",
+    "output": "8\nYES\nNO\nYES\nNO\nYES\nNO\n4\nYES\nYES\nNO\nNO\n"
+  }
+]

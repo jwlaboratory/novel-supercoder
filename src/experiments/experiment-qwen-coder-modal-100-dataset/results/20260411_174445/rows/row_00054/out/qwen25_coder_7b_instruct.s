@@ -1,0 +1,1 @@
+obj['assembly_code']

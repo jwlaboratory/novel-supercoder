@@ -1,0 +1,430 @@
+[
+  {
+    "input": "2 3\n##S\nG\n4\n2\n\n.##\n3\n\n.#\n5\n\n.\n7\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2 3\nS##\nG\n4\n2\n\n.##\n3\n\n.#\n5\n\n.\n12\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "2 2\nS.\n.G\n2\n2\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "8 3\nS..\n../\n..G\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n...\n4\n2\n\n.#\n\n.#\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n2\n\n.#\n\n.#\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n2\n\n.#\n\n.#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n0\n\n.#\n\n.#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n0\n\n.#\n\n/#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n../\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n../\n.G.\n../\n3\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n../\n.G.\n../\n3\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n../\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n...\n.G.\n...\n4\n2\n\n.#\n\n.#\n4\n\n.-\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2 2\n.S\n.G\n1\n3\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "2 2\nS.\n.G\n2\n3\n##\n##\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "2 3\n##S\nG\n4\n2\n\n.##\n3\n\n.#\n6\n\n.\n7\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n...\n4\n2\n\n.#\n\n.$\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n4\n\n.#\n\n.#\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n2\n\n.#\n\n.#\n0\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n0\n\n.#\n\n.#\n4\n\n..\n..\n\n8\n\n#.\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "8 3\nS..\n../\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n../\n.G.\n../\n3\n0\n\n.#\n\n/$\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n-./\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n...\n.G.\n...\n4\n2\n\n.#\n\n.#\n8\n\n.-\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2 2\n/S\n.G\n1\n3\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "2 2\nS.\nG.\n2\n2\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "2 2\nS.\nG.\n2\n3\n##\n##\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "4 3\nS..\n0..\n.G.\n...\n4\n2\n\n.#\n\n.$\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n4\n\n.#\n\n#.\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n3\n2\n\n.#\n\n.#\n0\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n8\n0\n\n.#\n\n.#\n4\n\n..\n..\n\n8\n\n#.\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G/\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n/.\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n../\n.G.\n../\n4\n0\n\n.#\n\n/$\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 5\nS..\n-./\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n...\n.G.\n...\n7\n2\n\n.#\n\n.#\n8\n\n.-\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2 2\n/S\nG.\n1\n3\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "2 2\nS.\nG-\n2\n2\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "2 2\nS.\nG.\n2\n6\n##\n##\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "4 3\nS..\n0..\n.G.\n...\n4\n2\n\n.$\n\n.$\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n4\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n..G\n../\n3\n2\n\n.#\n\n.#\n0\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n8\n0\n\n.#\n\n.#\n2\n\n..\n..\n\n8\n\n#.\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G/\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.$\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "8 3\nS..\n/..\n..G\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\nS..\n../\n.G.\n...\n4\n0\n\n.#\n\n/$\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 5\nS..\n-./\n.G.\n../\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n./\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n...\n.G.\n...\n7\n2\n\n.#\n\n.#\n8\n\n.-\n..\n\n6\n\n.#\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2 2\n.S\nG-\n2\n2\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "2 2\n.S\nG.\n2\n6\n##\n##\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "4 3\nS..\n0..\n.G.\n...\n4\n2\n\n.$\n\n.$\n4\n\n..\n..\n\n6\n\n.#\n\n..\n2\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n4\n4\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n.#\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n..G\n../\n3\n2\n\n.#\n\n.#\n0\n\n..\n..\n\n8\n\n-#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n8\n0\n\n.#\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G/\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.$\n\n..\n8\n\n..\n-.\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n-./\n4\n0\n\n.#\n\n/#\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "8 3\nS..\n/..\n..G\n../\n4\n0\n\n.#\n\n/#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n...\n4\n0\n\n.#\n\n/$\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 5\nS..\n-./\n.G.\n/..\n4\n0\n\n.#\n\n/#\n2\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n./\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n...\n.G.\n...\n7\n2\n\n.#\n\n.#\n8\n\n.-\n..\n\n6\n\n/#\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2 2\n.S\nG-\n3\n2\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "4 3\n..S\n/..\n.G.\n../\n4\n4\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n.#\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n..G\n../\n4\n2\n\n.#\n\n.#\n0\n\n..\n..\n\n8\n\n-#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n../\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n./.\n.G/\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.$\n\n..\n8\n\n..\n-.\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n-./\n4\n0\n\n.#\n\n#/\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "8 3\nS..\n...\n..G\n../\n4\n0\n\n.#\n\n/#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "2 2\nS.\nG-\n3\n2\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "4 3\n..S\n/..\n.G.\n/..\n4\n4\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n.#\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n..G\n../\n4\n2\n\n.#\n\n.#\n0\n\n..\n..\n\n8\n\n-#\n\n..\n10\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n./.\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n8\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n./.\n.G/\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.$\n\n..\n8\n\n.-\n-.\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n-./\n4\n0\n\n.#\n\n#/\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "8 3\nS-.\n...\n..G\n../\n4\n0\n\n.#\n\n/#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\n..S\n/..\n.G.\n/..\n4\n7\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n.#\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n/..\n.G.\n./.\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n16\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n./.\n.G/\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.$\n\n..\n8\n\n-.\n-.\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n-./\n4\n0\n\n.#\n\n#.\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS-.\n...\n..G\n../\n4\n0\n\n.#\n\n/#\n4\n\n..\n..\n\n8\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4 3\n..S\n/..\n.G.\n/..\n4\n7\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n.$\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS.-\n/..\n.G.\n./.\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n16\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS..\n./.\n.G/\n../\n4\n0\n\n-#\n\n/#\n4\n\n..\n..\n\n8\n\n.$\n\n..\n8\n\n-.\n.-\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n-./\n4\n0\n\n.\"\n\n#.\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\n..S\n/..\n.G.\n/..\n4\n7\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n-$\n\n..\n8\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS.-\n/..\n-G.\n./.\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n16\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\nS..\n../\n.G.\n-./\n4\n0\n\n-\"\n\n#.\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\n..S\n/..\n.G.\n/..\n4\n7\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n-$\n\n..\n12\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS.-\n/..\n-G.\n./.\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n14\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\n..S\n../\n.G.\n-./\n4\n0\n\n-\"\n\n#.\n2\n\n/.\n.-\n\n8\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\n..S\n...\n.G.\n/..\n4\n7\n\n.#\n\n#.\n4\n\n..\n.-\n\n6\n\n-$\n\n..\n12\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS.-\n/..\n-G.\n./.\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n2\n\n#.\n\n..\n2\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\n..S\n../\n.G.\n-./\n4\n0\n\n-\"\n\n#.\n2\n\n/.\n.-\n\n0\n\n.#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\n..S\n...\n.G.\n/..\n4\n7\n\n.#\n\n#.\n5\n\n..\n.-\n\n6\n\n-$\n\n..\n12\n\n-.\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "4 3\nS.-\n/..\n-G.\n./.\n8\n0\n\n.\"\n\n.#\n2\n\n..\n..\n\n3\n\n#.\n\n..\n2\n\n..\n..\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 3\n..S\n../\n.G.\n-./\n4\n0\n\n-\"\n\n#.\n2\n\n/.\n.-\n\n0\n\n-#\n\n..\n8\n\n..\n./\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2 2\nS.\n.G\n1\n3\n",
+    "output": "2\n"
+  },
+  {
+    "input": "2 2\nS.\n.G\n1\n3\n##\n##\n",
+    "output": "2\n"
+  },
+  {
+    "input": "2 3\nS##\nG\n4\n2\n\n.##\n3\n\n.#\n5\n\n.\n7\n",
+    "output": "3\n"
+  },
+  {
+    "input": "2 2\nS.\n.G\n1\n3\n##\n##\n",
+    "output": "2\n"
+  },
+  {
+    "input": "2 2\nS.\n.G\n1\n2\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "3 3\nS##\n\nG\n1\n1\n...\n...\n...\n",
+    "output": "4\n"
+  },
+  {
+    "input": "4 3\nS..\n...\n.G.\n...\n4\n2\n\n.#\n\n.#\n4\n\n..\n..\n\n6\n\n.#\n\n..\n8\n\n..\n..\n",
+    "output": "3\n"
+  }
+]

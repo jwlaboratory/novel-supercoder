@@ -1,0 +1,225 @@
+```
+```assembly
+section .text
+global quicksort
+type quicksort, @function
+quicksort:
+push r12
+push rbp
+mov rbp, rsp
+sub rsp, 16
+mov [rbp-4], edi
+mov [rbp-8], esi
+mov [rbp-12], edx
+mov eax, [rbp-4]
+cmp eax, [rbp-8]
+jge .L25
+.L2:
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+.L3:
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-20], eax
+mov eax, [rbp-16]
+cmp eax, [rbp-20]
+jle .L26
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+eax*4]
+mov eax, [rdx]
+mov [rbp-16], eax
+mov eax, [rbp-4]
+mov ebx, [rbp-8]
+mov ecx, [rbp-12]
+lea rdx, [rbp+ebx*4]
+mov eax, [rdx]
+mov [rbp-2

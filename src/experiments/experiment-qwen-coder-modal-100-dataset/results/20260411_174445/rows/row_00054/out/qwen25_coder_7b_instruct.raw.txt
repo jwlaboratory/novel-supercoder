@@ -1,0 +1,5 @@
+ assembly code with triple backticks.
+
+```
+obj['assembly_code']
+```

@@ -1,0 +1,169 @@
+movapd	%xmm0, %xmm8
+	movapd	%xmm10, %xmm1
+	movapd	%xmm8, %xmm0
+	jmp	hypot
+	.p2align 4,,10
+	.p2align 3
+.L30:
+	movl	$0, (%rdi)
+	movapd	%xmm10, %xmm1
+	movapd	%xmm8, %xmm0
+	jmp	hypot
+	.p2align 4,,10
+	.p2align 3
+.L22:
+	movapd	%xmm10, %xmm1
+	movapd	%xmm8, %xmm0
+	jmp	hypot
+	.cfi_endproc
+.LFE15:
+	.size	disPP2Ln, .-disPP2Ln
+	.p2align 4
+	.globl	disSeg2Seg
+	.type	disSeg2Seg, @function
+disSeg2Seg:
+.LFB16:
+	.cfi_startproc
+	movsd	8(%rsp), %xmm12
+	movsd	16(%rsp), %xmm13
+	movsd	24(%rsp), %xmm14
+	movsd	32(%rsp), %xmm15
+	movapd	%xmm0, %xmm8
+	movapd	%xmm1, %xmm9
+	movapd	%xmm2, %xmm10
+	movapd	%xmm3, %xmm11
+	movsd	40(%rsp), %xmm16
+	movsd	48(%rsp), %xmm17
+	movapd	%xmm8, %xmm2
+	movapd	%xmm9, %xmm5
+	movapd	%xmm10, %xmm3
+	movapd	%xmm11, %xmm4
+	subsd	%xmm12, %xmm2
+	subsd	%xmm13, %xmm5
+	movapd	%xmm14, %xmm6
+	movapd	%xmm15, %xmm7
+	subsd	%xmm12, %xmm6
+	subsd	%xmm13, %xmm7
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1
+	movapd	%xmm11, %xmm0
+	movapd	%xmm16, %xmm2
+	movapd	%xmm17, %xmm5
+	movapd	%xmm14, %xmm3
+	movapd	%xmm15, %xmm4
+	movapd	%xmm8, %xmm1
+	movapd	%xmm9, %xmm0
+	movapd	%xmm10, %xmm1

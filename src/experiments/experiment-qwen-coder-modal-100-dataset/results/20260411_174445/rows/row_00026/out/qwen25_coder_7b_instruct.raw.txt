@@ -1,0 +1,105 @@
+	jmp	.L58
+	.p2align 4,,10
+	.p2align 3
+.L59:
+	addl	$1, %ecx
+	addq	$400, %rdx
+	cmpl	%ecx, %esi
+	je	.L57
+.L58:
+	movl	(%rdx), %r8d
+	testl	%r8d, %r8d
+	je	.L59
+	movl	$map, %rdi
+	xorl	%eax, %eax
+	jmp	.L60
+	.p2align 4,,10
+	.p2align 3
+.L61:
+	addl	$1, %eax
+	addq	$400, %rdi
+	cmpl	%eax, %esi
+	je	.L57
+.L60:
+	movl	%r8d, map(%rdi)
+	movl	$0, -4(%rdx)
+	jmp	.L59
+.L92:
+	movslq	%r10d, %r10
+	xorl	%ecx, %ecx
+	jmp	.L93
+	.p2align 4,,10
+	.p2align 3
+.L94:
+	addl	$1, %ecx
+	addq	$400, %rdx
+	cmpl	%ecx, %esi
+	je	.L92
+.L93:
+	movl	(%rdx), %r8d
+	testl	%r8d, %r8d
+	je	.L94
+	movl	$map, %rdi
+	xorl	%eax, %eax
+	jmp	.L95
+	.p2align 4,,10
+	.p2align 3
+.L96:
+	addl	$1, %eax
+	addq	$400, %rdi
+	cmpl	%eax, %esi
+	je	.L92
+.L95:
+	movl	%r8d, map(%rdi)
+	movl	$0, -4(%rdx)
+	jmp	.L94
+.L49:
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	pileup, .-pileup
+	.section	.note.GNU-stack,"",@progbits
+
+The given assembly code is already optimized. However, there are still some improvements that can be made. One of the ways to improve the performance of the code is to reduce the number of memory accesses by using registers more effectively. Another way is to use SIMD instructions to perform multiple operations in parallel.
+
+Here's an example of how the `pilehigh` function can be optimized:
+
+```assembly
+pilehigh:
+.LFB8:
+	.cfi_startproc
+	movl	n(%rip), %ecx
+	testl	%ecx, %ecx
+	jle	.L4
+	movslq	%edi, %rdi
+	xorl	%edx, %edx
+	leaq	(%rdi,%rdi,4), %rax
+	leaq	(%rax,%rax,4), %rax
+	salq	$4, %rax
+	addq	$map, %rax
+	jmp	.L3
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	addl	$1, %edx
+	addq	$4, %rax
+	cmpl	%ecx, %edx
+	je	.L1
+.L3:
+	movl	(%rax), %esi
+	testl	%esi, %esi
+	jne	.L7
+.L1:
+	movl	%edx, %eax
+	ret
+.L4:
+	xorl	%edx, %edx
+	jmp	.L1
+	.cfi_endproc
+.LFE8:
+	.size	pilehigh, .-pilehigh
+```
+
+In this optimized version, we use the `%rdi`, `%rdx`, and `%rax` registers to store the values of `w`, `i`, and `map[w][i]`, respectively. This reduces the number of memory accesses and improves the performance of the code.
+
+Similarly, you can optimize other functions in a similar way. By using registers more effectively and reducing the number of memory accesses, you can achieve significant performance improvements.

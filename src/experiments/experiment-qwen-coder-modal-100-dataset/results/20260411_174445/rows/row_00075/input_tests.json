@@ -1,0 +1,418 @@
+[
+  {
+    "input": "9 8 1000 1674\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 9 2849 -1\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "9 9 2849 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "9 8 1000 1100\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 1000 3269\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 1000 1101\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 1000 5146\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "10 9 2849 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "9 11 1000 1101\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 1000 9934\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "10 9 2232 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "9 11 1000 1100\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 0000 9934\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "18 9 2232 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "9 11 1010 1100\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 0100 9934\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "18 9 45 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "2 11 1010 1100\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 0100 14847\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "18 9 45 1\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "2 11 1010 1000\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "9 8 0100 25741\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "18 9 0 1\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "2 11 1011 1000\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "9 8 0110 25741\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "18 9 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 11 1011 1000\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "9 2 0110 25741\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "30 9 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 11 1011 1001\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "6 2 0110 25741\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "45 9 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 11 1011 1011\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "6 1 0110 25741\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "63 9 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 11 1001 1011\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "6 1 0110 12767\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "63 2 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 8 1001 1011\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "8 1 0110 12767\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "63 4 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 8 1001 1010\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "8 1 0110 5421\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "63 4 -1 0\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "3 9 1001 1010\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "8 1 0111 5421\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "63 4 -1 1\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "3 9 1001 1110\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "8 1 1111 5421\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 4 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "4 9 1001 1110\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "8 1 0111 8089\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 4 1 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "4 9 1001 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "8 2 0111 8089\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 2 1 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "7 9 1001 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "8 2 0111 7306\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 1 1 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "3 9 1001 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "8 2 0111 8636\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 1 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 16 1001 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "6 2 0111 8636\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 2 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "3 2 1001 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "6 2 0111 11841\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 3 0 0\n",
+    "output": "Draw\n\n"
+  },
+  {
+    "input": "4 2 1001 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "6 2 0111 21190\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 3 1 0\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "4 3 1001 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "6 2 0011 21190\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "82 3 1 -1\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "4 3 1000 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "11 2 0111 21190\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "3 3 1000 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "11 3 0111 21190\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "3 1 1000 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "11 3 0111 18016\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "5 1 1000 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "12 3 0111 18016\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "5 1 0000 0110\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "19 3 0111 18016\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 1 1000 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "19 2 0111 18016\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 2 1000 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "19 0 0111 18016\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 2 1010 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "19 1 0111 18016\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 0 1010 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "19 1 0111 23763\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 0 0010 0110\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "19 2 0111 23763\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 0 0000 0110\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "8 2 0111 23763\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 0 1000 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "8 2 0110 23763\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "1 0 1100 0110\n",
+    "output": "Alice\n\n"
+  },
+  {
+    "input": "8 2 0111 39046\n",
+    "output": "Bob\n\n"
+  },
+  {
+    "input": "9 8 1000 999\n",
+    "output": "Alice\n"
+  },
+  {
+    "input": "9 8 1000 999\n",
+    "output": "Alice\n"
+  },
+  {
+    "input": "9 8 1000 1000\n",
+    "output": "Draw\n"
+  },
+  {
+    "input": "9 8 2849 -1\n",
+    "output": "Bob\n"
+  }
+]

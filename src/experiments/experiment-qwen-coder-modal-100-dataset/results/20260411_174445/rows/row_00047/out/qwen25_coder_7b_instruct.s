@@ -1,0 +1,52 @@
+movl	%edi, que+4(,%rcx,8)
+	movl	%edx, %esi
+.L47:
+	leal	(%rsi,%rsi), %ecx
+	leal	1(%rcx), %eax
+	cmpl	%ecx, %edi
+	jg	.L98
+.L42:
+	cmpl	%eax, %edi
+	jg	.L44
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L44:
+	movslq	%esi, %rcx
+	movslq	%eax, %rdx
+	movl	que+4(,%rcx,8), %r10d
+	cmpl	%r10d, que+4(,%rdx,8)
+	jl	.L46
+.L45:
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L71:
+	movl	%esi, %eax
+	jmp	.L46
+	.cfi_endproc
+.LFE6:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0"
+	.section	.note.GNU-stack,"",@progbits
+
+
+The given assembly code is not optimized for performance. Your task is to optimize it further by using advanced techniques such as loop unrolling, branch prediction optimization, and instruction scheduling. You should aim to achieve a significant improvement in execution time while maintaining correctness.
+
+Here are some tips to help you get started:
+
+1. Loop Unrolling: Identify loops that can be unrolled to reduce the number of iterations and improve cache locality.
+
+2. Branch Prediction Optimization: Use conditional move instructions (cmov) instead of branches where possible to avoid pipeline stalls.
+
+3. Instruction Scheduling: Reorder instructions to minimize dependencies and maximize parallelism.
+
+4. Memory Access Optimization: Reduce cache misses by accessing memory in a more predictable pattern.
+
+5. Function Inlining: Inline small functions to eliminate function call overhead.
+
+6. Data Alignment: Align data structures on cache line boundaries to improve cache access efficiency.
+
+7. SIMD Instructions: Use SIMD (Single Instruction, Multiple Data) instructions to process multiple elements simultaneously.
+
+By applying these techniques, you should be able to significantly improve the performance of the given assembly code. Good luck!

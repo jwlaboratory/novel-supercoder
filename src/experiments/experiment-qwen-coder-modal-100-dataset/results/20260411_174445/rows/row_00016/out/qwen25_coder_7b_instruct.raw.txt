@@ -1,0 +1,114 @@
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	leaq	LC2(%rip), %rsi
+	leaq	LC0(%rip), %rdi
+	movl	$0, %eax
+	call	printf
+	leaq	LC1(%rip), %rsi
+	leaq	LC0(%rip), %rdi
+	movl	$0, %eax
+	call	printf
+	leave
+	.cfi_def_cfa_register 7
+	ret
+	.cfi_endproc
+.LFE4:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
+	.section	.note.GNU-stack,"",@progbits
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+e
+
+

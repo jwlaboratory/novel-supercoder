@@ -1,0 +1,54 @@
+```
+```assembly
+section .text
+global main
+extern printf, scanf
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 24
+
+    ; Initialize variables
+    mov eax, [i]
+    mov ecx, [z]
+    cmp eax, ecx
+    jge .end_loop
+
+.outer_loop:
+    mov ebx, eax
+    imul ebx, ebx
+    lea rdx, [ebx + ebx]
+
+.inner_loop:
+    mov esi, eax
+    imul esi, esi
+    add esi, ebx
+    imul esi, esi
+    add esi, edx
+
+    cmp esi, [z]
+    jl .increment_count
+    jmp .next_outer
+
+.increment_count:
+    mov edi, esi
+    shl edi, 2
+    inc dword [t + edi]
+
+.next_outer:
+    inc eax
+    cmp eax, ecx
+    jl .inner_loop
+
+    mov eax, ecx
+    inc eax
+    cmp eax, [i]
+    jl .outer_loop
+
+.end_loop:
+    xor eax, eax
+    pop rbp
+    ret
+```
+```

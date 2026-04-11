@@ -1,0 +1,81 @@
+```
+```assembly
+section .text
+global main
+extern printf, scanf
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 48
+
+    ; Read input values
+    lea rdi, [a]
+    call scanf
+    lea rdi, [a + 4]
+    call scanf
+    lea rdi, [a + 8]
+    call scanf
+    lea rdi, [a + 12]
+    call scanf
+
+    lea rdi, [b]
+    call scanf
+    lea rdi, [b + 4]
+    call scanf
+    lea rdi, [b + 8]
+    call scanf
+    lea rdi, [b + 12]
+    call scanf
+
+    ; Initialize dp array with large values
+    lea rdi, [dp]
+    mov ecx, 1000
+    mov eax, 100000000
+.L1:
+    mov [rdi], eax
+    add rdi, 4
+    loop .L1
+
+    ; Update dp array based on given conditions
+    mov ecx, 900
+    lea rsi, [b]
+.L2:
+    mov edx, 4
+.L3:
+    mov rax, [rsi]
+    add rax, [rdi]
+    cmp [rdi + rax * 4], eax
+    jge .L4
+    mov [rdi + rax * 4], eax
+.L4:
+    add rsi, 4
+    dec edx
+    jnz .L3
+    add rdi, 4
+    dec ecx
+    jnz .L2
+
+    ; Find minimum value in dp array starting from n
+    mov ecx, [n]
+    lea rdi, [dp + ecx * 4]
+    mov eax, 1000000
+.L5:
+    cmp [rdi], eax
+    jge .L6
+    mov eax, [rdi]
+.L6:
+    add rdi, 4
+    cmp ecx, 999
+    jle .L5
+
+    ; Print result
+    mov esi, eax
+    mov edi, .LC4
+    xor eax, eax
+    call printf
+
+    leave
+    ret
+```
+```

@@ -1,0 +1,418 @@
+[
+  {
+    "input": "selims\n",
+    "output": "s4s\n\n"
+  },
+  {
+    "input": "intfrnationalization\n",
+    "output": "i18n\n\n"
+  },
+  {
+    "input": "xxz\n",
+    "output": "x1z\n\n"
+  },
+  {
+    "input": "smilet\n",
+    "output": "s4t\n\n"
+  },
+  {
+    "input": "noitazilanoitanrftni\n",
+    "output": "n18i\n\n"
+  },
+  {
+    "input": "xx{\n",
+    "output": "x1{\n\n"
+  },
+  {
+    "input": "stilem\n",
+    "output": "s4m\n\n"
+  },
+  {
+    "input": "ooitazilanoitanrftni\n",
+    "output": "o18i\n\n"
+  },
+  {
+    "input": "x{x\n",
+    "output": "x1x\n\n"
+  },
+  {
+    "input": "melits\n",
+    "output": "m4s\n\n"
+  },
+  {
+    "input": "w{x\n",
+    "output": "w1x\n\n"
+  },
+  {
+    "input": "melhtt\n",
+    "output": "m4t\n\n"
+  },
+  {
+    "input": "w{y\n",
+    "output": "w1y\n\n"
+  },
+  {
+    "input": "x|y\n",
+    "output": "x1y\n\n"
+  },
+  {
+    "input": "llfhtt\n",
+    "output": "l4t\n\n"
+  },
+  {
+    "input": "onilazitanojianrftot\n",
+    "output": "o18t\n\n"
+  },
+  {
+    "input": "y|x\n",
+    "output": "y1x\n\n"
+  },
+  {
+    "input": "tthfll\n",
+    "output": "t4l\n\n"
+  },
+  {
+    "input": "xz|\n",
+    "output": "x1|\n\n"
+  },
+  {
+    "input": "totfsnaijonatizalhno\n",
+    "output": "t18o\n\n"
+  },
+  {
+    "input": "lhfttk\n",
+    "output": "l4k\n\n"
+  },
+  {
+    "input": "wy|\n",
+    "output": "w1|\n\n"
+  },
+  {
+    "input": "|yw\n",
+    "output": "|1w\n\n"
+  },
+  {
+    "input": "tntfsooijonatizalhna\n",
+    "output": "t18a\n\n"
+  },
+  {
+    "input": "|yx\n",
+    "output": "|1x\n\n"
+  },
+  {
+    "input": "kgettk\n",
+    "output": "k4k\n\n"
+  },
+  {
+    "input": "yy|\n",
+    "output": "y1|\n\n"
+  },
+  {
+    "input": "kgektt\n",
+    "output": "k4t\n\n"
+  },
+  {
+    "input": "|yy\n",
+    "output": "|1y\n\n"
+  },
+  {
+    "input": "yy}\n",
+    "output": "y1}\n\n"
+  },
+  {
+    "input": "ttkdgk\n",
+    "output": "t4k\n\n"
+  },
+  {
+    "input": "anhla{itanojiporftnt\n",
+    "output": "a18t\n\n"
+  },
+  {
+    "input": "}yy\n",
+    "output": "}1y\n\n"
+  },
+  {
+    "input": "~yy\n",
+    "output": "~1y\n\n"
+  },
+  {
+    "input": "anhla{iuanojiporftnu\n",
+    "output": "a18u\n\n"
+  },
+  {
+    "input": "~yz\n",
+    "output": "~1z\n\n"
+  },
+  {
+    "input": "y~z\n",
+    "output": "y1z\n\n"
+  },
+  {
+    "input": "egkjtt\n",
+    "output": "e4t\n\n"
+  },
+  {
+    "input": "egkjtu\n",
+    "output": "e4u\n\n"
+  },
+  {
+    "input": "unsfropikonaui{alhna\n",
+    "output": "u18a\n\n"
+  },
+  {
+    "input": "y{\n",
+    "output": "y1{\n\n"
+  },
+  {
+    "input": "utjkge\n",
+    "output": "u4e\n\n"
+  },
+  {
+    "input": "zy\n",
+    "output": "z1y\n\n"
+  },
+  {
+    "input": "vtjkge\n",
+    "output": "v4e\n\n"
+  },
+  {
+    "input": "y~y\n",
+    "output": "y1y\n\n"
+  },
+  {
+    "input": "vtgejk\n",
+    "output": "v4k\n\n"
+  },
+  {
+    "input": "vtkejg\n",
+    "output": "v4g\n\n"
+  },
+  {
+    "input": "yy\n",
+    "output": "1y\n\n"
+  },
+  {
+    "input": "zz\n",
+    "output": "1z\n\n"
+  },
+  {
+    "input": "z{\n",
+    "output": "1{\n\n"
+  },
+  {
+    "input": "wmtejg\n",
+    "output": "w4g\n\n"
+  },
+  {
+    "input": "gjetmw\n",
+    "output": "g4w\n\n"
+  },
+  {
+    "input": "onsfqopiktmita{alhna\n",
+    "output": "o18a\n\n"
+  },
+  {
+    "input": "{{\n",
+    "output": "{1\n\n"
+  },
+  {
+    "input": "{{\n",
+    "output": "{1{\n\n"
+  },
+  {
+    "input": "gjetlx\n",
+    "output": "g4x\n\n"
+  },
+  {
+    "input": "z{\n",
+    "output": "z1{\n\n"
+  },
+  {
+    "input": "xltejg\n",
+    "output": "x4g\n\n"
+  },
+  {
+    "input": "z{\n",
+    "output": "z1\n\n"
+  },
+  {
+    "input": "anhm`{atjmtkipoqfsno\n",
+    "output": "a18o\n\n"
+  },
+  {
+    "input": "z{\n",
+    "output": "z2\n\n"
+  },
+  {
+    "input": "{z\n",
+    "output": "2z\n\n"
+  },
+  {
+    "input": "gisfxl\n",
+    "output": "g4l\n\n"
+  },
+  {
+    "input": "pprfqoniktmjt``{mhna\n",
+    "output": "p18a\n\n"
+  },
+  {
+    "input": "gisfxm\n",
+    "output": "g4m\n\n"
+  },
+  {
+    "input": "anhm{``tjmtkinoqfrpp\n",
+    "output": "a18p\n\n"
+  },
+  {
+    "input": "}|z\n",
+    "output": "}1z\n\n"
+  },
+  {
+    "input": "}|{\n",
+    "output": "}1{\n\n"
+  },
+  {
+    "input": "{|}\n",
+    "output": "{1}\n\n"
+  },
+  {
+    "input": "igtfxm\n",
+    "output": "i4m\n\n"
+  },
+  {
+    "input": "|{}\n",
+    "output": "|1}\n\n"
+  },
+  {
+    "input": "mxftgi\n",
+    "output": "m4i\n\n"
+  },
+  {
+    "input": "~{{\n",
+    "output": "~1{\n\n"
+  },
+  {
+    "input": "igsfxl\n",
+    "output": "i4l\n\n"
+  },
+  {
+    "input": "{{~\n",
+    "output": "{1~\n\n"
+  },
+  {
+    "input": "{~z\n",
+    "output": "{1z\n\n"
+  },
+  {
+    "input": "ietfxk\n",
+    "output": "i4k\n\n"
+  },
+  {
+    "input": "z~z\n",
+    "output": "z1z\n\n"
+  },
+  {
+    "input": "kwftei\n",
+    "output": "k4i\n\n"
+  },
+  {
+    "input": "y{\n",
+    "output": "y1\n\n"
+  },
+  {
+    "input": "kifteu\n",
+    "output": "k4u\n\n"
+  },
+  {
+    "input": "y{\n",
+    "output": "y2\n\n"
+  },
+  {
+    "input": "bnhm{``sjlskhmpofqrp\n",
+    "output": "b18p\n\n"
+  },
+  {
+    "input": "y{\n",
+    "output": "y2{\n\n"
+  },
+  {
+    "input": "ueteik\n",
+    "output": "u4k\n\n"
+  },
+  {
+    "input": "prqfopmhksljs``{mhnb\n",
+    "output": "p18b\n\n"
+  },
+  {
+    "input": "{x\n",
+    "output": "{1x\n\n"
+  },
+  {
+    "input": "{w\n",
+    "output": "{1w\n\n"
+  },
+  {
+    "input": "tjekdu\n",
+    "output": "t4u\n\n"
+  },
+  {
+    "input": "{w\n",
+    "output": "{2w\n\n"
+  },
+  {
+    "input": "{v\n",
+    "output": "{2v\n\n"
+  },
+  {
+    "input": "tjukdd\n",
+    "output": "t4d\n\n"
+  },
+  {
+    "input": "{v\n",
+    "output": "{2\n\n"
+  },
+  {
+    "input": "tdukdj\n",
+    "output": "t4j\n\n"
+  },
+  {
+    "input": "v{\n",
+    "output": "v2{\n\n"
+  },
+  {
+    "input": "|v\n",
+    "output": "|2\n\n"
+  },
+  {
+    "input": "}v\n",
+    "output": "}2\n\n"
+  },
+  {
+    "input": "uedkuj\n",
+    "output": "u4j\n\n"
+  },
+  {
+    "input": "}v\n",
+    "output": "}2v\n\n"
+  },
+  {
+    "input": "v}\n",
+    "output": "v2}\n\n"
+  },
+  {
+    "input": "smiles\n",
+    "output": "s4s\n"
+  },
+  {
+    "input": "internationalization\n",
+    "output": "i18n\n"
+  },
+  {
+    "input": "xyz\n",
+    "output": "x1z\n"
+  },
+  {
+    "input": "internationalization\n",
+    "output": "i18n\n"
+  }
+]

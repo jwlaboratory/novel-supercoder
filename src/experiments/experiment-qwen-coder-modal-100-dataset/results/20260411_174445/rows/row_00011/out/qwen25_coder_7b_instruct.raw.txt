@@ -1,0 +1,118 @@
+```
+```assembly
+section .text
+global main
+extern printf, scanf
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 5784
+
+    lea rdi, [rsp+16]
+    rep stosb
+
+    xor eax, eax
+    mov ecx, 720
+
+outer_loop:
+    cmp eax, 2
+    jge end_outer_loop
+
+    push rcx
+    push rbx
+    push rsi
+    push rdi
+
+    lea rdi, [rsp+16]
+    mov eax, 0
+    call scanf
+
+    pop rdi
+    pop rsi
+    pop rbx
+    pop rcx
+
+    test eax, eax
+    jle continue_outer_loop
+
+    xor ebx, ebx
+
+inner_loop:
+    lea rdx, [rsp+12]
+    lea rsi, [rsp+8]
+    xor eax, eax
+    add ebx, 1
+    mov edi, [rsp+4]
+    call scanf
+
+    mov rdx, [rsp+8]
+    mov rcx, [rsp+12]
+    mov rax, rdx
+    sal rax, 4
+    sub rax, rdx
+    lea rax, [rcx+rax*4]
+    mov dword [rsp+16+rax], 1
+
+    cmp ebx, [rsp+4]
+    jl inner_loop
+
+continue_outer_loop:
+    inc eax
+    jmp outer_loop
+
+end_outer_loop:
+
+    xor eax, eax
+    xor r13d, r13d
+
+outer_print_loop:
+    cmp r13d, 24
+    jge end_outer_print_loop
+
+    xor ebx, ebx
+
+inner_print_loop:
+    mov ecx, [rsp+16+r13d*24+rbx*4]
+    test ecx, ecx
+    jle continue_inner_print_loop
+
+    test eax, eax
+    jne print_space
+
+print_colon:
+    mov esi, r13d
+    mov edi, [rsp+16]
+    xor eax, eax
+    call printf
+
+print_space:
+    mov eax, 32
+    call putchar
+
+    test ebx, ebx
+    jle print_minute
+
+    mov esi, ebx
+    mov edi, [rsp+20]
+    xor eax, eax
+    call printf
+
+print_minute:
+    inc ebx
+    cmp ebx, 60
+    jne inner_print_loop
+
+continue_inner_print_loop:
+    inc r13d
+    jmp outer_print_loop
+
+end_outer_print_loop:
+    mov eax, 10
+    call putchar
+
+    add rsp, 5784
+    leave
+    ret
+```
+```

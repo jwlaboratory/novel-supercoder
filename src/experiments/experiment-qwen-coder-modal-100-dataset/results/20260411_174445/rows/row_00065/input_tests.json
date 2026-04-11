@@ -1,0 +1,418 @@
+[
+  {
+    "input": "E F\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "A A\n",
+    "output": "=\n\n"
+  },
+  {
+    "input": "E B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "D F\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "A C\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "E A\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "E E\n",
+    "output": "=\n\n"
+  },
+  {
+    "input": "A D\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "D B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "F E\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "A E\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "D C\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "F D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "A F\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "E D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "F C\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "B E\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "G E\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "G D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "C E\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "H E\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "D D\n",
+    "output": "=\n\n"
+  },
+  {
+    "input": "C D\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "H D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "F B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "C C\n",
+    "output": "=\n\n"
+  },
+  {
+    "input": "I E\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "G B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "H F\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "I D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "B D\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "I F\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "H C\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "A G\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "I G\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "I C\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "A H\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "H G\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "I B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "A I\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J G\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "J B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "@ I\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "K G\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "K B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "@ H\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "K F\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "K C\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "? I\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "K H\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "L B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "? H\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J H\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "K A\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "> H\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J F\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "K @\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "> I\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "H H\n",
+    "output": "=\n\n"
+  },
+  {
+    "input": "L @\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "? J\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "D E\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "L ?\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "> J\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "C F\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "K ?\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "= H\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "D A\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "L >\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "= G\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "C A\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "M >\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "< H\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "C B\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "M ?\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "; H\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "B B\n",
+    "output": "=\n\n"
+  },
+  {
+    "input": "N ?\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "; G\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "@ C\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J @\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": ": G\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "@ B\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J A\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": ": F\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "@ A\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J C\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "9 G\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "? A\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "L C\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "? B\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "L D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "? C\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "K D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "@ D\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J D\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "@ E\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "J E\n",
+    "output": ">\n\n"
+  },
+  {
+    "input": "? E\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "F G\n",
+    "output": "<\n\n"
+  },
+  {
+    "input": "F F\n",
+    "output": "=\n"
+  },
+  {
+    "input": "A B\n",
+    "output": "<\n"
+  },
+  {
+    "input": "E C\n",
+    "output": ">\n"
+  },
+  {
+    "input": "A B\n",
+    "output": "<\n"
+  }
+]

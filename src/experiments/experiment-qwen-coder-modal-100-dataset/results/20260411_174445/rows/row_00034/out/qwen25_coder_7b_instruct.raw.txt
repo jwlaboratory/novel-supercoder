@@ -1,0 +1,183 @@
+
+.L34:
+	testw	%cx, %cx
+	jle	.L49
+	movq	to(,%r14,8), %r12
+	movq	no(,%r14,8), %r15
+	xorl	%r11d, %r11d
+	addl	$1, %ebx
+	jmp	.L41
+	.p2align 4,,10
+	.p2align 3
+.L52:
+	movl	%r13d, %eax
+	movl	%r14d, %edx
+	popq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_restore_state
+	ret
+.L51:
+	movl	$-1, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_restore_state
+	ret
+	.cfi_endproc
+.LFE12:
+	.size	dijkstra, .-dijkstra
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB13:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	subq	$16, %rsp
+	.cfi_def_cfa_offset 24
+	movl	$0, -4(%rbp)
+.L100:
+	movl	-4(%rbp), %eax
+	call	in
+	testl	%eax, %eax
+	je	.L101
+	addl	$1, %eax
+	movl	%eax, -4(%rbp)
+	movl	-4(%rbp), %eax
+	call	in
+	movl	%eax, -8(%rbp)
+	movl	-4(%rbp), %eax
+	call	in
+	movl	%eax, -12(%rbp)
+	movl	-4(%rbp), %eax
+	movl	-8(%rbp), %edx
+	movl	-12(%rbp), %esi
+	movl	-16(%rbp), %edi
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl	-16(%rbp), %esi
+	movl	-12(%rbp), %edi
+	movl	-8(%rbp), %edx
+	movl	-4(%rbp), %eax
+	movl

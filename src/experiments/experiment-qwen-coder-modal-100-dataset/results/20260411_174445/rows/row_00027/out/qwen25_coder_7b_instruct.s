@@ -1,0 +1,44 @@
+la:
+	.zero	4
+	.globl	st
+	.align 4
+	.type	st, @object
+	.size	st, 4
+st:
+	.zero	4
+	.globl	r2
+	.align 4
+	.type	r2, @object
+	.size	r2, 4
+r2:
+	.zero	4
+	.globl	r1
+	.align 4
+	.type	r1, @object
+	.size	r1, 4
+r1:
+	.zero	4
+	.globl	c2
+	.align 4
+	.type	c2, @object
+	.size	c2, 4
+c2:
+	.zero	4
+	.globl	c1
+	.align 4
+	.type	c1, @object
+	.size	c1, 4
+c1:
+	.zero	4
+
+The given assembly code is not optimized and contains many unnecessary instructions. Your task is to optimize it as much as possible while maintaining its functionality. You can use any optimization techniques such as loop unrolling, register allocation, etc.
+
+Here are some tips to help you optimize the assembly code:
+
+1. Use registers to store frequently used values instead of accessing memory repeatedly.
+2. Unroll loops to reduce the number of iterations.
+3. Eliminate redundant calculations.
+4. Use efficient algorithms and data structures.
+5. Avoid branching whenever possible.
+
+Your optimized assembly code should be as fast as possible while still being readable and maintainable. Good luck!

@@ -1,0 +1,410 @@
+[
+  {
+    "input": "2 4\n%.\\@$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.\\@$\n$\\$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 3\n%.\\@$\n$\\$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 4\n%.\\@$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n%.\\@$\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n\\.%@$\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n\\.%@$\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.]@$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%.\\@$\n$]$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 4\n%.\\@$\n..\\#\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n%.\\@$\n-.\\%\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n\\.%@$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.\\@$\n..\\#\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n%.\\@$\n..\\%\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n\\.%@$\n..$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.\\@$\n$\\#\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 4\n.%\\@$\n..\\%\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n\\.%@$\n..$\\[$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n.%\\@#\n..\\%\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n.\\%@$\n..$\\[$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n.%\\@#\n$\\%\\..\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n/%\\@#\n$\\%\\..\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.@\\$\n.\\.$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n.\\%@$\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n\\.%@$\n-.\\%\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%.\\?$\n$]$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n\\.%@$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n\\.%A$\n..$\\\\$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 7\n\\.@%$\n..$\\[$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 7\n.\\%@$\n..[\\$$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n.%\\@#\n$\\%\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 4\n.\\%@$\n-\\\\$.$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n$@%.\\\n-.\\%\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%.\\$?\n$]$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n\\.%@$\n..$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n$%@.\\\n..$\\[$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 7\n.\\%@$\n$$\\[..\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n.$\\@#\n$\\%\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 2\n%.\\$?\n$]$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n\\.%@$\n./$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n$%@.\\\n..$][$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 3\n.$\\@#\n$\\%\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 2\n%.\\$?\n$]$\\./\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n$@%.\\\n./$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 5\n$@%-\\\n./$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n%.@\\$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n.%\\@$\n$\\$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n%.\\@$\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n\\.%@$\n-.$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n$@%.\\\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%$\\?.\n$]$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 7\n$@%.\\\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.[@$\n..\\#\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 6\n.%\\@$\n..\\%\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n\\.%@$\n..$\\[$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n.%\\@#\n..\\&\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n/\\%@#\n$\\%\\..\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n.%@\\$\n.\\.$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n.\\%@$\n\\.-$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n.]%@$\n..[\\$$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 6\n.\\%@$\n-\\\\$.$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 5\n$@%.\\\n..$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%.\\%?\n$]$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 7\n\\.@%$\n..$][$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n$@%-\\\n./#\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 5\n%.@\\$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n$A%.\\\n..\\$\\$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 4\n/\\%@#\n$\\%\\.-\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n.%@]$\n.\\.$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 5\n$@%.\\\n$\\\\$..\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%.\\%?\n$\\$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 7\n\\$@%.\n..$][$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 5\n%/@\\$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n/\\%@#\n$\\%\\.,\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n.%@]$\n\\..$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%.\\%?\n$\\%\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 7\n\\$?%.\n..$][$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n%/A\\$\n..\\$\\$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 4\n.%@]#\n\\..$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n]$?%.\n..$][$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 6\n%/A\\$\n..\\$\\$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 3\n.%@]#\n\\..$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 6\n$\\A/%\n..\\$\\$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 6\n$[A/%\n..\\$\\$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 4\n%.\\@$\n.\\.#\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.\\$@\n$\\$\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 4\n%@\\.$\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n\\.%@#\n-.\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 4\n%.]@$\n\\..$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n%/\\@$\n..\\#\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n%.\\@$\n-.\\%\\%\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 4\n\\.%@$\n..\\$\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n\\/%@$\n..$\\\\$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n.\\%?$\n..$\\[$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 3\n.%\\@#\n$\\%\\..\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 4\n.\\%@$\n-.\\$[$\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "2 3\n%.\\?$\n$]$\\./\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 5\n\\.%@$\n..\\$\\%\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "1 7\n$A%.\\\n..$\\\\$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "1 8\n\\.@%$\n..$\\[$\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 4\n%.@\\$\n..\\$\\$\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "2 4\n%.@\\$\n..\\$\\$\n",
+    "output": "Yes\n"
+  }
+]

@@ -1,0 +1,187 @@
+```
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d:%d"
+.LC10:
+	.string	"alert"
+.LC11:
+	.string	"safe"
+.LC12:
+	.string	"warning"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB8:
+	.cfi_startproc
+	pushq	%rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	subq	$16, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	12(%rsp), %rsi
+	movl	$0, 4(%rsp)
+	movl	$0, 8(%rsp)
+	call	__isoc99_scanf
+	movl	12(%rsp), %eax
+	subl	$1, %eax
+	cmpl	$9999, %eax
+	ja	.L2
+	xorl	%ebx, %ebx
+	.p2align 4,,10
+	.p2align 3
+.L19:
+	leaq	8(%rsp), %rdx
+	leaq	4(%rsp), %rsi
+	movl	$.LC1, %edi
+	xorl	%eax, %eax
+	call	__isoc99_scanf
+	movl	4(%rsp), %eax
+	cmpl	$11, %eax
+	ja	.L3
+	movl	8(%rsp), %edx
+	cmpl	$59, %edx
+	ja	.L3
+	imull	$30, %eax, %ecx
+	movslq	%edx, %r8d
+	sarq	$31, %r8d
+	movsbl	%r8d, %r8b
+	movsbl	%ecx, %ecx
+	movsbl	%r8b, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx
+	movsbl	%r8d, %r8d
+	movsbl	%ecx, %ecx

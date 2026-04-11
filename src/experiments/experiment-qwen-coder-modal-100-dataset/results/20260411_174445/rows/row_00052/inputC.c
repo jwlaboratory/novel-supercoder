@@ -1,0 +1,1 @@
+X[2001];i,p,g;main(N,M){for(;scanf("%d%d",&N,&M)*N;printf("%d\n",g)){for(g=i=0;i++<N+M;p=1)scanf("%d",X+i);for(i=0;i++<M;g=g|p<N?g:i)p+=X[N+i],p+=p<N?X[p]:0;}}

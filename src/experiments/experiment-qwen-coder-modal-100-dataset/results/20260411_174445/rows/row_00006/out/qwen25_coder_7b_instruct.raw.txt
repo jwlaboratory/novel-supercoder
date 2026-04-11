@@ -1,0 +1,161 @@
+8(%rsp)
+	movapd	-32(%rsp), %xmm4
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	addpd	-24(%rsp), %xmm4
+	movaps	%xmm4, %xmm0
+	ret
+	.cfi_endproc
+.LFE14:
+	.size	vadd, .-vadd
+	.p2align 4
+	.globl	vsub
+	.type	vsub, @function
+vsub:
+.LFB15:
+	.cfi_startproc
+	movq	%xmm0, -40(%rsp)
+	movq	%xmm1, -32(%rsp)
+	movapd	-40(%rsp), %xmm4
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	subpd	-24(%rsp), %xmm4
+	movaps	%xmm4, -8(%rsp)
+	movapd	-32(%rsp), %xmm4
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	subpd	-24(%rsp), %xmm4
+	movaps	%xmm4, %xmm0
+	ret
+	.cfi_endproc
+.LFE15:
+	.size	vsub, .-vsub
+	.p2align 4
+	.globl	vsmul
+	.type	vsmul, @function
+vsmul:
+.LFB16:
+	.cfi_startproc
+	movq	%xmm0, -40(%rsp)
+	movq	%xmm1, -32(%rsp)
+	movapd	-40(%rsp), %xmm4
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	mulpd	-24(%rsp), %xmm4
+	movaps	%xmm4, -8(%rsp)
+	movapd	-32(%rsp), %xmm4
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	mulpd	-24(%rsp), %xmm4
+	movaps	%xmm4, %xmm0
+	ret
+	.cfi_endproc
+.LFE16:
+	.size	vsmul, .-vsmul
+	.p2align 4
+	.globl	vmul
+	.type	vmul, @function
+vmul:
+.LFB17:
+	.cfi_startproc
+	movq	%xmm0, -40(%rsp)
+	movq	%xmm1, -32(%rsp)
+	movapd	-40(%rsp), %xmm4
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	movapd	-32(%rsp), %xmm5
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	movapd	-32(%rsp), %xmm6
+	movq	%xmm2, -24(%rsp)
+	movq	%xmm3, -16(%rsp)
+	movapd	-32(%rsp), %xmm7
+	movapd	-40(%rsp), %xmm8
+	movapd	-32(%rsp), %xmm9
+	movapd	-40(%rsp), %xmm10
+	movapd	-32(%rsp), %xmm11
+	movapd	-40(%rsp), %xmm12
+	movapd	-32(%rsp), %xmm13
+	movapd	-40(%rsp), %xmm14
+	movapd	-32(%rsp), %xmm15
+	movapd	-40(%rsp), %xmm16
+	movapd	-32(%rsp), %xmm17
+	movapd	-40(%rsp), %xmm18
+	movapd	-32(%rsp), %xmm19
+	movapd	-40(%rsp), %xmm20
+	movapd	-32(%rsp), %xmm21
+	movapd	-40(%rsp), %xmm22
+	movapd	-32(%rsp), %xmm23
+	movapd	-40(%rsp), %xmm24
+	movapd	-32(%rsp), %xmm25
+	movapd	-40(%rsp), %xmm26
+	movapd	-32(%rsp), %xmm27
+	movapd	-40(%rsp), %xmm28
+	movapd	-32(%rsp), %xmm29
+	movapd	-40(%rsp), %xmm30
+	movapd	-32(%rsp), %xmm31
+	movapd	-40(%rsp), %xmm32
+	movapd	-32(%rsp), %xmm33
+	movapd	-40(%rsp), %xmm34
+	movapd	-32(%rsp), %xmm35
+	movapd	-40(%rsp), %xmm36
+	movapd	-32(%rsp), %xmm37
+	movapd	-40(%rsp), %xmm38
+	movapd	-32(%rsp), %xmm39
+	movapd	-40(%rsp), %xmm40
+	movapd	-32(%rsp), %xmm41
+	movapd	-40(%rsp), %xmm42
+	movapd	-32(%rsp), %xmm43
+	movapd	-40(%rsp), %xmm44
+	movapd	-32(%rsp), %xmm45
+	movapd	-40(%rsp), %xmm46
+	movapd	-32(%rsp), %xmm47
+	movapd	-40(%rsp), %xmm48
+	movapd	-32(%rsp), %xmm49
+	movapd	-40(%rsp), %xmm50
+	movapd	-32(%rsp), %xmm51
+	movapd	-40(%rsp), %xmm52
+	movapd	-32(%rsp), %xmm53
+	movapd	-40(%rsp), %xmm54
+	movapd	-32(%rsp), %xmm55
+	movapd	-40(%rsp), %xmm56
+	movapd	-32(%rsp), %xmm57
+	movapd	-40(%rsp), %xmm58
+	movapd	-32(%rsp), %xmm59
+	movapd	-40(%rsp), %xmm60
+	movapd	-32(%rsp), %xmm61
+	movapd	-40(%rsp), %xmm62
+	movapd	-32(%rsp), %xmm63
+	movapd	-40(%rsp), %xmm64
+	movapd	-32(%rsp), %xmm65
+	movapd	-40(%rsp), %xmm66
+	movapd	-32(%rsp), %xmm67
+	movapd	-40(%rsp), %xmm68
+	movapd	-32(%rsp), %xmm69
+	movapd	-40(%rsp), %xmm70
+	movapd	-32(%rsp), %xmm71
+	movapd	-40(%rsp), %xmm72
+	movapd	-32(%rsp), %xmm73
+	movapd	-40(%rsp), %xmm74
+	movapd	-32(%rsp), %xmm75
+	movapd	-40(%rsp), %xmm76
+	movapd	-32(%rsp), %xmm77
+	movapd	-40(%rsp), %xmm78
+	movapd	-32(%rsp), %xmm79
+	movapd	-40(%rsp), %xmm80
+	movapd	-32(%rsp), %xmm81
+	movapd	-40(%rsp), %xmm82
+	movapd	-32(%rsp), %xmm83
+	movapd	-40(%rsp), %xmm84
+	movapd	-32(%rsp), %xmm85
+	movapd	-40(%rsp), %xmm86
+	movapd	-32(%rsp), %xmm87
+	movapd	-40(%rsp), %xmm88
+	movapd	-32(%rsp), %xmm89
+	movapd	-40(%rsp), %xmm90
+	movapd	-32(%rsp), %xmm91
+	movapd	-40(%rsp), %xmm92
+	movapd	-32(%rsp), %xmm93
+	movapd	-40(%rsp), %xmm94
+	movapd	-32(%rsp), %xmm95
+	movapd	-40(%rsp), %

@@ -1,0 +1,235 @@
+```
+```assembly
+section .text
+global nextint
+global fen_add
+global fen_sum
+global fen_range
+global main
+
+nextint:
+    movslq idx.0(%rip), %rax
+    pushq %rbx
+    testl %eax, %eax
+    je .L24
+.L2:
+    xorl %ecx, %ecx
+    jmp .L3
+.L6:
+    addq $1, %rax
+    movl $1, %ecx
+.L3:
+    movzbl buf(%rax), %edx
+    cmpl $16777215, %eax
+    jg .L5
+    cmpb $47, %dl
+    jle .L6
+.L5:
+    cmpb $57, %dl
+    jg .L6
+    movl %eax, %edx
+    testb %cl, %cl
+    je .L7
+    movl %eax, idx.0(%rip)
+.L7:
+    movslq %edx, %rax
+    xorl %edi, %edi
+    xorl %ecx, %ecx
+    cmpl $16777215, %edx
+    jle .L9
+    jmp .L13
+.L11:
+    leal (%rcx,%rcx,4), %ecx
+    leal 1(%rax), %ebx
+    addq $1, %rax
+    movl $1, %edi
+    leal -48(%rdx,%rcx,2), %ecx
+    cmpl $16777215, %eax
+    jg .L25
+.L9:
+    movsbl buf(%rax), %edx
+    leal -48(%rdx), %esi
+    cmpb $9, %sil
+    jbe .L11
+    testb %dil, %dil
+    je .L12
+    movl %ebx, idx.0(%rip)
+.L12:
+    movl %eax, %ebx
+.L10:
+    cmpl $16777215, %ebx
+    jg .L13
+    movl %ecx, %eax
+    popq %rbx
+    ret
+.L24:
+    movl $16777216, %edx
+    movl $buf, %esi
+    xorl %edi, %edi
+    call read
+    movslq idx.0(%rip), %rax
+    jmp .L2
+.L25:
+    movl %ebx, idx.0(%rip)
+    jmp .L10
+.L13:
+    movl $1, %edi
+    call exit
+
+fen_add:
+    addl $1, %edi
+    cmpl %edx, %edi
+    jg .L26
+.L28:
+    leal -1(%rdi), %eax
+    cltq
+    addq %rsi, data(,%rax,8)
+    movl %edi, %eax
+    negl %eax
+    andl %edi, %eax
+    addl %eax, %edi
+    cmpl %edi, %edx
+    jge .L28
+.L26:
+    ret
+
+fen_sum:
+    xorl %edx, %edx
+    testl %edi, %edi
+    jle .L30
+.L32:
+    leal -1(%rdi), %eax
+    movslq %eax, %rcx
+    addq data(,%rcx,8), %rdx
+    andl %eax, %edi
+    jne .L32
+.L30:
+    movq %rdx, %rax
+    ret
+
+fen_range:
+    xorl %edx, %edx
+    testl %esi, %esi
+    jle .L36
+.L37:
+    leal -1(%rsi), %eax
+    movslq %eax, %rcx
+    addq data(,%rcx,8), %rdx
+    andl %eax, %esi
+    jne .L37
+.L36:
+    testl %edi, %edi
+    jle .L35
+    xorl %ecx, %ecx
+.L39:
+    leal -1(%rdi), %eax
+    movslq %eax, %rsi
+    addq data(,%rsi,8), %rcx
+    andl %eax, %edi
+    jne .L39
+    subq %rcx, %rdx
+.L35:
+    movq %rdx, %rax
+    ret
+
+main:
+    pushq %r12
+    xorl %eax, %eax
+    pushq %rbp
+    pushq %rbx
+    call nextint
+    movl %eax, %ebp
+    xorl %eax, %eax
+    call nextint
+    movl %eax, %ebx
+    testl %ebp, %ebp
+    jle .L44
+    xorl %r12d, %r12d
+.L46:
+    xorl %eax, %eax
+    addl $1, %r12d
+    call nextint
+    movl %eax, %eax
+    cmpl %r12d, %ebp
+    jl .L44
+    movl %r12d, %edx
+.L45:
+    leal -1(%rdx), %ecx
+    movslq %ecx, %rcx
+    addq %rax, data(,%rcx,8)
+    movl %edx, %ecx
+    negl %ecx
+    andl %edx, %ecx
+    addl %ecx, %edx
+    cmpl %edx, %ebp
+    jge .L45
+    cmpl %r12d, %ebp
+    jne .L46
+.L44:
+    testl %ebx, %ebx
+    je .L47
+.L56:
+    xorl %eax, %eax
+    call nextint
+    cmpl $1, %eax
+    movl $0, %eax
+    je .L69
+    call nextint
+    movl %eax, %r12d
+    xorl %eax, %eax
+    call nextint
+    addl $1, %eax
+    cmpl %eax, %ebp
+    jl .L53
+.L55:
+    leal -1(%rax), %edx
+    movslq %edx, %rdx
+    addq %r12, data(,%rdx,8)
+    movl %eax, %edx
+    negl %edx
+    andl %eax, %edx
+    addl %edx, %eax
+    cmpl %eax, %ebp
+    jge .L55
+.L53:
+    subl $1, %ebx
+    jne .L56
+.L47:
+    popq %rbx
+    xorl %eax, %eax
+    popq %rbp
+    popq %r12
+    ret
+.L69:
+    call nextint
+    movl %eax, %r12d
+    xorl %eax, %eax
+    call nextint
+    xorl %esi, %esi
+    testl %r12d, %r12d
+    jle .L49
+.L50:
+    leal -1(%r12), %edx
+    movslq %edx, %rcx
+    addq data(,%rcx,8), %rsi
+    andl %edx, %r12d
+    jne .L50
+.L49:
+    xorl %ecx, %ecx
+    testl %eax, %eax
+    jle .L51
+.L52:
+    leal -1(%rax), %edx
+    movslq %edx, %rdi
+    addq data(,%rdi,8), %rcx
+    andl %edx, %eax
+    jne .L52
+.L51:
+    subq %rcx, %rsi
+    xorl %eax, %eax
+    movl $.LC0, %edi
+    call printf
+    subl $1, %ebx
+    jne .L56
+    jmp .L47
+```

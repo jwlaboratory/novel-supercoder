@@ -1,0 +1,418 @@
+[
+  {
+    "input": "101914\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "17346\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2771679283\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "7026\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "5110764300\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "472\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "10211397040\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "16034112351\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "010\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "53937807463\n",
+    "output": "10\n\n"
+  },
+  {
+    "input": "2375578529\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "102392\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "3360905534\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "1567311305\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6220\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "748\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "18677078008\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "395\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "593\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "1108\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "101\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "111\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "1250833\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "10010\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "15102704751\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "149537\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "1634271104\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "190346\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "619233107\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "18085\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "1165187166\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "3784\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "4625887173\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "10605\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "6645842010\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "385\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "610\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "470\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "414\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "2182\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "100\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "206684\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "10011\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "18454852044\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "120106\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "984724511\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "305762\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "981365934\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "14871\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "1747602376\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "4606\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "4020311016\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "16116\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "5645239358\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "693\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "953\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "16905846298\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "607\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "264\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "1310\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "110\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "86387\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "10110\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "1784609950\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "205650\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "1411339157\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "517145\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "1416341852\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "15607\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "87908940\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "5783\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "4625312013\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9440\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "7808313569\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "300\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "1758\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "17374143489\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "138\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "107\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "1538\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "001\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "75132\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "10111\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "3194941194\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "49475\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "1933005141\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "577812\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "2015751880\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "14831\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "53317289\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "5964\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "7479929988\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9870\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "960676829\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "427\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "3425\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "20640787921\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "184\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "56\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "299\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "1000003\n",
+    "output": "7\n"
+  },
+  {
+    "input": "10000\n",
+    "output": "3\n"
+  },
+  {
+    "input": "9876543210\n",
+    "output": "6\n"
+  },
+  {
+    "input": "10000\n",
+    "output": "3\n"
+  }
+]

@@ -1,0 +1,6 @@
+[
+  {
+    "input": "4\nabcd\nefgh\nijkl\nmnop\n5\nabcd\nabcc\nefgh\nabcd\nmnop\n",
+    "output": "Opened by abcd\nUnknown abcc\nClosed by efgh\nOpened by abcd\nClosed by mnop\n"
+  }
+]

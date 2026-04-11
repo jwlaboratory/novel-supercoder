@@ -1,0 +1,109 @@
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d%d%d%d"
+.LC2:
+	.string	"%d%d"
+.LC3:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB3:
+	.cfi_startproc
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	subq	$32, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%rsp, %rsi
+	call	__isoc99_scanf
+	movl	(%rsp), %edx
+	testl	%edx, %edx
+	jle	.L2
+	xorl	%ebp, %ebp
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	leaq	16(%rsp), %r8
+	leaq	12(%rsp), %rcx
+	xorl	%eax, %eax
+	xorl	%r12d, %r12d
+	leaq	8(%rsp), %rdx
+	leaq	4(%rsp), %rsi
+	movl	$.LC1, %edi
+	call	__isoc99_scanf
+	movl	4(%rsp), %eax
+	leaq	28(%rsp), %rsi
+	addl	%eax, 12(%rsp)
+	movl	$.LC0, %edi
+	movl	8(%rsp), %eax
+	addl	%eax, 16(%rsp)
+	xorl	%eax, %eax
+	call	__isoc99_scanf
+	movl	28(%rsp), %eax
+	testl	%eax, %eax
+	jle	.L3
+	xorl	%ebx, %ebx
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	leaq	24(%rsp), %rdx
+	leaq	20(%rsp), %rsi
+	movl	$.LC2, %edi
+	xorl	%eax, %eax
+	call	__isoc99_scanf
+	movl	20(%rsp), %eax
+	cmpl	%eax, 4(%rsp)
+	jg	.L4
+	cmpl	12(%rsp), %eax
+	jg	.L4
+	movl	24(%rsp), %eax
+	cmpl	%eax, 8(%rsp)
+	jg	.L4
+	cmpl	16(%rsp), %eax
+	jg	.L4
+	addl	$1, %r12d
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	addl	$1, %ebx
+	cmpl	%ebx, 28(%rsp)
+	jg	.L5
+.L3:
+	movl	%r12d, %esi
+	movl	$.LC3, %edi
+	xorl	%eax, %eax
+	addl	$1, %ebp
+	call	printf
+	cmpl	%ebp, (%rsp)
+	jg	.L6
+.L2:
+	addq	$32, %rsp
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	main, .-main
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

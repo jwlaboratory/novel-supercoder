@@ -1,0 +1,29 @@
+q	$4, %rdi
+	cmpb	$0, 46(%rsp)
+	jne	.L22
+	movl	$-1, %esi
+	movl	$1, %r9d
+.L22:
+	movl	%esi, %eax
+	movl	%r9d, %r10d
+	addq	$72, %rsp
+	.cfi_def_cfa_offset 0
+	popq	%rbx
+	.cfi_def_cfa_offset 8
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 32
+	popq	%r14
+	.cfi_def_cfa_offset 40
+	popq	%r15
+	.cfi_def_cfa_offset 48
+	ret
+	.cfi_endproc
+	.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609"
+	.size	main, .-main
+	.section	.note.GNU-stack,"",@progbits
+```
+```

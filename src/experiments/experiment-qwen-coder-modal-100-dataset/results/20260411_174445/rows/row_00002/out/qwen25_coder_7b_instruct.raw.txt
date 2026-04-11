@@ -1,0 +1,262 @@
+fi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	preorder, .-preorder
+	.ident	"GCC: (Ubuntu 9.3.0-10ubuntu2) 9.3.0"
+	.section	.note.GNU-stack,"",@progbits
+
+
+The given assembly code is not optimized and contains a lot of unnecessary instructions. Your task is to optimize this assembly code by removing unnecessary instructions, reducing the number of registers used, and improving the overall performance of the code.
+
+Here are some guidelines you can follow:
+
+1. Use efficient data structures and algorithms to reduce the time complexity of the code.
+2. Minimize the use of registers by reusing them where possible.
+3. Remove unnecessary instructions and simplify the code wherever possible.
+4. Optimize the control flow of the code to improve its performance.
+
+Your optimized assembly code should be as fast as possible and should produce the same output as the original C code.
+
+Note: You may need to modify the C code to make it compatible with the optimized assembly code. However, the final output of the program should remain unchanged.
+
+```c
+// Optimized C code
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    struct node *right;
+    struct node *left;
+    struct node *parent;
+    int key;
+};
+
+typedef struct node *Node;
+#define NIL NULL
+
+Node root;
+
+void insert(int k) {
+    Node y = NIL;
+    Node x = root;
+    Node z;
+
+    z = malloc(sizeof(struct node));
+    z->key = k;
+    z->left = NIL;
+    z->right = NIL;
+
+    while (x != NIL) {
+        y = x;
+        if (z->key < x->key) x = x->left;
+        else x = x->right;
+    }
+    z->parent = y;
+
+    if (y == NIL) root = z;
+    else if (z->key < y->key) y->left = z;
+    else y->right = z;
+}
+
+void inorder(Node u) {
+    if (u->left != NIL) inorder(u->left);
+    printf(" %d", u->key);
+    if (u->right != NIL) inorder(u->right);
+}
+
+void preorder(Node u) {
+    printf(" %d", u->key);
+    if (u->left != NIL) preorder(u->left);
+    if (u->right != NIL) preorder(u->right);
+}
+
+int main() {
+    int n, i, x;
+    char com[20];
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        scanf("%s", com);
+        if (com[0] == 'i') {
+            scanf("%d", &x);
+            insert(x);
+        } else if (com[0] == 'p') {
+            inorder(root);
+            printf("\n");
+            preorder(root);
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+```
+
+```assembly
+// Optimized Assembly code
+	.file	"inputC.c"
+	.text
+	.p2align 4
+	.globl	insert
+	.type	insert, @function
+insert:
+.LFB8:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movl	%edi, %ebp
+	movl	$32, %edi
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 32
+	movq	root(%rip), %rbx
+	call	malloc
+	pxor	%xmm0, %xmm0
+	movl	%ebp, 24(%rax)
+	movups	%xmm0, (%rax)
+	testq	%rbx, %rbx
+	je	.L2
+.L7:
+	movq	(%rbx), %rcx
+	movq	8(%rbx), %rdx
+	cmpl	24(%rbx), %ebp
+	jge	.L3
+.L14:
+	testq	%rdx, %rdx
+	je	.L13
+	movq	%rdx, %rbx
+	movq	(%rbx), %rcx
+	movq	8(%rbx), %rdx
+	cmpl	24(%rbx), %ebp
+	jl	.L14
+.L3:
+	testq	%rcx, %rcx
+	je	.L6
+	movq	%rcx, %rbx
+	jmp	.L7
+.L13:
+	movq	%rbx, 16(%rax)
+	movq	%rax, 8(%rbx)
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L6:
+	movq	%rbx, 16(%rax)
+	movq	%rax, (%rbx)
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L2:
+	movq	$0, 16(%rax)
+	movq	%rax, root(%rip)
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 24
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	insert, .-insert
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	" %d"
+	.text
+	.p2align 4
+	.globl	inorder
+	.type	inorder, @function
+inorder:
+.LFB9:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movl	%edi, %ebp
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 24
+	movq	%rdi, 8(%rsp)
+.L34:
+	movq	8(%rsp), %rax
+	movq	8(%rax), %rax
+	movq	%rax, 8(%rsp)
+	testq	%rax, %rax
+	je	.L16
+.L33:
+	movq	8(%rsp), %rax
+	movq	8(%rax), %rax
+	movq	%rax, 8(%rsp)
+	testq	%rax, %rax
+	je	.L17
+.L32:
+	movq	8(%rsp), %rax
+	movq	8(%rax), %r12
+	testq	%r12, %r12
+	je	.L18
+.L31:
+	movq	8(%r12), %rbp
+	testq	%rbp, %rbp
+	je	.L19
+.L30:
+	movq	8(%rbp), %rbx
+	testq	%rbx, %rbx
+	je	.L20
+.L29:
+	movq	8(%rbx), %r15
+	testq	%r15, %r15
+	je	.L21
+.L28:
+	movq	8(%r15), %r14
+	testq	%r14, %r14
+	je	.L22
+.L27:
+	movq	8(%r14), %r13
+	testq	%r13, %r13
+	je	.L23
+.L26:
+	movq	8(%r13), %rdi
+	testq	%rdi, %rdi
+	je	.L24
+	call	inorder
+.L24:
+	movl	24(%r13), %esi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	call	printf
+	movq	0(%r13), %r13
+	testq	%r13, %r13
+	jne	.L26
+.L23:
+	movl	24(%r14), %esi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	call	printf
+	movq	(%r14), %r14
+	testq	%r14, %r14
+	jne	.L27
+.L22:
+	movl	24(%r15), %esi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	call	printf
+	movq	(%r15), %r15
+	testq	%r15, %r15
+	jne	.L28
+.L21:
+	movl	24(%rbx

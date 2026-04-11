@@ -1,0 +1,332 @@
+	.file	"inputC.c"
+	.text
+	.p2align 4
+	.globl	nextint
+	.type	nextint, @function
+nextint:
+.LFB8:
+	.cfi_startproc
+	movslq	idx.0(%rip), %rax
+	pushq	%rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+	testl	%eax, %eax
+	je	.L24
+.L2:
+	xorl	%ecx, %ecx
+	jmp	.L3
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	addq	$1, %rax
+	movl	$1, %ecx
+.L3:
+	movzbl	buf(%rax), %edx
+	cmpl	$16777215, %eax
+	jg	.L5
+	cmpb	$47, %dl
+	jle	.L6
+.L5:
+	cmpb	$57, %dl
+	jg	.L6
+	movl	%eax, %edx
+	testb	%cl, %cl
+	je	.L7
+	movl	%eax, idx.0(%rip)
+.L7:
+	movslq	%edx, %rax
+	xorl	%edi, %edi
+	xorl	%ecx, %ecx
+	cmpl	$16777215, %edx
+	jle	.L9
+	jmp	.L13
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	leal	(%rcx,%rcx,4), %ecx
+	leal	1(%rax), %ebx
+	addq	$1, %rax
+	movl	$1, %edi
+	leal	-48(%rdx,%rcx,2), %ecx
+	cmpl	$16777215, %eax
+	jg	.L25
+.L9:
+	movsbl	buf(%rax), %edx
+	leal	-48(%rdx), %esi
+	cmpb	$9, %sil
+	jbe	.L11
+	testb	%dil, %dil
+	je	.L12
+	movl	%ebx, idx.0(%rip)
+.L12:
+	movl	%eax, %ebx
+.L10:
+	cmpl	$16777215, %ebx
+	jg	.L13
+	movl	%ecx, %eax
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L24:
+	.cfi_restore_state
+	movl	$16777216, %edx
+	movl	$buf, %esi
+	xorl	%edi, %edi
+	call	read
+	movslq	idx.0(%rip), %rax
+	jmp	.L2
+	.p2align 4,,10
+	.p2align 3
+.L25:
+	movl	%ebx, idx.0(%rip)
+	jmp	.L10
+.L13:
+	movl	$1, %edi
+	call	exit
+	.cfi_endproc
+.LFE8:
+	.size	nextint, .-nextint
+	.p2align 4
+	.globl	fen_add
+	.type	fen_add, @function
+fen_add:
+.LFB9:
+	.cfi_startproc
+	addl	$1, %edi
+	cmpl	%edx, %edi
+	jg	.L26
+	.p2align 4,,10
+	.p2align 3
+.L28:
+	leal	-1(%rdi), %eax
+	cltq
+	addq	%rsi, data(,%rax,8)
+	movl	%edi, %eax
+	negl	%eax
+	andl	%edi, %eax
+	addl	%eax, %edi
+	cmpl	%edi, %edx
+	jge	.L28
+.L26:
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	fen_add, .-fen_add
+	.p2align 4
+	.globl	fen_sum
+	.type	fen_sum, @function
+fen_sum:
+.LFB10:
+	.cfi_startproc
+	xorl	%edx, %edx
+	testl	%edi, %edi
+	jle	.L30
+	.p2align 4,,10
+	.p2align 3
+.L32:
+	leal	-1(%rdi), %eax
+	movslq	%eax, %rcx
+	addq	data(,%rcx,8), %rdx
+	andl	%eax, %edi
+	jne	.L32
+.L30:
+	movq	%rdx, %rax
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	fen_sum, .-fen_sum
+	.p2align 4
+	.globl	fen_range
+	.type	fen_range, @function
+fen_range:
+.LFB11:
+	.cfi_startproc
+	xorl	%edx, %edx
+	testl	%esi, %esi
+	jle	.L36
+	.p2align 4,,10
+	.p2align 3
+.L37:
+	leal	-1(%rsi), %eax
+	movslq	%eax, %rcx
+	addq	data(,%rcx,8), %rdx
+	andl	%eax, %esi
+	jne	.L37
+.L36:
+	testl	%edi, %edi
+	jle	.L35
+	xorl	%ecx, %ecx
+	.p2align 4,,10
+	.p2align 3
+.L39:
+	leal	-1(%rdi), %eax
+	movslq	%eax, %rsi
+	addq	data(,%rsi,8), %rcx
+	andl	%eax, %edi
+	jne	.L39
+	subq	%rcx, %rdx
+.L35:
+	movq	%rdx, %rax
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	fen_range, .-fen_range
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%ld\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB12:
+	.cfi_startproc
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	xorl	%eax, %eax
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	call	nextint
+	movl	%eax, %ebp
+	xorl	%eax, %eax
+	call	nextint
+	movl	%eax, %ebx
+	testl	%ebp, %ebp
+	jle	.L44
+	xorl	%r12d, %r12d
+	.p2align 4,,10
+	.p2align 3
+.L46:
+	xorl	%eax, %eax
+	addl	$1, %r12d
+	call	nextint
+	movl	%eax, %eax
+	cmpl	%r12d, %ebp
+	jl	.L44
+	movl	%r12d, %edx
+	.p2align 4,,10
+	.p2align 3
+.L45:
+	leal	-1(%rdx), %ecx
+	movslq	%ecx, %rcx
+	addq	%rax, data(,%rcx,8)
+	movl	%edx, %ecx
+	negl	%ecx
+	andl	%edx, %ecx
+	addl	%ecx, %edx
+	cmpl	%edx, %ebp
+	jge	.L45
+	cmpl	%r12d, %ebp
+	jne	.L46
+	.p2align 4,,10
+	.p2align 3
+.L44:
+	testl	%ebx, %ebx
+	je	.L47
+	.p2align 4,,10
+	.p2align 3
+.L56:
+	xorl	%eax, %eax
+	call	nextint
+	cmpl	$1, %eax
+	movl	$0, %eax
+	je	.L69
+	call	nextint
+	movl	%eax, %r12d
+	xorl	%eax, %eax
+	call	nextint
+	addl	$1, %eax
+	cmpl	%eax, %ebp
+	jl	.L53
+	.p2align 4,,10
+	.p2align 3
+.L55:
+	leal	-1(%rax), %edx
+	movslq	%edx, %rdx
+	addq	%r12, data(,%rdx,8)
+	movl	%eax, %edx
+	negl	%edx
+	andl	%eax, %edx
+	addl	%edx, %eax
+	cmpl	%eax, %ebp
+	jge	.L55
+.L53:
+	subl	$1, %ebx
+	jne	.L56
+.L47:
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L69:
+	.cfi_restore_state
+	call	nextint
+	movl	%eax, %r12d
+	xorl	%eax, %eax
+	call	nextint
+	xorl	%esi, %esi
+	testl	%r12d, %r12d
+	jle	.L49
+	.p2align 4,,10
+	.p2align 3
+.L50:
+	leal	-1(%r12), %edx
+	movslq	%edx, %rcx
+	addq	data(,%rcx,8), %rsi
+	andl	%edx, %r12d
+	jne	.L50
+.L49:
+	xorl	%ecx, %ecx
+	testl	%eax, %eax
+	jle	.L51
+	.p2align 4,,10
+	.p2align 3
+.L52:
+	leal	-1(%rax), %edx
+	movslq	%edx, %rdi
+	addq	data(,%rdi,8), %rcx
+	andl	%edx, %eax
+	jne	.L52
+.L51:
+	subq	%rcx, %rsi
+	xorl	%eax, %eax
+	movl	$.LC0, %edi
+	call	printf
+	subl	$1, %ebx
+	jne	.L56
+	jmp	.L47
+	.cfi_endproc
+.LFE12:
+	.size	main, .-main
+	.local	idx.0
+	.comm	idx.0,4,4
+	.globl	data
+	.bss
+	.align 32
+	.type	data, @object
+	.size	data, 4194304
+data:
+	.zero	4194304
+	.globl	buf
+	.align 32
+	.type	buf, @object
+	.size	buf, 16777216
+buf:
+	.zero	16777216
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

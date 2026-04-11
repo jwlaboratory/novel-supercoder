@@ -1,0 +1,410 @@
+[
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "YES\nNO\nYES\nYES\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nYES\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFjzmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nWYzXTZ\n0\n",
+    "output": "NO\nNO\nYES\nNO\nYES\n\n"
+  },
+  {
+    "input": "zqbZNa\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nOnUvif\nAizuaH\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAiyuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "YES\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "YES\nNO\nYES\nYES\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFjzmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbcfaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbcfaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbcfaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nbcfaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziu\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziu\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzjZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziu\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzj[\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzj[\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzj[\nUnivOf\nAizuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nBCwmAi\nBcbZCj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nBCwmAi\nBcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nBcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nBcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nBcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\ndeafcb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nBcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\npiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzi`\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTWzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzi`\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcbCZj\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzi`\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFE\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzi`\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceafdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzi`\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nooMzHJ\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzi`\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nAhzuaH\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\nnCXzi`\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\n`CXzin\nQgmABC\nJHyNop\nzGXomI\nphMTZO\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\n`CXzin\nQgmABC\nJHyNop\nzGXomI\nOZTMhp\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiglIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\n`CXzin\nQgmABC\nJHyNop\nzGXomI\nOZTMhp\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nzTXZZW\npiflIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\n`CXzin\nQgmABC\nJHyNop\nzGXomI\nOZTMhp\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nGNULRP\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\n`CXzin\nQgmABC\nJHyNop\nzGXomI\nOZTMhp\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nfabcde\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCj\n`CXzin\nQgmABC\nJHyNop\nzGXomI\nOZTMhp\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCi\n`CXzin\nQgmABC\nJHyNop\nzGXomI\nOZTMhp\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCi\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nACwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCi\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\nceagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\nZcbBCi\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\necagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdef\nBFACDF\necagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\necagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFizmKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\necagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nuAzIXZ\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\necagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGXomI\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nUnNvif\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nuAzIXZ\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nHaAziv\nyTXZZW\npiflIt\nPRLUNG\nhgjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nHaAziv\nzTXZZW\npiflIt\nPRLUNG\nhgjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzabZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nHaAziv\nzTXZZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdef\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nHaAziv\nzTXZZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nHaAziv\nzTXZZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBECAE\nabcdfe\nBFACDF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAziv\nzTXZZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBECAE\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAziv\nzTXZZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBECAE\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAziv\nzTX[ZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTzWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBECAE\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAziv\nzTX[ZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTyWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBEC@E\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAziv\nzTX[ZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTyWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmBi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBEC@E\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAzjv\nzTX[ZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTyWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmAi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBEC@E\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAzjv\nzTX[ZW\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTyWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmAi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBEC@E\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAzjv\nWZ[XTz\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTyWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zaaZNq\nBCxmAi\niCBbcZ\n`CXzin\nQgmABC\nJHyNpo\nzGIomX\nOZTMhp\nzbbZnQ\nADwmAi\nAcjCZb\naziWCm\nQgmABC\nJHzMoo\nImoXGz\nMOTZhq\nabcdeg\nABDCFF\nFBEC@E\nabcdfe\nBFACEF\nedagdb\nedcbaf\nDE@BCF\nfivNnU\nGaAzkv\nWZ[XTz\npiflIt\nPRLUNG\nhhjFtH\nZXIzAu\nFKmzj[\nUnivOf\nHauzhA\noiglIt\nhigGtH\nPNLURG\nZXIzAu\nFiymKZ\nZTyWYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "YES\nNO\nYES\nYES\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxAmi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "YES\nNO\nYES\nYES\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCi\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nYES\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nRGULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nYES\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZccBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nphOTZM\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nEACDBF\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nphZTOM\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nPgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nZcbBCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nXCmzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nmCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nCBAmgQ\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nAizuaH\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAiyuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzMop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigtGH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naimXCz\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmBBC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCwmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOZTMhp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHauziA\nzTXZYW\npiglIt\nGNULRP\nhgiGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\nnCXzia\nQgmABC\nJHzNop\nImoXGz\nOhTMZp\nzabZnQ\nBCwmAi\nBcbZCj\naizXCm\nQgmABC\npoMzHJ\nImoXGz\nMOTZhp\nabcdef\nABDCFE\nFBECAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDE@BCF\nUnOvif\nHaAziu\nzTXZYW\npiglIt\nGNULRP\nhgjGtH\nuAzIXZ\nZjzmKF\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "NO\nNO\nYES\nNO\nNO\n\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "YES\nNO\nYES\nYES\nNO\n"
+  },
+  {
+    "input": "zabZNq\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nzabZnQ\nBCxmAi\nZcbBCj\naizXCm\nQgmABC\nJHzMop\nImoXGz\nMZTOhp\nabcdef\nABDCFE\nFBDCAE\nabcdef\nBEACDF\nbfcaed\nfabcde\nDEABCF\nUnivOf\nAizuaH\nzTXZYW\npiglIt\nGRULNP\nhigGtH\nuAzIXZ\nFizmKZ\nUnivOf\nAizuaH\npiglIt\nhigGtH\nGRULNP\nuAzIXZ\nFizmKZ\nZTXzYW\n0\n",
+    "output": "YES\nNO\nYES\nYES\nNO\n"
+  }
+]

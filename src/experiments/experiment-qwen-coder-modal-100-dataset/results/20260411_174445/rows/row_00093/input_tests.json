@@ -1,0 +1,10 @@
+[
+  {
+    "input": "2\nHIT\nOUT\nHOMERUN\nHIT\nHIT\nHOMERUN\nHIT\nOUT\nHIT\nHIT\nHIT\nHIT\nOUT\nHIT\nHIT\nOUT\nHIT\nOUT\nOUT\n",
+    "output": "7\n0\n"
+  },
+  {
+    "input": "2\nHIT\nOUT\nHOMERUN\nHIT\nHIT\nHOMERUN\nHIT\nOUT\nHIT\nHIT\nHIT\nHIT\nOUT\nHIT\nHIT\nOUT\nHIT\nOUT\nOUT\n",
+    "output": "7\n0\n"
+  }
+]

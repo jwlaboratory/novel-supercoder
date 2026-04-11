@@ -1,0 +1,422 @@
+[
+  {
+    "input": "6 2\nLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 3\nRRRLRLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 0\nRRRLRLRLL\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "6 0\nLRRLRL\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "9 1\nRRRRLLRLL\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "9 1\nRLRRLLLRR\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "6 1\nRRLLRL\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "10 2\nLLLLLRRRRR\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "13 4\nLRRLRLRRLRLLR\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "13 8\nLRRLRLRRLRLLR\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 0\nRRLLRL\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "6 0\nLRLRLR\n",
+    "output": "0\n\n"
+  },
+  {
+    "input": "9 0\nRRRRLLRLL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 4\nLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 1\nLRRLRL\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "6 3\nLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 1\nRRRLRLRLL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 3\nLRRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 2\nRRRRLLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "6 2\nLRRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 0\nLRLRRL\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "9 4\nRRRLRLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 1\nRRRRLLLRL\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "6 4\nLRLRLR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 1\nLLRLRLRRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 4\nRLRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 2\nRLRRLLLRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "10 0\nLLLLLRRRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "6 5\nLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 6\nLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 0\nLLRLRLRRR\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "6 5\nLRRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 2\nRRRRLLLLR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 3\nRRRRLLLLR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 3\nLLRLRLRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "6 4\nLRRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 1\nLLRLLRRRR\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "9 6\nRRRLRLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 0\nRRRRLLLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 2\nLLRLRLRRR\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "9 0\nRLRRLLLRR\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "6 6\nLRRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 0\nLRRLLLRRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 1\nRLLLRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 5\nLLRLRLRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 8\nRRRLRLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 8\nRRRLRRLLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 8\nLLLRRLRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 0\nLLRLRRLRR\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "9 0\nRRRRLRLLL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 4\nLRLLRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 3\nRRLLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 4\nRRRRLLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 6\nLRRRRLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 0\nLLRLLRRRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 0\nLLRRLRLRR\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "9 2\nRRLLLRRLR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "10 0\nLRLLLRRRLR\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "6 10\nLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 2\nRLLLLRRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 0\nRRRRLLLLR\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "6 1\nLRLLRR\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "9 5\nRRRLRLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 2\nLLRRRLRLR\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "9 8\nRLRLRLRRL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 7\nLLLRRLRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 0\nRRRLLRLRL\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "9 1\nLRRRRLRLL\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "9 4\nRLLLLRRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 0\nRRLRRLLLR\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "6 2\nLRLLRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 3\nLLRRRLRLR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 2\nLLLRRLRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "13 8\nRLLRLRRLRLRRL\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "9 1\nRRRLLRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 2\nLRRRRLRLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 3\nRLLLLRRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 1\nLLLRRLRRR\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "13 9\nRLLRLRRLRLRRL\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "9 1\nRRRLRRLLL\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "9 4\nLLRLRLRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 1\nLRLLLRRRR\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "9 4\nRLRRLLLRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "6 11\nLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 4\nRRRRLLLLR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "10 2\nRRRRRLLLLL\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "9 1\nLRRLLLRRR\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "9 12\nRRRLRRLLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "6 5\nLRLLRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 3\nRLRLRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 6\nLLRRRLRRL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 1\nLLRRLRLRR\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 0\nRLLLLRRRR\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "9 2\nRLRLRLRRL\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 7\nRRRLRRLLL\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "13 8\nLRRLRLRLLRRLR\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "9 8\nRLLLLRRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 6\nLLRRRLRLR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 3\nLLLRRLRRR\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "9 2\nRRRLLRLRL\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "10 1\nLLLLLRRRRR\n",
+    "output": "9\n"
+  },
+  {
+    "input": "6 1\nLRLRRL\n",
+    "output": "3\n"
+  },
+  {
+    "input": "6 1\nLRLRRL\n",
+    "output": "3\n"
+  },
+  {
+    "input": "13 3\nLRRLRLRRLRLLR\n",
+    "output": "9\n"
+  },
+  {
+    "input": "9 2\nRRRLRLRLL\n",
+    "output": "7\n"
+  }
+]

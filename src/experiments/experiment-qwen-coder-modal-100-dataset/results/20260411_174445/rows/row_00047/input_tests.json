@@ -1,0 +1,426 @@
+[
+  {
+    "input": "4 5\nS#...\n.#.$.\n.#.#.\n...#G\n",
+    "output": "21\n\n"
+  },
+  {
+    "input": "5 5\n.S...\n.....\n.....\n.....\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "4 5\nG####\nonxoo\nx#o\nSoooo\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.$.\n.#.#.\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\no#ooS\no#o#o\no#o#o\nooo#G\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "7 5\nS....\n.....\n.....\n.....\n....G\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "4 5\nS#-..\n.#.$.\n.#.$.\n/..#G\n",
+    "output": "17\n\n"
+  },
+  {
+    "input": "4 5\nG####\npoxoo\no#x\noooSo\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "6 5\n.S...\n.../.\n.....\n..-..\n..G..\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "4 5\nS#-..\n.$.$.\n.#.$.\n/..#G\n",
+    "output": "13\n\n"
+  },
+  {
+    "input": "12 7\nS#..-\n.$.#.\n.#.\"/\n#G../\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "13 6\n.S...\n.-...\n-....\n/....\nG....\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "10 9\nS#...\n.#.$.\n/#..\"\nG#./.\n",
+    "output": "16\n\n"
+  },
+  {
+    "input": "12 27\n0..S.\n./...\n./../\n/.-.-\n..G-.\n",
+    "output": "32\n\n"
+  },
+  {
+    "input": "4 9\nS..#.\n-#.$.\n#./#.\n./.#G\n",
+    "output": "10\n\n"
+  },
+  {
+    "input": "2 39\n/S0..\n./...\n0../.\n/--/-\n.-G,-\n",
+    "output": "35\n\n"
+  },
+  {
+    "input": "10 10\nS#...\n.#.$.\n/#..\"\nG#./.\n",
+    "output": "15\n\n"
+  },
+  {
+    "input": "3 39\nS.0./\n.../.\n./../\n/.-/-\n.-G-.\n",
+    "output": "37\n\n"
+  },
+  {
+    "input": "6 18\nS#...\n-#.$.\n/.\"#.\nG#/..\n",
+    "output": "29\n\n"
+  },
+  {
+    "input": "3 39\n/.0.S\n.../.\n/../-\n/.-/-\n.-G-.\n",
+    "output": "30\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.$.\n.#.#.\n/..#G\n",
+    "output": "21\n\n"
+  },
+  {
+    "input": "6 5\n.S...\n.....\n.....\n.....\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "4 5\nG####\nooxoo\no#x\nSoooo\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "4 5\nG####\nonxoo\no#x\nSoooo\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "4 5\nS#-..\n.#.$.\n.#.#.\n/..#G\n",
+    "output": "21\n\n"
+  },
+  {
+    "input": "6 5\n.S...\n.....\n.....\n..-..\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 5\nS#...\n.#.$.\n.#.#.\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\no#ooS\no#o#o\no#o#p\nooo#G\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 5\nS....\n.....\n.....\n.....\n....G\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "4 5\nG####\nooxoo\no#x\noooSo\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 5\n.S...\n.../.\n.....\n..-..\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 5\nS#...\n.#.$.\n.#.\".\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 5\n.S...\n.....\n.....\n.....\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "7 5\n.S...\n.../.\n.....\n..-..\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 5\nS#...\n.#.$.\n.#\"..\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 5\n.S...\n.....\n.....\n..../\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 5\nS#...\n.#.$.\n.#\"..\nG#/..\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 5\n.S...\n.....\n..../\n..../\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 5\nS#.-.\n.#.$.\n.#\"..\nG#/..\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 5\n/S...\n.....\n..../\n..../\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.#.\n.#.#.\nG#...\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "5 5\nS....\n..../\n.....\n.....\n....G\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.$.\n.#.#.\n...\"G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.$.\n.#.\".\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "7 5\nS....\n.....\n.....\n..../\n....G\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "11 5\n.S...\n.....\n.....\n..-..\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "9 5\nS#...\n.#.$.\n.#.#.\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\no#ooS\no#o#o\np#o#o\nooo#G\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "5 5\nS....\n.....\n....-\n.....\n....G\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "6 7\nS#...\n.#.$.\n.#.\".\nG#../\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 5\n...S.\n.....\n.....\n.....\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "7 5\n.S...\n./...\n.....\n..-..\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "9 5\nS#...\n.#.$.\n.#\"..\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 5\n.S...\n.....\n-....\n..../\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 7\nS#...\n.#.$.\n.#\"..\nG#/..\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 5\n.S...\n-....\n..../\n..../\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "10 5\nS#.-.\n.#.$.\n.#\"..\nG#/..\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.#.\n.#.#.\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "5 5\nS....\n....0\n.....\n.....\n....G\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "5 5\nS#...\n.#.$.\n.#.#.\n...\"G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.%.\n.#.\".\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "7 5\nS....\n.....\n..../\n..../\n....G\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "11 5\n.S/..\n.....\n.....\n..-..\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "9 5\nS#...\n.#.$.\n.##..\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\nG####\nooxop\no#x\noooSo\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 5\n.S...\n.../.\n.....\n..-..\n..G.-\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "6 7\nS#...\n.$.#.\n.#.\".\nG#../\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 7\n...S.\n.....\n.....\n.....\n....G\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "9 5\nS#...\n.#.$.\n.#\"..\nG#..0\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 5\n.S...\n.-...\n-....\n..../\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "6 7\nS#...\n.#.$.\n..\"#.\nG#/..\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 5\n.S...\n-.-..\n..../\n..../\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.#.\n.$.#.\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "5 5\nS#...\n.#.$.\n.#.#.\nG\"...\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.%.\n...\"#\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\nS#-..\n.$.$.\n.#-$.\n/..#G\n",
+    "output": "13\n\n"
+  },
+  {
+    "input": "11 5\n.S/..\n.....\n.-...\n..-..\n....G\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "9 5\nS$...\n.#.$.\n.##..\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "6 5\n.S../\n.../.\n.....\n..-..\n..G.-\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "12 7\nS#...\n.$.#.\n.#.\".\nG#../\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 7\n...S.\n.....\n.....\n-....\n....G\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "8 6\n.S...\n.-...\n-....\n..../\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "6 7\nS#...\n.#.$.\n/.\"#.\nG#/..\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 7\n.S...\n-.-..\n..../\n..../\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.\".\n.$.#.\nG#../\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "5 5\nS#...\n.#.$.\n.#..#\nG\"...\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "4 5\nS#--.\n.$.$.\n.#-$.\n/..#G\n",
+    "output": "13\n\n"
+  },
+  {
+    "input": "12 5\n.S../\n.../.\n.....\n..-..\n..G.-\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "12 7\nS#..-\n.$.#.\n.#.\".\nG#../\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 5\n...S.\n.....\n.....\n-....\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "13 6\n.S...\n.-...\n-....\n..../\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "6 7\nS#...\n-#.$.\n/.\"#.\nG#/..\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 7\n.S...\n-.-..\n/.../\n..../\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "5 5\nS#...\n.#.$.\n.#..#\nG\"./.\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "12 5\n.S../\n.../.\n.....\n-.-..\n..G.-\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "12 7\nS#..-\n.$.#.\n.#.\"/\nG#../\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "16 5\n...S.\n.....\n.....\n-....\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "13 6\n.S...\n.-...\n-....\n/....\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "9 7\nS#...\n-#.$.\n/.\"#.\nG#/..\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "8 7\n.S...\n-.--.\n/.../\n..../\n....G\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "5 5\nS....\n.....\n.....\n.....\n....G\n",
+    "output": "14\n"
+  },
+  {
+    "input": "4 5\nS#...\n.#.#.\n.#.#.\n...#G\n",
+    "output": "23\n"
+  },
+  {
+    "input": "5 5\nS....\n.....\n.....\n.....\n....G\n",
+    "output": "14\n"
+  },
+  {
+    "input": "4 5\nG####\nooxoo\nx#o\nSoooo\n",
+    "output": "10\n"
+  },
+  {
+    "input": "4 5\nS#ooo\no#o#o\no#o#o\nooo#G\n",
+    "output": "14\n"
+  },
+  {
+    "input": "5 5\nSxxxx\nxxxxx\nxxxxx\nxxxxx\nxxxxG\n",
+    "output": "15\n"
+  }
+]

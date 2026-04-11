@@ -1,0 +1,43 @@
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d %d"
+.LC2:
+	.string	"%lf\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB3:
+	.cfi_startproc
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	leaq	12(%rsp), %rdx
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf
+	movl	8(%rsp), %eax
+	imull	12(%rsp), %eax
+	pxor	%xmm0, %xmm0
+	movl	$.LC2, %edi
+	cvtsi2sdl	%eax, %xmm0
+	movl	$1, %eax
+	divsd	.LC1(%rip), %xmm0
+	call	printf
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	main, .-main
+	.section	.rodata.cst8,"aM",@progbits,8
+	.align 8
+.LC1:
+	.long	1744100320
+	.long	1074426431
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

@@ -1,0 +1,195 @@
+movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L63:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L64:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L65:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L66:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L67:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L68:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L69:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L70:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L71:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl	$0, potential(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L72:
+	movq	24(%rsp), %rdx
+	movl	$min_cost, %edi
+	movl	$269488144, %esi
+	call	memset
+	movq	16(%rsp), %rax
+	movl	%ebx, que+4(%rip)
+	xorl	%edi, %edi
+	movl	$1, qsize(%rip)
+	movl	$0, que(%rip)
+	movl	$0, min_cost(,%rax,4)
+	movl	%r12d, %edi
+	movl	%r15d, %esi
+	movl	%r14d, %edx
+	movl	$0, prevv(%rip)
+	movl	$0, preve(%rip)
+	movl

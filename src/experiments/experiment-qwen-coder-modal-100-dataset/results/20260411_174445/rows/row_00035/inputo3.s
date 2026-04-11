@@ -1,0 +1,263 @@
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB5:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	movl	$202, %esi
+	movl	$s, %edi
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 64
+	movq	stdin(%rip), %rdx
+	call	fgets
+	movzbl	s(%rip), %ebx
+	cmpb	$31, %bl
+	jbe	.L2
+	call	__ctype_b_loc
+	xorl	%edx, %edx
+	movl	$num, %esi
+	movl	$sgn, %r8d
+	movq	%rax, %rdi
+	jmp	.L5
+.L33:
+	movb	%dl, (%rsi)
+	addq	$1, %rsi
+.L4:
+	movzbl	s+1(%rdx), %ebx
+	addq	$1, %rdx
+	cmpb	$31, %bl
+	jbe	.L32
+.L5:
+	movq	(%rdi), %rcx
+	movzbl	%bl, %eax
+	testb	$8, 1(%rcx,%rax,2)
+	jne	.L33
+	subl	$43, %ebx
+	andl	$253, %ebx
+	jne	.L4
+	movb	%dl, (%r8)
+	movzbl	s+1(%rdx), %ebx
+	addq	$1, %rdx
+	addq	$1, %r8
+	cmpb	$31, %bl
+	ja	.L5
+.L32:
+	subq	$num, %rsi
+	movl	$163216, %edx
+	movl	$min, %edi
+	movq	%rsi, %r13
+	movl	%esi, %ebx
+	movl	$269488144, %esi
+	call	memset
+	movl	$163216, %edx
+	movl	$-269488144, %esi
+	movl	$max, %edi
+	call	memset
+	testl	%r13d, %r13d
+	jle	.L22
+	leal	-1(%r13), %esi
+	xorl	%ecx, %ecx
+	xorl	%edx, %edx
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	movzbl	num(%rdx), %eax
+	addq	$812, %rcx
+	movzbl	s(%rax), %eax
+	andl	$15, %eax
+	movl	%eax, max-812(%rcx)
+	movl	%eax, min-812(%rcx)
+	movq	%rdx, %rax
+	addq	$1, %rdx
+	cmpq	%rsi, %rax
+	jne	.L7
+	movq	$-4, %rbp
+	movl	$1, %r12d
+	cmpl	$1, %r13d
+	je	.L22
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	leaq	0(,%r12,4), %rdi
+	movq	%r12, %r8
+	xorl	%r9d, %r9d
+	.p2align 4,,10
+	.p2align 3
+.L21:
+	movl	%r8d, %r11d
+	movl	%r9d, %r10d
+	leaq	(%rdi,%rbp), %rsi
+	movq	%rdi, %rcx
+	movq	%r9, %rax
+	cmpl	%r8d, %r9d
+	jl	.L17
+	jmp	.L20
+	.p2align 4,,10
+	.p2align 3
+.L14:
+	subl	%r13d, %edx
+	cmpl	%r14d, %edx
+	jle	.L16
+	movl	%edx, max(%rdi)
+.L16:
+	movl	min(%rsi), %edx
+	subl	max+808(%rcx), %edx
+	cmpl	%edx, min(%rdi)
+	jle	.L11
+	movl	%edx, min(%rdi)
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	addq	$1, %rax
+	addq	$4, %rsi
+	addq	$808, %rcx
+	cmpl	%eax, %r11d
+	jle	.L20
+.L17:
+	cmpl	%eax, %r10d
+	je	.L9
+	movzbl	num(%r9), %edx
+	cmpb	$41, s+1(%rdx)
+	je	.L11
+	movzbl	num(%rax), %edx
+	subl	$1, %edx
+	movslq	%edx, %rdx
+	cmpb	$40, s(%rdx)
+	je	.L11
+.L9:
+	leal	1(%rax), %edx
+	cmpl	%r8d, %edx
+	je	.L13
+	movzbl	num+1(%rax), %edx
+	cmpb	$41, s+1(%rdx)
+	je	.L11
+	movzbl	num(%r8), %edx
+	subl	$1, %edx
+	movslq	%edx, %rdx
+	cmpb	$40, s(%rdx)
+	je	.L11
+.L13:
+	movzbl	sgn(%rax), %r15d
+	movl	max(%rsi), %edx
+	movl	min+808(%rcx), %r13d
+	movl	max(%rdi), %r14d
+	cmpb	$43, s(%r15)
+	jne	.L14
+	addl	max+808(%rcx), %edx
+	cmpl	%r14d, %edx
+	jle	.L15
+	movl	%edx, max(%rdi)
+.L15:
+	addl	min(%rsi), %r13d
+	cmpl	%r13d, min(%rdi)
+	jle	.L11
+	movl	%r13d, min(%rdi)
+	jmp	.L11
+	.p2align 4,,10
+	.p2align 3
+.L20:
+	addq	$1, %r8
+	addq	$1, %r9
+	addq	$812, %rdi
+	cmpl	%r8d, %ebx
+	jg	.L21
+	addq	$1, %r12
+	subq	$4, %rbp
+	cmpl	%r12d, %ebx
+	jg	.L8
+.L22:
+	leal	-1(%rbx), %eax
+	movl	$.LC0, %edi
+	cltq
+	movl	max(,%rax,4), %esi
+	xorl	%eax, %eax
+	call	printf
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+.L2:
+	.cfi_restore_state
+	movl	$163216, %edx
+	movl	$269488144, %esi
+	movl	$min, %edi
+	xorl	%ebx, %ebx
+	call	memset
+	movl	$163216, %edx
+	movl	$-269488144, %esi
+	movl	$max, %edi
+	call	memset
+	jmp	.L22
+	.cfi_endproc
+.LFE5:
+	.size	main, .-main
+	.globl	max
+	.bss
+	.align 32
+	.type	max, @object
+	.size	max, 163216
+max:
+	.zero	163216
+	.globl	min
+	.align 32
+	.type	min, @object
+	.size	min, 163216
+min:
+	.zero	163216
+	.globl	num
+	.align 32
+	.type	num, @object
+	.size	num, 202
+num:
+	.zero	202
+	.globl	sgn
+	.align 32
+	.type	sgn, @object
+	.size	sgn, 202
+sgn:
+	.zero	202
+	.globl	s
+	.align 32
+	.type	s, @object
+	.size	s, 202
+s:
+	.zero	202
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits
