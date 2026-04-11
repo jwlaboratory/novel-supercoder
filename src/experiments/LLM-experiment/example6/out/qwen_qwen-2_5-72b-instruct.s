@@ -1,0 +1,74 @@
+.arch armv8-a
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align	3
+.LC0:
+	.string	"%lf"
+	.align	3
+.LC1:
+	.string	"error"
+	.align	3
+.LC2:
+	.string	"%lf %lf\n"
+	.section	.text.startup,"ax",@progbits
+	.align	2
+	.p2align 4,,11
+	.global	main
+	.type	main, %function
+main:
+.LFB3:
+	.cfi_startproc
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	adrp	x0, .LC0
+	add	x0, x0, :lo12:.LC0
+	mov	x29, sp
+	add	x1, sp, 24
+	bl	__isoc99_scanf
+	ldr	d2, [sp, 24]
+	fcmp	d2, #0.0
+	bls	.L2
+	mov	x0, 149533581377536
+	movk	x0, 0x40c3, lsl 48
+	fmov	d0, x0
+	fcmp	d2, d0
+	bge	.L2
+	adrp	x0, .LC3
+	ldr	d0, [x0, #:lo12:.LC3]
+	adrp	x0, .LC4
+	ldr	d1, [x0, #:lo12:.LC4]
+	fmul	d0, d2, d0
+	fmul	d1, d2, d1
+	fmul	d0, d0, d2
+	adrp	x0, .LC2
+	add	x0, x0, :lo12:.LC2
+	bl	printf
+	b	.L5
+.L2:
+	adrp	x0, .LC1
+	add	x0, x0, :lo12:.LC1
+	bl	puts
+.L5:
+	mov	w0, 0
+	ldp	x29, x30, [sp], 32
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	main, .-main
+	.section	.rodata.cst8,"aM",@progbits,8
+	.align	3
+.LC3:
+	.word	1413752350
+	.word	1074340347
+	.align	3
+.LC4:
+	.word	1413752350
+	.word	1075388923
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

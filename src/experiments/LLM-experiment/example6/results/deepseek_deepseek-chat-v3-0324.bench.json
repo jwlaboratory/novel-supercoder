@@ -1,0 +1,986 @@
+{
+  "ok": false,
+  "script_exit_code": 3,
+  "phases": [
+    {
+      "name": "correctness",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "script_stdout": "",
+  "script_stderr": "",
+  "compile": {
+    "skipped": false,
+    "assembly": {
+      "binary": "bench_asm",
+      "ok": true
+    },
+    "baselines": {
+      "O0": {
+        "binary": "bench_O0",
+        "ok": false
+      },
+      "O1": {
+        "binary": "bench_O1",
+        "ok": false
+      },
+      "O2": {
+        "binary": "bench_O2",
+        "ok": false
+      },
+      "O3": {
+        "binary": "bench_O3",
+        "ok": false
+      }
+    }
+  },
+  "correctness": {
+    "enabled": true,
+    "strict": false,
+    "cases": [
+      {
+        "index": 0,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "50.265482457 25.1327412287\n\n",
+        "actual": "50.265482 25.132741\n",
+        "stderr": ""
+      },
+      {
+        "index": 1,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "0.000000000 0.0\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 2,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "78.539816340 31.4159265359\n\n",
+        "actual": "78.539816 31.415927\n",
+        "stderr": ""
+      },
+      {
+        "index": 3,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "3.141592654 6.28318530718\n\n",
+        "actual": "3.141593 6.283185\n",
+        "stderr": ""
+      },
+      {
+        "index": 4,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "113.097335529 37.6991118431\n\n",
+        "actual": "113.097336 37.699112\n",
+        "stderr": ""
+      },
+      {
+        "index": 5,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "3.141592654 -6.28318530718\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 6,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "314.159265359 62.8318530718\n\n",
+        "actual": "314.159265 62.831853\n",
+        "stderr": ""
+      },
+      {
+        "index": 7,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "12.566370614 -12.5663706144\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 8,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "153.938040026 43.9822971502\n\n",
+        "actual": "153.938040 43.982297\n",
+        "stderr": ""
+      },
+      {
+        "index": 9,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "50.265482457 -25.1327412287\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 10,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "380.132711084 69.115038379\n\n",
+        "actual": "380.132711 69.115038\n",
+        "stderr": ""
+      },
+      {
+        "index": 11,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "28.274333882 -18.8495559215\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 12,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "907.920276887 106.814150222\n\n",
+        "actual": "907.920277 106.814150\n",
+        "stderr": ""
+      },
+      {
+        "index": 13,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "78.539816340 -31.4159265359\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 14,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "530.929158457 81.6814089933\n\n",
+        "actual": "530.929158 81.681409\n",
+        "stderr": ""
+      },
+      {
+        "index": 15,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "314.159265359 -62.8318530718\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 16,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1385.442360233 131.946891451\n\n",
+        "actual": "1385.442360 131.946891\n",
+        "stderr": ""
+      },
+      {
+        "index": 17,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "530.929158457 -81.6814089933\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 18,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "3631.681107549 213.628300444\n\n",
+        "actual": "3631.681108 213.628300\n",
+        "stderr": ""
+      },
+      {
+        "index": 19,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1520.530844337 -138.230076758\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 20,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "4778.362426109 245.04422698\n\n",
+        "actual": "4778.362426 245.044227\n",
+        "stderr": ""
+      },
+      {
+        "index": 21,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "201.061929830 -50.2654824574\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 22,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "17203.361371053 464.955712731\n\n",
+        "actual": "17203.361371 464.955713\n",
+        "stderr": ""
+      },
+      {
+        "index": 23,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "201.061929830 50.2654824574\n\n",
+        "actual": "201.061930 50.265482\n",
+        "stderr": ""
+      },
+      {
+        "index": 24,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "18145.839167130 477.522083346\n\n",
+        "actual": "18145.839167 477.522083\n",
+        "stderr": ""
+      },
+      {
+        "index": 25,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "153.938040026 -43.9822971502\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 26,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "69746.498502329 936.19461077\n\n",
+        "actual": "69746.498502 936.194611\n",
+        "stderr": ""
+      },
+      {
+        "index": 27,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "113.097335529 -37.6991118431\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 28,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "452.389342117 75.3982236861\n\n",
+        "actual": "452.389342 75.398224\n",
+        "stderr": ""
+      },
+      {
+        "index": 29,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "380.132711084 -69.115038379\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 30,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1809.557368467 150.796447372\n\n",
+        "actual": "1809.557368 150.796447\n",
+        "stderr": ""
+      },
+      {
+        "index": 31,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "615.752160103 -87.9645943005\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 32,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "6647.610054994 289.02652413\n\n",
+        "actual": "6647.610055 289.026524\n",
+        "stderr": ""
+      },
+      {
+        "index": 33,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "452.389342117 -75.3982236861\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 34,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "11309.733552920 376.991118431\n\n",
+        "actual": "11309.733553 376.991118\n",
+        "stderr": ""
+      },
+      {
+        "index": 35,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "907.920276887 -106.814150222\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 36,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "615.752160103 87.9645943005\n\n",
+        "actual": "615.752160 87.964594\n",
+        "stderr": ""
+      },
+      {
+        "index": 37,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "706.858347058 -94.2477796077\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 38,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "804.247719319 100.530964915\n\n",
+        "actual": "804.247719 100.530965\n",
+        "stderr": ""
+      },
+      {
+        "index": 39,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1256.637061436 125.663706144\n\n",
+        "actual": "1256.637061 125.663706\n",
+        "stderr": ""
+      },
+      {
+        "index": 40,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1963.495408493 157.079632679\n\n",
+        "actual": "1963.495408 157.079633\n",
+        "stderr": ""
+      },
+      {
+        "index": 41,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1661.902513749 144.513262065\n\n",
+        "actual": "1661.902514 144.513262\n",
+        "stderr": ""
+      },
+      {
+        "index": 42,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1134.114947946 119.380520836\n\n",
+        "actual": "1134.114948 119.380521\n",
+        "stderr": ""
+      },
+      {
+        "index": 43,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1520.530844337 138.230076758\n\n",
+        "actual": "1520.530844 138.230077\n",
+        "stderr": ""
+      },
+      {
+        "index": 44,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "706.858347058 94.2477796077\n\n",
+        "actual": "706.858347 94.247780\n",
+        "stderr": ""
+      },
+      {
+        "index": 45,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "254.469004941 -56.5486677646\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 46,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "254.469004941 56.5486677646\n\n",
+        "actual": "254.469005 56.548668\n",
+        "stderr": ""
+      },
+      {
+        "index": 47,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1017.876019763 -113.097335529\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 48,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1017.876019763 113.097335529\n\n",
+        "actual": "1017.876020 113.097336\n",
+        "stderr": ""
+      },
+      {
+        "index": 49,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "3631.681107549 -213.628300444\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 50,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "804.247719319 -100.530964915\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 51,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "9160.884177866 -339.292006588\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 52,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "2123.716633826 -163.362817987\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 53,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "2290.221044466 169.646003294\n\n",
+        "actual": "2290.221044 169.646003\n",
+        "stderr": ""
+      },
+      {
+        "index": 54,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "7238.229473869 -301.592894745\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 55,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "2827.433388230 188.495559215\n\n",
+        "actual": "2827.433388 188.495559\n",
+        "stderr": ""
+      },
+      {
+        "index": 56,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "11309.733552920 -376.991118431\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 57,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "2123.716633826 163.362817987\n\n",
+        "actual": "2123.716634 163.362818\n",
+        "stderr": ""
+      },
+      {
+        "index": 58,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "14526.724430196 -427.256600888\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 59,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "6082.123377348 276.460153516\n\n",
+        "actual": "6082.123377 276.460154\n",
+        "stderr": ""
+      },
+      {
+        "index": 60,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "22167.077763724 -527.787565803\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 61,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "12468.981242095 395.840674352\n\n",
+        "actual": "12468.981242 395.840674\n",
+        "stderr": ""
+      },
+      {
+        "index": 62,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "40114.996593678 -709.999939711\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 63,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "22698.006922181 534.07075111\n\n",
+        "actual": "22698.006922 534.070751\n",
+        "stderr": ""
+      },
+      {
+        "index": 64,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "27759.112687112 -590.619418875\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 65,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1134.114947946 -119.380520836\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 66,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "3421.194399758 -207.345115137\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 67,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "2290.221044466 -169.646003294\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 68,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "11689.866264005 -383.274303738\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 69,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "8171.282491985 -320.442450666\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 70,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "40828.138126043 -716.283125018\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 71,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "2463.008640414 -175.929188601\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 72,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "23778.714795015 -546.637121724\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 73,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1661.902513749 -144.513262065\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 74,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "32047.386659261 -634.601716025\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 75,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "2642.079421668 -182.212373908\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 76,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "24328.493509393 -552.920307032\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 77,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "4071.504079051 -226.194671058\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 78,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "8824.733763932 -333.00882128\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 79,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "13684.777599034 -414.690230274\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 80,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1256.637061436 -125.663706144\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 81,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "5026.548245742 -251.327412287\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 82,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "1385.442360233 -131.946891451\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 83,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "14102.609421961 -420.973415581\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 84,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "7542.963961267 307.876080052\n\n",
+        "actual": "7542.963961 307.876080\n",
+        "stderr": ""
+      },
+      {
+        "index": 85,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "27171.634860891 -584.336233568\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 86,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "3216.990877275 -201.06192983\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 87,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "12867.963509101 -402.123859659\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 88,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "4536.459791783 -238.761041673\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 89,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "18626.502843129 -483.805268653\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 90,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "13273.228961414 -408.407044967\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 91,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "4071.504079051 226.194671058\n\n",
+        "actual": "4071.504079 226.194671\n",
+        "stderr": ""
+      },
+      {
+        "index": 92,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "32685.129967940 -640.884901332\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 93,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "3019.070540099 194.778744523\n\n",
+        "actual": "3019.070540 194.778745\n",
+        "stderr": ""
+      },
+      {
+        "index": 94,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "48305.128641584 -779.11497809\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 95,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "8824.733763932 333.00882128\n\n",
+        "actual": "8824.733764 333.008821\n",
+        "stderr": ""
+      },
+      {
+        "index": 96,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "138544.236023275 -1319.46891451\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 97,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "22167.077763724 527.787565803\n\n",
+        "actual": "22167.077764 527.787566\n",
+        "stderr": ""
+      },
+      {
+        "index": 98,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "145220.120412152 -1350.88484104\n\n",
+        "actual": "error\n",
+        "stderr": ""
+      },
+      {
+        "index": 99,
+        "exit_code": 0,
+        "passed": false,
+        "output_ok": false,
+        "expected": "15836.768566742 446.10615681\n\n",
+        "actual": "15836.768567 446.106157\n",
+        "stderr": ""
+      },
+      {
+        "index": 100,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "12.566371 12.566371\n",
+        "actual": "12.566371 12.566371\n",
+        "stderr": ""
+      },
+      {
+        "index": 101,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "12.566371 12.566371\n",
+        "actual": "12.566371 12.566371\n",
+        "stderr": ""
+      },
+      {
+        "index": 102,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "28.274334 18.849556\n",
+        "actual": "28.274334 18.849556\n",
+        "stderr": ""
+      }
+    ],
+    "all_passed": false
+  },
+  "timing": {
+    "enabled": false,
+    "skipped": true,
+    "reason": "assembly_output_mismatch"
+  },
+  "timing_summary": {
+    "enabled": false
+  },
+  "timing_chart_lines": [
+    "",
+    "(timing chart: timing disabled or no samples)",
+    ""
+  ]
+}

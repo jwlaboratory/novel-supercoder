@@ -1,0 +1,96 @@
+	.arch armv8-a
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align	3
+.LC0:
+	.string	"%d\n"
+	.align	3
+.LC1:
+	.string	"%d"
+	.section	.data
+	.align	2
+z:
+	.word	-100000000
+	.bss
+	.align	2
+n:
+	.zero	4
+i:
+	.zero	4
+	.text
+	.p2align 2,,4
+	.global	main
+	.type	main, %function
+main:
+	stp	x29, x30, [sp, #-16]!
+	mov	x29, sp
+
+	ldr	w0, =-100000000
+	str	w0, z
+
+	mov	w1, wzr       // n=0
+	mov	w2, wzr       // i=0
+	mov	w3, wzr       // s=0
+	mov	w4, wzr       // a=0
+
+.Lloop:
+	// scanf("%d", !n ? &s : &i)
+	cmp	w1, wzr
+	b.ne	.Lscanf_i
+	adrp	x0, n
+	add	x0, x0, :lo12:n
+	mov	x1, x0
+	b	.Lscanf
+.Lscanf_i:
+	adrp	x0, i
+	add	x0, x0, :lo12:i
+	mov	x1, x0
+.Lscanf:
+	adrp	x0, .LC1
+	add	x0, x0, :lo12:.LC1
+	bl	scanf
+	cbz	w0, .Lend
+
+	cmp	w1, wzr
+	b.ne	.Lafter_scan
+
+	// if !n: s = a-1 && !printf("%d\n",a), i=a=z, &n
+	// s = a-1
+	sub	w3, w4, #1
+	cmp	w3, wzr
+	b.le	.Lskip_printf
+	adrp	x0, .LC0
+	add	x0, x0, :lo12:.LC0
+	mov	w1, w4
+	bl	printf
+.Lskip_printf:
+	ldr	w0, z
+	mov	w2, w4
+	mov	w4, w0
+	mov	w1, #1
+	str	w1, n
+	b	.Lafter_scan
+
+.Lafter_scan:
+	// (i-z ? (a = a < (s += i) ? s : a), n-- : n)
+	ldr	w0, z
+	subs	w5, w2, w0
+	b.eq	.Lno_update_a
+
+	add	w3, w3, w2
+	cmp	w4, w3
+	csel	w4, w4, w3, lt
+	ldr	w6, n
+	subs	w6, w6, #1
+	str	w6, n
+	b	.Lloop
+
+.Lno_update_a:
+	b	.Lloop
+
+.Lend:
+	mov	w0, wzr
+	ldp	x29, x30, [sp], #16
+	ret
+	.size	main, .-main

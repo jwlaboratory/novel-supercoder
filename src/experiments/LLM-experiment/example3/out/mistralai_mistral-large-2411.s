@@ -1,0 +1,311 @@
+.arch armv8-a
+	.file	"inputC.c"
+	.text
+	.align	2
+	.p2align 4,,11
+	.global	in
+	.type	in, %function
+in:
+.LFB3:
+	.cfi_startproc
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	mov	x29, sp
+	str	x19, [sp, 16]
+	.cfi_offset 19, -16
+	mov	w19, 0
+	bl	getchar_unlocked
+	.p2align 3,,7
+.L2:
+	and	w0, w0, 15
+	add	w19, w19, w19, lsl 2
+	add	w19, w0, w19, lsl 1
+	bl	getchar_unlocked
+	cmp	w0, 47
+	bgt	.L2
+	mov	w0, w19
+	ldr	x19, [sp, 16]
+	ldp	x29, x30, [sp], 32
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 19
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	in, .-in
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align	3
+.LC0:
+	.string	"%d"
+	.align	3
+.LC1:
+	.string	" %d"
+	.text
+	.align	2
+	.p2align 4,,11
+	.global	dump
+	.type	dump, %function
+dump:
+.LFB4:
+	.cfi_startproc
+	stp	x29, x30, [sp, -48]!
+	.cfi_def_cfa_offset 48
+	.cfi_offset 29, -48
+	.cfi_offset 30, -40
+	adrp	x1, .LANCHOR0
+	mov	x29, sp
+	stp	x19, x20, [sp, 16]
+	.cfi_offset 19, -32
+	.cfi_offset 20, -24
+	add	x19, x1, :lo12:.LANCHOR0
+	ldr	w1, [x1, #:lo12:.LANCHOR0]
+	mov	w20, w0
+	adrp	x0, .LC0
+	add	x0, x0, :lo12:.LC0
+	bl	printf
+	cmp	w20, 1
+	ble	.L7
+	sub	w20, w20, #2
+	add	x0, x19, 4
+	str	x21, [sp, 32]
+	.cfi_offset 21, -16
+	adrp	x21, .LC1
+	add	x20, x0, w20, uxtw 2
+	add	x21, x21, :lo12:.LC1
+	.p2align 3,,7
+.L8:
+	ldr	w1, [x19, 4]!
+	mov	x0, x21
+	bl	printf
+	cmp	x19, x20
+	bne	.L8
+	ldr	x21, [sp, 32]
+	.cfi_restore 21
+.L7:
+	adrp	x1, stdout
+	ldp	x19, x20, [sp, 16]
+	mov	w0, 10
+	ldp	x29, x30, [sp], 48
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 19
+	.cfi_restore 20
+	.cfi_def_cfa_offset 0
+	ldr	x1, [x1, #:lo12:stdout]
+	b	putc
+	.cfi_endproc
+.LFE4:
+	.size	dump, .-dump
+	.align	2
+	.p2align 4,,11
+	.global	insertion_sort
+	.type	insertion_sort, %function
+insertion_sort:
+.LFB5:
+	.cfi_startproc
+	stp	x29, x30, [sp, -96]!
+	.cfi_def_cfa_offset 96
+	.cfi_offset 29, -96
+	.cfi_offset 30, -88
+	mov	x29, sp
+	stp	x21, x22, [sp, 32]
+	.cfi_offset 21, -64
+	.cfi_offset 22, -56
+	adrp	x22, .LANCHOR0
+	ldr	w1, [x22, #:lo12:.LANCHOR0]
+	stp	x23, x24, [sp, 48]
+	.cfi_offset 23, -48
+	.cfi_offset 24, -40
+	adrp	x24, .LC0
+	add	x24, x24, :lo12:.LC0
+	stp	x25, x26, [sp, 64]
+	.cfi_offset 25, -32
+	.cfi_offset 26, -24
+	mov	w25, w0
+	mov	x0, x24
+	bl	printf
+	cmp	w25, 1
+	ble	.L12
+	add	x22, x22, :lo12:.LANCHOR0
+	stp	x19, x20, [sp, 16]
+	.cfi_offset 20, -72
+	.cfi_offset 19, -80
+	sub	w19, w25, #2
+	add	x0, x22, 4
+	adrp	x20, .LC1
+	mov	x21, x22
+	add	x19, x0, w19, uxtw 2
+	add	x20, x20, :lo12:.LC1
+	str	x27, [sp, 80]
+	.cfi_offset 27, -16
+	.p2align 3,,7
+.L13:
+	ldr	w1, [x21, 4]!
+	mov	x0, x20
+	bl	printf
+	cmp	x21, x19
+	bne	.L13
+	adrp	x26, stdout
+	mov	x21, x22
+	mov	w23, 1
+	mov	w0, 10
+	ldr	x1, [x26, #:lo12:stdout]
+	add	x26, x26, :lo12:stdout
+	bl	putc
+	.p2align 3,,7
+.L19:
+	ldr	w3, [x21, 4]
+	mov	w2, w23
+	mov	x1, x21
+	b	.L15
+	.p2align 2,,3
+.L17:
+	str	w0, [x1, 4]
+	subs	w2, w2, #1
+	sub	x1, x1, #4
+	beq	.L20
+.L15:
+	ldr	w0, [x1]
+	cmp	w0, w3
+	bgt	.L17
+.L16:
+	str	w3, [x22, w2, sxtw 2]
+	mov	x0, x24
+	mov	x27, x22
+	ldr	w1, [x22]
+	bl	printf
+	.p2align 3,,7
+.L18:
+	ldr	w1, [x27, 4]!
+	mov	x0, x20
+	bl	printf
+	cmp	x27, x19
+	bne	.L18
+	ldr	x1, [x26]
+	add	w23, w23, 1
+	add	x21, x21, 4
+	mov	w0, 10
+	bl	putc
+	cmp	w25, w23
+	bne	.L19
+	ldp	x19, x20, [sp, 16]
+	.cfi_remember_state
+	.cfi_restore 20
+	.cfi_restore 19
+	ldp	x21, x22, [sp, 32]
+	ldp	x23, x24, [sp, 48]
+	ldp	x25, x26, [sp, 64]
+	ldr	x27, [sp, 80]
+	.cfi_restore 27
+	ldp	x29, x30, [sp], 96
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 25
+	.cfi_restore 26
+	.cfi_restore 23
+	.cfi_restore 24
+	.cfi_restore 21
+	.cfi_restore 22
+	.cfi_def_cfa_offset 0
+	ret
+	.p2align 2,,3
+.L20:
+	.cfi_restore_state
+	mov	w2, 0
+	b	.L16
+.L12:
+	.cfi_restore 19
+	.cfi_restore 20
+	.cfi_restore 27
+	ldp	x21, x22, [sp, 32]
+	adrp	x1, stdout
+	ldp	x23, x24, [sp, 48]
+	mov	w0, 10
+	ldp	x25, x26, [sp, 64]
+	ldp	x29, x30, [sp], 96
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 25
+	.cfi_restore 26
+	.cfi_restore 23
+	.cfi_restore 24
+	.cfi_restore 21
+	.cfi_restore 22
+	.cfi_def_cfa_offset 0
+	ldr	x1, [x1, #:lo12:stdout]
+	b	putc
+	.cfi_endproc
+.LFE5:
+	.size	insertion_sort, .-insertion_sort
+	.section	.text.startup,"ax",@progbits
+	.align	2
+	.p2align 4,,11
+	.global	main
+	.type	main, %function
+main:
+.LFB6:
+	.cfi_startproc
+	stp	x29, x30, [sp, -48]!
+	.cfi_def_cfa_offset 48
+	.cfi_offset 29, -48
+	.cfi_offset 30, -40
+	mov	x29, sp
+	stp	x21, x22, [sp, 32]
+	.cfi_offset 21, -16
+	.cfi_offset 22, -8
+	bl	in
+	mov	w22, w0
+	cmp	w0, 0
+	ble	.L27
+	stp	x19, x20, [sp, 16]
+	.cfi_offset 20, -24
+	.cfi_offset 19, -32
+	adrp	x20, .LANCHOR0
+	add	x20, x20, :lo12:.LANCHOR0
+	add	x21, x20, w0, sxtw 2
+	.p2align 3,,7
+.L29:
+	mov	w19, 0
+	bl	getchar_unlocked
+	.p2align 3,,7
+.L28:
+	and	w0, w0, 15
+	add	w19, w19, w19, lsl 2
+	add	w19, w0, w19, lsl 1
+	bl	getchar_unlocked
+	cmp	w0, 47
+	bgt	.L28
+	str	w19, [x20], 4
+	cmp	x20, x21
+	bne	.L29
+	ldp	x19, x20, [sp, 16]
+	.cfi_restore 20
+	.cfi_restore 19
+.L27:
+	mov	w0, w22
+	bl	insertion_sort
+	ldp	x21, x22, [sp, 32]
+	mov	w0, 0
+	ldp	x29, x30, [sp], 48
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_restore 21
+	.cfi_restore 22
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	main, .-main
+	.global	a
+	.bss
+	.align	4
+	.set	.LANCHOR0,. + 0
+	.type	a, %object
+	.size	a, 408
+a:
+	.zero	408
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

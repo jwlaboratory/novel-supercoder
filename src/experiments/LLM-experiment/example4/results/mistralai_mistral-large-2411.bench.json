@@ -1,0 +1,1243 @@
+{
+  "ok": true,
+  "script_exit_code": 0,
+  "phases": [
+    {
+      "name": "correctness",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "benchmark",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "ref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\n"
+    }
+  ],
+  "script_stdout": "",
+  "script_stderr": "ref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:1:1: warning: data definition has no type or storage class\n    1 | z=-1e8;\n      | ^\nref.c:1:1: warning: type defaults to 'int' in declaration of 'z' [-Wimplicit-int]\nref.c:2:1: warning: data definition has no type or storage class\n    2 | n,i;main(a,s){\n      | ^\nref.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]\nref.c:2:3: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |   ^\nref.c:2:5: warning: return type defaults to 'int' [-Wimplicit-int]\n    2 | n,i;main(a,s){\n      |     ^~~~\nref.c: In function 'main':\nref.c:2:5: warning: type of 'a' defaults to 'int' [-Wimplicit-int]\nref.c:2:5: warning: type of 's' defaults to 'int' [-Wimplicit-int]\nref.c:3:8: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'\n  +++ |+#include <stdio.h>\n    1 | z=-1e8;\nref.c:3:8: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]\n    3 |   for(;scanf(\"%d\",\n      |        ^~~~~\nref.c:3:8: note: include '<stdio.h>' or provide a declaration of 'scanf'\nref.c:5:22: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]\n    5 |              s=a-1&&!printf(\"%d\\n\",a),i=a=z,&n:&i),\n      |                      ^~~~~~\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\nref.c:5:22: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]\nref.c:5:22: note: include '<stdio.h>' or provide a declaration of 'printf'\n",
+  "compile": {
+    "skipped": false,
+    "assembly": {
+      "binary": "bench_asm",
+      "ok": true
+    },
+    "baselines": {
+      "O0": {
+        "binary": "bench_O0",
+        "ok": true
+      },
+      "O1": {
+        "binary": "bench_O1",
+        "ok": true
+      },
+      "O2": {
+        "binary": "bench_O2",
+        "ok": true
+      },
+      "O3": {
+        "binary": "bench_O3",
+        "ok": true
+      }
+    }
+  },
+  "correctness": {
+    "enabled": true,
+    "strict": false,
+    "cases": [
+      {
+        "index": 0,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n14\n1001\n\n",
+        "actual": "19\n14\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 1,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n13\n1001\n\n",
+        "actual": "19\n13\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 2,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n13\n1001\n\n",
+        "actual": "23\n13\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 3,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n13\n1000\n\n",
+        "actual": "23\n13\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 4,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n12\n1001\n\n",
+        "actual": "19\n12\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 5,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n14\n1000\n\n",
+        "actual": "19\n14\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 6,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n13\n1001\n\n",
+        "actual": "18\n13\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 7,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n12\n1000\n\n",
+        "actual": "19\n12\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 8,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n12\n1000\n\n",
+        "actual": "23\n12\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 9,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n15\n1001\n\n",
+        "actual": "19\n15\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 10,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n11\n1001\n\n",
+        "actual": "19\n11\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 11,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n12\n1100\n\n",
+        "actual": "23\n12\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 12,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n15\n201\n\n",
+        "actual": "19\n15\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 13,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n12\n1100\n\n",
+        "actual": "29\n12\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 14,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n15\n201\n\n",
+        "actual": "16\n15\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 15,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n14\n201\n\n",
+        "actual": "16\n14\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 16,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n14\n1100\n\n",
+        "actual": "29\n14\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 17,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n16\n201\n\n",
+        "actual": "16\n16\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 18,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n13\n1100\n\n",
+        "actual": "29\n13\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 19,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n18\n201\n\n",
+        "actual": "16\n18\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 20,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n17\n201\n\n",
+        "actual": "16\n17\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 21,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n13\n1157\n\n",
+        "actual": "19\n13\n1157\n",
+        "stderr": ""
+      },
+      {
+        "index": 22,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n16\n1001\n\n",
+        "actual": "23\n16\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 23,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n14\n1000\n\n",
+        "actual": "23\n14\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 24,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n14\n1001\n\n",
+        "actual": "18\n14\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 25,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n12\n1124\n\n",
+        "actual": "19\n12\n1124\n",
+        "stderr": ""
+      },
+      {
+        "index": 26,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "17\n13\n1001\n\n",
+        "actual": "17\n13\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 27,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n10\n1000\n\n",
+        "actual": "19\n10\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 28,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n12\n1052\n\n",
+        "actual": "23\n12\n1052\n",
+        "stderr": ""
+      },
+      {
+        "index": 29,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "20\n12\n1100\n\n",
+        "actual": "20\n12\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 30,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n11\n1100\n\n",
+        "actual": "23\n11\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 31,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n12\n145\n\n",
+        "actual": "29\n12\n145\n",
+        "stderr": ""
+      },
+      {
+        "index": 32,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "15\n14\n201\n\n",
+        "actual": "15\n14\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 33,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n14\n145\n\n",
+        "actual": "29\n14\n145\n",
+        "stderr": ""
+      },
+      {
+        "index": 34,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n9\n201\n\n",
+        "actual": "16\n9\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 35,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n15\n1100\n\n",
+        "actual": "29\n15\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 36,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n11\n1100\n\n",
+        "actual": "29\n11\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 37,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n16\n360\n\n",
+        "actual": "16\n16\n360\n",
+        "stderr": ""
+      },
+      {
+        "index": 38,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n17\n1001\n\n",
+        "actual": "23\n17\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 39,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n15\n1000\n\n",
+        "actual": "19\n15\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 40,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n15\n1001\n\n",
+        "actual": "18\n15\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 41,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "27\n14\n1000\n\n",
+        "actual": "27\n14\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 42,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n14\n1124\n\n",
+        "actual": "19\n14\n1124\n",
+        "stderr": ""
+      },
+      {
+        "index": 43,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n10\n1000\n\n",
+        "actual": "23\n10\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 44,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "10\n14\n1001\n\n",
+        "actual": "10\n14\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 45,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n10\n1000\n\n",
+        "actual": "18\n10\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 46,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "24\n12\n1100\n\n",
+        "actual": "24\n12\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 47,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n8\n201\n\n",
+        "actual": "16\n8\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 48,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n19\n201\n\n",
+        "actual": "16\n19\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 49,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n14\n397\n\n",
+        "actual": "16\n14\n397\n",
+        "stderr": ""
+      },
+      {
+        "index": 50,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n18\n360\n\n",
+        "actual": "16\n18\n360\n",
+        "stderr": ""
+      },
+      {
+        "index": 51,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n13\n1164\n\n",
+        "actual": "19\n13\n1164\n",
+        "stderr": ""
+      },
+      {
+        "index": 52,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n18\n1001\n\n",
+        "actual": "23\n18\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 53,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n12\n1011\n\n",
+        "actual": "19\n12\n1011\n",
+        "stderr": ""
+      },
+      {
+        "index": 54,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "38\n14\n1000\n\n",
+        "actual": "38\n14\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 55,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n12\n1073\n\n",
+        "actual": "23\n12\n1073\n",
+        "stderr": ""
+      },
+      {
+        "index": 56,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n15\n1022\n\n",
+        "actual": "19\n15\n1022\n",
+        "stderr": ""
+      },
+      {
+        "index": 57,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "22\n12\n145\n\n",
+        "actual": "22\n12\n145\n",
+        "stderr": ""
+      },
+      {
+        "index": 58,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "22\n19\n201\n\n",
+        "actual": "22\n19\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 59,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "17\n18\n360\n\n",
+        "actual": "17\n18\n360\n",
+        "stderr": ""
+      },
+      {
+        "index": 60,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "12\n15\n201\n\n",
+        "actual": "12\n15\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 61,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n16\n1001\n\n",
+        "actual": "19\n16\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 62,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "24\n13\n1164\n\n",
+        "actual": "24\n13\n1164\n",
+        "stderr": ""
+      },
+      {
+        "index": 63,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n13\n1011\n\n",
+        "actual": "19\n13\n1011\n",
+        "stderr": ""
+      },
+      {
+        "index": 64,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n14\n1169\n\n",
+        "actual": "19\n14\n1169\n",
+        "stderr": ""
+      },
+      {
+        "index": 65,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "26\n12\n1001\n\n",
+        "actual": "26\n12\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 66,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n9\n1000\n\n",
+        "actual": "23\n9\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 67,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n8\n1000\n\n",
+        "actual": "18\n8\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 68,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n12\n1001\n\n",
+        "actual": "18\n12\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 69,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n13\n1073\n\n",
+        "actual": "23\n13\n1073\n",
+        "stderr": ""
+      },
+      {
+        "index": 70,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "21\n14\n1001\n\n",
+        "actual": "21\n14\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 71,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "22\n11\n145\n\n",
+        "actual": "22\n11\n145\n",
+        "stderr": ""
+      },
+      {
+        "index": 72,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n14\n201\n\n",
+        "actual": "18\n14\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 73,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n16\n1043\n\n",
+        "actual": "16\n16\n1043\n",
+        "stderr": ""
+      },
+      {
+        "index": 74,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n12\n397\n\n",
+        "actual": "16\n12\n397\n",
+        "stderr": ""
+      },
+      {
+        "index": 75,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "24\n13\n1000\n\n",
+        "actual": "24\n13\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 76,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n14\n1220\n\n",
+        "actual": "19\n14\n1220\n",
+        "stderr": ""
+      },
+      {
+        "index": 77,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n8\n1000\n\n",
+        "actual": "23\n8\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 78,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n9\n1000\n\n",
+        "actual": "18\n9\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 79,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "18\n11\n1001\n\n",
+        "actual": "18\n11\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 80,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "21\n15\n1001\n\n",
+        "actual": "21\n15\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 81,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "21\n8\n201\n\n",
+        "actual": "21\n8\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 82,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "16\n15\n1043\n\n",
+        "actual": "16\n15\n1043\n",
+        "stderr": ""
+      },
+      {
+        "index": 83,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "22\n18\n201\n\n",
+        "actual": "22\n18\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 84,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "12\n12\n397\n\n",
+        "actual": "12\n12\n397\n",
+        "stderr": ""
+      },
+      {
+        "index": 85,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "17\n17\n360\n\n",
+        "actual": "17\n17\n360\n",
+        "stderr": ""
+      },
+      {
+        "index": 86,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "12\n14\n201\n\n",
+        "actual": "12\n14\n201\n",
+        "stderr": ""
+      },
+      {
+        "index": 87,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "21\n18\n1001\n\n",
+        "actual": "21\n18\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 88,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n15\n1220\n\n",
+        "actual": "19\n15\n1220\n",
+        "stderr": ""
+      },
+      {
+        "index": 89,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n8\n1000\n\n",
+        "actual": "29\n8\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 90,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "21\n15\n1011\n\n",
+        "actual": "21\n15\n1011\n",
+        "stderr": ""
+      },
+      {
+        "index": 91,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "35\n12\n1100\n\n",
+        "actual": "35\n12\n1100\n",
+        "stderr": ""
+      },
+      {
+        "index": 92,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "12\n9\n0\n397\n\n",
+        "actual": "12\n9\n0\n397\n",
+        "stderr": ""
+      },
+      {
+        "index": 93,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "17\n15\n360\n\n",
+        "actual": "17\n15\n360\n",
+        "stderr": ""
+      },
+      {
+        "index": 94,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "12\n14\n1001\n\n",
+        "actual": "12\n14\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 95,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "21\n19\n1001\n\n",
+        "actual": "21\n19\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 96,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n15\n246\n\n",
+        "actual": "19\n15\n246\n",
+        "stderr": ""
+      },
+      {
+        "index": 97,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "29\n9\n1000\n\n",
+        "actual": "29\n9\n1000\n",
+        "stderr": ""
+      },
+      {
+        "index": 98,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "23\n14\n1073\n\n",
+        "actual": "23\n14\n1073\n",
+        "stderr": ""
+      },
+      {
+        "index": 99,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "21\n1024\n\n",
+        "actual": "21\n1024\n",
+        "stderr": ""
+      },
+      {
+        "index": 100,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n14\n1001\n",
+        "actual": "19\n14\n1001\n",
+        "stderr": ""
+      },
+      {
+        "index": 101,
+        "exit_code": 0,
+        "passed": true,
+        "output_ok": true,
+        "expected": "19\n14\n1001\n",
+        "actual": "19\n14\n1001\n",
+        "stderr": ""
+      }
+    ],
+    "all_passed": true
+  },
+  "timing": {
+    "enabled": true,
+    "runs_requested": 10,
+    "hyperfine_warmup": 3,
+    "hyperfine_prepare": "sync",
+    "assembly": {
+      "count": 10,
+      "source": "hyperfine",
+      "command": "./run_one_binary.sh ./bench_asm",
+      "mean_s": 0.07512171172,
+      "median_s": 0.07600222862,
+      "min_s": 0.06955041612,
+      "max_s": 0.07883495712000001,
+      "stddev_s": 0.003117025409740698,
+      "samples_s": [
+        0.07883495712000001,
+        0.07681758212,
+        0.07750791612,
+        0.07608645812,
+        0.07408195712,
+        0.07043108212,
+        0.07797858312,
+        0.07401016612,
+        0.06955041612,
+        0.07591799912
+      ],
+      "samples_ns": [
+        78834957,
+        76817582,
+        77507916,
+        76086458,
+        74081957,
+        70431082,
+        77978583,
+        74010166,
+        69550416,
+        75917999
+      ],
+      "mean_ns": 75121711.72,
+      "median_ns": 76002228.62,
+      "min_ns": 69550416.12,
+      "max_ns": 78834957.12
+    },
+    "baselines": {
+      "O0": {
+        "count": 10,
+        "source": "hyperfine",
+        "command": "./run_one_binary.sh ./bench_O0",
+        "mean_s": 0.07777851026,
+        "median_s": 0.07727161426000001,
+        "min_s": 0.07355001076,
+        "max_s": 0.08310755176000001,
+        "stddev_s": 0.002679841948083891,
+        "samples_s": [
+          0.07611221876,
+          0.07627296876,
+          0.07909209376000001,
+          0.07355001076,
+          0.07617605176,
+          0.07667259376,
+          0.07787063476,
+          0.07844196776000001,
+          0.08310755176000001,
+          0.08048901076000001
+        ],
+        "samples_ns": [
+          76112219,
+          76272969,
+          79092094,
+          73550011,
+          76176052,
+          76672594,
+          77870635,
+          78441968,
+          83107552,
+          80489011
+        ],
+        "mean_ns": 77778510.26,
+        "median_ns": 77271614.26,
+        "min_ns": 73550010.76,
+        "max_ns": 83107551.76
+      },
+      "O1": {
+        "count": 10,
+        "source": "hyperfine",
+        "command": "./run_one_binary.sh ./bench_O1",
+        "mean_s": 0.07434859312,
+        "median_s": 0.07404855972,
+        "min_s": 0.07147251772,
+        "max_s": 0.07900272672,
+        "stddev_s": 0.002045181273445307,
+        "samples_s": [
+          0.07471193472,
+          0.07900272672,
+          0.07370526772000001,
+          0.07601318472,
+          0.07403318472,
+          0.07436006072000001,
+          0.07147251772,
+          0.07239005972000001,
+          0.07406393472,
+          0.07373305972000001
+        ],
+        "samples_ns": [
+          74711935,
+          79002727,
+          73705268,
+          76013185,
+          74033185,
+          74360061,
+          71472518,
+          72390060,
+          74063935,
+          73733060
+        ],
+        "mean_ns": 74348593.12,
+        "median_ns": 74048559.72,
+        "min_ns": 71472517.72,
+        "max_ns": 79002726.72
+      },
+      "O2": {
+        "count": 10,
+        "source": "hyperfine",
+        "command": "./run_one_binary.sh ./bench_O2",
+        "mean_s": 0.07436138394000001,
+        "median_s": 0.07476892594000001,
+        "min_s": 0.06767157094000001,
+        "max_s": 0.08175557194000001,
+        "stddev_s": 0.0039841186644585655,
+        "samples_s": [
+          0.07413507194,
+          0.06767157094000001,
+          0.08175557194000001,
+          0.07604469694,
+          0.07713669594000001,
+          0.07540277994000001,
+          0.07614882094,
+          0.07360782094000001,
+          0.07216173794000001,
+          0.06954907194000001
+        ],
+        "samples_ns": [
+          74135072,
+          67671571,
+          81755572,
+          76044697,
+          77136696,
+          75402780,
+          76148821,
+          73607821,
+          72161738,
+          69549072
+        ],
+        "mean_ns": 74361383.94000001,
+        "median_ns": 74768925.94000001,
+        "min_ns": 67671570.94000001,
+        "max_ns": 81755571.94000001
+      },
+      "O3": {
+        "count": 10,
+        "source": "hyperfine",
+        "command": "./run_one_binary.sh ./bench_O3",
+        "mean_s": 0.07717511496,
+        "median_s": 0.07724455646,
+        "min_s": 0.07258632746,
+        "max_s": 0.08048061946000001,
+        "stddev_s": 0.002353921587516661,
+        "samples_s": [
+          0.07741886946000001,
+          0.08048061946000001,
+          0.07990474346000001,
+          0.07504136846000001,
+          0.07783332746,
+          0.07656803646,
+          0.07707024346,
+          0.07258632746,
+          0.07586086946000001,
+          0.07898674446000001
+        ],
+        "samples_ns": [
+          77418869,
+          80480619,
+          79904743,
+          75041368,
+          77833327,
+          76568036,
+          77070243,
+          72586327,
+          75860869,
+          78986744
+        ],
+        "mean_ns": 77175114.96,
+        "median_ns": 77244556.46000001,
+        "min_ns": 72586327.46000001,
+        "max_ns": 80480619.46000001
+      }
+    }
+  },
+  "timing_summary": {
+    "enabled": true,
+    "rows": [
+      {
+        "label": "assembly",
+        "count": 10,
+        "total_ns": 751217116,
+        "mean_ns": 75121711.72,
+        "median_ns": 76002228.62,
+        "mean_s": 0.07512171172,
+        "median_s": 0.07600222862,
+        "stddev_s": 0.003117025409740698
+      },
+      {
+        "label": "O0",
+        "count": 10,
+        "total_ns": 777785105,
+        "mean_ns": 77778510.26,
+        "median_ns": 77271614.26,
+        "mean_s": 0.07777851026,
+        "median_s": 0.07727161426000001,
+        "stddev_s": 0.002679841948083891
+      },
+      {
+        "label": "O1",
+        "count": 10,
+        "total_ns": 743485934,
+        "mean_ns": 74348593.12,
+        "median_ns": 74048559.72,
+        "mean_s": 0.07434859312,
+        "median_s": 0.07404855972,
+        "stddev_s": 0.002045181273445307
+      },
+      {
+        "label": "O2",
+        "count": 10,
+        "total_ns": 743613840,
+        "mean_ns": 74361383.94000001,
+        "median_ns": 74768925.94000001,
+        "mean_s": 0.07436138394000001,
+        "median_s": 0.07476892594000001,
+        "stddev_s": 0.0039841186644585655
+      },
+      {
+        "label": "O3",
+        "count": 10,
+        "total_ns": 771751145,
+        "mean_ns": 77175114.96,
+        "median_ns": 77244556.46000001,
+        "mean_s": 0.07717511496,
+        "median_s": 0.07724455646,
+        "stddev_s": 0.002353921587516661
+      }
+    ],
+    "best_mean_label": "O1"
+  },
+  "timing_chart_lines": [
+    "",
+    "==============================================================================",
+    "  TIMING CHART",
+    "  Mean / median = wall time for one full benchmark iteration (hyperfine result).",
+    "  vs fastest = mean / smallest mean in this run. Bar length is proportional to mean.",
+    "==============================================================================",
+    "",
+    "  Label           Mean ms   Median ms   vs fastest   Bar",
+    "  ------------ ---------- ----------- ------------   --------------------------------------------",
+    "  assembly         75.122      76.002       1.010x   ##########################################..",
+    "  O0               77.779      77.272       1.046x   ############################################",
+    "  O1               74.349      74.049       1.000x   ##########################################..",
+    "  O2               74.361      74.769       1.000x   ##########################################..",
+    "  O3               77.175      77.245       1.038x   ############################################",
+    "",
+    "==============================================================================",
+    ""
+  ]
+}

@@ -1,0 +1,181 @@
+.arch armv8-a
+	.file	"inputC.c"
+	.text
+	.align	2
+	.p2align 4,,11
+	.global	in
+	.type	in, %function
+in:
+.LFB3:
+	.cfi_startproc
+	stp	x29, x30, [sp, -16]!
+	.cfi_def_cfa_offset 16
+	.cfi_offset 29, -16
+	.cfi_offset 30, -8
+	mov	x29, sp
+	mov	w19, 0
+	bl	getchar_unlocked
+.L2:
+	and	w0, w0, 15
+	add	w19, w19, w19, lsl 2
+	add	w19, w0, w19, lsl 1
+	bl	getchar_unlocked
+	cmp	w0, 47
+	bgt	.L2
+	mov	w0, w19
+	ldp	x29, x30, [sp], 16
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	in, .-in
+	.section	.rodata.str1.8,"aMS",@progbits,1
+	.align	3
+.LC0:
+	.string	"%d"
+	.align	3
+.LC1:
+	.string	" %d"
+	.text
+	.align	2
+	.p2align 4,,11
+	.global	dump
+	.type	dump, %function
+dump:
+.LFB4:
+	.cfi_startproc
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	mov	x29, sp
+	adrp	x1, a
+	add	x1, x1, :lo12:a
+	mov	w1, w0
+	adrp	x0, .LC0
+	add	x0, x0, :lo12:.LC0
+	bl	printf
+	cmp	w1, 1
+	ble	.L7
+	sub	w1, w1, 1
+	add	x1, x1, 4
+	adrp	x0, .LC1
+	add	x0, x0, :lo12:.LC1
+.L8:
+	ldr	w2, [x1], 4
+	mov	w1, w2
+	bl	printf
+	subs	w1, w1, 1
+	bne	.L8
+.L7:
+	adrp	x1, stdout
+	mov	w0, 10
+	ldr	x1, [x1, #:lo12:stdout]
+	bl	putc
+	ldp	x29, x30, [sp], 32
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE4:
+	.size	dump, .-dump
+	.p2align 4,,11
+	.global	insertion_sort
+	.type	insertion_sort, %function
+insertion_sort:
+.LFB5:
+	.cfi_startproc
+	stp	x29, x30, [sp, -48]!
+	.cfi_def_cfa_offset 48
+	.cfi_offset 29, -48
+	.cfi_offset 30, -40
+	mov	x29, sp
+	mov	w21, w0
+	bl	dump
+	mov	w20, 1
+	adrp	x22, a
+	add	x22, x22, :lo12:a
+.Lloop_i:
+	cmp	w20, w21
+	bge	.Lend
+	lsl	x0, x20, 2
+	add	x0, x22, x0
+	ldr	w19, [x0]
+	sub	w18, w20, 1
+.Lloop_j:
+	cmp	w18, -1
+	blt	.Linsert
+	lsl	x1, w18, 2
+	add	x1, x22, x1
+	ldr	w17, [x1]
+	cmp	w17, w19
+	ble	.Linsert
+	str	w17, [x1, 4]
+	subs	w18, w18, 1
+	b	.Lloop_j
+.Linsert:
+	lsl	x1, w18, 2
+	add	x1, x22, x1
+	str	w19, [x1, 4]
+	bl	dump
+	add	w20, w20, 1
+	b	.Lloop_i
+.Lend:
+	mov	w0, 0
+	ldp	x29, x30, [sp], 48
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE5:
+	.size	insertion_sort, .-insertion_sort
+	.p2align 4,,11
+	.global	main
+	.type	main, %function
+main:
+.LFB6:
+	.cfi_startproc
+	stp	x29, x30, [sp, -32]!
+	.cfi_def_cfa_offset 32
+	.cfi_offset 29, -32
+	.cfi_offset 30, -24
+	mov	x29, sp
+	bl	in
+	mov	w19, w0
+	cmp	w19, 0
+	ble	.Lend_main
+	adrp	x20, a
+	add	x20, x20, :lo12:a
+	mov	w21, 0
+.Lread_loop:
+	cmp	w21, w19
+	bge	.Lread_end
+	bl	in
+	str	w0, [x20, w21, sxtw 2]
+	add	w21, w21, 1
+	b	.Lread_loop
+.Lread_end:
+	mov	w0, w19
+	bl	insertion_sort
+.Lend_main:
+	mov	w0, 0
+	ldp	x29, x30, [sp], 32
+	.cfi_restore 30
+	.cfi_restore 29
+	.cfi_def_cfa_offset 0
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	main, .-main
+	.bss
+	.align	4
+	.type	a, %object
+	.size	a, 408
+a:
+	.zero	408
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits
