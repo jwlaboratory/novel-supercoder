@@ -1,0 +1,15 @@
+{
+  "rows_total": 20,
+  "paper_compilation_rate_pct": 0.0,
+  "our_compilation_rate_pct": 0.0,
+  "paper_correct_rate_pct": 0.0,
+  "our_correct_rate_pct": 0.0,
+  "compile_agreement_rate_pct": 100.0,
+  "correctness_agreement_rate_pct": 100.0,
+  "artifacts": {
+    "paper_problem_results": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/experiment-copying-paper/results/smoke_run_20260412/supercoder_bench/problem_results.json",
+    "paper_row_summary": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/experiment-copying-paper/results/smoke_run_20260412/supercoder_bench/row_summary.jsonl",
+    "our_bench_summary": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/experiment-copying-paper/results/smoke_run_20260412/bench_summary.jsonl",
+    "side_by_side_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/experiment-copying-paper/results/smoke_run_20260412/paper_vs_ours.csv"
+  }
+}

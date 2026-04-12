@@ -1,0 +1,21 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+	int main(){
+		int paper, page;
+		scanf("%d", &page);
+		if (page%2==0){
+			paper = page/2;
+		}
+		else {
+			paper = page/2+1;
+		}
+		printf("%d", paper);
+		return 0;
+	}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

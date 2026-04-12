@@ -1,0 +1,47 @@
+```c
+#include<stdio.h>
+int min(int a, int b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+int main()
+{
+	int n, m;
+	scanf("%d %d", &n, &m);
+	int i;
+	int l, r;
+	int ans[100005];
+	for (i = 0; i < m + 2; i++)
+		ans[i] = 0;
+	int b, c, cc;
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d %d", &l, &r);
+		b = r;
+		cc = -1;
+		for (;;)
+		{
+			c = l / b;
+			if (c < 1)
+				c = 1;
+			if (c == cc)
+				c++;
+			if (c < 1)
+				break;
+			ans[min(r / c + 1, b + 1)]--;
+			ans[(l + c - 1) / c]++;
+			b = (l + c - 1) / c - 1;
+			if (b < 1)
+				break;
+			cc = c;
+		}
+	}
+	for (i = 1; i <= m; i++)
+		ans[i] += ans[i - 1];
+	for (i = 1; i <= m; i++)
+		printf("%d\n", ans[i]);
+	return 0;
+}```

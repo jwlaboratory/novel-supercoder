@@ -1,0 +1,46 @@
+```assembly
+section .text
+global main
+extern __isoc99_scanf, __printf_chk, __stack_chk_fail
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 32
+    xor eax, eax
+    mov [rbp-24], rax
+    lea rdi, [LC0]
+    lea rsi, [rbp-24]
+    call __isoc99_scanf
+    mov rcx, [rbp-24]
+    mov edx, 1
+    jmp .L2
+.L4:
+    cmp rax, rcx
+    jle .L3
+.L2:
+    mov rbx, rdx
+    add rbx, 1
+    imul rax, rbx
+    sar rax
+    cmp rax, rcx
+    jg .L4
+.L3:
+    sub rcx, rax
+    mov ebx, 1
+    lea rdi, [LC1]
+    mov rsi, rcx
+    mov edi, 1
+    xor eax, eax
+    call __printf_chk
+    inc ebx
+    cmp ebx, rcx
+    jge .L7
+    jmp .L8
+.L7:
+    mov rsp, rbp
+    pop rbp
+    ret
+.L8:
+    jmp .L7
+```

@@ -1,0 +1,410 @@
+[
+  {
+    "input": "computer\nNurtures computer scientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nNurtures computer scientists and highly-skilled computes engineers\nwho will create and exploit \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "comquter\nNurtures computer stsitneics and highly-skilked computer engineers\nwho wilk create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding comquter environment.\nEND_OF_TEXT\n",
+    "output": "1\n"
+  },
+  {
+    "input": "computer\nNurtures computer scientists and highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists aod highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scifntists aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scitntisfs aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lmiw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lmiw create and tiolpxe \"knowledge\" for the wne era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nserutruN computer scientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the new era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "computer\nNvrtures computer scientists and highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists ane highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highly-skilked computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an gnidnatotus computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw er.a\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotgndina ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists aod highlx-skilled computer engineers\nwho will create and tioloxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotandiog ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scifntists aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an gnidnatotus ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scitntisfs aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer envjronment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs ado highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" foq the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lmiw create and tiolpxe \"knowledge\" for tge enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lmiw create and tiolpxe \"knowleegd\" for the wne era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nserutruN computer rcientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the new era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "computer\nNurtures computer scientists dna highly-skilled computes engineers\nwho will create and exploit \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "computer\nNvrtures computer scientists and highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw .are\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "comqtter\nNurtures computer scientists ane highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highly-skilked computer engineers\nwho wilk create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highlx-skilled computer engineers\nohw will create and tiolpxe \"knowledge\" for the enw era.\nProvides an gnidnatotus computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw er.a\nProvider an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists aod highlx-skilled computer engineers\nwho will create and tioloxe \"knowledge\" for the enw era.\nOrovides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists aod highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutptandiog ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scifntists aod highlx-skilled computer engineers\nwho lliw create and tilopxe \"knowledge\" for the enw era.\nProvides an gnidnatotus ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scitntisfs apd highlx-skilled computer engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer envjronment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs ado highlx-skilled retupmoc engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lliw create and tiolpxe !knowledge\" foq the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comqvter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lmiw create and tiolpxe \"knowledge\" for tge enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer dngineers\nwho lmiw create and tiolpxe \"knowleegd\" for the wne era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nserutruN computer rcientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the new era.\nProvides `n outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "computer\nNurtures computer scientists dna highly-skilled comqutes engineers\nwho will create and exploit \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "computer\nNvrtures retupmoc scientists and highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw .are\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "comqtter\nNurtures computer scientists ane highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw era.\nProvides an outstanding computer .tnemnorivne\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer stsitneics and highly-skilked computer engineers\nwho wilk create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scientists and highlx-skilled computer engineers\nowh will create and tiolpxe \"knowledge\" for the enw era.\nProvides an gnidnatotus computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer scienuists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw er.a\nProvider an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scientists aod highlx-skilled computer engineers\nwho will create and tioloxe \"knowledge\" for the enw era.\nOrovides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists aod highlx-skilled computer engineesr\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutptandiog ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scifntists aod highlx-skilled computer engineers\nwho lliw create and tilopxe \"knowledge\" for the enw era.\nProvides na gnidnatotus ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scitntisfs apd highlx-skilled computer engineers\nwho lliw create and siolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer envjronment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs adp highlx-skilled retupmoc engineers\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lliw create and tiolpxe !knowledge\" foq the enw e.ar\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comqvter\nserutruN computer scitntisfs apd highlx-skilled computer engineers\nwho lmiw create and tiolpxe \"knowledge\" for tge enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer dngineers\nwho lmiw ereatc and tiolpxe \"knowleegd\" for the wne era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nserutruN computer rcientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the new era.\nProvides n` outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "computer\nNurtures computer scientists dna highly-skilled comqutes engineers\nwho will create and exqloit \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "computer\nNvrtures retupmoc scientists and highly-skilled computer enginfers\nwho will create and tiolpxe \"knowledge\" for the enw .are\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "comqtter\nNurtures computer scientists ane highly-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for eht enw era.\nProvides an outstanding computer .tnemnorivne\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scientists and highlx-skilled computer engineers\nowh will create and tiolpxe \"knowledge\" for the enw era.\nProvides an gnidnatotus computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurttres computer scienuists and highlx-skilled computer engineers\nwho will create and tiolpxe \"knowledge\" for the enw er.a\nProvider an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scientists aod highlx-skilled computer sreenigne\nwho will create and tioloxe \"knowledge\" for the enw era.\nOrovides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN bomputer scientists aod highlx-skilled computer engineesr\nwho lliw create and tiolpxe \"knowledge\" for the enw era.\nProvides an sutptandiog ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scifntists aod highlx-skilled computer engineers\nwho lliw create and tilopxe \"knowledge\" for the enw era.\nProvides na gnidnatotus ctmpuoer environnent.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN computer scitntisfs apd highlx-skilled computer engineers\nwho lliw create and siolpxe \"knowledge\" for the enw dra.\nProvides an sutotanding ctmpuoer envjronment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs adp highlx-skilled retupmoc engineers\nwho lliw create and tiolpxe \"knowledge\" for hte enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lliw create and tiolpxe !knowledge\" foq the enw e.ar\nProvides an sutotadning ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comqvter\nserutruN computer scitntisfs apd highlx-skilled computer engineers\nwho lmjw create and tiolpxe \"knowledge\" for tge enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures retupmoc scitntisfs apd highlx-skilled computer dngineers\nwho lmiw ereatc and tiolpxe \"knowleegd\" for the wne era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nserutruN computer rcientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the new era-\nProvides n` outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "compuetr\nNurtures computer scientists dna highly-skilled comqutes engineers\nwho will create and exqloit \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nNvrtures resupmoc scientists and highly-skilled computer enginfers\nwho will create and tiolpxe \"knowledge\" for the enw .are\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "comqtter\nNurtures computer scientists ane highly-skilled computer sreenigne\nwho will create and tiolpxe \"knowledge\" for eht enw era.\nProvides an outstanding computer .tnemnorivne\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer stsitneics and highly-skilked computer engineers\nwho wilk create and tiolpxe \"knowledge\" for the enx era.\nProvides an sutotanding comquter environment.\nEND_OF_TEXT\n",
+    "output": "1\n"
+  },
+  {
+    "input": "retuqmoc\nserutruN computer scientists and highlx-skilled computer engineers\nowh will create and tiolpxe \"knowledge\" for the enw era.\nProvides an gnidnatotus computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurttres computer scienuists and highlx-skilled computer engineers\nwhp will create and tiolpxe \"knowledge\" for the enw er.a\nProvider an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scientists aod delliks-xlhgih computer sreenigne\nwho will create and tioloxe \"knowledge\" for the enw era.\nOrovides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN bomputer scientists aod highlx-skilled computer engineesr\nwho lliw create and tiolpxe \"knowledge\" for the new era.\nProvides an sutptandiog ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "domquter\nserutruN computer scitntisfs apd highlx-skilled computer engineers\nwho lliw create and siolpxe \"knowledge\" for the enw dra.\nProvides an sutotanding ctmpuoer envjronment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs adp highlx-skilled retupmoc engineers\nwho lliw create and tiolpxe \"knowledge\" for hse enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN retupmoc scitntisfs apd highlx-skilled computer engineers\nwho lliw create `nd tiolpxe !knowledge\" foq the enw e.ar\nProvides an sutotadning ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comqvter\nserutruN computer sciinttsfs apd highlx-skilled computer engineers\nwho lmjw create and tiolpxe \"knowledge\" for tge enw era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures retupmoc scitntisfs dpa highlx-skilled computer dngineers\nwho lmiw ereatc and tiolpxe \"knowleegd\" for the wne era.\nProvides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nserutruN computer rcientists and highly-skilled computer engineers\nwho wiml create and exploit \"knowledge\" for the new era-\nProvides n` outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "compuetr\nNurtures computer stsitneics dna highly-skilled comqutes engineers\nwho will create and exqloit \"knowledge\" for the enw era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nNvrtures resupmoc scientists and highly-skilled computer enginfers\nwho will create and tiolpxe \"knowledge\" for the enw .`re\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "comqtter\nNurtures computer scientists nae highly-skilled computer sreenigne\nwho will create and tiolpxe \"knowledge\" for eht enw era.\nProvides an outstanding computer .tnemnorivne\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurtures computer stsitneics and highly-skilked computer engineers\nwho wilk create and tiolpxe \"knowledge\" for eht enx era.\nProvides an sutotanding comquter environment.\nEND_OF_TEXT\n",
+    "output": "1\n"
+  },
+  {
+    "input": "retuqmoc\nserutruN computer scientists and highlx-skilled computer engineers\nowh will create and tiolpxe \"knowledge\" for the enw era.\nProvides an gnndiatotus computer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nNurttres computer scienuists and highlx-skilled computer engineers\nwhp will create and tiolpxe \"knowledge\" for the enw dr.a\nProvider an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comqetur\nserutruN retupmoc scientists aod delliks-xlhgih computer sreenigne\nwho will create and tioloxe \"knowledge\" for the enw era.\nOrovides an sutotanding ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "comquter\nserutruN bomputer scientists aod highlx-skilled computer engineesr\nwho lliw create and tiolpxe \"knowledge\" for the new era.\nProvides na sutptandiog ctmpuoer environment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "domquter\nserutruN computer scitntisfs dpa highlx-skilled computer engineers\nwho lliw create and siolpxe \"knowledge\" for the enw dra.\nProvides an sutotanding ctmpuoer envjronment.\nEND_OF_TEXT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "computer\nNurtures computer scientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the new era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  },
+  {
+    "input": "computer\nNurtures computer scientists and highly-skilled computer engineers\nwho will create and exploit \"knowledge\" for the new era.\nProvides an outstanding computer environment.\nEND_OF_TEXT\n",
+    "output": "3\n"
+  }
+]

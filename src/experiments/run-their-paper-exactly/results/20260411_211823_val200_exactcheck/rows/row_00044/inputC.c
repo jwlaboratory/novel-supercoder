@@ -1,0 +1,22 @@
+```c
+#include <malloc.h>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+//abc133D
+int main(void) {
+  long long n, k, i, cou=0, tmp=0;
+  scanf("%lld", &n);
+  long long a[n];
+  for(i=0; i < n; i++){
+    scanf("%lld",&a[i]);
+    tmp=2*a[i]-tmp;
+  }
+  tmp/=2;
+  for(i=0; i < n; i++){
+    printf("%lld ",tmp);
+    tmp=2*a[i]-tmp;
+  }
+}
+```

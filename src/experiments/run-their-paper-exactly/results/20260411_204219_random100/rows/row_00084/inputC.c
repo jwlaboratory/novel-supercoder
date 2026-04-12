@@ -1,0 +1,59 @@
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <math.h>
+
+int main(void){
+
+    char SS[51], T[51];
+
+    scanf("%s%s", SS, T);
+
+    int lenS = strlen(SS);
+    int lenT = strlen(T);
+
+    int s = 0;
+    int t = 0;
+
+    for(int i = 0; i <= lenS - lenT; i++){
+        int f = 0;
+        for(int j = 0; j < lenT; j++){
+            if(SS[lenS - i - 1 - j] != '?' && SS[lenS-i-1-j] != T[lenT-j-1]){
+                f = 1;
+                break;
+            }
+        }
+        if(f == 0){
+            s = lenS-i-lenT;
+            t = 1;
+            break;
+        }
+    }
+
+    if(t == 0){
+        printf("UNRESTORABLE\n");
+    }else{
+        for(int i = 0; i < s; i++){
+            if(SS[i] == '?'){
+                printf("a");
+            }else{
+                printf("%c", SS[i]);
+            }
+        }
+        for(int i = s; i < s + lenT; i++){
+            printf("%c", T[i-s]);
+        }
+        for(int i = s + lenT; i < lenS; i++){
+            if(SS[i] == '?'){
+                printf("a");
+            }else{
+                printf("%c", SS[i]);
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}```

@@ -1,0 +1,418 @@
+[
+  {
+    "input": "RRLLRLRLLRLL\n",
+    "output": "0 2 2 0 1 1 2 1 0 2 1 0 "
+  },
+  {
+    "input": "RLRLLRLRRRRLLLLL\n",
+    "output": "1 1 2 1 0 1 1 0 0 0 4 5 0 0 0 0 "
+  },
+  {
+    "input": "RRLLLLRLRLRL\n",
+    "output": "0 3 3 0 0 0 1 1 1 1 1 1 "
+  },
+  {
+    "input": "RRRLLRLLRRLRLLLL\n",
+    "output": "0 0 3 2 0 2 1 0 0 1 2 3 2 0 0 0 "
+  },
+  {
+    "input": "RRLRLLRLLLRL\n",
+    "output": "0 1 2 2 1 0 2 2 0 0 1 1 "
+  },
+  {
+    "input": "RRLRLLRLLRLL\n",
+    "output": "0 1 2 2 1 0 2 1 0 2 1 0 "
+  },
+  {
+    "input": "RRLLLLRRLRLL\n",
+    "output": "0 3 3 0 0 0 0 1 2 2 1 0 "
+  },
+  {
+    "input": "RRRLLRLLLRRLLRLL\n",
+    "output": "0 0 3 2 0 2 2 0 0 0 2 2 0 2 1 0 "
+  },
+  {
+    "input": "RRLRRLLLLLRL\n",
+    "output": "0 1 2 0 3 4 0 0 0 0 1 1 "
+  },
+  {
+    "input": "RRRLLRLLRLRLLRLL\n",
+    "output": "0 0 3 2 0 2 1 0 1 1 2 1 0 2 1 0 "
+  },
+  {
+    "input": "RRLRLLLRLLRL\n",
+    "output": "0 1 2 2 2 0 0 2 1 0 1 1 "
+  },
+  {
+    "input": "RRLLLLRLLRRL\n",
+    "output": "0 3 3 0 0 0 2 1 0 0 1 2 "
+  },
+  {
+    "input": "RRRLLRRLLRRLLLLL\n",
+    "output": "0 0 3 2 0 0 2 2 0 0 3 4 0 0 0 0 "
+  },
+  {
+    "input": "RRLLLLRRRLLL\n",
+    "output": "0 3 3 0 0 0 0 0 3 3 0 0 "
+  },
+  {
+    "input": "RRRLLLLLRRLRLRLL\n",
+    "output": "0 0 4 4 0 0 0 0 0 1 2 1 1 2 1 0 "
+  },
+  {
+    "input": "RRLRRLRLLLLL\n",
+    "output": "0 1 2 0 1 2 3 3 0 0 0 0 "
+  },
+  {
+    "input": "RRLLRLLLLRRL\n",
+    "output": "0 2 2 0 3 2 0 0 0 0 1 2 "
+  },
+  {
+    "input": "RRRLLLRLLRRLRLLL\n",
+    "output": "0 0 3 3 0 0 2 1 0 0 1 2 2 2 0 0 "
+  },
+  {
+    "input": "RRRRLRLLRRLLLLLL\n",
+    "output": "0 0 0 2 3 2 1 0 0 4 4 0 0 0 0 0 "
+  },
+  {
+    "input": "RRRLLRRLLLRLLRLL\n",
+    "output": "0 0 3 2 0 0 2 3 0 0 2 1 0 2 1 0 "
+  },
+  {
+    "input": "RRRLLRRLLRLRLLLL\n",
+    "output": "0 0 3 2 0 0 2 2 0 1 1 3 2 0 0 0 "
+  },
+  {
+    "input": "RLRLRLRLLRRLRLLL\n",
+    "output": "1 1 1 1 1 1 2 1 0 0 1 2 2 2 0 0 "
+  },
+  {
+    "input": "RLRLLLRRLRLL\n",
+    "output": "1 1 2 2 0 0 0 1 2 2 1 0 "
+  },
+  {
+    "input": "RLLLLRRLRLRL\n",
+    "output": "3 2 0 0 0 0 1 2 1 1 1 1 "
+  },
+  {
+    "input": "RRLLLRRLLLRL\n",
+    "output": "0 2 3 0 0 0 2 3 0 0 1 1 "
+  },
+  {
+    "input": "RRLLLRRLLRRLLRLL\n",
+    "output": "0 2 3 0 0 0 2 2 0 0 2 2 0 2 1 0 "
+  },
+  {
+    "input": "RRLLRLRRLLLL\n",
+    "output": "0 2 2 0 1 1 0 3 3 0 0 0 "
+  },
+  {
+    "input": "RRRLLLLLRRLLRRLL\n",
+    "output": "0 0 4 4 0 0 0 0 0 2 2 0 0 2 2 0 "
+  },
+  {
+    "input": "RLLLRLRLRRRLRLLL\n",
+    "output": "2 2 0 0 1 1 1 1 0 0 2 2 2 2 0 0 "
+  },
+  {
+    "input": "RRLLLRLLLRRLLRRL\n",
+    "output": "0 2 3 0 0 2 2 0 0 0 2 2 0 0 1 2 "
+  },
+  {
+    "input": "RLRLLLLRRRLLRRLL\n",
+    "output": "1 1 3 2 0 0 0 0 0 3 2 0 0 2 2 0 "
+  },
+  {
+    "input": "RRLLRLLRLLRL\n",
+    "output": "0 2 2 0 2 1 0 2 1 0 1 1 "
+  },
+  {
+    "input": "RLRLRLLRRLLLRRLL\n",
+    "output": "1 1 1 1 2 1 0 0 2 3 0 0 0 2 2 0 "
+  },
+  {
+    "input": "RRLLLRLRLRRLLRLL\n",
+    "output": "0 2 3 0 0 1 1 1 1 0 2 2 0 2 1 0 "
+  },
+  {
+    "input": "RRRLLRLLRLRLLLRL\n",
+    "output": "0 0 3 2 0 2 1 0 1 1 2 2 0 0 1 1 "
+  },
+  {
+    "input": "RRRLLRLLRRLLLRLL\n",
+    "output": "0 0 3 2 0 2 1 0 0 2 3 0 0 2 1 0 "
+  },
+  {
+    "input": "RRLLLLLRLRRL\n",
+    "output": "0 3 4 0 0 0 0 1 1 0 1 2 "
+  },
+  {
+    "input": "RLLLLRLRLRRLLRRL\n",
+    "output": "3 2 0 0 0 1 1 1 1 0 2 2 0 0 1 2 "
+  },
+  {
+    "input": "RRRLLRLRRLLLLLRL\n",
+    "output": "0 0 3 2 0 1 1 0 3 4 0 0 0 0 1 1 "
+  },
+  {
+    "input": "RLLLLLLRRRRL\n",
+    "output": "4 3 0 0 0 0 0 0 0 0 2 3 "
+  },
+  {
+    "input": "RRRLLRLLRLLRRLLL\n",
+    "output": "0 0 3 2 0 2 1 0 2 1 0 0 2 3 0 0 "
+  },
+  {
+    "input": "RRRLLRRLLRLLLRLL\n",
+    "output": "0 0 3 2 0 0 2 2 0 2 2 0 0 2 1 0 "
+  },
+  {
+    "input": "RRLLRLLRLRLL\n",
+    "output": "0 2 2 0 2 1 0 1 1 2 1 0 "
+  },
+  {
+    "input": "RRRRLLLLLRRLLRLL\n",
+    "output": "0 0 0 4 5 0 0 0 0 0 2 2 0 2 1 0 "
+  },
+  {
+    "input": "RLLLRLRLLRRLLRRL\n",
+    "output": "2 2 0 0 1 1 2 1 0 0 2 2 0 0 1 2 "
+  },
+  {
+    "input": "RRRLLLRLLRRLLRLL\n",
+    "output": "0 0 3 3 0 0 2 1 0 0 2 2 0 2 1 0 "
+  },
+  {
+    "input": "RRRLLLRLLRRRLLLL\n",
+    "output": "0 0 3 3 0 0 2 1 0 0 0 4 3 0 0 0 "
+  },
+  {
+    "input": "RRLRLLRLLRRRLLLL\n",
+    "output": "0 1 2 2 1 0 2 1 0 0 0 4 3 0 0 0 "
+  },
+  {
+    "input": "RLLLLRRLLRRL\n",
+    "output": "3 2 0 0 0 0 2 2 0 0 1 2 "
+  },
+  {
+    "input": "RRLLLLRLLRRLRRLL\n",
+    "output": "0 3 3 0 0 0 2 1 0 0 1 2 0 2 2 0 "
+  },
+  {
+    "input": "RRRRLLLLRLLLRRLL\n",
+    "output": "0 0 0 4 4 0 0 0 2 2 0 0 0 2 2 0 "
+  },
+  {
+    "input": "RLLLLLRRRRRLRLLL\n",
+    "output": "3 3 0 0 0 0 0 0 0 0 3 3 2 2 0 0 "
+  },
+  {
+    "input": "RLLLLRLRLRRL\n",
+    "output": "3 2 0 0 0 1 1 1 1 0 1 2 "
+  },
+  {
+    "input": "RRRLLRLLRLRRLLLL\n",
+    "output": "0 0 3 2 0 2 1 0 1 1 0 3 3 0 0 0 "
+  },
+  {
+    "input": "RRRLLRLLLRLLLRRL\n",
+    "output": "0 0 3 2 0 2 2 0 0 2 2 0 0 0 1 2 "
+  },
+  {
+    "input": "RRRLRLLLLRLL\n",
+    "output": "0 0 2 2 3 2 0 0 0 2 1 0 "
+  },
+  {
+    "input": "RLRRLLLLLRRLRRLL\n",
+    "output": "1 1 0 3 4 0 0 0 0 0 1 2 0 2 2 0 "
+  },
+  {
+    "input": "RRLLLLRLLRRRLRLL\n",
+    "output": "0 3 3 0 0 0 2 1 0 0 0 2 2 2 1 0 "
+  },
+  {
+    "input": "RLRRLRLLRLLLRRLL\n",
+    "output": "1 1 0 1 2 2 1 0 2 2 0 0 0 2 2 0 "
+  },
+  {
+    "input": "RRRLLRLLLLLRLRRL\n",
+    "output": "0 0 3 2 0 3 3 0 0 0 0 1 1 0 1 2 "
+  },
+  {
+    "input": "RRLLLLLLRRRL\n",
+    "output": "0 4 4 0 0 0 0 0 0 0 2 2 "
+  },
+  {
+    "input": "RLRLLLLRRRRLLLRL\n",
+    "output": "1 1 3 2 0 0 0 0 0 0 3 4 0 0 1 1 "
+  },
+  {
+    "input": "RRLLLLRRLLRL\n",
+    "output": "0 3 3 0 0 0 0 2 2 0 1 1 "
+  },
+  {
+    "input": "RRRLLLLLLRRL\n",
+    "output": "0 0 5 4 0 0 0 0 0 0 1 2 "
+  },
+  {
+    "input": "RLRLRRLLLRRLRLLL\n",
+    "output": "1 1 1 1 0 2 3 0 0 0 1 2 2 2 0 0 "
+  },
+  {
+    "input": "RRLLRLLLRRLLRRLL\n",
+    "output": "0 2 2 0 2 2 0 0 0 2 2 0 0 2 2 0 "
+  },
+  {
+    "input": "RRRLLRRLLLLLLRRL\n",
+    "output": "0 0 3 2 0 0 4 4 0 0 0 0 0 0 1 2 "
+  },
+  {
+    "input": "RRRLLRLLLRLRLLRL\n",
+    "output": "0 0 3 2 0 2 2 0 0 1 1 2 1 0 1 1 "
+  },
+  {
+    "input": "RRRRLRRLLLLRLLLL\n",
+    "output": "0 0 0 2 3 0 3 3 0 0 0 3 2 0 0 0 "
+  },
+  {
+    "input": "RRRLLRRLLLLL\n",
+    "output": "0 0 3 2 0 0 3 4 0 0 0 0 "
+  },
+  {
+    "input": "RLLLLRRLLRRLLRRL\n",
+    "output": "3 2 0 0 0 0 2 2 0 0 2 2 0 0 1 2 "
+  },
+  {
+    "input": "RLRLLLRRRRLLLRLL\n",
+    "output": "1 1 2 2 0 0 0 0 0 3 4 0 0 2 1 0 "
+  },
+  {
+    "input": "RRRLLRLLRLLRLRLL\n",
+    "output": "0 0 3 2 0 2 1 0 2 1 0 1 1 2 1 0 "
+  },
+  {
+    "input": "RRLLLRLRRLRLLLRL\n",
+    "output": "0 2 3 0 0 1 1 0 1 2 2 2 0 0 1 1 "
+  },
+  {
+    "input": "RRLRLLLLRLRLRRLL\n",
+    "output": "0 1 2 3 2 0 0 0 1 1 1 1 0 2 2 0 "
+  },
+  {
+    "input": "RRLRLLLLLRRL\n",
+    "output": "0 1 2 3 3 0 0 0 0 0 1 2 "
+  },
+  {
+    "input": "RRLLRLLLRRLLRLRL\n",
+    "output": "0 2 2 0 2 2 0 0 0 2 2 0 1 1 1 1 "
+  },
+  {
+    "input": "RRLLLRLLRLRRLRLL\n",
+    "output": "0 2 3 0 0 2 1 0 1 1 0 1 2 2 1 0 "
+  },
+  {
+    "input": "RRLLRLLLRRLL\n",
+    "output": "0 2 2 0 2 2 0 0 0 2 2 0 "
+  },
+  {
+    "input": "RRLLLRRLRLLL\n",
+    "output": "0 2 3 0 0 0 1 2 2 2 0 0 "
+  },
+  {
+    "input": "RRLLLLRRLRRLLRLL\n",
+    "output": "0 3 3 0 0 0 0 1 2 0 2 2 0 2 1 0 "
+  },
+  {
+    "input": "RLRRLRLLLLLRRRLL\n",
+    "output": "1 1 0 1 2 3 3 0 0 0 0 0 0 3 2 0 "
+  },
+  {
+    "input": "RRLRLLRRLLLL\n",
+    "output": "0 1 2 2 1 0 0 3 3 0 0 0 "
+  },
+  {
+    "input": "RRRLLRLLLRRRLLLL\n",
+    "output": "0 0 3 2 0 2 2 0 0 0 0 4 3 0 0 0 "
+  },
+  {
+    "input": "RRRLLLRLLLRLRRLL\n",
+    "output": "0 0 3 3 0 0 2 2 0 0 1 1 0 2 2 0 "
+  },
+  {
+    "input": "RRLLLRLRLRRLLLRL\n",
+    "output": "0 2 3 0 0 1 1 1 1 0 2 3 0 0 1 1 "
+  },
+  {
+    "input": "RRRLLLLRRLRLLLRL\n",
+    "output": "0 0 4 3 0 0 0 0 1 2 2 2 0 0 1 1 "
+  },
+  {
+    "input": "RRLLLLRRLRLRLRLL\n",
+    "output": "0 3 3 0 0 0 0 1 2 1 1 1 1 2 1 0 "
+  },
+  {
+    "input": "RLRLLLLRRLRLRLRL\n",
+    "output": "1 1 3 2 0 0 0 0 1 2 1 1 1 1 1 1 "
+  },
+  {
+    "input": "RLLLLRRLLRRRLLRL\n",
+    "output": "3 2 0 0 0 0 2 2 0 0 0 3 2 0 1 1 "
+  },
+  {
+    "input": "RRLLLLLRRLRRLLRL\n",
+    "output": "0 3 4 0 0 0 0 0 1 2 0 2 2 0 1 1 "
+  },
+  {
+    "input": "RRLLLLLLRRLRRLRL\n",
+    "output": "0 4 4 0 0 0 0 0 0 1 2 0 1 2 1 1 "
+  },
+  {
+    "input": "RRLLLRLRRRRLLLLL\n",
+    "output": "0 2 3 0 0 1 1 0 0 0 4 5 0 0 0 0 "
+  },
+  {
+    "input": "RRRLLLLLRLRLRLRL\n",
+    "output": "0 0 4 4 0 0 0 0 1 1 1 1 1 1 1 1 "
+  },
+  {
+    "input": "RRLLLLLLRRLRLRRL\n",
+    "output": "0 4 4 0 0 0 0 0 0 1 2 1 1 0 1 2 "
+  },
+  {
+    "input": "RRLLRLLLRLRLRLRL\n",
+    "output": "0 2 2 0 2 2 0 0 1 1 1 1 1 1 1 1 "
+  },
+  {
+    "input": "RLRLLRLLRLRRLRLL\n",
+    "output": "1 1 2 1 0 2 1 0 1 1 0 1 2 2 1 0 "
+  },
+  {
+    "input": "RRRLLLRLLRRLLLRL\n",
+    "output": "0 0 3 3 0 0 2 1 0 0 2 3 0 0 1 1 "
+  },
+  {
+    "input": "RRRLLRRLLLLRLRLL\n",
+    "output": "0 0 3 2 0 0 3 3 0 0 0 1 1 2 1 0 "
+  },
+  {
+    "input": "RLRLLLRLLRRL\n",
+    "output": "1 1 2 2 0 0 2 1 0 0 1 2 "
+  },
+  {
+    "input": "RRLLLLRLRRLL\n",
+    "output": "0 3 3 0 0 0 1 1 0 2 2 0 "
+  },
+  {
+    "input": "RRLRL\n",
+    "output": "0 1 2 1 1 "
+  },
+  {
+    "input": "RRLRL\n",
+    "output": "0 1 2 1 1 "
+  },
+  {
+    "input": "RRRLLRLLRRRLLLLL\n",
+    "output": "0 0 3 2 0 2 1 0 0 0 4 4 0 0 0 0 "
+  }
+]

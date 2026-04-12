@@ -1,0 +1,422 @@
+[
+  {
+    "input": "b\n",
+    "output": "0\n"
+  },
+  {
+    "input": "axbax\n",
+    "output": "2\n"
+  },
+  {
+    "input": "`b\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xxxo\n",
+    "output": "3\n"
+  },
+  {
+    "input": "tpxt\n",
+    "output": "1\n"
+  },
+  {
+    "input": "c\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bxbax\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "b`\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "yxxo\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "d\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bxbbx\n",
+    "output": "2\n"
+  },
+  {
+    "input": "ba\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oxxy\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "e\n",
+    "output": "0\n"
+  },
+  {
+    "input": "xxbbb\n",
+    "output": "2\n"
+  },
+  {
+    "input": "bb\n",
+    "output": "0\n"
+  },
+  {
+    "input": "oxyx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "f\n",
+    "output": "0\n"
+  },
+  {
+    "input": "xxabb\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "cb\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oxyy\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "g\n",
+    "output": "0\n"
+  },
+  {
+    "input": "xyabb\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "bc\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oxzy\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "h\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bbayx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "db\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oxzz\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "i\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bb`yx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "bd\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "zzxo\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "j\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bb`xx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "cc\n",
+    "output": "0\n"
+  },
+  {
+    "input": "ozxz\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "k\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bc`xx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "eb\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "ozzx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "l\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cc`xx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "da\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oyzx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "m\n",
+    "output": "0\n"
+  },
+  {
+    "input": "xx`cc\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "ad\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oyyx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "n\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cb`xx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "be\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oxyw\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "o\n",
+    "output": "0\n"
+  },
+  {
+    "input": "xb`xc\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "ae\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "wyxo\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "p\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cx`bx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "ea\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xywo\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "q\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cx`xb\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "e`\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xyvo\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "r\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cy`xb\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "f`\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xowy\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "s\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cy_xb\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "`e\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xowx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "t\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bx_yc\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "`f\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xxwo\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "u\n",
+    "output": "0\n"
+  },
+  {
+    "input": "bx`yc\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "_f\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "owxx\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "v\n",
+    "output": "0\n"
+  },
+  {
+    "input": "`xbyc\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "f_\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xwox\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "w\n",
+    "output": "0\n"
+  },
+  {
+    "input": "_xbyc\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "e_\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xxow\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "x\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cybx_\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "_e\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xyow\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "y\n",
+    "output": "0\n"
+  },
+  {
+    "input": "cybx^\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "^e\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "wyow\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "z\n",
+    "output": "0\n"
+  },
+  {
+    "input": "dybx^\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "e^\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "oxxx\n",
+    "output": "3\n"
+  },
+  {
+    "input": "a\n",
+    "output": "0\n"
+  },
+  {
+    "input": "xabxa\n",
+    "output": "2\n"
+  },
+  {
+    "input": "ab\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "xabxa\n",
+    "output": "2\n"
+  }
+]

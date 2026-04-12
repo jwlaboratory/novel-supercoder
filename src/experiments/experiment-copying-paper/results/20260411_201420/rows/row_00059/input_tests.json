@@ -1,0 +1,418 @@
+[
+  {
+    "input": "9 23 42\n",
+    "output": "Borys"
+  },
+  {
+    "input": "8 2 4\n",
+    "output": "Alice"
+  },
+  {
+    "input": "3 1 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "9 23 18\n",
+    "output": "Borys"
+  },
+  {
+    "input": "3 2 2\n",
+    "output": "Alice"
+  },
+  {
+    "input": "8 2 3\n",
+    "output": "Borys"
+  },
+  {
+    "input": "9 23 23\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 2 2\n",
+    "output": "Alice"
+  },
+  {
+    "input": "7 2 3\n",
+    "output": "Borys"
+  },
+  {
+    "input": "9 44 23\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 2 1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "7 2 5\n",
+    "output": "Borys"
+  },
+  {
+    "input": "9 44 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 0 1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "7 1 5\n",
+    "output": "Alice"
+  },
+  {
+    "input": "9 38 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 1 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "7 1 4\n",
+    "output": "Borys"
+  },
+  {
+    "input": "1 38 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 1 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "8 1 4\n",
+    "output": "Borys"
+  },
+  {
+    "input": "1 38 1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 2 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "8 1 7\n",
+    "output": "Alice"
+  },
+  {
+    "input": "1 31 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 0 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "8 0 7\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 31 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "1 0 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "8 0 3\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 31 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 0 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "8 1 3\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 53 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 0 -1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "3 1 3\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 64 -1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 -1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 1 3\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 64 -1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "-1 -1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "-1 1 3\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 64 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 -2 -1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "-1 1 4\n",
+    "output": "Borys"
+  },
+  {
+    "input": "1 64 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "-1 1 7\n",
+    "output": "Alice"
+  },
+  {
+    "input": "1 103 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "1 1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "-1 1 13\n",
+    "output": "Alice"
+  },
+  {
+    "input": "1 103 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "-1 1 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 103 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "4 1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 1 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 79 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "4 1 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 1 4\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 79 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "7 1 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 1 6\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 56 2\n",
+    "output": "Alice"
+  },
+  {
+    "input": "7 0 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 0 6\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 56 4\n",
+    "output": "Alice"
+  },
+  {
+    "input": "11 0 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "-1 0 6\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 12 4\n",
+    "output": "Alice"
+  },
+  {
+    "input": "11 -1 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "-1 0 8\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 21 4\n",
+    "output": "Borys"
+  },
+  {
+    "input": "21 -1 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "-1 0 10\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 21 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "21 -2 0\n",
+    "output": "Alice"
+  },
+  {
+    "input": "0 0 10\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 35 0\n",
+    "output": "Borys"
+  },
+  {
+    "input": "21 -2 1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "1 0 -1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 35 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "16 -2 1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "1 -1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 30 1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "16 -3 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 -1 -1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 11 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "16 -3 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "2 -1 -2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 11 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "5 -3 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 -1 -2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "-1 11 1\n",
+    "output": "Alice"
+  },
+  {
+    "input": "7 -3 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 -1 -3\n",
+    "output": "Alice"
+  },
+  {
+    "input": "-1 22 1\n",
+    "output": "Borys"
+  },
+  {
+    "input": "13 -3 2\n",
+    "output": "Borys"
+  },
+  {
+    "input": "0 0 -3\n",
+    "output": "Borys"
+  },
+  {
+    "input": "-1 22 2\n",
+    "output": "Alice"
+  },
+  {
+    "input": "58 23 42\n",
+    "output": "Borys"
+  },
+  {
+    "input": "5 2 4\n",
+    "output": "Alice"
+  },
+  {
+    "input": "5 2 4\n",
+    "output": "Alice"
+  },
+  {
+    "input": "2 1 2\n",
+    "output": "Borys"
+  }
+]

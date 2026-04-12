@@ -1,0 +1,20 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+	int i, j, p, N;
+	scanf("%d", &N);
+	printf("%d\n", (N - 1) * (N - 1) / 2);
+	for (i = 1, p = 1 - N % 2; i < N; i++) {
+		for (j = i + 1; j <= N; j++) if (j != N - i + p) printf("%d %d\n", i, j);
+	}
+	fflush(stdout);
+	return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

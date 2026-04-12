@@ -1,0 +1,113 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+int main()
+{
+    int num,temp,rem,count=0;
+    scanf("%d",&num);
+    temp = num;
+    while(temp!=0)
+    {
+        rem = temp%10;
+        if(rem==2)
+            count++;
+        temp/=10;
+    }
+    printf("%d\n",count);
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %edx
+	xorl	%r8d, %r8d
+	testl	%edx, %edx
+	je	.L2
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movslq	%edx, %rax
+	movl	%edx, %ecx
+	imulq	$1717986919, %rax, %rax
+	sarl	$31, %ecx
+	sarq	$34, %rax
+	subl	%ecx, %eax
+	leal	(%rax,%rax,4), %ecx
+	addl	%ecx, %ecx
+	subl	%ecx, %edx
+	cmpl	$2, %edx
+	sete	%dl
+	movzbl	%dl, %edx
+	addl	%edx, %r8d
+	movl	%eax, %edx
+	testl	%eax, %eax
+	jne	.L4
+.L2:
+	xorl	%eax, %eax
+	movl	%r8d, %edx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L10
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L10:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

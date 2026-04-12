@@ -1,0 +1,414 @@
+[
+  {
+    "input": "20\n",
+    "output": "No"
+  },
+  {
+    "input": "44\n",
+    "output": "Yes"
+  },
+  {
+    "input": "37\n",
+    "output": "Yes"
+  },
+  {
+    "input": "78\n",
+    "output": "Yes"
+  },
+  {
+    "input": "47\n",
+    "output": "Yes"
+  },
+  {
+    "input": "91\n",
+    "output": "Yes"
+  },
+  {
+    "input": "61\n",
+    "output": "Yes"
+  },
+  {
+    "input": "26\n",
+    "output": "No"
+  },
+  {
+    "input": "35\n",
+    "output": "Yes"
+  },
+  {
+    "input": "23\n",
+    "output": "No"
+  },
+  {
+    "input": "48\n",
+    "output": "Yes"
+  },
+  {
+    "input": "21\n",
+    "output": "No"
+  },
+  {
+    "input": "3\n",
+    "output": "No"
+  },
+  {
+    "input": "1\n",
+    "output": "No"
+  },
+  {
+    "input": "5\n",
+    "output": "No"
+  },
+  {
+    "input": "0\n",
+    "output": "No"
+  },
+  {
+    "input": "6\n",
+    "output": "No"
+  },
+  {
+    "input": "2\n",
+    "output": "No"
+  },
+  {
+    "input": "-1\n",
+    "output": "No"
+  },
+  {
+    "input": "-2\n",
+    "output": "No"
+  },
+  {
+    "input": "-3\n",
+    "output": "No"
+  },
+  {
+    "input": "-4\n",
+    "output": "No"
+  },
+  {
+    "input": "-6\n",
+    "output": "No"
+  },
+  {
+    "input": "-7\n",
+    "output": "No"
+  },
+  {
+    "input": "-11\n",
+    "output": "No"
+  },
+  {
+    "input": "-5\n",
+    "output": "No"
+  },
+  {
+    "input": "-10\n",
+    "output": "No"
+  },
+  {
+    "input": "4\n",
+    "output": "No"
+  },
+  {
+    "input": "-13\n",
+    "output": "No"
+  },
+  {
+    "input": "-9\n",
+    "output": "No"
+  },
+  {
+    "input": "-16\n",
+    "output": "No"
+  },
+  {
+    "input": "-12\n",
+    "output": "No"
+  },
+  {
+    "input": "-8\n",
+    "output": "No"
+  },
+  {
+    "input": "8\n",
+    "output": "No"
+  },
+  {
+    "input": "-17\n",
+    "output": "No"
+  },
+  {
+    "input": "9\n",
+    "output": "No"
+  },
+  {
+    "input": "-21\n",
+    "output": "No"
+  },
+  {
+    "input": "10\n",
+    "output": "No"
+  },
+  {
+    "input": "-28\n",
+    "output": "No"
+  },
+  {
+    "input": "17\n",
+    "output": "No"
+  },
+  {
+    "input": "-24\n",
+    "output": "No"
+  },
+  {
+    "input": "13\n",
+    "output": "No"
+  },
+  {
+    "input": "7\n",
+    "output": "No"
+  },
+  {
+    "input": "12\n",
+    "output": "No"
+  },
+  {
+    "input": "-15\n",
+    "output": "No"
+  },
+  {
+    "input": "11\n",
+    "output": "No"
+  },
+  {
+    "input": "-14\n",
+    "output": "No"
+  },
+  {
+    "input": "18\n",
+    "output": "No"
+  },
+  {
+    "input": "-25\n",
+    "output": "No"
+  },
+  {
+    "input": "24\n",
+    "output": "No"
+  },
+  {
+    "input": "-49\n",
+    "output": "No"
+  },
+  {
+    "input": "19\n",
+    "output": "No"
+  },
+  {
+    "input": "-66\n",
+    "output": "No"
+  },
+  {
+    "input": "-33\n",
+    "output": "No"
+  },
+  {
+    "input": "14\n",
+    "output": "No"
+  },
+  {
+    "input": "-37\n",
+    "output": "No"
+  },
+  {
+    "input": "-22\n",
+    "output": "No"
+  },
+  {
+    "input": "-20\n",
+    "output": "No"
+  },
+  {
+    "input": "-18\n",
+    "output": "No"
+  },
+  {
+    "input": "-26\n",
+    "output": "No"
+  },
+  {
+    "input": "27\n",
+    "output": "No"
+  },
+  {
+    "input": "22\n",
+    "output": "No"
+  },
+  {
+    "input": "50\n",
+    "output": "Yes"
+  },
+  {
+    "input": "38\n",
+    "output": "Yes"
+  },
+  {
+    "input": "72\n",
+    "output": "Yes"
+  },
+  {
+    "input": "56\n",
+    "output": "Yes"
+  },
+  {
+    "input": "39\n",
+    "output": "Yes"
+  },
+  {
+    "input": "108\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-19\n",
+    "output": "No"
+  },
+  {
+    "input": "212\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-44\n",
+    "output": "No"
+  },
+  {
+    "input": "238\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-27\n",
+    "output": "No"
+  },
+  {
+    "input": "29\n",
+    "output": "No"
+  },
+  {
+    "input": "-48\n",
+    "output": "No"
+  },
+  {
+    "input": "16\n",
+    "output": "No"
+  },
+  {
+    "input": "-76\n",
+    "output": "No"
+  },
+  {
+    "input": "-40\n",
+    "output": "No"
+  },
+  {
+    "input": "-152\n",
+    "output": "No"
+  },
+  {
+    "input": "41\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-263\n",
+    "output": "No"
+  },
+  {
+    "input": "58\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-130\n",
+    "output": "No"
+  },
+  {
+    "input": "43\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-208\n",
+    "output": "No"
+  },
+  {
+    "input": "71\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-222\n",
+    "output": "No"
+  },
+  {
+    "input": "87\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-54\n",
+    "output": "No"
+  },
+  {
+    "input": "109\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-95\n",
+    "output": "No"
+  },
+  {
+    "input": "88\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-50\n",
+    "output": "No"
+  },
+  {
+    "input": "117\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-71\n",
+    "output": "No"
+  },
+  {
+    "input": "114\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-107\n",
+    "output": "No"
+  },
+  {
+    "input": "169\n",
+    "output": "Yes"
+  },
+  {
+    "input": "-23\n",
+    "output": "No"
+  },
+  {
+    "input": "310\n",
+    "output": "Yes"
+  },
+  {
+    "input": "25\n",
+    "output": "No"
+  },
+  {
+    "input": "25\n",
+    "output": "No"
+  },
+  {
+    "input": "30\n",
+    "output": "Yes"
+  }
+]

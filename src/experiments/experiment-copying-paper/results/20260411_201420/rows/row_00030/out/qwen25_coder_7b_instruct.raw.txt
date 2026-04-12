@@ -1,0 +1,121 @@
+```assembly
+section .text
+global main
+extern printf, scanf
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 4032
+
+    lea rdi, [LC0]
+    call scanf
+    mov eax, dword [rsp+8]
+    test eax, eax
+    jle .L2
+
+    lea rbx, [rsp+16]
+    xor ecx, ecx
+    lea rsi, [LC1]
+
+.L3:
+    mov rdi, rbx
+    mov rsi, rsi
+    xor eax, eax
+    add ecx, 1
+    call scanf
+    mov eax, dword [rsp+8]
+    add rbx, 4
+    cmp ecx, eax
+    jg .L3
+
+.L2:
+    mov eax, dword [rsp+8]
+    mov ebx, dword [rsp+12]
+    cqto
+    idiv ebx
+    test edx, edx
+    je .L11
+
+    lea esi, [rax+rax]
+    jmp .L4
+
+.L5:
+    mov ecx, esi
+    add esi, eax
+    mov eax, ecx
+    cqto
+    idiv ebx
+    test edx, edx
+    jne .L5
+
+.L4:
+    mov ecx, esi
+    mov esi, [rsp+16]
+    cqto
+    idiv ebx
+    test eax, eax
+    jle .L12
+
+    lea edi, [rax+1]
+    mov ebx, eax
+    xor r10d, r10d
+    xor ecx, ecx
+    mov ebp, 1
+
+.L7:
+    mov eax, esi
+    mov edi, esi
+    mov edx, esi
+    cmp ecx, ebx
+    jle .L9
+
+.L8:
+    cmp eax, esi
+    cmovg esi, eax
+    cmp eax, edi
+    cmovl edi, eax
+    add ecx, 1
+    mov eax, ecx
+    cqto
+    idiv eax
+    movsx edx, dl
+    mov eax, [rsp+16+rdx*4]
+    cmp ebx, ecx
+    jne .L8
+
+    mov esi, eax
+    jmp .L9
+
+.L9:
+    add edi, r10d
+    add ebp, 1
+    add esi, ebx
+    sub ecx, edx
+    cmp edi, ebp
+    jne .L7
+
+.L6:
+    xor eax, eax
+    mov eax, r10d
+    mov esi, 1
+    lea rdi, [LC2]
+    call printf
+    mov rax, [rsp+4024]
+    sub rax, fs:[40]
+    jne .L20
+    add rsp, 4032
+    leave
+    ret
+
+.L11:
+    mov ecx, eax
+    jmp .L4
+
+.L12:
+    xor r10d, r10d
+    jmp .L6
+
+.L20:
+    call __stack_chk_fail
+```

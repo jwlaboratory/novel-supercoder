@@ -1,0 +1,10 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/experiment-copying-paper/results/smoke_run_20260412/paper_dataset.csv",
+  "total_rows": 20,
+  "source": {
+    "dataset": "random1123anonymized/supercoder",
+    "split": "val",
+    "offset": 0,
+    "limit": 20
+  }
+}

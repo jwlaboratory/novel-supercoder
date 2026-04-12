@@ -1,0 +1,418 @@
+[
+  {
+    "input": "cofgee\n",
+    "output": "No\n"
+  },
+  {
+    "input": "sjppvv\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "uuppis\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ephoni\n",
+    "output": "No\n"
+  },
+  {
+    "input": "cofgef\n",
+    "output": "No\n"
+  },
+  {
+    "input": "uvppis\n",
+    "output": "No\n"
+  },
+  {
+    "input": "eohoni\n",
+    "output": "No\n"
+  },
+  {
+    "input": "fegfoc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "sippvu\n",
+    "output": "No\n"
+  },
+  {
+    "input": "inohoe\n",
+    "output": "No\n"
+  },
+  {
+    "input": "fegeoc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "uvppjs\n",
+    "output": "No\n"
+  },
+  {
+    "input": "innhoe\n",
+    "output": "No\n"
+  },
+  {
+    "input": "feoegc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "sjppvu\n",
+    "output": "No\n"
+  },
+  {
+    "input": "innhof\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ffoegc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "fohnni\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gfoegc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "vvppjs\n",
+    "output": "No\n"
+  },
+  {
+    "input": "fohnnh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gfogec\n",
+    "output": "No\n"
+  },
+  {
+    "input": "sjqpvv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hnnhof\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gfogfc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "sjrpvv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hfnhon\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gfogdc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "vjrpvs\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nohnfh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gfgodc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "svprjv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "fhnhon\n",
+    "output": "No\n"
+  },
+  {
+    "input": "cdogfg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "svqrjv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nohnhf\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ddogfg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "swqrjv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nohnhe\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ddngfg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "swqqjv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "noinhe\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ddgnfg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "swqqvj\n",
+    "output": "No\n"
+  },
+  {
+    "input": "noinhd\n",
+    "output": "No\n"
+  },
+  {
+    "input": "edgnfg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jvqqws\n",
+    "output": "No\n"
+  },
+  {
+    "input": "doinhn\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ndgefg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jvpqws\n",
+    "output": "No\n"
+  },
+  {
+    "input": "dniohn\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ndgeeg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jvprws\n",
+    "output": "No\n"
+  },
+  {
+    "input": "dnhohn\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ndgeeh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jvprvs\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nhohnd\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ndfeeh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ivprvs\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nhohne\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nefeeh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ivpsvr\n",
+    "output": "No\n"
+  },
+  {
+    "input": "enhohn\n",
+    "output": "No\n"
+  },
+  {
+    "input": "neeeeh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "rvpsvi\n",
+    "output": "No\n"
+  },
+  {
+    "input": "enhhon\n",
+    "output": "No\n"
+  },
+  {
+    "input": "heeeen\n",
+    "output": "No\n"
+  },
+  {
+    "input": "rvprvi\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nohhne\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hedeen\n",
+    "output": "No\n"
+  },
+  {
+    "input": "rvvrpi\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hnheon\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hedeeo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "rvvrph\n",
+    "output": "No\n"
+  },
+  {
+    "input": "noehnh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hddeeo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "qvvrph\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nhehno\n",
+    "output": "No\n"
+  },
+  {
+    "input": "oeeddh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "qvvsph\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nhnheo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hcdeeo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "qhvspv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nnhheo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "oeedch\n",
+    "output": "No\n"
+  },
+  {
+    "input": "qhvrpv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nmhheo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "oeedbh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hqvrpv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nmgheo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "oeeebh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "vprvqh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "nmghdo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "oeeebg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hrvqpv\n",
+    "output": "No\n"
+  },
+  {
+    "input": "omghdo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "geeebo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hrvqov\n",
+    "output": "No\n"
+  },
+  {
+    "input": "odhgmo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gdeebo\n",
+    "output": "No\n"
+  },
+  {
+    "input": "coffee\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "sippuu\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "iphone\n",
+    "output": "No\n"
+  },
+  {
+    "input": "sippuu\n",
+    "output": "Yes\n"
+  }
+]

@@ -1,0 +1,19 @@
+section .text
+global main
+
+main:
+    sub rsp, 40
+    lea rdi, [LC0]
+    call scanf
+    mov eax, [rsp+20]
+    sub eax, [rsp+16]
+    test al, 1
+    jz .L2
+    lea rdi, [LC2]
+    jmp .L3
+.L2:
+    lea rdi, [LC1]
+.L3:
+    call puts
+    add rsp, 40
+    ret

@@ -1,0 +1,52 @@
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+
+loop_start:
+    lea rdi, [LC0]
+    xor eax, eax
+    call scanf
+    mov ecx, eax
+    add ecx, edx
+    jz exit_loop
+
+    mov ebx, 1
+outer_loop:
+    cmp ebx, ecx
+    jg outer_loop_end
+    mov ebp, 1
+inner_loop:
+    cmp ebp, edx
+    jg inner_loop_end
+    lea edi, [ebx + ebp]
+    testb $1, al
+    je print_hash
+    mov edi, 46
+    jmp print_char
+print_hash:
+    mov edi, 35
+print_char:
+    call putchar
+    inc ebp
+    jmp inner_loop
+inner_loop_end:
+    mov edi, 10
+    call putchar
+    inc ebx
+    jmp outer_loop
+outer_loop_end:
+    mov edi, 10
+    call putchar
+    jmp loop_start
+
+exit_loop:
+    mov rsp, rbp
+    pop rbp
+    ret
+
+section .rodata
+LC0 db "%d%d", 0

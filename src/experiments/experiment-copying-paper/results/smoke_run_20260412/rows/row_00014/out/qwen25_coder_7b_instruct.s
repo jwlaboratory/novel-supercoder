@@ -1,0 +1,87 @@
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 100016
+
+    lea rdi, [rbp-100016]
+    call read_string
+
+    movzx eax, byte [rbp-100016]
+    test al, al
+    je end
+
+    lea rsi, [rbp-100016+1]
+    xor ecx, ecx
+    mov rdx, rsi
+.L3:
+    inc rdx
+    mov eax, ecx
+    lea ecx, [rax+1]
+    cmp byte [rdx], 0
+    jne .L3
+    test ecx, ecx
+    je .L4
+    cqto
+    lea r8d, [rcx-1]
+    add rdx, rsi
+    jmp .L6
+.L25:
+    inc rdx
+    dec rcx
+    cmp rsi, rdx
+    je .L4
+.L6:
+    movzx eax, byte [rdx-2]
+    cmp al, byte [rsi]
+    je .L25
+.L5:
+    lea rdi, [rel LC2]
+    call puts
+    jmp .L8
+.L4:
+    cmp byte [rbp-100016], '0'
+    je .L5
+    movslq ecx, ebp
+    cmp byte [rbp-100016+rcx], '1'
+    je .L5
+    test ecx, ecx
+    jle .L8
+    xor ebp, ebp
+    mov ecx, 1
+    lea rdi, [rel LC1]
+.L10:
+    lea r13d, [rbp+2]
+    mov edx, ecx
+    xor eax, eax
+    mov esi, edi
+    mov ecx, r13d
+    call __printf_chk
+    cmp byte [rbp+rbp], '1'
+    cmove ecx, r13d
+    inc ebp
+    cmp ebp, ecx
+    jne .L10
+    jmp .L8
+.L2:
+    cmp byte [rbp-100016], '1'
+    je .L5
+.L8:
+    leave
+    ret
+
+read_string:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov rdi, [rbp+16]
+    call fgets
+    movzx eax, byte [rdi]
+    ret
+
+end:
+    lea rdi, [rel LC2]
+    call puts
+    jmp .L8

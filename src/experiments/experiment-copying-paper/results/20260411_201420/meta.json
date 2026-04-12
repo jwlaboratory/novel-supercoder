@@ -1,0 +1,10 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/experiment-copying-paper/results/20260411_201420/paper_dataset.csv",
+  "total_rows": 100,
+  "source": {
+    "dataset": "random1123anonymized/supercoder",
+    "split": "val",
+    "offset": 0,
+    "limit": 100
+  }
+}

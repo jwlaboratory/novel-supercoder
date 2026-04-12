@@ -1,0 +1,59 @@
+```c
+#include <stdlib.h>
+#include <string.h>
+int size(const void *x,const void *y);
+int main(){
+  int N;
+  int L[100];// 0 to 99
+  int i = 0;
+  char tmp[1024];
+  char *tp;
+  int sum = 0;
+  
+  if(scanf("%d",&N)<0){
+    return 1;
+  }
+  
+  // printf("%d\n",N);
+  
+  if (scanf("%[0-9 ^\n]",tmp)<0){
+    return 1;
+  }
+  //fgets(tmp,512,stdin);
+  // printf("%s\n",tmp);
+  tp = strtok(tmp, " ");
+	
+  L[i] = atoi(tp);
+  i=1;
+  while(tp = strtok(NULL, " ")){
+    L[i] = atoi(tp);
+    i++;
+  }
+  //ソート
+  qsort(L,i,sizeof(int),size);
+  i--; 
+  //
+  
+  for(int j = i ; 0<j && N > 0 ;j-=2){
+    // printf("%d[%d],%d[%d]\n",j,L[j],j-1,L[j-1]);
+    if(L[j]<L[j - 1]){
+      sum += L[j];
+    }else{
+      sum += L[j - 1];
+    }
+    N--;
+  }
+  printf("%d",sum);
+  return 0;
+}
+ 
+int size(const void *x,const void *y){
+  if(*(int *)x > *(int *)y){
+    return 1;
+  }else if(*(int *)x < *(int *)y){
+    return -1;
+  }else{
+    return 0;
+  }
+}
+```

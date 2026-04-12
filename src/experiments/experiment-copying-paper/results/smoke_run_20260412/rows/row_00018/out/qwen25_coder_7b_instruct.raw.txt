@@ -1,0 +1,57 @@
+```assembly
+section .bss
+    a resd 1000000
+
+section .text
+    global main
+    extern __isoc99_scanf
+    extern __printf_chk
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 24
+
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    mov ecx, eax
+    cmp ecx, 1
+    jle .L2
+
+    mov ebx, 2
+    lea rsi, [rsp+4]
+    lea rdi, [a]
+
+.L3:
+    mov rsi, rsi
+    mov rdi, rdi
+    xor eax, eax
+    add ebx, 1
+    call __isoc99_scanf
+    mov esi, dword [rsp]
+    add dword [rdi + rsi*4], 1
+    mov ecx, eax
+    cmp ebx, ecx
+    jge .L2
+
+.L2:
+    mov ebx, 1
+    lea rdi, [a]
+    lea rsi, [LC1]
+
+.L4:
+    mov eax, dword [rdi + rbx*4]
+    test eax, eax
+    je .L5
+    mov edi, eax
+    xor eax, eax
+    call __printf_chk
+    add ebx, 1
+    cmp ebx, ecx
+    jge .L4
+
+.L5:
+    mov rsp, rbp
+    pop rbp
+    ret
+```

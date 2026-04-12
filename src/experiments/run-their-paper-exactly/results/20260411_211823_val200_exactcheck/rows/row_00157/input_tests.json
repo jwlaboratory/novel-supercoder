@@ -1,0 +1,26 @@
+[
+  {
+    "input": "3\n2\n",
+    "output": "1\n"
+  },
+  {
+    "input": "1\n3\n",
+    "output": "2\n"
+  },
+  {
+    "input": "3\n001\n",
+    "output": "2\n"
+  },
+  {
+    "input": "3\n2\n",
+    "output": "1\n"
+  },
+  {
+    "input": "1\n3\n",
+    "output": "2\n"
+  },
+  {
+    "input": "3\n001\n",
+    "output": "2\n"
+  }
+]

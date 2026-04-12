@@ -1,0 +1,4226 @@
+idx,answer,test_cases,question,c_only_question
+0,"```c
+#include <stdio.h>
+int main(void){
+    // Your code here!
+    int i,j,n;
+    int ans=0,sum=0;
+    scanf(""%d"",&n);
+    int a[n];
+    
+    for(i=0;i<n;i++){
+        scanf(""%d"",&a[i]);
+    }
+    
+    for(j=0;j<n;j++){
+        ans = (ans+(long)a[j]*sum)%1000000007;
+        sum = (sum+a[j])%1000000007;
+    }
+    
+    printf(""%d\n"",ans);
+    return 0;
+}
+```","[{""input"": ""3\n0 2 3\n"", ""output"": ""6\n""}, {""input"": ""4\n141421356 17320508 22360679 176612\n"", ""output"": ""432841470\n""}, {""input"": ""3\n0 2 0\n"", ""output"": ""0\n""}, {""input"": ""4\n141421356 17320508 44188846 176612\n"", ""output"": ""442072669\n""}, {""input"": ""4\n141421356 15438004 44188846 176612\n"", ""output"": ""24018621\n""}, {""input"": ""4\n141421356 15438004 10545868 176612\n"", ""output"": ""309796111\n""}, {""input"": ""4\n141421356 22198551 10545868 176612\n"", ""output"": ""856634378\n""}, {""input"": ""4\n141421356 22198551 4405286 176612\n"", ""output"": ""907440962\n""}, {""input"": ""4\n141421356 5143928 4405286 176612\n"", ""output"": ""471127930\n""}, {""input"": ""4\n141421356 1512598 4405286 176612\n"", ""output"": ""478491412\n""}, {""input"": ""4\n141421356 1831213 4405286 176612\n"", ""output"": ""304938989\n""}, {""input"": ""4\n141421356 2224125 4405286 176612\n"", ""output"": ""735073075\n""}, {""input"": ""4\n141421356 2224125 4405286 26546\n"", ""output"": ""348827972\n""}, {""input"": ""4\n141421356 2224125 4405286 29158\n"", ""output"": ""57428667\n""}, {""input"": ""4\n141421356 2224125 3483883 29158\n"", ""output"": ""814956831\n""}, {""input"": ""4\n141421356 2224125 5164610 29158\n"", ""output"": ""658249038\n""}, {""input"": ""4\n14846625 2224125 5164610 29158\n"", ""output"": ""853759681\n""}, {""input"": ""4\n14846625 119786 5164610 29158\n"", ""output"": ""73489651\n""}, {""input"": ""4\n14846625 119786 2501999 29158\n"", ""output"": ""706798488\n""}, {""input"": ""4\n14846625 119786 2501999 47420\n"", ""output"": ""714899675\n""}, {""input"": ""4\n27651699 119786 2501999 47420\n"", ""output"": ""82206585\n""}, {""input"": ""4\n27651699 119786 2501999 72528\n"", ""output"": ""188837537\n""}, {""input"": ""4\n27651699 119786 2426618 72528\n"", ""output"": ""279308277\n""}, {""input"": ""4\n27651699 119786 3133913 72528\n"", ""output"": ""210345254\n""}, {""input"": ""4\n27651699 119786 5914431 72528\n"", ""output"": ""989142048\n""}, {""input"": ""4\n27651699 211119 5914431 72528\n"", ""output"": ""308671651\n""}, {""input"": ""4\n27651699 211119 10406344 72528\n"", ""output"": ""451650168\n""}, {""input"": ""4\n27651699 211119 10406344 94229\n"", ""output"": ""930728920\n""}, {""input"": ""4\n28568719 211119 10406344 94229\n"", ""output"": ""766457999\n""}, {""input"": ""4\n28568719 211119 623878 94229\n"", ""output"": ""189725990\n""}, {""input"": ""4\n28568719 211119 593808 94229\n"", ""output"": ""946537383\n""}, {""input"": ""4\n28568719 139427 593808 94229\n"", ""output"": ""471200910\n""}, {""input"": ""4\n27898610 139427 593808 94229\n"", ""output"": ""980131219\n""}, {""input"": ""4\n36257838 139427 593808 94229\n"", ""output"": ""940320592\n""}, {""input"": ""4\n36257838 139427 593808 70292\n"", ""output"": ""485012386\n""}, {""input"": ""4\n36257838 88697 593808 70292\n"", ""output"": ""435110757\n""}, {""input"": ""4\n36257838 88697 435150 70292\n"", ""output"": ""614213037\n""}, {""input"": ""4\n6341164 88697 435150 70292\n"", ""output"": ""951563776\n""}, {""input"": ""4\n6341164 105854 435150 70292\n"", ""output"": ""418782092\n""}, {""input"": ""4\n6341164 105854 435150 75715\n"", ""output"": ""740778897\n""}, {""input"": ""4\n6341164 101747 435150 75715\n"", ""output"": ""599495990\n""}, {""input"": ""4\n12645692 101747 435150 75715\n"", ""output"": ""828976092\n""}, {""input"": ""4\n3195143 101747 435150 75715\n"", ""output"": ""309292627\n""}, {""input"": ""4\n6160134 101747 435150 75715\n"", ""output"": ""698346407\n""}, {""input"": ""4\n6160134 101747 143968 75715\n"", ""output"": ""304480850\n""}, {""input"": ""4\n6160134 84292 143968 75715\n"", ""output"": ""944775899\n""}, {""input"": ""4\n5548583 84292 143968 75715\n"", ""output"": ""48561969\n""}, {""input"": ""4\n1069110 84292 143968 75715\n"", ""output"": ""400766328\n""}, {""input"": ""4\n1069110 84292 143968 43424\n"", ""output"": ""507391952\n""}, {""input"": ""4\n1069110 84292 143968 19516\n"", ""output"": ""489870209\n""}, {""input"": ""4\n1069110 84292 143968 7257\n"", ""output"": ""585411491\n""}, {""input"": ""4\n1069110 84292 143968 6344\n"", ""output"": ""400912688\n""}, {""input"": ""4\n1069110 84292 9743 6344\n"", ""output"": ""734006930\n""}, {""input"": ""4\n1837207 84292 9743 6344\n"", ""output"": ""834815154\n""}, {""input"": ""4\n1837207 116846 9743 6344\n"", ""output"": ""166947603\n""}, {""input"": ""4\n1988253 116846 9743 6344\n"", ""output"": ""245945381\n""}, {""input"": ""4\n1988253 116846 9743 12204\n"", ""output"": ""638919417\n""}, {""input"": ""4\n1988253 98660 9743 12204\n"", ""output"": ""81422469\n""}, {""input"": ""4\n3855157 98660 9743 12204\n"", ""output"": ""243111622\n""}, {""input"": ""4\n3855157 98660 5782 12204\n"", ""output"": ""533702553\n""}, {""input"": ""4\n3855157 64145 5782 12204\n"", ""output"": ""852172846\n""}, {""input"": ""4\n2509638 64145 5782 12204\n"", ""output"": ""343352627\n""}, {""input"": ""4\n2509638 64145 5782 11005\n"", ""output"": ""250454213\n""}, {""input"": ""4\n2509638 64145 5782 5951\n"", ""output"": ""213332794\n""}, {""input"": ""4\n2509638 64145 903 5951\n"", ""output"": ""626810699\n""}, {""input"": ""4\n3646424 64145 903 5951\n"", ""output"": ""337479346\n""}, {""input"": ""4\n3646424 64145 903 8685\n"", ""output"": ""484643724\n""}, {""input"": ""4\n3646424 64145 903 6247\n"", ""output"": ""436075051\n""}, {""input"": ""4\n3646424 64145 182 6247\n"", ""output"": ""756250736\n""}, {""input"": ""4\n3646424 64145 127 6247\n"", ""output"": ""551825856\n""}, {""input"": ""4\n3646424 64145 127 11813\n"", ""output"": ""205559645\n""}, {""input"": ""4\n3646424 64145 178 11813\n"", ""output"": ""395401127\n""}, {""input"": ""4\n3646424 4102 178 11813\n"", ""output"": ""733190822\n""}, {""input"": ""4\n3646424 4102 176 11813\n"", ""output"": ""725866144\n""}, {""input"": ""4\n4602446 4102 176 11813\n"", ""output"": ""109216034\n""}, {""input"": ""4\n2519048 4102 176 11813\n"", ""output"": ""585259054\n""}, {""input"": ""4\n2519048 2817 176 11813\n"", ""output"": ""332876530\n""}, {""input"": ""4\n2519048 2493 176 11813\n"", ""output"": ""512820549\n""}, {""input"": ""4\n2519048 2493 176 1307\n"", ""output"": ""19661929\n""}, {""input"": ""4\n2519048 3927 176 1307\n"", ""output"": ""634103362\n""}, {""input"": ""4\n2519048 3927 176 749\n"", ""output"": ""226185111\n""}, {""input"": ""4\n2519048 3927 227 749\n"", ""output"": ""354895035\n""}, {""input"": ""4\n2519048 3416 227 749\n"", ""output"": ""67162778\n""}, {""input"": ""4\n2519048 3416 366 749\n"", ""output"": ""417889385\n""}, {""input"": ""4\n2519048 3416 366 985\n"", ""output"": ""13277258\n""}, {""input"": ""4\n2519048 3416 189 985\n"", ""output"": ""566626792\n""}, {""input"": ""4\n2519048 3416 189 862\n"", ""output"": ""256340473\n""}, {""input"": ""4\n4932847 3416 189 862\n"", ""output"": ""38780529\n""}, {""input"": ""4\n4932847 3416 189 570\n"", ""output"": ""597336559\n""}, {""input"": ""4\n4932847 3416 189 33\n"", ""output"": ""946461856\n""}, {""input"": ""4\n4932847 3228 189 33\n"", ""output"": ""19044884\n""}, {""input"": ""4\n8519677 3228 189 33\n"", ""output"": ""393608300\n""}, {""input"": ""4\n8519677 3228 132 33\n"", ""output"": ""907800841\n""}, {""input"": ""4\n8519677 3228 187 33\n"", ""output"": ""376562424\n""}, {""input"": ""4\n8519677 230 187 33\n"", ""output"": ""833911400\n""}, {""input"": ""4\n8519677 230 75 33\n"", ""output"": ""879678127\n""}, {""input"": ""4\n10344776 230 75 33\n"", ""output"": ""496561582\n""}, {""input"": ""4\n10344776 230 6 33\n"", ""output"": ""782753898\n""}, {""input"": ""4\n6290673 230 6 33\n"", ""output"": ""692200198\n""}, {""input"": ""4\n6290673 168 6 33\n"", ""output"": ""302176054\n""}, {""input"": ""3\n1 2 3\n"", ""output"": ""11\n""}, {""input"": ""3\n1 2 3\n"", ""output"": ""11\n""}, {""input"": ""4\n141421356 17320508 22360679 244949\n"", ""output"": ""437235829\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+int main(void){
+    // Your code here!
+    int i,j,n;
+    int ans=0,sum=0;
+    scanf(""%d"",&n);
+    int a[n];
+    
+    for(i=0;i<n;i++){
+        scanf(""%d"",&a[i]);
+    }
+    
+    for(j=0;j<n;j++){
+        ans = (ans+(long)a[j]*sum)%1000000007;
+        sum = (sum+a[j])%1000000007;
+    }
+    
+    printf(""%d\n"",ans);
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	pushq	%r15
+	pushq	%r14
+	.cfi_offset 15, -24
+	.cfi_offset 14, -32
+	leaq	.LC0(%rip), %r14
+	leaq	-60(%rbp), %rsi
+	pushq	%r13
+	movq	%r14, %rdi
+	pushq	%r12
+	pushq	%rbx
+	subq	$24, %rsp
+	.cfi_offset 13, -40
+	.cfi_offset 12, -48
+	.cfi_offset 3, -56
+	movq	%fs:40, %rax
+	movq	%rax, -56(%rbp)
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movslq	-60(%rbp), %rax
+	movq	%rsp, %rsi
+	movq	%rax, %rcx
+	leaq	15(,%rax,4), %rax
+	movq	%rax, %rdx
+	andq	$-4096, %rax
+	subq	%rax, %rsi
+	andq	$-16, %rdx
+	cmpq	%rsi, %rsp
+	je	.L3
+.L17:
+	subq	$4096, %rsp
+	orq	$0, 4088(%rsp)
+	cmpq	%rsi, %rsp
+	jne	.L17
+.L3:
+	andl	$4095, %edx
+	subq	%rdx, %rsp
+	testq	%rdx, %rdx
+	jne	.L18
+.L4:
+	movq	%rsp, %r15
+	testl	%ecx, %ecx
+	jle	.L5
+	movq	%r15, %rbx
+	movq	%r15, %r13
+	xorl	%r12d, %r12d
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	movq	%r13, %rsi
+	movq	%r14, %rdi
+	xorl	%eax, %eax
+	addl	$1, %r12d
+	call	__isoc99_scanf@PLT
+	movl	-60(%rbp), %eax
+	addq	$4, %r13
+	cmpl	%r12d, %eax
+	jg	.L6
+	testl	%eax, %eax
+	jle	.L5
+	leaq	(%r15,%rax,4), %r8
+	xorl	%ecx, %ecx
+	xorl	%r10d, %r10d
+	movabsq	$-8543223828751151131, %rdi
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	movslq	(%rbx), %rsi
+	movslq	%ecx, %rax
+	movslq	%r10d, %r10
+	addq	$4, %rbx
+	movq	%rsi, %r9
+	imulq	%rax, %rsi
+	addq	%r10, %rsi
+	movq	%rsi, %rax
+	movl	%esi, %r10d
+	imulq	%rdi
+	movq	%rsi, %rax
+	sarq	$63, %rax
+	addq	%rsi, %rdx
+	sarq	$29, %rdx
+	subq	%rax, %rdx
+	leal	(%r9,%rcx), %eax
+	movslq	%eax, %rcx
+	imulq	$1000000007, %rdx, %rdx
+	imulq	$1152921497, %rcx, %rcx
+	subl	%edx, %r10d
+	cltd
+	sarq	$60, %rcx
+	subl	%edx, %ecx
+	imull	$1000000007, %ecx, %edx
+	subl	%edx, %eax
+	movl	%eax, %ecx
+	cmpq	%rbx, %r8
+	jne	.L7
+.L8:
+	xorl	%eax, %eax
+	movl	%r10d, %edx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	-56(%rbp), %rax
+	subq	%fs:40, %rax
+	jne	.L19
+	leaq	-40(%rbp), %rsp
+	xorl	%eax, %eax
+	popq	%rbx
+	popq	%r12
+	popq	%r13
+	popq	%r14
+	popq	%r15
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa 7, 8
+	ret
+.L18:
+	.cfi_restore_state
+	orq	$0, -8(%rsp,%rdx)
+	jmp	.L4
+.L5:
+	xorl	%r10d, %r10d
+	jmp	.L8
+.L19:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+int main(void){
+    // Your code here!
+    int i,j,n;
+    int ans=0,sum=0;
+    scanf(""%d"",&n);
+    int a[n];
+    
+    for(i=0;i<n;i++){
+        scanf(""%d"",&a[i]);
+    }
+    
+    for(j=0;j<n;j++){
+        ans = (ans+(long)a[j]*sum)%1000000007;
+        sum = (sum+a[j])%1000000007;
+    }
+    
+    printf(""%d\n"",ans);
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+1,"```c
+#include <stdio.h>
+#include <string.h>
+
+enum state {Await,Accum};
+typedef enum state State;
+
+int main(){
+
+    char x[200001];
+    scanf(""%s"", x);
+
+    int res = 0;
+    size_t state = 0;
+    for (int i = 0; x[i] != '\0'; ++i) {
+        if (x[i] == 'S') {
+            ++state;
+        } else if (state > 0) {
+            --state;
+            ++res;
+        }
+    }
+
+
+    printf(""%lu\n"", strlen(x)-2*res);
+}```","[{""input"": ""SSTTTSST\n"", ""output"": ""2\n""}, {""input"": ""STTTSS\n"", ""output"": ""4\n""}, {""input"": ""SSSTTT\n"", ""output"": ""0\n""}, {""input"": ""TTTSSS\n"", ""output"": ""6\n""}, {""input"": ""TTTTSSSS\n"", ""output"": ""8\n""}, {""input"": ""TSTSST\n"", ""output"": ""2\n""}, {""input"": ""SSTTTS\n"", ""output"": ""2\n""}, {""input"": ""TSSTST\n"", ""output"": ""2\n""}, {""input"": ""STTSST\n"", ""output"": ""2\n""}, {""input"": ""TSSSTT\n"", ""output"": ""2\n""}, {""input"": ""TTSSST\n"", ""output"": ""4\n""}, {""input"": ""TSSTTS\n"", ""output"": ""2\n""}, {""input"": ""STSTST\n"", ""output"": ""0\n""}, {""input"": ""TSTSTS\n"", ""output"": ""2\n""}, {""input"": ""TSSTTSST\n"", ""output"": ""2\n""}, {""input"": ""STSTTS\n"", ""output"": ""2\n""}, {""input"": ""TTSTSSST\n"", ""output"": ""4\n""}, {""input"": ""STTSTS\n"", ""output"": ""2\n""}, {""input"": ""TTSSTS\n"", ""output"": ""4\n""}, {""input"": ""STSSTT\n"", ""output"": ""0\n""}, {""input"": ""SSTTSTST\n"", ""output"": ""0\n""}, {""input"": ""TSSSTSTT\n"", ""output"": ""2\n""}, {""input"": ""TTSTSS\n"", ""output"": ""4\n""}, {""input"": ""SSTSTT\n"", ""output"": ""0\n""}, {""input"": ""TSTSTTSS\n"", ""output"": ""4\n""}, {""input"": ""SSSTTTST\n"", ""output"": ""0\n""}, {""input"": ""TTSTSTSS\n"", ""output"": ""4\n""}, {""input"": ""STTTTSSS\n"", ""output"": ""6\n""}, {""input"": ""TTTSSSST\n"", ""output"": ""6\n""}, {""input"": ""STSTSTTS\n"", ""output"": ""2\n""}, {""input"": ""STTSTSTS\n"", ""output"": ""2\n""}, {""input"": ""SSSTTTTS\n"", ""output"": ""2\n""}, {""input"": ""STTTSTSS\n"", ""output"": ""4\n""}, {""input"": ""SSTSTSTT\n"", ""output"": ""0\n""}, {""input"": ""SSTSTTTS\n"", ""output"": ""2\n""}, {""input"": ""TTSTSSTS\n"", ""output"": ""4\n""}, {""input"": ""STTSTSST\n"", ""output"": ""2\n""}, {""input"": ""TSSSTTTS\n"", ""output"": ""2\n""}, {""input"": ""STSSTSTT\n"", ""output"": ""0\n""}, {""input"": ""TSTTSSST\n"", ""output"": ""4\n""}, {""input"": ""STSTTTSS\n"", ""output"": ""4\n""}, {""input"": ""STTTSSST\n"", ""output"": ""4\n""}, {""input"": ""TTTSSSTS\n"", ""output"": ""6\n""}, {""input"": ""STTSSTST\n"", ""output"": ""2\n""}, {""input"": ""STSTSTST\n"", ""output"": ""0\n""}, {""input"": ""TTSSTSST\n"", ""output"": ""4\n""}, {""input"": ""SSSSTTTT\n"", ""output"": ""0\n""}, {""input"": ""STTSTTSS\n"", ""output"": ""4\n""}, {""input"": ""TTTSTSSS\n"", ""output"": ""6\n""}, {""input"": ""SSTSSTTT\n"", ""output"": ""0\n""}, {""input"": ""SSTTSTTS\n"", ""output"": ""2\n""}, {""input"": ""TSTTTSSS\n"", ""output"": ""6\n""}, {""input"": ""TSTSSTTS\n"", ""output"": ""2\n""}, {""input"": ""TSSTSSTT\n"", ""output"": ""2\n""}, {""input"": ""SSSTSTTT\n"", ""output"": ""0\n""}, {""input"": ""TTTSSTSS\n"", ""output"": ""6\n""}, {""input"": ""TSTSTSTS\n"", ""output"": ""2\n""}, {""input"": ""TSSTSTST\n"", ""output"": ""2\n""}, {""input"": ""TSTTSTSS\n"", ""output"": ""4\n""}, {""input"": ""TTSTTSSS\n"", ""output"": ""6\n""}, {""input"": ""STSSTTST\n"", ""output"": ""0\n""}, {""input"": ""SSSTTSTT\n"", ""output"": ""0\n""}, {""input"": ""TSTTSSTS\n"", ""output"": ""4\n""}, {""input"": ""SSTTTSTS\n"", ""output"": ""2\n""}, {""input"": ""SSTTTTSS\n"", ""output"": ""4\n""}, {""input"": ""SSTSTTST\n"", ""output"": ""0\n""}, {""input"": ""STTSSTTS\n"", ""output"": ""2\n""}, {""input"": ""SSTTSSTT\n"", ""output"": ""0\n""}, {""input"": ""TTSSTTSS\n"", ""output"": ""4\n""}, {""input"": ""TSSTTSTS\n"", ""output"": ""2\n""}, {""input"": ""TSTSSTST\n"", ""output"": ""2\n""}, {""input"": ""TSSSSTTT\n"", ""output"": ""2\n""}, {""input"": ""TTSSSTST\n"", ""output"": ""4\n""}, {""input"": ""TSSSTTST\n"", ""output"": ""2\n""}, {""input"": ""STSSSTTT\n"", ""output"": ""0\n""}, {""input"": ""TTSSSSTT\n"", ""output"": ""4\n""}, {""input"": ""TSTSTSST\n"", ""output"": ""2\n""}, {""input"": ""STTTSSTS\n"", ""output"": ""4\n""}, {""input"": ""STSTTSST\n"", ""output"": ""2\n""}, {""input"": ""TSTSSSTT\n"", ""output"": ""2\n""}, {""input"": ""TTSSSTTS\n"", ""output"": ""4\n""}, {""input"": ""STSSTTTS\n"", ""output"": ""2\n""}, {""input"": ""TTSSTSTS\n"", ""output"": ""4\n""}, {""input"": ""STTSSSTT\n"", ""output"": ""2\n""}, {""input"": ""STSTTSTS\n"", ""output"": ""2\n""}, {""input"": ""STSTSSTT\n"", ""output"": ""0\n""}, {""input"": ""TSSTSTTS\n"", ""output"": ""2\n""}, {""input"": ""TSSTTS\n"", ""output"": ""2\n""}, {""input"": ""SSTTTSST\n"", ""output"": ""2\n""}, {""input"": ""TSSTTSTS\n"", ""output"": ""2\n""}, {""input"": ""STSTTSST\n"", ""output"": ""2\n""}, {""input"": ""STTSST\n"", ""output"": ""2\n""}, {""input"": ""STTSTS\n"", ""output"": ""2\n""}, {""input"": ""SSTSTT\n"", ""output"": ""0\n""}, {""input"": ""TTSTSS\n"", ""output"": ""4\n""}, {""input"": ""STSTTS\n"", ""output"": ""2\n""}, {""input"": ""TSSTST\n"", ""output"": ""2\n""}, {""input"": ""SSSTTT\n"", ""output"": ""0\n""}, {""input"": ""STTTSSST\n"", ""output"": ""4\n""}, {""input"": ""TSTSST\n"", ""output"": ""2\n""}, {""input"": ""TSTTSS\n"", ""output"": ""4\n""}, {""input"": ""TSTTSS\n"", ""output"": ""4\n""}, {""input"": ""TSSTTTSS\n"", ""output"": ""4\n""}, {""input"": ""SSTTST\n"", ""output"": ""0\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+enum state {Await,Accum};
+typedef enum state State;
+
+int main(){
+
+    char x[200001];
+    scanf(""%s"", x);
+
+    int res = 0;
+    size_t state = 0;
+    for (int i = 0; x[i] != '\0'; ++i) {
+        if (x[i] == 'S') {
+            ++state;
+        } else if (state > 0) {
+            --state;
+            ++res;
+        }
+    }
+
+
+    printf(""%lu\n"", strlen(x)-2*res);
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+.LC1:
+	.string	""%lu\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	leaq	-196608(%rsp), %r11
+	.cfi_def_cfa 11, 196632
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	.cfi_def_cfa_register 7
+	subq	$3416, %rsp
+	.cfi_def_cfa_offset 200048
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 200008(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rbp
+	movq	%rbp, %rsi
+	call	__isoc99_scanf@PLT
+	movzbl	(%rsp), %eax
+	testb	%al, %al
+	je	.L7
+	leaq	1(%rsp), %rdx
+	xorl	%ecx, %ecx
+	xorl	%ebx, %ebx
+	jmp	.L5
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	testq	%rcx, %rcx
+	je	.L4
+	subq	$1, %rcx
+	addl	$1, %ebx
+.L4:
+	movzbl	(%rdx), %eax
+	addq	$1, %rdx
+	testb	%al, %al
+	je	.L2
+.L5:
+	cmpb	$83, %al
+	jne	.L3
+	movzbl	(%rdx), %eax
+	addq	$1, %rdx
+	addq	$1, %rcx
+	testb	%al, %al
+	jne	.L5
+.L2:
+	movq	%rbp, %rdi
+	addl	%ebx, %ebx
+	call	strlen@PLT
+	movslq	%ebx, %rbx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	subq	%rbx, %rax
+	movq	%rax, %rdx
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	movq	200008(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L14
+	addq	$200024, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L7:
+	.cfi_restore_state
+	xorl	%ebx, %ebx
+	jmp	.L2
+.L14:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE35:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+enum state {Await,Accum};
+typedef enum state State;
+
+int main(){
+
+    char x[200001];
+    scanf(""%s"", x);
+
+    int res = 0;
+    size_t state = 0;
+    for (int i = 0; x[i] != '\0'; ++i) {
+        if (x[i] == 'S') {
+            ++state;
+        } else if (state > 0) {
+            --state;
+            ++res;
+        }
+    }
+
+
+    printf(""%lu\n"", strlen(x)-2*res);
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+2,"```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int isodd(int x){
+	if(x % 2 == 1){
+		return 1;
+	}
+	return 0;
+}
+
+int main(){
+	int x, p;
+	scanf("" %d %d"", &x, &p);
+	double y=0, d = (double)x;
+	if(isodd(x)){
+		d+= 1.0-0.02*p;
+		y+=1.0;
+	}
+	y += d/(0.02*p);
+	printf(""%lf"",y);
+}
+```","[{""input"": ""6\n36\n"", ""output"": ""8.333333""}, {""input"": ""101\n141\n"", ""output"": ""36.170213""}, {""input"": ""3\n101\n"", ""output"": ""1.980198""}, {""input"": ""6\n38\n"", ""output"": ""7.894737""}, {""input"": ""101\n233\n"", ""output"": ""21.888412""}, {""input"": ""3\n111\n"", ""output"": ""1.801802""}, {""input"": ""6\n59\n"", ""output"": ""5.084746""}, {""input"": ""101\n416\n"", ""output"": ""12.259615""}, {""input"": ""3\n001\n"", ""output"": ""200.000000""}, {""input"": ""6\n106\n"", ""output"": ""2.830189""}, {""input"": ""101\n221\n"", ""output"": ""23.076923""}, {""input"": ""3\n011\n"", ""output"": ""18.181818""}, {""input"": ""6\n174\n"", ""output"": ""1.724138""}, {""input"": ""101\n27\n"", ""output"": ""188.888889""}, {""input"": ""3\n010\n"", ""output"": ""20.000000""}, {""input"": ""6\n95\n"", ""output"": ""3.157895""}, {""input"": ""101\n37\n"", ""output"": ""137.837838""}, {""input"": ""3\n110\n"", ""output"": ""1.818182""}, {""input"": ""6\n180\n"", ""output"": ""1.666667""}, {""input"": ""101\n67\n"", ""output"": ""76.119403""}, {""input"": ""3\n000\n"", ""output"": ""inf""}, {""input"": ""6\n274\n"", ""output"": ""1.094891""}, {""input"": ""101\n133\n"", ""output"": ""38.345865""}, {""input"": ""6\n138\n"", ""output"": ""2.173913""}, {""input"": ""101\n122\n"", ""output"": ""41.803279""}, {""input"": ""6\n232\n"", ""output"": ""1.293103""}, {""input"": ""101\n25\n"", ""output"": ""204.000000""}, {""input"": ""6\n397\n"", ""output"": ""0.755668""}, {""input"": ""101\n36\n"", ""output"": ""141.666667""}, {""input"": ""6\n414\n"", ""output"": ""0.724638""}, {""input"": ""101\n65\n"", ""output"": ""78.461538""}, {""input"": ""6\n534\n"", ""output"": ""0.561798""}, {""input"": ""101\n102\n"", ""output"": ""50.000000""}, {""input"": ""6\n805\n"", ""output"": ""0.372671""}, {""input"": ""101\n56\n"", ""output"": ""91.071429""}, {""input"": ""6\n944\n"", ""output"": ""0.317797""}, {""input"": ""101\n4\n"", ""output"": ""1275.000000""}, {""input"": ""6\n857\n"", ""output"": ""0.350058""}, {""input"": ""101\n8\n"", ""output"": ""637.500000""}, {""input"": ""6\n813\n"", ""output"": ""0.369004""}, {""input"": ""6\n819\n"", ""output"": ""0.366300""}, {""input"": ""101\n-1\n"", ""output"": ""-5100.000000""}, {""input"": ""6\n1401\n"", ""output"": ""0.214133""}, {""input"": ""101\n1\n"", ""output"": ""5100.000000""}, {""input"": ""6\n1772\n"", ""output"": ""0.169300""}, {""input"": ""101\n2\n"", ""output"": ""2550.000000""}, {""input"": ""6\n1247\n"", ""output"": ""0.240577""}, {""input"": ""101\n-2\n"", ""output"": ""-2550.000000""}, {""input"": ""6\n160\n"", ""output"": ""1.875000""}, {""input"": ""101\n3\n"", ""output"": ""1700.000000""}, {""input"": ""6\n20\n"", ""output"": ""15.000000""}, {""input"": ""101\n6\n"", ""output"": ""850.000000""}, {""input"": ""6\n25\n"", ""output"": ""12.000000""}, {""input"": ""101\n13\n"", ""output"": ""392.307692""}, {""input"": ""6\n19\n"", ""output"": ""15.789474""}, {""input"": ""101\n24\n"", ""output"": ""212.500000""}, {""input"": ""6\n37\n"", ""output"": ""8.108108""}, {""input"": ""101\n11\n"", ""output"": ""463.636364""}, {""input"": ""6\n56\n"", ""output"": ""5.357143""}, {""input"": ""101\n9\n"", ""output"": ""566.666667""}, {""input"": ""6\n30\n"", ""output"": ""10.000000""}, {""input"": ""101\n5\n"", ""output"": ""1020.000000""}, {""input"": ""6\n35\n"", ""output"": ""8.571429""}, {""input"": ""101\n10\n"", ""output"": ""510.000000""}, {""input"": ""6\n61\n"", ""output"": ""4.918033""}, {""input"": ""101\n16\n"", ""output"": ""318.750000""}, {""input"": ""6\n85\n"", ""output"": ""3.529412""}, {""input"": ""101\n46\n"", ""output"": ""110.869565""}, {""input"": ""6\n121\n"", ""output"": ""2.479339""}, {""input"": ""101\n82\n"", ""output"": ""62.195122""}, {""input"": ""6\n169\n"", ""output"": ""1.775148""}, {""input"": ""101\n132\n"", ""output"": ""38.636364""}, {""input"": ""6\n254\n"", ""output"": ""1.181102""}, {""input"": ""101\n131\n"", ""output"": ""38.931298""}, {""input"": ""6\n463\n"", ""output"": ""0.647948""}, {""input"": ""101\n216\n"", ""output"": ""23.611111""}, {""input"": ""6\n370\n"", ""output"": ""0.810811""}, {""input"": ""101\n14\n"", ""output"": ""364.285714""}, {""input"": ""6\n473\n"", ""output"": ""0.634249""}, {""input"": ""101\n15\n"", ""output"": ""340.000000""}, {""input"": ""6\n603\n"", ""output"": ""0.497512""}, {""input"": ""101\n20\n"", ""output"": ""255.000000""}, {""input"": ""6\n472\n"", ""output"": ""0.635593""}, {""input"": ""101\n23\n"", ""output"": ""221.739130""}, {""input"": ""6\n866\n"", ""output"": ""0.346420""}, {""input"": ""101\n29\n"", ""output"": ""175.862069""}, {""input"": ""6\n1673\n"", ""output"": ""0.179319""}, {""input"": ""101\n47\n"", ""output"": ""108.510638""}, {""input"": ""6\n2959\n"", ""output"": ""0.101386""}, {""input"": ""101\n57\n"", ""output"": ""89.473684""}, {""input"": ""6\n2729\n"", ""output"": ""0.109930""}, {""input"": ""101\n83\n"", ""output"": ""61.445783""}, {""input"": ""6\n2101\n"", ""output"": ""0.142789""}, {""input"": ""101\n71\n"", ""output"": ""71.830986""}, {""input"": ""6\n3231\n"", ""output"": ""0.092851""}, {""input"": ""101\n105\n"", ""output"": ""48.571429""}, {""input"": ""6\n4715\n"", ""output"": ""0.063627""}, {""input"": ""101\n117\n"", ""output"": ""43.589744""}, {""input"": ""6\n1098\n"", ""output"": ""0.273224""}, {""input"": ""101\n197\n"", ""output"": ""25.888325""}, {""input"": ""6\n40\n"", ""output"": ""7.500000""}, {""input"": ""3\n100\n"", ""output"": ""2.000000""}, {""input"": ""3\n100\n"", ""output"": ""2.000000""}, {""input"": ""101\n80\n"", ""output"": ""63.750000""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int isodd(int x){
+	if(x % 2 == 1){
+		return 1;
+	}
+	return 0;
+}
+
+int main(){
+	int x, p;
+	scanf("" %d %d"", &x, &p);
+	double y=0, d = (double)x;
+	if(isodd(x)){
+		d+= 1.0-0.02*p;
+		y+=1.0;
+	}
+	y += d/(0.02*p);
+	printf(""%lf"",y);
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	isodd
+	.type	isodd, @function
+isodd:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	movl	%edi, %eax
+	shrl	$31, %eax
+	addl	%eax, %edi
+	andl	$1, %edi
+	subl	%eax, %edi
+	xorl	%eax, %eax
+	cmpl	$1, %edi
+	sete	%al
+	ret
+	.cfi_endproc
+.LFE39:
+	.size	isodd, .-isodd
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC2:
+	.string	"" %d %d""
+.LC4:
+	.string	""%lf""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB40:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC2(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	pxor	%xmm0, %xmm0
+	movl	%eax, %edx
+	cvtsi2sdl	%eax, %xmm0
+	shrl	$31, %edx
+	addl	%edx, %eax
+	andl	$1, %eax
+	subl	%edx, %eax
+	cmpl	$1, %eax
+	je	.L8
+	pxor	%xmm1, %xmm1
+	movsd	.LC3(%rip), %xmm3
+	pxor	%xmm2, %xmm2
+	cvtsi2sdl	4(%rsp), %xmm1
+.L4:
+	mulsd	%xmm3, %xmm1
+	movl	$1, %edi
+	movl	$1, %eax
+	leaq	.LC4(%rip), %rsi
+	divsd	%xmm1, %xmm0
+	addsd	%xmm2, %xmm0
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L9
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L8:
+	.cfi_restore_state
+	pxor	%xmm1, %xmm1
+	movsd	.LC3(%rip), %xmm3
+	movsd	.LC1(%rip), %xmm2
+	cvtsi2sdl	4(%rsp), %xmm1
+	movapd	%xmm2, %xmm4
+	movapd	%xmm1, %xmm5
+	mulsd	%xmm3, %xmm5
+	subsd	%xmm5, %xmm4
+	addsd	%xmm4, %xmm0
+	jmp	.L4
+.L9:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE40:
+	.size	main, .-main
+	.section	.rodata.cst8,""aM"",@progbits,8
+	.align 8
+.LC1:
+	.long	0
+	.long	1072693248
+	.align 8
+.LC3:
+	.long	1202590843
+	.long	1066695393
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int isodd(int x){
+	if(x % 2 == 1){
+		return 1;
+	}
+	return 0;
+}
+
+int main(){
+	int x, p;
+	scanf("" %d %d"", &x, &p);
+	double y=0, d = (double)x;
+	if(isodd(x)){
+		d+= 1.0-0.02*p;
+		y+=1.0;
+	}
+	y += d/(0.02*p);
+	printf(""%lf"",y);
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+3,"```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+  long x,y;
+  scanf(""%ld %ld"", &x, &y);
+  long button;
+  if (labs(y) >= labs(x)) {
+    if (x >= 0 && y >= 0) {
+      button = y-x;
+    } else if (x >= 0 && y < 0) {
+      button = 1-x-y;
+    } else if (x < 0 && y >= 0) {
+      button = 1+y+x;
+    } else {
+      button = 2+x-y;
+    }
+  } else {
+    if (x >= 0 && y > 0) {
+      button = 2+x-y;
+    } else if (x >= 0 && y < 0) {
+      button = 1+y+x;
+    } else if (x >= 0 && y == 0) {
+      button = 1+x-y;
+    } else if (x < 0 && y > 0) {
+      button = 1-y-x;
+    } else {
+      button = y-x;
+    }
+  }
+  printf(""%ld\n"", button);
+
+  return 0;
+}```","[{""input"": ""15 20\n"", ""output"": ""5\n""}, {""input"": ""-10 -3\n"", ""output"": ""7\n""}, {""input"": ""19 -10\n"", ""output"": ""10\n""}, {""input"": ""-10 -2\n"", ""output"": ""8\n""}, {""input"": ""8 -10\n"", ""output"": ""3\n""}, {""input"": ""28 0\n"", ""output"": ""29\n""}, {""input"": ""28 2\n"", ""output"": ""28\n""}, {""input"": ""9 -14\n"", ""output"": ""6\n""}, {""input"": ""28 3\n"", ""output"": ""27\n""}, {""input"": ""1 -14\n"", ""output"": ""14\n""}, {""input"": ""53 3\n"", ""output"": ""52\n""}, {""input"": ""1 -20\n"", ""output"": ""20\n""}, {""input"": ""53 6\n"", ""output"": ""49\n""}, {""input"": ""0 -20\n"", ""output"": ""21\n""}, {""input"": ""53 0\n"", ""output"": ""54\n""}, {""input"": ""84 0\n"", ""output"": ""85\n""}, {""input"": ""137 0\n"", ""output"": ""138\n""}, {""input"": ""250 0\n"", ""output"": ""251\n""}, {""input"": ""110 0\n"", ""output"": ""111\n""}, {""input"": ""010 0\n"", ""output"": ""11\n""}, {""input"": ""10 34\n"", ""output"": ""24\n""}, {""input"": ""-10 -23\n"", ""output"": ""15\n""}, {""input"": ""15 40\n"", ""output"": ""25\n""}, {""input"": ""26 -10\n"", ""output"": ""17\n""}, {""input"": ""-6 -2\n"", ""output"": ""4\n""}, {""input"": ""40 0\n"", ""output"": ""41\n""}, {""input"": ""37 1\n"", ""output"": ""38\n""}, {""input"": ""76 3\n"", ""output"": ""75\n""}, {""input"": ""0 -32\n"", ""output"": ""33\n""}, {""input"": ""17 0\n"", ""output"": ""18\n""}, {""input"": ""228 0\n"", ""output"": ""229\n""}, {""input"": ""110 -1\n"", ""output"": ""110\n""}, {""input"": ""15 57\n"", ""output"": ""42\n""}, {""input"": ""-10 -9\n"", ""output"": ""1\n""}, {""input"": ""26 -1\n"", ""output"": ""26\n""}, {""input"": ""60 0\n"", ""output"": ""61\n""}, {""input"": ""24 -2\n"", ""output"": ""23\n""}, {""input"": ""76 0\n"", ""output"": ""77\n""}, {""input"": ""1 -32\n"", ""output"": ""32\n""}, {""input"": ""53 -1\n"", ""output"": ""53\n""}, {""input"": ""1 -12\n"", ""output"": ""12\n""}, {""input"": ""273 0\n"", ""output"": ""274\n""}, {""input"": ""-10 -63\n"", ""output"": ""55\n""}, {""input"": ""17 57\n"", ""output"": ""40\n""}, {""input"": ""22 -1\n"", ""output"": ""22\n""}, {""input"": ""43 0\n"", ""output"": ""44\n""}, {""input"": ""141 0\n"", ""output"": ""142\n""}, {""input"": ""55 1\n"", ""output"": ""56\n""}, {""input"": ""111 0\n"", ""output"": ""112\n""}, {""input"": ""4 34\n"", ""output"": ""30\n""}, {""input"": ""43 -1\n"", ""output"": ""43\n""}, {""input"": ""20 -2\n"", ""output"": ""19\n""}, {""input"": ""273 -1\n"", ""output"": ""273\n""}, {""input"": ""4 62\n"", ""output"": ""58\n""}, {""input"": ""14 -2\n"", ""output"": ""13\n""}, {""input"": ""47 -1\n"", ""output"": ""47\n""}, {""input"": ""16 -1\n"", ""output"": ""16\n""}, {""input"": ""42 5\n"", ""output"": ""39\n""}, {""input"": ""141 -1\n"", ""output"": ""141\n""}, {""input"": ""174 -1\n"", ""output"": ""174\n""}, {""input"": ""101 1\n"", ""output"": ""102\n""}, {""input"": ""72 -1\n"", ""output"": ""72\n""}, {""input"": ""35 2\n"", ""output"": ""35\n""}, {""input"": ""47 -2\n"", ""output"": ""46\n""}, {""input"": ""141 -2\n"", ""output"": ""140\n""}, {""input"": ""174 0\n"", ""output"": ""175\n""}, {""input"": ""100 1\n"", ""output"": ""101\n""}, {""input"": ""3 65\n"", ""output"": ""62\n""}, {""input"": ""47 -3\n"", ""output"": ""45\n""}, {""input"": ""77 5\n"", ""output"": ""74\n""}, {""input"": ""264 -2\n"", ""output"": ""263\n""}, {""input"": ""-1 -33\n"", ""output"": ""34\n""}, {""input"": ""77 0\n"", ""output"": ""78\n""}, {""input"": ""264 -4\n"", ""output"": ""261\n""}, {""input"": ""9 2\n"", ""output"": ""9\n""}, {""input"": ""98 1\n"", ""output"": ""99\n""}, {""input"": ""100 -1\n"", ""output"": ""100\n""}, {""input"": ""88 -6\n"", ""output"": ""83\n""}, {""input"": ""94 0\n"", ""output"": ""95\n""}, {""input"": ""264 -1\n"", ""output"": ""264\n""}, {""input"": ""147 1\n"", ""output"": ""148\n""}, {""input"": ""2 -52\n"", ""output"": ""51\n""}, {""input"": ""88 0\n"", ""output"": ""89\n""}, {""input"": ""64 0\n"", ""output"": ""65\n""}, {""input"": ""506 -1\n"", ""output"": ""506\n""}, {""input"": ""100 -3\n"", ""output"": ""98\n""}, {""input"": ""2 -95\n"", ""output"": ""94\n""}, {""input"": ""664 -1\n"", ""output"": ""664\n""}, {""input"": ""110 -3\n"", ""output"": ""108\n""}, {""input"": ""2 -177\n"", ""output"": ""176\n""}, {""input"": ""59 -1\n"", ""output"": ""59\n""}, {""input"": ""664 0\n"", ""output"": ""665\n""}, {""input"": ""100 -4\n"", ""output"": ""97\n""}, {""input"": ""1 -177\n"", ""output"": ""177\n""}, {""input"": ""59 0\n"", ""output"": ""60\n""}, {""input"": ""370 0\n"", ""output"": ""371\n""}, {""input"": ""2 -225\n"", ""output"": ""224\n""}, {""input"": ""370 -1\n"", ""output"": ""370\n""}, {""input"": ""100 -8\n"", ""output"": ""93\n""}, {""input"": ""3 -225\n"", ""output"": ""223\n""}, {""input"": ""10 20\n"", ""output"": ""10\n""}, {""input"": ""10 20\n"", ""output"": ""10\n""}, {""input"": ""10 -10\n"", ""output"": ""1\n""}, {""input"": ""-10 -20\n"", ""output"": ""12\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+  long x,y;
+  scanf(""%ld %ld"", &x, &y);
+  long button;
+  if (labs(y) >= labs(x)) {
+    if (x >= 0 && y >= 0) {
+      button = y-x;
+    } else if (x >= 0 && y < 0) {
+      button = 1-x-y;
+    } else if (x < 0 && y >= 0) {
+      button = 1+y+x;
+    } else {
+      button = 2+x-y;
+    }
+  } else {
+    if (x >= 0 && y > 0) {
+      button = 2+x-y;
+    } else if (x >= 0 && y < 0) {
+      button = 1+y+x;
+    } else if (x >= 0 && y == 0) {
+      button = 1+x-y;
+    } else if (x < 0 && y > 0) {
+      button = 1-y-x;
+    } else {
+      button = y-x;
+    }
+  }
+  printf(""%ld\n"", button);
+
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%ld %ld""
+.LC1:
+	.string	""%ld\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rdx
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movq	16(%rsp), %rcx
+	movq	8(%rsp), %rax
+	movq	%rcx, %rsi
+	movq	%rax, %rdx
+	negq	%rsi
+	cmovs	%rcx, %rsi
+	negq	%rdx
+	cmovs	%rax, %rdx
+	cmpq	%rdx, %rsi
+	jl	.L2
+	testq	%rax, %rax
+	js	.L3
+	testq	%rcx, %rcx
+	js	.L4
+	subq	%rax, %rcx
+	movq	%rcx, %rdx
+	jmp	.L5
+.L2:
+	testq	%rax, %rax
+	js	.L7
+	testq	%rcx, %rcx
+	jle	.L8
+.L14:
+	leaq	2(%rax), %rdx
+	subq	%rcx, %rdx
+.L5:
+	xorl	%eax, %eax
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L17
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L3:
+	.cfi_restore_state
+	testq	%rcx, %rcx
+	js	.L14
+.L15:
+	leaq	1(%rcx,%rax), %rdx
+	jmp	.L5
+.L8:
+	leaq	1(%rax), %rdx
+	je	.L5
+	jmp	.L15
+.L4:
+	movl	$1, %edx
+	subq	%rax, %rdx
+	subq	%rcx, %rdx
+	jmp	.L5
+.L7:
+	movq	%rcx, %rdx
+	subq	%rax, %rdx
+	testq	%rcx, %rcx
+	jle	.L5
+	movl	$1, %edx
+	subq	%rcx, %rdx
+	subq	%rax, %rdx
+	jmp	.L5
+.L17:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE39:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+  long x,y;
+  scanf(""%ld %ld"", &x, &y);
+  long button;
+  if (labs(y) >= labs(x)) {
+    if (x >= 0 && y >= 0) {
+      button = y-x;
+    } else if (x >= 0 && y < 0) {
+      button = 1-x-y;
+    } else if (x < 0 && y >= 0) {
+      button = 1+y+x;
+    } else {
+      button = 2+x-y;
+    }
+  } else {
+    if (x >= 0 && y > 0) {
+      button = 2+x-y;
+    } else if (x >= 0 && y < 0) {
+      button = 1+y+x;
+    } else if (x >= 0 && y == 0) {
+      button = 1+x-y;
+    } else if (x < 0 && y > 0) {
+      button = 1-y-x;
+    } else {
+      button = y-x;
+    }
+  }
+  printf(""%ld\n"", button);
+
+  return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+4,"```c
+#include<stdio.h>
+
+int main(){
+    int k,s;
+    scanf(""%d%d"",&k,&s);
+
+    int count=0;
+    int x,y;
+    for(x=0;x<=k;x++){
+        for(y=0;y<=k;y++){
+            if(0<=(s-x-y)&&(s-x-y)<=k){
+                count++;
+            }
+        }
+    }
+    printf(""%d\n"",count);
+    return 0;
+}```","[{""input"": ""3 2\n"", ""output"": ""6\n""}, {""input"": ""5 7\n"", ""output"": ""27\n""}, {""input"": ""3 3\n"", ""output"": ""10\n""}, {""input"": ""4 7\n"", ""output"": ""18\n""}, {""input"": ""3 4\n"", ""output"": ""12\n""}, {""input"": ""1 7\n"", ""output"": ""0\n""}, {""input"": ""2 5\n"", ""output"": ""3\n""}, {""input"": ""4 0\n"", ""output"": ""1\n""}, {""input"": ""6 7\n"", ""output"": ""33\n""}, {""input"": ""17 4\n"", ""output"": ""15\n""}, {""input"": ""5 5\n"", ""output"": ""21\n""}, {""input"": ""5 9\n"", ""output"": ""25\n""}, {""input"": ""2 3\n"", ""output"": ""7\n""}, {""input"": ""6 9\n"", ""output"": ""37\n""}, {""input"": ""12 9\n"", ""output"": ""55\n""}, {""input"": ""7 9\n"", ""output"": ""46\n""}, {""input"": ""11 12\n"", ""output"": ""88\n""}, {""input"": ""82 7\n"", ""output"": ""36\n""}, {""input"": ""10 6\n"", ""output"": ""28\n""}, {""input"": ""21 10\n"", ""output"": ""66\n""}, {""input"": ""24 13\n"", ""output"": ""105\n""}, {""input"": ""12 8\n"", ""output"": ""45\n""}, {""input"": ""12 13\n"", ""output"": ""102\n""}, {""input"": ""7 13\n"", ""output"": ""42\n""}, {""input"": ""13 12\n"", ""output"": ""91\n""}, {""input"": ""4 6\n"", ""output"": ""19\n""}, {""input"": ""8 10\n"", ""output"": ""57\n""}, {""input"": ""278 24\n"", ""output"": ""325\n""}, {""input"": ""278 20\n"", ""output"": ""231\n""}, {""input"": ""011 11\n"", ""output"": ""78\n""}, {""input"": ""100 22\n"", ""output"": ""276\n""}, {""input"": ""100 27\n"", ""output"": ""406\n""}, {""input"": ""110 28\n"", ""output"": ""435\n""}, {""input"": ""110 36\n"", ""output"": ""703\n""}, {""input"": ""100 58\n"", ""output"": ""1770\n""}, {""input"": ""100 50\n"", ""output"": ""1326\n""}, {""input"": ""101 60\n"", ""output"": ""1891\n""}, {""input"": ""111 72\n"", ""output"": ""2701\n""}, {""input"": ""111 79\n"", ""output"": ""3240\n""}, {""input"": ""3 5\n"", ""output"": ""12\n""}, {""input"": ""0 7\n"", ""output"": ""0\n""}, {""input"": ""0 4\n"", ""output"": ""0\n""}, {""input"": ""4 5\n"", ""output"": ""18\n""}, {""input"": ""-1 4\n"", ""output"": ""0\n""}, {""input"": ""-2 4\n"", ""output"": ""0\n""}, {""input"": ""6 0\n"", ""output"": ""1\n""}, {""input"": ""-2 7\n"", ""output"": ""0\n""}, {""input"": ""1 0\n"", ""output"": ""1\n""}, {""input"": ""0 6\n"", ""output"": ""0\n""}, {""input"": ""0 0\n"", ""output"": ""1\n""}, {""input"": ""0 11\n"", ""output"": ""0\n""}, {""input"": ""-1 0\n"", ""output"": ""0\n""}, {""input"": ""1 11\n"", ""output"": ""0\n""}, {""input"": ""-1 1\n"", ""output"": ""0\n""}, {""input"": ""1 2\n"", ""output"": ""3\n""}, {""input"": ""-2 1\n"", ""output"": ""0\n""}, {""input"": ""1 3\n"", ""output"": ""1\n""}, {""input"": ""-2 2\n"", ""output"": ""0\n""}, {""input"": ""1 5\n"", ""output"": ""0\n""}, {""input"": ""-2 0\n"", ""output"": ""0\n""}, {""input"": ""2 7\n"", ""output"": ""0\n""}, {""input"": ""0 1\n"", ""output"": ""0\n""}, {""input"": ""3 7\n"", ""output"": ""6\n""}, {""input"": ""1 1\n"", ""output"": ""3\n""}, {""input"": ""-1 -1\n"", ""output"": ""0\n""}, {""input"": ""6 1\n"", ""output"": ""3\n""}, {""input"": ""-2 -1\n"", ""output"": ""0\n""}, {""input"": ""-3 1\n"", ""output"": ""0\n""}, {""input"": ""-2 -2\n"", ""output"": ""0\n""}, {""input"": ""-4 1\n"", ""output"": ""0\n""}, {""input"": ""-4 -2\n"", ""output"": ""0\n""}, {""input"": ""-5 1\n"", ""output"": ""0\n""}, {""input"": ""-4 -1\n"", ""output"": ""0\n""}, {""input"": ""-6 1\n"", ""output"": ""0\n""}, {""input"": ""0 -2\n"", ""output"": ""0\n""}, {""input"": ""-5 0\n"", ""output"": ""0\n""}, {""input"": ""1 -2\n"", ""output"": ""0\n""}, {""input"": ""-8 0\n"", ""output"": ""0\n""}, {""input"": ""1 -1\n"", ""output"": ""0\n""}, {""input"": ""-10 0\n"", ""output"": ""0\n""}, {""input"": ""2 -2\n"", ""output"": ""0\n""}, {""input"": ""-10 1\n"", ""output"": ""0\n""}, {""input"": ""2 0\n"", ""output"": ""1\n""}, {""input"": ""-16 1\n"", ""output"": ""0\n""}, {""input"": ""2 1\n"", ""output"": ""3\n""}, {""input"": ""-12 1\n"", ""output"": ""0\n""}, {""input"": ""-1 -2\n"", ""output"": ""0\n""}, {""input"": ""-22 1\n"", ""output"": ""0\n""}, {""input"": ""0 -1\n"", ""output"": ""0\n""}, {""input"": ""-34 1\n"", ""output"": ""0\n""}, {""input"": ""2 -1\n"", ""output"": ""0\n""}, {""input"": ""0 2\n"", ""output"": ""0\n""}, {""input"": ""3 0\n"", ""output"": ""1\n""}, {""input"": ""0 8\n"", ""output"": ""0\n""}, {""input"": ""5 0\n"", ""output"": ""1\n""}, {""input"": ""-1 8\n"", ""output"": ""0\n""}, {""input"": ""-3 -2\n"", ""output"": ""0\n""}, {""input"": ""-2 8\n"", ""output"": ""0\n""}, {""input"": ""-5 -2\n"", ""output"": ""0\n""}, {""input"": ""-1 -4\n"", ""output"": ""0\n""}, {""input"": ""2 2\n"", ""output"": ""6\n""}, {""input"": ""2 2\n"", ""output"": ""6\n""}, {""input"": ""5 15\n"", ""output"": ""1\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+
+int main(){
+    int k,s;
+    scanf(""%d%d"",&k,&s);
+
+    int count=0;
+    int x,y;
+    for(x=0;x<=k;x++){
+        for(y=0;y<=k;y++){
+            if(0<=(s-x-y)&&(s-x-y)<=k){
+                count++;
+            }
+        }
+    }
+    printf(""%d\n"",count);
+    return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+	.string	""%d%d""
+.LC4:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC1(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %edi
+	testl	%edi, %edi
+	js	.L15
+	movl	4(%rsp), %r9d
+	leal	1(%rdi), %edx
+	cmpl	$2, %edi
+	jle	.L16
+	movd	%r9d, %xmm7
+	movl	%edx, %esi
+	pxor	%xmm1, %xmm1
+	xorl	%ecx, %ecx
+	pshufd	$0, %xmm7, %xmm11
+	movd	%edi, %xmm7
+	shrl	$2, %esi
+	movdqa	%xmm1, %xmm4
+	movdqa	.LC0(%rip), %xmm9
+	pshufd	$0, %xmm7, %xmm8
+	movdqa	.LC2(%rip), %xmm10
+	movdqa	.LC3(%rip), %xmm7
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movdqa	%xmm9, %xmm0
+	movdqa	%xmm11, %xmm6
+	pxor	%xmm3, %xmm3
+	xorl	%eax, %eax
+	paddd	%xmm10, %xmm9
+	psubd	%xmm0, %xmm6
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movdqa	%xmm3, %xmm0
+	movdqa	%xmm6, %xmm5
+	movdqa	%xmm4, %xmm2
+	addl	$1, %eax
+	psubd	%xmm0, %xmm5
+	paddd	%xmm7, %xmm3
+	movdqa	%xmm5, %xmm0
+	pcmpgtd	%xmm5, %xmm2
+	pcmpgtd	%xmm8, %xmm0
+	pcmpeqd	%xmm4, %xmm2
+	pcmpeqd	%xmm4, %xmm0
+	pand	%xmm2, %xmm0
+	psubd	%xmm0, %xmm1
+	cmpl	%edx, %eax
+	jne	.L4
+	addl	$1, %ecx
+	cmpl	%esi, %ecx
+	jne	.L5
+	movdqa	%xmm1, %xmm0
+	movl	%eax, %ecx
+	psrldq	$8, %xmm0
+	andl	$-4, %ecx
+	paddd	%xmm0, %xmm1
+	movdqa	%xmm1, %xmm0
+	psrldq	$4, %xmm0
+	paddd	%xmm0, %xmm1
+	movd	%xmm1, %edx
+	testb	$3, %al
+	je	.L2
+.L3:
+	movl	%r9d, %r8d
+	subl	%ecx, %r8d
+	movl	%r8d, %esi
+	subl	%edi, %esi
+	subl	$1, %esi
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	movl	%r8d, %eax
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	cmpl	%edi, %eax
+	jg	.L11
+	movl	%eax, %ecx
+	notl	%ecx
+	shrl	$31, %ecx
+	cmpb	$1, %cl
+	sbbl	$-1, %edx
+.L11:
+	subl	$1, %eax
+	cmpl	%esi, %eax
+	jne	.L8
+	subl	$1, %r8d
+	movl	%r9d, %eax
+	subl	$1, %esi
+	subl	%r8d, %eax
+	cmpl	%eax, %edi
+	jge	.L9
+.L2:
+	xorl	%eax, %eax
+	leaq	.LC4(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L27
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L15:
+	.cfi_restore_state
+	xorl	%edx, %edx
+	jmp	.L2
+.L16:
+	xorl	%ecx, %ecx
+	xorl	%edx, %edx
+	jmp	.L3
+.L27:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.section	.rodata.cst16,""aM"",@progbits,16
+	.align 16
+.LC0:
+	.long	0
+	.long	1
+	.long	2
+	.long	3
+	.align 16
+.LC2:
+	.long	4
+	.long	4
+	.long	4
+	.long	4
+	.align 16
+.LC3:
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+
+int main(){
+    int k,s;
+    scanf(""%d%d"",&k,&s);
+
+    int count=0;
+    int x,y;
+    for(x=0;x<=k;x++){
+        for(y=0;y<=k;y++){
+            if(0<=(s-x-y)&&(s-x-y)<=k){
+                count++;
+            }
+        }
+    }
+    printf(""%d\n"",count);
+    return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+5,"```c
+#include<stdio.h>
+int gcd(int a,int b){return a<b?gcd(b,a):b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a*(b/gcd(a,b));}
+int main(){
+  int a,b,c=1;
+  scanf(""%d"",&a);
+  while(a--){
+    scanf(""%d"",&b);
+    c=lcm(b,c);
+  }
+  printf(""%d\n"",c);
+  return 0;
+}```","[{""input"": ""4\n1 2 5 5\n"", ""output"": ""10\n""}, {""input"": ""3\n3 4 3\n"", ""output"": ""12\n""}, {""input"": ""4\n1 2 5 7\n"", ""output"": ""70\n""}, {""input"": ""3\n3 7 3\n"", ""output"": ""21\n""}, {""input"": ""4\n1 2 1 7\n"", ""output"": ""14\n""}, {""input"": ""3\n3 10 3\n"", ""output"": ""30\n""}, {""input"": ""3\n3 13 3\n"", ""output"": ""39\n""}, {""input"": ""4\n1 2 2 11\n"", ""output"": ""22\n""}, {""input"": ""3\n6 13 3\n"", ""output"": ""78\n""}, {""input"": ""3\n4 13 3\n"", ""output"": ""156\n""}, {""input"": ""3\n4 13 4\n"", ""output"": ""52\n""}, {""input"": ""3\n4 13 5\n"", ""output"": ""260\n""}, {""input"": ""3\n4 6 5\n"", ""output"": ""60\n""}, {""input"": ""3\n4 6 7\n"", ""output"": ""84\n""}, {""input"": ""3\n4 4 7\n"", ""output"": ""28\n""}, {""input"": ""3\n5 4 7\n"", ""output"": ""140\n""}, {""input"": ""3\n9 4 3\n"", ""output"": ""36\n""}, {""input"": ""3\n19 4 4\n"", ""output"": ""76\n""}, {""input"": ""3\n19 2 6\n"", ""output"": ""114\n""}, {""input"": ""3\n9 2 6\n"", ""output"": ""18\n""}, {""input"": ""3\n3 4 11\n"", ""output"": ""132\n""}, {""input"": ""4\n1 2 5 8\n"", ""output"": ""40\n""}, {""input"": ""4\n1 2 5 9\n"", ""output"": ""90\n""}, {""input"": ""3\n3 2 3\n"", ""output"": ""6\n""}, {""input"": ""4\n1 1 1 7\n"", ""output"": ""7\n""}, {""input"": ""3\n3 24 3\n"", ""output"": ""24\n""}, {""input"": ""3\n6 16 3\n"", ""output"": ""48\n""}, {""input"": ""4\n1 2 2 19\n"", ""output"": ""38\n""}, {""input"": ""3\n1 13 5\n"", ""output"": ""65\n""}, {""input"": ""3\n7 6 5\n"", ""output"": ""210\n""}, {""input"": ""3\n8 4 7\n"", ""output"": ""56\n""}, {""input"": ""3\n5 4 2\n"", ""output"": ""20\n""}, {""input"": ""3\n4 2 4\n"", ""output"": ""4\n""}, {""input"": ""3\n19 2 11\n"", ""output"": ""418\n""}, {""input"": ""4\n1 2 5 16\n"", ""output"": ""80\n""}, {""input"": ""4\n2 2 3 7\n"", ""output"": ""42\n""}, {""input"": ""3\n3 37 3\n"", ""output"": ""111\n""}, {""input"": ""3\n6 17 3\n"", ""output"": ""102\n""}, {""input"": ""3\n1 22 5\n"", ""output"": ""110\n""}, {""input"": ""3\n7 12 5\n"", ""output"": ""420\n""}, {""input"": ""3\n8 5 7\n"", ""output"": ""280\n""}, {""input"": ""3\n9 2 8\n"", ""output"": ""72\n""}, {""input"": ""4\n1 2 5 24\n"", ""output"": ""120\n""}, {""input"": ""3\n3 37 5\n"", ""output"": ""555\n""}, {""input"": ""3\n7 17 3\n"", ""output"": ""357\n""}, {""input"": ""3\n7 3 5\n"", ""output"": ""105\n""}, {""input"": ""3\n1 5 7\n"", ""output"": ""35\n""}, {""input"": ""3\n3 37 10\n"", ""output"": ""1110\n""}, {""input"": ""3\n7 17 2\n"", ""output"": ""238\n""}, {""input"": ""4\n4 2 8 4\n"", ""output"": ""8\n""}, {""input"": ""3\n5 37 10\n"", ""output"": ""370\n""}, {""input"": ""3\n16 2 9\n"", ""output"": ""144\n""}, {""input"": ""4\n1 2 5 44\n"", ""output"": ""220\n""}, {""input"": ""3\n9 37 10\n"", ""output"": ""3330\n""}, {""input"": ""3\n29 2 9\n"", ""output"": ""522\n""}, {""input"": ""4\n1 3 5 44\n"", ""output"": ""660\n""}, {""input"": ""3\n8 13 5\n"", ""output"": ""520\n""}, {""input"": ""3\n9 39 10\n"", ""output"": ""1170\n""}, {""input"": ""3\n14 25 2\n"", ""output"": ""350\n""}, {""input"": ""3\n5 1 3\n"", ""output"": ""15\n""}, {""input"": ""3\n29 2 2\n"", ""output"": ""58\n""}, {""input"": ""3\n13 3 10\n"", ""output"": ""390\n""}, {""input"": ""3\n8 11 5\n"", ""output"": ""440\n""}, {""input"": ""3\n9 39 11\n"", ""output"": ""1287\n""}, {""input"": ""3\n46 7 4\n"", ""output"": ""644\n""}, {""input"": ""3\n13 2 10\n"", ""output"": ""130\n""}, {""input"": ""3\n12 39 11\n"", ""output"": ""1716\n""}, {""input"": ""3\n46 7 6\n"", ""output"": ""966\n""}, {""input"": ""3\n1 2 2\n"", ""output"": ""2\n""}, {""input"": ""3\n3 1 1\n"", ""output"": ""3\n""}, {""input"": ""3\n46 7 5\n"", ""output"": ""1610\n""}, {""input"": ""3\n5 1 1\n"", ""output"": ""5\n""}, {""input"": ""3\n12 77 1\n"", ""output"": ""924\n""}, {""input"": ""3\n19 1 12\n"", ""output"": ""228\n""}, {""input"": ""3\n19 1 1\n"", ""output"": ""19\n""}, {""input"": ""3\n19 1 3\n"", ""output"": ""57\n""}, {""input"": ""4\n1 1 4 11\n"", ""output"": ""44\n""}, {""input"": ""4\n1 1 2 32\n"", ""output"": ""32\n""}, {""input"": ""3\n7 16 3\n"", ""output"": ""336\n""}, {""input"": ""3\n1 13 1\n"", ""output"": ""13\n""}, {""input"": ""3\n13 4 7\n"", ""output"": ""364\n""}, {""input"": ""3\n1 17 3\n"", ""output"": ""51\n""}, {""input"": ""3\n1 17 5\n"", ""output"": ""85\n""}, {""input"": ""3\n17 2 5\n"", ""output"": ""170\n""}, {""input"": ""3\n7 34 3\n"", ""output"": ""714\n""}, {""input"": ""3\n1 1 1\n"", ""output"": ""1\n""}, {""input"": ""3\n5 11 3\n"", ""output"": ""165\n""}, {""input"": ""3\n11 1 3\n"", ""output"": ""33\n""}, {""input"": ""3\n4 37 10\n"", ""output"": ""740\n""}, {""input"": ""3\n13 17 2\n"", ""output"": ""442\n""}, {""input"": ""3\n16 2 8\n"", ""output"": ""16\n""}, {""input"": ""3\n7 3 9\n"", ""output"": ""63\n""}, {""input"": ""4\n1 2 5 51\n"", ""output"": ""510\n""}, {""input"": ""3\n9 37 14\n"", ""output"": ""4662\n""}, {""input"": ""3\n9 3 1\n"", ""output"": ""9\n""}, {""input"": ""3\n8 13 8\n"", ""output"": ""104\n""}, {""input"": ""3\n9 54 10\n"", ""output"": ""270\n""}, {""input"": ""3\n9 25 2\n"", ""output"": ""450\n""}, {""input"": ""3\n5 3 9\n"", ""output"": ""45\n""}, {""input"": ""3\n13 3 18\n"", ""output"": ""234\n""}, {""input"": ""4\n1 2 3 5\n"", ""output"": ""30\n""}, {""input"": ""3\n3 4 6\n"", ""output"": ""12\n""}, {""input"": ""3\n3 4 6\n"", ""output"": ""12\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int gcd(int a,int b){return a<b?gcd(b,a):b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a*(b/gcd(a,b));}
+int main(){
+  int a,b,c=1;
+  scanf(""%d"",&a);
+  while(a--){
+    scanf(""%d"",&b);
+    c=lcm(b,c);
+  }
+  printf(""%d\n"",c);
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	movl	%edi, %edx
+	jmp	.L2
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	cltd
+	idivl	%esi
+.L3:
+	movl	%edx, %eax
+	movl	%esi, %edx
+	movl	%eax, %esi
+.L2:
+	cmpl	%esi, %edx
+	jl	.L3
+	movl	%edx, %eax
+	testl	%esi, %esi
+	jne	.L6
+	ret
+	.cfi_endproc
+.LFE23:
+	.size	gcd, .-gcd
+	.p2align 4
+	.globl	lcm
+	.type	lcm, @function
+lcm:
+.LFB24:
+	.cfi_startproc
+	endbr64
+	movl	%esi, %r8d
+	movl	%edi, %ecx
+	jmp	.L8
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	movl	%ecx, %eax
+	cltd
+	idivl	%r8d
+	movl	%edx, %ecx
+.L9:
+	movl	%ecx, %edx
+	movl	%r8d, %ecx
+	movl	%edx, %r8d
+.L8:
+	cmpl	%r8d, %ecx
+	jl	.L9
+	testl	%r8d, %r8d
+	jne	.L11
+	movl	%esi, %eax
+	cltd
+	idivl	%ecx
+	imull	%edi, %eax
+	ret
+	.cfi_endproc
+.LFE24:
+	.size	lcm, .-lcm
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB25:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movl	$1, %r12d
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	leaq	.LC0(%rip), %rbx
+	movq	%rbx, %rdi
+	subq	$16, %rsp
+	.cfi_def_cfa_offset 48
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	leal	-1(%rax), %edx
+	movl	%edx, (%rsp)
+	testl	%eax, %eax
+	je	.L13
+	leaq	4(%rsp), %rbp
+	.p2align 4,,10
+	.p2align 3
+.L17:
+	movq	%rbp, %rsi
+	movq	%rbx, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %edi
+	movl	%r12d, %esi
+	movl	%edi, %ecx
+	jmp	.L14
+	.p2align 4,,10
+	.p2align 3
+.L22:
+	movl	%ecx, %eax
+	cltd
+	idivl	%esi
+	movl	%edx, %ecx
+.L15:
+	movl	%ecx, %edx
+	movl	%esi, %ecx
+	movl	%edx, %esi
+.L14:
+	cmpl	%esi, %ecx
+	jl	.L15
+	testl	%esi, %esi
+	jne	.L22
+	movl	%r12d, %eax
+	cltd
+	idivl	%ecx
+	movl	%eax, %r12d
+	movl	(%rsp), %eax
+	imull	%edi, %r12d
+	leal	-1(%rax), %edx
+	movl	%edx, (%rsp)
+	testl	%eax, %eax
+	jne	.L17
+.L13:
+	xorl	%eax, %eax
+	movl	%r12d, %edx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L23
+	addq	$16, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+.L23:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE25:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int gcd(int a,int b){return a<b?gcd(b,a):b?gcd(b,a%b):a;}
+int lcm(int a,int b){return a*(b/gcd(a,b));}
+int main(){
+  int a,b,c=1;
+  scanf(""%d"",&a);
+  while(a--){
+    scanf(""%d"",&b);
+    c=lcm(b,c);
+  }
+  printf(""%d\n"",c);
+  return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+6,"```c
+#pragma GCC optimize (""O3"")
+#pragma GCC target (""avx2"")
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int get_int() {
+    int res = 0;
+    char c = getchar();
+    while(c != '\n') {
+        res *= 10;
+        res += c - '0';
+        c = getchar();
+    }
+    return res;
+}
+
+
+void put_int(int n) {
+    char c[30];
+    int sz = 0;
+    c[sz++] = (n % 10) + '0';
+    n /= 10;
+    while(n > 0) {
+        c[sz++] = (n % 10) + '0';
+        n /= 10;
+    }
+    for(int i = sz-1; i >= 0; i--) {
+        putchar(c[i]);
+    }
+    putchar('\n');
+}
+
+int main(){
+    int n = get_int();
+    int ans = 8 - (n - 400) / 200;
+    put_int(ans);
+    return 0;
+}
+```","[{""input"": ""1359\n"", ""output"": ""4\n""}, {""input"": ""543\n"", ""output"": ""8\n""}, {""input"": ""1855\n"", ""output"": ""1\n""}, {""input"": ""609\n"", ""output"": ""7\n""}, {""input"": ""982\n"", ""output"": ""6\n""}, {""input"": ""1485\n"", ""output"": ""3\n""}, {""input"": ""1125\n"", ""output"": ""5\n""}, {""input"": ""1764\n"", ""output"": ""2\n""}, {""input"": ""554\n"", ""output"": ""8\n""}, {""input"": ""417\n"", ""output"": ""8\n""}, {""input"": ""979\n"", ""output"": ""6\n""}, {""input"": ""424\n"", ""output"": ""8\n""}, {""input"": ""470\n"", ""output"": ""8\n""}, {""input"": ""826\n"", ""output"": ""6\n""}, {""input"": ""1596\n"", ""output"": ""3\n""}, {""input"": ""885\n"", ""output"": ""6\n""}, {""input"": ""1543\n"", ""output"": ""3\n""}, {""input"": ""969\n"", ""output"": ""6\n""}, {""input"": ""412\n"", ""output"": ""8\n""}, {""input"": ""654\n"", ""output"": ""7\n""}, {""input"": ""646\n"", ""output"": ""7\n""}, {""input"": ""915\n"", ""output"": ""6\n""}, {""input"": ""512\n"", ""output"": ""8\n""}, {""input"": ""456\n"", ""output"": ""8\n""}, {""input"": ""1815\n"", ""output"": ""1\n""}, {""input"": ""668\n"", ""output"": ""7\n""}, {""input"": ""1307\n"", ""output"": ""4\n""}, {""input"": ""511\n"", ""output"": ""8\n""}, {""input"": ""713\n"", ""output"": ""7\n""}, {""input"": ""491\n"", ""output"": ""8\n""}, {""input"": ""1303\n"", ""output"": ""4\n""}, {""input"": ""598\n"", ""output"": ""8\n""}, {""input"": ""570\n"", ""output"": ""8\n""}, {""input"": ""565\n"", ""output"": ""8\n""}, {""input"": ""1291\n"", ""output"": ""4\n""}, {""input"": ""550\n"", ""output"": ""8\n""}, {""input"": ""408\n"", ""output"": ""8\n""}, {""input"": ""644\n"", ""output"": ""7\n""}, {""input"": ""1020\n"", ""output"": ""5\n""}, {""input"": ""746\n"", ""output"": ""7\n""}, {""input"": ""1008\n"", ""output"": ""5\n""}, {""input"": ""482\n"", ""output"": ""8\n""}, {""input"": ""966\n"", ""output"": ""6\n""}, {""input"": ""1591\n"", ""output"": ""3\n""}, {""input"": ""639\n"", ""output"": ""7\n""}, {""input"": ""1435\n"", ""output"": ""3\n""}, {""input"": ""790\n"", ""output"": ""7\n""}, {""input"": ""1920\n"", ""output"": ""1\n""}, {""input"": ""536\n"", ""output"": ""8\n""}, {""input"": ""1041\n"", ""output"": ""5\n""}, {""input"": ""1760\n"", ""output"": ""2\n""}, {""input"": ""1026\n"", ""output"": ""5\n""}, {""input"": ""677\n"", ""output"": ""7\n""}, {""input"": ""1799\n"", ""output"": ""2\n""}, {""input"": ""1278\n"", ""output"": ""4\n""}, {""input"": ""832\n"", ""output"": ""6\n""}, {""input"": ""1518\n"", ""output"": ""3\n""}, {""input"": ""1204\n"", ""output"": ""4\n""}, {""input"": ""1353\n"", ""output"": ""4\n""}, {""input"": ""1551\n"", ""output"": ""3\n""}, {""input"": ""469\n"", ""output"": ""8\n""}, {""input"": ""696\n"", ""output"": ""7\n""}, {""input"": ""599\n"", ""output"": ""8\n""}, {""input"": ""447\n"", ""output"": ""8\n""}, {""input"": ""573\n"", ""output"": ""8\n""}, {""input"": ""921\n"", ""output"": ""6\n""}, {""input"": ""1565\n"", ""output"": ""3\n""}, {""input"": ""803\n"", ""output"": ""6\n""}, {""input"": ""401\n"", ""output"": ""8\n""}, {""input"": ""1714\n"", ""output"": ""2\n""}, {""input"": ""892\n"", ""output"": ""6\n""}, {""input"": ""407\n"", ""output"": ""8\n""}, {""input"": ""648\n"", ""output"": ""7\n""}, {""input"": ""1670\n"", ""output"": ""2\n""}, {""input"": ""941\n"", ""output"": ""6\n""}, {""input"": ""1933\n"", ""output"": ""1\n""}, {""input"": ""865\n"", ""output"": ""6\n""}, {""input"": ""843\n"", ""output"": ""6\n""}, {""input"": ""669\n"", ""output"": ""7\n""}, {""input"": ""810\n"", ""output"": ""6\n""}, {""input"": ""1434\n"", ""output"": ""3\n""}, {""input"": ""1717\n"", ""output"": ""2\n""}, {""input"": ""1669\n"", ""output"": ""2\n""}, {""input"": ""860\n"", ""output"": ""6\n""}, {""input"": ""483\n"", ""output"": ""8\n""}, {""input"": ""1316\n"", ""output"": ""4\n""}, {""input"": ""1170\n"", ""output"": ""5\n""}, {""input"": ""897\n"", ""output"": ""6\n""}, {""input"": ""504\n"", ""output"": ""8\n""}, {""input"": ""963\n"", ""output"": ""6\n""}, {""input"": ""509\n"", ""output"": ""8\n""}, {""input"": ""594\n"", ""output"": ""8\n""}, {""input"": ""956\n"", ""output"": ""6\n""}, {""input"": ""710\n"", ""output"": ""7\n""}, {""input"": ""670\n"", ""output"": ""7\n""}, {""input"": ""1067\n"", ""output"": ""5\n""}, {""input"": ""887\n"", ""output"": ""6\n""}, {""input"": ""1447\n"", ""output"": ""3\n""}, {""input"": ""1534\n"", ""output"": ""3\n""}, {""input"": ""1235\n"", ""output"": ""4\n""}, {""input"": ""725\n"", ""output"": ""7\n""}, {""input"": ""725\n"", ""output"": ""7\n""}, {""input"": ""1600\n"", ""output"": ""2\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#pragma GCC optimize (""O3"")
+#pragma GCC target (""avx2"")
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int get_int() {
+    int res = 0;
+    char c = getchar();
+    while(c != '\n') {
+        res *= 10;
+        res += c - '0';
+        c = getchar();
+    }
+    return res;
+}
+
+
+void put_int(int n) {
+    char c[30];
+    int sz = 0;
+    c[sz++] = (n % 10) + '0';
+    n /= 10;
+    while(n > 0) {
+        c[sz++] = (n % 10) + '0';
+        n /= 10;
+    }
+    for(int i = sz-1; i >= 0; i--) {
+        putchar(c[i]);
+    }
+    putchar('\n');
+}
+
+int main(){
+    int n = get_int();
+    int ans = 8 - (n - 400) / 200;
+    put_int(ans);
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	get_int
+	.type	get_int, @function
+get_int:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movq	stdin(%rip), %rdi
+	call	getc@PLT
+	cmpb	$10, %al
+	je	.L4
+	movsbl	%al, %edx
+	xorl	%r12d, %r12d
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movq	stdin(%rip), %rdi
+	leal	(%r12,%r12,4), %eax
+	leal	-48(%rdx,%rax,2), %r12d
+	call	getc@PLT
+	movsbl	%al, %edx
+	cmpb	$10, %al
+	jne	.L3
+	movl	%r12d, %eax
+	popq	%r12
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	.cfi_restore_state
+	xorl	%r12d, %r12d
+	movl	%r12d, %eax
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE39:
+	.size	get_int, .-get_int
+	.p2align 4
+	.globl	put_int
+	.type	put_int, @function
+put_int:
+.LFB40:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movslq	%edi, %rdx
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	imulq	$1717986919, %rdx, %rdx
+	subq	$56, %rsp
+	.cfi_def_cfa_offset 80
+	sarq	$34, %rdx
+	movq	%fs:40, %rax
+	movq	%rax, 40(%rsp)
+	xorl	%eax, %eax
+	movl	%edi, %eax
+	sarl	$31, %eax
+	subl	%eax, %edx
+	movl	%edi, %eax
+	leal	(%rdx,%rdx,4), %ecx
+	addl	%ecx, %ecx
+	subl	%ecx, %eax
+	addl	$48, %eax
+	movb	%al, (%rsp)
+	cmpl	$9, %edi
+	jle	.L14
+	movl	$1, %ecx
+	movq	%rsp, %rbx
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	movslq	%edx, %rax
+	movl	%edx, %esi
+	movslq	%ecx, %r8
+	imulq	$1717986919, %rax, %rax
+	sarl	$31, %esi
+	sarq	$34, %rax
+	subl	%esi, %eax
+	movl	%edx, %esi
+	leal	(%rax,%rax,4), %edi
+	addl	%edi, %edi
+	subl	%edi, %esi
+	addl	$48, %esi
+	movb	%sil, (%rbx,%rcx)
+	movl	%edx, %esi
+	addq	$1, %rcx
+	movl	%eax, %edx
+	cmpl	$9, %esi
+	jg	.L10
+.L9:
+	addq	%r8, %rbx
+	leaq	-1(%rsp), %rbp
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	movsbl	(%rbx), %edi
+	movq	stdout(%rip), %rsi
+	subq	$1, %rbx
+	call	putc@PLT
+	cmpq	%rbx, %rbp
+	jne	.L11
+	movq	40(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L18
+	movq	stdout(%rip), %rsi
+	addq	$56, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	movl	$10, %edi
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	jmp	putc@PLT
+	.p2align 4,,10
+	.p2align 3
+.L14:
+	.cfi_restore_state
+	xorl	%r8d, %r8d
+	movq	%rsp, %rbx
+	jmp	.L9
+.L18:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE40:
+	.size	put_int, .-put_int
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB41:
+	.cfi_startproc
+	endbr64
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 16
+	xorl	%eax, %eax
+	call	get_int
+	subl	$400, %eax
+	movslq	%eax, %rdx
+	sarl	$31, %eax
+	imulq	$1374389535, %rdx, %rdx
+	sarq	$38, %rdx
+	subl	%edx, %eax
+	leal	8(%rax), %edi
+	call	put_int
+	xorl	%eax, %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE41:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#pragma GCC optimize (""O3"")
+#pragma GCC target (""avx2"")
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int get_int() {
+    int res = 0;
+    char c = getchar();
+    while(c != '\n') {
+        res *= 10;
+        res += c - '0';
+        c = getchar();
+    }
+    return res;
+}
+
+
+void put_int(int n) {
+    char c[30];
+    int sz = 0;
+    c[sz++] = (n % 10) + '0';
+    n /= 10;
+    while(n > 0) {
+        c[sz++] = (n % 10) + '0';
+        n /= 10;
+    }
+    for(int i = sz-1; i >= 0; i--) {
+        putchar(c[i]);
+    }
+    putchar('\n');
+}
+
+int main(){
+    int n = get_int();
+    int ans = 8 - (n - 400) / 200;
+    put_int(ans);
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+7,"```c
+#include <stdio.h>
+#include <strings.h>
+int main() {
+    int a,b;
+    char s[15],t[15],u[15];
+    scanf(""%s %s"", &s, &t);
+    scanf(""%d %d"", &a, &b);
+    scanf(""%s"", &u);
+    if(strcmp(s,u) == 0) {
+        --a;
+    } else if(strcmp(t,u) == 0) {
+        --b;
+    }
+    printf(""%d %d\n"", a, b);
+    return 0;
+}```","[{""input"": ""red blue\n3 2\nred\n"", ""output"": ""2 2\n""}, {""input"": ""red blte\n3 0\nred\n"", ""output"": ""2 0\n""}, {""input"": ""red blue\n5 0\nred\n"", ""output"": ""4 0\n""}, {""input"": ""red blue\n7 0\nred\n"", ""output"": ""6 0\n""}, {""input"": ""red blue\n5 1\nred\n"", ""output"": ""4 1\n""}, {""input"": ""red blue\n0 0\nred\n"", ""output"": ""-1 0\n""}, {""input"": ""red blte\n3 4\nred\n"", ""output"": ""2 4\n""}, {""input"": ""red blue\n1 0\nred\n"", ""output"": ""0 0\n""}, {""input"": ""red blue\n11 0\nred\n"", ""output"": ""10 0\n""}, {""input"": ""red blue\n-1 0\nred\n"", ""output"": ""-2 0\n""}, {""input"": ""red blue\n11 -1\nred\n"", ""output"": ""10 -1\n""}, {""input"": ""red bkfu\n8 0\nred\n"", ""output"": ""7 0\n""}, {""input"": ""red blue\n11 -2\nred\n"", ""output"": ""10 -2\n""}, {""input"": ""red bkfu\n16 0\nred\n"", ""output"": ""15 0\n""}, {""input"": ""red ufkb\n22 0\nred\n"", ""output"": ""21 0\n""}, {""input"": ""red blue\n3 3\nred\n"", ""output"": ""2 3\n""}, {""input"": ""red blue\n2 0\nred\n"", ""output"": ""1 0\n""}, {""input"": ""red bule\n7 -1\nred\n"", ""output"": ""6 -1\n""}, {""input"": ""red blte\n9 0\nred\n"", ""output"": ""8 0\n""}, {""input"": ""red blue\n7 1\nred\n"", ""output"": ""6 1\n""}, {""input"": ""red bleu\n12 0\nred\n"", ""output"": ""11 0\n""}, {""input"": ""red blue\n0 1\nred\n"", ""output"": ""-1 1\n""}, {""input"": ""red bmte\n6 0\nred\n"", ""output"": ""5 0\n""}, {""input"": ""red blue\n-1 1\nred\n"", ""output"": ""-2 1\n""}, {""input"": ""red bkfu\n26 0\nred\n"", ""output"": ""25 0\n""}, {""input"": ""red bule\n7 -2\nred\n"", ""output"": ""6 -2\n""}, {""input"": ""red bkfu\n4 0\nred\n"", ""output"": ""3 0\n""}, {""input"": ""red blve\n3 6\nred\n"", ""output"": ""2 6\n""}, {""input"": ""red blte\n3 -1\nred\n"", ""output"": ""2 -1\n""}, {""input"": ""red bule\n7 -3\nred\n"", ""output"": ""6 -3\n""}, {""input"": ""red beul\n4 1\nred\n"", ""output"": ""3 1\n""}, {""input"": ""red bleu\n17 0\nred\n"", ""output"": ""16 0\n""}, {""input"": ""red ctle\n1 1\nred\n"", ""output"": ""0 1\n""}, {""input"": ""red blve\n3 1\nred\n"", ""output"": ""2 1\n""}, {""input"": ""red elbt\n-2 0\nred\n"", ""output"": ""-3 0\n""}, {""input"": ""red elbt\n0 -1\nred\n"", ""output"": ""-1 -1\n""}, {""input"": ""red elbt\n0 -2\nred\n"", ""output"": ""-1 -2\n""}, {""input"": ""red blue\n5 2\nred\n"", ""output"": ""4 2\n""}, {""input"": ""red blue\n2 -1\nred\n"", ""output"": ""1 -1\n""}, {""input"": ""red bkfu\n14 0\nred\n"", ""output"": ""13 0\n""}, {""input"": ""red blue\n3 5\nred\n"", ""output"": ""2 5\n""}, {""input"": ""red blve\n2 2\nred\n"", ""output"": ""1 2\n""}, {""input"": ""red blue\n2 1\nred\n"", ""output"": ""1 1\n""}, {""input"": ""red bule\n1 -1\nred\n"", ""output"": ""0 -1\n""}, {""input"": ""red bleu\n12 -1\nred\n"", ""output"": ""11 -1\n""}, {""input"": ""red blue\n0 2\nred\n"", ""output"": ""-1 2\n""}, {""input"": ""red blve\n0 4\nred\n"", ""output"": ""-1 4\n""}, {""input"": ""red bule\n1 -2\nred\n"", ""output"": ""0 -2\n""}, {""input"": ""red lueb\n9 1\nred\n"", ""output"": ""8 1\n""}, {""input"": ""red bulf\n-2 -1\nred\n"", ""output"": ""-3 -1\n""}, {""input"": ""red lbue\n-1 2\nred\n"", ""output"": ""-2 2\n""}, {""input"": ""red clue\n-1 4\nred\n"", ""output"": ""-2 4\n""}, {""input"": ""red laeu\n9 2\nred\n"", ""output"": ""8 2\n""}, {""input"": ""red blue\n11 1\nred\n"", ""output"": ""10 1\n""}, {""input"": ""red blue\n-1 -1\nred\n"", ""output"": ""-2 -1\n""}, {""input"": ""red bkfu\n8 -1\nred\n"", ""output"": ""7 -1\n""}, {""input"": ""red blue\n12 -2\nred\n"", ""output"": ""11 -2\n""}, {""input"": ""red beul\n4 2\nred\n"", ""output"": ""3 2\n""}, {""input"": ""red bleu\n10 0\nred\n"", ""output"": ""9 0\n""}, {""input"": ""red blue\n3 8\nred\n"", ""output"": ""2 8\n""}, {""input"": ""red blve\n1 4\nred\n"", ""output"": ""0 4\n""}, {""input"": ""red beul\n6 1\nred\n"", ""output"": ""5 1\n""}, {""input"": ""red blve\n3 9\nred\n"", ""output"": ""2 9\n""}, {""input"": ""red vkeb\n9 -1\nred\n"", ""output"": ""8 -1\n""}, {""input"": ""red blue\n14 1\nred\n"", ""output"": ""13 1\n""}, {""input"": ""red bulf\n-3 0\nred\n"", ""output"": ""-4 0\n""}, {""input"": ""red bule\n-1 -2\nred\n"", ""output"": ""-2 -2\n""}, {""input"": ""red lbue\n-1 3\nred\n"", ""output"": ""-2 3\n""}, {""input"": ""red laeu\n18 1\nred\n"", ""output"": ""17 1\n""}, {""input"": ""red luec\n-2 4\nred\n"", ""output"": ""-3 4\n""}, {""input"": ""red etlb\n4 4\nred\n"", ""output"": ""3 4\n""}, {""input"": ""red bldu\n18 0\nred\n"", ""output"": ""17 0\n""}, {""input"": ""red blue\n10 1\nred\n"", ""output"": ""9 1\n""}, {""input"": ""red tmbe\n3 -2\nred\n"", ""output"": ""2 -2\n""}, {""input"": ""red blue\n3 15\nred\n"", ""output"": ""2 15\n""}, {""input"": ""red beul\n6 2\nred\n"", ""output"": ""5 2\n""}, {""input"": ""red bule\n-2 -2\nred\n"", ""output"": ""-3 -2\n""}, {""input"": ""red lbeu\n7 2\nred\n"", ""output"": ""6 2\n""}, {""input"": ""red alue\n12 -3\nred\n"", ""output"": ""11 -3\n""}, {""input"": ""red alve\n6 9\nred\n"", ""output"": ""5 9\n""}, {""input"": ""red blue\n-4 -1\nred\n"", ""output"": ""-5 -1\n""}, {""input"": ""red alve\n7 9\nred\n"", ""output"": ""6 9\n""}, {""input"": ""red akve\n7 12\nred\n"", ""output"": ""6 12\n""}, {""input"": ""red bltf\n5 -1\nred\n"", ""output"": ""4 -1\n""}, {""input"": ""red bkfu\n8 1\nred\n"", ""output"": ""7 1\n""}, {""input"": ""red blue\n11 -3\nred\n"", ""output"": ""10 -3\n""}, {""input"": ""red ufkb\n22 1\nred\n"", ""output"": ""21 1\n""}, {""input"": ""red blve\n1 2\nred\n"", ""output"": ""0 2\n""}, {""input"": ""red blue\n13 1\nred\n"", ""output"": ""12 1\n""}, {""input"": ""red bleu\n12 1\nred\n"", ""output"": ""11 1\n""}, {""input"": ""red blue\n-2 1\nred\n"", ""output"": ""-3 1\n""}, {""input"": ""red blve\n0 6\nred\n"", ""output"": ""-1 6\n""}, {""input"": ""red blue\n3 7\nred\n"", ""output"": ""2 7\n""}, {""input"": ""red buel\n2 -2\nred\n"", ""output"": ""1 -2\n""}, {""input"": ""red uelb\n10 -1\nred\n"", ""output"": ""9 -1\n""}, {""input"": ""red eulb\n0 8\nred\n"", ""output"": ""-1 8\n""}, {""input"": ""red vkeb\n9 -2\nred\n"", ""output"": ""8 -2\n""}, {""input"": ""red lbte\n0 3\nred\n"", ""output"": ""-1 3\n""}, {""input"": ""red bule\n-3 -2\nred\n"", ""output"": ""-4 -2\n""}, {""input"": ""red lbeu\n7 3\nred\n"", ""output"": ""6 3\n""}, {""input"": ""red blue\n3 4\nred\n"", ""output"": ""2 4\n""}, {""input"": ""red blue\n3 4\nred\n"", ""output"": ""2 4\n""}, {""input"": ""red blue\n5 5\nblue\n"", ""output"": ""5 4\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <strings.h>
+int main() {
+    int a,b;
+    char s[15],t[15],u[15];
+    scanf(""%s %s"", &s, &t);
+    scanf(""%d %d"", &a, &b);
+    scanf(""%s"", &u);
+    if(strcmp(s,u) == 0) {
+        --a;
+    } else if(strcmp(t,u) == 0) {
+        --b;
+    }
+    printf(""%d %d\n"", a, b);
+    return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s %s""
+.LC1:
+	.string	""%d %d""
+.LC2:
+	.string	""%s""
+.LC3:
+	.string	""%d %d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB25:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	.LC0(%rip), %rdi
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	subq	$64, %rsp
+	.cfi_def_cfa_offset 96
+	movq	%fs:40, %rax
+	movq	%rax, 56(%rsp)
+	xorl	%eax, %eax
+	leaq	11(%rsp), %r12
+	leaq	26(%rsp), %r13
+	movq	%r13, %rdx
+	movq	%r12, %rsi
+	leaq	41(%rsp), %rbp
+	call	__isoc99_scanf@PLT
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	xorl	%eax, %eax
+	leaq	.LC1(%rip), %rdi
+	call	__isoc99_scanf@PLT
+	movq	%rbp, %rsi
+	leaq	.LC2(%rip), %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movq	%rbp, %rsi
+	movq	%r12, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L2
+	subl	$1, (%rsp)
+.L3:
+	movl	4(%rsp), %ecx
+	movl	(%rsp), %edx
+	xorl	%eax, %eax
+	leaq	.LC3(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	56(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	addq	$64, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L2:
+	.cfi_restore_state
+	movq	%rbp, %rsi
+	movq	%r13, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L3
+	subl	$1, 4(%rsp)
+	jmp	.L3
+.L7:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE25:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <strings.h>
+int main() {
+    int a,b;
+    char s[15],t[15],u[15];
+    scanf(""%s %s"", &s, &t);
+    scanf(""%d %d"", &a, &b);
+    scanf(""%s"", &u);
+    if(strcmp(s,u) == 0) {
+        --a;
+    } else if(strcmp(t,u) == 0) {
+        --b;
+    }
+    printf(""%d %d\n"", a, b);
+    return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+8,"```c
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(void) {
+	long long int s, c, ans = 0;
+
+	scanf(""%lld %lld"", &s, &c);
+
+	c /= 2;
+
+	if (s < c) {
+		ans += s;
+		c -= s;
+		ans += c / 2;
+	}
+	else {
+		ans += c;
+	}
+
+	printf(""%lld"", ans);
+}```","[{""input"": ""12345 267141\n"", ""output"": ""72957""}, {""input"": ""1 4\n"", ""output"": ""1""}, {""input"": ""12345 263982\n"", ""output"": ""72168""}, {""input"": ""5656 263982\n"", ""output"": ""68823""}, {""input"": ""0 8\n"", ""output"": ""2""}, {""input"": ""10389 263982\n"", ""output"": ""71190""}, {""input"": ""0 12\n"", ""output"": ""3""}, {""input"": ""10389 232248\n"", ""output"": ""63256""}, {""input"": ""0 20\n"", ""output"": ""5""}, {""input"": ""10389 85698\n"", ""output"": ""26619""}, {""input"": ""0 28\n"", ""output"": ""7""}, {""input"": ""10389 18349\n"", ""output"": ""9174""}, {""input"": ""10389 5425\n"", ""output"": ""2712""}, {""input"": ""10389 728\n"", ""output"": ""364""}, {""input"": ""10389 750\n"", ""output"": ""375""}, {""input"": ""3 11\n"", ""output"": ""4""}, {""input"": ""5394 668\n"", ""output"": ""334""}, {""input"": ""5394 1245\n"", ""output"": ""622""}, {""input"": ""-1 27\n"", ""output"": ""6""}, {""input"": ""3695 2384\n"", ""output"": ""1192""}, {""input"": ""-2 7\n"", ""output"": ""0""}, {""input"": ""1162 2384\n"", ""output"": ""1177""}, {""input"": ""340 2384\n"", ""output"": ""766""}, {""input"": ""340 3876\n"", ""output"": ""1139""}, {""input"": ""340 341\n"", ""output"": ""170""}, {""input"": ""-2 1\n"", ""output"": ""-1""}, {""input"": ""67 341\n"", ""output"": ""118""}, {""input"": ""133 341\n"", ""output"": ""151""}, {""input"": ""-3 0\n"", ""output"": ""-2""}, {""input"": ""133 280\n"", ""output"": ""136""}, {""input"": ""133 51\n"", ""output"": ""25""}, {""input"": ""133 67\n"", ""output"": ""33""}, {""input"": ""133 75\n"", ""output"": ""37""}, {""input"": ""133 106\n"", ""output"": ""53""}, {""input"": ""0 -5\n"", ""output"": ""-2""}, {""input"": ""372 178\n"", ""output"": ""89""}, {""input"": ""1 -10\n"", ""output"": ""-5""}, {""input"": ""1 -12\n"", ""output"": ""-6""}, {""input"": ""282 33\n"", ""output"": ""16""}, {""input"": ""298 17\n"", ""output"": ""8""}, {""input"": ""1 -24\n"", ""output"": ""-12""}, {""input"": ""2 -18\n"", ""output"": ""-9""}, {""input"": ""762 18\n"", ""output"": ""9""}, {""input"": ""10 -29\n"", ""output"": ""-14""}, {""input"": ""762 28\n"", ""output"": ""14""}, {""input"": ""762 39\n"", ""output"": ""19""}, {""input"": ""985 64\n"", ""output"": ""32""}, {""input"": ""1489 71\n"", ""output"": ""35""}, {""input"": ""1489 23\n"", ""output"": ""11""}, {""input"": ""-7 0\n"", ""output"": ""-4""}, {""input"": ""-20 0\n"", ""output"": ""-10""}, {""input"": ""0 50\n"", ""output"": ""12""}, {""input"": ""-1 -13\n"", ""output"": ""-6""}, {""input"": ""-16 2\n"", ""output"": ""-8""}, {""input"": ""-42 3\n"", ""output"": ""-21""}, {""input"": ""-42 5\n"", ""output"": ""-20""}, {""input"": ""-81 4\n"", ""output"": ""-40""}, {""input"": ""-115 4\n"", ""output"": ""-57""}, {""input"": ""-115 7\n"", ""output"": ""-56""}, {""input"": ""-115 10\n"", ""output"": ""-55""}, {""input"": ""-77 10\n"", ""output"": ""-36""}, {""input"": ""-77 6\n"", ""output"": ""-37""}, {""input"": ""-63 7\n"", ""output"": ""-30""}, {""input"": ""-63 3\n"", ""output"": ""-31""}, {""input"": ""-36 2\n"", ""output"": ""-18""}, {""input"": ""-47 0\n"", ""output"": ""-24""}, {""input"": ""4 -28\n"", ""output"": ""-14""}, {""input"": ""-22 2\n"", ""output"": ""-11""}, {""input"": ""-51 -1\n"", ""output"": ""-26""}, {""input"": ""-25 -1\n"", ""output"": ""-13""}, {""input"": ""-37 -1\n"", ""output"": ""-19""}, {""input"": ""0 52\n"", ""output"": ""13""}, {""input"": ""-9 -31\n"", ""output"": ""-15""}, {""input"": ""-1 -53\n"", ""output"": ""-26""}, {""input"": ""-45 0\n"", ""output"": ""-23""}, {""input"": ""-28 -12\n"", ""output"": ""-17""}, {""input"": ""100 41\n"", ""output"": ""20""}, {""input"": ""1 61\n"", ""output"": ""15""}, {""input"": ""100 53\n"", ""output"": ""26""}, {""input"": ""100 72\n"", ""output"": ""36""}, {""input"": ""-23 -41\n"", ""output"": ""-22""}, {""input"": ""-6 -64\n"", ""output"": ""-32""}, {""input"": ""1 67\n"", ""output"": ""17""}, {""input"": ""0 4\n"", ""output"": ""1""}, {""input"": ""1 28\n"", ""output"": ""7""}, {""input"": ""1 27\n"", ""output"": ""7""}, {""input"": ""2 27\n"", ""output"": ""7""}, {""input"": ""2 11\n"", ""output"": ""3""}, {""input"": ""3219 750\n"", ""output"": ""375""}, {""input"": ""4586 750\n"", ""output"": ""375""}, {""input"": ""3 17\n"", ""output"": ""5""}, {""input"": ""5394 750\n"", ""output"": ""375""}, {""input"": ""0 17\n"", ""output"": ""4""}, {""input"": ""-1 17\n"", ""output"": ""3""}, {""input"": ""-1 18\n"", ""output"": ""4""}, {""input"": ""4370 1245\n"", ""output"": ""622""}, {""input"": ""3695 1245\n"", ""output"": ""622""}, {""input"": ""-2 17\n"", ""output"": ""3""}, {""input"": ""-3 7\n"", ""output"": ""0""}, {""input"": ""-1 7\n"", ""output"": ""1""}, {""input"": ""12345 678901\n"", ""output"": ""175897""}, {""input"": ""1 6\n"", ""output"": ""2""}, {""input"": ""1 6\n"", ""output"": ""2""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(void) {
+	long long int s, c, ans = 0;
+
+	scanf(""%lld %lld"", &s, &c);
+
+	c /= 2;
+
+	if (s < c) {
+		ans += s;
+		c -= s;
+		ans += c / 2;
+	}
+	else {
+		ans += c;
+	}
+
+	printf(""%lld"", ans);
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%lld %lld""
+.LC1:
+	.string	""%lld""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rdx
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movq	16(%rsp), %rax
+	movq	%rax, %rdx
+	shrq	$63, %rdx
+	addq	%rax, %rdx
+	movq	8(%rsp), %rax
+	sarq	%rdx
+	movq	%rdx, 16(%rsp)
+	cmpq	%rax, %rdx
+	jle	.L2
+	subq	%rax, %rdx
+	movq	%rdx, 16(%rsp)
+	sarq	%rdx
+	addq	%rax, %rdx
+.L2:
+	xorl	%eax, %eax
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L6
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L6:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(void) {
+	long long int s, c, ans = 0;
+
+	scanf(""%lld %lld"", &s, &c);
+
+	c /= 2;
+
+	if (s < c) {
+		ans += s;
+		c -= s;
+		ans += c / 2;
+	}
+	else {
+		ans += c;
+	}
+
+	printf(""%lld"", ans);
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+9,"```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int compare_int(const void *a, const void *b)
+{
+    return *(int*)b - *(int*)a;
+}
+
+int main(void){
+  int n, k; 
+  long int sum=0;
+  scanf(""%d"", &n);
+  scanf(""%d"", &k);
+  int s[n];
+  for(int i=0; i<n; i++){
+    scanf(""%d"", &s[i]);
+  }
+  if(n <= k){
+    printf(""0"");
+  }else{
+    qsort(s, n, sizeof(int), compare_int);
+    for(int m=k;m<n;m++){
+      sum += s[m];
+    }    
+    printf(""%ld"", sum);
+  }
+  return 0;
+}```","[{""input"": ""3 0\n1000000000 1000000000 1010000000\n"", ""output"": ""3010000000""}, {""input"": ""8 8\n7 9 3 2 3 8 4 6\n"", ""output"": ""0""}, {""input"": ""3 1\n0 1 5\n"", ""output"": ""1""}, {""input"": ""3 0\n1000000000 1000000000 1110000000\n"", ""output"": ""3110000000""}, {""input"": ""3 0\n1100000000 1000000000 1110000000\n"", ""output"": ""3210000000""}, {""input"": ""3 0\n1100000000 1000000001 1110000000\n"", ""output"": ""3210000001""}, {""input"": ""3 0\n1100000000 1000000001 1110001000\n"", ""output"": ""3210001001""}, {""input"": ""3 0\n1100000001 1000000001 1110001000\n"", ""output"": ""3210001002""}, {""input"": ""8 0\n4 9 5 2 3 6 5 6\n"", ""output"": ""40""}, {""input"": ""8 1\n4 9 5 2 3 6 5 6\n"", ""output"": ""31""}, {""input"": ""3 0\n1000000100 1000000000 1000000000\n"", ""output"": ""3000000100""}, {""input"": ""3 0\n1000000000 1000000000 1010010000\n"", ""output"": ""3010010000""}, {""input"": ""3 0\n0 1 5\n"", ""output"": ""6""}, {""input"": ""3 0\n1000000000 1000000000 0110000000\n"", ""output"": ""2110000000""}, {""input"": ""3 0\n0100000000 1000000001 1110000000\n"", ""output"": ""2210000001""}, {""input"": ""3 0\n1100000001 1000000001 0110001000\n"", ""output"": ""2210001002""}, {""input"": ""8 0\n4 16 5 2 3 6 5 6\n"", ""output"": ""47""}, {""input"": ""8 1\n4 9 9 2 3 6 5 6\n"", ""output"": ""35""}, {""input"": ""3 0\n1100000011 1000000000 1110000000\n"", ""output"": ""3210000011""}, {""input"": ""3 0\n1000000000 1100000000 0110000000\n"", ""output"": ""2210000000""}, {""input"": ""3 0\n0000000000 1000000001 1110000000\n"", ""output"": ""2110000001""}, {""input"": ""8 0\n4 16 5 1 3 6 5 6\n"", ""output"": ""46""}, {""input"": ""8 1\n4 9 9 2 3 4 5 6\n"", ""output"": ""33""}, {""input"": ""8 2\n7 6 3 2 3 8 7 6\n"", ""output"": ""27""}, {""input"": ""3 0\n1100000011 1010000000 1110000000\n"", ""output"": ""3220000011""}, {""input"": ""3 0\n0000000000 1100000000 0110000000\n"", ""output"": ""1210000000""}, {""input"": ""3 0\n0000000000 1000000001 0110000000\n"", ""output"": ""1110000001""}, {""input"": ""8 1\n4 9 9 2 6 4 5 6\n"", ""output"": ""36""}, {""input"": ""3 0\n1100000011 1010100000 1110000000\n"", ""output"": ""3220100011""}, {""input"": ""3 0\n0000000000 0100000000 0110000000\n"", ""output"": ""210000000""}, {""input"": ""8 0\n4 22 5 1 3 6 6 6\n"", ""output"": ""53""}, {""input"": ""8 2\n7 6 3 2 0 14 7 6\n"", ""output"": ""24""}, {""input"": ""3 0\n0000000001 0100000000 0110000000\n"", ""output"": ""210000001""}, {""input"": ""8 1\n4 9 9 0 6 4 16 6\n"", ""output"": ""38""}, {""input"": ""8 2\n7 6 3 1 0 23 7 6\n"", ""output"": ""23""}, {""input"": ""8 1\n4 9 8 0 3 4 16 6\n"", ""output"": ""34""}, {""input"": ""8 2\n7 6 3 1 0 23 10 5\n"", ""output"": ""22""}, {""input"": ""8 2\n7 6 2 1 0 23 10 5\n"", ""output"": ""21""}, {""input"": ""8 2\n4 9 8 0 3 4 11 6\n"", ""output"": ""25""}, {""input"": ""8 2\n7 6 2 1 0 23 0 5\n"", ""output"": ""14""}, {""input"": ""8 2\n7 2 2 1 0 23 0 5\n"", ""output"": ""10""}, {""input"": ""8 2\n7 2 2 1 0 23 0 6\n"", ""output"": ""11""}, {""input"": ""8 2\n7 2 2 2 0 23 0 6\n"", ""output"": ""12""}, {""input"": ""8 0\n6 9 8 0 3 4 8 6\n"", ""output"": ""44""}, {""input"": ""8 2\n7 2 2 2 0 1 0 6\n"", ""output"": ""7""}, {""input"": ""8 2\n0 2 2 2 0 1 0 1\n"", ""output"": ""4""}, {""input"": ""3 0\n1000000000 1000000000 1000001000\n"", ""output"": ""3000001000""}, {""input"": ""3 1\n4 1 6\n"", ""output"": ""5""}, {""input"": ""3 0\n1000000000 1000000100 1110000000\n"", ""output"": ""3110000100""}, {""input"": ""8 5\n7 9 5 2 3 8 4 6\n"", ""output"": ""9""}, {""input"": ""3 0\n1100000000 1000000000 1110000010\n"", ""output"": ""3210000010""}, {""input"": ""3 0\n1100000000 1000000001 1010000000\n"", ""output"": ""3110000001""}, {""input"": ""3 0\n1100000000 1000000001 1110011000\n"", ""output"": ""3210011001""}, {""input"": ""8 0\n4 12 5 2 3 6 5 6\n"", ""output"": ""43""}, {""input"": ""8 1\n4 9 5 2 0 6 5 6\n"", ""output"": ""28""}, {""input"": ""3 0\n1000000100 1000010000 1000000000\n"", ""output"": ""3000010100""}, {""input"": ""3 0\n1000000000 1000010000 1010010000\n"", ""output"": ""3010020000""}, {""input"": ""3 0\n0110000000 1000000001 1110000000\n"", ""output"": ""2220000001""}, {""input"": ""3 0\n1100000001 1000000001 0010001000\n"", ""output"": ""2110001002""}, {""input"": ""8 0\n2 16 5 2 3 6 5 6\n"", ""output"": ""45""}, {""input"": ""3 0\n1100010011 1000000000 1110000000\n"", ""output"": ""3210010011""}, {""input"": ""3 0\n1000000000 1100100000 0110000000\n"", ""output"": ""2210100000""}, {""input"": ""3 1\n0000000000 1100000000 0110000000\n"", ""output"": ""110000000""}, {""input"": ""8 0\n4 16 5 1 3 6 6 8\n"", ""output"": ""49""}, {""input"": ""8 1\n4 9 9 2 6 4 5 12\n"", ""output"": ""39""}, {""input"": ""3 0\n1000000011 1010100000 1110000000\n"", ""output"": ""3120100011""}, {""input"": ""3 0\n0000000100 0100000000 0110000000\n"", ""output"": ""210000100""}, {""input"": ""8 0\n4 22 5 1 3 6 7 6\n"", ""output"": ""54""}, {""input"": ""3 0\n0000000001 0100010000 0110000000\n"", ""output"": ""210010001""}, {""input"": ""8 2\n2 6 3 1 0 23 7 6\n"", ""output"": ""18""}, {""input"": ""8 2\n7 2 3 1 0 23 10 6\n"", ""output"": ""19""}, {""input"": ""8 2\n7 6 2 1 0 23 1 5\n"", ""output"": ""15""}, {""input"": ""8 2\n6 9 8 0 2 4 8 6\n"", ""output"": ""26""}, {""input"": ""8 0\n6 9 5 0 3 4 8 6\n"", ""output"": ""41""}, {""input"": ""3 0\n1000000000 1001000100 1110000000\n"", ""output"": ""3111000100""}, {""input"": ""3 1\n1100000000 1000000000 1110000010\n"", ""output"": ""2100000000""}, {""input"": ""3 0\n1100000000 1001000001 1010000000\n"", ""output"": ""3111000001""}, {""input"": ""3 0\n1100000000 1000000001 1110010000\n"", ""output"": ""3210010001""}, {""input"": ""3 1\n1000000100 1000010000 1000000000\n"", ""output"": ""2000000100""}, {""input"": ""3 0\n1100000000 1000000000 0110000100\n"", ""output"": ""2210000100""}, {""input"": ""3 0\n1000000010 1100100000 0110000000\n"", ""output"": ""2210100010""}, {""input"": ""3 0\n0000000000 1000000100 1110000000\n"", ""output"": ""2110000100""}, {""input"": ""8 1\n4 9 9 2 3 4 1 7\n"", ""output"": ""30""}, {""input"": ""3 1\n0000000010 1100000000 0110000000\n"", ""output"": ""110000010""}, {""input"": ""8 0\n4 16 5 0 3 6 6 8\n"", ""output"": ""48""}, {""input"": ""8 2\n7 7 3 2 3 14 7 9\n"", ""output"": ""29""}, {""input"": ""3 0\n1000000011 1010100001 1110000000\n"", ""output"": ""3120100012""}, {""input"": ""3 0\n0000000100 0100010000 0110000000\n"", ""output"": ""210010100""}, {""input"": ""8 0\n4 22 10 1 3 6 7 6\n"", ""output"": ""59""}, {""input"": ""8 2\n4 2 3 1 0 23 10 6\n"", ""output"": ""16""}, {""input"": ""8 2\n6 6 3 0 0 23 10 5\n"", ""output"": ""20""}, {""input"": ""8 1\n4 9 6 0 3 4 13 6\n"", ""output"": ""32""}, {""input"": ""8 2\n7 6 2 2 0 23 2 5\n"", ""output"": ""17""}, {""input"": ""8 2\n4 6 2 1 0 23 1 5\n"", ""output"": ""13""}, {""input"": ""8 0\n2 9 5 0 3 4 8 6\n"", ""output"": ""37""}, {""input"": ""3 0\n1000000000 1101000100 1110000000\n"", ""output"": ""3211000100""}, {""input"": ""3 1\n1000000000 1000000000 1110000010\n"", ""output"": ""2000000000""}, {""input"": ""3 0\n0100000000 1001000001 1010000000\n"", ""output"": ""2111000001""}, {""input"": ""3 1\n1000001100 1000010000 1000000000\n"", ""output"": ""2000001100""}, {""input"": ""3 0\n1110000000 1000000000 0110000100\n"", ""output"": ""2220000100""}, {""input"": ""3 0\n1000000000 1000000000 1000000000\n"", ""output"": ""3000000000""}, {""input"": ""3 1\n4 1 5\n"", ""output"": ""5""}, {""input"": ""3 1\n4 1 5\n"", ""output"": ""5""}, {""input"": ""8 9\n7 9 3 2 3 8 4 6\n"", ""output"": ""0""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int compare_int(const void *a, const void *b)
+{
+    return *(int*)b - *(int*)a;
+}
+
+int main(void){
+  int n, k; 
+  long int sum=0;
+  scanf(""%d"", &n);
+  scanf(""%d"", &k);
+  int s[n];
+  for(int i=0; i<n; i++){
+    scanf(""%d"", &s[i]);
+  }
+  if(n <= k){
+    printf(""0"");
+  }else{
+    qsort(s, n, sizeof(int), compare_int);
+    for(int m=k;m<n;m++){
+      sum += s[m];
+    }    
+    printf(""%ld"", sum);
+  }
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	compare_int
+	.type	compare_int, @function
+compare_int:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	movl	(%rsi), %eax
+	subl	(%rdi), %eax
+	ret
+	.cfi_endproc
+.LFE39:
+	.size	compare_int, .-compare_int
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%ld""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB40:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	pushq	%r14
+	.cfi_offset 14, -24
+	leaq	.LC0(%rip), %r14
+	pushq	%r13
+	leaq	-48(%rbp), %rsi
+	movq	%r14, %rdi
+	pushq	%r12
+	pushq	%rbx
+	subq	$16, %rsp
+	.cfi_offset 13, -32
+	.cfi_offset 12, -40
+	.cfi_offset 3, -48
+	movq	%fs:40, %rax
+	movq	%rax, -40(%rbp)
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	leaq	-44(%rbp), %rsi
+	movq	%r14, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movslq	-48(%rbp), %rax
+	movq	%rsp, %rcx
+	movq	%rax, %rsi
+	leaq	15(,%rax,4), %rax
+	movq	%rax, %rdx
+	andq	$-4096, %rax
+	subq	%rax, %rcx
+	andq	$-16, %rdx
+	cmpq	%rcx, %rsp
+	je	.L5
+.L25:
+	subq	$4096, %rsp
+	orq	$0, 4088(%rsp)
+	cmpq	%rcx, %rsp
+	jne	.L25
+.L5:
+	andl	$4095, %edx
+	subq	%rdx, %rsp
+	testq	%rdx, %rdx
+	jne	.L26
+.L6:
+	movq	%rsp, %r13
+	testl	%esi, %esi
+	jle	.L7
+	movq	%r13, %r12
+	xorl	%ebx, %ebx
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movq	%r12, %rsi
+	movq	%r14, %rdi
+	xorl	%eax, %eax
+	addl	$1, %ebx
+	call	__isoc99_scanf@PLT
+	movslq	-48(%rbp), %rsi
+	addq	$4, %r12
+	cmpl	%ebx, %esi
+	jg	.L8
+.L7:
+	cmpl	%esi, -44(%rbp)
+	jl	.L9
+	movl	$48, %edi
+	call	putchar@PLT
+.L10:
+	movq	-40(%rbp), %rax
+	subq	%fs:40, %rax
+	jne	.L27
+	leaq	-32(%rbp), %rsp
+	xorl	%eax, %eax
+	popq	%rbx
+	popq	%r12
+	popq	%r13
+	popq	%r14
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa 7, 8
+	ret
+.L9:
+	.cfi_restore_state
+	leaq	compare_int(%rip), %rcx
+	movq	%r13, %rdi
+	movl	$4, %edx
+	call	qsort@PLT
+	movl	-44(%rbp), %ecx
+	movl	-48(%rbp), %edi
+	cmpl	%edi, %ecx
+	jge	.L17
+	movl	%edi, %esi
+	subl	%ecx, %esi
+	leal	-1(%rsi), %eax
+	cmpl	$2, %eax
+	jbe	.L18
+	movl	%esi, %edx
+	pxor	%xmm0, %xmm0
+	pxor	%xmm4, %xmm4
+	movslq	%ecx, %rax
+	shrl	$2, %edx
+	leaq	0(%r13,%rax,4), %rax
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L13:
+	movdqu	(%rax), %xmm1
+	movdqa	%xmm4, %xmm2
+	addq	$16, %rax
+	pcmpgtd	%xmm1, %xmm2
+	movdqa	%xmm1, %xmm3
+	punpckldq	%xmm2, %xmm3
+	punpckhdq	%xmm2, %xmm1
+	paddq	%xmm3, %xmm0
+	paddq	%xmm1, %xmm0
+	cmpq	%rdx, %rax
+	jne	.L13
+	movdqa	%xmm0, %xmm1
+	movl	%esi, %eax
+	psrldq	$8, %xmm1
+	andl	$-4, %eax
+	paddq	%xmm1, %xmm0
+	addl	%eax, %ecx
+	movq	%xmm0, %rdx
+	cmpl	%eax, %esi
+	je	.L11
+.L12:
+	movslq	%ecx, %rax
+	leaq	0(%r13,%rax,4), %rax
+	movslq	(%rax), %rsi
+	addq	%rsi, %rdx
+	leal	1(%rcx), %esi
+	cmpl	%edi, %esi
+	jge	.L11
+	movslq	4(%rax), %rsi
+	addl	$2, %ecx
+	addq	%rsi, %rdx
+	cmpl	%ecx, %edi
+	jle	.L11
+	movslq	8(%rax), %rax
+	addq	%rax, %rdx
+.L11:
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	jmp	.L10
+.L26:
+	orq	$0, -8(%rsp,%rdx)
+	jmp	.L6
+.L17:
+	xorl	%edx, %edx
+	jmp	.L11
+.L18:
+	xorl	%edx, %edx
+	jmp	.L12
+.L27:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE40:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int compare_int(const void *a, const void *b)
+{
+    return *(int*)b - *(int*)a;
+}
+
+int main(void){
+  int n, k; 
+  long int sum=0;
+  scanf(""%d"", &n);
+  scanf(""%d"", &k);
+  int s[n];
+  for(int i=0; i<n; i++){
+    scanf(""%d"", &s[i]);
+  }
+  if(n <= k){
+    printf(""0"");
+  }else{
+    qsort(s, n, sizeof(int), compare_int);
+    for(int m=k;m<n;m++){
+      sum += s[m];
+    }    
+    printf(""%ld"", sum);
+  }
+  return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+10,"```c
+#include<stdio.h>
+int main()
+{
+
+    char a[11],b[11],c[11];
+    int x , y, t;
+
+    scanf(""%s"",a);
+    scanf(""%s"",b);
+    scanf(""%s"",c);
+
+    x=strlen(a)-1;
+    y=strlen(b)-1;
+    t=strlen(c)-1;
+
+        if((a[x]==b[0])&&(b[y]==c[0]))
+        {
+            printf(""YES\n"");
+        }
+        else
+        {
+            printf(""NO\n"");
+        }
+
+    return 0;
+}```","[{""input"": ""a a `\n"", ""output"": ""NO\n""}, {""input"": ""baaaa`aaaa aabaaaaaaa aaaaa`aaab\n"", ""output"": ""YES\n""}, {""input"": ""rnh gorilla apple\n"", ""output"": ""NO\n""}, {""input"": ""aaaaaaaaab aaaaaaaaaa aaaaa`aaab\n"", ""output"": ""NO\n""}, {""input"": ""ybkiniku unagi sushi\n"", ""output"": ""NO\n""}, {""input"": ""a b a\n"", ""output"": ""NO\n""}, {""input"": ""rng gorilla paple\n"", ""output"": ""NO\n""}, {""input"": ""aaaaaaaaab aaaaaaaaaa baaa`aaaaa\n"", ""output"": ""NO\n""}, {""input"": ""ybkiniku inagu sushi\n"", ""output"": ""NO\n""}, {""input"": ""a b `\n"", ""output"": ""NO\n""}, {""input"": ""rnh gorilla paple\n"", ""output"": ""NO\n""}, {""input"": ""aaaaaaaaab aabaaaaaaa baaa`aaaaa\n"", ""output"": ""NO\n""}, {""input"": ""ukinikby inagu sushi\n"", ""output"": ""NO\n""}, {""input"": ""b a a\n"", ""output"": ""NO\n""}, {""input"": ""rnh gorilla pepla\n"", ""output"": ""NO\n""}, {""input"": ""aaaa`aaaab aabaaaaaaa baaa`aaaaa\n"", ""output"": ""NO\n""}, {""input"": ""ukinhkby inagu sushi\n"", ""output"": ""NO\n""}, {""input"": ""b a b\n"", ""output"": ""NO\n""}, {""input"": ""rnh allirog pepla\n"", ""output"": ""NO\n""}, {""input"": ""aaaa`aaaab aaaaaaabaa baaa`aaaaa\n"", ""output"": ""NO\n""}, {""input"": ""ukinhkby inagt sushi\n"", ""output"": ""NO\n""}, {""input"": ""c a b\n"", ""output"": ""NO\n""}, {""input"": ""roh allirog pepla\n"", ""output"": ""NO\n""}, {""input"": ""aaaa`aaaab aabaaaaaaa aaaaa`aaab\n"", ""output"": ""NO\n""}, {""input"": ""ukhnikby inagt sushi\n"", ""output"": ""NO\n""}, {""input"": ""c b b\n"", ""output"": ""NO\n""}, {""input"": ""roh `llirog pepla\n"", ""output"": ""NO\n""}, {""input"": ""ukhnikby in`gt sushi\n"", ""output"": ""NO\n""}, {""input"": ""c b a\n"", ""output"": ""NO\n""}, {""input"": ""roh `llirog plpea\n"", ""output"": ""NO\n""}, {""input"": ""baaaaaaaa` aabaaaaaaa aaaaa`aaab\n"", ""output"": ""NO\n""}, {""input"": ""ukhnikby in`gt svshi\n"", ""output"": ""NO\n""}, {""input"": ""d b a\n"", ""output"": ""NO\n""}, {""input"": ""roh `glirol plpea\n"", ""output"": ""NO\n""}, {""input"": ""baaaaaaa`` aabaaaaaaa aaaaa`aaab\n"", ""output"": ""NO\n""}, {""input"": ""ukhnikby in`gt svsgi\n"", ""output"": ""NO\n""}, {""input"": ""d c a\n"", ""output"": ""NO\n""}, {""input"": ""roh `glirol aeplp\n"", ""output"": ""NO\n""}, {""input"": ""baaaaaaa`` aabaaaaaa` aaaaa`aaab\n"", ""output"": ""NO\n""}, {""input"": ""ykhnikbu in`gt svsgi\n"", ""output"": ""NO\n""}, {""input"": ""d c `\n"", ""output"": ""NO\n""}, {""input"": ""roh `glirok aeplp\n"", ""output"": ""NO\n""}, {""input"": ""baaaaaaa`` `aaaaaabaa aaaaa`aaab\n"", ""output"": ""YES\n""}, {""input"": ""ykhnikbu in`gt svsgh\n"", ""output"": ""NO\n""}, {""input"": ""c c `\n"", ""output"": ""NO\n""}, {""input"": ""roh `glirok `eplp\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` `aaaaaabaa aaaaa`aaab\n"", ""output"": ""YES\n""}, {""input"": ""ubkinhky in`gt svsgh\n"", ""output"": ""NO\n""}, {""input"": ""b c `\n"", ""output"": ""NO\n""}, {""input"": ""rph `glirok `eplp\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` `aaabaabaa aaaaa`aaab\n"", ""output"": ""YES\n""}, {""input"": ""ubkinhky in`gu svsgh\n"", ""output"": ""NO\n""}, {""input"": ""b c _\n"", ""output"": ""NO\n""}, {""input"": ""rph `gilrok `eplp\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` `aaaba`baa aaaaa`aaab\n"", ""output"": ""YES\n""}, {""input"": ""ubkhnhky in`gu svsgh\n"", ""output"": ""NO\n""}, {""input"": ""a c _\n"", ""output"": ""NO\n""}, {""input"": ""hpr `gilrok `eplp\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` `aaaba`baa baaa`aaaaa\n"", ""output"": ""NO\n""}, {""input"": ""ubkhnhjy in`gu svsgh\n"", ""output"": ""NO\n""}, {""input"": ""a c ^\n"", ""output"": ""NO\n""}, {""input"": ""hpr `gilrok lep`p\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` `aaaba`baa baba`aaaaa\n"", ""output"": ""NO\n""}, {""input"": ""ubkhnhjy in`fu svsgh\n"", ""output"": ""NO\n""}, {""input"": ""a b ^\n"", ""output"": ""NO\n""}, {""input"": ""hpr `gimrok lep`p\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` `aaaba`baa aaaaa`abab\n"", ""output"": ""YES\n""}, {""input"": ""ubkhnhjy in`fv svsgh\n"", ""output"": ""NO\n""}, {""input"": ""` b ^\n"", ""output"": ""NO\n""}, {""input"": ""hps `gimrok lep`p\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` `aaaba`baa aabaa`abaa\n"", ""output"": ""YES\n""}, {""input"": ""ubkhnhjy jn`fv svsgh\n"", ""output"": ""NO\n""}, {""input"": ""` a ^\n"", ""output"": ""NO\n""}, {""input"": ""gps `gimrok lep`p\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` _aaaba`baa aabaa`abaa\n"", ""output"": ""NO\n""}, {""input"": ""yjhnhkbu jn`fv svsgh\n"", ""output"": ""NO\n""}, {""input"": ""` a ]\n"", ""output"": ""NO\n""}, {""input"": ""gps `gjmrok lep`p\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` _aaab`abaa aabaa`abaa\n"", ""output"": ""NO\n""}, {""input"": ""yjhnhkbu j`nfv svsgh\n"", ""output"": ""NO\n""}, {""input"": ""_ a ]\n"", ""output"": ""NO\n""}, {""input"": ""gps `gmjrok lep`p\n"", ""output"": ""NO\n""}, {""input"": ""``aaabaaab _aaab`abaa aabaa`abaa\n"", ""output"": ""NO\n""}, {""input"": ""yjhnhkbu jn`fu svsgh\n"", ""output"": ""NO\n""}, {""input"": ""` a \\\n"", ""output"": ""NO\n""}, {""input"": ""gps agmjrok lep`p\n"", ""output"": ""NO\n""}, {""input"": ""``aaabaaab _aabb`abaa aabaa`abaa\n"", ""output"": ""NO\n""}, {""input"": ""yjhnhkau jn`fu svsgh\n"", ""output"": ""NO\n""}, {""input"": ""a a \\\n"", ""output"": ""NO\n""}, {""input"": ""gps agmjrok lfp`p\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` _aabb`abaa aabaa`abaa\n"", ""output"": ""NO\n""}, {""input"": ""yjinhkau jn`fu svsgh\n"", ""output"": ""NO\n""}, {""input"": ""a ` \\\n"", ""output"": ""NO\n""}, {""input"": ""gps agnjrok lfp`p\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` _aabb`abaa aabba`abaa\n"", ""output"": ""NO\n""}, {""input"": ""yjinhkau jnf`u svsgh\n"", ""output"": ""NO\n""}, {""input"": ""` ` \\\n"", ""output"": ""NO\n""}, {""input"": ""gps agnjrok p`pfl\n"", ""output"": ""NO\n""}, {""input"": ""baaabaaa`` _aabb`abaa aabba`baaa\n"", ""output"": ""NO\n""}, {""input"": ""yjinhkau jnf`u rvsgh\n"", ""output"": ""NO\n""}, {""input"": ""yakiniku unagi sushi\n"", ""output"": ""NO\n""}, {""input"": ""a a a\n"", ""output"": ""YES\n""}, {""input"": ""rng gorilla apple\n"", ""output"": ""YES\n""}, {""input"": ""aaaaaaaaab aaaaaaaaaa aaaaaaaaab\n"", ""output"": ""NO\n""}, {""input"": ""rng gorilla apple\n"", ""output"": ""YES\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main()
+{
+
+    char a[11],b[11],c[11];
+    int x , y, t;
+
+    scanf(""%s"",a);
+    scanf(""%s"",b);
+    scanf(""%s"",c);
+
+    x=strlen(a)-1;
+    y=strlen(b)-1;
+    t=strlen(c)-1;
+
+        if((a[x]==b[0])&&(b[y]==c[0]))
+        {
+            printf(""YES\n"");
+        }
+        else
+        {
+            printf(""NO\n"");
+        }
+
+    return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+.LC1:
+	.string	""YES""
+.LC2:
+	.string	""NO""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	leaq	.LC0(%rip), %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	movq	%rbp, %rdi
+	subq	$56, %rsp
+	.cfi_def_cfa_offset 96
+	movq	%fs:40, %rax
+	movq	%rax, 40(%rsp)
+	xorl	%eax, %eax
+	leaq	7(%rsp), %r13
+	leaq	18(%rsp), %r12
+	movq	%r13, %rsi
+	call	__isoc99_scanf@PLT
+	movq	%r12, %rsi
+	movq	%rbp, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	leaq	29(%rsp), %rsi
+	movq	%rbp, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movq	%r13, %rdi
+	call	strlen@PLT
+	movq	%r12, %rdi
+	movq	%rax, %rbx
+	call	strlen@PLT
+	subl	$1, %ebx
+	movzbl	18(%rsp), %edx
+	movslq	%ebx, %rbx
+	cmpb	%dl, 7(%rsp,%rbx)
+	jne	.L2
+	subl	$1, %eax
+	movzbl	29(%rsp), %ecx
+	cltq
+	cmpb	%cl, 18(%rsp,%rax)
+	je	.L7
+.L2:
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+.L3:
+	movq	40(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L8
+	addq	$56, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L7:
+	.cfi_restore_state
+	leaq	.LC1(%rip), %rdi
+	call	puts@PLT
+	jmp	.L3
+.L8:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main()
+{
+
+    char a[11],b[11],c[11];
+    int x , y, t;
+
+    scanf(""%s"",a);
+    scanf(""%s"",b);
+    scanf(""%s"",c);
+
+    x=strlen(a)-1;
+    y=strlen(b)-1;
+    t=strlen(c)-1;
+
+        if((a[x]==b[0])&&(b[y]==c[0]))
+        {
+            printf(""YES\n"");
+        }
+        else
+        {
+            printf(""NO\n"");
+        }
+
+    return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+11,"```c
+#include<stdio.h>
+
+int main()
+{
+    int a,b,y,temp;
+    double x;
+    scanf(""%d %d"", &a,&b);
+    if(b>a)
+    {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+    x=(double)((a-b)/2.00);
+    y=((a-b)/2);
+    if((x-(double)y)==0)
+        printf(""%d"", a-y);
+    else
+        printf(""IMPOSSIBLE"");
+    return 0;
+}
+```","[{""input"": ""899758294 99824435\n"", ""output"": ""IMPOSSIBLE""}, {""input"": ""0 4\n"", ""output"": ""2""}, {""input"": ""1349313191 99824435\n"", ""output"": ""724568813""}, {""input"": ""0 2\n"", ""output"": ""1""}, {""input"": ""1 7\n"", ""output"": ""4""}, {""input"": ""1349313191 6197513\n"", ""output"": ""677755352""}, {""input"": ""1 13\n"", ""output"": ""7""}, {""input"": ""2563528379 6197513\n"", ""output"": ""-862620702""}, {""input"": ""2563528379 9221341\n"", ""output"": ""-861108788""}, {""input"": ""2563528379 13118121\n"", ""output"": ""-859160398""}, {""input"": ""-2 2\n"", ""output"": ""0""}, {""input"": ""6 4\n"", ""output"": ""5""}, {""input"": ""707160285 9274641\n"", ""output"": ""358217463""}, {""input"": ""819805567 9274641\n"", ""output"": ""414540104""}, {""input"": ""-2 8\n"", ""output"": ""3""}, {""input"": ""819805567 6544429\n"", ""output"": ""413174998""}, {""input"": ""819805567 8560445\n"", ""output"": ""414183006""}, {""input"": ""44913600 9480486\n"", ""output"": ""27197043""}, {""input"": ""107633744 9480486\n"", ""output"": ""58557115""}, {""input"": ""108741947 17746947\n"", ""output"": ""63244447""}, {""input"": ""108741947 23304885\n"", ""output"": ""66023416""}, {""input"": ""1 11\n"", ""output"": ""6""}, {""input"": ""142428602 25059880\n"", ""output"": ""83744241""}, {""input"": ""190939370 25059880\n"", ""output"": ""107999625""}, {""input"": ""0 -4\n"", ""output"": ""-2""}, {""input"": ""190939370 14450182\n"", ""output"": ""102694776""}, {""input"": ""-1 -7\n"", ""output"": ""-4""}, {""input"": ""320431836 14450182\n"", ""output"": ""167441009""}, {""input"": ""-2 0\n"", ""output"": ""-1""}, {""input"": ""836982489 25582625\n"", ""output"": ""431282557""}, {""input"": ""314794616 44782566\n"", ""output"": ""179788591""}, {""input"": ""160359946 44782566\n"", ""output"": ""102571256""}, {""input"": ""186946962 44782566\n"", ""output"": ""115864764""}, {""input"": ""5490045 24174675\n"", ""output"": ""14832360""}, {""input"": ""969473 24174675\n"", ""output"": ""12572074""}, {""input"": ""649873 24174675\n"", ""output"": ""12412274""}, {""input"": ""649873 20404011\n"", ""output"": ""10526942""}, {""input"": ""1764893 20404011\n"", ""output"": ""11084452""}, {""input"": ""2981809 20404011\n"", ""output"": ""11692910""}, {""input"": ""2981809 14428573\n"", ""output"": ""8705191""}, {""input"": ""1665978 17462894\n"", ""output"": ""9564436""}, {""input"": ""1665978 29045576\n"", ""output"": ""15355777""}, {""input"": ""2978008 29045576\n"", ""output"": ""16011792""}, {""input"": ""2978008 25356586\n"", ""output"": ""14167297""}, {""input"": ""-2 -4\n"", ""output"": ""-3""}, {""input"": ""-2 24\n"", ""output"": ""11""}, {""input"": ""2770031 5298487\n"", ""output"": ""4034259""}, {""input"": ""-4 24\n"", ""output"": ""10""}, {""input"": ""4373039 5298487\n"", ""output"": ""4835763""}, {""input"": ""3240969 5298487\n"", ""output"": ""4269728""}, {""input"": ""3240969 9769089\n"", ""output"": ""6505029""}, {""input"": ""0 54\n"", ""output"": ""27""}, {""input"": ""2261972 976314\n"", ""output"": ""1619143""}, {""input"": ""2 22\n"", ""output"": ""12""}, {""input"": ""2 24\n"", ""output"": ""13""}, {""input"": ""4 24\n"", ""output"": ""14""}, {""input"": ""2773903 1574255\n"", ""output"": ""2174079""}, {""input"": ""2 94\n"", ""output"": ""48""}, {""input"": ""4 36\n"", ""output"": ""20""}, {""input"": ""804043 1574255\n"", ""output"": ""1189149""}, {""input"": ""4 42\n"", ""output"": ""23""}, {""input"": ""943375 1574255\n"", ""output"": ""1258815""}, {""input"": ""0 94\n"", ""output"": ""47""}, {""input"": ""2 42\n"", ""output"": ""22""}, {""input"": ""0 42\n"", ""output"": ""21""}, {""input"": ""351241 1574255\n"", ""output"": ""962748""}, {""input"": ""0 162\n"", ""output"": ""81""}, {""input"": ""522599 1574255\n"", ""output"": ""1048427""}, {""input"": ""0 34\n"", ""output"": ""17""}, {""input"": ""471283 1574255\n"", ""output"": ""1022769""}, {""input"": ""-12 0\n"", ""output"": ""-6""}, {""input"": ""146724 1911600\n"", ""output"": ""1029162""}, {""input"": ""-14 0\n"", ""output"": ""-7""}, {""input"": ""43305 3311419\n"", ""output"": ""1677362""}, {""input"": ""9903 3311419\n"", ""output"": ""1660661""}, {""input"": ""-1 19\n"", ""output"": ""9""}, {""input"": ""7456 873182\n"", ""output"": ""440319""}, {""input"": ""9349 184005\n"", ""output"": ""96677""}, {""input"": ""9349 71369\n"", ""output"": ""40359""}, {""input"": ""13452 75698\n"", ""output"": ""44575""}, {""input"": ""-2 -8\n"", ""output"": ""-5""}, {""input"": ""1258 75698\n"", ""output"": ""38478""}, {""input"": ""1258 96120\n"", ""output"": ""48689""}, {""input"": ""1258 186122\n"", ""output"": ""93690""}, {""input"": ""35 1\n"", ""output"": ""18""}, {""input"": ""1258 32696\n"", ""output"": ""16977""}, {""input"": ""1457 62403\n"", ""output"": ""31930""}, {""input"": ""317 12053\n"", ""output"": ""6185""}, {""input"": ""89 11409\n"", ""output"": ""5749""}, {""input"": ""155 18233\n"", ""output"": ""9194""}, {""input"": ""101 18233\n"", ""output"": ""9167""}, {""input"": ""15 1\n"", ""output"": ""8""}, {""input"": ""101 12903\n"", ""output"": ""6502""}, {""input"": ""111 12903\n"", ""output"": ""6507""}, {""input"": ""28 2\n"", ""output"": ""15""}, {""input"": ""101 23155\n"", ""output"": ""11628""}, {""input"": ""111 10209\n"", ""output"": ""5160""}, {""input"": ""30 2\n"", ""output"": ""16""}, {""input"": ""011 21039\n"", ""output"": ""10525""}, {""input"": ""50 2\n"", ""output"": ""26""}, {""input"": ""998244353 99824435\n"", ""output"": ""549034394""}, {""input"": ""2 16\n"", ""output"": ""9""}, {""input"": ""2 16\n"", ""output"": ""9""}, {""input"": ""0 3\n"", ""output"": ""IMPOSSIBLE""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+
+int main()
+{
+    int a,b,y,temp;
+    double x;
+    scanf(""%d %d"", &a,&b);
+    if(b>a)
+    {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+    x=(double)((a-b)/2.00);
+    y=((a-b)/2);
+    if((x-(double)y)==0)
+        printf(""%d"", a-y);
+    else
+        printf(""IMPOSSIBLE"");
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC3:
+	.string	""%d""
+.LC4:
+	.string	""IMPOSSIBLE""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	movl	(%rsp), %edx
+	cmpl	%edx, %eax
+	jle	.L2
+	movl	%eax, (%rsp)
+	movl	%edx, 4(%rsp)
+	movl	%eax, %edx
+.L2:
+	movl	%edx, %ecx
+	pxor	%xmm0, %xmm0
+	pxor	%xmm1, %xmm1
+	subl	4(%rsp), %ecx
+	movl	%ecx, %eax
+	cvtsi2sdl	%ecx, %xmm0
+	mulsd	.LC1(%rip), %xmm0
+	shrl	$31, %eax
+	addl	%ecx, %eax
+	sarl	%eax
+	cvtsi2sdl	%eax, %xmm1
+	subsd	%xmm1, %xmm0
+	ucomisd	.LC2(%rip), %xmm0
+	jp	.L3
+	jne	.L3
+	subl	%eax, %edx
+	leaq	.LC3(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+.L5:
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L10
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L3:
+	.cfi_restore_state
+	leaq	.LC4(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	jmp	.L5
+.L10:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.section	.rodata.cst8,""aM"",@progbits,8
+	.align 8
+.LC1:
+	.long	0
+	.long	1071644672
+	.align 8
+.LC2:
+	.long	0
+	.long	0
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+
+int main()
+{
+    int a,b,y,temp;
+    double x;
+    scanf(""%d %d"", &a,&b);
+    if(b>a)
+    {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+    x=(double)((a-b)/2.00);
+    y=((a-b)/2);
+    if((x-(double)y)==0)
+        printf(""%d"", a-y);
+    else
+        printf(""IMPOSSIBLE"");
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+12,"```c
+#include <stdio.h>
+
+int main(){
+  int m;
+  scanf(""%d"", &m);
+  printf(""%d\n"", 48 - m);
+  return 0;
+}```","[{""input"": ""9\n"", ""output"": ""39\n""}, {""input"": ""34\n"", ""output"": ""14\n""}, {""input"": ""8\n"", ""output"": ""40\n""}, {""input"": ""25\n"", ""output"": ""23\n""}, {""input"": ""14\n"", ""output"": ""34\n""}, {""input"": ""49\n"", ""output"": ""-1\n""}, {""input"": ""0\n"", ""output"": ""48\n""}, {""input"": ""4\n"", ""output"": ""44\n""}, {""input"": ""-1\n"", ""output"": ""49\n""}, {""input"": ""1\n"", ""output"": ""47\n""}, {""input"": ""-2\n"", ""output"": ""50\n""}, {""input"": ""2\n"", ""output"": ""46\n""}, {""input"": ""-4\n"", ""output"": ""52\n""}, {""input"": ""3\n"", ""output"": ""45\n""}, {""input"": ""-5\n"", ""output"": ""53\n""}, {""input"": ""5\n"", ""output"": ""43\n""}, {""input"": ""-3\n"", ""output"": ""51\n""}, {""input"": ""-8\n"", ""output"": ""56\n""}, {""input"": ""-6\n"", ""output"": ""54\n""}, {""input"": ""-13\n"", ""output"": ""61\n""}, {""input"": ""-10\n"", ""output"": ""58\n""}, {""input"": ""-21\n"", ""output"": ""69\n""}, {""input"": ""-15\n"", ""output"": ""63\n""}, {""input"": ""-31\n"", ""output"": ""79\n""}, {""input"": ""-12\n"", ""output"": ""60\n""}, {""input"": ""-35\n"", ""output"": ""83\n""}, {""input"": ""-11\n"", ""output"": ""59\n""}, {""input"": ""6\n"", ""output"": ""42\n""}, {""input"": ""-20\n"", ""output"": ""68\n""}, {""input"": ""-16\n"", ""output"": ""64\n""}, {""input"": ""-7\n"", ""output"": ""55\n""}, {""input"": ""-19\n"", ""output"": ""67\n""}, {""input"": ""10\n"", ""output"": ""38\n""}, {""input"": ""-28\n"", ""output"": ""76\n""}, {""input"": ""7\n"", ""output"": ""41\n""}, {""input"": ""-36\n"", ""output"": ""84\n""}, {""input"": ""-9\n"", ""output"": ""57\n""}, {""input"": ""-18\n"", ""output"": ""66\n""}, {""input"": ""-26\n"", ""output"": ""74\n""}, {""input"": ""11\n"", ""output"": ""37\n""}, {""input"": ""-14\n"", ""output"": ""62\n""}, {""input"": ""15\n"", ""output"": ""33\n""}, {""input"": ""-27\n"", ""output"": ""75\n""}, {""input"": ""22\n"", ""output"": ""26\n""}, {""input"": ""17\n"", ""output"": ""31\n""}, {""input"": ""41\n"", ""output"": ""7\n""}, {""input"": ""24\n"", ""output"": ""24\n""}, {""input"": ""55\n"", ""output"": ""-7\n""}, {""input"": ""-29\n"", ""output"": ""77\n""}, {""input"": ""93\n"", ""output"": ""-45\n""}, {""input"": ""-41\n"", ""output"": ""89\n""}, {""input"": ""182\n"", ""output"": ""-134\n""}, {""input"": ""-81\n"", ""output"": ""129\n""}, {""input"": ""339\n"", ""output"": ""-291\n""}, {""input"": ""-117\n"", ""output"": ""165\n""}, {""input"": ""467\n"", ""output"": ""-419\n""}, {""input"": ""-155\n"", ""output"": ""203\n""}, {""input"": ""324\n"", ""output"": ""-276\n""}, {""input"": ""-263\n"", ""output"": ""311\n""}, {""input"": ""349\n"", ""output"": ""-301\n""}, {""input"": ""-414\n"", ""output"": ""462\n""}, {""input"": ""171\n"", ""output"": ""-123\n""}, {""input"": ""-356\n"", ""output"": ""404\n""}, {""input"": ""184\n"", ""output"": ""-136\n""}, {""input"": ""-111\n"", ""output"": ""159\n""}, {""input"": ""112\n"", ""output"": ""-64\n""}, {""input"": ""-145\n"", ""output"": ""193\n""}, {""input"": ""127\n"", ""output"": ""-79\n""}, {""input"": ""19\n"", ""output"": ""29\n""}, {""input"": ""94\n"", ""output"": ""-46\n""}, {""input"": ""16\n"", ""output"": ""32\n""}, {""input"": ""43\n"", ""output"": ""5\n""}, {""input"": ""32\n"", ""output"": ""16\n""}, {""input"": ""64\n"", ""output"": ""-16\n""}, {""input"": ""62\n"", ""output"": ""-14\n""}, {""input"": ""20\n"", ""output"": ""28\n""}, {""input"": ""-17\n"", ""output"": ""65\n""}, {""input"": ""13\n"", ""output"": ""35\n""}, {""input"": ""23\n"", ""output"": ""25\n""}, {""input"": ""31\n"", ""output"": ""17\n""}, {""input"": ""27\n"", ""output"": ""21\n""}, {""input"": ""46\n"", ""output"": ""2\n""}, {""input"": ""18\n"", ""output"": ""30\n""}, {""input"": ""70\n"", ""output"": ""-22\n""}, {""input"": ""50\n"", ""output"": ""-2\n""}, {""input"": ""138\n"", ""output"": ""-90\n""}, {""input"": ""39\n"", ""output"": ""9\n""}, {""input"": ""76\n"", ""output"": ""-28\n""}, {""input"": ""63\n"", ""output"": ""-15\n""}, {""input"": ""115\n"", ""output"": ""-67\n""}, {""input"": ""126\n"", ""output"": ""-78\n""}, {""input"": ""38\n"", ""output"": ""10\n""}, {""input"": ""52\n"", ""output"": ""-4\n""}, {""input"": ""-30\n"", ""output"": ""78\n""}, {""input"": ""44\n"", ""output"": ""4\n""}, {""input"": ""28\n"", ""output"": ""20\n""}, {""input"": ""30\n"", ""output"": ""18\n""}, {""input"": ""56\n"", ""output"": ""-8\n""}, {""input"": ""47\n"", ""output"": ""1\n""}, {""input"": ""73\n"", ""output"": ""-25\n""}, {""input"": ""12\n"", ""output"": ""36\n""}, {""input"": ""21\n"", ""output"": ""27\n""}, {""input"": ""21\n"", ""output"": ""27\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main(){
+  int m;
+  scanf(""%d"", &m);
+  printf(""%d\n"", 48 - m);
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	$48, %edx
+	xorl	%eax, %eax
+	subl	4(%rsp), %edx
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L5
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L5:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main(){
+  int m;
+  scanf(""%d"", &m);
+  printf(""%d\n"", 48 - m);
+  return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+13,"```c
+#include<stdio.h>
+int main(){
+  char s[100010];
+  int i,n,a=1;
+  scanf(""%s"",s);
+  for(n=0;s[n];n++);
+  for(i=0;i<n-1;i++){
+    if(s[i]-s[n-i-2])goto END;
+  }
+  if(s[0]=='0'||s[n-1]=='1')goto END;
+  for(i=0;i<n-1;i++){
+    printf(""%d %d\n"",a,i+2);
+    if(s[i]=='1')a=i+2;
+  }
+  return 0;
+ END:;
+  printf(""-1\n"");
+  return 0;
+}
+		   
+```","[{""input"": ""1011\n"", ""output"": ""-1\n""}, {""input"": ""0111\n"", ""output"": ""-1\n""}, {""input"": ""1000\n"", ""output"": ""-1\n""}, {""input"": ""1100\n"", ""output"": ""-1\n""}, {""input"": ""0011\n"", ""output"": ""-1\n""}, {""input"": ""1001\n"", ""output"": ""-1\n""}, {""input"": ""0100\n"", ""output"": ""-1\n""}, {""input"": ""0110\n"", ""output"": ""-1\n""}, {""input"": ""0001\n"", ""output"": ""-1\n""}, {""input"": ""0101\n"", ""output"": ""-1\n""}, {""input"": ""0010\n"", ""output"": ""-1\n""}, {""input"": ""1101\n"", ""output"": ""-1\n""}, {""input"": ""0000\n"", ""output"": ""-1\n""}, {""input"": ""0111\n"", ""output"": ""-1\n""}, {""input"": ""1011\n"", ""output"": ""-1\n""}, {""input"": ""0010\n"", ""output"": ""-1\n""}, {""input"": ""0101\n"", ""output"": ""-1\n""}, {""input"": ""0011\n"", ""output"": ""-1\n""}, {""input"": ""0000\n"", ""output"": ""-1\n""}, {""input"": ""0100\n"", ""output"": ""-1\n""}, {""input"": ""1001\n"", ""output"": ""-1\n""}, {""input"": ""1100\n"", ""output"": ""-1\n""}, {""input"": ""0110\n"", ""output"": ""-1\n""}, {""input"": ""1101\n"", ""output"": ""-1\n""}, {""input"": ""1000\n"", ""output"": ""-1\n""}, {""input"": ""0001\n"", ""output"": ""-1\n""}, {""input"": ""1110\n"", ""output"": ""1 2\n2 3\n3 4\n""}, {""input"": ""1111\n"", ""output"": ""-1\n""}, {""input"": ""1010\n"", ""output"": ""1 2\n2 3\n2 4\n""}, {""input"": ""1111\n"", ""output"": ""-1\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main(){
+  char s[100010];
+  int i,n,a=1;
+  scanf(""%s"",s);
+  for(n=0;s[n];n++);
+  for(i=0;i<n-1;i++){
+    if(s[i]-s[n-i-2])goto END;
+  }
+  if(s[0]=='0'||s[n-1]=='1')goto END;
+  for(i=0;i<n-1;i++){
+    printf(""%d %d\n"",a,i+2);
+    if(s[i]=='1')a=i+2;
+  }
+  return 0;
+ END:;
+  printf(""-1\n"");
+  return 0;
+}
+		   
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+.LC1:
+	.string	""%d %d\n""
+.LC2:
+	.string	""-1""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	leaq	-98304(%rsp), %r11
+	.cfi_def_cfa 11, 98360
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	.cfi_def_cfa_register 7
+	subq	$1736, %rsp
+	.cfi_def_cfa_offset 100096
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 100024(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rbx
+	movq	%rbx, %rsi
+	call	__isoc99_scanf@PLT
+	movzbl	(%rsp), %edi
+	testb	%dil, %dil
+	je	.L2
+	leaq	1(%rsp), %rsi
+	xorl	%eax, %eax
+	movq	%rsi, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	addq	$1, %rdx
+	movl	%eax, %ecx
+	leal	1(%rax), %eax
+	cmpb	$0, -1(%rdx)
+	jne	.L3
+	testl	%ecx, %ecx
+	je	.L4
+	cltq
+	leal	-1(%rcx), %r8d
+	movq	%rbx, %rdx
+	addq	%rbx, %rax
+	addq	%r8, %rsi
+	jmp	.L6
+	.p2align 4,,10
+	.p2align 3
+.L25:
+	addq	$1, %rdx
+	subq	$1, %rax
+	cmpq	%rsi, %rdx
+	je	.L4
+.L6:
+	movzbl	-2(%rax), %r9d
+	cmpb	%r9b, (%rdx)
+	je	.L25
+.L5:
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+.L8:
+	movq	100024(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L26
+	addq	$100040, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+.L4:
+	.cfi_restore_state
+	cmpb	$48, %dil
+	je	.L5
+	movslq	%ecx, %r14
+	cmpb	$49, (%rsp,%r14)
+	je	.L5
+	testl	%ecx, %ecx
+	jle	.L8
+	xorl	%ebp, %ebp
+	movl	$1, %r12d
+	leaq	.LC1(%rip), %r15
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	leal	2(%rbp), %r13d
+	movl	%r12d, %edx
+	xorl	%eax, %eax
+	movq	%r15, %rsi
+	movl	%r13d, %ecx
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	cmpb	$49, (%rbx,%rbp)
+	cmove	%r13d, %r12d
+	addq	$1, %rbp
+	cmpq	%rbp, %r14
+	jne	.L10
+	jmp	.L8
+.L2:
+	cmpb	$49, -1(%rsp)
+	je	.L5
+	jmp	.L8
+.L26:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main(){
+  char s[100010];
+  int i,n,a=1;
+  scanf(""%s"",s);
+  for(n=0;s[n];n++);
+  for(i=0;i<n-1;i++){
+    if(s[i]-s[n-i-2])goto END;
+  }
+  if(s[0]=='0'||s[n-1]=='1')goto END;
+  for(i=0;i<n-1;i++){
+    printf(""%d %d\n"",a,i+2);
+    if(s[i]=='1')a=i+2;
+  }
+  return 0;
+ END:;
+  printf(""-1\n"");
+  return 0;
+}
+		   
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+14,"```c
+#include <stdio.h>
+
+int main()
+{
+    int n, a, b;
+    int distance;
+    
+    scanf(""%d %d %d"", &n, &a, &b);
+
+    distance = b - a;
+
+    if ((distance % 2) == 0)
+    {
+	printf(""Alice\n"");
+    }
+    else
+    {
+	printf(""Borys\n"");
+    }
+
+    return 0;
+}
+```","[{""input"": ""9 23 42\n"", ""output"": ""Borys\n""}, {""input"": ""8 2 4\n"", ""output"": ""Alice\n""}, {""input"": ""3 1 2\n"", ""output"": ""Borys\n""}, {""input"": ""9 23 18\n"", ""output"": ""Borys\n""}, {""input"": ""3 2 2\n"", ""output"": ""Alice\n""}, {""input"": ""8 2 3\n"", ""output"": ""Borys\n""}, {""input"": ""9 23 23\n"", ""output"": ""Alice\n""}, {""input"": ""0 2 2\n"", ""output"": ""Alice\n""}, {""input"": ""7 2 3\n"", ""output"": ""Borys\n""}, {""input"": ""9 44 23\n"", ""output"": ""Borys\n""}, {""input"": ""0 2 1\n"", ""output"": ""Borys\n""}, {""input"": ""7 2 5\n"", ""output"": ""Borys\n""}, {""input"": ""9 44 0\n"", ""output"": ""Alice\n""}, {""input"": ""0 0 1\n"", ""output"": ""Borys\n""}, {""input"": ""7 1 5\n"", ""output"": ""Alice\n""}, {""input"": ""9 38 0\n"", ""output"": ""Alice\n""}, {""input"": ""0 1 1\n"", ""output"": ""Alice\n""}, {""input"": ""7 1 4\n"", ""output"": ""Borys\n""}, {""input"": ""1 38 0\n"", ""output"": ""Alice\n""}, {""input"": ""0 1 0\n"", ""output"": ""Borys\n""}, {""input"": ""8 1 4\n"", ""output"": ""Borys\n""}, {""input"": ""1 38 1\n"", ""output"": ""Borys\n""}, {""input"": ""0 2 0\n"", ""output"": ""Alice\n""}, {""input"": ""8 1 7\n"", ""output"": ""Alice\n""}, {""input"": ""1 31 0\n"", ""output"": ""Borys\n""}, {""input"": ""0 0 0\n"", ""output"": ""Alice\n""}, {""input"": ""8 0 7\n"", ""output"": ""Borys\n""}, {""input"": ""2 31 0\n"", ""output"": ""Borys\n""}, {""input"": ""1 0 0\n"", ""output"": ""Alice\n""}, {""input"": ""8 0 3\n"", ""output"": ""Borys\n""}, {""input"": ""2 31 -1\n"", ""output"": ""Alice\n""}, {""input"": ""2 0 0\n"", ""output"": ""Alice\n""}, {""input"": ""8 1 3\n"", ""output"": ""Alice\n""}, {""input"": ""2 53 -1\n"", ""output"": ""Alice\n""}, {""input"": ""0 0 -1\n"", ""output"": ""Borys\n""}, {""input"": ""3 1 3\n"", ""output"": ""Alice\n""}, {""input"": ""2 64 -1\n"", ""output"": ""Borys\n""}, {""input"": ""0 -1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""0 1 3\n"", ""output"": ""Alice\n""}, {""input"": ""0 64 -1\n"", ""output"": ""Borys\n""}, {""input"": ""-1 -1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""-1 1 3\n"", ""output"": ""Alice\n""}, {""input"": ""0 64 0\n"", ""output"": ""Alice\n""}, {""input"": ""0 -2 -1\n"", ""output"": ""Borys\n""}, {""input"": ""-1 1 4\n"", ""output"": ""Borys\n""}, {""input"": ""1 64 0\n"", ""output"": ""Alice\n""}, {""input"": ""0 1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""-1 1 7\n"", ""output"": ""Alice\n""}, {""input"": ""1 103 0\n"", ""output"": ""Borys\n""}, {""input"": ""1 1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""-1 1 13\n"", ""output"": ""Alice\n""}, {""input"": ""1 103 1\n"", ""output"": ""Alice\n""}, {""input"": ""2 1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""-1 1 2\n"", ""output"": ""Borys\n""}, {""input"": ""2 103 1\n"", ""output"": ""Alice\n""}, {""input"": ""4 1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""0 1 2\n"", ""output"": ""Borys\n""}, {""input"": ""2 79 1\n"", ""output"": ""Alice\n""}, {""input"": ""4 1 0\n"", ""output"": ""Borys\n""}, {""input"": ""0 1 4\n"", ""output"": ""Borys\n""}, {""input"": ""2 79 2\n"", ""output"": ""Borys\n""}, {""input"": ""7 1 0\n"", ""output"": ""Borys\n""}, {""input"": ""0 1 6\n"", ""output"": ""Borys\n""}, {""input"": ""2 56 2\n"", ""output"": ""Alice\n""}, {""input"": ""7 0 0\n"", ""output"": ""Alice\n""}, {""input"": ""0 0 6\n"", ""output"": ""Alice\n""}, {""input"": ""2 56 4\n"", ""output"": ""Alice\n""}, {""input"": ""11 0 0\n"", ""output"": ""Alice\n""}, {""input"": ""-1 0 6\n"", ""output"": ""Alice\n""}, {""input"": ""2 12 4\n"", ""output"": ""Alice\n""}, {""input"": ""11 -1 0\n"", ""output"": ""Borys\n""}, {""input"": ""-1 0 8\n"", ""output"": ""Alice\n""}, {""input"": ""2 21 4\n"", ""output"": ""Borys\n""}, {""input"": ""21 -1 0\n"", ""output"": ""Borys\n""}, {""input"": ""-1 0 10\n"", ""output"": ""Alice\n""}, {""input"": ""2 21 0\n"", ""output"": ""Borys\n""}, {""input"": ""21 -2 0\n"", ""output"": ""Alice\n""}, {""input"": ""0 0 10\n"", ""output"": ""Alice\n""}, {""input"": ""2 35 0\n"", ""output"": ""Borys\n""}, {""input"": ""21 -2 1\n"", ""output"": ""Borys\n""}, {""input"": ""1 0 -1\n"", ""output"": ""Borys\n""}, {""input"": ""2 35 1\n"", ""output"": ""Alice\n""}, {""input"": ""16 -2 1\n"", ""output"": ""Borys\n""}, {""input"": ""1 -1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""2 30 1\n"", ""output"": ""Borys\n""}, {""input"": ""16 -3 1\n"", ""output"": ""Alice\n""}, {""input"": ""2 -1 -1\n"", ""output"": ""Alice\n""}, {""input"": ""2 11 1\n"", ""output"": ""Alice\n""}, {""input"": ""16 -3 2\n"", ""output"": ""Borys\n""}, {""input"": ""2 -1 -2\n"", ""output"": ""Borys\n""}, {""input"": ""0 11 1\n"", ""output"": ""Alice\n""}, {""input"": ""5 -3 2\n"", ""output"": ""Borys\n""}, {""input"": ""0 -1 -2\n"", ""output"": ""Borys\n""}, {""input"": ""-1 11 1\n"", ""output"": ""Alice\n""}, {""input"": ""7 -3 2\n"", ""output"": ""Borys\n""}, {""input"": ""0 -1 -3\n"", ""output"": ""Alice\n""}, {""input"": ""-1 22 1\n"", ""output"": ""Borys\n""}, {""input"": ""13 -3 2\n"", ""output"": ""Borys\n""}, {""input"": ""0 0 -3\n"", ""output"": ""Borys\n""}, {""input"": ""-1 22 2\n"", ""output"": ""Alice\n""}, {""input"": ""58 23 42\n"", ""output"": ""Borys\n""}, {""input"": ""5 2 4\n"", ""output"": ""Alice\n""}, {""input"": ""5 2 4\n"", ""output"": ""Alice\n""}, {""input"": ""2 1 2\n"", ""output"": ""Borys\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int n, a, b;
+    int distance;
+    
+    scanf(""%d %d %d"", &n, &a, &b);
+
+    distance = b - a;
+
+    if ((distance % 2) == 0)
+    {
+	printf(""Alice\n"");
+    }
+    else
+    {
+	printf(""Borys\n"");
+    }
+
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d %d""
+.LC1:
+	.string	""Alice""
+.LC2:
+	.string	""Borys""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rcx
+	leaq	16(%rsp), %rdx
+	leaq	12(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	20(%rsp), %eax
+	subl	16(%rsp), %eax
+	testb	$1, %al
+	jne	.L2
+	leaq	.LC1(%rip), %rdi
+	call	puts@PLT
+.L3:
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L2:
+	.cfi_restore_state
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+	jmp	.L3
+.L7:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int n, a, b;
+    int distance;
+    
+    scanf(""%d %d %d"", &n, &a, &b);
+
+    distance = b - a;
+
+    if ((distance % 2) == 0)
+    {
+	printf(""Alice\n"");
+    }
+    else
+    {
+	printf(""Borys\n"");
+    }
+
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+15,"```c
+#include <stdio.h>
+
+int main()
+{
+	int N;
+	scanf(""%d"", &N);
+	printf(""%d\n"",(N+1)/2);
+	return 0;
+}```","[{""input"": ""9\n"", ""output"": ""5\n""}, {""input"": ""110\n"", ""output"": ""55\n""}, {""input"": ""3\n"", ""output"": ""2\n""}, {""input"": ""11\n"", ""output"": ""6\n""}, {""input"": ""111\n"", ""output"": ""56\n""}, {""input"": ""6\n"", ""output"": ""3\n""}, {""input"": ""101\n"", ""output"": ""51\n""}, {""input"": ""1\n"", ""output"": ""1\n""}, {""input"": ""8\n"", ""output"": ""4\n""}, {""input"": ""18\n"", ""output"": ""9\n""}, {""input"": ""14\n"", ""output"": ""7\n""}, {""input"": ""15\n"", ""output"": ""8\n""}, {""input"": ""26\n"", ""output"": ""13\n""}, {""input"": ""36\n"", ""output"": ""18\n""}, {""input"": ""28\n"", ""output"": ""14\n""}, {""input"": ""65\n"", ""output"": ""33\n""}, {""input"": ""20\n"", ""output"": ""10\n""}, {""input"": ""42\n"", ""output"": ""21\n""}, {""input"": ""67\n"", ""output"": ""34\n""}, {""input"": ""47\n"", ""output"": ""24\n""}, {""input"": ""57\n"", ""output"": ""29\n""}, {""input"": ""55\n"", ""output"": ""28\n""}, {""input"": ""40\n"", ""output"": ""20\n""}, {""input"": ""24\n"", ""output"": ""12\n""}, {""input"": ""75\n"", ""output"": ""38\n""}, {""input"": ""69\n"", ""output"": ""35\n""}, {""input"": ""92\n"", ""output"": ""46\n""}, {""input"": ""148\n"", ""output"": ""74\n""}, {""input"": ""282\n"", ""output"": ""141\n""}, {""input"": ""33\n"", ""output"": ""17\n""}, {""input"": ""22\n"", ""output"": ""11\n""}, {""input"": ""31\n"", ""output"": ""16\n""}, {""input"": ""52\n"", ""output"": ""26\n""}, {""input"": ""38\n"", ""output"": ""19\n""}, {""input"": ""29\n"", ""output"": ""15\n""}, {""input"": ""53\n"", ""output"": ""27\n""}, {""input"": ""86\n"", ""output"": ""43\n""}, {""input"": ""46\n"", ""output"": ""23\n""}, {""input"": ""62\n"", ""output"": ""31\n""}, {""input"": ""73\n"", ""output"": ""37\n""}, {""input"": ""44\n"", ""output"": ""22\n""}, {""input"": ""72\n"", ""output"": ""36\n""}, {""input"": ""171\n"", ""output"": ""86\n""}, {""input"": ""557\n"", ""output"": ""279\n""}, {""input"": ""117\n"", ""output"": ""59\n""}, {""input"": ""81\n"", ""output"": ""41\n""}, {""input"": ""77\n"", ""output"": ""39\n""}, {""input"": ""59\n"", ""output"": ""30\n""}, {""input"": ""121\n"", ""output"": ""61\n""}, {""input"": ""63\n"", ""output"": ""32\n""}, {""input"": ""108\n"", ""output"": ""54\n""}, {""input"": ""284\n"", ""output"": ""142\n""}, {""input"": ""276\n"", ""output"": ""138\n""}, {""input"": ""50\n"", ""output"": ""25\n""}, {""input"": ""105\n"", ""output"": ""53\n""}, {""input"": ""153\n"", ""output"": ""77\n""}, {""input"": ""79\n"", ""output"": ""40\n""}, {""input"": ""97\n"", ""output"": ""49\n""}, {""input"": ""231\n"", ""output"": ""116\n""}, {""input"": ""87\n"", ""output"": ""44\n""}, {""input"": ""143\n"", ""output"": ""72\n""}, {""input"": ""149\n"", ""output"": ""75\n""}, {""input"": ""487\n"", ""output"": ""244\n""}, {""input"": ""146\n"", ""output"": ""73\n""}, {""input"": ""210\n"", ""output"": ""105\n""}, {""input"": ""94\n"", ""output"": ""47\n""}, {""input"": ""189\n"", ""output"": ""95\n""}, {""input"": ""280\n"", ""output"": ""140\n""}, {""input"": ""840\n"", ""output"": ""420\n""}, {""input"": ""248\n"", ""output"": ""124\n""}, {""input"": ""134\n"", ""output"": ""67\n""}, {""input"": ""129\n"", ""output"": ""65\n""}, {""input"": ""161\n"", ""output"": ""81\n""}, {""input"": ""124\n"", ""output"": ""62\n""}, {""input"": ""345\n"", ""output"": ""173\n""}, {""input"": ""335\n"", ""output"": ""168\n""}, {""input"": ""131\n"", ""output"": ""66\n""}, {""input"": ""126\n"", ""output"": ""63\n""}, {""input"": ""224\n"", ""output"": ""112\n""}, {""input"": ""277\n"", ""output"": ""139\n""}, {""input"": ""84\n"", ""output"": ""42\n""}, {""input"": ""217\n"", ""output"": ""109\n""}, {""input"": ""601\n"", ""output"": ""301\n""}, {""input"": ""274\n"", ""output"": ""137\n""}, {""input"": ""138\n"", ""output"": ""69\n""}, {""input"": ""201\n"", ""output"": ""101\n""}, {""input"": ""472\n"", ""output"": ""236\n""}, {""input"": ""156\n"", ""output"": ""78\n""}, {""input"": ""365\n"", ""output"": ""183\n""}, {""input"": ""740\n"", ""output"": ""370\n""}, {""input"": ""216\n"", ""output"": ""108\n""}, {""input"": ""211\n"", ""output"": ""106\n""}, {""input"": ""466\n"", ""output"": ""233\n""}, {""input"": ""1073\n"", ""output"": ""537\n""}, {""input"": ""181\n"", ""output"": ""91\n""}, {""input"": ""104\n"", ""output"": ""52\n""}, {""input"": ""583\n"", ""output"": ""292\n""}, {""input"": ""163\n"", ""output"": ""82\n""}, {""input"": ""245\n"", ""output"": ""123\n""}, {""input"": ""195\n"", ""output"": ""98\n""}, {""input"": ""5\n"", ""output"": ""3\n""}, {""input"": ""5\n"", ""output"": ""3\n""}, {""input"": ""2\n"", ""output"": ""1\n""}, {""input"": ""100\n"", ""output"": ""50\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+	int N;
+	scanf(""%d"", &N);
+	printf(""%d\n"",(N+1)/2);
+	return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	addl	$1, %eax
+	movl	%eax, %edx
+	shrl	$31, %edx
+	addl	%eax, %edx
+	xorl	%eax, %eax
+	sarl	%edx
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L5
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L5:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+	int N;
+	scanf(""%d"", &N);
+	printf(""%d\n"",(N+1)/2);
+	return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+16,"```c
+long s;c[101][101],n,i;main(j){for(scanf(""%d"",&n);i++<n;)for(j=0;j++<n;j<i?s+=fmin(c[i][j],c[j][i]):s)scanf(""%d"",c[i]+j);n=!printf(""%ld\n"",s);}```","[{""input"": ""3\n0 3 7\n2 0 4\n5 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 3 7\n0 0 4\n5 8 0\n"", ""output"": ""9\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n9 8 1\n"", ""output"": ""13\n""}, {""input"": ""3\n0 3 7\n4 0 4\n5 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n-1 6 2\n2 0 4\n5 8 1\n"", ""output"": ""8\n""}, {""input"": ""3\n0 0 7\n16 0 4\n6 8 0\n"", ""output"": ""10\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n0 8 1\n"", ""output"": ""6\n""}, {""input"": ""3\n0 3 7\n4 0 4\n10 8 0\n"", ""output"": ""14\n""}, {""input"": ""3\n-1 6 1\n2 0 4\n5 8 1\n"", ""output"": ""7\n""}, {""input"": ""3\n0 3 10\n4 0 4\n10 8 0\n"", ""output"": ""17\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n4 -1 1\n"", ""output"": ""5\n""}, {""input"": ""3\n0 3 7\n4 0 6\n12 8 0\n"", ""output"": ""16\n""}, {""input"": ""3\n0 3 13\n4 0 6\n12 8 0\n"", ""output"": ""21\n""}, {""input"": ""3\n0 3 13\n4 0 3\n12 8 0\n"", ""output"": ""18\n""}, {""input"": ""3\n0 3 10\n1 0 4\n19 11 0\n"", ""output"": ""15\n""}, {""input"": ""3\n0 6 13\n4 0 3\n12 8 0\n"", ""output"": ""19\n""}, {""input"": ""3\n0 1 7\n-1 0 0\n3 8 0\n"", ""output"": ""2\n""}, {""input"": ""3\n-1 1 7\n2 0 4\n4 -1 1\n"", ""output"": ""4\n""}, {""input"": ""3\n0 1 7\n-1 0 0\n2 10 0\n"", ""output"": ""1\n""}, {""input"": ""3\n0 6 13\n4 0 3\n24 12 0\n"", ""output"": ""20\n""}, {""input"": ""3\n0 0 1\n1 0 2\n7 14 0\n"", ""output"": ""3\n""}, {""input"": ""3\n0 3 19\n4 0 5\n33 0 0\n"", ""output"": ""22\n""}, {""input"": ""3\n0 1 7\n-1 0 0\n0 8 0\n"", ""output"": ""-1\n""}, {""input"": ""3\n0 -2 2\n3 0 0\n3 4 0\n"", ""output"": ""0\n""}, {""input"": ""3\n0 5 19\n4 0 5\n33 0 0\n"", ""output"": ""23\n""}, {""input"": ""3\n0 12 13\n6 0 6\n27 8 0\n"", ""output"": ""25\n""}, {""input"": ""3\n0 12 18\n6 0 6\n27 8 0\n"", ""output"": ""30\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n5 8 1\n"", ""output"": ""11\n""}, {""input"": ""3\n0 2 7\n2 0 4\n5 14 0\n"", ""output"": ""11\n""}, {""input"": ""3\n-1 3 7\n2 0 4\n5 8 1\n"", ""output"": ""11\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n9 0 1\n"", ""output"": ""9\n""}, {""input"": ""3\n0 2 7\n2 0 4\n7 14 0\n"", ""output"": ""13\n""}, {""input"": ""3\n0 3 7\n4 0 4\n6 8 0\n"", ""output"": ""13\n""}, {""input"": ""3\n-1 6 7\n2 0 4\n5 8 1\n"", ""output"": ""11\n""}, {""input"": ""3\n0 1 7\n4 0 4\n6 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 1 7\n8 0 4\n6 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 1 7\n16 0 4\n6 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 2 7\n16 0 4\n6 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n0 0 7\n6 0 4\n6 8 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 2 13\n2 0 4\n5 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 3 7\n2 0 4\n6 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n-1 2 3\n2 0 4\n9 8 1\n"", ""output"": ""9\n""}, {""input"": ""3\n0 2 7\n0 0 4\n5 14 0\n"", ""output"": ""9\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n4 0 1\n"", ""output"": ""6\n""}, {""input"": ""3\n0 2 7\n2 0 4\n0 14 0\n"", ""output"": ""6\n""}, {""input"": ""3\n0 3 7\n4 0 4\n7 8 0\n"", ""output"": ""14\n""}, {""input"": ""3\n-1 6 14\n2 0 4\n5 8 1\n"", ""output"": ""11\n""}, {""input"": ""3\n0 2 7\n4 0 4\n6 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n0 1 7\n8 0 4\n6 3 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 1 7\n6 0 4\n6 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 2 13\n2 0 4\n3 8 0\n"", ""output"": ""9\n""}, {""input"": ""3\n0 2 7\n2 0 4\n6 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n0 3 7\n4 0 4\n12 8 0\n"", ""output"": ""14\n""}, {""input"": ""3\n-1 6 14\n2 0 0\n5 8 1\n"", ""output"": ""7\n""}, {""input"": ""3\n0 2 7\n8 0 4\n6 3 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 1 7\n3 0 4\n6 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 4 13\n2 0 4\n3 8 0\n"", ""output"": ""9\n""}, {""input"": ""3\n0 3 6\n2 0 4\n6 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n0 3 10\n4 0 4\n19 8 0\n"", ""output"": ""17\n""}, {""input"": ""3\n-1 6 14\n3 0 0\n5 8 1\n"", ""output"": ""8\n""}, {""input"": ""3\n0 2 7\n8 0 2\n6 3 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 1 7\n3 0 4\n3 8 0\n"", ""output"": ""8\n""}, {""input"": ""3\n0 3 10\n4 0 4\n19 11 0\n"", ""output"": ""17\n""}, {""input"": ""3\n0 2 10\n8 0 2\n6 3 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 1 7\n0 0 4\n3 8 0\n"", ""output"": ""7\n""}, {""input"": ""3\n0 3 10\n7 0 4\n19 11 0\n"", ""output"": ""17\n""}, {""input"": ""3\n0 2 15\n8 0 2\n6 3 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 1 7\n-1 0 4\n3 8 0\n"", ""output"": ""6\n""}, {""input"": ""3\n0 2 15\n8 0 4\n6 3 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 12 13\n4 0 3\n12 8 0\n"", ""output"": ""19\n""}, {""input"": ""3\n0 1 7\n-1 0 0\n3 10 0\n"", ""output"": ""2\n""}, {""input"": ""3\n0 12 13\n4 0 1\n12 8 0\n"", ""output"": ""17\n""}, {""input"": ""3\n0 2 12\n2 0 4\n5 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n-1 2 7\n3 0 4\n5 8 1\n"", ""output"": ""11\n""}, {""input"": ""3\n0 3 7\n0 0 4\n7 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 2 7\n3 0 4\n5 14 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 0 7\n4 0 4\n5 8 0\n"", ""output"": ""9\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n9 1 1\n"", ""output"": ""10\n""}, {""input"": ""3\n0 2 9\n2 0 4\n7 14 0\n"", ""output"": ""13\n""}, {""input"": ""3\n0 4 7\n4 0 4\n6 8 0\n"", ""output"": ""14\n""}, {""input"": ""3\n-1 6 7\n2 0 4\n5 4 1\n"", ""output"": ""11\n""}, {""input"": ""3\n0 1 7\n4 0 3\n6 8 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 2 7\n17 0 4\n6 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n0 3 7\n2 0 4\n8 8 0\n"", ""output"": ""13\n""}, {""input"": ""3\n-1 2 7\n2 0 4\n0 3 1\n"", ""output"": ""5\n""}, {""input"": ""3\n-1 3 3\n2 0 4\n9 8 1\n"", ""output"": ""9\n""}, {""input"": ""3\n0 2 7\n0 0 4\n5 4 0\n"", ""output"": ""9\n""}, {""input"": ""3\n-1 1 7\n2 0 4\n4 0 1\n"", ""output"": ""5\n""}, {""input"": ""3\n0 2 10\n2 0 4\n0 14 0\n"", ""output"": ""6\n""}, {""input"": ""3\n0 2 7\n0 0 4\n6 8 0\n"", ""output"": ""10\n""}, {""input"": ""3\n-1 7 1\n2 0 4\n5 8 1\n"", ""output"": ""7\n""}, {""input"": ""3\n0 1 7\n8 0 8\n6 3 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 1 7\n6 0 4\n6 16 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 2 13\n2 0 4\n3 4 0\n"", ""output"": ""9\n""}, {""input"": ""3\n0 4 7\n2 0 4\n6 8 0\n"", ""output"": ""12\n""}, {""input"": ""3\n0 3 10\n4 0 5\n10 8 0\n"", ""output"": ""18\n""}, {""input"": ""3\n0 3 7\n4 0 4\n12 7 0\n"", ""output"": ""14\n""}, {""input"": ""3\n-1 6 14\n2 0 1\n5 8 1\n"", ""output"": ""8\n""}, {""input"": ""3\n0 2 7\n13 0 4\n6 3 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 0 7\n3 0 4\n6 8 0\n"", ""output"": ""10\n""}, {""input"": ""3\n0 2 7\n2 0 4\n5 8 0\n"", ""output"": ""11\n""}, {""input"": ""3\n0 2 7\n2 0 4\n5 8 0\n"", ""output"": ""11\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+long s;c[101][101],n,i;main(j){for(scanf(""%d"",&n);i++<n;)for(j=0;j++<n;j<i?s+=fmin(c[i][j],c[j][i]):s)scanf(""%d"",c[i]+j);n=!printf(""%ld\n"",s);}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%ld\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+	leaq	n(%rip), %rsi
+	xorl	%eax, %eax
+	pushq	%r13
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+	leaq	.LC0(%rip), %r13
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
+	movq	%r13, %rdi
+	leaq	c(%rip), %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	call	scanf@PLT
+	movl	i(%rip), %edx
+	movl	n(%rip), %eax
+	leal	1(%rdx), %r14d
+	movl	%r14d, i(%rip)
+	cmpl	%eax, %edx
+	jge	.L3
+	testl	%eax, %eax
+	jle	.L22
+.L11:
+	movl	$1, %ebp
+	.p2align 4,,10
+	.p2align 3
+.L20:
+	movslq	%r14d, %rbx
+.L7:
+	imulq	$404, %rbx, %rbx
+	movq	%r13, %rdi
+	xorl	%eax, %eax
+	leaq	(%rbx,%rbp,4), %rsi
+	addq	%r12, %rsi
+	call	scanf@PLT
+	movl	i(%rip), %r14d
+	cmpl	%ebp, %r14d
+	jle	.L4
+	movslq	%ebp, %rax
+	movslq	%r14d, %rbx
+	pxor	%xmm0, %xmm0
+	addq	$1, %rbp
+	leaq	(%rax,%rax,4), %rdx
+	leaq	(%rbx,%rbx,4), %rcx
+	pxor	%xmm1, %xmm1
+	leaq	(%rdx,%rdx,4), %rdx
+	leaq	(%rcx,%rcx,4), %rcx
+	leaq	(%rax,%rdx,4), %rdx
+	leaq	(%rbx,%rcx,4), %rcx
+	addq	%rbx, %rdx
+	addq	%rcx, %rax
+	cvtsi2sdl	(%r12,%rdx,4), %xmm1
+	cvtsi2sdl	(%r12,%rax,4), %xmm0
+	call	fmin@PLT
+	leal	-1(%rbp), %edx
+	movapd	%xmm0, %xmm1
+	pxor	%xmm0, %xmm0
+	cvtsi2sdq	s(%rip), %xmm0
+	addsd	%xmm1, %xmm0
+	cvttsd2siq	%xmm0, %rax
+	movq	%rax, s(%rip)
+	movl	n(%rip), %eax
+	cmpl	%edx, %eax
+	jg	.L7
+.L6:
+	leal	1(%r14), %edx
+	movl	%edx, i(%rip)
+	cmpl	%eax, %r14d
+	jge	.L3
+	movl	%edx, %r14d
+	testl	%eax, %eax
+	jg	.L11
+.L22:
+	leal	1(%r14), %edx
+	movl	%edx, i(%rip)
+	cmpl	%r14d, %eax
+	jle	.L3
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movl	%edx, %ecx
+	addl	$1, %edx
+	cmpl	%eax, %ecx
+	jl	.L8
+	movl	%edx, i(%rip)
+.L3:
+	movq	s(%rip), %rsi
+	xorl	%eax, %eax
+	leaq	.LC1(%rip), %rdi
+	call	printf@PLT
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	testl	%eax, %eax
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	sete	%al
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	movzbl	%al, %eax
+	movl	%eax, n(%rip)
+	xorl	%eax, %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	.cfi_restore_state
+	addq	$1, %rbp
+	movl	n(%rip), %eax
+	leal	-1(%rbp), %edx
+	cmpl	%edx, %eax
+	jg	.L20
+	jmp	.L6
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	i
+	.bss
+	.align 4
+	.type	i, @object
+	.size	i, 4
+i:
+	.zero	4
+	.globl	n
+	.align 4
+	.type	n, @object
+	.size	n, 4
+n:
+	.zero	4
+	.globl	c
+	.align 32
+	.type	c, @object
+	.size	c, 40804
+c:
+	.zero	40804
+	.globl	s
+	.align 8
+	.type	s, @object
+	.size	s, 8
+s:
+	.zero	8
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+long s;c[101][101],n,i;main(j){for(scanf(""%d"",&n);i++<n;)for(j=0;j++<n;j<i?s+=fmin(c[i][j],c[j][i]):s)scanf(""%d"",c[i]+j);n=!printf(""%ld\n"",s);}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+17,"```c
+#include <stdio.h>
+
+int a[1000000];
+
+int main () {
+    int n, A;
+    scanf(""%d"",&n);
+    for(int i=2;i<=n;i++) {
+        scanf(""%d"",&A);
+        a[A]+=1;
+    }
+    for(int i=1;i<=n;i++) printf(""%d\n"",a[i]);
+}```","[{""input"": ""5\n1 1 2 3\n"", ""output"": ""2\n1\n1\n0\n0\n""}, {""input"": ""7\n1 2 1 4 5 6\n"", ""output"": ""2\n1\n0\n1\n1\n1\n0\n""}, {""input"": ""10\n1 1 1 1 1 2 1 1 1\n"", ""output"": ""8\n1\n0\n0\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""5\n1 2 2 3\n"", ""output"": ""1\n2\n1\n0\n0\n""}, {""input"": ""7\n1 2 3 4 5 4\n"", ""output"": ""1\n1\n1\n2\n1\n0\n0\n""}, {""input"": ""5\n1 2 2 2\n"", ""output"": ""1\n3\n0\n0\n0\n""}, {""input"": ""7\n1 2 2 4 5 6\n"", ""output"": ""1\n2\n0\n1\n1\n1\n0\n""}, {""input"": ""10\n1 1 1 2 1 2 1 1 1\n"", ""output"": ""7\n2\n0\n0\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""7\n1 2 3 4 5 2\n"", ""output"": ""1\n2\n1\n1\n1\n0\n0\n""}, {""input"": ""7\n1 2 2 4 1 6\n"", ""output"": ""2\n2\n0\n1\n0\n1\n0\n""}, {""input"": ""7\n1 2 3 6 5 2\n"", ""output"": ""1\n2\n1\n0\n1\n1\n0\n""}, {""input"": ""7\n1 2 2 2 1 6\n"", ""output"": ""2\n3\n0\n0\n0\n1\n0\n""}, {""input"": ""7\n1 2 3 5 5 6\n"", ""output"": ""1\n1\n1\n0\n2\n1\n0\n""}, {""input"": ""5\n1 1 2 5\n"", ""output"": ""2\n1\n0\n0\n1\n""}, {""input"": ""7\n1 2 3 3 5 4\n"", ""output"": ""1\n1\n2\n1\n1\n0\n0\n""}, {""input"": ""7\n1 2 3 4 3 2\n"", ""output"": ""1\n2\n2\n1\n0\n0\n0\n""}, {""input"": ""7\n1 2 4 4 1 6\n"", ""output"": ""2\n1\n0\n2\n0\n1\n0\n""}, {""input"": ""7\n1 3 2 2 1 6\n"", ""output"": ""2\n2\n1\n0\n0\n1\n0\n""}, {""input"": ""7\n2 2 3 5 5 6\n"", ""output"": ""0\n2\n1\n0\n2\n1\n0\n""}, {""input"": ""7\n1 2 3 1 5 4\n"", ""output"": ""2\n1\n1\n1\n1\n0\n0\n""}, {""input"": ""7\n1 2 1 4 1 6\n"", ""output"": ""3\n1\n0\n1\n0\n1\n0\n""}, {""input"": ""7\n2 2 4 5 5 6\n"", ""output"": ""0\n2\n0\n1\n2\n1\n0\n""}, {""input"": ""7\n1 2 2 1 5 4\n"", ""output"": ""2\n2\n0\n1\n1\n0\n0\n""}, {""input"": ""7\n1 2 2 1 1 4\n"", ""output"": ""3\n2\n0\n1\n0\n0\n0\n""}, {""input"": ""5\n1 2 4 3\n"", ""output"": ""1\n1\n1\n1\n0\n""}, {""input"": ""7\n1 2 3 3 3 4\n"", ""output"": ""1\n1\n3\n1\n0\n0\n0\n""}, {""input"": ""5\n1 2 4 2\n"", ""output"": ""1\n2\n0\n1\n0\n""}, {""input"": ""10\n1 1 1 2 1 2 1 1 2\n"", ""output"": ""6\n3\n0\n0\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""7\n1 2 3 4 1 6\n"", ""output"": ""2\n1\n1\n1\n0\n1\n0\n""}, {""input"": ""7\n1 4 2 2 1 7\n"", ""output"": ""2\n2\n0\n1\n0\n0\n1\n""}, {""input"": ""5\n2 1 2 5\n"", ""output"": ""1\n2\n0\n0\n1\n""}, {""input"": ""10\n1 1 1 1 3 2 1 1 1\n"", ""output"": ""7\n1\n1\n0\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""7\n2 2 3 3 5 4\n"", ""output"": ""0\n2\n2\n1\n1\n0\n0\n""}, {""input"": ""7\n1 2 3 3 3 2\n"", ""output"": ""1\n2\n3\n0\n0\n0\n0\n""}, {""input"": ""7\n1 2 4 4 2 6\n"", ""output"": ""1\n2\n0\n2\n0\n1\n0\n""}, {""input"": ""7\n2 2 2 5 5 6\n"", ""output"": ""0\n3\n0\n0\n2\n1\n0\n""}, {""input"": ""7\n1 2 1 4 1 7\n"", ""output"": ""3\n1\n0\n1\n0\n0\n1\n""}, {""input"": ""7\n1 2 2 1 2 4\n"", ""output"": ""2\n3\n0\n1\n0\n0\n0\n""}, {""input"": ""5\n1 2 4 5\n"", ""output"": ""1\n1\n0\n1\n1\n""}, {""input"": ""7\n1 1 3 3 3 4\n"", ""output"": ""2\n0\n3\n1\n0\n0\n0\n""}, {""input"": ""7\n1 2 2 5 5 3\n"", ""output"": ""1\n2\n1\n0\n2\n0\n0\n""}, {""input"": ""10\n1 1 1 4 1 2 1 1 2\n"", ""output"": ""6\n2\n0\n1\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""5\n2 1 3 5\n"", ""output"": ""1\n1\n1\n0\n1\n""}, {""input"": ""7\n1 2 3 3 6 2\n"", ""output"": ""1\n2\n2\n0\n0\n1\n0\n""}, {""input"": ""7\n1 3 2 4 2 6\n"", ""output"": ""1\n2\n1\n1\n0\n1\n0\n""}, {""input"": ""7\n1 3 2 1 2 4\n"", ""output"": ""2\n2\n1\n1\n0\n0\n0\n""}, {""input"": ""5\n1 4 4 5\n"", ""output"": ""1\n0\n0\n2\n1\n""}, {""input"": ""7\n1 2 2 3 6 2\n"", ""output"": ""1\n3\n1\n0\n0\n1\n0\n""}, {""input"": ""7\n2 3 2 4 2 6\n"", ""output"": ""0\n3\n1\n1\n0\n1\n0\n""}, {""input"": ""7\n1 3 1 4 2 7\n"", ""output"": ""2\n1\n1\n1\n0\n0\n1\n""}, {""input"": ""7\n1 3 2 1 2 3\n"", ""output"": ""2\n2\n2\n0\n0\n0\n0\n""}, {""input"": ""5\n1 4 1 5\n"", ""output"": ""2\n0\n0\n1\n1\n""}, {""input"": ""7\n2 4 2 4 2 6\n"", ""output"": ""0\n3\n0\n2\n0\n1\n0\n""}, {""input"": ""7\n2 3 1 4 2 7\n"", ""output"": ""1\n2\n1\n1\n0\n0\n1\n""}, {""input"": ""7\n2 3 1 4 3 7\n"", ""output"": ""1\n1\n2\n1\n0\n0\n1\n""}, {""input"": ""7\n2 1 2 4 2 7\n"", ""output"": ""1\n3\n0\n1\n0\n0\n1\n""}, {""input"": ""7\n2 1 2 1 2 7\n"", ""output"": ""2\n3\n0\n0\n0\n0\n1\n""}, {""input"": ""7\n2 2 4 2 3 7\n"", ""output"": ""0\n3\n1\n1\n0\n0\n1\n""}, {""input"": ""7\n2 2 6 2 3 7\n"", ""output"": ""0\n3\n1\n0\n0\n1\n1\n""}, {""input"": ""7\n2 2 6 2 4 7\n"", ""output"": ""0\n3\n0\n1\n0\n1\n1\n""}, {""input"": ""7\n2 2 6 2 2 7\n"", ""output"": ""0\n4\n0\n0\n0\n1\n1\n""}, {""input"": ""7\n4 4 6 2 2 7\n"", ""output"": ""0\n2\n0\n2\n0\n1\n1\n""}, {""input"": ""7\n1 2 3 4 7 6\n"", ""output"": ""1\n1\n1\n1\n0\n1\n1\n""}, {""input"": ""7\n1 2 2 4 5 4\n"", ""output"": ""1\n2\n0\n2\n1\n0\n0\n""}, {""input"": ""10\n1 1 1 2 1 2 2 1 2\n"", ""output"": ""5\n4\n0\n0\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""7\n1 2 3 7 5 2\n"", ""output"": ""1\n2\n1\n0\n1\n0\n1\n""}, {""input"": ""7\n1 2 2 2 1 5\n"", ""output"": ""2\n3\n0\n0\n1\n0\n0\n""}, {""input"": ""7\n1 3 3 5 5 6\n"", ""output"": ""1\n0\n2\n0\n2\n1\n0\n""}, {""input"": ""7\n1 2 2 1 5 3\n"", ""output"": ""2\n2\n1\n0\n1\n0\n0\n""}, {""input"": ""5\n1 4 4 3\n"", ""output"": ""1\n0\n1\n2\n0\n""}, {""input"": ""5\n2 2 4 2\n"", ""output"": ""0\n3\n0\n1\n0\n""}, {""input"": ""7\n1 2 2 4 5 5\n"", ""output"": ""1\n2\n0\n1\n2\n0\n0\n""}, {""input"": ""7\n2 3 3 3 5 4\n"", ""output"": ""0\n1\n3\n1\n1\n0\n0\n""}, {""input"": ""7\n2 2 3 3 3 2\n"", ""output"": ""0\n3\n3\n0\n0\n0\n0\n""}, {""input"": ""7\n1 3 2 6 1 6\n"", ""output"": ""2\n1\n1\n0\n0\n2\n0\n""}, {""input"": ""7\n2 2 2 5 2 6\n"", ""output"": ""0\n4\n0\n0\n1\n1\n0\n""}, {""input"": ""7\n1 1 3 3 3 1\n"", ""output"": ""3\n0\n3\n0\n0\n0\n0\n""}, {""input"": ""5\n4 1 3 5\n"", ""output"": ""1\n0\n1\n1\n1\n""}, {""input"": ""7\n1 4 3 3 6 2\n"", ""output"": ""1\n1\n2\n1\n0\n1\n0\n""}, {""input"": ""7\n2 3 2 4 4 6\n"", ""output"": ""0\n2\n1\n2\n0\n1\n0\n""}, {""input"": ""7\n1 3 1 4 1 7\n"", ""output"": ""3\n0\n1\n1\n0\n0\n1\n""}, {""input"": ""7\n2 4 1 4 2 7\n"", ""output"": ""1\n2\n0\n2\n0\n0\n1\n""}, {""input"": ""7\n2 5 1 4 3 7\n"", ""output"": ""1\n1\n1\n1\n1\n0\n1\n""}, {""input"": ""7\n2 1 1 5 2 7\n"", ""output"": ""2\n2\n0\n0\n1\n0\n1\n""}, {""input"": ""7\n2 1 2 5 2 7\n"", ""output"": ""1\n3\n0\n0\n1\n0\n1\n""}, {""input"": ""7\n2 2 4 3 3 7\n"", ""output"": ""0\n2\n2\n1\n0\n0\n1\n""}, {""input"": ""7\n3 2 6 2 4 7\n"", ""output"": ""0\n2\n1\n1\n0\n1\n1\n""}, {""input"": ""7\n2 4 6 1 2 7\n"", ""output"": ""1\n2\n0\n1\n0\n1\n1\n""}, {""input"": ""7\n5 4 6 2 2 7\n"", ""output"": ""0\n2\n0\n1\n1\n1\n1\n""}, {""input"": ""7\n1 4 3 4 7 6\n"", ""output"": ""1\n0\n1\n2\n0\n1\n1\n""}, {""input"": ""10\n1 1 1 3 1 2 2 1 2\n"", ""output"": ""5\n3\n1\n0\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""7\n2 2 3 7 5 2\n"", ""output"": ""0\n3\n1\n0\n1\n0\n1\n""}, {""input"": ""7\n1 5 3 5 5 6\n"", ""output"": ""1\n0\n1\n0\n3\n1\n0\n""}, {""input"": ""7\n1 2 3 1 7 2\n"", ""output"": ""2\n2\n1\n0\n0\n0\n1\n""}, {""input"": ""7\n2 2 7 1 5 6\n"", ""output"": ""1\n2\n0\n0\n1\n1\n1\n""}, {""input"": ""7\n2 2 2 1 5 3\n"", ""output"": ""1\n3\n1\n0\n1\n0\n0\n""}, {""input"": ""5\n2 4 4 3\n"", ""output"": ""0\n1\n1\n2\n0\n""}, {""input"": ""5\n4 2 4 2\n"", ""output"": ""0\n2\n0\n2\n0\n""}, {""input"": ""7\n1 1 2 4 5 5\n"", ""output"": ""2\n1\n0\n1\n2\n0\n0\n""}, {""input"": ""7\n1 2 3 4 4 6\n"", ""output"": ""1\n1\n1\n2\n0\n1\n0\n""}, {""input"": ""7\n1 2 3 4 5 6\n"", ""output"": ""1\n1\n1\n1\n1\n1\n0\n""}, {""input"": ""5\n1 1 2 2\n"", ""output"": ""2\n2\n0\n0\n0\n""}, {""input"": ""10\n1 1 1 1 1 1 1 1 1\n"", ""output"": ""9\n0\n0\n0\n0\n0\n0\n0\n0\n0\n""}, {""input"": ""5\n1 1 2 2\n"", ""output"": ""2\n2\n0\n0\n0\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int a[1000000];
+
+int main () {
+    int n, A;
+    scanf(""%d"",&n);
+    for(int i=2;i<=n;i++) {
+        scanf(""%d"",&A);
+        a[A]+=1;
+    }
+    for(int i=1;i<=n;i++) printf(""%d\n"",a[i]);
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	leaq	.LC0(%rip), %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movq	%r12, %rdi
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	cmpl	$1, %eax
+	jle	.L2
+	movl	$2, %ebx
+	leaq	4(%rsp), %r13
+	leaq	a(%rip), %rbp
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movq	%r13, %rsi
+	movq	%r12, %rdi
+	xorl	%eax, %eax
+	addl	$1, %ebx
+	call	__isoc99_scanf@PLT
+	movslq	4(%rsp), %rax
+	addl	$1, 0(%rbp,%rax,4)
+	movl	(%rsp), %eax
+	cmpl	%ebx, %eax
+	jge	.L3
+.L2:
+	movl	$1, %ebx
+	leaq	a(%rip), %rbp
+	leaq	.LC1(%rip), %r12
+	testl	%eax, %eax
+	jle	.L5
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movl	0(%rbp,%rbx,4), %edx
+	movq	%r12, %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	addq	$1, %rbx
+	call	__printf_chk@PLT
+	cmpl	%ebx, (%rsp)
+	jge	.L4
+.L5:
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L14
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L14:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.globl	a
+	.bss
+	.align 32
+	.type	a, @object
+	.size	a, 4000000
+a:
+	.zero	4000000
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int a[1000000];
+
+int main () {
+    int n, A;
+    scanf(""%d"",&n);
+    for(int i=2;i<=n;i++) {
+        scanf(""%d"",&A);
+        a[A]+=1;
+    }
+    for(int i=1;i<=n;i++) printf(""%d\n"",a[i]);
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+18,"```c
+#include <stdio.h>
+
+int main()
+{
+	int a, b, c;
+	scanf(""%d %d %d"",&a, &b, &c);
+	if ((a==b)&&(b==c)) printf(""Yes"");
+	else printf(""No"");
+}```","[{""input"": ""2 4 2\n"", ""output"": ""No""}, {""input"": ""0 0 0\n"", ""output"": ""Yes""}, {""input"": ""3 4 2\n"", ""output"": ""No""}, {""input"": ""2 6 2\n"", ""output"": ""No""}, {""input"": ""3 4 1\n"", ""output"": ""No""}, {""input"": ""2 7 2\n"", ""output"": ""No""}, {""input"": ""3 0 1\n"", ""output"": ""No""}, {""input"": ""1 7 2\n"", ""output"": ""No""}, {""input"": ""4 0 1\n"", ""output"": ""No""}, {""input"": ""0 7 2\n"", ""output"": ""No""}, {""input"": ""4 0 2\n"", ""output"": ""No""}, {""input"": ""0 13 2\n"", ""output"": ""No""}, {""input"": ""5 0 2\n"", ""output"": ""No""}, {""input"": ""1 13 2\n"", ""output"": ""No""}, {""input"": ""6 0 2\n"", ""output"": ""No""}, {""input"": ""1 13 3\n"", ""output"": ""No""}, {""input"": ""8 0 2\n"", ""output"": ""No""}, {""input"": ""1 15 3\n"", ""output"": ""No""}, {""input"": ""8 -1 2\n"", ""output"": ""No""}, {""input"": ""2 15 3\n"", ""output"": ""No""}, {""input"": ""15 -1 2\n"", ""output"": ""No""}, {""input"": ""4 15 3\n"", ""output"": ""No""}, {""input"": ""13 -1 2\n"", ""output"": ""No""}, {""input"": ""3 15 3\n"", ""output"": ""No""}, {""input"": ""16 -1 2\n"", ""output"": ""No""}, {""input"": ""3 11 3\n"", ""output"": ""No""}, {""input"": ""16 -1 1\n"", ""output"": ""No""}, {""input"": ""2 11 3\n"", ""output"": ""No""}, {""input"": ""0 -1 1\n"", ""output"": ""No""}, {""input"": ""2 5 3\n"", ""output"": ""No""}, {""input"": ""0 -1 0\n"", ""output"": ""No""}, {""input"": ""1 5 3\n"", ""output"": ""No""}, {""input"": ""1 6 3\n"", ""output"": ""No""}, {""input"": ""1 0 0\n"", ""output"": ""No""}, {""input"": ""0 6 3\n"", ""output"": ""No""}, {""input"": ""1 0 -1\n"", ""output"": ""No""}, {""input"": ""-1 6 3\n"", ""output"": ""No""}, {""input"": ""0 0 -1\n"", ""output"": ""No""}, {""input"": ""-2 6 3\n"", ""output"": ""No""}, {""input"": ""0 -1 -1\n"", ""output"": ""No""}, {""input"": ""-4 6 3\n"", ""output"": ""No""}, {""input"": ""-1 -1 -1\n"", ""output"": ""Yes""}, {""input"": ""-3 6 3\n"", ""output"": ""No""}, {""input"": ""-2 -1 -1\n"", ""output"": ""No""}, {""input"": ""-1 10 3\n"", ""output"": ""No""}, {""input"": ""-2 -1 -2\n"", ""output"": ""No""}, {""input"": ""-2 10 3\n"", ""output"": ""No""}, {""input"": ""-2 0 -1\n"", ""output"": ""No""}, {""input"": ""-4 10 3\n"", ""output"": ""No""}, {""input"": ""-2 0 0\n"", ""output"": ""No""}, {""input"": ""-4 10 0\n"", ""output"": ""No""}, {""input"": ""-2 1 -1\n"", ""output"": ""No""}, {""input"": ""-6 10 0\n"", ""output"": ""No""}, {""input"": ""-2 1 -2\n"", ""output"": ""No""}, {""input"": ""-3 10 0\n"", ""output"": ""No""}, {""input"": ""-2 0 -2\n"", ""output"": ""No""}, {""input"": ""-3 10 -1\n"", ""output"": ""No""}, {""input"": ""-2 0 -3\n"", ""output"": ""No""}, {""input"": ""-3 0 -1\n"", ""output"": ""No""}, {""input"": ""-3 0 -3\n"", ""output"": ""No""}, {""input"": ""-1 0 -1\n"", ""output"": ""No""}, {""input"": ""-3 1 -3\n"", ""output"": ""No""}, {""input"": ""-1 1 -1\n"", ""output"": ""No""}, {""input"": ""-3 1 -6\n"", ""output"": ""No""}, {""input"": ""-1 1 -2\n"", ""output"": ""No""}, {""input"": ""-3 1 -11\n"", ""output"": ""No""}, {""input"": ""-1 1 -4\n"", ""output"": ""No""}, {""input"": ""-3 1 -21\n"", ""output"": ""No""}, {""input"": ""-1 1 -8\n"", ""output"": ""No""}, {""input"": ""-5 1 -21\n"", ""output"": ""No""}, {""input"": ""-1 1 -7\n"", ""output"": ""No""}, {""input"": ""-9 1 -21\n"", ""output"": ""No""}, {""input"": ""-1 1 -3\n"", ""output"": ""No""}, {""input"": ""-9 1 -32\n"", ""output"": ""No""}, {""input"": ""-1 0 -3\n"", ""output"": ""No""}, {""input"": ""-9 1 -49\n"", ""output"": ""No""}, {""input"": ""-1 0 0\n"", ""output"": ""No""}, {""input"": ""-9 1 -4\n"", ""output"": ""No""}, {""input"": ""-1 1 0\n"", ""output"": ""No""}, {""input"": ""-5 1 -4\n"", ""output"": ""No""}, {""input"": ""-1 0 1\n"", ""output"": ""No""}, {""input"": ""-5 1 0\n"", ""output"": ""No""}, {""input"": ""-1 -1 0\n"", ""output"": ""No""}, {""input"": ""-5 1 -1\n"", ""output"": ""No""}, {""input"": ""0 -2 0\n"", ""output"": ""No""}, {""input"": ""-5 1 -2\n"", ""output"": ""No""}, {""input"": ""0 -2 -1\n"", ""output"": ""No""}, {""input"": ""-5 0 -2\n"", ""output"": ""No""}, {""input"": ""-1 -2 -1\n"", ""output"": ""No""}, {""input"": ""-8 1 0\n"", ""output"": ""No""}, {""input"": ""-1 -1 -2\n"", ""output"": ""No""}, {""input"": ""-9 1 0\n"", ""output"": ""No""}, {""input"": ""-1 -2 -2\n"", ""output"": ""No""}, {""input"": ""-9 0 0\n"", ""output"": ""No""}, {""input"": ""-1 0 -2\n"", ""output"": ""No""}, {""input"": ""-9 -1 0\n"", ""output"": ""No""}, {""input"": ""0 1 -1\n"", ""output"": ""No""}, {""input"": ""-9 -2 0\n"", ""output"": ""No""}, {""input"": ""0 2 -1\n"", ""output"": ""No""}, {""input"": ""-9 -2 1\n"", ""output"": ""No""}, {""input"": ""2 2 2\n"", ""output"": ""Yes""}, {""input"": ""2 2 2\n"", ""output"": ""Yes""}, {""input"": ""3 4 5\n"", ""output"": ""No""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+	int a, b, c;
+	scanf(""%d %d %d"",&a, &b, &c);
+	if ((a==b)&&(b==c)) printf(""Yes"");
+	else printf(""No"");
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d %d""
+.LC1:
+	.string	""Yes""
+.LC2:
+	.string	""No""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rcx
+	leaq	16(%rsp), %rdx
+	leaq	12(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	16(%rsp), %eax
+	cmpl	%eax, 12(%rsp)
+	jne	.L2
+	cmpl	20(%rsp), %eax
+	je	.L7
+.L2:
+	leaq	.LC2(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+.L3:
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L8
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L7:
+	.cfi_restore_state
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	jmp	.L3
+.L8:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+	int a, b, c;
+	scanf(""%d %d %d"",&a, &b, &c);
+	if ((a==b)&&(b==c)) printf(""Yes"");
+	else printf(""No"");
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"
+19,"```c
+#include <stdio.h>
+#define max(x, y) ((x)<(y) ? (y) : (x))
+#define min(x, y) ((x)>(y) ? (y) : (x))
+#define sqr(x) ((x)*(x))
+
+int main(){
+  int n;  scanf(""%d"", &n);
+  int a[105] = {0};
+  int mini = 200, maxi = -200;
+  for(int i=1; i<=n; i++){
+    scanf(""%d"", a+i);
+    mini = min(mini, a[i]);
+    maxi = max(maxi, a[i]);
+  }
+
+  long ans = 100000000;
+  for(int i=mini; i<=maxi; i++){
+    long sum = 0;
+    for(int j=1; j<=n; j++)
+      sum = sum + (long)(sqr(a[j]-i));
+    ans = min(ans, sum);
+    if(!ans)  break;
+  }
+
+  printf(""%ld\n"", ans);
+
+  return 0;
+}
+```","[{""input"": ""2\n4 8\n"", ""output"": ""8\n""}]","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#define max(x, y) ((x)<(y) ? (y) : (x))
+#define min(x, y) ((x)>(y) ? (y) : (x))
+#define sqr(x) ((x)*(x))
+
+int main(){
+  int n;  scanf(""%d"", &n);
+  int a[105] = {0};
+  int mini = 200, maxi = -200;
+  for(int i=1; i<=n; i++){
+    scanf(""%d"", a+i);
+    mini = min(mini, a[i]);
+    maxi = max(maxi, a[i]);
+  }
+
+  long ans = 100000000;
+  for(int i=mini; i<=maxi; i++){
+    long sum = 0;
+    for(int j=1; j<=n; j++)
+      sum = sum + (long)(sqr(a[j]-i));
+    ans = min(ans, sum);
+    if(!ans)  break;
+  }
+
+  printf(""%ld\n"", ans);
+
+  return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%ld\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	leaq	.LC0(%rip), %r13
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	movq	%r13, %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$456, %rsp
+	.cfi_def_cfa_offset 512
+	movq	%fs:40, %rax
+	movq	%rax, 440(%rsp)
+	xorl	%eax, %eax
+	leaq	12(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rdi
+	movl	$52, %ecx
+	rep stosq
+	movl	12(%rsp), %eax
+	movl	$0, (%rdi)
+	testl	%eax, %eax
+	jle	.L5
+	leaq	20(%rsp), %rbp
+	movl	$1, %r15d
+	movl	$-200, %r12d
+	movl	$200, %ebx
+	movq	%rbp, %r14
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movq	%r14, %rsi
+	xorl	%eax, %eax
+	movq	%r13, %rdi
+	call	__isoc99_scanf@PLT
+	movl	(%r14), %eax
+	movl	12(%rsp), %ecx
+	cmpl	%eax, %ebx
+	cmovg	%eax, %ebx
+	cmpl	%eax, %r12d
+	cmovl	%eax, %r12d
+	addl	$1, %r15d
+	addq	$4, %r14
+	cmpl	%r15d, %ecx
+	jge	.L4
+	cmpl	%r12d, %ebx
+	jg	.L5
+	movl	%ecx, %eax
+	movl	%ecx, %edi
+	leal	-1(%rcx), %r9d
+	movl	$100000000, %r8d
+	shrl	$2, %eax
+	andl	$-4, %edi
+	pxor	%xmm5, %xmm5
+	subl	$1, %eax
+	leal	1(%rdi), %r10d
+	salq	$4, %rax
+	leaq	36(%rsp,%rax), %rsi
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	testl	%ecx, %ecx
+	jle	.L20
+	cmpl	$2, %r9d
+	jbe	.L12
+	movd	%ebx, %xmm6
+	movq	%rbp, %rax
+	pxor	%xmm2, %xmm2
+	pshufd	$0, %xmm6, %xmm4
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movdqu	(%rax), %xmm0
+	addq	$16, %rax
+	psubd	%xmm4, %xmm0
+	movdqa	%xmm0, %xmm1
+	pmuludq	%xmm0, %xmm1
+	psrlq	$32, %xmm0
+	pmuludq	%xmm0, %xmm0
+	pshufd	$8, %xmm1, %xmm1
+	pshufd	$8, %xmm0, %xmm0
+	punpckldq	%xmm0, %xmm1
+	movdqa	%xmm5, %xmm0
+	pcmpgtd	%xmm1, %xmm0
+	movdqa	%xmm1, %xmm3
+	punpckldq	%xmm0, %xmm3
+	punpckhdq	%xmm0, %xmm1
+	paddq	%xmm3, %xmm2
+	paddq	%xmm1, %xmm2
+	cmpq	%rsi, %rax
+	jne	.L8
+	movdqa	%xmm2, %xmm0
+	movl	%r10d, %r11d
+	psrldq	$8, %xmm0
+	paddq	%xmm0, %xmm2
+	movq	%xmm2, %rax
+	cmpl	%ecx, %edi
+	je	.L9
+.L7:
+	movslq	%r11d, %rdx
+	movl	16(%rsp,%rdx,4), %edx
+	subl	%ebx, %edx
+	imull	%edx, %edx
+	movslq	%edx, %rdx
+	addq	%rdx, %rax
+	leal	1(%r11), %edx
+	cmpl	%edx, %ecx
+	jl	.L9
+	movslq	%edx, %rdx
+	addl	$2, %r11d
+	movl	16(%rsp,%rdx,4), %edx
+	subl	%ebx, %edx
+	imull	%edx, %edx
+	movslq	%edx, %rdx
+	addq	%rdx, %rax
+	cmpl	%r11d, %ecx
+	jl	.L9
+	movslq	%r11d, %r11
+	movl	16(%rsp,%r11,4), %edx
+	subl	%ebx, %edx
+	imull	%edx, %edx
+	movslq	%edx, %rdx
+	addq	%rdx, %rax
+.L9:
+	cmpq	%rax, %r8
+	cmovg	%rax, %r8
+	testq	%r8, %r8
+	je	.L3
+	addl	$1, %ebx
+	cmpl	%r12d, %ebx
+	jle	.L6
+.L3:
+	xorl	%eax, %eax
+	movq	%r8, %rdx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	440(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L21
+	addq	$456, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L20:
+	.cfi_restore_state
+	xorl	%r8d, %r8d
+	jmp	.L3
+.L12:
+	movl	$1, %r11d
+	xorl	%eax, %eax
+	jmp	.L7
+.L5:
+	movl	$100000000, %r8d
+	jmp	.L3
+.L21:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#define max(x, y) ((x)<(y) ? (y) : (x))
+#define min(x, y) ((x)>(y) ? (y) : (x))
+#define sqr(x) ((x)*(x))
+
+int main(){
+  int n;  scanf(""%d"", &n);
+  int a[105] = {0};
+  int mini = 200, maxi = -200;
+  for(int i=1; i<=n; i++){
+    scanf(""%d"", a+i);
+    mini = min(mini, a[i]);
+    maxi = max(maxi, a[i]);
+  }
+
+  long ans = 100000000;
+  for(int i=mini; i<=maxi; i++){
+    long sum = 0;
+    for(int j=1; j<=n; j++)
+      sum = sum + (long)(sqr(a[j]-i));
+    ans = min(ans, sum);
+    if(!ans)  break;
+  }
+
+  printf(""%ld\n"", ans);
+
+  return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+"

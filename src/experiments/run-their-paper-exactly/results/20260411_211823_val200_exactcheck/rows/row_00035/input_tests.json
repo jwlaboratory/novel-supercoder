@@ -1,0 +1,422 @@
+[
+  {
+    "input": "EEFF\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "FQEE\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SPOT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ASRA\n",
+    "output": "No\n"
+  },
+  {
+    "input": "EEQF\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SPNT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ARSA\n",
+    "output": "No\n"
+  },
+  {
+    "input": "EEQG\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RPNT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ARSB\n",
+    "output": "No\n"
+  },
+  {
+    "input": "EDQG\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TNPR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "AQSB\n",
+    "output": "No\n"
+  },
+  {
+    "input": "GQDE\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TMPR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "@QSB\n",
+    "output": "No\n"
+  },
+  {
+    "input": "GEDQ\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TRPM\n",
+    "output": "No\n"
+  },
+  {
+    "input": "@QBS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "GEDP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TRMP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SBQ@\n",
+    "output": "No\n"
+  },
+  {
+    "input": "GDDP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PRMT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "S@QB\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PDDG\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PRTM\n",
+    "output": "No\n"
+  },
+  {
+    "input": "S@RB\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PCDG\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PRLT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "S@RC\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PCEG\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TRLP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "S@SC\n",
+    "output": "No\n"
+  },
+  {
+    "input": "GCEP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TPLR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "C@SS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HCEP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TOLR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "C@RS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PECH\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RLOT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SR@C\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HCEO\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TLOR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RR@C\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HBEO\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RMOT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RC@R\n",
+    "output": "No\n"
+  },
+  {
+    "input": "OEBH\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TOMR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "R@CR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "OECH\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TMOR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RC?R\n",
+    "output": "No\n"
+  },
+  {
+    "input": "OCEH\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ROMT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RC?Q\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HECO\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SOMT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RQ?C\n",
+    "output": "No\n"
+  },
+  {
+    "input": "EHCO\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TMOS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "?QRC\n",
+    "output": "No\n"
+  },
+  {
+    "input": "CHEO\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SMOS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "CRQ?\n",
+    "output": "No\n"
+  },
+  {
+    "input": "CHFO\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SNOS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "DRQ?\n",
+    "output": "No\n"
+  },
+  {
+    "input": "COFH\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SONS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ERQ?\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HFOC\n",
+    "output": "No\n"
+  },
+  {
+    "input": "SOOS\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "QRE?\n",
+    "output": "No\n"
+  },
+  {
+    "input": "COGH\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ROOS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "QRD?\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HGOC\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RPOS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "?DRQ\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HGPC\n",
+    "output": "No\n"
+  },
+  {
+    "input": "RPPS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "QR?D\n",
+    "output": "No\n"
+  },
+  {
+    "input": "HGCP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ROPS\n",
+    "output": "No\n"
+  },
+  {
+    "input": "D?RQ\n",
+    "output": "No\n"
+  },
+  {
+    "input": "IGCP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ROPT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "E?RQ\n",
+    "output": "No\n"
+  },
+  {
+    "input": "JGCP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TPOR\n",
+    "output": "No\n"
+  },
+  {
+    "input": "QR?E\n",
+    "output": "No\n"
+  },
+  {
+    "input": "JGDP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "TPOQ\n",
+    "output": "No\n"
+  },
+  {
+    "input": "EQR?\n",
+    "output": "No\n"
+  },
+  {
+    "input": "PDGJ\n",
+    "output": "No\n"
+  },
+  {
+    "input": "QOPT\n",
+    "output": "No\n"
+  },
+  {
+    "input": "EQ?R\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ASSA\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "FFEE\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "ASSA\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "STOP\n",
+    "output": "No\n"
+  },
+  {
+    "input": "FREE\n",
+    "output": "No\n"
+  }
+]

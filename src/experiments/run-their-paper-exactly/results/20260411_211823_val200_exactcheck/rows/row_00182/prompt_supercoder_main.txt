@@ -1,0 +1,280 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int m,d,i,j,count = 0,d1,d10;
+
+    scanf("%d %d",&m,&d);
+
+    for (i = 1; i <= d; i++)
+    {
+        d10 = i / 10;
+        d1 = i % 10;
+        if((d10 >= 2) && (d1 >= 2))
+        {
+            if(d10 * d1 <= m)
+            {
+                //printf("%d %d %d",d1,d10,d1 * d1);
+                count++;
+            }
+        }
+    }
+    
+    
+    printf("%d",count);
+}```
+
+Assembly Code:
+
+```assembly
+	.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC1:
+	.string	"%d %d"
+.LC6:
+	.string	"%d"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC1(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rsi
+	leaq	4(%rsp), %rdx
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %esi
+	testl	%esi, %esi
+	jle	.L13
+	movl	(%rsp), %r9d
+	cmpl	$1, %esi
+	je	.L13
+	leal	-2(%rsi), %eax
+	leal	-1(%rsi), %edi
+	cmpl	$2, %eax
+	jbe	.L4
+	pxor	%xmm3, %xmm3
+	movdqa	.LC3(%rip), %xmm2
+	movl	%edi, %edx
+	xorl	%eax, %eax
+	movdqa	%xmm3, %xmm6
+	movd	%r9d, %xmm7
+	shrl	$2, %edx
+	movdqa	%xmm3, %xmm4
+	pcmpgtd	%xmm2, %xmm6
+	pshufd	$0, %xmm7, %xmm10
+	movdqa	.LC0(%rip), %xmm5
+	movdqa	.LC2(%rip), %xmm9
+	movdqa	.LC4(%rip), %xmm8
+	movdqa	.LC5(%rip), %xmm7
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movdqa	%xmm5, %xmm1
+	movdqa	%xmm4, %xmm11
+	movdqa	%xmm6, %xmm12
+	addl	$1, %eax
+	movdqa	%xmm1, %xmm0
+	movdqa	%xmm6, %xmm13
+	paddd	%xmm9, %xmm5
+	punpckldq	%xmm1, %xmm0
+	pcmpgtd	%xmm0, %xmm11
+	pmuludq	%xmm0, %xmm12
+	pmuludq	%xmm2, %xmm0
+	pmuludq	%xmm2, %xmm11
+	paddq	%xmm12, %xmm11
+	movdqa	%xmm4, %xmm12
+	psllq	$32, %xmm11
+	paddq	%xmm11, %xmm0
+	movdqa	%xmm1, %xmm11
+	punpckhdq	%xmm1, %xmm11
+	pcmpgtd	%xmm11, %xmm12
+	pmuludq	%xmm11, %xmm13
+	pmuludq	%xmm2, %xmm11
+	pmuludq	%xmm2, %xmm12
+	paddq	%xmm13, %xmm12
+	psllq	$32, %xmm12
+	paddq	%xmm12, %xmm11
+	movdqa	%xmm1, %xmm12
+	shufps	$221, %xmm11, %xmm0
+	psrad	$2, %xmm0
+	pcmpgtd	%xmm8, %xmm1
+	movdqa	%xmm0, %xmm11
+	pslld	$2, %xmm11
+	paddd	%xmm0, %xmm11
+	pslld	$1, %xmm11
+	psubd	%xmm11, %xmm12
+	movdqa	%xmm12, %xmm11
+	pcmpgtd	%xmm7, %xmm11
+	pand	%xmm11, %xmm1
+	movdqa	%xmm0, %xmm11
+	pmuludq	%xmm12, %xmm11
+	psrlq	$32, %xmm0
+	psrlq	$32, %xmm12
+	pmuludq	%xmm12, %xmm0
+	pshufd	$8, %xmm11, %xmm11
+	pshufd	$8, %xmm0, %xmm0
+	punpckldq	%xmm0, %xmm11
+	movdqa	%xmm11, %xmm0
+	pcmpgtd	%xmm10, %xmm0
+	pcmpeqd	%xmm4, %xmm0
+	pand	%xmm0, %xmm1
+	psubd	%xmm1, %xmm3
+	cmpl	%eax, %edx
+	jne	.L5
+	movdqa	%xmm3, %xmm0
+	movl	%edi, %ecx
+	psrldq	$8, %xmm0
+	andl	$-4, %ecx
+	paddd	%xmm0, %xmm3
+	leal	2(%rcx), %r10d
+	movdqa	%xmm3, %xmm0
+	psrldq	$4, %xmm0
+	paddd	%xmm0, %xmm3
+	movd	%xmm3, %r8d
+	cmpl	%ecx, %edi
+	je	.L2
+	movl	%r10d, %eax
+	movl	$10, %edi
+	cltd
+	idivl	%edi
+	cmpl	$1, %edx
+	jle	.L7
+	cmpl	$19, %r10d
+	jle	.L7
+	imull	%edx, %eax
+	cmpl	%eax, %r9d
+	jl	.L7
+	addl	$1, %r8d
+.L7:
+	addl	$3, %ecx
+	cmpl	%ecx, %esi
+	jl	.L2
+	movl	%ecx, %eax
+	movl	$10, %edi
+	cltd
+	idivl	%edi
+	cmpl	$1, %edx
+	jle	.L8
+	cmpl	$19, %ecx
+	jle	.L8
+	imull	%edx, %eax
+	cmpl	%eax, %r9d
+	jge	.L35
+.L8:
+	addl	$1, %ecx
+	cmpl	%ecx, %esi
+	jl	.L2
+	movl	%ecx, %eax
+	movl	$10, %esi
+	cltd
+	idivl	%esi
+	cmpl	$19, %ecx
+	jle	.L2
+	cmpl	$1, %edx
+	jle	.L2
+	imull	%edx, %eax
+	cmpl	%eax, %r9d
+	jge	.L36
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	xorl	%eax, %eax
+	movl	%r8d, %edx
+	movl	$1, %edi
+	leaq	.LC6(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L37
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L13:
+	.cfi_restore_state
+	xorl	%r8d, %r8d
+	jmp	.L2
+.L35:
+	addl	$1, %r8d
+	jmp	.L8
+.L36:
+	addl	$1, %r8d
+	jmp	.L2
+.L4:
+	movl	$3, %ecx
+	xorl	%r8d, %r8d
+	cmpl	$2, %esi
+	jg	.L8
+	jmp	.L2
+.L37:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.section	.rodata.cst16,"aM",@progbits,16
+	.align 16
+.LC0:
+	.long	2
+	.long	3
+	.long	4
+	.long	5
+	.align 16
+.LC2:
+	.long	4
+	.long	4
+	.long	4
+	.long	4
+	.align 16
+.LC3:
+	.long	1717986919
+	.long	1717986919
+	.long	1717986919
+	.long	1717986919
+	.align 16
+.LC4:
+	.long	19
+	.long	19
+	.long	19
+	.long	19
+	.align 16
+.LC5:
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

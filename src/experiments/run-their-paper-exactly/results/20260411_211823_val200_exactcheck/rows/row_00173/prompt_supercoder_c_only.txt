@@ -1,0 +1,25 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+
+int main(){
+	int N;	//文字列の長さN
+	int K;	//文字列のK番目を指定するための変数
+	char S[50];		//入力した文字列
+
+	//scanf_s("%d %d", &N, &K);
+	//scanf_s("%s", &S,50);
+
+	scanf("%d %d", &N, &K);
+	scanf("%s", &S);
+
+	S[K - 1] = S[K - 1] + 32;
+	printf("%s\n", S);
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

@@ -1,0 +1,123 @@
+```assembly
+	.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d%s"
+.LC1:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	leaq	.LC0(%rip), %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	subq	$144, %rsp
+	.cfi_def_cfa_offset 176
+	movq	%fs:40, %rax
+	movq	%rax, 136(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rbx
+	leaq	12(%rsp), %rsi
+	movq	%rbx, %rdx
+	call	__isoc99_scanf@PLT
+	movl	12(%rsp), %r9d
+	cmpl	$1, %r9d
+	jle	.L12
+	leaq	17(%rsp), %r8
+	movslq	%r9d, %rbp
+	xorl	%r12d, %r12d
+	movl	$1, %edi
+	movl	$1, %r11d
+.L3:
+	movl	$97, %ecx
+	xorl	%r10d, %r10d
+.L10:
+	movq	%rbx, %rax
+	xorl	%edx, %edx
+.L5:
+	cmpb	%cl, (%rax)
+	cmove	%edi, %edx
+	addq	$1, %rax
+	cmpq	%r8, %rax
+	jne	.L5
+	movq	%r11, %rax
+	xorl	%esi, %esi
+.L7:
+	cmpb	%cl, (%rbx,%rax)
+	cmove	%edi, %esi
+	addq	$1, %rax
+	cmpl	%eax, %r9d
+	jg	.L7
+	andl	%esi, %edx
+	cmpl	$1, %edx
+	sbbl	$-1, %r10d
+	addl	$1, %ecx
+	cmpb	$123, %cl
+	jne	.L10
+	cmpl	%r10d, %r12d
+	cmovl	%r10d, %r12d
+	addq	$1, %r11
+	addq	$1, %r8
+	cmpq	%rbp, %r11
+	jne	.L3
+.L2:
+	xorl	%eax, %eax
+	movl	%r12d, %edx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	136(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L19
+	addq	$144, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+.L12:
+	.cfi_restore_state
+	xorl	%r12d, %r12d
+	jmp	.L2
+.L19:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```

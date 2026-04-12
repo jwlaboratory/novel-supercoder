@@ -1,0 +1,414 @@
+[
+  {
+    "input": "maohiro\n",
+    "output": "mao\n"
+  },
+  {
+    "input": "sakahashi\n",
+    "output": "sak\n"
+  },
+  {
+    "input": "orihoam\n",
+    "output": "ori\n"
+  },
+  {
+    "input": "sbkahashi\n",
+    "output": "sbk\n"
+  },
+  {
+    "input": "ihsahakbs\n",
+    "output": "ihs\n"
+  },
+  {
+    "input": "hhsaiakbr\n",
+    "output": "hhs\n"
+  },
+  {
+    "input": "anphiro\n",
+    "output": "anp\n"
+  },
+  {
+    "input": "rbkaiashh\n",
+    "output": "rbk\n"
+  },
+  {
+    "input": "onphira\n",
+    "output": "onp\n"
+  },
+  {
+    "input": "rkbaiashh\n",
+    "output": "rkb\n"
+  },
+  {
+    "input": "arihpno\n",
+    "output": "ari\n"
+  },
+  {
+    "input": "skbajashh\n",
+    "output": "skb\n"
+  },
+  {
+    "input": "nmpgira\n",
+    "output": "nmp\n"
+  },
+  {
+    "input": "sgi`pmn\n",
+    "output": "sgi\n"
+  },
+  {
+    "input": "ska^iashi\n",
+    "output": "ska\n"
+  },
+  {
+    "input": "nlp`igs\n",
+    "output": "nlp\n"
+  },
+  {
+    "input": "nplgi`s\n",
+    "output": "npl\n"
+  },
+  {
+    "input": "shsai_kai\n",
+    "output": "shs\n"
+  },
+  {
+    "input": "nqlgi`s\n",
+    "output": "nql\n"
+  },
+  {
+    "input": "shaai_ksi\n",
+    "output": "sha\n"
+  },
+  {
+    "input": "nilgq`s\n",
+    "output": "nil\n"
+  },
+  {
+    "input": "isk_iaahs\n",
+    "output": "isk\n"
+  },
+  {
+    "input": "inlgq`s\n",
+    "output": "inl\n"
+  },
+  {
+    "input": "s`qglin\n",
+    "output": "s`q\n"
+  },
+  {
+    "input": "hsaai_kri\n",
+    "output": "hsa\n"
+  },
+  {
+    "input": "milgq`s\n",
+    "output": "mil\n"
+  },
+  {
+    "input": "hta`i_jsi\n",
+    "output": "hta\n"
+  },
+  {
+    "input": "sgq`lim\n",
+    "output": "sgq\n"
+  },
+  {
+    "input": "isj_i`ath\n",
+    "output": "isj\n"
+  },
+  {
+    "input": "ish_i`atj\n",
+    "output": "ish\n"
+  },
+  {
+    "input": "sgl`qil\n",
+    "output": "sgl\n"
+  },
+  {
+    "input": "liq`lgs\n",
+    "output": "liq\n"
+  },
+  {
+    "input": "ith_i`auj\n",
+    "output": "ith\n"
+  },
+  {
+    "input": "itg_i`auj\n",
+    "output": "itg\n"
+  },
+  {
+    "input": "sgh`qll\n",
+    "output": "sgh\n"
+  },
+  {
+    "input": "lghlps`\n",
+    "output": "lgh\n"
+  },
+  {
+    "input": "lfhlps`\n",
+    "output": "lfh\n"
+  },
+  {
+    "input": "`pslhfl\n",
+    "output": "`ps\n"
+  },
+  {
+    "input": "lfilsp`\n",
+    "output": "lfi\n"
+  },
+  {
+    "input": "lehlsp`\n",
+    "output": "leh\n"
+  },
+  {
+    "input": "vtg```kii\n",
+    "output": "vtg\n"
+  },
+  {
+    "input": "sehllp`\n",
+    "output": "seh\n"
+  },
+  {
+    "input": "vig```kti\n",
+    "output": "vig\n"
+  },
+  {
+    "input": "sepllh`\n",
+    "output": "sep\n"
+  },
+  {
+    "input": "`hllpes\n",
+    "output": "`hl\n"
+  },
+  {
+    "input": "wig``_ksi\n",
+    "output": "wig\n"
+  },
+  {
+    "input": "ehllo`s\n",
+    "output": "ehl\n"
+  },
+  {
+    "input": "fhllo`s\n",
+    "output": "fhl\n"
+  },
+  {
+    "input": "wi``g_ksi\n",
+    "output": "wi`\n"
+  },
+  {
+    "input": "wsk_g``ii\n",
+    "output": "wsk\n"
+  },
+  {
+    "input": "fhklns`\n",
+    "output": "fhk\n"
+  },
+  {
+    "input": "fgklns`\n",
+    "output": "fgk\n"
+  },
+  {
+    "input": "ij``g_ksw\n",
+    "output": "ij`\n"
+  },
+  {
+    "input": "lsn`kgf\n",
+    "output": "lsn\n"
+  },
+  {
+    "input": "lns`lgf\n",
+    "output": "lns\n"
+  },
+  {
+    "input": "fgl`snl\n",
+    "output": "fgl\n"
+  },
+  {
+    "input": "wsj_f``ki\n",
+    "output": "wsj\n"
+  },
+  {
+    "input": "ffl`snl\n",
+    "output": "ffl\n"
+  },
+  {
+    "input": "wjs_f``ki\n",
+    "output": "wjs\n"
+  },
+  {
+    "input": "gfl`snl\n",
+    "output": "gfl\n"
+  },
+  {
+    "input": "wjt_f``ki\n",
+    "output": "wjt\n"
+  },
+  {
+    "input": "ggl_rnl\n",
+    "output": "ggl\n"
+  },
+  {
+    "input": "wju_f``kh\n",
+    "output": "wju\n"
+  },
+  {
+    "input": "hju_f``kw\n",
+    "output": "hju\n"
+  },
+  {
+    "input": "grl`fnl\n",
+    "output": "grl\n"
+  },
+  {
+    "input": "wk`f`_ujh\n",
+    "output": "wk`\n"
+  },
+  {
+    "input": "grk`fnl\n",
+    "output": "grk\n"
+  },
+  {
+    "input": "frk`fnl\n",
+    "output": "frk\n"
+  },
+  {
+    "input": "ujg_`f`kw\n",
+    "output": "ujg\n"
+  },
+  {
+    "input": "lof`krf\n",
+    "output": "lof\n"
+  },
+  {
+    "input": "ukg_`f_kw\n",
+    "output": "ukg\n"
+  },
+  {
+    "input": "ukf_`f_kw\n",
+    "output": "ukf\n"
+  },
+  {
+    "input": "hrk`fol\n",
+    "output": "hrk\n"
+  },
+  {
+    "input": "krh`fol\n",
+    "output": "krh\n"
+  },
+  {
+    "input": "xk_f`_fku\n",
+    "output": "xk_\n"
+  },
+  {
+    "input": "lpf`hrk\n",
+    "output": "lpf\n"
+  },
+  {
+    "input": "wk_e`_fku\n",
+    "output": "wk_\n"
+  },
+  {
+    "input": "lpe`hrk\n",
+    "output": "lpe\n"
+  },
+  {
+    "input": "wj_ea_fku\n",
+    "output": "wj_\n"
+  },
+  {
+    "input": "kqh`epl\n",
+    "output": "kqh\n"
+  },
+  {
+    "input": "wje_u_fka\n",
+    "output": "wje\n"
+  },
+  {
+    "input": "lpd`hqk\n",
+    "output": "lpd\n"
+  },
+  {
+    "input": "akf_u_ejw\n",
+    "output": "akf\n"
+  },
+  {
+    "input": "lod`hqk\n",
+    "output": "lod\n"
+  },
+  {
+    "input": "god`lqk\n",
+    "output": "god\n"
+  },
+  {
+    "input": "kql`dog\n",
+    "output": "kql\n"
+  },
+  {
+    "input": "xie_u_fka\n",
+    "output": "xie\n"
+  },
+  {
+    "input": "kq`ldog\n",
+    "output": "kq`\n"
+  },
+  {
+    "input": "kr`ldog\n",
+    "output": "kr`\n"
+  },
+  {
+    "input": "al_fu_eix\n",
+    "output": "al_\n"
+  },
+  {
+    "input": "al^fu_eix\n",
+    "output": "al^\n"
+  },
+  {
+    "input": "glod`rk\n",
+    "output": "glo\n"
+  },
+  {
+    "input": "af^lu_eix\n",
+    "output": "af^\n"
+  },
+  {
+    "input": "kr_dolg\n",
+    "output": "kr_\n"
+  },
+  {
+    "input": "gr_kold\n",
+    "output": "gr_\n"
+  },
+  {
+    "input": "ixe]ul^fa\n",
+    "output": "ixe\n"
+  },
+  {
+    "input": "rg_kold\n",
+    "output": "rg_\n"
+  },
+  {
+    "input": "ae^lu]exi\n",
+    "output": "ae^\n"
+  },
+  {
+    "input": "rgok_ld\n",
+    "output": "rgo\n"
+  },
+  {
+    "input": "rgpk_ld\n",
+    "output": "rgp\n"
+  },
+  {
+    "input": "naohiro\n",
+    "output": "nao\n"
+  },
+  {
+    "input": "takahashi\n",
+    "output": "tak\n"
+  },
+  {
+    "input": "takahashi\n",
+    "output": "tak\n"
+  }
+]

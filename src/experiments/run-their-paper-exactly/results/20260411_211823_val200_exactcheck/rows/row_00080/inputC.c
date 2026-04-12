@@ -1,0 +1,22 @@
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#define Rep(i,a,n)for(int i=(int)(a);i<(int)(n);i++)
+#define rep(i,n)Rep(i,0,n)
+typedef long long ll;
+typedef long double ld;
+#define M(x,y) ((x)>(y)?(x):(y))
+#define m(x,y) ((x)<(y)?(x):(y))
+
+int main() {
+	int n, a[200001]; ll S=0, s=0, min=9999999999999999;
+	scanf("%d", &n);
+	rep(i, n) { scanf("%d", &a[i]); S += a[i]; }
+	rep(i,n-1) {
+		s += a[i];
+		min = m(min, M(S - 2 * s, 2 * s - S));
+	}
+	printf("%lld", min);
+}```

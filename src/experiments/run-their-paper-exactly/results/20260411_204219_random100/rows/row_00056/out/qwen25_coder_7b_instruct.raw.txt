@@ -1,0 +1,71 @@
+```assembly
+section .text
+global main
+extern printf, scanf
+
+main:
+    sub rsp, 24
+    lea rdi, [LC1]
+    call scanf
+    mov eax, [rsp+8]
+    cmp eax, 2
+    je .L37
+    mov ecx, [rsp+12]
+    cmp ecx, 2
+    je .L37
+    xor eax, eax
+    xor ecx, ecx
+    lea rdi, [LC2]
+    lea rsi, [a]
+    mov ecx, 7
+.L1:
+    cmp ecx, 0
+    jz .L2
+    mov eax, [rdi]
+    cmp eax, [rsi]
+    je .L3
+    add rsi, 4
+    dec ecx
+    jmp .L1
+.L2:
+    xor eax, eax
+    lea rdi, [LC3]
+    lea rsi, [b]
+    mov ecx, 4
+.L4:
+    cmp ecx, 0
+    jz .L5
+    mov eax, [rdi]
+    cmp eax, [rsi]
+    je .L6
+    add rsi, 4
+    dec ecx
+    jmp .L4
+.L5:
+    xor eax, eax
+    jmp .L7
+.L3:
+    or eax, 1
+.L6:
+    or eax, 1
+.L7:
+    test eax, eax
+    jz .L8
+    lea rdi, [LC5]
+    call printf
+    jmp .L9
+.L8:
+    lea rdi, [LC6]
+    call printf
+.L9:
+    add rsp, 24
+    ret
+section .rodata
+LC1 db "%d %d", 0
+LC2 dd 1, 3, 5, 7, 8, 10, 12
+LC3 dd 1, 1, 1, 1
+LC5 db "Yes", 0
+LC6 db "No", 0
+a dd 1, 3, 5, 7, 8, 10, 12
+b dd 4, 6, 9, 11
+```

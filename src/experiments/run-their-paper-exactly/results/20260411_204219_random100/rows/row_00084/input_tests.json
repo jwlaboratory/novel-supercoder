@@ -1,0 +1,414 @@
+[
+  {
+    "input": "?tc??@?\ncoder\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">q???d?>\n_ba\n",
+    "output": ">q_bada>\n"
+  },
+  {
+    "input": "d>>>???q\na`a\n",
+    "output": "d>>>a`aq\n"
+  },
+  {
+    "input": "d>>>???q\naaa\n",
+    "output": "d>>>aaaq\n"
+  },
+  {
+    "input": "??p??d??\nabb\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?tc??@?\ncnder\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??p??d??\n`bb\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?tc??@?\nendcr\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??p??d??\n`ab\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@tc??@?\nendcr\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??p??d??\nba`\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@tc??@?\nendcq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??p??d??\nb``\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@tc???@\nendcq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??p??d??\nb`_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?tc???@\nendcq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??d??p??\nb`_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?tc???@\nqndce\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??d??p??\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@???ct?\nqndce\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??d??p??\nbb_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@???ct?\nqndcd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??p??\nbb_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@???ct?\nqndbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??p??\n_bb\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@???cu?\nqndbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??p??\n_ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "@???ct?\ndbdnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=?d??p??\n_ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t???c@?\ndbdnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=?d??p??\n`ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t???c@?\nqndbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=?d??q??\n`ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t???b@?\nqndbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=?d??q??\nab`\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t???bA?\nqndbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??q??\nab`\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t?@?bA?\nqndbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??q?>\nab`\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t?@?bA?\ndbdnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??q?>\n`ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t?@?bA?\ndbcnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??q?>\n_ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "t@@?bA?\ndbcnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?d??q?>\nab_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "s@@?bA?\ndbcnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?q??d?>\nab_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?Ab?@@s\ndbcnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">?q??d?>\n_ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?@b?@@s\ndbcnq\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?@b?@@s\nqncbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">q?@?d?>\n_ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "s@@?b@?\nqncbd\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">q?@?d?>\n^ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "s@@?b@?\nqncbe\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=q?@?d?>\n^ba\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?@b?@@s\nqncbe\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=q?@?d?>\n^aa\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?@b?@@s\nrncbe\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=q?@?>?d\n^aa\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b?@@s\nrncbe\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "=q?@?>?d\n^ab\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b?@@t\nrncbe\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "d?>?@?q=\n^ab\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b?@t@\nrncbe\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "d?>?@?=q\n^ab\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b?@t@\nebcnr\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "q=?@?>?d\n^ab\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b@@t@\nebcnr\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "q=?@?>?d\nba^\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b@@t@\nfbcnr\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "q=?@?>?d\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b@@t@\ngbcnr\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "q=?@>>?d\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b@@t@\nrncbg\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "q=?@>?>d\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b@@t@\ngbrnc\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "qd?@>?>=\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b@@t@\ngbsnc\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "qd?@>?=>\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??b@@t@\nfbsnc\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">=?>@?dq\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??a@@t@\nfbsnc\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">>?>@?dq\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??a@@t@\ncnsbf\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">>?>??dq\nba_\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??a@@t@\ncsnbf\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">>?>??dq\n_ab\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??@@@ta\ncsnbf\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": ">>?>??dq\nba`\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "??@@@ta\nfbnsc\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "d>?>??>q\nba`\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?t@@@?a\nfbnsc\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "d>?>??>q\naa`\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?t@@@?a\ngbnsc\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "d>?>??>q\na`a\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?t@@@?a\ngbcsn\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?t@@@?a\ngbdsn\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?t@@@?a\nnsdbg\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "d>>>@??q\naaa\n",
+    "output": "UNRESTORABLE\n"
+  },
+  {
+    "input": "?tc????\ncoder\n",
+    "output": "atcoder\n"
+  },
+  {
+    "input": "?tc????\ncoder\n",
+    "output": "atcoder\n"
+  },
+  {
+    "input": "??p??d??\nabc\n",
+    "output": "UNRESTORABLE\n"
+  }
+]

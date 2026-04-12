@@ -1,0 +1,29 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int isodd(int x){
+	if(x % 2 == 1){
+		return 1;
+	}
+	return 0;
+}
+
+int main(){
+	int x, p;
+	scanf(" %d %d", &x, &p);
+	double y=0, d = (double)x;
+	if(isodd(x)){
+		d+= 1.0-0.02*p;
+		y+=1.0;
+	}
+	y += d/(0.02*p);
+	printf("%lf",y);
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

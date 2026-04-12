@@ -1,0 +1,414 @@
+[
+  {
+    "input": "3\nabcxyx\ncyx\nabb\n",
+    "output": "1"
+  },
+  {
+    "input": "3\nabxxyc\ncyx\nabb\n",
+    "output": "0"
+  },
+  {
+    "input": "6\nb\na\nabb\nc\nd\nab\n",
+    "output": "5"
+  },
+  {
+    "input": "6\nb\na\nabb\nc\nd\nba\n",
+    "output": "4"
+  },
+  {
+    "input": "3\naxxbyc\ncyx\nabb\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naxxbyc\ncyx\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naxxbyc\ncyw\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naxxbyc\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncybxxa\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncabxxy\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxxb\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxyb\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxya\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ndyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ndyw\ncaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ndyv\ncaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nabcxyx\ncyx\ncba\n",
+    "output": "1"
+  },
+  {
+    "input": "3\nabcxyx\ncyx\nbba\n",
+    "output": "1"
+  },
+  {
+    "input": "3\nabxxxc\ncyx\nabb\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncybxxa\ncyx\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naxxbyc\ncxw\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncybxxa\ncyw\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nbabxxy\ncyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\ndyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxxb\nwyc\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxyb\nycw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxya\ncyw\naba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\nbyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ndyx\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ndyw\ncba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\ndyv\ncaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nabcxyx\ncyx\ncb`\n",
+    "output": "1"
+  },
+  {
+    "input": "3\nxbcayx\ncyx\nbba\n",
+    "output": "1"
+  },
+  {
+    "input": "3\nabxxxc\ncyx\nbba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncybxxa\nxyc\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naxxbyc\nwxc\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncabxxy\ncyw\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nbabxxy\ncyw\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\neyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxxb\nczw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxyb\nycw\naba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndayxya\nwyc\naba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naaxyyd\nbyw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ndyx\naaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\ndyw\ncb`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\nvyd\ncaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nxbcayx\nxyc\nbba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nabxxxc\ncyx\nbb`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncybxax\nxyc\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naxxbyc\nwxc\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncabwxy\ncyw\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nbabxwy\ncyw\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\nezw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\nczw\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndxyayb\nycw\naba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\nwyc\naba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naaxyyd\nbyw\naaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxday\ndyx\naaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nayxyad\nydw\ncb`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\nvyd\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nxbcayx\nxyd\nbba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naxxybc\nwxc\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncabwxy\ncyw\nbab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nbabxwy\ncyw\nabb\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\nwze\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\nczw\nba`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nbyayxd\nycw\naba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naaxyyd\nydw\ncb`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\ndyv\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nxbcayx\nxyd\ncba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncbyxxa\nwxc\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncaawxy\ncyw\nbab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\nwzd\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndabxxy\nczw\nab`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nbyayxd\nycw\naaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naaxyyd\nydw\nbc`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\ndzv\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nxbcayx\nwyd\ncba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncbyxxa\nwwc\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncaawxz\ncyw\nbab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncabxxy\nwzd\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nyabxxd\nczw\nab`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nbyayxd\nwcy\naaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naaxyyd\nydv\nbc`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\ndzv\ncaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nxbcayx\nvyd\ncba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncaawxz\nwyc\nbab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncabxxy\nzwd\nbaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndxxbay\nczw\nab`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndxyayb\nwcy\naaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naaxyyd\nyev\nbc`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\ndzu\ncaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nxbcayx\nvxd\ncba\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncaawxz\nwzc\nbab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ncabxxy\nzwd\naab\n",
+    "output": "0"
+  },
+  {
+    "input": "3\ndxyayb\nycw\naaa\n",
+    "output": "0"
+  },
+  {
+    "input": "3\naaxdyy\nyev\nbc`\n",
+    "output": "0"
+  },
+  {
+    "input": "3\nazxyad\ndzu\naac\n",
+    "output": "0"
+  },
+  {
+    "input": "6\nb\na\nabc\nc\nd\nab\n",
+    "output": "5"
+  },
+  {
+    "input": "3\nabcxyx\ncyx\nabc\n",
+    "output": "1"
+  },
+  {
+    "input": "3\nabcxyx\ncyx\nabc\n",
+    "output": "1"
+  }
+]

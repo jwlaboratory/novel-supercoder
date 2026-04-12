@@ -1,0 +1,44 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main()
+{
+    int a,b,x,y;
+    scanf("%d%d",&a,&b);
+    if(a>=b)
+    {
+        x=a;
+        a=a-1;
+        if(a>=b)
+        {
+            y=a;
+        }
+        else
+        {
+            y=b;
+        }
+    }
+    else
+    {
+        x=b;
+        b=b-1;
+        if(b>=a)
+        {
+            y=b;
+        }
+        else
+        {
+            y=a;
+        }
+    }
+
+    printf("%d",x+y);
+    return 0;
+}
+
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

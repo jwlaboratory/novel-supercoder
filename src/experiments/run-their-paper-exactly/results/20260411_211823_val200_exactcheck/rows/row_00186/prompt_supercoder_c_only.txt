@@ -1,0 +1,8 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+char*s,T['   '],*r=T;U[1<<27];n;k;main(i){for(;gets(r+1);k=!--n)for(;*++r&=31;)U[r-T]=k|=!!n<<*r;for(;~i--;)for(s=r;s-->T;k=U[k]=U[k-=~-~*s<<21]?:*s?s-T:0)n+=__builtin_popcount(U[s-T]&(U[k+'   ']^=!s[-1]<<*s));printf("%d",n+1);}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

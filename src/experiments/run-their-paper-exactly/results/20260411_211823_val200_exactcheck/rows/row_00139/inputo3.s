@@ -1,0 +1,192 @@
+.file	"temp.c"
+	.text
+	.p2align 4
+	.globl	partition
+	.type	partition, @function
+partition:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	leaq	X(%rip), %rcx
+	movslq	%esi, %r11
+	leal	-1(%rdi), %r8d
+	movl	(%rcx,%r11,4), %r9d
+	cmpl	%edi, %esi
+	jle	.L5
+	subl	%edi, %esi
+	movslq	%edi, %r10
+	leal	-1(%rsi), %eax
+	leaq	4(%rcx), %rsi
+	addq	%r10, %rax
+	leaq	(%rcx,%r10,4), %rdx
+	leaq	(%rsi,%rax,4), %rdi
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movl	(%rdx), %eax
+	cmpl	%r9d, %eax
+	jg	.L3
+	addl	$1, %r8d
+	movslq	%r8d, %rsi
+	movl	(%rcx,%rsi,4), %r10d
+	movl	%eax, (%rcx,%rsi,4)
+	movl	%r10d, (%rdx)
+.L3:
+	addq	$4, %rdx
+	cmpq	%rdi, %rdx
+	jne	.L4
+	leal	1(%r8), %eax
+	movl	(%rcx,%r11,4), %r9d
+	movslq	%eax, %rdx
+	movl	(%rcx,%rdx,4), %esi
+	movl	%r9d, (%rcx,%rdx,4)
+	movl	%esi, (%rcx,%r11,4)
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movl	%edi, %eax
+	movslq	%eax, %rdx
+	movl	(%rcx,%rdx,4), %esi
+	movl	%r9d, (%rcx,%rdx,4)
+	movl	%esi, (%rcx,%r11,4)
+	ret
+	.cfi_endproc
+.LFE23:
+	.size	partition, .-partition
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB24:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	num(%rip), %rsi
+	xorl	%eax, %eax
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	leaq	.LC0(%rip), %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movq	%r12, %rdi
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 48
+	call	__isoc99_scanf@PLT
+	movl	num(%rip), %esi
+	testl	%esi, %esi
+	jle	.L9
+	leaq	X(%rip), %rbp
+	xorl	%ebx, %ebx
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	movq	%rbp, %rsi
+	movq	%r12, %rdi
+	xorl	%eax, %eax
+	addl	$1, %ebx
+	call	__isoc99_scanf@PLT
+	movl	num(%rip), %esi
+	addq	$4, %rbp
+	cmpl	%ebx, %esi
+	jg	.L10
+.L9:
+	subl	$1, %esi
+	xorl	%edi, %edi
+	leaq	X(%rip), %r13
+	xorl	%ebx, %ebx
+	call	partition
+	movl	%eax, %ebp
+	movl	num(%rip), %eax
+	testl	%eax, %eax
+	jg	.L11
+	jmp	.L14
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	movl	0(%r13,%rbx,4), %edx
+	xorl	%eax, %eax
+	movq	%r12, %rsi
+	movl	$1, %edi
+	addq	$1, %rbx
+	call	__printf_chk@PLT
+	cmpl	%ebx, num(%rip)
+	jle	.L14
+.L13:
+	movl	$32, %edi
+	call	putchar@PLT
+.L11:
+	cmpl	%ebx, %ebp
+	jne	.L12
+	movl	$91, %edi
+	call	putchar@PLT
+	movl	0(%r13,%rbx,4), %edx
+	movq	%r12, %rsi
+	xorl	%eax, %eax
+	movl	$1, %edi
+	addq	$1, %rbx
+	call	__printf_chk@PLT
+	movl	$93, %edi
+	call	putchar@PLT
+	cmpl	%ebx, num(%rip)
+	jg	.L13
+.L14:
+	movl	$10, %edi
+	call	putchar@PLT
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE24:
+	.size	main, .-main
+	.globl	num
+	.bss
+	.align 4
+	.type	num, @object
+	.size	num, 4
+num:
+	.zero	4
+	.globl	X
+	.align 32
+	.type	X, @object
+	.size	X, 400000
+X:
+	.zero	400000
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

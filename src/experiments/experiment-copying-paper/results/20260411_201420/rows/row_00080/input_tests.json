@@ -1,0 +1,414 @@
+[
+  {
+    "input": "6\n0 2 3 4 5 6\n",
+    "output": "2"
+  },
+  {
+    "input": "2\n0 -10\n",
+    "output": "10"
+  },
+  {
+    "input": "6\n0 2 3 7 5 6\n",
+    "output": "1"
+  },
+  {
+    "input": "2\n0 -19\n",
+    "output": "19"
+  },
+  {
+    "input": "6\n-1 2 3 7 5 6\n",
+    "output": "0"
+  },
+  {
+    "input": "2\n1 -19\n",
+    "output": "20"
+  },
+  {
+    "input": "2\n1 -33\n",
+    "output": "34"
+  },
+  {
+    "input": "2\n0 -33\n",
+    "output": "33"
+  },
+  {
+    "input": "6\n1 2 3 7 8 8\n",
+    "output": "3"
+  },
+  {
+    "input": "2\n-1 -33\n",
+    "output": "32"
+  },
+  {
+    "input": "6\n1 2 3 7 8 13\n",
+    "output": "8"
+  },
+  {
+    "input": "2\n-1 -47\n",
+    "output": "46"
+  },
+  {
+    "input": "6\n1 3 3 7 8 13\n",
+    "output": "7"
+  },
+  {
+    "input": "2\n-1 -75\n",
+    "output": "74"
+  },
+  {
+    "input": "2\n-1 -32\n",
+    "output": "31"
+  },
+  {
+    "input": "6\n0 3 3 7 5 13\n",
+    "output": "5"
+  },
+  {
+    "input": "2\n-1 -38\n",
+    "output": "37"
+  },
+  {
+    "input": "2\n-2 -38\n",
+    "output": "36"
+  },
+  {
+    "input": "2\n-2 -65\n",
+    "output": "63"
+  },
+  {
+    "input": "6\n0 3 3 7 1 8\n",
+    "output": "4"
+  },
+  {
+    "input": "2\n-2 -126\n",
+    "output": "124"
+  },
+  {
+    "input": "2\n-4 -126\n",
+    "output": "122"
+  },
+  {
+    "input": "2\n-5 -126\n",
+    "output": "121"
+  },
+  {
+    "input": "2\n-5 -89\n",
+    "output": "84"
+  },
+  {
+    "input": "2\n-1 -89\n",
+    "output": "88"
+  },
+  {
+    "input": "2\n0 -89\n",
+    "output": "89"
+  },
+  {
+    "input": "2\n-2 -20\n",
+    "output": "18"
+  },
+  {
+    "input": "2\n-6 0\n",
+    "output": "6"
+  },
+  {
+    "input": "2\n-11 0\n",
+    "output": "11"
+  },
+  {
+    "input": "2\n-62 -1\n",
+    "output": "61"
+  },
+  {
+    "input": "2\n-58 -1\n",
+    "output": "57"
+  },
+  {
+    "input": "2\n-74 -1\n",
+    "output": "73"
+  },
+  {
+    "input": "2\n-36 -1\n",
+    "output": "35"
+  },
+  {
+    "input": "2\n-68 -1\n",
+    "output": "67"
+  },
+  {
+    "input": "2\n-68 0\n",
+    "output": "68"
+  },
+  {
+    "input": "2\n-68 -2\n",
+    "output": "66"
+  },
+  {
+    "input": "6\n1 30 1 10 -1 6\n",
+    "output": "15"
+  },
+  {
+    "input": "2\n-68 -4\n",
+    "output": "64"
+  },
+  {
+    "input": "6\n1 36 1 10 -1 6\n",
+    "output": "21"
+  },
+  {
+    "input": "2\n-136 0\n",
+    "output": "136"
+  },
+  {
+    "input": "6\n1 36 1 10 -1 1\n",
+    "output": "26"
+  },
+  {
+    "input": "2\n-42 0\n",
+    "output": "42"
+  },
+  {
+    "input": "2\n-42 1\n",
+    "output": "43"
+  },
+  {
+    "input": "2\n-40 1\n",
+    "output": "41"
+  },
+  {
+    "input": "2\n-25 2\n",
+    "output": "27"
+  },
+  {
+    "input": "2\n-50 2\n",
+    "output": "52"
+  },
+  {
+    "input": "2\n-39 1\n",
+    "output": "40"
+  },
+  {
+    "input": "2\n-47 2\n",
+    "output": "49"
+  },
+  {
+    "input": "2\n-47 1\n",
+    "output": "48"
+  },
+  {
+    "input": "2\n-85 1\n",
+    "output": "86"
+  },
+  {
+    "input": "2\n-142 1\n",
+    "output": "143"
+  },
+  {
+    "input": "2\n-64 1\n",
+    "output": "65"
+  },
+  {
+    "input": "2\n-119 1\n",
+    "output": "120"
+  },
+  {
+    "input": "2\n-163 1\n",
+    "output": "164"
+  },
+  {
+    "input": "2\n-259 1\n",
+    "output": "260"
+  },
+  {
+    "input": "2\n-75 1\n",
+    "output": "76"
+  },
+  {
+    "input": "2\n-77 1\n",
+    "output": "78"
+  },
+  {
+    "input": "2\n-77 2\n",
+    "output": "79"
+  },
+  {
+    "input": "2\n-108 2\n",
+    "output": "110"
+  },
+  {
+    "input": "2\n-42 2\n",
+    "output": "44"
+  },
+  {
+    "input": "2\n-47 7\n",
+    "output": "54"
+  },
+  {
+    "input": "2\n-66 3\n",
+    "output": "69"
+  },
+  {
+    "input": "2\n-14 3\n",
+    "output": "17"
+  },
+  {
+    "input": "2\n-21 3\n",
+    "output": "24"
+  },
+  {
+    "input": "2\n-25 3\n",
+    "output": "28"
+  },
+  {
+    "input": "2\n-25 5\n",
+    "output": "30"
+  },
+  {
+    "input": "2\n-34 5\n",
+    "output": "39"
+  },
+  {
+    "input": "2\n-34 4\n",
+    "output": "38"
+  },
+  {
+    "input": "2\n-10 2\n",
+    "output": "12"
+  },
+  {
+    "input": "2\n-13 3\n",
+    "output": "16"
+  },
+  {
+    "input": "2\n-22 3\n",
+    "output": "25"
+  },
+  {
+    "input": "2\n-43 2\n",
+    "output": "45"
+  },
+  {
+    "input": "2\n-69 3\n",
+    "output": "72"
+  },
+  {
+    "input": "2\n-1 8\n",
+    "output": "9"
+  },
+  {
+    "input": "2\n0 13\n",
+    "output": "13"
+  },
+  {
+    "input": "2\n15 1\n",
+    "output": "14"
+  },
+  {
+    "input": "2\n23 0\n",
+    "output": "23"
+  },
+  {
+    "input": "2\n51 0\n",
+    "output": "51"
+  },
+  {
+    "input": "2\n86 -1\n",
+    "output": "87"
+  },
+  {
+    "input": "2\n78 -3\n",
+    "output": "81"
+  },
+  {
+    "input": "2\n44 -3\n",
+    "output": "47"
+  },
+  {
+    "input": "2\n-1 -30\n",
+    "output": "29"
+  },
+  {
+    "input": "2\n-17 5\n",
+    "output": "22"
+  },
+  {
+    "input": "6\n0 2 3 7 8 6\n",
+    "output": "2"
+  },
+  {
+    "input": "6\n1 2 3 7 8 6\n",
+    "output": "1"
+  },
+  {
+    "input": "6\n0 3 3 7 8 13\n",
+    "output": "8"
+  },
+  {
+    "input": "6\n0 3 3 7 1 13\n",
+    "output": "1"
+  },
+  {
+    "input": "6\n0 3 3 7 1 24\n",
+    "output": "10"
+  },
+  {
+    "input": "6\n0 3 3 5 1 8\n",
+    "output": "2"
+  },
+  {
+    "input": "6\n0 3 3 4 1 8\n",
+    "output": "1"
+  },
+  {
+    "input": "6\n0 6 3 4 1 8\n",
+    "output": "4"
+  },
+  {
+    "input": "6\n0 10 3 4 1 8\n",
+    "output": "0"
+  },
+  {
+    "input": "6\n0 10 3 3 1 8\n",
+    "output": "1"
+  },
+  {
+    "input": "6\n-1 10 3 3 1 8\n",
+    "output": "0"
+  },
+  {
+    "input": "2\n0 -20\n",
+    "output": "20"
+  },
+  {
+    "input": "6\n-1 10 3 3 1 4\n",
+    "output": "2"
+  },
+  {
+    "input": "2\n-1 -20\n",
+    "output": "19"
+  },
+  {
+    "input": "6\n-1 15 3 3 1 4\n",
+    "output": "3"
+  },
+  {
+    "input": "6\n-1 15 3 5 1 4\n",
+    "output": "1"
+  },
+  {
+    "input": "2\n-1 -2\n",
+    "output": "1"
+  },
+  {
+    "input": "6\n1 2 3 4 5 6\n",
+    "output": "1"
+  },
+  {
+    "input": "6\n1 2 3 4 5 6\n",
+    "output": "1"
+  },
+  {
+    "input": "2\n10 -10\n",
+    "output": "20"
+  }
+]

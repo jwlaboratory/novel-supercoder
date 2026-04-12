@@ -1,0 +1,276 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int selectionSort(int A[], int N) {
+  int i, j, t, sw = 0, mini;
+  for(i=0; i<N-1; i++) {
+    mini = i;
+    for(j=i; j<N; j++) {
+      if(A[j] < A[mini]) mini = j;
+    }
+
+  	t = A[i];
+  	A[i] = A[mini];
+  	A[mini] = t;
+
+  	if(i != mini) sw++;
+  }
+  return sw;
+}
+
+int main(void) {
+  int A[100], N, i, sw;
+  scanf("%d", &N);
+  for(i=0;i<N;i++) scanf("%d",&A[i]);
+
+  sw = selectionSort(A,N);
+
+  for(i=0;i<N;i++) {
+    if(i>0) printf(" ");
+    printf("%d",A[i]);
+  }
+  printf("\n");
+  printf("%d\n", sw);
+
+  return 0;
+}
+
+```
+
+Assembly Code:
+
+```assembly
+	.file	"temp.c"
+	.text
+	.p2align 4
+	.globl	selectionSort
+	.type	selectionSort, @function
+selectionSort:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leal	-1(%rsi), %r13d
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	testl	%r13d, %r13d
+	jle	.L9
+	testl	%esi, %esi
+	jle	.L9
+	movq	%rdi, %rbx
+	movq	%rdi, %r11
+	xorl	%r12d, %r12d
+	xorl	%r10d, %r10d
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movl	(%r11), %ebp
+	movq	%r11, %rax
+	movl	%r10d, %r9d
+	movl	%r10d, %edx
+	movl	%ebp, %edi
+	jmp	.L6
+	.p2align 4,,10
+	.p2align 3
+.L16:
+	movslq	%r9d, %rcx
+	addl	$1, %edx
+	addq	$4, %rax
+	leaq	(%rbx,%rcx,4), %r8
+	cmpl	%edx, %esi
+	jle	.L15
+.L6:
+	movl	(%rax), %ecx
+	movq	%rax, %r8
+	cmpl	%edi, %ecx
+	jge	.L16
+	movl	%edx, %r9d
+	addl	$1, %edx
+	movl	%ecx, %edi
+	addq	$4, %rax
+	cmpl	%edx, %esi
+	jg	.L6
+.L15:
+	xorl	%eax, %eax
+	cmpl	%r9d, %r10d
+	movl	%edi, (%r11)
+	setne	%al
+	addl	$1, %r10d
+	movl	%ebp, (%r8)
+	addq	$4, %r11
+	addl	%eax, %r12d
+	cmpl	%r13d, %r10d
+	jne	.L8
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	movl	%r12d, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	.cfi_restore_state
+	xorl	%r12d, %r12d
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	movl	%r12d, %eax
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE23:
+	.size	selectionSort, .-selectionSort
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB24:
+	.cfi_startproc
+	endbr64
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+	pushq	%r13
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
+	leaq	.LC0(%rip), %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+	movq	%r12, %rdi
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	xorl	%ebx, %ebx
+	subq	$432, %rsp
+	.cfi_def_cfa_offset 480
+	movq	%fs:40, %rax
+	movq	%rax, 424(%rsp)
+	xorl	%eax, %eax
+	leaq	12(%rsp), %rsi
+	leaq	16(%rsp), %r13
+	movq	%r13, %rbp
+	call	__isoc99_scanf@PLT
+	movl	12(%rsp), %esi
+	testl	%esi, %esi
+	jle	.L18
+	.p2align 4,,10
+	.p2align 3
+.L19:
+	movq	%rbp, %rsi
+	movq	%r12, %rdi
+	xorl	%eax, %eax
+	addl	$1, %ebx
+	call	__isoc99_scanf@PLT
+	movl	12(%rsp), %esi
+	addq	$4, %rbp
+	cmpl	%ebx, %esi
+	jg	.L19
+.L18:
+	movq	%r13, %rdi
+	xorl	%ebx, %ebx
+	call	selectionSort
+	movl	%eax, %r14d
+	movl	12(%rsp), %eax
+	testl	%eax, %eax
+	jg	.L20
+	jmp	.L22
+	.p2align 4,,10
+	.p2align 3
+.L21:
+	movl	$32, %edi
+	call	putchar@PLT
+.L20:
+	movl	0(%r13,%rbx,4), %edx
+	movq	%r12, %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	addq	$1, %rbx
+	call	__printf_chk@PLT
+	cmpl	%ebx, 12(%rsp)
+	jg	.L21
+.L22:
+	movl	$10, %edi
+	call	putchar@PLT
+	xorl	%eax, %eax
+	movl	%r14d, %edx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	424(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L31
+	addq	$432, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 48
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 40
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	ret
+.L31:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE24:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

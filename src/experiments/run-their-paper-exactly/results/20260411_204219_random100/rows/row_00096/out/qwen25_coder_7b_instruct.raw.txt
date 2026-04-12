@@ -1,0 +1,21 @@
+```assembly
+section .text
+global main
+main:
+    sub rsp, 40
+    lea rdi, [LC0]
+    call scanf
+    mov eax, dword [rsp + 12]
+    xor edx, edx
+    cmp eax, dword [rsp + 8]
+    setne dl
+    lea rsi, [LC1]
+    xor eax, eax
+    mov edi, 1
+    call printf
+    add rsp, 40
+    ret
+section .rodata
+LC0 db "%d %d %d %d", 0
+LC1 db "%d", 0
+```

@@ -1,0 +1,33 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+
+
+int main(void) {
+
+	int n, a, b,plana,planb;
+	
+
+	scanf("%d %d %d", &n, &a, &b);
+
+	plana = n * a;
+	planb = b;
+
+	if (plana <= planb) {
+		printf("%d", plana);
+	}
+	else {
+		printf("%d", planb);
+	}
+
+	return 0;
+
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

@@ -1,0 +1,418 @@
+[
+  {
+    "input": "2\n2\n4\n100\n",
+    "output": "2\n"
+  },
+  {
+    "input": "30\n40\n77\n6000\n",
+    "output": "293\n"
+  },
+  {
+    "input": "5\n0\n0\n150\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n47\n77\n6000\n",
+    "output": "319\n"
+  },
+  {
+    "input": "5\n0\n0\n0\n",
+    "output": "1\n"
+  },
+  {
+    "input": "2\n2\n5\n100\n",
+    "output": "2\n"
+  },
+  {
+    "input": "2\n2\n10\n100\n",
+    "output": "2\n"
+  },
+  {
+    "input": "30\n47\n77\n10696\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n1\n0\n",
+    "output": "1\n"
+  },
+  {
+    "input": "2\n0\n10\n100\n",
+    "output": "1\n"
+  },
+  {
+    "input": "30\n56\n77\n10696\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n1\n1\n0\n",
+    "output": "1\n"
+  },
+  {
+    "input": "2\n0\n10\n110\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n56\n77\n13326\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n2\n1\n0\n",
+    "output": "1\n"
+  },
+  {
+    "input": "2\n0\n1\n100\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n60\n77\n13326\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n2\n1\n-1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n0\n1\n000\n",
+    "output": "1\n"
+  },
+  {
+    "input": "30\n60\n77\n14610\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n2\n0\n-1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n0\n2\n000\n",
+    "output": "1\n"
+  },
+  {
+    "input": "30\n60\n77\n20069\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n0\n-1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n0\n4\n000\n",
+    "output": "1\n"
+  },
+  {
+    "input": "30\n60\n77\n31334\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n0\n-1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-1\n4\n000\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n60\n76\n31334\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-1\n-1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-1\n4\n010\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n60\n76\n16179\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-2\n-1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-2\n4\n010\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n73\n76\n16179\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n-2\n-1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-2\n0\n010\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n73\n76\n20818\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n-2\n-2\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-2\n0\n011\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n73\n76\n6415\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n-3\n-2\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-2\n-1\n011\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n73\n134\n6415\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-3\n-2\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-2\n-1\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n112\n134\n6415\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-2\n-3\n-2\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-3\n-1\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n112\n134\n8208\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-2\n-3\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-6\n-1\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n112\n134\n3602\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-3\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-6\n0\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n168\n134\n3602\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-3\n1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-8\n0\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n168\n252\n3602\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-4\n1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-8\n1\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n168\n252\n4759\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-4\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-12\n0\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n168\n252\n5860\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-8\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-17\n0\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n168\n152\n5860\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-14\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-24\n0\n001\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n168\n280\n5860\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n-21\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-6\n0\n101\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n191\n280\n5860\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n-21\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-3\n0\n101\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n151\n280\n5860\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n0\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-3\n1\n101\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n151\n280\n8240\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n-1\n0\n1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-3\n-1\n101\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n151\n280\n961\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n0\n1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-6\n-1\n101\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n151\n136\n961\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n0\n2\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-6\n-1\n100\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n41\n136\n961\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n1\n2\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-11\n-1\n100\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n42\n136\n961\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n1\n1\n2\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n-10\n-1\n100\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n82\n136\n961\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n1\n2\n0\n",
+    "output": "1\n"
+  },
+  {
+    "input": "2\n-10\n-1\n000\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n82\n136\n803\n",
+    "output": "0\n"
+  },
+  {
+    "input": "5\n0\n2\n0\n",
+    "output": "1\n"
+  },
+  {
+    "input": "2\n-10\n-1\n010\n",
+    "output": "0\n"
+  },
+  {
+    "input": "2\n2\n2\n100\n",
+    "output": "2\n"
+  },
+  {
+    "input": "2\n2\n2\n100\n",
+    "output": "2\n"
+  },
+  {
+    "input": "5\n1\n0\n150\n",
+    "output": "0\n"
+  },
+  {
+    "input": "30\n40\n50\n6000\n",
+    "output": "213\n"
+  }
+]

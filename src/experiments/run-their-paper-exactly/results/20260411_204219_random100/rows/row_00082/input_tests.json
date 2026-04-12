@@ -1,0 +1,414 @@
+[
+  {
+    "input": "PDPD???\n",
+    "output": "PDPDDDD\n"
+  },
+  {
+    "input": "?P?P\n",
+    "output": "DPDP\n"
+  },
+  {
+    "input": "DDPP???\n",
+    "output": "DDPPDDD\n"
+  },
+  {
+    "input": "??PP\n",
+    "output": "DDPP\n"
+  },
+  {
+    "input": "DDPO???\n",
+    "output": "DDPODDD\n"
+  },
+  {
+    "input": "??OP\n",
+    "output": "DDOP\n"
+  },
+  {
+    "input": "DDPO?>?\n",
+    "output": "DDPOD>D\n"
+  },
+  {
+    "input": "??OO\n",
+    "output": "DDOO\n"
+  },
+  {
+    "input": "?>?OPDD\n",
+    "output": "D>DOPDD\n"
+  },
+  {
+    "input": "@?OP\n",
+    "output": "@DOP\n"
+  },
+  {
+    "input": "?>?PPDD\n",
+    "output": "D>DPPDD\n"
+  },
+  {
+    "input": "@?PO\n",
+    "output": "@DPO\n"
+  },
+  {
+    "input": "DDPP?>?\n",
+    "output": "DDPPD>D\n"
+  },
+  {
+    "input": "@?PN\n",
+    "output": "@DPN\n"
+  },
+  {
+    "input": "DDPP?>@\n",
+    "output": "DDPPD>@\n"
+  },
+  {
+    "input": "NP?@\n",
+    "output": "NPD@\n"
+  },
+  {
+    "input": "DDPP??@\n",
+    "output": "DDPPDD@\n"
+  },
+  {
+    "input": "@P?N\n",
+    "output": "@PDN\n"
+  },
+  {
+    "input": "@DPP??D\n",
+    "output": "@DPPDDD\n"
+  },
+  {
+    "input": "@P@N\n",
+    "output": "@P@N\n"
+  },
+  {
+    "input": "D??PPD@\n",
+    "output": "DDDPPD@\n"
+  },
+  {
+    "input": "?P@N\n",
+    "output": "DP@N\n"
+  },
+  {
+    "input": "D??PPC@\n",
+    "output": "DDDPPC@\n"
+  },
+  {
+    "input": "NP@?\n",
+    "output": "NP@D\n"
+  },
+  {
+    "input": "D??CPP@\n",
+    "output": "DDDCPP@\n"
+  },
+  {
+    "input": "N?@P\n",
+    "output": "ND@P\n"
+  },
+  {
+    "input": "D??CPPA\n",
+    "output": "DDDCPPA\n"
+  },
+  {
+    "input": "P@?N\n",
+    "output": "P@DN\n"
+  },
+  {
+    "input": "DC??PPA\n",
+    "output": "DCDDPPA\n"
+  },
+  {
+    "input": "PN?@\n",
+    "output": "PND@\n"
+  },
+  {
+    "input": "DP?C?PA\n",
+    "output": "DPDCDPA\n"
+  },
+  {
+    "input": "@?NP\n",
+    "output": "@DNP\n"
+  },
+  {
+    "input": "DQ?C?PA\n",
+    "output": "DQDCDPA\n"
+  },
+  {
+    "input": "A?NP\n",
+    "output": "ADNP\n"
+  },
+  {
+    "input": "CQ?C?PA\n",
+    "output": "CQDCDPA\n"
+  },
+  {
+    "input": "PN?A\n",
+    "output": "PNDA\n"
+  },
+  {
+    "input": "CQ?D?PA\n",
+    "output": "CQDDDPA\n"
+  },
+  {
+    "input": "PN?B\n",
+    "output": "PNDB\n"
+  },
+  {
+    "input": "AP?D?QC\n",
+    "output": "APDDDQC\n"
+  },
+  {
+    "input": "ON?B\n",
+    "output": "ONDB\n"
+  },
+  {
+    "input": "PA?D?QC\n",
+    "output": "PADDDQC\n"
+  },
+  {
+    "input": "OO?B\n",
+    "output": "OODB\n"
+  },
+  {
+    "input": "PA>D?QC\n",
+    "output": "PA>DDQC\n"
+  },
+  {
+    "input": "PO?B\n",
+    "output": "PODB\n"
+  },
+  {
+    "input": "PP?B\n",
+    "output": "PPDB\n"
+  },
+  {
+    "input": "PA>?DQB\n",
+    "output": "PA>DDQB\n"
+  },
+  {
+    "input": "QP?B\n",
+    "output": "QPDB\n"
+  },
+  {
+    "input": "PA??DQB\n",
+    "output": "PADDDQB\n"
+  },
+  {
+    "input": "B?PQ\n",
+    "output": "BDPQ\n"
+  },
+  {
+    "input": "PA??EQB\n",
+    "output": "PADDEQB\n"
+  },
+  {
+    "input": "B?QP\n",
+    "output": "BDQP\n"
+  },
+  {
+    "input": "BQE??AP\n",
+    "output": "BQEDDAP\n"
+  },
+  {
+    "input": "PQ?B\n",
+    "output": "PQDB\n"
+  },
+  {
+    "input": "PA??ERB\n",
+    "output": "PADDERB\n"
+  },
+  {
+    "input": "Q?PB\n",
+    "output": "QDPB\n"
+  },
+  {
+    "input": "PB??ERB\n",
+    "output": "PBDDERB\n"
+  },
+  {
+    "input": "Q?QB\n",
+    "output": "QDQB\n"
+  },
+  {
+    "input": "PB??ESB\n",
+    "output": "PBDDESB\n"
+  },
+  {
+    "input": "BQ?Q\n",
+    "output": "BQDQ\n"
+  },
+  {
+    "input": "BSE??BP\n",
+    "output": "BSEDDBP\n"
+  },
+  {
+    "input": "BQQ?\n",
+    "output": "BQQD\n"
+  },
+  {
+    "input": "BSE@?BP\n",
+    "output": "BSE@DBP\n"
+  },
+  {
+    "input": "AQ?Q\n",
+    "output": "AQDQ\n"
+  },
+  {
+    "input": "PB?@ESB\n",
+    "output": "PBD@ESB\n"
+  },
+  {
+    "input": "AQ>Q\n",
+    "output": "AQ>Q\n"
+  },
+  {
+    "input": "PB?@DSB\n",
+    "output": "PBD@DSB\n"
+  },
+  {
+    "input": "AQ>P\n",
+    "output": "AQ>P\n"
+  },
+  {
+    "input": "PC?@DSB\n",
+    "output": "PCD@DSB\n"
+  },
+  {
+    "input": "QA>P\n",
+    "output": "QA>P\n"
+  },
+  {
+    "input": "PD?@DSB\n",
+    "output": "PDD@DSB\n"
+  },
+  {
+    "input": "QP>A\n",
+    "output": "QP>A\n"
+  },
+  {
+    "input": "PD?@DRB\n",
+    "output": "PDD@DRB\n"
+  },
+  {
+    "input": "A>PQ\n",
+    "output": "A>PQ\n"
+  },
+  {
+    "input": "PD?@CRB\n",
+    "output": "PDD@CRB\n"
+  },
+  {
+    "input": "A>PP\n",
+    "output": "A>PP\n"
+  },
+  {
+    "input": "PD?@CRA\n",
+    "output": "PDD@CRA\n"
+  },
+  {
+    "input": "P>AP\n",
+    "output": "P>AP\n"
+  },
+  {
+    "input": "ARC@?DP\n",
+    "output": "ARC@DDP\n"
+  },
+  {
+    "input": "PA>P\n",
+    "output": "PA>P\n"
+  },
+  {
+    "input": "PD?@RCA\n",
+    "output": "PDD@RCA\n"
+  },
+  {
+    "input": "PA?P\n",
+    "output": "PADP\n"
+  },
+  {
+    "input": "ACR@?DP\n",
+    "output": "ACR@DDP\n"
+  },
+  {
+    "input": "PP?A\n",
+    "output": "PPDA\n"
+  },
+  {
+    "input": "ACR@?DO\n",
+    "output": "ACR@DDO\n"
+  },
+  {
+    "input": "PQ?A\n",
+    "output": "PQDA\n"
+  },
+  {
+    "input": "OD?@RCA\n",
+    "output": "ODD@RCA\n"
+  },
+  {
+    "input": "PQ?@\n",
+    "output": "PQD@\n"
+  },
+  {
+    "input": "PD@@RCA\n",
+    "output": "PD@@RCA\n"
+  },
+  {
+    "input": "PQ@@\n",
+    "output": "PQ@@\n"
+  },
+  {
+    "input": "ACR@@DP\n",
+    "output": "ACR@@DP\n"
+  },
+  {
+    "input": "@@QP\n",
+    "output": "@@QP\n"
+  },
+  {
+    "input": "PCR@@DA\n",
+    "output": "PCR@@DA\n"
+  },
+  {
+    "input": "PP@@\n",
+    "output": "PP@@\n"
+  },
+  {
+    "input": "PC@R@DA\n",
+    "output": "PC@R@DA\n"
+  },
+  {
+    "input": "@P@P\n",
+    "output": "@P@P\n"
+  },
+  {
+    "input": "AD@R@CP\n",
+    "output": "AD@R@CP\n"
+  },
+  {
+    "input": "@Q@P\n",
+    "output": "@Q@P\n"
+  },
+  {
+    "input": "RD@A@CP\n",
+    "output": "RD@A@CP\n"
+  },
+  {
+    "input": "@PP@\n",
+    "output": "@PP@\n"
+  },
+  {
+    "input": "PC@A@DR\n",
+    "output": "PC@A@DR\n"
+  },
+  {
+    "input": "PD?D??P\n",
+    "output": "PDDDDDP\n"
+  },
+  {
+    "input": "PD?D??P\n",
+    "output": "PDDDDDP\n"
+  },
+  {
+    "input": "P?P?\n",
+    "output": "PDPD\n"
+  }
+]

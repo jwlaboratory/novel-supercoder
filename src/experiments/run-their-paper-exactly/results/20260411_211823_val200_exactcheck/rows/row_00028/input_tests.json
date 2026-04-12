@@ -1,0 +1,414 @@
+[
+  {
+    "input": "4 1\nCABA\n",
+    "output": "cABA"
+  },
+  {
+    "input": "3 2\nABC\n",
+    "output": "AbC"
+  },
+  {
+    "input": "4 1\nCABB\n",
+    "output": "cABB"
+  },
+  {
+    "input": "3 2\nACC\n",
+    "output": "AcC"
+  },
+  {
+    "input": "4 1\nC@BB\n",
+    "output": "c@BB"
+  },
+  {
+    "input": "3 2\nBCC\n",
+    "output": "BcC"
+  },
+  {
+    "input": "5 1\nD@BB\n",
+    "output": "d@BB"
+  },
+  {
+    "input": "5 1\nE@BB\n",
+    "output": "e@BB"
+  },
+  {
+    "input": "5 1\nBB@E\n",
+    "output": "bB@E"
+  },
+  {
+    "input": "5 1\nBB@D\n",
+    "output": "bB@D"
+  },
+  {
+    "input": "1 3\nCABA\n",
+    "output": "CAbA"
+  },
+  {
+    "input": "3 2\nCBA\n",
+    "output": "CbA"
+  },
+  {
+    "input": "4 1\nCBBA\n",
+    "output": "cBBA"
+  },
+  {
+    "input": "3 2\nBDC\n",
+    "output": "BdC"
+  },
+  {
+    "input": "4 2\nCBBA\n",
+    "output": "CbBA"
+  },
+  {
+    "input": "6 2\nCCA\n",
+    "output": "CcA"
+  },
+  {
+    "input": "3 2\nCDB\n",
+    "output": "CdB"
+  },
+  {
+    "input": "10 1\nC?BB\n",
+    "output": "c?BB"
+  },
+  {
+    "input": "4 4\nCBBA\n",
+    "output": "CBBa"
+  },
+  {
+    "input": "9 2\nABB\n",
+    "output": "AbB"
+  },
+  {
+    "input": "9 2\nCABB\n",
+    "output": "CaBB"
+  },
+  {
+    "input": "6 3\nCCA\n",
+    "output": "CCa"
+  },
+  {
+    "input": "3 2\nCCB\n",
+    "output": "CcB"
+  },
+  {
+    "input": "10 1\nC?BA\n",
+    "output": "c?BA"
+  },
+  {
+    "input": "-1 1\nBC@E\n",
+    "output": "BC@E"
+  },
+  {
+    "input": "9 1\nBBAE\n",
+    "output": "bBAE"
+  },
+  {
+    "input": "1 3\nABAC\n",
+    "output": "ABaC"
+  },
+  {
+    "input": "4 1\nABAC\n",
+    "output": "aBAC"
+  },
+  {
+    "input": "9 1\nABB\n",
+    "output": "aBB"
+  },
+  {
+    "input": "9 2\nBBAC\n",
+    "output": "BbAC"
+  },
+  {
+    "input": "9 1\nEABB\n",
+    "output": "eABB"
+  },
+  {
+    "input": "1 3\nCACA\n",
+    "output": "CAcA"
+  },
+  {
+    "input": "9 1\nEABA\n",
+    "output": "eABA"
+  },
+  {
+    "input": "1 2\nCACA\n",
+    "output": "CaCA"
+  },
+  {
+    "input": "9 2\nEABA\n",
+    "output": "EaBA"
+  },
+  {
+    "input": "1 4\nEABA\n",
+    "output": "EABa"
+  },
+  {
+    "input": "1 4\nFABA\n",
+    "output": "FABa"
+  },
+  {
+    "input": "2 4\nABAF\n",
+    "output": "ABAf"
+  },
+  {
+    "input": "4 2\nCABA\n",
+    "output": "CaBA"
+  },
+  {
+    "input": "3 3\nABC\n",
+    "output": "ABc"
+  },
+  {
+    "input": "4 1\nBBAC\n",
+    "output": "bBAC"
+  },
+  {
+    "input": "5 1\nC@BA\n",
+    "output": "c@BA"
+  },
+  {
+    "input": "5 1\nBBE@\n",
+    "output": "bBE@"
+  },
+  {
+    "input": "3 2\nCBB\n",
+    "output": "CbB"
+  },
+  {
+    "input": "9 1\nB@BD\n",
+    "output": "b@BD"
+  },
+  {
+    "input": "2 3\nDABA\n",
+    "output": "DAbA"
+  },
+  {
+    "input": "0 2\nDBA\n",
+    "output": "DbA"
+  },
+  {
+    "input": "6 1\nCCA\n",
+    "output": "cCA"
+  },
+  {
+    "input": "3 2\nCDC\n",
+    "output": "CdC"
+  },
+  {
+    "input": "-1 2\nBB@E\n",
+    "output": "BB@E"
+  },
+  {
+    "input": "3 3\nCBBA\n",
+    "output": "CBbA"
+  },
+  {
+    "input": "2 4\nABBC\n",
+    "output": "ABBc"
+  },
+  {
+    "input": "9 2\nAAB\n",
+    "output": "AaB"
+  },
+  {
+    "input": "9 4\nCABB\n",
+    "output": "CABb"
+  },
+  {
+    "input": "6 3\nCAC\n",
+    "output": "CAc"
+  },
+  {
+    "input": "3 3\nCCB\n",
+    "output": "CCb"
+  },
+  {
+    "input": "9 1\nABBE\n",
+    "output": "aBBE"
+  },
+  {
+    "input": "4 1\nABAB\n",
+    "output": "aBAB"
+  },
+  {
+    "input": "9 1\nBAB\n",
+    "output": "bAB"
+  },
+  {
+    "input": "0 1\nAC@E\n",
+    "output": "AC@E"
+  },
+  {
+    "input": "7 1\nAAB\n",
+    "output": "aAB"
+  },
+  {
+    "input": "1 1\nCACA\n",
+    "output": "cACA"
+  },
+  {
+    "input": "14 1\nBB@\n",
+    "output": "bB@"
+  },
+  {
+    "input": "9 2\nBAEA\n",
+    "output": "BaEA"
+  },
+  {
+    "input": "1 2\nABAE\n",
+    "output": "AbAE"
+  },
+  {
+    "input": "1 4\nEABB\n",
+    "output": "EABb"
+  },
+  {
+    "input": "4 1\nBAAC\n",
+    "output": "bAAC"
+  },
+  {
+    "input": "5 2\nBBC\n",
+    "output": "BbC"
+  },
+  {
+    "input": "5 1\nC@B@\n",
+    "output": "c@B@"
+  },
+  {
+    "input": "0 1\nEBB@\n",
+    "output": "EBB@"
+  },
+  {
+    "input": "2 3\nDACA\n",
+    "output": "DAcA"
+  },
+  {
+    "input": "0 2\nEBA\n",
+    "output": "EbA"
+  },
+  {
+    "input": "9 3\nABB\n",
+    "output": "ABb"
+  },
+  {
+    "input": "6 1\nACC\n",
+    "output": "aCC"
+  },
+  {
+    "input": "3 3\nBBBA\n",
+    "output": "BBbA"
+  },
+  {
+    "input": "2 4\nABBB\n",
+    "output": "ABBb"
+  },
+  {
+    "input": "9 2\nAAC\n",
+    "output": "AaC"
+  },
+  {
+    "input": "9 4\nBBAC\n",
+    "output": "BBAc"
+  },
+  {
+    "input": "6 3\nC@C\n",
+    "output": "C@c"
+  },
+  {
+    "input": "3 3\nCDB\n",
+    "output": "CDb"
+  },
+  {
+    "input": "0 1\nCB@E\n",
+    "output": "CB@E"
+  },
+  {
+    "input": "9 1\nABBF\n",
+    "output": "aBBF"
+  },
+  {
+    "input": "0 1\nE@CA\n",
+    "output": "E@CA"
+  },
+  {
+    "input": "2 2\nEABB\n",
+    "output": "EaBB"
+  },
+  {
+    "input": "2 3\nACAC\n",
+    "output": "ACaC"
+  },
+  {
+    "input": "1 2\nABEA\n",
+    "output": "AbEA"
+  },
+  {
+    "input": "3 1\nBAC\n",
+    "output": "bAC"
+  },
+  {
+    "input": "5 2\nBAC\n",
+    "output": "BaC"
+  },
+  {
+    "input": "5 1\nCB@@\n",
+    "output": "cB@@"
+  },
+  {
+    "input": "6 1\nBCE@\n",
+    "output": "bCE@"
+  },
+  {
+    "input": "3 1\nBBAD\n",
+    "output": "bBAD"
+  },
+  {
+    "input": "2 3\nCADA\n",
+    "output": "CAdA"
+  },
+  {
+    "input": "0 1\nEBA\n",
+    "output": "eBA"
+  },
+  {
+    "input": "5 1\nCDC\n",
+    "output": "cDC"
+  },
+  {
+    "input": "0 1\nD@BA\n",
+    "output": "D@BA"
+  },
+  {
+    "input": "0 4\nBB@E\n",
+    "output": "BB@E"
+  },
+  {
+    "input": "3 3\nABBB\n",
+    "output": "ABbB"
+  },
+  {
+    "input": "2 4\nBBBA\n",
+    "output": "BBBa"
+  },
+  {
+    "input": "9 4\nBCAC\n",
+    "output": "BCAc"
+  },
+  {
+    "input": "3 3\nCEB\n",
+    "output": "CEb"
+  },
+  {
+    "input": "4 3\nCABA\n",
+    "output": "CAbA"
+  },
+  {
+    "input": "3 1\nABC\n",
+    "output": "aBC"
+  },
+  {
+    "input": "3 1\nABC\n",
+    "output": "aBC"
+  }
+]

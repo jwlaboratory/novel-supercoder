@@ -1,0 +1,414 @@
+[
+  {
+    "input": "5\n6 7 3 10 31\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n28 27 47\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n6 7 4 10 31\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n28 15 47\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 7 4 10 31\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 15 47\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n-1 7 4 10 31\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 26 47\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 7 4 10 31\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n4 26 47\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 1 4 10 31\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n4 3 47\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 1 4 5 31\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n4 5 47\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 1 4 5 32\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n4 5 66\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 1 4 5 46\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n4 5 99\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 2 4 5 46\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n4 5 69\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 2 5 5 46\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 5 69\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n1 1 5 5 46\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 8 69\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n2 1 5 5 46\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 8 9\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n2 0 5 5 46\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 8 16\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n2 0 5 5 81\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 8 25\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n2 0 5 5 132\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 8 25\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n2 0 5 1 132\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 8 42\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n2 0 5 1 252\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 1 42\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n0 0 5 1 252\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n2 1 42\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -1 5 1 252\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n2 1 43\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -1 5 1 266\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 2 43\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -2 5 1 266\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 2 75\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -2 5 2 266\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 2 110\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -4 5 2 266\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 2 100\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -3 5 2 266\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n0 2 100\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -5 5 2 266\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 2 100\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n-1 -5 5 2 266\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 0 100\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n0 -5 5 2 345\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 0 100\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n0 -5 5 2 538\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n3 0 100\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n0 -5 5 4 538\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n0 0 100\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n0 -5 9 4 538\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n-1 0 100\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n0 -5 17 4 538\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n-1 0 101\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n0 -5 0 4 538\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n0 0 101\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -5 0 4 538\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 1 100\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -5 0 4 374\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 0 110\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n-1 -1 0 4 374\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n3 0 110\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -1 1 4 374\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 0 110\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-2 -1 1 4 374\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 0 010\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-4 -1 1 4 374\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n2 0 010\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n-1 -1 1 1 374\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n1 1 010\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -1 1 1 321\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n0 1 010\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -1 1 1 337\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n0 1 011\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -1 1 1 166\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n0 1 001\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -1 1 1 200\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n0 1 101\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-1 -1 1 1 385\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n0 1 100\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-2 -1 1 1 385\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n0 1 110\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-2 -1 1 1 189\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n-1 1 100\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-2 -2 1 1 189\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n-1 1 101\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n-2 -2 1 1 150\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n-1 2 101\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n-2 -3 1 1 150\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "3\n0 2 101\n",
+    "output": "DENIED"
+  },
+  {
+    "input": "5\n6 7 9 10 31\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "5\n6 7 9 10 31\n",
+    "output": "APPROVED"
+  },
+  {
+    "input": "3\n28 27 24\n",
+    "output": "DENIED"
+  }
+]

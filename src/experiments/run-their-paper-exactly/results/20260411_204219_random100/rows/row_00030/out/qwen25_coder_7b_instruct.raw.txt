@@ -1,0 +1,85 @@
+```assembly
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 3048
+
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    jmp .L2
+
+.L3:
+    call __ctype_tolower_loc
+    movsbq -1(rbp), rdx
+    mov rbx, rbp
+    mov rax, [rax]
+    mov eax, [rax + rdx*4]
+    movb al, -1(rbp)
+
+.L2:
+    mov rdi, rsp
+    lea rbp, [rbx+1]
+    sub rsp, rbx
+    call strlen
+    cmp rbx, rax
+    ja .L3
+
+    xor r13d, r13d
+    lea rbp, [rsp+1520]
+
+.L4:
+    xor eax, eax
+    mov rsi, rbp
+    mov rdi, r14
+    call __isoc99_scanf
+    test eax, eax
+    je .L12
+
+    movabs rax, 6079655328688131653
+    cmp rax, [rbp]
+    je .L17
+
+.L5:
+    mov rbx, rbp
+    jmp .L8
+
+.L9:
+    call __ctype_tolower_loc
+    movsbq -1(r15), rcx
+    mov rbx, r15
+    mov rax, [rax]
+    mov eax, [rax + rcx*4]
+    movb al, -1(r15)
+
+.L8:
+    mov rdi, rsp
+    lea r15, [rbx+1]
+    sub rsp, rbx
+    call strlen
+    cmp rbx, rax
+    ja .L9
+
+    mov rsi, rsp
+    mov rdi, rsp
+    call strcmp
+    cmpl $1, eax
+    adcl $0, r13d
+    jmp .L4
+
+.L17:
+    cmpl $5527621, [rbp+8]
+    jne .L5
+
+.L12:
+    xor eax, eax
+    mov edx, r13d
+    mov edi, 1
+    lea rsi, [LC2]
+    call __printf_chk
+    add rsp, 3048
+    leave
+    ret
+```

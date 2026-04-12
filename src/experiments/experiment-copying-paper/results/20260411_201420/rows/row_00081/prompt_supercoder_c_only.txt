@@ -1,0 +1,56 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+
+typedef long long ll;
+
+int t[100000];
+int k[500007];
+
+int main(){
+  ll n,m;
+  ll p;
+  int sp = 0;
+  int a,i;
+  ll ans = 1;
+  int limit;
+
+  scanf("%lld %lld", &n, &p);
+
+  for(i = 0;i <= 500000;i++) k[i] = 0;
+
+  if(n == 1){
+    printf("%lld\n", p);
+    return 0;
+  }
+
+  if(p == 1){
+    printf("%lld\n", p);
+    return 0;
+  }
+
+  limit = sqrt(p);
+
+  for(i = 2;i <= limit;i++){
+    while(p % i == 0){
+      k[i]++;
+      p = p/i;
+    }
+  }
+
+  for(i = 2;i <= 500000;i++){
+    ans = ans*pow(i,(k[i])/n);
+  }
+
+  printf("%lld\n", ans);
+
+  return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

@@ -1,0 +1,122 @@
+[
+  {
+    "input": "1011\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0111\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1000\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1100\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0011\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1001\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0100\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0110\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0001\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0101\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0010\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1101\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0000\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0111\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1011\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0010\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0101\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0011\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0000\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0100\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1001\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1100\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0110\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1101\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1000\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "0001\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1110\n",
+    "output": "1 2\n2 3\n3 4\n"
+  },
+  {
+    "input": "1111\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "1010\n",
+    "output": "1 2\n2 3\n2 4\n"
+  },
+  {
+    "input": "1111\n",
+    "output": "-1\n"
+  }
+]

@@ -1,0 +1,87 @@
+section .text
+global main
+
+main:
+    endbr64
+    push rbp
+    mov rbp, rsp
+    sub rsp, 48
+    xor eax, eax
+    lea rdi, [LC0]
+    call scanf
+    mov ecx, dword [rsp+4]
+    test ecx, ecx
+    jle .L8
+.L2:
+    lea rsi, [LC0]
+    call scanf
+    mov eax, dword [rsp+8]
+    dec eax
+    mov dword [rsp+8], eax
+    test eax, eax
+    je .L5
+    mov ebp, 2
+    mov ebx, 1
+.L7:
+    lea rsi, [LC0]
+    call scanf
+    mov eax, dword [rsp+8]
+    test eax, eax
+    je .L33
+    mov eax, ebp
+    mov ebp, ebx
+    mov ebx, eax
+    jmp .L7
+.L33:
+    xor eax, eax
+    cmp ebp, ebx
+    setg al
+    lea eax, [rax*2+rbx*2]
+.L5:
+    add rsp, 4
+    lea rdx, [a]
+    add eax, 1
+    add dword [rdx+rax*4], 1
+    cmp eax, ecx
+    jg .L2
+.L8:
+    mov eax, dword [a]
+    test eax, eax
+    jg .L3
+    mov eax, dword [a+4]
+    cmp eax, 1
+    jle .L34
+.L3:
+    lea rdi, [LC1]
+    call puts
+.L11:
+    leave
+    ret
+.L34:
+    mov eax, dword [a+8]
+    cmp eax, 1
+    jg .L3
+    mov eax, dword [a+12]
+    cmp eax, 1
+    jg .L3
+    mov eax, dword [a+16]
+    cmp eax, 2
+    jg .L3
+    mov eax, dword [a+20]
+    cmp eax, 2
+    jg .L3
+    test eax, eax
+    je .L15
+    test ecx, ecx
+    jne .L3
+.L15:
+    add eax, dword [a+8]
+    add eax, dword [a+12]
+    sub eax, 1
+    jle .L10
+    or eax, dword [a+16]
+    jne .L3
+.L10:
+    lea rdi, [LC2]
+    call puts
+    jmp .L11

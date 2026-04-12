@@ -1,0 +1,418 @@
+[
+  {
+    "input": "SHINJUKV\n",
+    "output": "0"
+  },
+  {
+    "input": "ATCPDER\n",
+    "output": "3"
+  },
+  {
+    "input": "HATAGBYA\n",
+    "output": "4"
+  },
+  {
+    "input": "HASAGBYA\n",
+    "output": "2"
+  },
+  {
+    "input": "VKUJNIHT\n",
+    "output": "1"
+  },
+  {
+    "input": "HATAGCYA\n",
+    "output": "5"
+  },
+  {
+    "input": "VKUJNIHS\n",
+    "output": "0"
+  },
+  {
+    "input": "ATCPCER\n",
+    "output": "3"
+  },
+  {
+    "input": "ATCPBER\n",
+    "output": "3"
+  },
+  {
+    "input": "HASAGCYA\n",
+    "output": "3"
+  },
+  {
+    "input": "VUKJNIHT\n",
+    "output": "1"
+  },
+  {
+    "input": "REBPCTA\n",
+    "output": "3"
+  },
+  {
+    "input": "THINJKUV\n",
+    "output": "1"
+  },
+  {
+    "input": "RDBPCTA\n",
+    "output": "3"
+  },
+  {
+    "input": "AYCGATAH\n",
+    "output": "5"
+  },
+  {
+    "input": "JUKVNIHT\n",
+    "output": "1"
+  },
+  {
+    "input": "RTBPCDA\n",
+    "output": "1"
+  },
+  {
+    "input": "HATAHCYA\n",
+    "output": "3"
+  },
+  {
+    "input": "JUKVMIHT\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBTCDA\n",
+    "output": "2"
+  },
+  {
+    "input": "AYCHATAH\n",
+    "output": "3"
+  },
+  {
+    "input": "THIMVKUJ\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBSCDA\n",
+    "output": "1"
+  },
+  {
+    "input": "AYCH@TAH\n",
+    "output": "2"
+  },
+  {
+    "input": "THIMUKUJ\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBSCEA\n",
+    "output": "1"
+  },
+  {
+    "input": "AXCH@TAH\n",
+    "output": "2"
+  },
+  {
+    "input": "TIHMUKUJ\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBSCE@\n",
+    "output": "1"
+  },
+  {
+    "input": "HAT@HCXA\n",
+    "output": "2"
+  },
+  {
+    "input": "TJHMUKUJ\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBSDE@\n",
+    "output": "0"
+  },
+  {
+    "input": "HAT@HCX@\n",
+    "output": "2"
+  },
+  {
+    "input": "TJHMUKVJ\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBRDE@\n",
+    "output": "0"
+  },
+  {
+    "input": "@XCH@TAH\n",
+    "output": "2"
+  },
+  {
+    "input": "VJHMUKTJ\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBREE@\n",
+    "output": "0"
+  },
+  {
+    "input": "HAT?HCX@\n",
+    "output": "2"
+  },
+  {
+    "input": "VJHMVKTJ\n",
+    "output": "1"
+  },
+  {
+    "input": "RPBSEE@\n",
+    "output": "0"
+  },
+  {
+    "input": "HAT?GCX@\n",
+    "output": "2"
+  },
+  {
+    "input": "WJHMVKTJ\n",
+    "output": "1"
+  },
+  {
+    "input": "@EESBPR\n",
+    "output": "0"
+  },
+  {
+    "input": "@XCG?TAH\n",
+    "output": "2"
+  },
+  {
+    "input": "WJHMVKSJ\n",
+    "output": "0"
+  },
+  {
+    "input": "?EESBPR\n",
+    "output": "0"
+  },
+  {
+    "input": "@XCG>TAH\n",
+    "output": "2"
+  },
+  {
+    "input": "WKHMVJSJ\n",
+    "output": "0"
+  },
+  {
+    "input": "RPBSEE?\n",
+    "output": "0"
+  },
+  {
+    "input": "HAT>GCX@\n",
+    "output": "2"
+  },
+  {
+    "input": "WKHMVJRJ\n",
+    "output": "0"
+  },
+  {
+    "input": "RPBREE?\n",
+    "output": "0"
+  },
+  {
+    "input": "HBT>GCX@\n",
+    "output": "2"
+  },
+  {
+    "input": "WKHNVJRJ\n",
+    "output": "0"
+  },
+  {
+    "input": "RPAREE@\n",
+    "output": "1"
+  },
+  {
+    "input": "HBT>GDX@\n",
+    "output": "1"
+  },
+  {
+    "input": "JRJVNHKW\n",
+    "output": "0"
+  },
+  {
+    "input": "RPRAEE@\n",
+    "output": "1"
+  },
+  {
+    "input": "HBT?GDX@\n",
+    "output": "1"
+  },
+  {
+    "input": "JRJVNIKW\n",
+    "output": "0"
+  },
+  {
+    "input": "RPRAED@\n",
+    "output": "1"
+  },
+  {
+    "input": "@XDG?TBH\n",
+    "output": "1"
+  },
+  {
+    "input": "JRJVMIKW\n",
+    "output": "0"
+  },
+  {
+    "input": "RPEARD@\n",
+    "output": "1"
+  },
+  {
+    "input": "@XDG?SBH\n",
+    "output": "1"
+  },
+  {
+    "input": "RJJVMIKW\n",
+    "output": "0"
+  },
+  {
+    "input": "RPEASD@\n",
+    "output": "1"
+  },
+  {
+    "input": "@XDG?RBH\n",
+    "output": "1"
+  },
+  {
+    "input": "RJJVLIKW\n",
+    "output": "0"
+  },
+  {
+    "input": "@DSAEPR\n",
+    "output": "1"
+  },
+  {
+    "input": "@XDGBR?H\n",
+    "output": "1"
+  },
+  {
+    "input": "WKILVJJR\n",
+    "output": "0"
+  },
+  {
+    "input": "RPE@SD@\n",
+    "output": "0"
+  },
+  {
+    "input": "@XEGBR?H\n",
+    "output": "1"
+  },
+  {
+    "input": "RJJVLIJW\n",
+    "output": "0"
+  },
+  {
+    "input": "@DS@EPR\n",
+    "output": "0"
+  },
+  {
+    "input": "H?RBGEX@\n",
+    "output": "1"
+  },
+  {
+    "input": "QJJVLIJW\n",
+    "output": "0"
+  },
+  {
+    "input": "RPEDS@@\n",
+    "output": "0"
+  },
+  {
+    "input": "H?RBFEX@\n",
+    "output": "0"
+  },
+  {
+    "input": "RJJVLIJV\n",
+    "output": "0"
+  },
+  {
+    "input": "RPEDT@@\n",
+    "output": "1"
+  },
+  {
+    "input": "H?RBFEW@\n",
+    "output": "0"
+  },
+  {
+    "input": "RIJVLIJV\n",
+    "output": "0"
+  },
+  {
+    "input": "@@TDEPR\n",
+    "output": "1"
+  },
+  {
+    "input": "H?RBFEV@\n",
+    "output": "0"
+  },
+  {
+    "input": "VJILVJIR\n",
+    "output": "0"
+  },
+  {
+    "input": "@@UDEPR\n",
+    "output": "0"
+  },
+  {
+    "input": "H?REFBV@\n",
+    "output": "0"
+  },
+  {
+    "input": "RIJVILJV\n",
+    "output": "0"
+  },
+  {
+    "input": "@AUDEPR\n",
+    "output": "1"
+  },
+  {
+    "input": "H?REFAV@\n",
+    "output": "1"
+  },
+  {
+    "input": "RIJVHLJV\n",
+    "output": "0"
+  },
+  {
+    "input": "RPEDUA@\n",
+    "output": "1"
+  },
+  {
+    "input": "H@REFAV@\n",
+    "output": "1"
+  },
+  {
+    "input": "RJJVHLJV\n",
+    "output": "0"
+  },
+  {
+    "input": "RDEPUA@\n",
+    "output": "1"
+  },
+  {
+    "input": "@VAFER@H\n",
+    "output": "1"
+  },
+  {
+    "input": "VJLHVJJR\n",
+    "output": "0"
+  },
+  {
+    "input": "SHINJUKU\n",
+    "output": "0"
+  },
+  {
+    "input": "ATCODER\n",
+    "output": "3"
+  },
+  {
+    "input": "HATAGAYA\n",
+    "output": "5"
+  },
+  {
+    "input": "ATCODER\n",
+    "output": "3"
+  }
+]

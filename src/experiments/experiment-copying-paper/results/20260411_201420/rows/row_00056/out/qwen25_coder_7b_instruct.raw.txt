@@ -1,0 +1,55 @@
+```assembly
+section .text
+global main
+extern printf, scanf
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 40
+
+    lea rdi, [LC0]
+    xor eax, eax
+    call scanf
+    cmp eax, 0
+    jle .L6
+
+    lea rdi, [LC1]
+    xor ebx, ebx
+    mov ecx, 1000000001
+    lea rsi, [rbp-40]
+
+.L3:
+    mov rdi, rsi
+    xor eax, eax
+    add ebx, 1
+    call scanf
+    mov eax, dword [rbp-40+ebx*4]
+    add rsi, 4
+    cmp ebx, eax
+    jg .L6
+    test eax, eax
+    jle .L6
+
+.L5:
+    mov edx, eax
+    cmp ecx, edx
+    jge .L4
+    mov ecx, edx
+    jmp .L5
+
+.L4:
+    cmp rsi, rbp-40
+    je .L6
+    add rsi, 4
+    jmp .L5
+
+.L6:
+    mov eax, 1
+    mov edi, eax
+    lea rsi, [LC2]
+    xor eax, eax
+    call printf
+    leave
+    ret
+```

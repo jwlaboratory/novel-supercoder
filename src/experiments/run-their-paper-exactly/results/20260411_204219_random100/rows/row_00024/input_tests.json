@@ -1,0 +1,426 @@
+[
+  {
+    "input": "7 5 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 42 5\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "2 2 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "80 98 58\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 110 97\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "11 5 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 4 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 42 2\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "103 98 58\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "0 110 97\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "14 5 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 4 -1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "77 42 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "103 98 87\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 111 97\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "14 9 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 79 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "13 98 87\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 111 97\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "14 9 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 79 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "14 2 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "141 79 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "117 79 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "117 63 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "174 63 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "320 63 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "299 63 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "299 117 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "299 16 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "459 16 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "459 16 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "459 13 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "338 13 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "64 13 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "38 13 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 63 36\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "40 50 58\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4 5 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 3 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "33 42 5\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "11 4 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "4 4 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 42 3\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "103 77 58\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 110 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "14 10 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "4 4 -1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "153 42 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "103 98 85\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 101 97\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "26 9 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "3 111 97\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "0 9 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 120 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "280 79 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "117 35 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "117 111 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "174 3 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "41 63 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "299 63 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "299 16 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "549 16 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "459 30 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "338 22 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "8 13 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "38 23 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "4 5 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "33 42 4\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "11 8 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 1 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 8 3\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "67 77 58\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 010 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "0 10 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "4 4 -2\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "153 17 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "103 135 85\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 101 54\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "9 9 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "3 110 97\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 9 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "66 120 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "135 79 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "117 55 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "117 101 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "146 3 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "41 63 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "299 7 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "299 25 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "549 14 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "809 30 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "338 22 1\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "12 13 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "63 23 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "4 8 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "33 19 4\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "11 2 0\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 8 4\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "122 77 58\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "40 98 58\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "7 5 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "7 5 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "1 100 97\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "77 42 36\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "2 2 1\n",
+    "output": "NO\n"
+  }
+]

@@ -1,0 +1,136 @@
+.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	leaq	-36864(%rsp), %r11
+	.cfi_def_cfa 11, 36896
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	.cfi_def_cfa_register 7
+	subq	$3168, %rsp
+	.cfi_def_cfa_offset 40064
+	movl	$40004, %edx
+	xorl	%esi, %esi
+	movq	%fs:40, %rax
+	movq	%rax, 40024(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rbx
+	movq	%rbx, %rdi
+	call	memset@PLT
+	leaq	12(%rsp), %rsi
+	leaq	.LC0(%rip), %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movl	$1, %r9d
+.L2:
+	movl	%r9d, %r11d
+	movl	%r9d, %r10d
+	movl	$1, %edi
+.imul	%r9d, %r11d
+.L8:
+	movl	%edi, %r8d
+	movl	%r9d, %esi
+	movl	%edi, %ecx
+	movl	$1, %edx
+.imul	%edi, %r8d
+	addl	%r11d, %r8d
+.L4:
+	movl	%edx, %eax
+.imul	%edx, %eax
+	addl	%r8d, %eax
+	addl	%r10d, %eax
+	addl	%ecx, %eax
+	addl	%esi, %eax
+	cmpl	$10000, %eax
+	jg	.L3
+.cltq
+	addl	$1, 16(%rsp,%rax,4)
+.L3:
+	addl	$1, %edx
+	addl	%edi, %ecx
+	addl	%r9d, %esi
+	cmpl	$101, %edx
+	jne	.L4
+	addl	$1, %edi
+	addl	%r9d, %r10d
+	cmpl	$101, %edi
+	jne	.L8
+	addl	$1, %r9d
+	cmpl	$101, %r9d
+	jne	.L2
+	movl	12(%rsp), %eax
+	movl	$1, %ebp
+	leaq	.LC1(%rip), %r12
+	testl	%eax, %eax
+	jle	.L7
+.L6:
+	movl	(%rbx,%rbp,4), %edx
+	movq	%r12, %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	addq	$1, %rbp
+	call	__printf_chk@PLT
+	cmpl	%ebp, 12(%rsp)
+	jge	.L6
+.L7:
+	movq	40024(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L17
+	addq	$40032, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+.L17:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

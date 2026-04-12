@@ -1,0 +1,141 @@
+```assembly
+	.file	"temp.c"
+	.text
+	.p2align 4
+	.globl	f
+	.type	f, @function
+f:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	xorl	%r8d, %r8d
+	testl	%edi, %edi
+	jle	.L1
+	movl	$3435973837, %esi
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movl	%edi, %eax
+	movl	%edi, %ecx
+	imulq	%rsi, %rax
+	shrq	$35, %rax
+	leal	(%rax,%rax,4), %edx
+	addl	%edx, %edx
+	subl	%edx, %ecx
+	movl	%edi, %edx
+	movl	%eax, %edi
+	addl	%ecx, %r8d
+	cmpl	$9, %edx
+	jg	.L3
+.L1:
+	movl	%r8d, %eax
+	ret
+	.cfi_endproc
+.LFE51:
+	.size	f, .-f
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"Yes"
+.LC2:
+	.string	"No"
+	.section	.text.unlikely,"ax",@progbits
+.LCOLDB3:
+	.section	.text.startup,"ax",@progbits
+.LHOTB3:
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB52:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	testl	%eax, %eax
+	jle	.L8
+	movl	%eax, %ecx
+	xorl	%edi, %edi
+	movl	$3435973837, %r9d
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	movl	%ecx, %edx
+	movl	%ecx, %r8d
+	imulq	%r9, %rdx
+	shrq	$35, %rdx
+	leal	(%rdx,%rdx,4), %esi
+	addl	%esi, %esi
+	subl	%esi, %r8d
+	movl	%ecx, %esi
+	movl	%edx, %ecx
+	addl	%r8d, %edi
+	cmpl	$9, %esi
+	jg	.L9
+	cltd
+	idivl	%edi
+	testl	%edx, %edx
+	je	.L16
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+.L11:
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L17
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L16:
+	.cfi_restore_state
+	leaq	.LC1(%rip), %rdi
+	call	puts@PLT
+	jmp	.L11
+.L17:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+	.section	.text.unlikely
+	.cfi_startproc
+	.type	main.cold, @function
+main.cold:
+.LFSB52:
+.L8:
+	.cfi_def_cfa_offset 32
+	ud2
+	.cfi_endproc
+.LFE52:
+	.section	.text.startup
+	.size	main, .-main
+	.section	.text.unlikely
+	.size	main.cold, .-main.cold
+.LCOLDE3:
+	.section	.text.startup
+.LHOTE3:
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```

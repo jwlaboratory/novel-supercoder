@@ -1,0 +1,410 @@
+[
+  {
+    "input": "27\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n"
+  },
+  {
+    "input": "13\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n"
+  },
+  {
+    "input": "3\n",
+    "output": "0\n0\n0\n"
+  },
+  {
+    "input": "2\n",
+    "output": "0\n0\n"
+  },
+  {
+    "input": "4\n",
+    "output": "0\n0\n0\n0\n"
+  },
+  {
+    "input": "8\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n"
+  },
+  {
+    "input": "14\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n"
+  },
+  {
+    "input": "1\n",
+    "output": "0\n"
+  },
+  {
+    "input": "31\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "53\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n"
+  },
+  {
+    "input": "10\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "5\n",
+    "output": "0\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "6\n",
+    "output": "0\n0\n0\n0\n0\n1\n"
+  },
+  {
+    "input": "11\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n"
+  },
+  {
+    "input": "15\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "9\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n"
+  },
+  {
+    "input": "16\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "12\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n"
+  },
+  {
+    "input": "22\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "7\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n"
+  },
+  {
+    "input": "29\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n"
+  },
+  {
+    "input": "23\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "21\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n"
+  },
+  {
+    "input": "18\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n"
+  },
+  {
+    "input": "17\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n"
+  },
+  {
+    "input": "32\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "33\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n"
+  },
+  {
+    "input": "45\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n"
+  },
+  {
+    "input": "25\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n"
+  },
+  {
+    "input": "28\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n"
+  },
+  {
+    "input": "24\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n"
+  },
+  {
+    "input": "19\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n"
+  },
+  {
+    "input": "43\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n"
+  },
+  {
+    "input": "41\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n"
+  },
+  {
+    "input": "42\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "26\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n"
+  },
+  {
+    "input": "52\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n"
+  },
+  {
+    "input": "40\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n"
+  },
+  {
+    "input": "44\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n"
+  },
+  {
+    "input": "36\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n"
+  },
+  {
+    "input": "60\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n"
+  },
+  {
+    "input": "30\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n"
+  },
+  {
+    "input": "104\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n"
+  },
+  {
+    "input": "62\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n"
+  },
+  {
+    "input": "35\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n"
+  },
+  {
+    "input": "84\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n"
+  },
+  {
+    "input": "37\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n"
+  },
+  {
+    "input": "80\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n"
+  },
+  {
+    "input": "79\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n"
+  },
+  {
+    "input": "38\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n"
+  },
+  {
+    "input": "34\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n"
+  },
+  {
+    "input": "51\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n"
+  },
+  {
+    "input": "70\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n"
+  },
+  {
+    "input": "63\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n"
+  },
+  {
+    "input": "46\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n"
+  },
+  {
+    "input": "39\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n"
+  },
+  {
+    "input": "58\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n"
+  },
+  {
+    "input": "171\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n"
+  },
+  {
+    "input": "49\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n"
+  },
+  {
+    "input": "64\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n"
+  },
+  {
+    "input": "65\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n"
+  },
+  {
+    "input": "83\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n"
+  },
+  {
+    "input": "97\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n"
+  },
+  {
+    "input": "76\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n"
+  },
+  {
+    "input": "110\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n"
+  },
+  {
+    "input": "71\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n"
+  },
+  {
+    "input": "334\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n"
+  },
+  {
+    "input": "90\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n"
+  },
+  {
+    "input": "102\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n"
+  },
+  {
+    "input": "73\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n"
+  },
+  {
+    "input": "99\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n"
+  },
+  {
+    "input": "135\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n"
+  },
+  {
+    "input": "122\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n"
+  },
+  {
+    "input": "132\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n"
+  },
+  {
+    "input": "390\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n6\n0\n12\n0\n9\n6\n0\n3\n12\n3\n6\n6\n12\n6\n6\n0\n0\n0\n15\n3\n18\n3\n18\n3\n12\n6\n3\n6\n9\n0\n12\n0\n12\n0\n18\n12\n0\n0\n12\n3\n6\n0\n6\n6\n9\n6\n0\n0\n18\n1\n18\n3\n12\n6\n6\n6\n"
+  },
+  {
+    "input": "150\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n"
+  },
+  {
+    "input": "157\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n"
+  },
+  {
+    "input": "72\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n"
+  },
+  {
+    "input": "131\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n"
+  },
+  {
+    "input": "181\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n"
+  },
+  {
+    "input": "138\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n"
+  },
+  {
+    "input": "743\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n6\n0\n12\n0\n9\n6\n0\n3\n12\n3\n6\n6\n12\n6\n6\n0\n0\n0\n15\n3\n18\n3\n18\n3\n12\n6\n3\n6\n9\n0\n12\n0\n12\n0\n18\n12\n0\n0\n12\n3\n6\n0\n6\n6\n9\n6\n0\n0\n18\n1\n18\n3\n12\n6\n6\n6\n12\n0\n15\n6\n12\n6\n18\n0\n0\n6\n0\n9\n12\n0\n18\n0\n6\n3\n12\n0\n12\n12\n0\n0\n12\n0\n3\n6\n12\n6\n18\n9\n18\n0\n9\n6\n18\n0\n6\n0\n6\n3\n27\n6\n6\n6\n6\n3\n6\n0\n12\n6\n9\n0\n6\n0\n18\n0\n9\n9\n15\n3\n12\n6\n6\n3\n9\n6\n12\n12\n18\n0\n18\n0\n6\n6\n21\n6\n0\n0\n6\n3\n15\n6\n12\n6\n18\n0\n0\n0\n12\n6\n6\n3\n6\n4\n18\n6\n12\n6\n3\n9\n30\n0\n18\n0\n6\n6\n12\n6\n6\n9\n12\n0\n18\n6\n18\n0\n6\n0\n12\n0\n6\n12\n6\n3\n18\n0\n6\n6\n6\n6\n15\n3\n24\n0\n6\n3\n18\n0\n12\n6\n12\n6\n24\n0\n15\n18\n9\n6\n0\n0\n18\n3\n6\n0\n15\n12\n12\n6\n6\n0\n18\n0\n6\n3\n12\n0\n12\n6\n6\n9\n9\n6\n24\n3\n24\n0\n9\n12\n6\n6\n12\n0\n12\n0\n21\n9\n15\n6\n12\n3\n18\n3\n12\n6\n12\n6\n0\n0\n12\n0\n12\n6\n24\n0\n6\n12\n6\n1\n9\n6\n12\n6\n24\n0\n18\n3\n12\n6\n6\n12\n24\n0\n12\n6\n15\n6\n18\n0\n18\n0\n0\n0\n18\n9\n21\n12\n0\n6\n18\n0\n9\n6\n6\n6\n12\n0\n12\n0\n9\n9\n27\n6\n6\n3\n18\n6\n21\n6\n6\n12\n12\n0\n12\n0\n24\n12\n0\n0\n24\n3\n24\n6\n12\n12\n18\n0\n0\n0\n12\n0\n18\n3\n15\n6\n12\n9\n6\n0\n15\n6\n9\n12\n24\n0\n12\n3\n6\n6\n21\n6\n18\n3\n18\n0\n21\n12\n15\n6\n6\n0\n12\n3\n12\n9\n18\n9\n12\n6\n6\n6\n24\n0\n18\n3\n24\n0\n6\n6\n0\n6\n9\n6\n6\n4\n30\n0\n18\n12\n9\n6\n24\n0\n18\n0\n9\n12\n21\n6\n6\n12\n12\n"
+  },
+  {
+    "input": "198\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n"
+  },
+  {
+    "input": "124\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n"
+  },
+  {
+    "input": "112\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n"
+  },
+  {
+    "input": "320\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n"
+  },
+  {
+    "input": "293\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n"
+  },
+  {
+    "input": "183\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n"
+  },
+  {
+    "input": "117\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n"
+  },
+  {
+    "input": "395\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n6\n0\n12\n0\n9\n6\n0\n3\n12\n3\n6\n6\n12\n6\n6\n0\n0\n0\n15\n3\n18\n3\n18\n3\n12\n6\n3\n6\n9\n0\n12\n0\n12\n0\n18\n12\n0\n0\n12\n3\n6\n0\n6\n6\n9\n6\n0\n0\n18\n1\n18\n3\n12\n6\n6\n6\n12\n0\n15\n6\n12\n"
+  },
+  {
+    "input": "418\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n6\n0\n12\n0\n9\n6\n0\n3\n12\n3\n6\n6\n12\n6\n6\n0\n0\n0\n15\n3\n18\n3\n18\n3\n12\n6\n3\n6\n9\n0\n12\n0\n12\n0\n18\n12\n0\n0\n12\n3\n6\n0\n6\n6\n9\n6\n0\n0\n18\n1\n18\n3\n12\n6\n6\n6\n12\n0\n15\n6\n12\n6\n18\n0\n0\n6\n0\n9\n12\n0\n18\n0\n6\n3\n12\n0\n12\n12\n0\n0\n12\n0\n3\n6\n"
+  },
+  {
+    "input": "48\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n"
+  },
+  {
+    "input": "218\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n"
+  },
+  {
+    "input": "153\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n"
+  },
+  {
+    "input": "344\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n6\n0\n12\n0\n9\n6\n0\n3\n12\n3\n"
+  },
+  {
+    "input": "56\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n"
+  },
+  {
+    "input": "335\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n6\n"
+  },
+  {
+    "input": "270\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n"
+  },
+  {
+    "input": "587\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n3\n0\n0\n1\n6\n0\n6\n6\n0\n0\n6\n0\n0\n0\n0\n3\n3\n3\n6\n0\n6\n3\n6\n0\n0\n0\n6\n0\n0\n0\n3\n3\n9\n0\n6\n3\n6\n0\n3\n6\n0\n0\n0\n0\n6\n1\n6\n0\n6\n6\n0\n3\n12\n0\n6\n0\n0\n3\n6\n0\n0\n0\n3\n3\n12\n0\n6\n3\n6\n0\n3\n6\n9\n0\n6\n0\n0\n0\n3\n6\n3\n3\n6\n0\n6\n3\n12\n0\n3\n6\n6\n0\n6\n0\n6\n3\n6\n0\n0\n1\n6\n3\n12\n6\n0\n0\n12\n0\n6\n0\n6\n6\n12\n0\n0\n6\n0\n0\n6\n0\n12\n3\n6\n0\n6\n3\n9\n6\n3\n6\n6\n0\n6\n0\n6\n0\n15\n6\n0\n0\n6\n0\n3\n3\n12\n0\n12\n6\n6\n0\n3\n6\n6\n3\n12\n0\n6\n0\n9\n6\n0\n0\n6\n3\n12\n1\n6\n6\n6\n6\n0\n0\n18\n0\n12\n0\n3\n6\n12\n0\n0\n6\n3\n6\n12\n0\n12\n0\n0\n0\n9\n3\n9\n6\n12\n3\n12\n0\n3\n6\n6\n0\n12\n0\n12\n0\n9\n9\n0\n0\n6\n3\n6\n3\n12\n6\n9\n3\n6\n0\n12\n3\n6\n3\n9\n6\n12\n6\n6\n0\n6\n0\n9\n6\n6\n0\n12\n3\n6\n0\n9\n6\n6\n1\n6\n0\n21\n12\n6\n0\n12\n0\n12\n0\n0\n6\n15\n6\n0\n6\n12\n0\n12\n0\n12\n0\n0\n0\n12\n0\n12\n12\n3\n3\n18\n3\n6\n3\n6\n6\n9\n9\n18\n0\n6\n0\n12\n0\n9\n6\n0\n3\n12\n3\n6\n6\n12\n6\n6\n0\n0\n0\n15\n3\n18\n3\n18\n3\n12\n6\n3\n6\n9\n0\n12\n0\n12\n0\n18\n12\n0\n0\n12\n3\n6\n0\n6\n6\n9\n6\n0\n0\n18\n1\n18\n3\n12\n6\n6\n6\n12\n0\n15\n6\n12\n6\n18\n0\n0\n6\n0\n9\n12\n0\n18\n0\n6\n3\n12\n0\n12\n12\n0\n0\n12\n0\n3\n6\n12\n6\n18\n9\n18\n0\n9\n6\n18\n0\n6\n0\n6\n3\n27\n6\n6\n6\n6\n3\n6\n0\n12\n6\n9\n0\n6\n0\n18\n0\n9\n9\n15\n3\n12\n6\n6\n3\n9\n6\n12\n12\n18\n0\n18\n0\n6\n6\n21\n6\n0\n0\n6\n3\n15\n6\n12\n6\n18\n0\n0\n0\n12\n6\n6\n3\n6\n4\n18\n6\n12\n6\n3\n9\n30\n0\n18\n0\n6\n6\n12\n6\n6\n9\n12\n0\n18\n6\n18\n0\n6\n0\n12\n0\n6\n12\n6\n3\n18\n0\n6\n6\n6\n6\n15\n3\n24\n0\n6\n3\n18\n0\n12\n6\n12\n6\n24\n0\n15\n18\n9\n6\n0\n0\n18\n3\n6\n0\n15\n12\n12\n6\n6\n0\n18\n0\n6\n3\n12\n0\n12\n6\n6\n9\n9\n6\n24\n3\n24\n0\n9\n12\n6\n6\n12\n0\n12\n0\n21\n9\n15\n6\n12\n3\n18\n3\n12\n6\n12\n"
+  },
+  {
+    "input": "50\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n0\n0\n0\n1\n6\n0\n3\n0\n0\n0\n0\n0\n3\n3\n6\n0\n0\n3\n0\n0\n0\n0\n3\n3\n6\n0\n6\n0\n0\n0\n"
+  },
+  {
+    "input": "20\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n"
+  },
+  {
+    "input": "20\n",
+    "output": "0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n3\n0\n0\n0\n0\n0\n3\n3\n0\n0\n"
+  }
+]

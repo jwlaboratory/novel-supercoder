@@ -1,0 +1,24 @@
+```c
+#include <stdio.h>
+
+int main()
+{
+	char S[100001];
+	scanf("%s", S);
+	
+	int i, j, count[100001] = {}, sink = -1;
+	for (i = 0; S[i] != 0; i++) {
+		if (S[i] == 'L') count[sink + ((i - sink) % 2)]++;
+		else {
+			for (j = i; S[j+1] == 'R'; j++);
+			count[j] += (j - i) / 2 + 1;
+			count[j+1] += (j - i + 1) / 2;
+			sink = j;
+			i = j;
+		}
+	}
+	
+	for (i = 0; S[i] != 0; i++) printf("%d ", count[i]);
+	fflush(stdout);
+	return 0;
+}```

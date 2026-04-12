@@ -1,0 +1,103 @@
+section .text
+global main
+extern printf, scanf, fflush, __isoc99_scanf, __printf_chk, __stack_chk_fail
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 100008
+    lea rdi, [rbp-100000]
+    xor eax, eax
+    call __isoc99_scanf
+    lea rdi, [rbp-100004]
+    xor eax, eax
+    call __isoc99_scanf
+    lea rdi, [rbp-100008]
+    lea rsi, [rbp-100000]
+    xor eax, eax
+    call __isoc99_scanf
+    mov ecx, dword [rbp-100000]
+    test ecx, ecx
+    je .L13
+    lea edx, [rcx-1]
+    lea esi, [rbp-100004]
+    mov ebx, dword [rbp-100008]
+    lea rcx, [rbp-100000+rdx*1+33]
+    xor eax, eax
+.L6:
+    cmp byte [rcx], 115
+    je .L18
+    add eax, esi
+    mov esi, 83
+    jmp .L4
+.L3:
+    cmp byte [rcx], 114
+    je .L19
+    add eax, ebx
+    mov esi, 80
+.L4:
+    mov byte [rcx], sil
+    inc rcx
+    cmp rcx, rax
+    jne .L6
+.L19:
+    mov ecx, dword [rbp-100000]
+.L2:
+    cmp ecx, esi
+    jle .L7
+    mov eax, ecx
+    sub eax, dword [rbp-100000]
+    lea esi, [rbp-100004]
+    mov ebx, dword [rbp-100008]
+    lea rcx, [rbp-100000+rdx*1+33]
+    jmp .L11
+.L8:
+    cmp byte [rcx], 115
+    je .L20
+    cmp byte [rcx], 112
+    jne .L9
+    cmp byte [rbp-100000+rax*1+32], 83
+    je .L9
+    mov byte [rbp-100000+rax*1], 83
+    add eax, ebx
+    jmp .L9
+.L9:
+    inc eax
+    inc rcx
+    cmp ecx, esi
+    jne .L11
+.L11:
+    cmp byte [rcx], 114
+    je .L8
+    cmp byte [rbp-100000+rax*1+32], 80
+    je .L9
+    inc eax
+    mov byte [rbp-100000+rax*1], 80
+    add eax, ebx
+    inc rcx
+    cmp ecx, esi
+    jne .L11
+.L7:
+    mov eax, 1
+    xor esi, esi
+    mov edi, eax
+    mov eax, esi
+    lea rsi, [rbp-100000+rdx*1]
+    call __printf_chk
+    lea rdi, [stdout]
+    call fflush
+    mov eax, 0
+    leave
+    ret
+.L18:
+    add eax, ebx
+    mov esi, 82
+    jmp .L4
+.L20:
+    cmp byte [rbp-100000+rax*1+32], 82
+    je .L9
+    mov byte [rbp-100000+rax*1], 82
+    jmp .L9
+.L13:
+    xor eax, eax
+    jmp .L2

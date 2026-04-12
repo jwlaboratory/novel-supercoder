@@ -1,0 +1,32 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <math.h>
+#include <time.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main(void) {
+    int a[5], loss = 0, ans = 0, i;
+
+    scanf("%d %d %d %d %d", &a[0], &a[1], &a[2], &a[3], &a[4]);
+
+    for (i = 0; i < 5; i++) {
+        if (a[i] % 10 == 0) {
+            ans += a[i];
+            continue;
+        }
+        if (loss < 10 - a[i] % 10) {
+            loss = 10 - a[i] % 10;
+        }
+        ans += (a[i] / 10) * 10 + 10;
+    }
+    ans -= loss;
+    printf("%d", ans);
+    return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

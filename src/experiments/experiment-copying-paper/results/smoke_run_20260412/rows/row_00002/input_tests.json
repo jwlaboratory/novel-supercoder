@@ -1,0 +1,418 @@
+[
+  {
+    "input": "SSTTTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSSTTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TTTSSS\n",
+    "output": "6\n"
+  },
+  {
+    "input": "TTTTSSSS\n",
+    "output": "8\n"
+  },
+  {
+    "input": "TSTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSTTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSTST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSSTT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSSST\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TSSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSTST\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TSTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSTTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSTSSST\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSSTS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STSSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "SSTTSTST\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TSSSTSTT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSTSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TSTSTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSSTTTST\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TTSTSTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STTTTSSS\n",
+    "output": "6\n"
+  },
+  {
+    "input": "TTTSSSST\n",
+    "output": "6\n"
+  },
+  {
+    "input": "STSTSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STTSTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSSTTTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STTTSTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSTSTSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "SSTSTTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSTSSTS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STTSTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSSTTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSSTSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TSTTSSST\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STSTTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STTTSSST\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TTTSSSTS\n",
+    "output": "6\n"
+  },
+  {
+    "input": "STTSSTST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSTSTST\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TTSSTSST\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSSSTTTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "STTSTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TTTSTSSS\n",
+    "output": "6\n"
+  },
+  {
+    "input": "SSTSSTTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "SSTTSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSTTTSSS\n",
+    "output": "6\n"
+  },
+  {
+    "input": "TSTSSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSTSSTT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSSTSTTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TTTSSTSS\n",
+    "output": "6\n"
+  },
+  {
+    "input": "TSTSTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSTSTST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSTTSTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TTSTTSSS\n",
+    "output": "6\n"
+  },
+  {
+    "input": "STSSTTST\n",
+    "output": "0\n"
+  },
+  {
+    "input": "SSSTTSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TSTTSSTS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSTTTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSTTTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSTSTTST\n",
+    "output": "0\n"
+  },
+  {
+    "input": "STTSSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSTTSSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TTSSTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TSSTTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSTSSTST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSSSTTT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSSSTST\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TSSSTTST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSSSTTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TTSSSSTT\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TSTSTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STTTSSTS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STSTTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSTSSSTT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSSSTTS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STSSTTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TTSSTSTS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STTSSSTT\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSTTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSTSSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TSSTSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSTTTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSTTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STSTTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "STTSTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSTSTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "TTSTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "STSTTS\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSSTST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "SSSTTT\n",
+    "output": "0\n"
+  },
+  {
+    "input": "STTTSSST\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TSTSST\n",
+    "output": "2\n"
+  },
+  {
+    "input": "TSTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TSTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "TSSTTTSS\n",
+    "output": "4\n"
+  },
+  {
+    "input": "SSTTST\n",
+    "output": "0\n"
+  }
+]

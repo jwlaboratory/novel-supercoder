@@ -1,0 +1,11 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/run-their-paper-exactly/results/20260411_204219_random100/paper_dataset.csv",
+  "total_rows": 100,
+  "source": {
+    "dataset": "random1123anonymized/supercoder",
+    "split": "val",
+    "limit": 100,
+    "seed": 42,
+    "sampling": "shuffle_then_take"
+  }
+}

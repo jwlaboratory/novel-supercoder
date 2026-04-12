@@ -7,6 +7,7 @@ RUNS=10
 WARMUP=3
 MODEL_SLUG="qwen25_coder_7b_instruct"
 OUTPUT_CSV=""
+BENCH_TIMEOUT_SEC=180
 
 usage() {
   cat <<'EOF'
@@ -18,6 +19,7 @@ Options:
   --runs <n>            Hyperfine runs (default: 10)
   --warmup <n>          Hyperfine warmup (default: 3)
   --output-csv <path>   Output merged CSV (default: <run-dir>/data_with_bench.csv)
+  --bench-timeout-sec <n>  Timeout per row benchmark command (default: 180)
   -h, --help            Show this help
 EOF
 }
@@ -38,6 +40,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --output-csv)
       OUTPUT_CSV="${2:-}"
+      shift 2
+      ;;
+    --bench-timeout-sec)
+      BENCH_TIMEOUT_SEC="${2:-180}"
       shift 2
       ;;
     -h|--help)
@@ -127,7 +133,8 @@ while IFS= read -r rec; do
     if [[ "$has_tests" == "1" ]]; then
       bench_cmd+=(--tests input_tests.json)
     fi
-    "${bench_cmd[@]}" > "$bench_file"
+    # Guard against hangs from generated binaries by timing out each row bench.
+    perl -e 'alarm shift @ARGV; exec @ARGV' "$BENCH_TIMEOUT_SEC" "${bench_cmd[@]}" > "$bench_file"
     rc=$?
     set -e
     exit "$rc"
@@ -145,7 +152,7 @@ while IFS= read -r rec; do
       asm_mean_s: (.timing.asm.mean_s // .timing_summary.by_label.asm.mean_s // null),
       bench_file: $bench_file,
       asm_file: $asm_file
-    }' "$bench_file" 2>/dev/null \
+    }' "$bench_file" 2>/dev/null >> "$BENCH_SUMMARY" \
     || jq -cn --argjson row_index "$row_index" --arg status "bench_parse_error" --arg bench_file "$bench_file" --arg asm_file "$asm_file" \
       '{row_index:$row_index,status:$status,asm_ok:false,all_passed:false,script_exit_code:-1,timing_enabled:false,best_by_mean_label:null,asm_mean_s:null,bench_file:$bench_file,asm_file:$asm_file}' \
     >> "$BENCH_SUMMARY"

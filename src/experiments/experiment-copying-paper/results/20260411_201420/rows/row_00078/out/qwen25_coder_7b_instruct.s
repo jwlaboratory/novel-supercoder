@@ -1,0 +1,91 @@
+.endbr64
+pushq	%r13
+pushq	%r12
+pushq	%rbp
+pushq	%rbx
+subq	$48, %rsp
+movq	%rsp, %rbp
+movq	%rdi, %r12
+movq	%rsi, %r13
+xorl	%eax, %eax
+movl	$n, %esi
+jz	.L2
+.L3:
+addl	$1, %esi
+movl	%esi, $n
+.L2:
+movslq	%esi, %rsi
+shlq	$3, %rsi
+movq	%r12, %rdi
+addq	%r13, %rsi
+call	scanf@PLT
+cmpl	$-1, %eax
+jne	.L3
+movl	%n, %edx
+shrl	$31, %edx
+addl	%n, %edx
+sarq	%rdx
+testb	$1, %al
+jne	.L5
+movslq	%edx, %rcx
+movsd	(%r12), %xmm4
+movsd	0(%r13), %xmm5
+movl	$1, %edi
+addsd	(%r12,%rcx,8), %xmm4
+addsd	0(%r13,%rcx,8), %xmm5
+movsd	.LC3(%rip), %xmm1
+mulsd	%xmm1, %xmm4
+mulsd	%xmm1, %xmm5
+movsd	%xmm4, %X
+movsd	%xmm5, %Y
+cmpq	$3, %rdx
+jle	.L5
+movq	.LC4(%rip), %xmm3
+movl	$1, %edi
+xorl	%esi, %esi
+movq	.LC5(%rip), %xmm2
+addq	%r13, %rcx
+ jmp	.L8
+.L9:
+movsd	0(%r13,%rax,8), %xmm0
+addsd	(%rcx,%rax,8), %xmm0
+mulsd	%xmm1, %xmm0
+subsd	%Y, %xmm0
+andpd	%xmm3, %xmm0
+comisd	%xmm0, %xmm2
+jbe	.L22
+leal	1(%rax), %edi
+addq	$1, %rax
+movl	$1, %esi
+cmpq	%rax, %rdx
+jle	.L21
+.L8:
+movsd	(%r12,%rax,8), %xmm0
+addsd	(%rsi,%rax,8), %xmm0
+mulsd	%xmm1, %xmm0
+subsd	%X, %xmm0
+andpd	%xmm3, %xmm0
+comisd	%xmm0, %xmm2
+ja	.L9
+.L22:
+testb	%sil, %sil
+je	.L5
+.L21:
+movl	%edi, %i
+.L5:
+cmpq	%rdx, %i
+leaq	.LC1(%rip), %rax
+leaq	.LC0(%rip), %rdi
+movsd	%Y, %xmm1
+cmovne	%rax, %rdi
+movsd	%X, %xmm0
+movl	$2, %eax
+call	printf@PLT
+xorl	%edi, %edi
+call	exit@PLT
+movq	%rbp, %rsp
+popq	%rbx
+popq	%rbp
+popq	%r12
+popq	%r13
+ret

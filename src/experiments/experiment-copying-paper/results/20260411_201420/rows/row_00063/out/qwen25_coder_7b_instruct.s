@@ -1,0 +1,85 @@
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 24
+
+    lea rdi, [LC0]
+    call read_int
+    mov ebx, eax
+
+    xor ecx, ecx
+    cmp ebx, 1
+    jle .L2
+
+.L4:
+    mov eax, ebx
+    sar eax, 1
+    add ecx, 2
+    inc ebx
+    test eax, 1
+    jz .L4
+
+    mov edx, ecx
+    lea rsi, [LC1]
+    mov edi, 1
+    xor eax, eax
+    call printf
+
+.L8:
+    mov eax, ebx
+    sar eax, 1
+    inc ebx
+    cmp eax, ecx
+    je .L6
+
+    lea rsi, [LC2]
+    mov edi, 1
+    xor eax, eax
+    call printf
+
+    lea rsi, [LC2]
+    mov edi, 1
+    xor eax, eax
+    call printf
+
+    test eax, 1
+    jz .L8
+
+    mov eax, ebx
+    sar eax, 1
+    inc ebx
+    cmp eax, ecx
+    je .L6
+
+    lea rsi, [LC2]
+    mov edi, 1
+    xor eax, eax
+    call printf
+
+.L6:
+    mov rsp, rbp
+    pop rbp
+    ret
+
+.L2:
+    lea rsi, [LC1]
+    mov edi, 1
+    xor eax, eax
+    call printf
+    jmp .L6
+
+read_int:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 8
+
+    lea rdi, [rbp-4]
+    call scanf
+    mov eax, dword [rbp-4]
+
+    mov rsp, rbp
+    pop rbp
+    ret

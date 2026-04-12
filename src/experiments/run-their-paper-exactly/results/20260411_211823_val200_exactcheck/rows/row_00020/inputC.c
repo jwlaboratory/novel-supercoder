@@ -1,0 +1,30 @@
+```c
+#include <stdio.h>
+#define max(x, y) ((x)<(y) ? (y) : (x))
+#define min(x, y) ((x)>(y) ? (y) : (x))
+#define sqr(x) ((x)*(x))
+
+int main(){
+  int n;  scanf("%d", &n);
+  int a[105] = {0};
+  int mini = 200, maxi = -200;
+  for(int i=1; i<=n; i++){
+    scanf("%d", a+i);
+    mini = min(mini, a[i]);
+    maxi = max(maxi, a[i]);
+  }
+
+  long ans = 100000000;
+  for(int i=mini; i<=maxi; i++){
+    long sum = 0;
+    for(int j=1; j<=n; j++)
+      sum = sum + (long)(sqr(a[j]-i));
+    ans = min(ans, sum);
+    if(!ans)  break;
+  }
+
+  printf("%ld\n", ans);
+
+  return 0;
+}
+```

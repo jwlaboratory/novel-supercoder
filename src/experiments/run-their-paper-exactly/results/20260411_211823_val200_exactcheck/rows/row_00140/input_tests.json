@@ -1,0 +1,414 @@
+[
+  {
+    "input": "4\n4\n7\n",
+    "output": "28\n"
+  },
+  {
+    "input": "3\n6\n2\n",
+    "output": "9\n"
+  },
+  {
+    "input": "4\n8\n7\n",
+    "output": "42\n"
+  },
+  {
+    "input": "3\n10\n2\n",
+    "output": "13\n"
+  },
+  {
+    "input": "4\n8\n6\n",
+    "output": "36\n"
+  },
+  {
+    "input": "3\n10\n3\n",
+    "output": "19\n"
+  },
+  {
+    "input": "4\n9\n6\n",
+    "output": "39\n"
+  },
+  {
+    "input": "3\n12\n2\n",
+    "output": "15\n"
+  },
+  {
+    "input": "4\n5\n6\n",
+    "output": "27\n"
+  },
+  {
+    "input": "3\n2\n2\n",
+    "output": "5\n"
+  },
+  {
+    "input": "4\n5\n12\n",
+    "output": "54\n"
+  },
+  {
+    "input": "3\n1\n2\n",
+    "output": "4\n"
+  },
+  {
+    "input": "4\n5\n0\n",
+    "output": "0\n"
+  },
+  {
+    "input": "3\n2\n3\n",
+    "output": "7\n"
+  },
+  {
+    "input": "4\n5\n-1\n",
+    "output": "-4\n"
+  },
+  {
+    "input": "4\n4\n-1\n",
+    "output": "-4\n"
+  },
+  {
+    "input": "3\n0\n1\n",
+    "output": "1\n"
+  },
+  {
+    "input": "3\n0\n2\n",
+    "output": "3\n"
+  },
+  {
+    "input": "3\n-1\n2\n",
+    "output": "2\n"
+  },
+  {
+    "input": "4\n0\n-1\n",
+    "output": "-2\n"
+  },
+  {
+    "input": "4\n1\n-1\n",
+    "output": "-2\n"
+  },
+  {
+    "input": "3\n1\n3\n",
+    "output": "6\n"
+  },
+  {
+    "input": "4\n0\n4\n",
+    "output": "8\n"
+  },
+  {
+    "input": "3\n1\n-4\n",
+    "output": "-8\n"
+  },
+  {
+    "input": "3\n2\n-4\n",
+    "output": "-10\n"
+  },
+  {
+    "input": "3\n2\n-8\n",
+    "output": "-20\n"
+  },
+  {
+    "input": "3\n2\n-7\n",
+    "output": "-17\n"
+  },
+  {
+    "input": "3\n2\n-10\n",
+    "output": "-25\n"
+  },
+  {
+    "input": "3\n0\n-10\n",
+    "output": "-15\n"
+  },
+  {
+    "input": "3\n1\n-12\n",
+    "output": "-24\n"
+  },
+  {
+    "input": "3\n1\n-24\n",
+    "output": "-48\n"
+  },
+  {
+    "input": "3\n1\n-36\n",
+    "output": "-72\n"
+  },
+  {
+    "input": "3\n1\n-70\n",
+    "output": "-140\n"
+  },
+  {
+    "input": "3\n1\n-135\n",
+    "output": "-270\n"
+  },
+  {
+    "input": "3\n2\n-135\n",
+    "output": "-337\n"
+  },
+  {
+    "input": "3\n2\n-98\n",
+    "output": "-245\n"
+  },
+  {
+    "input": "3\n2\n-65\n",
+    "output": "-162\n"
+  },
+  {
+    "input": "3\n4\n-65\n",
+    "output": "-227\n"
+  },
+  {
+    "input": "3\n7\n-65\n",
+    "output": "-325\n"
+  },
+  {
+    "input": "4\n6\n4\n",
+    "output": "20\n"
+  },
+  {
+    "input": "3\n10\n-65\n",
+    "output": "-422\n"
+  },
+  {
+    "input": "4\n6\n6\n",
+    "output": "30\n"
+  },
+  {
+    "input": "3\n5\n-65\n",
+    "output": "-260\n"
+  },
+  {
+    "input": "3\n5\n-103\n",
+    "output": "-412\n"
+  },
+  {
+    "input": "3\n5\n-107\n",
+    "output": "-428\n"
+  },
+  {
+    "input": "3\n5\n-168\n",
+    "output": "-672\n"
+  },
+  {
+    "input": "3\n1\n-168\n",
+    "output": "-336\n"
+  },
+  {
+    "input": "4\n13\n2\n",
+    "output": "17\n"
+  },
+  {
+    "input": "3\n1\n-281\n",
+    "output": "-562\n"
+  },
+  {
+    "input": "4\n6\n2\n",
+    "output": "10\n"
+  },
+  {
+    "input": "3\n0\n-281\n",
+    "output": "-421\n"
+  },
+  {
+    "input": "3\n1\n-156\n",
+    "output": "-312\n"
+  },
+  {
+    "input": "4\n5\n-2\n",
+    "output": "-9\n"
+  },
+  {
+    "input": "3\n1\n-7\n",
+    "output": "-14\n"
+  },
+  {
+    "input": "3\n0\n-7\n",
+    "output": "-10\n"
+  },
+  {
+    "input": "3\n3\n-7\n",
+    "output": "-21\n"
+  },
+  {
+    "input": "3\n5\n-7\n",
+    "output": "-28\n"
+  },
+  {
+    "input": "4\n8\n-6\n",
+    "output": "-36\n"
+  },
+  {
+    "input": "4\n15\n-6\n",
+    "output": "-57\n"
+  },
+  {
+    "input": "4\n10\n-6\n",
+    "output": "-42\n"
+  },
+  {
+    "input": "4\n10\n-8\n",
+    "output": "-56\n"
+  },
+  {
+    "input": "4\n10\n-5\n",
+    "output": "-35\n"
+  },
+  {
+    "input": "4\n10\n-10\n",
+    "output": "-70\n"
+  },
+  {
+    "input": "3\n-1\n-1\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "4\n2\n-10\n",
+    "output": "-30\n"
+  },
+  {
+    "input": "3\n0\n-4\n",
+    "output": "-6\n"
+  },
+  {
+    "input": "4\n2\n-4\n",
+    "output": "-12\n"
+  },
+  {
+    "input": "4\n0\n-11\n",
+    "output": "-22\n"
+  },
+  {
+    "input": "4\n-1\n-11\n",
+    "output": "-16\n"
+  },
+  {
+    "input": "3\n5\n-4\n",
+    "output": "-16\n"
+  },
+  {
+    "input": "4\n-27\n-1\n",
+    "output": "11\n"
+  },
+  {
+    "input": "3\n-12\n7\n",
+    "output": "-31\n"
+  },
+  {
+    "input": "4\n-44\n-2\n",
+    "output": "40\n"
+  },
+  {
+    "input": "3\n0\n8\n",
+    "output": "12\n"
+  },
+  {
+    "input": "3\n-1\n29\n",
+    "output": "29\n"
+  },
+  {
+    "input": "4\n-109\n1\n",
+    "output": "-52\n"
+  },
+  {
+    "input": "3\n0\n29\n",
+    "output": "43\n"
+  },
+  {
+    "input": "3\n1\n29\n",
+    "output": "58\n"
+  },
+  {
+    "input": "3\n-2\n29\n",
+    "output": "14\n"
+  },
+  {
+    "input": "4\n-144\n3\n",
+    "output": "-210\n"
+  },
+  {
+    "input": "4\n-92\n3\n",
+    "output": "-132\n"
+  },
+  {
+    "input": "4\n-68\n-1\n",
+    "output": "32\n"
+  },
+  {
+    "input": "4\n-52\n-1\n",
+    "output": "24\n"
+  },
+  {
+    "input": "3\n-36\n-1\n",
+    "output": "16\n"
+  },
+  {
+    "input": "3\n-36\n-2\n",
+    "output": "33\n"
+  },
+  {
+    "input": "3\n-65\n-2\n",
+    "output": "62\n"
+  },
+  {
+    "input": "3\n-86\n-2\n",
+    "output": "83\n"
+  },
+  {
+    "input": "4\n-5\n14\n",
+    "output": "-7\n"
+  },
+  {
+    "input": "4\n-12\n17\n",
+    "output": "-68\n"
+  },
+  {
+    "input": "4\n-19\n17\n",
+    "output": "-127\n"
+  },
+  {
+    "input": "4\n-38\n17\n",
+    "output": "-289\n"
+  },
+  {
+    "input": "4\n-38\n22\n",
+    "output": "-374\n"
+  },
+  {
+    "input": "3\n2\n-5\n",
+    "output": "-12\n"
+  },
+  {
+    "input": "4\n-38\n14\n",
+    "output": "-238\n"
+  },
+  {
+    "input": "4\n-51\n14\n",
+    "output": "-329\n"
+  },
+  {
+    "input": "4\n-1\n14\n",
+    "output": "21\n"
+  },
+  {
+    "input": "3\n0\n17\n",
+    "output": "25\n"
+  },
+  {
+    "input": "3\n0\n12\n",
+    "output": "18\n"
+  },
+  {
+    "input": "3\n0\n15\n",
+    "output": "22\n"
+  },
+  {
+    "input": "3\n1\n17\n",
+    "output": "34\n"
+  },
+  {
+    "input": "4\n4\n4\n",
+    "output": "16\n"
+  },
+  {
+    "input": "3\n4\n2\n",
+    "output": "7\n"
+  },
+  {
+    "input": "3\n4\n2\n",
+    "output": "7\n"
+  }
+]

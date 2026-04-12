@@ -1,0 +1,114 @@
+```assembly
+	.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"No"
+.LC1:
+	.string	"Yes"
+.LC2:
+	.string	"%d"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	leaq	.LC2(%rip), %rbx
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 48
+	movl	%edi, 12(%rsp)
+	leaq	12(%rsp), %rbp
+	jmp	.L3
+.L7:
+	movl	i(%rip), %eax
+	leal	1(%rax), %edx
+	movl	%edx, i(%rip)
+	testl	%eax, %eax
+	jne	.L14
+.L3:
+	xorl	%eax, %eax
+	movq	%rbp, %rsi
+	movq	%rbx, %rdi
+	call	scanf@PLT
+	cmpl	$-1, %eax
+	jne	.L7
+	cmpl	$1, y(%rip)
+	leaq	.LC0(%rip), %rdi
+	sbbl	%eax, %eax
+	cmpl	z(%rip), %eax
+	leaq	.LC1(%rip), %rax
+	cmovle	%rax, %rdi
+	call	puts@PLT
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L14:
+	movl	12(%rsp), %eax
+	testb	$1, %al
+	jne	.L15
+	testb	$3, %al
+	je	.L6
+	addl	$1, y(%rip)
+	jmp	.L3
+.L15:
+	subl	$1, z(%rip)
+	jmp	.L3
+.L6:
+	addl	$1, z(%rip)
+	jmp	.L3
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	z
+	.bss
+	.align 4
+	.type	z, @object
+	.size	z, 4
+z:
+	.zero	4
+	.globl	y
+	.align 4
+	.type	y, @object
+	.size	y, 4
+y:
+	.zero	4
+	.globl	i
+	.align 4
+	.type	i, @object
+	.size	i, 4
+i:
+	.zero	4
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```

@@ -1,0 +1,23 @@
+```c
+#include <stdio.h>
+
+int		main(void)
+{
+	int N, Y;
+	int	i, j;
+
+	scanf("%d%d", &N, &Y);
+	for (i = 0; i <= N; i++)
+	{
+		for (j = 0; j <= N - i; j++)
+		{
+			if (10000 * i + 5000 * j + (N - i - j) * 1000 == Y)
+			{
+				printf("%d %d %d\n", i , j , N - i - j);
+				return (0);
+			}
+		}
+	}
+	printf("%d %d %d\n", -1, -1, -1);
+	return (0);
+}```

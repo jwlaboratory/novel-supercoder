@@ -1,0 +1,6 @@
+[
+  {
+    "input": "3 12\n5 sogo5gokan\n10 sogo10gokan\n15 sogo15gokan\n",
+    "output": "sogo10gokan\n"
+  }
+]

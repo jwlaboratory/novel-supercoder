@@ -1,0 +1,20 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int a[1000000];
+
+int main () {
+    int n, A;
+    scanf("%d",&n);
+    for(int i=2;i<=n;i++) {
+        scanf("%d",&A);
+        a[A]+=1;
+    }
+    for(int i=1;i<=n;i++) printf("%d\n",a[i]);
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

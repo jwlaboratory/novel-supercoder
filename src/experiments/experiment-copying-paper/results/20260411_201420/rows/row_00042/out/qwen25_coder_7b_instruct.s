@@ -1,0 +1,21 @@
+section .text
+global main
+extern __isoc99_scanf, __printf_chk, __stack_chk_fail
+
+main:
+    endbr64
+    push rbp
+    mov rbp, rsp
+    sub rsp, 48
+    xor eax, eax
+    call __isoc99_scanf
+    mov rcx, rdi
+    lea rdx, [rsp+16]
+    call __isoc99_scanf
+    mov rsi, rsp
+    lea rdi, [rsp+24]
+    xor eax, eax
+    call __printf_chk
+    mov rdi, rsp
+    xor eax, eax
+    ret

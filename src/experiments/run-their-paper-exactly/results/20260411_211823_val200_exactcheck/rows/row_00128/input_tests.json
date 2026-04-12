@@ -1,0 +1,418 @@
+[
+  {
+    "input": "123\n123\n161\n123\n123\n",
+    "output": "681"
+  },
+  {
+    "input": "29\n20\n13\n35\n120\n",
+    "output": "223"
+  },
+  {
+    "input": "101\n86\n119\n108\n92\n",
+    "output": "521"
+  },
+  {
+    "input": "123\n123\n161\n123\n163\n",
+    "output": "721"
+  },
+  {
+    "input": "29\n20\n9\n35\n120\n",
+    "output": "215"
+  },
+  {
+    "input": "101\n86\n119\n125\n92\n",
+    "output": "541"
+  },
+  {
+    "input": "123\n123\n161\n123\n263\n",
+    "output": "821"
+  },
+  {
+    "input": "29\n20\n4\n35\n120\n",
+    "output": "214"
+  },
+  {
+    "input": "101\n26\n119\n125\n92\n",
+    "output": "481"
+  },
+  {
+    "input": "123\n123\n40\n123\n263\n",
+    "output": "693"
+  },
+  {
+    "input": "29\n20\n4\n18\n120\n",
+    "output": "194"
+  },
+  {
+    "input": "101\n26\n119\n125\n53\n",
+    "output": "441"
+  },
+  {
+    "input": "123\n118\n40\n123\n263\n",
+    "output": "683"
+  },
+  {
+    "input": "29\n20\n4\n52\n120\n",
+    "output": "232"
+  },
+  {
+    "input": "123\n118\n40\n123\n461\n",
+    "output": "881"
+  },
+  {
+    "input": "29\n20\n4\n52\n96\n",
+    "output": "212"
+  },
+  {
+    "input": "101\n28\n141\n125\n53\n",
+    "output": "471"
+  },
+  {
+    "input": "29\n20\n4\n52\n89\n",
+    "output": "202"
+  },
+  {
+    "input": "123\n114\n40\n95\n461\n",
+    "output": "851"
+  },
+  {
+    "input": "123\n96\n40\n95\n461\n",
+    "output": "831"
+  },
+  {
+    "input": "101\n30\n142\n212\n53\n",
+    "output": "561"
+  },
+  {
+    "input": "123\n96\n8\n95\n461\n",
+    "output": "801"
+  },
+  {
+    "input": "29\n20\n2\n52\n48\n",
+    "output": "162"
+  },
+  {
+    "input": "101\n6\n142\n92\n53\n",
+    "output": "421"
+  },
+  {
+    "input": "123\n96\n0\n95\n461\n",
+    "output": "791"
+  },
+  {
+    "input": "101\n6\n142\n162\n53\n",
+    "output": "491"
+  },
+  {
+    "input": "29\n20\n4\n60\n49\n",
+    "output": "164"
+  },
+  {
+    "input": "101\n6\n142\n60\n53\n",
+    "output": "381"
+  },
+  {
+    "input": "123\n96\n2\n95\n105\n",
+    "output": "442"
+  },
+  {
+    "input": "29\n20\n6\n60\n49\n",
+    "output": "166"
+  },
+  {
+    "input": "101\n6\n140\n60\n53\n",
+    "output": "371"
+  },
+  {
+    "input": "123\n96\n0\n95\n105\n",
+    "output": "433"
+  },
+  {
+    "input": "29\n29\n6\n60\n49\n",
+    "output": "176"
+  },
+  {
+    "input": "101\n6\n140\n60\n23\n",
+    "output": "341"
+  },
+  {
+    "input": "123\n96\n0\n95\n183\n",
+    "output": "513"
+  },
+  {
+    "input": "29\n29\n11\n60\n49\n",
+    "output": "181"
+  },
+  {
+    "input": "101\n6\n140\n60\n36\n",
+    "output": "351"
+  },
+  {
+    "input": "123\n96\n0\n173\n183\n",
+    "output": "593"
+  },
+  {
+    "input": "29\n29\n11\n60\n11\n",
+    "output": "151"
+  },
+  {
+    "input": "101\n6\n140\n65\n36\n",
+    "output": "361"
+  },
+  {
+    "input": "123\n96\n0\n173\n122\n",
+    "output": "532"
+  },
+  {
+    "input": "101\n6\n22\n65\n36\n",
+    "output": "251"
+  },
+  {
+    "input": "123\n96\n0\n230\n122\n",
+    "output": "582"
+  },
+  {
+    "input": "29\n29\n31\n60\n11\n",
+    "output": "171"
+  },
+  {
+    "input": "101\n6\n22\n79\n36\n",
+    "output": "261"
+  },
+  {
+    "input": "29\n29\n31\n85\n11\n",
+    "output": "201"
+  },
+  {
+    "input": "123\n96\n-1\n449\n122\n",
+    "output": "809"
+  },
+  {
+    "input": "29\n40\n31\n85\n11\n",
+    "output": "211"
+  },
+  {
+    "input": "29\n44\n31\n85\n11\n",
+    "output": "221"
+  },
+  {
+    "input": "29\n52\n31\n85\n11\n",
+    "output": "231"
+  },
+  {
+    "input": "123\n96\n0\n219\n122\n",
+    "output": "572"
+  },
+  {
+    "input": "29\n52\n31\n95\n11\n",
+    "output": "241"
+  },
+  {
+    "input": "123\n96\n1\n219\n122\n",
+    "output": "581"
+  },
+  {
+    "input": "101\n3\n43\n79\n38\n",
+    "output": "281"
+  },
+  {
+    "input": "123\n96\n1\n233\n122\n",
+    "output": "601"
+  },
+  {
+    "input": "123\n96\n0\n233\n122\n",
+    "output": "592"
+  },
+  {
+    "input": "123\n96\n0\n267\n122\n",
+    "output": "622"
+  },
+  {
+    "input": "29\n33\n32\n58\n15\n",
+    "output": "182"
+  },
+  {
+    "input": "123\n57\n0\n442\n122\n",
+    "output": "762"
+  },
+  {
+    "input": "123\n111\n0\n600\n122\n",
+    "output": "971"
+  },
+  {
+    "input": "29\n33\n8\n79\n15\n",
+    "output": "173"
+  },
+  {
+    "input": "123\n101\n0\n600\n122\n",
+    "output": "961"
+  },
+  {
+    "input": "29\n2\n8\n79\n15\n",
+    "output": "142"
+  },
+  {
+    "input": "29\n2\n8\n79\n26\n",
+    "output": "152"
+  },
+  {
+    "input": "29\n0\n8\n79\n26\n",
+    "output": "146"
+  },
+  {
+    "input": "29\n0\n8\n79\n49\n",
+    "output": "168"
+  },
+  {
+    "input": "123\n111\n-1\n856\n36\n",
+    "output": "1149"
+  },
+  {
+    "input": "123\n111\n-1\n856\n41\n",
+    "output": "1159"
+  },
+  {
+    "input": "29\n0\n8\n65\n22\n",
+    "output": "132"
+  },
+  {
+    "input": "29\n0\n8\n5\n22\n",
+    "output": "72"
+  },
+  {
+    "input": "123\n110\n-1\n856\n29\n",
+    "output": "1129"
+  },
+  {
+    "input": "29\n0\n8\n5\n11\n",
+    "output": "61"
+  },
+  {
+    "input": "101\n10\n1\n288\n17\n",
+    "output": "431"
+  },
+  {
+    "input": "123\n110\n-1\n940\n29\n",
+    "output": "1209"
+  },
+  {
+    "input": "101\n10\n1\n468\n17\n",
+    "output": "611"
+  },
+  {
+    "input": "123\n110\n-1\n940\n19\n",
+    "output": "1199"
+  },
+  {
+    "input": "29\n1\n8\n9\n11\n",
+    "output": "71"
+  },
+  {
+    "input": "101\n15\n1\n468\n17\n",
+    "output": "621"
+  },
+  {
+    "input": "123\n110\n0\n940\n2\n",
+    "output": "1182"
+  },
+  {
+    "input": "29\n0\n8\n10\n2\n",
+    "output": "52"
+  },
+  {
+    "input": "101\n8\n1\n576\n4\n",
+    "output": "711"
+  },
+  {
+    "input": "123\n100\n0\n940\n2\n",
+    "output": "1172"
+  },
+  {
+    "input": "29\n0\n8\n17\n2\n",
+    "output": "62"
+  },
+  {
+    "input": "101\n8\n1\n1055\n4\n",
+    "output": "1191"
+  },
+  {
+    "input": "101\n8\n1\n320\n4\n",
+    "output": "451"
+  },
+  {
+    "input": "123\n111\n1\n940\n2\n",
+    "output": "1201"
+  },
+  {
+    "input": "29\n-1\n8\n17\n3\n",
+    "output": "69"
+  },
+  {
+    "input": "29\n-1\n8\n0\n3\n",
+    "output": "49"
+  },
+  {
+    "input": "101\n13\n1\n316\n4\n",
+    "output": "461"
+  },
+  {
+    "input": "123\n101\n1\n52\n2\n",
+    "output": "311"
+  },
+  {
+    "input": "101\n13\n1\n596\n4\n",
+    "output": "741"
+  },
+  {
+    "input": "123\n111\n1\n52\n2\n",
+    "output": "321"
+  },
+  {
+    "input": "29\n0\n2\n-1\n3\n",
+    "output": "49"
+  },
+  {
+    "input": "123\n101\n0\n52\n2\n",
+    "output": "301"
+  },
+  {
+    "input": "29\n0\n2\n-1\n0\n",
+    "output": "39"
+  },
+  {
+    "input": "101\n13\n4\n1178\n4\n",
+    "output": "1321"
+  },
+  {
+    "input": "123\n100\n0\n52\n3\n",
+    "output": "292"
+  },
+  {
+    "input": "29\n0\n3\n-1\n0\n",
+    "output": "39"
+  },
+  {
+    "input": "101\n26\n4\n239\n5\n",
+    "output": "391"
+  },
+  {
+    "input": "29\n-1\n3\n-4\n1\n",
+    "output": "56"
+  },
+  {
+    "input": "123\n123\n123\n123\n123\n",
+    "output": "643"
+  },
+  {
+    "input": "29\n20\n7\n35\n120\n",
+    "output": "215"
+  },
+  {
+    "input": "101\n86\n119\n108\n57\n",
+    "output": "481"
+  },
+  {
+    "input": "29\n20\n7\n35\n120\n",
+    "output": "215"
+  }
+]

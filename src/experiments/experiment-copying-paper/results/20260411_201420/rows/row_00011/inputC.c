@@ -1,0 +1,27 @@
+```c
+#include<stdio.h>
+int main()
+{
+
+    char a[11],b[11],c[11];
+    int x , y, t;
+
+    scanf("%s",a);
+    scanf("%s",b);
+    scanf("%s",c);
+
+    x=strlen(a)-1;
+    y=strlen(b)-1;
+    t=strlen(c)-1;
+
+        if((a[x]==b[0])&&(b[y]==c[0]))
+        {
+            printf("YES\n");
+        }
+        else
+        {
+            printf("NO\n");
+        }
+
+    return 0;
+}```

@@ -1,0 +1,127 @@
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 48
+
+    lea rdi, [rbp-24]
+    call read_longlong
+    mov rcx, rax
+
+    lea rsi, [rbp-48]
+    mov rdx, rcx
+    shl rdx, 3
+    add rdx, 48
+    sub rsp, rdx
+
+    xor eax, eax
+    mov rdi, rsp
+    call allocate_memory
+
+    lea rsi, [rbp-24]
+    call read_array
+    lea rsi, [rbp-48]
+    call process_array
+
+    lea rsi, [rbp-48]
+    call print_array
+
+    mov rsp, rbp
+    pop rbp
+    ret
+
+read_longlong:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 8
+    mov rdi, [rbp+16]
+    call __isoc99_scanf
+    mov rax, [rbp+16]
+    leave
+    ret
+
+allocate_memory:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 8
+    mov rdi, rsi
+    call malloc
+    mov rax, rdi
+    leave
+    ret
+
+read_array:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov rdi, rsi
+    mov rsi, [rbp+16]
+    mov ecx, [rbp+20]
+    xor eax, eax
+    lea rdx, [rbp-8]
+    mov [rdx], eax
+.read_loop:
+    cmp ecx, [rdx]
+    jge .end_read_loop
+    mov rax, [rdi]
+    add rdi, 8
+    mov [rsi], rax
+    inc dword [rdx]
+    jmp .read_loop
+.end_read_loop:
+    leave
+    ret
+
+process_array:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov rdi, rsi
+    mov rsi, [rbp+16]
+    mov ecx, [rbp+20]
+    xor eax, eax
+    lea rdx, [rbp-8]
+    mov [rdx], eax
+.process_loop:
+    cmp ecx, [rdx]
+    jge .end_process_loop
+    mov rax, [rsi]
+    add rsi, 8
+    imul rax, 2
+    sub rax, [rdi]
+    mov [rdi], rax
+    inc dword [rdx]
+    jmp .process_loop
+.end_process_loop:
+    leave
+    ret
+
+print_array:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov rdi, rsi
+    mov rsi, [rbp+16]
+    mov ecx, [rbp+20]
+    xor eax, eax
+    lea rdx, [rbp-8]
+    mov [rdx], eax
+.print_loop:
+    cmp ecx, [rdx]
+    jge .end_print_loop
+    mov rax, [rsi]
+    add rsi, 8
+    imul rax, 2
+    sub rax, [rdi]
+    mov [rdi], rax
+    mov rdi, rax
+    mov rsi, [rbp+24]
+    xor eax, eax
+    call printf
+    inc dword [rdx]
+    jmp .print_loop
+.end_print_loop:
+    leave
+    ret

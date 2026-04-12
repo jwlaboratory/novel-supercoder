@@ -1,0 +1,70 @@
+.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$24, %rsp
+	leaq	.LC0(%rip), %rdi
+	movl	%rsp, %esi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	testl	%eax, %eax
+	jle	.L2
+	movl	$1, %ebp
+	leaq	4(%rsp), %r14
+.L3:
+	movq	%r14, %rsi
+	movq	%r13, %rdi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	addl	%eax, %r12d
+	cmpl	%eax, %ebx
+	cmovl	%eax, %ebx
+	addl	$1, %ebp
+	cmpl	%ebp, (%rsp)
+	jge	.L3
+.L2:
+	subl	%ebx, %r12d
+	sarl	%ebx
+	xorl	%eax, %eax
+	leal	(%r12,%rbx), %edx
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movl	%eax, %edi
+	call	__exit@PLT
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

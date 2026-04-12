@@ -1,0 +1,14 @@
+section .text
+global main
+main:
+    sub rsp, 40
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    cmp dword [rsp+20], 1
+    sete al
+    xor eax, eax
+    movzx eax, al
+    lea rdi, [LC1]
+    call printf
+    add rsp, 40
+    ret

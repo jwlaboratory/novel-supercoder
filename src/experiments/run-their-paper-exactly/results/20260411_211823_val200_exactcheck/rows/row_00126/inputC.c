@@ -1,0 +1,28 @@
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int compare_int(const void *a, const void *b){
+    return *(int*)a - *(int*)b;
+}
+
+int main(){
+    int n, x, cnt=0, a[100]={0};
+    long long sum=0;
+
+    scanf("%d%d", &n, &x);
+    for(int i=0; i<n; i++){ scanf("%d", &a[i]); sum+=a[i]; }
+
+  	//お菓子の方が多い -> 1人犠牲になってもらう
+    if( x > sum ){ printf("%d\n", n-1); return 0; }
+  	
+  	//お菓子の方が少ない -> 少ない人から順に配る
+    qsort( a, n, sizeof(int), compare_int );
+  	for(int i=0; i<n; i++){
+     	x -= a[i];
+      	if	   ( x >  0 ){ cnt++; }
+      	else if( x == 0 ){ printf("%d\n", i+1);	return 0; }	//ぴったり配りきった
+      	else			 { printf("%d\n", cnt); return 0; }	//お菓子が足りなかった
+    }
+  	return 0;
+}```

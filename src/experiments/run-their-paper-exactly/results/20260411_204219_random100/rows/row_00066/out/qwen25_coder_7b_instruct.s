@@ -1,0 +1,66 @@
+section .text
+global main
+extern __isoc99_scanf
+extern __printf_chk
+extern __stack_chk_fail
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 48
+    xor eax, eax
+    lea rdi, [rbp-4]
+    call __isoc99_scanf
+    cmp esi, 0
+    jle .L2
+    lea rbx, [A]
+    xor ebp, ebp
+    lea r13, [LC1]
+    lea r12, [tmp]
+.L3:
+    mov rsi, rbx
+    mov rdi, r13
+    xor eax, eax
+    add ebp, 1
+    call __isoc99_scanf
+    movslq eax, [rbx]
+    add rbx, 4
+    add dword [r12+rax*4], 1
+    cmp ebp, [rbp-4]
+    jg .L3
+.L2:
+    lea rax, [tmp]
+    pxor xmm0, xmm0
+    lea rdx, [rax+400016]
+.L4:
+    movdqa xmm1, [rax]
+    add rax, 16
+    pcmpgtd xmm2, xmm1
+    psubd xmm1, xmm0
+    cmp rax, rdx
+    jne .L4
+    movdqa xmm1, xmm0
+    mov ecx, [rax+400016]
+    xor eax, eax
+    psrldq $8, xmm1
+    paddd xmm0, xmm1
+    test ecx, ecx
+    movdqa xmm1, xmm0
+    setg al
+    psrldq $4, xmm1
+    paddd xmm0, xmm1
+    mov edx, eax
+    add eax, dl
+    test byte dl, 1
+    jne .L14
+    sub eax, 1
+.L14:
+    lea rsi, [LC2]
+    mov edi, 1
+    xor eax, eax
+    call __printf_chk
+    jmp .L9
+.L9:
+    mov rsp, rbp
+    pop rbp
+    ret

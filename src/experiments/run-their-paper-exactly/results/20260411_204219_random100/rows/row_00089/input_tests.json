@@ -1,0 +1,410 @@
+[
+  {
+    "input": "10 30 10\n0\nnobiro\nnobiro\ntidime\n",
+    "output": "10\n"
+  },
+  {
+    "input": "18 30 10\n0\nnobiro\nnobiro\ntidime\n",
+    "output": "18\n"
+  },
+  {
+    "input": "15 30 9\n0\nnoairo\noribon\nmidite\n",
+    "output": "15\n"
+  },
+  {
+    "input": "23 30 9\n0\nnoairo\noribon\nmidite\n",
+    "output": "23\n"
+  },
+  {
+    "input": "44 30 5\n0\nnoairo\nnobiro\ntidime\n",
+    "output": "44\n"
+  },
+  {
+    "input": "59 30 5\n0\noriaon\nnobiro\ntieimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "83 48 5\n0\norioan\nnobiro\ndmifit\n",
+    "output": "83\n"
+  },
+  {
+    "input": "31 48 5\n0\norioan\nnobiro\ndmifit\n",
+    "output": "31\n"
+  },
+  {
+    "input": "19 48 5\n0\norioan\nnnciro\ndmifit\n",
+    "output": "19\n"
+  },
+  {
+    "input": "8 48 5\n0\norioan\nnnciro\ndmifit\n",
+    "output": "8\n"
+  },
+  {
+    "input": "7 48 5\n0\norioan\nnncior\ndmifit\n",
+    "output": "7\n"
+  },
+  {
+    "input": "9 30 9\n0\nnoairo\noribon\nmidite\n",
+    "output": "9\n"
+  },
+  {
+    "input": "24 30 5\n0\nnoairo\nnobiro\ntidime\n",
+    "output": "24\n"
+  },
+  {
+    "input": "4 30 5\n0\nnoairo\nnobiro\ntieimd\n",
+    "output": "4\n"
+  },
+  {
+    "input": "37 48 5\n0\norioan\nnnciro\ndmifit\n",
+    "output": "37\n"
+  },
+  {
+    "input": "13 48 5\n0\norioan\nnncior\ndmifit\n",
+    "output": "13\n"
+  },
+  {
+    "input": "3 30 5\n0\nnoairo\nnobiro\ntidime\n",
+    "output": "3\n"
+  },
+  {
+    "input": "109 30 5\n0\norioan\nnobiro\nuifimd\n",
+    "output": "109\n"
+  },
+  {
+    "input": "45 48 5\n0\norioan\nnmbiro\ndmifit\n",
+    "output": "45\n"
+  },
+  {
+    "input": "5 48 5\n0\norioan\nnncios\ndmifiu\n",
+    "output": "5\n"
+  },
+  {
+    "input": "112 30 9\n0\norioan\nniboro\ntieimd\n",
+    "output": "112\n"
+  },
+  {
+    "input": "0 30 19\n0\noricon\nnobiro\ntidime\n",
+    "output": "0\n"
+  },
+  {
+    "input": "29 50 9\n0\noribon\noriobn\ntidimd\n",
+    "output": "29\n"
+  },
+  {
+    "input": "36 30 6\n0\nnoairo\nnobiqo\nmidise\n",
+    "output": "36\n"
+  },
+  {
+    "input": "30 30 8\n0\nori`on\nnobiro\ndmieit\n",
+    "output": "30\n"
+  },
+  {
+    "input": "25 9 5\n0\norioan\nnobiro\nuifimd\n",
+    "output": "25\n"
+  },
+  {
+    "input": "11 48 9\n0\norioan\nniboro\ndmifit\n",
+    "output": "11\n"
+  },
+  {
+    "input": "41 48 5\n0\norioan\nonciro\ndmifiu\n",
+    "output": "41\n"
+  },
+  {
+    "input": "1 41 1\n0\norioan\nnncior\ndmifit\n",
+    "output": "1\n"
+  },
+  {
+    "input": "51 30 6\n0\nnoairo\nnobiqo\nmidise\n",
+    "output": "51\n"
+  },
+  {
+    "input": "42 69 5\n0\norio`n\nnmbiro\ndmifit\n",
+    "output": "42\n"
+  },
+  {
+    "input": "12 82 8\n0\norioan\nnnciro\ndmifis\n",
+    "output": "12\n"
+  },
+  {
+    "input": "46 47 0\n0\nnoairo\nnobiro\nsidine\n",
+    "output": "46\n"
+  },
+  {
+    "input": "-1 30 0\n0\noricon\nnboiro\ntidime\n",
+    "output": "-1\n"
+  },
+  {
+    "input": "57 48 5\n0\nnaoiro\nnorjbn\ntigimd\n",
+    "output": "57\n"
+  },
+  {
+    "input": "75 85 5\n0\nnaoiro\nosnboi\nemieit\n",
+    "output": "75\n"
+  },
+  {
+    "input": "2 45 10\n1\nnobiro\nnrojob\nthdile\n",
+    "output": "47\n"
+  },
+  {
+    "input": "2 45 10\n0\nnobiro\nnrojob\nthdile\n",
+    "output": "2\n"
+  },
+  {
+    "input": "21 108 8\n0\nnaoiro\nnnciso\ndmifit\n",
+    "output": "21\n"
+  },
+  {
+    "input": "32 4 1\n0\nnobhro\nnobiro\ndmidis\n",
+    "output": "32\n"
+  },
+  {
+    "input": "63 26 8\n0\noriapn\norjnob\nuifimd\n",
+    "output": "63\n"
+  },
+  {
+    "input": "84 122 10\n0\noobrjn\nonciro\nudfimi\n",
+    "output": "84\n"
+  },
+  {
+    "input": "17 122 12\n0\nnjrbop\nnndiro\nudfimi\n",
+    "output": "17\n"
+  },
+  {
+    "input": "20 122 12\n0\nnjrbop\nnndiro\nudfimi\n",
+    "output": "20\n"
+  },
+  {
+    "input": "11 30 10\n3\nnobiro\nnobiro\ntidime\n",
+    "output": "81\n"
+  },
+  {
+    "input": "34 30 9\n0\nnoairo\nnobiro\nmidite\n",
+    "output": "34\n"
+  },
+  {
+    "input": "6 48 5\n0\norioan\nnncior\ndmifit\n",
+    "output": "6\n"
+  },
+  {
+    "input": "35 30 19\n0\noribon\nnobiro\ntidime\n",
+    "output": "35\n"
+  },
+  {
+    "input": "14 30 9\n0\noribon\noribon\ntidimd\n",
+    "output": "14\n"
+  },
+  {
+    "input": "61 30 9\n0\norioan\nniboro\ntieimd\n",
+    "output": "61\n"
+  },
+  {
+    "input": "80 33 10\n0\norioan\nnobiro\ntifimd\n",
+    "output": "80\n"
+  },
+  {
+    "input": "55 48 5\n0\norioan\nnobirn\ndmigit\n",
+    "output": "55\n"
+  },
+  {
+    "input": "16 30 4\n0\nnoairo\noribon\nmiditd\n",
+    "output": "16\n"
+  },
+  {
+    "input": "101 27 5\n0\norioan\nniboro\ntiiemd\n",
+    "output": "101\n"
+  },
+  {
+    "input": "85 85 4\n0\nnaoiro\nosnboi\nemieit\n",
+    "output": "85\n"
+  },
+  {
+    "input": "113 33 8\n0\noripan\nbonjro\nuifimd\n",
+    "output": "113\n"
+  },
+  {
+    "input": "74 64 5\n0\noobrjn\nonciro\nimdfiu\n",
+    "output": "74\n"
+  },
+  {
+    "input": "50 0 4\n0\nanohro\nnobiro\nuieimd\n",
+    "output": "50\n"
+  },
+  {
+    "input": "43 91 5\n0\noobrjn\nonciro\nimdfiu\n",
+    "output": "43\n"
+  },
+  {
+    "input": "73 122 10\n0\noobrjn\nonciro\nimifdu\n",
+    "output": "73\n"
+  },
+  {
+    "input": "18 30 19\n0\nnobiro\nnobiro\ntidime\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 10\n0\nnobiro\nnobiro\ntidimd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 10\n0\nnobiro\noribon\ntidimd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 9\n0\nnobiro\noribon\ntidimd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 9\n0\nnoairo\noribon\ntidimd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 9\n0\nnoairo\noribon\nmiditd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 9\n0\nnoairo\noribon\nmidite\n",
+    "output": "18\n"
+  },
+  {
+    "input": "23 30 9\n0\nnoairo\nnobiro\nmidite\n",
+    "output": "23\n"
+  },
+  {
+    "input": "23 30 3\n0\nnoairo\nnobiro\nmidite\n",
+    "output": "23\n"
+  },
+  {
+    "input": "23 30 3\n0\nnoairo\nnobiro\ntidime\n",
+    "output": "23\n"
+  },
+  {
+    "input": "23 30 5\n0\nnoairo\nnobiro\ntidime\n",
+    "output": "23\n"
+  },
+  {
+    "input": "44 30 5\n0\nnoairo\nnobiro\ntieimd\n",
+    "output": "44\n"
+  },
+  {
+    "input": "44 30 5\n0\noriaon\nnobiro\ntieimd\n",
+    "output": "44\n"
+  },
+  {
+    "input": "59 30 5\n0\norioan\nnobiro\ntieimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "59 30 5\n0\norioan\nnobiro\ntifimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "59 48 5\n0\norioan\nnobiro\ntifimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "59 48 5\n0\norioan\nnobiro\ndmifit\n",
+    "output": "59\n"
+  },
+  {
+    "input": "31 48 5\n0\norioan\nnnbiro\ndmifit\n",
+    "output": "31\n"
+  },
+  {
+    "input": "31 48 5\n0\norioan\nnnciro\ndmifit\n",
+    "output": "31\n"
+  },
+  {
+    "input": "8 48 5\n0\norioan\nnncior\ndmifit\n",
+    "output": "8\n"
+  },
+  {
+    "input": "7 48 5\n0\norioan\nnncios\ndmifit\n",
+    "output": "7\n"
+  },
+  {
+    "input": "10 30 10\n0\nnobiro\nnrbioo\ntidime\n",
+    "output": "10\n"
+  },
+  {
+    "input": "18 30 9\n0\nnobiro\nnobiro\ntidime\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 19\n0\noribon\nnobiro\ntidime\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 0\n0\nnobiro\nnobiro\ntidimd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 9\n0\noribon\noribon\ntidimd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 9\n0\nnoairo\noribon\ntidind\n",
+    "output": "18\n"
+  },
+  {
+    "input": "18 30 3\n0\nnoairo\noribon\nmiditd\n",
+    "output": "18\n"
+  },
+  {
+    "input": "15 30 9\n0\nmoairo\noribon\nmidite\n",
+    "output": "15\n"
+  },
+  {
+    "input": "23 30 9\n0\nnoairo\noribnn\nmidite\n",
+    "output": "23\n"
+  },
+  {
+    "input": "23 48 9\n0\nnoairo\nnobiro\nmidite\n",
+    "output": "23\n"
+  },
+  {
+    "input": "23 30 6\n0\nnoairo\nnobiro\nmidite\n",
+    "output": "23\n"
+  },
+  {
+    "input": "23 47 3\n0\nnoairo\nnobiro\ntidime\n",
+    "output": "23\n"
+  },
+  {
+    "input": "44 58 5\n0\nnoairo\nnobiro\ntidime\n",
+    "output": "44\n"
+  },
+  {
+    "input": "44 30 5\n0\noriaon\nnobiro\niteimd\n",
+    "output": "44\n"
+  },
+  {
+    "input": "59 30 8\n0\noriaon\nnobiro\ntieimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "59 30 5\n0\norioan\nniboro\ntieimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "59 30 5\n0\norioan\nnobiro\nuifimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "59 48 10\n0\norioan\nnobiro\ntifimd\n",
+    "output": "59\n"
+  },
+  {
+    "input": "59 48 5\n0\norioan\nnobiro\ndmigit\n",
+    "output": "59\n"
+  },
+  {
+    "input": "10 30 10\n3\nnobiro\nnobiro\ntidime\n",
+    "output": "80\n"
+  },
+  {
+    "input": "10 30 10\n3\nnobiro\nnobiro\ntidime\n",
+    "output": "80\n"
+  }
+]

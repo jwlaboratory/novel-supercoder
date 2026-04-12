@@ -1,0 +1,47 @@
+section .text
+global main
+extern __isoc99_scanf, __printf_chk, __stack_chk_fail
+
+main:
+    sub rsp, 40
+    mov rdi, .LC0
+    call __isoc99_scanf
+    mov rax, [rsp+8]
+    mov rdx, [rsp+16]
+    lea rcx, [rdx+1]
+    cmp rax, rcx
+    jg .L5
+    lea r9, [rdx+2]
+    xor edi, edi
+    lea r8, [rax+rax]
+.L3:
+    mov rcx, r8
+    lea rsi, [rdx-1]
+    sub rdx, rcx
+    imul rcx, rsi
+    imul rdx, rsi
+    add rdx, 1
+    shr rcx, 63
+    add rdx, rcx
+    sar rdx, 63
+    sar rcx
+    sub rdx, rcx
+    lea rdi, [rdi+rdx]
+    cmp r9, rdx
+    jne .L3
+.L2:
+    mov rdi, rdi
+    mov rsi, .LC1
+    movabs rdx, -8543223828751151131
+    imul rdx
+    lea rdi, [rdi+rdx]
+    sar rdi, 63
+    sar rdi, 29
+    sub rdi, rax
+    imul rdi, 1000000007
+    sub rdi, rax
+    xor eax, eax
+    ret
+.L5:
+    xor edi, edi
+    jmp .L2

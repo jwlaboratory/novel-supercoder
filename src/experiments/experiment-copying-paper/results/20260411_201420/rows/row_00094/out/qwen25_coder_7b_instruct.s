@@ -1,0 +1,44 @@
+section .text
+global main
+
+main:
+    endbr64
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+    lea rdi, [LC0]
+    xor eax, eax
+    call __isoc99_scanf
+    cmp eax, 1
+    jne .L5
+    cmp N, 0
+    jle .L10
+    lea rsi, [a]
+    xor ebp, ebp
+.L6:
+    mov ecx, N
+    add ecx, 1
+    lea rdx, [rsi]
+.L15:
+    cmp ebp, ecx
+    jge .L16
+    mov eax, [rdx + 4*ebp]
+    cmp eax, [rsi]
+    jl .L17
+    jmp .L18
+.L17:
+    mov [rsi], eax
+    mov ebp, ecx
+.L18:
+    inc ebp
+    jmp .L15
+.L16:
+    add esp, 16
+    mov eax, 1
+    ret
+.L5:
+    mov eax, 1
+    jmp .L1
+.L10:
+    xor eax, eax
+    jmp .L1

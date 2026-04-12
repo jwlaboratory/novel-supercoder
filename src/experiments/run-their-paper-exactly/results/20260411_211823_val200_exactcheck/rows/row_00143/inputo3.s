@@ -1,0 +1,191 @@
+.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%lld"
+.LC1:
+	.string	"%lld %lld\n"
+.LC2:
+	.string	"-1"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	leaq	-798720(%rsp), %r11
+	.cfi_def_cfa 11, 798752
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	.cfi_def_cfa_register 7
+	subq	$1392, %rsp
+	.cfi_def_cfa_offset 800144
+	leaq	.LC0(%rip), %r12
+	movq	%r12, %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 800104(%rsp)
+	xorl	%eax, %eax
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movq	8(%rsp), %rdi
+	testq	%rdi, %rdi
+	jle	.L2
+	leaq	16(%rsp), %rbp
+	xorl	%ebx, %ebx
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movq	%rbp, %rsi
+	movq	%r12, %rdi
+	xorl	%eax, %eax
+	addq	$1, %rbx
+	call	__isoc99_scanf@PLT
+	movq	8(%rsp), %rdi
+	addq	$8, %rbp
+	cmpq	%rbx, %rdi
+	jg	.L3
+.L2:
+	movq	$1000000000, 16(%rsp,%rdi,8)
+	leaq	-1(%rdi), %rax
+	movq	16(%rsp,%rax,8), %r8
+	cmpq	$2, %r8
+	jne	.L4
+	testq	%rdi, %rdi
+	je	.L16
+	testq	%rax, %rax
+	je	.L17
+	leaq	16(%rsp), %r10
+	leaq	24(%rsp), %r11
+	movl	$3, %esi
+	leaq	(%r10,%rdi,8), %r9
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movq	-16(%r9), %rcx
+	movq	%r8, %rax
+	cqto
+	idivq	%rcx
+	movq	%rcx, %rax
+	subq	%rdx, %rax
+	addq	%r8, %rax
+	testq	%rdx, %rdx
+	cmovne	%rax, %r8
+	movq	%rsi, %rax
+	subq	$8, %r9
+	cqto
+	idivq	%rcx
+	subq	%rdx, %rcx
+	leaq	-1(%rsi,%rcx), %rsi
+	cmpq	%r9, %r11
+	jne	.L8
+	testq	%rdi, %rdi
+	jle	.L9
+	movq	%rsi, %r11
+.L6:
+	movq	%r10, %r9
+	leaq	(%r10,%rdi,8), %rdi
+	movq	%r10, %rcx
+	movq	%r8, %rsi
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	movq	%rsi, %rax
+	cqto
+	idivq	(%rcx)
+	addq	$8, %rcx
+	subq	%rdx, %rsi
+	cmpq	%rdi, %rcx
+	jne	.L10
+	cmpq	$2, %rsi
+	jne	.L4
+	movq	%r11, %rsi
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	movq	%rsi, %rax
+	cqto
+	idivq	(%r9)
+	addq	$8, %r9
+	subq	%rdx, %rsi
+	cmpq	%r9, %rdi
+	jne	.L12
+.L14:
+	cmpq	$2, %rsi
+	je	.L5
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+.L13:
+	movq	800104(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L28
+	addq	$800112, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+.L16:
+	.cfi_restore_state
+	movl	$2, %r11d
+.L5:
+	movq	%r11, %rcx
+	movq	%r8, %rdx
+	leaq	.LC1(%rip), %rsi
+	xorl	%eax, %eax
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	jmp	.L13
+.L17:
+	movl	$3, %r11d
+	leaq	16(%rsp), %r10
+	jmp	.L6
+.L9:
+	movq	%rsi, %r11
+	cmpq	$2, %r8
+	je	.L14
+	jmp	.L4
+.L28:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

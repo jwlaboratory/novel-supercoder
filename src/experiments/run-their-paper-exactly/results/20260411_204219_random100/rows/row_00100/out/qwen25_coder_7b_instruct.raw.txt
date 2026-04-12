@@ -1,0 +1,23 @@
+```assembly
+section .text
+global main
+
+main:
+    sub rsp, 24
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    mov eax, [rsp+4]
+    cmp eax, [rsp]
+    jle .L2
+    lea rsi, [LC1]
+    xor edi, edi
+    call __printf_chk
+    jmp .L3
+.L2:
+    lea rsi, [LC2]
+    xor edi, edi
+    call __printf_chk
+.L3:
+    add rsp, 24
+    ret
+```

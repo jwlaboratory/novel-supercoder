@@ -1,0 +1,422 @@
+[
+  {
+    "input": "ecneyek\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ashkfyha\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeyofscienck\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mnyszsbzpf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ecneyel\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkfyha\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeyofsciencj\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mnyszsb{pf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ecleyen\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkyfha\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeyofscienci\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mnzszsb{pf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "neyelce\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ahfykhra\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeyofscjenci\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mnzs{sb{pf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "neyemce\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ahfzkhra\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "icnejcsfoyee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "snzs{mb{pf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "oeyemce\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzfha\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "icnyjcsfoeee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "snzs{mbfp{\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "oemeyce\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzfhb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "icmyjcsfoeee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "{pfbm{szns\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "oemeycd\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzfib\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeeofscjymci\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "{pfbl{szns\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dcyemeo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzfjb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeeofsjcymci\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "{pfbn{szls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dcyemen\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzbjf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeeofsjdymci\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "|pfbn{szls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dcxemen\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzjbf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeeofsjdyicm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "slzs{nbfp|\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dcxenen\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzjaf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eeeofsjdyjcm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "slzs|nbfp|\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dcxenfn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzkaf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mcjydjsfoeee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "|pfbn|szls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dcyenfn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "arhkzlaf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mcjydjsfodee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "|pfbn}szls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "nfneycd\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "akhrzlaf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mcjyejsfodee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "slzs}nbfp|\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "nfncyed\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "akhrzlbf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mcjyejsgodee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "|zfbn}spls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "nfmcyed\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "`khrzlbf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eedogsjeyjcm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "|yfbn}spls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "deycmfn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "fblzrhk`\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eedojsjeygcm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "|xfbn}spls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "deydmfn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "fbmzrhk`\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eedojrjeygcm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "bxf|n}spls\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "deycmnf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hbmzrfk`\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "eedoirjeygcm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "slps}n|fxb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dexcmnf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hbmzrfka\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mcgyejriodee\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "slpt}n|fxb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "dmxcenf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hcmzrfka\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mcgyejriodfe\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "slpt}n{fxb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "emxcenf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hcmarfkz\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mcygejriodfe\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "slpt}n{exb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "emxceof\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hczarfkm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "lcygejriodfe\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "sxpt}n{elb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "foecxme\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mkfrazch\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "lcygfjriodfe\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "sxpt}nzelb\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "mpyszsbznf\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "keyence\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "keyofscience\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "keyofscience\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "ashlfyha\n",
+    "output": "NO\n"
+  }
+]

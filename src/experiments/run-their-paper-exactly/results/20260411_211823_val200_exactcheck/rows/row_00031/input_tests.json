@@ -1,0 +1,418 @@
+[
+  {
+    "input": "gaiku,atcoder,tasks\n",
+    "output": "gaiku atcoder tasks\n"
+  },
+  {
+    "input": "abgde,fchihgf,edcba\n",
+    "output": "abgde fchihgf edcba\n"
+  },
+  {
+    "input": "ha,pypnewyear,enjoy\n",
+    "output": "ha pypnewyear enjoy\n"
+  },
+  {
+    "input": "gaiku,atcoeer,tasks\n",
+    "output": "gaiku atcoeer tasks\n"
+  },
+  {
+    "input": "abcde,fghihcf,edgba\n",
+    "output": "abcde fghihcf edgba\n"
+  },
+  {
+    "input": "ha,pypnewzear,enjoy\n",
+    "output": "ha pypnewzear enjoy\n"
+  },
+  {
+    "input": "gaiku,atcoeer-tasks\n",
+    "output": "gaiku atcoeer-tasks\n"
+  },
+  {
+    "input": "abgde,fchihgf+edcba\n",
+    "output": "abgde fchihgf+edcba\n"
+  },
+  {
+    "input": "hap,ypnewzear,enjoy\n",
+    "output": "hap ypnewzear enjoy\n"
+  },
+  {
+    "input": "gbiku,atcoeer-tasks\n",
+    "output": "gbiku atcoeer-tasks\n"
+  },
+  {
+    "input": "aagde,fchihgf+edcba\n",
+    "output": "aagde fchihgf+edcba\n"
+  },
+  {
+    "input": "hap,ypnewzebr,enjoy\n",
+    "output": "hap ypnewzebr enjoy\n"
+  },
+  {
+    "input": "gbjku,atcoeer-tasks\n",
+    "output": "gbjku atcoeer-tasks\n"
+  },
+  {
+    "input": "aagde,f+hihgfcedcba\n",
+    "output": "aagde f+hihgfcedcba\n"
+  },
+  {
+    "input": "ahp,ypnewzebr,enjoy\n",
+    "output": "ahp ypnewzebr enjoy\n"
+  },
+  {
+    "input": "gbjku,atcoeer.tasks\n",
+    "output": "gbjku atcoeer.tasks\n"
+  },
+  {
+    "input": "abcdecfghih+f,edgaa\n",
+    "output": "abcdecfghih+f edgaa\n"
+  },
+  {
+    "input": "ahp,ypnewzebr,emjoy\n",
+    "output": "ahp ypnewzebr emjoy\n"
+  },
+  {
+    "input": "sksat.reeocta,ukjbg\n",
+    "output": "sksat.reeocta ukjbg\n"
+  },
+  {
+    "input": "fbcdecfghih+a,edgaa\n",
+    "output": "fbcdecfghih+a edgaa\n"
+  },
+  {
+    "input": "yojme,rbezwenpy,pha\n",
+    "output": "yojme rbezwenpy pha\n"
+  },
+  {
+    "input": "gbjku,atcoeer.sasks\n",
+    "output": "gbjku atcoeer.sasks\n"
+  },
+  {
+    "input": "aagde,a+hihgfcedcbf\n",
+    "output": "aagde a+hihgfcedcbf\n"
+  },
+  {
+    "input": "ahp,zpnewzebr,emjoy\n",
+    "output": "ahp zpnewzebr emjoy\n"
+  },
+  {
+    "input": "gbtku,ajcoeer.sasks\n",
+    "output": "gbtku ajcoeer.sasks\n"
+  },
+  {
+    "input": "fbcdecfghjh+a,edgaa\n",
+    "output": "fbcdecfghjh+a edgaa\n"
+  },
+  {
+    "input": "ahp,zpndwzebr,emjoy\n",
+    "output": "ahp zpndwzebr emjoy\n"
+  },
+  {
+    "input": "sksas.reeocja,uktbg\n",
+    "output": "sksas.reeocja uktbg\n"
+  },
+  {
+    "input": "fbceecfghjh+a,edgaa\n",
+    "output": "fbceecfghjh+a edgaa\n"
+  },
+  {
+    "input": "ahp,zpndwzebr,emioy\n",
+    "output": "ahp zpndwzebr emioy\n"
+  },
+  {
+    "input": "sksas.reeocja,tktbg\n",
+    "output": "sksas.reeocja tktbg\n"
+  },
+  {
+    "input": "aagde,a+hjhgfceecbf\n",
+    "output": "aagde a+hjhgfceecbf\n"
+  },
+  {
+    "input": "ahp,mpndwzebr,ezioy\n",
+    "output": "ahp mpndwzebr ezioy\n"
+  },
+  {
+    "input": "skcas.reeosja,tktbg\n",
+    "output": "skcas.reeosja tktbg\n"
+  },
+  {
+    "input": "aagee,a+hjhgfceecbf\n",
+    "output": "aagee a+hjhgfceecbf\n"
+  },
+  {
+    "input": "ahp,mpndwzebr,eziyo\n",
+    "output": "ahp mpndwzebr eziyo\n"
+  },
+  {
+    "input": "skcas.seeosja,tktbg\n",
+    "output": "skcas.seeosja tktbg\n"
+  },
+  {
+    "input": "aagee,a+hjhgfcdecbf\n",
+    "output": "aagee a+hjhgfcdecbf\n"
+  },
+  {
+    "input": "ahp,mpndwzecr,eziyo\n",
+    "output": "ahp mpndwzecr eziyo\n"
+  },
+  {
+    "input": "skcas/seeosja,tktbg\n",
+    "output": "skcas/seeosja tktbg\n"
+  },
+  {
+    "input": "aagee,a+hjhgfcdebbf\n",
+    "output": "aagee a+hjhgfcdebbf\n"
+  },
+  {
+    "input": "ahp,mpndwzecr+eziyo\n",
+    "output": "ahp mpndwzecr+eziyo\n"
+  },
+  {
+    "input": "skcas/seejsoa,tktbg\n",
+    "output": "skcas/seejsoa tktbg\n"
+  },
+  {
+    "input": "fbbedcfghjh+a,eegaa\n",
+    "output": "fbbedcfghjh+a eegaa\n"
+  },
+  {
+    "input": "azp,mpndwhecr+eziyo\n",
+    "output": "azp mpndwhecr+eziyo\n"
+  },
+  {
+    "input": "skcas/seejroa,tktbg\n",
+    "output": "skcas/seejroa tktbg\n"
+  },
+  {
+    "input": "fbbedcfghjh+a,eeg`a\n",
+    "output": "fbbedcfghjh+a eeg`a\n"
+  },
+  {
+    "input": "azo,mpndwhecr+eziyo\n",
+    "output": "azo mpndwhecr+eziyo\n"
+  },
+  {
+    "input": "gbtkt,aorjees/sacks\n",
+    "output": "gbtkt aorjees/sacks\n"
+  },
+  {
+    "input": "ebbedcfghjh+a,eeg`a\n",
+    "output": "ebbedcfghjh+a eeg`a\n"
+  },
+  {
+    "input": "azo,mpndwhecq+eziyo\n",
+    "output": "azo mpndwhecq+eziyo\n"
+  },
+  {
+    "input": "skcas/sejesoa,tktbg\n",
+    "output": "skcas/sejesoa tktbg\n"
+  },
+  {
+    "input": "dbbedcfghjh+a,eeg`a\n",
+    "output": "dbbedcfghjh+a eeg`a\n"
+  },
+  {
+    "input": "azo,mpndwhezq+eciyo\n",
+    "output": "azo mpndwhezq+eciyo\n"
+  },
+  {
+    "input": "gbtkt,aosejes/sacks\n",
+    "output": "gbtkt aosejes/sacks\n"
+  },
+  {
+    "input": "dbbedcfghjh+a+eeg`a\n",
+    "output": "dbbedcfghjh+a+eeg`a\n"
+  },
+  {
+    "input": "azo,mpndwhezp+eciyo\n",
+    "output": "azo mpndwhezp+eciyo\n"
+  },
+  {
+    "input": "gbtkt,aosejse/sacks\n",
+    "output": "gbtkt aosejse/sacks\n"
+  },
+  {
+    "input": "dbbedcfghjh+a+deg`a\n",
+    "output": "dbbedcfghjh+a+deg`a\n"
+  },
+  {
+    "input": "oyice+pzehwdnpm,oza\n",
+    "output": "oyice+pzehwdnpm oza\n"
+  },
+  {
+    "input": "gbtkt,sosejse/sacka\n",
+    "output": "gbtkt sosejse/sacka\n"
+  },
+  {
+    "input": "dbbeddfghjh+a+deg`a\n",
+    "output": "dbbeddfghjh+a+deg`a\n"
+  },
+  {
+    "input": "oyi,e+pzehwdnpmcoza\n",
+    "output": "oyi e+pzehwdnpmcoza\n"
+  },
+  {
+    "input": "gbtkt,sosekse/sacka\n",
+    "output": "gbtkt sosekse/sacka\n"
+  },
+  {
+    "input": "dbbfddfghjh+a+deg`a\n",
+    "output": "dbbfddfghjh+a+deg`a\n"
+  },
+  {
+    "input": "oyi,e+pzehwdnpzcoma\n",
+    "output": "oyi e+pzehwdnpzcoma\n"
+  },
+  {
+    "input": "gbtkt,spsekse/sacka\n",
+    "output": "gbtkt spsekse/sacka\n"
+  },
+  {
+    "input": "dbbfddfghjh+a+deg`b\n",
+    "output": "dbbfddfghjh+a+deg`b\n"
+  },
+  {
+    "input": "pyi,e+ozehwdnpzcoma\n",
+    "output": "pyi e+ozehwdnpzcoma\n"
+  },
+  {
+    "input": "akcas/eskesps,tktbg\n",
+    "output": "akcas/eskesps tktbg\n"
+  },
+  {
+    "input": "dbbfddffhjh+a+deg`b\n",
+    "output": "dbbfddffhjh+a+deg`b\n"
+  },
+  {
+    "input": "pyi,e+ozehwdnpzcpma\n",
+    "output": "pyi e+ozehwdnpzcpma\n"
+  },
+  {
+    "input": "gbtkt,spselse/sacka\n",
+    "output": "gbtkt spselse/sacka\n"
+  },
+  {
+    "input": "cbbfddffhjh+a+deg`b\n",
+    "output": "cbbfddffhjh+a+deg`b\n"
+  },
+  {
+    "input": "ampczpndwhezo+e,iyp\n",
+    "output": "ampczpndwhezo+e iyp\n"
+  },
+  {
+    "input": "gbtkt,spselsf/sacka\n",
+    "output": "gbtkt spselsf/sacka\n"
+  },
+  {
+    "input": "cbbeddffhjh+a+deg`b\n",
+    "output": "cbbeddffhjh+a+deg`b\n"
+  },
+  {
+    "input": "ampczpndwhezo+e,iyq\n",
+    "output": "ampczpndwhezo+e iyq\n"
+  },
+  {
+    "input": "fbtkt,spselsf/sacka\n",
+    "output": "fbtkt spselsf/sacka\n"
+  },
+  {
+    "input": "cbbeddffhjh+a+eeg`b\n",
+    "output": "cbbeddffhjh+a+eeg`b\n"
+  },
+  {
+    "input": "ampczpndwhezo+e+iyq\n",
+    "output": "ampczpndwhezo+e+iyq\n"
+  },
+  {
+    "input": "fbtku,spselsf/sacka\n",
+    "output": "fbtku spselsf/sacka\n"
+  },
+  {
+    "input": "cbbeddfghjh+a+eeg`b\n",
+    "output": "cbbeddfghjh+a+eeg`b\n"
+  },
+  {
+    "input": "ampczpndwhezo+e+iyr\n",
+    "output": "ampczpndwhezo+e+iyr\n"
+  },
+  {
+    "input": "fbtka,spselsf/sucka\n",
+    "output": "fbtka spselsf/sucka\n"
+  },
+  {
+    "input": "b`gee+a+hjhgfddebbc\n",
+    "output": "b`gee+a+hjhgfddebbc\n"
+  },
+  {
+    "input": "ryi+e+ozehwdnpzcpma\n",
+    "output": "ryi+e+ozehwdnpzcpma\n"
+  },
+  {
+    "input": "akcus/fslesps,aktbf\n",
+    "output": "akcus/fslesps aktbf\n"
+  },
+  {
+    "input": "b`geb+a+hjhgfddebec\n",
+    "output": "b`geb+a+hjhgfddebec\n"
+  },
+  {
+    "input": "rxi+e+ozehwdnpzcpma\n",
+    "output": "rxi+e+ozehwdnpzcpma\n"
+  },
+  {
+    "input": "akcus/fskesps,aktbf\n",
+    "output": "akcus/fskesps aktbf\n"
+  },
+  {
+    "input": "b`gfb+a+hjhgfddebec\n",
+    "output": "b`gfb+a+hjhgfddebec\n"
+  },
+  {
+    "input": "rxi+e+ozehwdzpncpma\n",
+    "output": "rxi+e+ozehwdzpncpma\n"
+  },
+  {
+    "input": "akcus/fskdsps,aktbf\n",
+    "output": "akcus/fskdsps aktbf\n"
+  },
+  {
+    "input": "b+gfb+a`hjhgfddebec\n",
+    "output": "b+gfb+a`hjhgfddebec\n"
+  },
+  {
+    "input": "rxi+f+ozehwdzpncpma\n",
+    "output": "rxi+f+ozehwdzpncpma\n"
+  },
+  {
+    "input": "akcur/fskdsps,aktbf\n",
+    "output": "akcur/fskdsps aktbf\n"
+  },
+  {
+    "input": "b+gfb+a`hjhgfdddbec\n",
+    "output": "b+gfb+a`hjhgfdddbec\n"
+  },
+  {
+    "input": "rxi+f+o{ehwdzpncpma\n",
+    "output": "rxi+f+o{ehwdzpncpma\n"
+  },
+  {
+    "input": "akcur/fskdspr,aktbf\n",
+    "output": "akcur/fskdspr aktbf\n"
+  },
+  {
+    "input": "haiku,atcoder,tasks\n",
+    "output": "haiku atcoder tasks\n"
+  },
+  {
+    "input": "happy,newyear,enjoy\n",
+    "output": "happy newyear enjoy\n"
+  },
+  {
+    "input": "happy,newyear,enjoy\n",
+    "output": "happy newyear enjoy\n"
+  },
+  {
+    "input": "abcde,fghihgf,edcba\n",
+    "output": "abcde fghihgf edcba\n"
+  }
+]

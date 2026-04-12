@@ -1,0 +1,113 @@
+```assembly
+	.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%lu"
+.LC1:
+	.string	"%lu\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	%eax, %r8d
+	movl	$1, %eax
+	cmpl	$1, %r8d
+	jne	.L1
+	movq	(%rsp), %rdi
+	testq	%rdi, %rdi
+	je	.L11
+	movl	$2, %r8d
+	movl	$1, %ecx
+	xorl	%r9d, %r9d
+	xorl	%r10d, %r10d
+.L6:
+	movq	%rdi, %rax
+	xorl	%edx, %edx
+	divq	%rcx
+	testq	%rdx, %rdx
+	jne	.L4
+	subq	$1, %rax
+	movq	%rax, %rsi
+	je	.L5
+	xorl	%edx, %edx
+	movq	%rdi, %rax
+	divq	%rsi
+	addq	%r10, %rsi
+	cmpq	%rax, %rdx
+	cmove	%rsi, %r10
+.L5:
+	testq	%rcx, %rcx
+	je	.L8
+	testq	%r9, %r9
+	je	.L4
+	movq	%rdi, %rax
+	xorl	%edx, %edx
+	divq	%r9
+	cmpq	%rax, %rdx
+	jne	.L4
+	addq	%r9, %r10
+.L4:
+	movq	%r8, %rax
+	imulq	%r8, %rax
+	cmpq	%rdi, %rax
+	ja	.L3
+.L8:
+	addq	$1, %r9
+	addq	$1, %rcx
+	addq	$1, %r8
+	jmp	.L6
+.L11:
+	xorl	%r10d, %r10d
+.L3:
+	movq	%r10, %rdx
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	xorl	%eax, %eax
+.L1:
+	movq	8(%rsp), %rdx
+	subq	%fs:40, %rdx
+	jne	.L21
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L21:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```

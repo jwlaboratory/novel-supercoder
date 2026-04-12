@@ -1,0 +1,422 @@
+[
+  {
+    "input": "10 131\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "43 10\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "5 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "5 8\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 178\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "43 19\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 2\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "5 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 43\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "51 19\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "6 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 69\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "51 27\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 81\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "77 27\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "9 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 105\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "135 27\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "9 4\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 105\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "135 47\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "9 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 65\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "149 47\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "17 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "3 65\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "149 50\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "22 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "3 14\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "151 50\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "15 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "151 97\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "151 7\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "151 14\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "178 14\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "178 24\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "9 24\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 24\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 19\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "5 19\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 82\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "31 15\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "4 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "5 9\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 30\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "70 10\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "5 4\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "5 10\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 243\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "67 19\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 65\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "51 29\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "6 3\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "14 69\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "93 27\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 139\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "77 35\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "10 78\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "135 35\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "7 4\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 117\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "192 47\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "16 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 114\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "149 49\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "19 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "2 58\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "87 50\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "3 26\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "98 50\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "15 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "151 161\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "151 8\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "151 28\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "144 24\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "9 12\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "5 24\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "20 19\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "8 19\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "8 82\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "31 18\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "1 9\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "20 30\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "70 6\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "6 4\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "3 1\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "16 243\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "29 19\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 94\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "86 29\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "6 5\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "14 86\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "142 27\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "11 139\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "77 50\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "0 78\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "5 5\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "10 90\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "3 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "3 2\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "31 10\n",
+    "output": "YES\n"
+  }
+]

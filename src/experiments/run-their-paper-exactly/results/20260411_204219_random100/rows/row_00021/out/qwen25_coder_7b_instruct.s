@@ -1,0 +1,88 @@
+.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d "
+.LC1:
+	.string	"%d"
+.LC2:
+	.string	"%d\n%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$24, %rsp
+	movl	$1, %edi
+	leaq	.LC0(%rip), %esi
+	movl	$n, %edx
+	call	__isoc99_scanf@PLT
+	movl	$1, %edi
+	leaq	.LC1(%rip), %esi
+	movl	$c0, %edx
+	call	__isoc99_scanf@PLT
+	movl	n(%rbp), %ecx
+	cmpl	$1, %ecx
+	jle	.L2
+	movl	$1, %ebx
+	movq	%rsp, %r13
+	leaq	.LC1(%rip), %rbp
+.L4:
+	xorl	%eax, %eax
+	movq	%r13, %rsi
+	movq	%rbp, %rdi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	cmp	%c0, %eax
+	setle	%al
+	addl	$1, %ebx
+	movl	%eax, 4(%rsp)
+	addb	%al, %cl
+	cmpl	%ebx, %ecx
+	jg	.L4
+.L2:
+	movl	$1, %edi
+	leaq	.LC2(%rip), %esi
+	movl	%cl, %edx
+	movl	$1, %eax
+	call	__printf_chk@PLT
+	movq	%rbp, %rsp
+	.cfi_def_cfa_register 7
+	popq	%rbp
+	ret
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.globl	n
+	.bss
+	.align 4
+	.type	n, @object
+	.size	n, 4
+n:
+	.zero	4
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

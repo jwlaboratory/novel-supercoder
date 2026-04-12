@@ -1,0 +1,414 @@
+[
+  {
+    "input": "deened\n",
+    "output": "2 3"
+  },
+  {
+    "input": "aoctder\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aocteer\n",
+    "output": "5 6"
+  },
+  {
+    "input": "aectepp\n",
+    "output": "6 7"
+  },
+  {
+    "input": "defnfd\n",
+    "output": "3 5"
+  },
+  {
+    "input": "ndeedd\n",
+    "output": "3 4"
+  },
+  {
+    "input": "defned\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "fedned\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aocueer\n",
+    "output": "5 6"
+  },
+  {
+    "input": "efdned\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aocueeq\n",
+    "output": "5 6"
+  },
+  {
+    "input": "efnded\n",
+    "output": "4 6"
+  },
+  {
+    "input": "aocueep\n",
+    "output": "5 6"
+  },
+  {
+    "input": "dendfe\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "peeucoa\n",
+    "output": "2 3"
+  },
+  {
+    "input": "peetcoa\n",
+    "output": "2 3"
+  },
+  {
+    "input": "aocteep\n",
+    "output": "5 6"
+  },
+  {
+    "input": "aecteop\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aecsepp\n",
+    "output": "6 7"
+  },
+  {
+    "input": "neeedd\n",
+    "output": "2 3"
+  },
+  {
+    "input": "actoder\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "deenfd\n",
+    "output": "2 3"
+  },
+  {
+    "input": "aocuder\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aoctree\n",
+    "output": "6 7"
+  },
+  {
+    "input": "fedndd\n",
+    "output": "3 5"
+  },
+  {
+    "input": "aecueor\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "dfened\n",
+    "output": "3 5"
+  },
+  {
+    "input": "aocufeq\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "efndfd\n",
+    "output": "4 6"
+  },
+  {
+    "input": "aecueop\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "deodfe\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aocveep\n",
+    "output": "5 6"
+  },
+  {
+    "input": "epetcoa\n",
+    "output": "1 3"
+  },
+  {
+    "input": "ancteep\n",
+    "output": "5 6"
+  },
+  {
+    "input": "aceteop\n",
+    "output": "3 5"
+  },
+  {
+    "input": "aectfpp\n",
+    "output": "6 7"
+  },
+  {
+    "input": "aecsdpp\n",
+    "output": "6 7"
+  },
+  {
+    "input": "actoeer\n",
+    "output": "5 6"
+  },
+  {
+    "input": "aocured\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "nedfdd\n",
+    "output": "3 5"
+  },
+  {
+    "input": "aebueor\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "dfenee\n",
+    "output": "3 5"
+  },
+  {
+    "input": "aoeufcq\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "effdnd\n",
+    "output": "2 3"
+  },
+  {
+    "input": "poeucea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "dfodee\n",
+    "output": "5 6"
+  },
+  {
+    "input": "aobveep\n",
+    "output": "5 6"
+  },
+  {
+    "input": "epetcao\n",
+    "output": "1 3"
+  },
+  {
+    "input": "ancpeet\n",
+    "output": "5 6"
+  },
+  {
+    "input": "acetdop\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aebsepp\n",
+    "output": "6 7"
+  },
+  {
+    "input": "ednedd\n",
+    "output": "5 6"
+  },
+  {
+    "input": "abtoeer\n",
+    "output": "5 6"
+  },
+  {
+    "input": "aocuqed\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aeubeor\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "efenee\n",
+    "output": "1 3"
+  },
+  {
+    "input": "`oeufcq\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "efgdnd\n",
+    "output": "4 6"
+  },
+  {
+    "input": "poeubea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aoaveep\n",
+    "output": "1 3"
+  },
+  {
+    "input": "apetceo\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "bncpeet\n",
+    "output": "5 6"
+  },
+  {
+    "input": "abetdop\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aetober\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aocuqee\n",
+    "output": "6 7"
+  },
+  {
+    "input": "aeuceor\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "coeuf`q\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "dndgfe\n",
+    "output": "1 3"
+  },
+  {
+    "input": "podubea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aoavdep\n",
+    "output": "1 3"
+  },
+  {
+    "input": "apeocet\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "bncptee\n",
+    "output": "6 7"
+  },
+  {
+    "input": "podteca\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "rebotea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "roecuea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "cqeuf`o\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "efddng\n",
+    "output": "3 4"
+  },
+  {
+    "input": "pocubea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "pedvaoa\n",
+    "output": "5 7"
+  },
+  {
+    "input": "tecoepa\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "bocptee\n",
+    "output": "6 7"
+  },
+  {
+    "input": "padteco\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "reboaet\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "roectea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "cquef`o\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "efedng\n",
+    "output": "1 3"
+  },
+  {
+    "input": "qocubea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aoawdep\n",
+    "output": "1 3"
+  },
+  {
+    "input": "tecofpa\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "botpcee\n",
+    "output": "6 7"
+  },
+  {
+    "input": "padseco\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "reboate\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aetceor\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "c`uefqo\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "gndefe\n",
+    "output": "4 6"
+  },
+  {
+    "input": "qodubea\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "aoawdfp\n",
+    "output": "1 3"
+  },
+  {
+    "input": "secofpa\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "ocesdap\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "retoabe\n",
+    "output": "-1 -1"
+  },
+  {
+    "input": "needed\n",
+    "output": "2 3"
+  },
+  {
+    "input": "needed\n",
+    "output": "2 3"
+  },
+  {
+    "input": "atcoder\n",
+    "output": "-1 -1"
+  }
+]

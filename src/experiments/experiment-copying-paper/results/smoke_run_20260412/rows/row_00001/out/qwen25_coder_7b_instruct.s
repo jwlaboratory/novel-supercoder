@@ -1,0 +1,93 @@
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 48
+
+    lea rdi, [LC0]
+    lea rsi, [rbp-40]
+    call read_int
+
+    mov ecx, dword [rbp-40]
+    lea rdx, [rbp-44]
+    xor eax, eax
+    call allocate_array
+
+    lea rdi, [LC0]
+    lea rsi, [rbp-44]
+    call read_array
+
+    xor eax, eax
+    xor ebx, ebx
+    xor ecx, ecx
+    xor edx, edx
+
+read_loop:
+    cmp ecx, dword [rbp-40]
+    jge end_read_loop
+    mov eax, dword [rbp-44+ecx*4]
+    imul eax, ebx
+    add eax, ecx
+    imul eax, 1000000007
+    sar eax, 31
+    add eax, ecx
+    sar eax, 29
+    sub eax, ecx
+    lea ecx, [rax+ebx]
+    imul ecx, 1000000007
+    sar ecx, 60
+    sub ecx, eax
+    imul ecx, 1000000007
+    sub ecx, eax
+    add eax, ecx
+    inc ecx
+    jmp read_loop
+
+end_read_loop:
+    mov eax, ebx
+    lea rdi, [LC1]
+    call print_int
+
+    leave
+    ret
+
+allocate_array:
+    mov eax, 4
+    mul ecx
+    add eax, 16
+    call malloc
+    ret
+
+read_array:
+    xor ecx, ecx
+read_array_loop:
+    cmp ecx, dword [rbp-40]
+    jge end_read_array_loop
+    lea rdi, [LC0]
+    lea rsi, [rbp-44+ecx*4]
+    call read_int
+    inc ecx
+    jmp read_array_loop
+
+end_read_array_loop:
+    ret
+
+print_int:
+    xor eax, eax
+    xor edi, edi
+    call printf
+    ret
+
+read_int:
+    xor eax, eax
+    xor edi, edi
+    call scanf
+    ret
+
+malloc:
+    xor eax, eax
+    xor edi, edi
+    call __libc_malloc
+    ret

@@ -1,0 +1,27 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int D,E,i;
+double r,t;
+int main()
+{
+	for(;scanf("%d%d",&D,&E),D;)
+	{
+		r=10000000;
+		for(i=0;i<=D/2;i++)
+		{
+			t=sqrt(1.0*i*i+(D-i)*(D-i))-E;
+			if(t<0)t*=-1;
+			r=r-t>=0.001?t:r;
+		}
+		printf("%lf\n",r);
+	}
+	return 0;
+}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

@@ -1,0 +1,214 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct tuple {
+    int x;
+    int y;
+};
+
+int asc(const void *a, const void *b) {
+    return ((struct tuple *)a)->y - ((struct tuple *)b)->y;
+}
+
+
+int main(void){
+    int N;
+    int x,l;
+    scanf("%d", &N);
+    struct tuple A[1000000+10];
+    for (int i = 0; i < N; i++) {
+        scanf("%d %d", &x, &l);
+        A[i].x = x - l;
+        A[i].y = x + l;
+    }
+    qsort(A,N,sizeof (struct tuple), asc);
+    int now = -1100000000;
+    int cnt = 0;
+    for (int i = 0; i < N; i++) {
+        if (now <= A[i].x) {
+            now = A[i].y;
+            cnt++;
+        }
+    }
+    printf("%d\n",cnt);
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"temp.c"
+	.text
+	.p2align 4
+	.globl	asc
+	.type	asc, @function
+asc:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	movl	4(%rdi), %eax
+	subl	4(%rsi), %eax
+	ret
+	.cfi_endproc
+.LFE51:
+	.size	asc, .-asc
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d %d"
+.LC2:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB52:
+	.cfi_startproc
+	endbr64
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+	pushq	%r13
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
+	pushq	%rbp
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	leaq	-7999488(%rsp), %r11
+	.cfi_def_cfa 11, 7999536
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	.cfi_def_cfa_register 7
+	subq	$624, %rsp
+	.cfi_def_cfa_offset 8000160
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8000104(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	leaq	16(%rsp), %rbx
+	call	__isoc99_scanf@PLT
+	movslq	4(%rsp), %rsi
+	testl	%esi, %esi
+	jle	.L4
+	xorl	%r14d, %r14d
+	leaq	12(%rsp), %r13
+	leaq	8(%rsp), %r12
+	leaq	.LC1(%rip), %rbp
+	leaq	16(%rsp), %rbx
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movq	%r12, %rsi
+	movq	%r13, %rdx
+	movq	%rbp, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movl	8(%rsp), %eax
+	movslq	4(%rsp), %rsi
+	movl	%eax, %ecx
+	addl	12(%rsp), %eax
+	subl	12(%rsp), %ecx
+	movd	%ecx, %xmm0
+	movd	%eax, %xmm1
+	punpckldq	%xmm1, %xmm0
+	movq	%xmm0, (%rbx,%r14,8)
+	addq	$1, %r14
+	cmpl	%r14d, %esi
+	jg	.L5
+.L4:
+	movl	$8, %edx
+	leaq	asc(%rip), %rcx
+	movq	%rbx, %rdi
+	call	qsort@PLT
+	movl	4(%rsp), %edx
+	testl	%edx, %edx
+	jle	.L10
+	subl	$1, %edx
+	movq	%rbx, %rax
+	xorl	%r8d, %r8d
+	leaq	24(%rsp,%rdx,8), %rcx
+	movl	$-1100000000, %edx
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	cmpl	(%rax), %edx
+	jg	.L7
+	movl	4(%rax), %edx
+	addl	$1, %r8d
+.L7:
+	addq	$8, %rax
+	cmpq	%rcx, %rax
+	jne	.L8
+.L6:
+	xorl	%eax, %eax
+	movl	%r8d, %edx
+	movl	$1, %edi
+	leaq	.LC2(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	8000104(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L16
+	addq	$8000112, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 48
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 40
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	ret
+.L10:
+	.cfi_restore_state
+	xorl	%r8d, %r8d
+	jmp	.L6
+.L16:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE52:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

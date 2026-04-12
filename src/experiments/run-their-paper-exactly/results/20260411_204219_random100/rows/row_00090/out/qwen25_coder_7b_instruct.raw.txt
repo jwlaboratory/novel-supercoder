@@ -1,0 +1,65 @@
+```assembly
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 24
+
+    lea rdi, [LC0]
+    call read_int
+    mov ecx, eax
+
+    xor ebx, ebx
+    xor edx, edx
+    xor esi, esi
+
+loop_start:
+    cmp esi, ecx
+    jge loop_end
+
+    lea rdi, [LC0]
+    call read_int
+    add edx, eax
+
+    cmp eax, ebx
+    jle no_update
+    mov ebx, eax
+
+no_update:
+    inc esi
+    jmp loop_start
+
+loop_end:
+    sub edx, ebx
+    cmp edx, ebx
+    jle print_no
+    lea rdi, [LC1]
+    jmp print_result
+
+print_no:
+    lea rdi, [LC2]
+
+print_result:
+    call puts
+    mov eax, 0
+    leave
+    ret
+
+read_int:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 8
+
+    lea rdi, [rsp + 8]
+    call scanf
+    mov eax, dword [rsp + 8]
+    leave
+    ret
+
+section .rodata
+LC0 db "%d", 0
+LC1 db "Yes", 0
+LC2 db "No", 0
+```

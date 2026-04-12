@@ -1,0 +1,410 @@
+[
+  {
+    "input": "4\nA\nUn\nB\nUn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nUn\nB\nUn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nUn\nB\nnU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nUn\nB\noU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nUn\nA\noU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nUn\nA\nUo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nTn\nA\nUo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nTn\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nTo\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nUo\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\noU\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\noU\nA\nWo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nUo\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nVo\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nVo\nA\noV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVo\nA\noV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVo\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVp\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npV\nA\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npV\n@\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npV\n@\noV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npV\n?\noV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npV\n?\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npW\n?\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npW\n>\nVo\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\npW\n>\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\npW\n>\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nqW\n>\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqW\n>\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqW\n=\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqW\n<\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqW\n;\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nqW\n<\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nqV\n<\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nqV\n;\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nVq\n<\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nVq\n<\nnV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nWq\n<\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nWq\n=\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n<\nWq\n=\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n<\nqW\n=\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n<\nWr\n=\nVn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n<\nWr\n=\nnV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n<\nWr\n=\nmV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n<\nWr\n=\nlV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n=\nWr\n=\nlV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWr\n=\nlV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWr\n<\nlV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWr\n<\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWr\n=\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nrW\n=\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nrW\n>\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqW\n>\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWq\n>\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWq\n>\nlV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWp\n>\nlV\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWp\n>\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nWp\n=\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nWp\n=\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nWp\n>\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\npW\n>\nVl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\npW\n>\nUl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\npW\n>\nUk\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\npW\n>\nkU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\npW\n=\nUk\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\npW\n?\nUk\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n?\nUk\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n?\nUl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nWq\n?\nUl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nWq\n>\nUl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nWq\n>\nlU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n>\nUl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n=\nUl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n=\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n<\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqX\n<\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqX\n=\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nXq\n=\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nXq\n=\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nXq\n>\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nWq\n>\nUm\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n@\nWq\n>\nUn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nWq\n>\nUn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n>\nUn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nrW\n>\nUn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nrW\n>\nnU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n>\nnU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nWq\n>\nnU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nVq\n>\nnU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nVq\n?\nnU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVq\n?\nnU\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVq\n?\nnT\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVq\n?\noT\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVq\n@\nnT\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVq\n@\nTn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nVq\n?\nTn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqV\n?\nTn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqW\n?\nTn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n?\nqW\n?\nTn\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\n>\nqW\n?\nnT\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "4\nA\nUn\nA\nUn\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "4\nA\nUn\nA\nUn\n",
+    "output": "YES\n"
+  }
+]

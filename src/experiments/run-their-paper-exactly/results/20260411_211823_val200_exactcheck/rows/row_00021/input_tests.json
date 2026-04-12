@@ -1,0 +1,18 @@
+[
+  {
+    "input": "8920\n",
+    "output": "No\n"
+  },
+  {
+    "input": "4000\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "2051\n",
+    "output": "No\n"
+  },
+  {
+    "input": "1247\n",
+    "output": "No\n"
+  }
+]

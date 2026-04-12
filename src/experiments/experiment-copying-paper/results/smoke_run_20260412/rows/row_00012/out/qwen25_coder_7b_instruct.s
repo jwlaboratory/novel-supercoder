@@ -1,0 +1,33 @@
+section .text
+global main
+
+main:
+    sub rsp, 24
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    mov eax, dword [rsp+4]
+    cmp eax, dword [rsp]
+    jle .L2
+    xchg eax, dword [rsp+4]
+.L2:
+    mov ecx, dword [rsp+4]
+    sub ecx, eax
+    sar ecx, 1
+    cvtsi2sd xmm0, ecx
+    mul sd [LC1]
+    cvtsi2sd xmm1, ecx
+    subsd xmm0, xmm1
+    ucomisd [LC2], xmm0
+    jp .L3
+    je .L3
+.L3:
+    mov eax, ecx
+    sub eax, ecx
+    shr eax, 1
+    lea rsi, [LC3]
+    xor edi, edi
+    call __printf_chk
+    jmp .L5
+.L5:
+    add rsp, 24
+    ret

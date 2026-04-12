@@ -1,0 +1,42 @@
+```assembly
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+
+loop_start:
+    lea rdi, [LC0]
+    xor eax, eax
+    call scanf
+    cmp eax, 2
+    je exit_loop
+    jmp print_grid
+
+print_grid:
+    mov ecx, [rsp + 8]
+    inc ecx
+    mov ebx, 1
+grid_loop:
+    cmp ebx, ecx
+    jge next_row
+    mov edi, 35
+    call putchar
+    inc ebx
+    jmp grid_loop
+
+next_row:
+    mov edi, 10
+    call putchar
+    inc dword [rsp + 12]
+    mov ecx, [rsp + 12]
+    cmp ecx, [rsp + 4]
+    jl print_grid
+
+exit_loop:
+    mov rsp, rbp
+    pop rbp
+    ret
+```

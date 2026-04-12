@@ -1,0 +1,85 @@
+section .text
+global main
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 24
+
+    lea rdi, [LC0]
+    call read_int
+    mov ebx, eax
+
+    xor ecx, ecx
+    cmp ebx, 1
+    jle .L2
+
+    mov r14d, 1
+.L4:
+    mov eax, ebx
+    lea r13d, [r14 + 1]
+    and eax, 1
+    cmpl 1, eax
+    sbbl $-1, ecx
+    sarl ebx
+    addl $2, ecx
+    cmpl 1, ebx
+    jne .L4
+
+    mov edx, r13d
+    lea rsi, [LC1]
+    mov edi, 1
+    xor eax, eax
+    call printf
+
+    lea r12, [LC2]
+    mov ebp, ebx
+.L8:
+    lea eax, [ebp + 1]
+    mov ebx, eax
+    sarl eax
+    mov ebp, eax
+    cmpl r15d, r14d
+    je .L6
+
+    lea eax, [r15 + 1]
+    mov ecx, eax
+    sarl eax
+    mov edx, eax
+    xor eax, eax
+    call printf
+
+    xor eax, eax
+    call printf
+
+    mov eax, ebp
+    sarl eax
+    addl eax, ebp
+    sarl eax
+    mov ebp, eax
+    cmpl r15d, r14d
+    jne .L8
+
+.L6:
+    add rsp, 24
+    pop rbp
+    ret
+
+.L2:
+    lea rsi, [LC1]
+    mov edi, 1
+    xor eax, eax
+    call printf
+    jmp .L6
+
+read_int:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 8
+
+    lea rdi, [rbp - 4]
+    call __isoc99_scanf
+    mov eax, dword [rbp - 4]
+
+    leave
+    ret

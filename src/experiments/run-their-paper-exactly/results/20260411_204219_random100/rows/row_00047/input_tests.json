@@ -1,0 +1,418 @@
+[
+  {
+    "input": "ah\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ih\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hhhi\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hb\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hhhj\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gi\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jhhh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gb\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hjhh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "fb\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gjhh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bf\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hjgh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "af\n",
+    "output": "No\n"
+  },
+  {
+    "input": "fg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gjgh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "eg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gkgh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ga\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ge\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hgjg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ag\n",
+    "output": "No\n"
+  },
+  {
+    "input": "he\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ggjg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ia\n",
+    "output": "No\n"
+  },
+  {
+    "input": "eh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gjgg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ai\n",
+    "output": "No\n"
+  },
+  {
+    "input": "dh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ggkg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "`i\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hd\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gkgg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "`h\n",
+    "output": "No\n"
+  },
+  {
+    "input": "id\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gkhg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "`g\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jd\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ghkg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "g`\n",
+    "output": "No\n"
+  },
+  {
+    "input": "dj\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gkhf\n",
+    "output": "No\n"
+  },
+  {
+    "input": "cf\n",
+    "output": "No\n"
+  },
+  {
+    "input": "di\n",
+    "output": "No\n"
+  },
+  {
+    "input": "gkhe\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ce\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hkge\n",
+    "output": "No\n"
+  },
+  {
+    "input": "be\n",
+    "output": "No\n"
+  },
+  {
+    "input": "cj\n",
+    "output": "No\n"
+  },
+  {
+    "input": "egkh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "eb\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bj\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hegk\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bd\n",
+    "output": "No\n"
+  },
+  {
+    "input": "jb\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hegl\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "kb\n",
+    "output": "No\n"
+  },
+  {
+    "input": "kgeh\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bb\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bk\n",
+    "output": "No\n"
+  },
+  {
+    "input": "kgeg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ba\n",
+    "output": "No\n"
+  },
+  {
+    "input": "aj\n",
+    "output": "No\n"
+  },
+  {
+    "input": "egkg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ab\n",
+    "output": "No\n"
+  },
+  {
+    "input": "bi\n",
+    "output": "No\n"
+  },
+  {
+    "input": "eglg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "aa\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ib\n",
+    "output": "No\n"
+  },
+  {
+    "input": "dglg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "a`\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ic\n",
+    "output": "No\n"
+  },
+  {
+    "input": "dflg\n",
+    "output": "No\n"
+  },
+  {
+    "input": "`a\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "glfd\n",
+    "output": "No\n"
+  },
+  {
+    "input": "`b\n",
+    "output": "No\n"
+  },
+  {
+    "input": "kc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "glfe\n",
+    "output": "No\n"
+  },
+  {
+    "input": "b`\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ck\n",
+    "output": "No\n"
+  },
+  {
+    "input": "glff\n",
+    "output": "No\n"
+  },
+  {
+    "input": "``\n",
+    "output": "No\n"
+  },
+  {
+    "input": "cl\n",
+    "output": "No\n"
+  },
+  {
+    "input": "glgf\n",
+    "output": "No\n"
+  },
+  {
+    "input": "_b\n",
+    "output": "No\n"
+  },
+  {
+    "input": "lc\n",
+    "output": "No\n"
+  },
+  {
+    "input": "flgf\n",
+    "output": "No\n"
+  },
+  {
+    "input": "b_\n",
+    "output": "No\n"
+  },
+  {
+    "input": "dl\n",
+    "output": "No\n"
+  },
+  {
+    "input": "flff\n",
+    "output": "No\n"
+  },
+  {
+    "input": "`_\n",
+    "output": "No\n"
+  },
+  {
+    "input": "ha\n",
+    "output": "No\n"
+  },
+  {
+    "input": "hihi\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "hihi\n",
+    "output": "Yes\n"
+  },
+  {
+    "input": "hi\n",
+    "output": "Yes\n"
+  }
+]

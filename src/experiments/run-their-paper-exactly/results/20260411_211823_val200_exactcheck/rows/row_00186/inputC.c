@@ -1,0 +1,2 @@
+```c
+char*s,T['   '],*r=T;U[1<<27];n;k;main(i){for(;gets(r+1);k=!--n)for(;*++r&=31;)U[r-T]=k|=!!n<<*r;for(;~i--;)for(s=r;s-->T;k=U[k]=U[k-=~-~*s<<21]?:*s?s-T:0)n+=__builtin_popcount(U[s-T]&(U[k+'   ']^=!s[-1]<<*s));printf("%d",n+1);}```

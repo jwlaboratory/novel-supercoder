@@ -1,0 +1,249 @@
+section .text
+global main
+extern printf, scanf
+
+main:
+push rbp
+mov rbp, rsp
+sub rsp, 120
+
+lea rdi, [rbp-120]
+mov ecx, 9
+rep stosd
+
+mov rsi, rbp-120
+mov ecx, 3
+mov ebx, 0
+mov edx, 0
+
+read_loop:
+mov eax, 3
+mov edi, rsi
+call scanf
+add rsi, 4
+loop read_loop
+
+mov eax, [rbp-120]
+mov ecx, [rbp-116]
+mov edx, [rbp-112]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-108]
+mov edx, [rbp-104]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-100]
+mov edx, [rbp-96]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-92]
+mov edx, [rbp-88]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-84]
+mov edx, [rbp-80]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-76]
+mov edx, [rbp-72]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-68]
+mov edx, [rbp-64]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-60]
+mov edx, [rbp-56]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-52]
+mov edx, [rbp-48]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-44]
+mov edx, [rbp-40]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-36]
+mov edx, [rbp-32]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-28]
+mov edx, [rbp-24]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-20]
+mov edx, [rbp-16]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-12]
+mov edx, [rbp-8]
+add eax, ecx
+add eax, edx
+mov ecx, [rbp-4]
+mov edx, [rbp]
+add eax, ecx
+add eax, edx
+mov ecx, eax
+mov eax, 3
+idiv ecx
+test edx, edx
+jnz no
+mov eax, 1
+jmp end
+no:
+xor eax, eax
+end:
+mov esi, eax
+mov edi, [rbp-12]
+cmp esi, byte [rbp-12]
+jne no_output
+mov edi, [rbp-16]
+cmp esi, byte [rbp-16]
+jne no_output
+mov edi, [rbp-20]
+cmp esi, byte [rbp-20]
+jne no_output
+mov edi, [rbp-24]
+cmp esi, byte [rbp-24]
+jne no_output
+mov edi, [rbp-28]
+cmp esi, byte [rbp-28]
+jne no_output
+mov edi, [rbp-32]
+cmp esi, byte [rbp-32]
+jne no_output
+mov edi, [rbp-36]
+cmp esi, byte [rbp-36]
+jne no_output
+mov edi, [rbp-40]
+cmp esi, byte [rbp-40]
+jne no_output
+mov edi, [rbp-44]
+cmp esi, byte [rbp-44]
+jne no_output
+mov edi, [rbp-48]
+cmp esi, byte [rbp-48]
+jne no_output
+mov edi, [rbp-52]
+cmp esi, byte [rbp-52]
+jne no_output
+mov edi, [rbp-56]
+cmp esi, byte [rbp-56]
+jne no_output
+mov edi, [rbp-60]
+cmp esi, byte [rbp-60]
+jne no_output
+mov edi, [rbp-64]
+cmp esi, byte [rbp-64]
+jne no_output
+mov edi, [rbp-68]
+cmp esi, byte [rbp-68]
+jne no_output
+mov edi, [rbp-72]
+cmp esi, byte [rbp-72]
+jne no_output
+mov edi, [rbp-76]
+cmp esi, byte [rbp-76]
+jne no_output
+mov edi, [rbp-80]
+cmp esi, byte [rbp-80]
+jne no_output
+mov edi, [rbp-84]
+cmp esi, byte [rbp-84]
+jne no_output
+mov edi, [rbp-88]
+cmp esi, byte [rbp-88]
+jne no_output
+mov edi, [rbp-92]
+cmp esi, byte [rbp-92]
+jne no_output
+mov edi, [rbp-96]
+cmp esi, byte [rbp-96]
+jne no_output
+mov edi, [rbp-100]
+cmp esi, byte [rbp-100]
+jne no_output
+mov edi, [rbp-104]
+cmp esi, byte [rbp-104]
+jne no_output
+mov edi, [rbp-108]
+cmp esi, byte [rbp-108]
+jne no_output
+mov edi, [rbp-112]
+cmp esi, byte [rbp-112]
+jne no_output
+mov edi, [rbp-116]
+cmp esi, byte [rbp-116]
+jne no_output
+mov edi, [rbp-120]
+cmp esi, byte [rbp-120]
+jne no_output
+mov edi, [rbp-124]
+cmp esi, byte [rbp-124]
+jne no_output
+mov edi, [rbp-128]
+cmp esi, byte [rbp-128]
+jne no_output
+mov edi, [rbp-132]
+cmp esi, byte [rbp-132]
+jne no_output
+mov edi, [rbp-136]
+cmp esi, byte [rbp-136]
+jne no_output
+mov edi, [rbp-140]
+cmp esi, byte [rbp-140]
+jne no_output
+mov edi, [rbp-144]
+cmp esi, byte [rbp-144]
+jne no_output
+mov edi, [rbp-148]
+cmp esi, byte [rbp-148]
+jne no_output
+mov edi, [rbp-152]
+cmp esi, byte [rbp-152]
+jne no_output
+mov edi, [rbp-156]
+cmp esi, byte [rbp-156]
+jne no_output
+mov edi, [rbp-160]
+cmp esi, byte [rbp-160]
+jne no_output
+mov edi, [rbp-164]
+cmp esi, byte [rbp-164]
+jne no_output
+mov edi, [rbp-168]
+cmp esi, byte [rbp-168]
+jne no_output
+mov edi, [rbp-172]
+cmp esi, byte [rbp-172]
+jne no_output
+mov edi, [rbp-176]
+cmp esi, byte [rbp-176]
+jne no_output
+mov edi, [rbp-180]
+cmp esi, byte [rbp-180]
+jne no_output
+mov edi, [rbp-184]
+cmp esi, byte [rbp-184]
+jne no_output
+mov edi, [rbp-188]
+cmp esi, byte [rbp-188]
+jne no_output
+mov edi, [rbp-192]
+cmp esi, byte [rbp-192]
+jne no_output
+mov edi, [rbp-196]
+cmp esi, byte [rbp-196]
+jne no_output
+mov edi, [rbp-200]
+cmp esi, byte [rbp-200]
+jne no_output
+mov edi, [rbp-204]
+cmp esi, byte [rbp-204]
+jne no_output
+mov edi, [rbp-208]
+cmp esi, byte [rbp-208]
+jne no_output
+mov edi, [rbp-212]
+cmp esi, byte [rbp-21

@@ -1,0 +1,101 @@
+```assembly
+section .text
+global main
+extern __isoc99_scanf, __printf_chk, __stack_chk_fail
+
+main:
+    sub rsp, 40
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    mov ecx, eax
+    imul eax, 1717986919
+    sar eax, 31
+    sar edx, 34
+    sub eax, edx
+    lea eax, [eax+eax*4]
+    mov esi, eax
+    add edx, eax
+    sub edx, eax
+    je .L2
+    mov eax, 10
+    lea ecx, [rsi+rsi*4+5]
+    sub eax, edx
+    add ecx, ecx
+    mov eax, edx
+.L2:
+    mov ecx, ebx
+    imul ebx, 1717986919
+    lea edi, [rcx+rbx]
+    sar ebx, 31
+    sar edx, 34
+    sub ebx, edx
+    lea ebx, [ebx+ebx*4]
+    add edi, ebx
+    sub edi, ebx
+    je .L4
+    mov ebx, 10
+    sub edi, ebx
+    lea ecx, [rbx+rbx*4+5]
+    cmp eax, ecx
+    lea edx, [rcx+rax*2]
+    cmovl eax, ecx
+.L4:
+    mov ecx, edx
+    imul edx, 1717986919
+    lea ebx, [rdi+rcx]
+    sar edx, 31
+    sar ecx, 34
+    sub edx, ecx
+    lea ecx, [edx+edx*4]
+    add ebx, ecx
+    sub ebx, ecx
+    je .L6
+    mov ecx, 10
+    sub ebx, ecx
+    lea edx, [rcx+rcx*4+5]
+    cmp eax, ecx
+    lea ecx, [rdi+rbx*2]
+    cmovl eax, ecx
+.L6:
+    mov ecx, edx
+    imul edx, 1717986919
+    lea ebx, [rdi+rcx]
+    sar edx, 31
+    sar ecx, 34
+    sub edx, ecx
+    lea ecx, [edx+edx*4]
+    add ebx, ecx
+    sub ebx, ecx
+    je .L8
+    mov ecx, 10
+    sub ebx, ecx
+    lea edx, [rcx+rcx*4+5]
+    cmp eax, ecx
+    lea ecx, [rdi+rbx*2]
+    cmovl eax, ecx
+.L8:
+    mov ecx, edx
+    imul edx, 1717986919
+    lea ebx, [rdi+rcx]
+    sar edx, 31
+    sar ecx, 34
+    sub edx, ecx
+    lea ecx, [edx+edx*4]
+    add ebx, ecx
+    sub ebx, ecx
+    je .L10
+    mov ecx, 10
+    sub ebx, ecx
+    lea edx, [rcx+rcx*4+5]
+    cmp eax, ecx
+    lea ecx, [rdi+rbx*2]
+    cmovl eax, ecx
+.L10:
+    sub eax, ebx
+    lea rsi, [LC1]
+    xor eax, eax
+    mov edi, 1
+    call __printf_chk
+    add rsp, 40
+    ret
+```

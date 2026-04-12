@@ -1,0 +1,414 @@
+[
+  {
+    "input": "-1\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "100\n",
+    "output": "ai13333\n"
+  },
+  {
+    "input": "200\n",
+    "output": "ai133333\n"
+  },
+  {
+    "input": "-2\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-4\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-7\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-6\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-3\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-5\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-8\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-12\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-22\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-9\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-21\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-32\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-10\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-61\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-11\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-65\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-20\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-78\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-31\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-13\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-24\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-18\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-15\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-23\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-25\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-26\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-19\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-42\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-43\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-34\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-62\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-44\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-74\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-39\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-38\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-54\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-16\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-30\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-14\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-17\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-47\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-76\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-58\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-51\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-33\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-82\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-66\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-28\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-57\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-29\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-59\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-71\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-63\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-49\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-85\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-45\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-72\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-95\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-60\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-50\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-53\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-40\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-80\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-88\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-56\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-75\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-41\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-37\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-86\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-48\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-27\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-36\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-83\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-97\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-91\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-46\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-52\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-35\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-94\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-70\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-64\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-73\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-69\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-92\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-68\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-87\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-77\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-55\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-98\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-89\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-67\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-84\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-81\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-90\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-79\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-99\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "-93\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "0\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "0\n",
+    "output": "ai1333\n"
+  },
+  {
+    "input": "300\n",
+    "output": "ai1333333\n"
+  }
+]

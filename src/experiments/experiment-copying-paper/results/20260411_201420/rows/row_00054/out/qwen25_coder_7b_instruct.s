@@ -1,0 +1,23 @@
+section .text
+global main
+extern __isoc99_scanf, __printf_chk, __stack_chk_fail
+
+main:
+    sub rsp, 24
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    cmp dword [rsp+4], 29
+    jg .Lyes
+    lea rsi, [LC2]
+    mov edi, 1
+    xor eax, eax
+    call __printf_chk
+    jmp .Lend
+.Lyes:
+    lea rsi, [LC1]
+    mov edi, 1
+    xor eax, eax
+    call __printf_chk
+.Lend:
+    add rsp, 24
+    ret

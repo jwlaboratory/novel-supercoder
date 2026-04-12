@@ -1,0 +1,414 @@
+[
+  {
+    "input": "11 30\n6 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 17\n11 17\n",
+    "output": "0"
+  },
+  {
+    "input": "6 30\n12 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 16\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 24\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n18 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 8\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 17\n",
+    "output": "0"
+  },
+  {
+    "input": "11 16\n11 31\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n35 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 8\n11 32\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n2 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 3\n11 8\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n26 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 16\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 33\n",
+    "output": "0"
+  },
+  {
+    "input": "11 3\n11 7\n",
+    "output": "0"
+  },
+  {
+    "input": "11 27\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 4\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 4\n11 30\n",
+    "output": "0"
+  },
+  {
+    "input": "11 21\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n31 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 1\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 52\n",
+    "output": "0"
+  },
+  {
+    "input": "11 27\n11 50\n",
+    "output": "0"
+  },
+  {
+    "input": "11 11\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 71\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 58\n",
+    "output": "0"
+  },
+  {
+    "input": "11 12\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 71\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n23 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 17\n11 20\n",
+    "output": "0"
+  },
+  {
+    "input": "9 30\n12 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 16\n11 56\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 17\n",
+    "output": "0"
+  },
+  {
+    "input": "11 11\n11 31\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 50\n",
+    "output": "0"
+  },
+  {
+    "input": "11 4\n11 73\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 30\n",
+    "output": "0"
+  },
+  {
+    "input": "11 21\n11 27\n",
+    "output": "0"
+  },
+  {
+    "input": "11 6\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n58 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 1\n11 47\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 44\n",
+    "output": "0"
+  },
+  {
+    "input": "11 27\n11 91\n",
+    "output": "0"
+  },
+  {
+    "input": "11 11\n11 61\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 61\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 64\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 99\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 20\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 71\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 47\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 23\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 116\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 20\n",
+    "output": "0"
+  },
+  {
+    "input": "11 6\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 20\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 21\n11 31\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 94\n",
+    "output": "0"
+  },
+  {
+    "input": "11 3\n11 9\n",
+    "output": "0"
+  },
+  {
+    "input": "11 6\n11 7\n",
+    "output": "0"
+  },
+  {
+    "input": "11 5\n11 46\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 92\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 61\n",
+    "output": "0"
+  },
+  {
+    "input": "11 4\n11 71\n",
+    "output": "0"
+  },
+  {
+    "input": "11 17\n11 38\n",
+    "output": "0"
+  },
+  {
+    "input": "11 14\n11 56\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 32\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 63\n",
+    "output": "0"
+  },
+  {
+    "input": "11 6\n11 77\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n63 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 8\n11 175\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 125\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 111\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 21\n",
+    "output": "0"
+  },
+  {
+    "input": "11 12\n11 61\n",
+    "output": "0"
+  },
+  {
+    "input": "11 17\n11 65\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 97\n",
+    "output": "0"
+  },
+  {
+    "input": "11 3\n11 77\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 110\n",
+    "output": "0"
+  },
+  {
+    "input": "11 8\n11 101\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 39\n",
+    "output": "0"
+  },
+  {
+    "input": "11 3\n11 61\n",
+    "output": "0"
+  },
+  {
+    "input": "11 17\n11 122\n",
+    "output": "0"
+  },
+  {
+    "input": "11 4\n11 110\n",
+    "output": "0"
+  },
+  {
+    "input": "11 11\n11 101\n",
+    "output": "0"
+  },
+  {
+    "input": "11 1\n11 7\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 61\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 7\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 24\n",
+    "output": "0"
+  },
+  {
+    "input": "11 4\n11 7\n",
+    "output": "0"
+  },
+  {
+    "input": "11 2\n11 10\n",
+    "output": "0"
+  },
+  {
+    "input": "11 16\n11 19\n",
+    "output": "0"
+  },
+  {
+    "input": "11 7\n11 28\n",
+    "output": "0"
+  },
+  {
+    "input": "11 5\n11 7\n",
+    "output": "0"
+  },
+  {
+    "input": "6 30\n31 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 12\n11 57\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n42 1\n",
+    "output": "1"
+  },
+  {
+    "input": "11 16\n11 17\n",
+    "output": "0"
+  },
+  {
+    "input": "11 16\n11 17\n",
+    "output": "0"
+  },
+  {
+    "input": "11 30\n12 1\n",
+    "output": "1"
+  }
+]

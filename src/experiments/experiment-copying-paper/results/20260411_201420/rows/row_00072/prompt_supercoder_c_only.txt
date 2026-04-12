@@ -1,0 +1,8 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+i,b;main(a,c){for(;c-b&&c-a&&~c;c=getchar_unlocked(i++))a=b,b=c;printf("%d %d",c-b?c-a?-1:i-2:i-1,c-b&&c-a?-1:i);}```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

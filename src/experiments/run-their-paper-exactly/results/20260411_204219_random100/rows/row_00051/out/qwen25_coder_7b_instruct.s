@@ -1,0 +1,48 @@
+section .text
+global main
+extern __isoc99_scanf, __printf_chk, __stack_chk_fail
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 32
+
+    lea rdi, [LC0]
+    call __isoc99_scanf
+    mov eax, dword [rsp+20]
+    dec eax
+    test eax, eax
+    je end_loop
+
+loop_start:
+    mov ebx, dword [rsp+12]
+    mov ecx, dword [rsp+16]
+    mov edx, dword [rsp+8]
+
+    cmp ebx, ecx
+    jl check_b
+    add ebx, ebx
+    jmp update_a
+
+check_b:
+    cmp ecx, edx
+    jg update_c
+    add ecx, ecx
+    jmp update_b
+
+update_c:
+    add edx, edx
+
+update_a:
+    dec eax
+    jnz loop_start
+
+end_loop:
+    mov eax, dword [rsp+12]
+    add eax, dword [rsp+16]
+    add eax, dword [rsp+8]
+    lea rdi, [LC1]
+    xor edi, edi
+    call __printf_chk
+    leave
+    ret

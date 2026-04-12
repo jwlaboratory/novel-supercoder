@@ -1,0 +1,141 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+
+int main () {
+	int n, m;
+	scanf("%d %d", &n, &m);
+	char s[n];
+	scanf("%s", s);
+	if(s[m-1] >= 'A' && s[m-1] <= 'Z') {
+		s[m-1] += 32;
+	} else {
+		s[m-1] -= 32;
+	}
+	printf("%s", s);
+	return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d %d"
+.LC1:
+	.string	"%s"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rdi
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	pushq	%r13
+	pushq	%r12
+	leaq	-28(%rbp), %rdx
+	leaq	-32(%rbp), %rsi
+	subq	$16, %rsp
+	.cfi_offset 13, -24
+	.cfi_offset 12, -32
+	movq	%fs:40, %rax
+	movq	%rax, -24(%rbp)
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movslq	-32(%rbp), %rax
+	movq	%rsp, %rcx
+	addq	$15, %rax
+	movq	%rax, %rdx
+	andq	$-4096, %rax
+	subq	%rax, %rcx
+	andq	$-16, %rdx
+	cmpq	%rcx, %rsp
+	je	.L3
+.L13:
+	subq	$4096, %rsp
+	orq	$0, 4088(%rsp)
+	cmpq	%rcx, %rsp
+	jne	.L13
+.L3:
+	andl	$4095, %edx
+	subq	%rdx, %rsp
+	testq	%rdx, %rdx
+	jne	.L14
+.L4:
+	leaq	.LC1(%rip), %r13
+	movq	%rsp, %rsi
+	xorl	%eax, %eax
+	movq	%rsp, %r12
+	movq	%r13, %rdi
+	call	__isoc99_scanf@PLT
+	movl	-28(%rbp), %eax
+	subl	$1, %eax
+	cltq
+	movzbl	(%rsp,%rax), %ecx
+	leal	-65(%rcx), %esi
+	leal	-32(%rcx), %edx
+	cmpb	$25, %sil
+	jbe	.L15
+.L6:
+	movb	%dl, (%r12,%rax)
+	movq	%r13, %rsi
+	xorl	%eax, %eax
+	movq	%r12, %rdx
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	-24(%rbp), %rax
+	subq	%fs:40, %rax
+	jne	.L16
+	leaq	-16(%rbp), %rsp
+	xorl	%eax, %eax
+	popq	%r12
+	popq	%r13
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa 7, 8
+	ret
+.L15:
+	.cfi_restore_state
+	leal	32(%rcx), %edx
+	jmp	.L6
+.L14:
+	orq	$0, -8(%rsp,%rdx)
+	jmp	.L4
+.L16:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

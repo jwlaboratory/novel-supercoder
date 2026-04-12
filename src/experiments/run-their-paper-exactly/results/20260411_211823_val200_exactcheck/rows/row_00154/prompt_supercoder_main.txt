@@ -1,0 +1,229 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+int a[6];
+int main(){
+	int n;
+	scanf("%d",&n);
+	for(int i=0;i<n;i++){
+		int k;
+		scanf("%d",&k);
+		int d[3]={0,1,2};
+		while(k--){
+			int x;
+			scanf("%d",&x);
+			if(x){int t=d[1];d[1]=d[2];d[2]=t;}
+			else{int t=d[1];d[1]=d[0];d[0]=t;}
+		}
+		a[d[0]*2+(d[1]>d[2])]++;
+	}
+	if(a[0]>=1||a[1]>=2||a[2]>=2||a[5]>=2||a[3]>=3||a[4]>=3||(a[3]&&a[4])||(a[1]+a[2]+a[5]>=2&&(a[3]||a[4])))puts("yes");
+	else puts("no");
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"yes"
+.LC2:
+	.string	"no"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	xorl	%r14d, %r14d
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	leaq	.LC0(%rip), %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	movq	%r12, %rdi
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$56, %rsp
+	.cfi_def_cfa_offset 112
+	movq	%fs:40, %rax
+	movq	%rax, 40(%rsp)
+	xorl	%eax, %eax
+	leaq	28(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	28(%rsp), %ecx
+	leaq	32(%rsp), %rax
+	movq	%rax, 8(%rsp)
+	testl	%ecx, %ecx
+	jle	.L8
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	movq	8(%rsp), %rsi
+	movq	%r12, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movl	32(%rsp), %eax
+	leal	-1(%rax), %edx
+	movl	%edx, 32(%rsp)
+	testl	%eax, %eax
+	je	.L5
+	movl	$2, %ebp
+	movl	$1, %r15d
+	xorl	%ebx, %ebx
+	leaq	36(%rsp), %r13
+	jmp	.L7
+	.p2align 4,,10
+	.p2align 3
+.L33:
+	movl	%ebx, %eax
+	movl	%r15d, %ebx
+	movl	%eax, %r15d
+	movl	32(%rsp), %eax
+	leal	-1(%rax), %ecx
+	movl	%ecx, 32(%rsp)
+	testl	%eax, %eax
+	je	.L32
+.L7:
+	movq	%r13, %rsi
+	movq	%r12, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movl	36(%rsp), %eax
+	testl	%eax, %eax
+	je	.L33
+	movl	%r15d, %eax
+	movl	%ebp, %r15d
+	movl	%eax, %ebp
+	movl	32(%rsp), %eax
+	leal	-1(%rax), %ecx
+	movl	%ecx, 32(%rsp)
+	testl	%eax, %eax
+	jne	.L7
+.L32:
+	xorl	%eax, %eax
+	cmpl	%ebp, %r15d
+	setg	%al
+	leal	(%rax,%rbx,2), %eax
+.L5:
+	cltq
+	leaq	a(%rip), %rdx
+	addl	$1, %r14d
+	addl	$1, (%rdx,%rax,4)
+	cmpl	%r14d, 28(%rsp)
+	jg	.L2
+.L8:
+	movl	a(%rip), %edx
+	testl	%edx, %edx
+	jg	.L3
+	movl	4+a(%rip), %eax
+	cmpl	$1, %eax
+	jle	.L34
+.L3:
+	leaq	.LC1(%rip), %rdi
+	call	puts@PLT
+.L11:
+	movq	40(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L35
+	addq	$56, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 56
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 48
+	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
+	.cfi_def_cfa_offset 8
+	ret
+.L34:
+	.cfi_restore_state
+	movl	8+a(%rip), %edx
+	cmpl	$1, %edx
+	jg	.L3
+	movl	20+a(%rip), %edi
+	cmpl	$1, %edi
+	jg	.L3
+	movl	12+a(%rip), %ecx
+	cmpl	$2, %ecx
+	jg	.L3
+	movl	16+a(%rip), %esi
+	cmpl	$2, %esi
+	jg	.L3
+	testl	%esi, %esi
+	je	.L15
+	testl	%ecx, %ecx
+	jne	.L3
+.L15:
+	addl	%edx, %eax
+	addl	%edi, %eax
+	subl	$1, %eax
+	jle	.L10
+	orl	%esi, %ecx
+	jne	.L3
+.L10:
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+	jmp	.L11
+.L35:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.globl	a
+	.bss
+	.align 16
+	.type	a, @object
+	.size	a, 24
+a:
+	.zero	24
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

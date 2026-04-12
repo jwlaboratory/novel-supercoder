@@ -1,0 +1,410 @@
+[
+  {
+    "input": "f@IR, LATER, OCCASIONALLY CLOUDY.\n",
+    "output": "F@ir, later, occasionally cloudy.\n"
+  },
+  {
+    "input": "f@IR, LATER, YLLANOISACCO CLOUDY.\n",
+    "output": "F@ir, later, yllanoisacco cloudy.\n"
+  },
+  {
+    "input": "f@IR, LATER, OLLANOISACCY CLOUDY.\n",
+    "output": "F@ir, later, ollanoisaccy cloudy.\n"
+  },
+  {
+    "input": "f@IR, LATER, OLKANOISACCY CLOUDY.\n",
+    "output": "F@ir, later, olkanoisaccy cloudy.\n"
+  },
+  {
+    "input": ",RI@f LATER, OLKANOISACCY CLOUDY.\n",
+    "output": ",ri@F later, olkanoisaccy cloudy.\n"
+  },
+  {
+    "input": ",RI@f KATER, OLKANOISACCY CLOUDY.\n",
+    "output": ",ri@F kater, olkanoisaccy cloudy.\n"
+  },
+  {
+    "input": ",RI@g KATER, OLKANOISACCY CLOUDY.\n",
+    "output": ",ri@G kater, olkanoisaccy cloudy.\n"
+  },
+  {
+    "input": ",RI@g KATER, OLKANOISACCY CLOUDX.\n",
+    "output": ",ri@G kater, olkanoisaccy cloudx.\n"
+  },
+  {
+    "input": ",RI@g KATFR, OLKANOISACCY CLOUDX.\n",
+    "output": ",ri@G katfr, olkanoisaccy cloudx.\n"
+  },
+  {
+    "input": ",RI@g KATFR, OLKANOISACCY .XDUOLC\n",
+    "output": ",ri@G katfr, olkanoisaccy .xduolc\n"
+  },
+  {
+    "input": ",RI@g KATFR, OLKANOISACCY .XDULOC\n",
+    "output": ",ri@G katfr, olkanoisaccy .xduloc\n"
+  },
+  {
+    "input": ",RI@g KATFR, OLKANOISACCY .ODULXC\n",
+    "output": ",ri@G katfr, olkanoisaccy .odulxc\n"
+  },
+  {
+    "input": ",RI@g KATFR- OLKANOISACCY .ODULXC\n",
+    "output": ",ri@G katfr- olkanoisaccy .odulxc\n"
+  },
+  {
+    "input": ",RI@g KATFR- OLKANOISACCY .ODUKXC\n",
+    "output": ",ri@G katfr- olkanoisaccy .odukxc\n"
+  },
+  {
+    "input": ",RI@g KATFR- OLKANOISACCY .OXUKDC\n",
+    "output": ",ri@G katfr- olkanoisaccy .oxukdc\n"
+  },
+  {
+    "input": "g@IR, KATFR- OLKANOISACCY .OXUKDC\n",
+    "output": "G@ir, katfr- olkanoisaccy .oxukdc\n"
+  },
+  {
+    "input": "g@IR, KATFR- OLKANOISACCY CDKUXO.\n",
+    "output": "G@ir, katfr- olkanoisaccy cdkuxo.\n"
+  },
+  {
+    "input": "g@IR, KRTFA- OLKANOISACCY CDKUXO.\n",
+    "output": "G@ir, krtfa- olkanoisaccy cdkuxo.\n"
+  },
+  {
+    "input": ",RI@g KRTFA- OLKANOISACCY CDKUXO.\n",
+    "output": ",ri@G krtfa- olkanoisaccy cdkuxo.\n"
+  },
+  {
+    "input": ",RI@g KRTF@- OLKANOISACCY CDKUXO.\n",
+    "output": ",ri@G krtf@- olkanoisaccy cdkuxo.\n"
+  },
+  {
+    "input": ",RI@g KRTF@- OLKANOISACCY CDKUXP.\n",
+    "output": ",ri@G krtf@- olkanoisaccy cdkuxp.\n"
+  },
+  {
+    "input": ",RI@g KRTF@- OLKANOISACCY BDKUXP.\n",
+    "output": ",ri@G krtf@- olkanoisaccy bdkuxp.\n"
+  },
+  {
+    "input": ",RI@g KRSF@- OLKANOISACCY BDKUXP.\n",
+    "output": ",ri@G krsf@- olkanoisaccy bdkuxp.\n"
+  },
+  {
+    "input": ",RI@g KRSF@- OLKANOISACCY .PXUKDB\n",
+    "output": ",ri@G krsf@- olkanoisaccy .pxukdb\n"
+  },
+  {
+    "input": ",RI@g KRSF@, OLKANOISACCY .PXUKDB\n",
+    "output": ",ri@G krsf@, olkanoisaccy .pxukdb\n"
+  },
+  {
+    "input": ",IR@g KRSF@, OLKANOISACCY .PXUKDB\n",
+    "output": ",ir@G krsf@, olkanoisaccy .pxukdb\n"
+  },
+  {
+    "input": ",IR@g ,RSF@K OLKANOISACCY .PXUKDB\n",
+    "output": ",ir@G ,rsf@k olkanoisaccy .pxukdb\n"
+  },
+  {
+    "input": ",IR@g ,RSF@K OLKANOISACCY BDKUXP.\n",
+    "output": ",ir@G ,rsf@k olkanoisaccy bdkuxp.\n"
+  },
+  {
+    "input": ",IR@g ,RSF@K OLKANOISACCY B.KUXPD\n",
+    "output": ",ir@G ,rsf@k olkanoisaccy b.kuxpd\n"
+  },
+  {
+    "input": "g@RI, ,RSF@K OLKANOISACCY B.KUXPD\n",
+    "output": "G@ri, ,rsf@k olkanoisaccy b.kuxpd\n"
+  },
+  {
+    "input": "g@RI, ,QSF@K OLKANOISACCY B.KUXPD\n",
+    "output": "G@ri, ,qsf@k olkanoisaccy b.kuxpd\n"
+  },
+  {
+    "input": "g@RI, ,QSF@K ALKANOISOCCY B.KUXPD\n",
+    "output": "G@ri, ,qsf@k alkanoisoccy b.kuxpd\n"
+  },
+  {
+    "input": "g@RI, ,QSF@K ALKAYOISOCCN B.KUXPD\n",
+    "output": "G@ri, ,qsf@k alkayoisoccn b.kuxpd\n"
+  },
+  {
+    "input": "g@RH, ,QSF@K ALKAYOISOCCN B.KUXPD\n",
+    "output": "G@rh, ,qsf@k alkayoisoccn b.kuxpd\n"
+  },
+  {
+    "input": "R@gH, ,QSF@K ALKAYOISOCCN B.KUXPD\n",
+    "output": "r@Gh, ,qsf@k alkayoisoccn b.kuxpd\n"
+  },
+  {
+    "input": "R@gH, K@FSQ, ALKAYOISOCCN B.KUXPD\n",
+    "output": "r@Gh, k@fsq, alkayoisoccn b.kuxpd\n"
+  },
+  {
+    "input": "R@gH, K@FSQ, ALKAYOISOCCN BK.UXPD\n",
+    "output": "r@Gh, k@fsq, alkayoisoccn bk.uxpd\n"
+  },
+  {
+    "input": "R@gH, K@FSQ, ALKAYOISOCCN BK.UWPD\n",
+    "output": "r@Gh, k@fsq, alkayoisoccn bk.uwpd\n"
+  },
+  {
+    "input": "R@gH, K@FSQ, ALKAYOISOCBN BK.UWPD\n",
+    "output": "r@Gh, k@fsq, alkayoisocbn bk.uwpd\n"
+  },
+  {
+    "input": "R@gH, ,QSF@K ALKAYOISOCBN BK.UWPD\n",
+    "output": "r@Gh, ,qsf@k alkayoisocbn bk.uwpd\n"
+  },
+  {
+    "input": "R@gH, ,QSG@K ALKAYOISOCBN BK.UWPD\n",
+    "output": "r@Gh, ,qsg@k alkayoisocbn bk.uwpd\n"
+  },
+  {
+    "input": "R@gH, ,QSG@K ALKAYOISOCBN DPWU.KB\n",
+    "output": "r@Gh, ,qsg@k alkayoisocbn dpwu.kb\n"
+  },
+  {
+    "input": "R@gH, ,QSG@K ALKAYOISOCBN .PWUDKB\n",
+    "output": "r@Gh, ,qsg@k alkayoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, ,QSK@G ALKAYOISOCBN .PWUDKB\n",
+    "output": "r@Gh, ,qsk@g alkayoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, G@KSQ, ALKAYOISOCBN .PWUDKB\n",
+    "output": "r@Gh, g@ksq, alkayoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, G,KSQ@ ALKAYOISOCBN .PWUDKB\n",
+    "output": "r@Gh, g,ksq@ alkayoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, G,KSQ@ ALK@YOISOCBN .PWUDKB\n",
+    "output": "r@Gh, g,ksq@ alk@yoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, G,KSQ@ AKK@YOISOCBN .PWUDKB\n",
+    "output": "r@Gh, g,ksq@ akk@yoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, GQKS,@ AKK@YOISOCBN .PWUDKB\n",
+    "output": "r@Gh, gqks,@ akk@yoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, GQKS-@ AKK@YOISOCBN .PWUDKB\n",
+    "output": "r@Gh, gqks-@ akk@yoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, GQKT-@ AKK@YOISOCBN .PWUDKB\n",
+    "output": "r@Gh, gqkt-@ akk@yoisocbn .pwudkb\n"
+  },
+  {
+    "input": "R@gH, GQKT-@ AKK@YOISOCBN BKDUWP.\n",
+    "output": "r@Gh, gqkt-@ akk@yoisocbn bkduwp.\n"
+  },
+  {
+    "input": "R@gH, GQKT-@ AKK@YOISOCBN BJDUWP.\n",
+    "output": "r@Gh, gqkt-@ akk@yoisocbn bjduwp.\n"
+  },
+  {
+    "input": "R@gH, GQKT-@ AKK@YOISOCBN BPDUWJ.\n",
+    "output": "r@Gh, gqkt-@ akk@yoisocbn bpduwj.\n"
+  },
+  {
+    "input": "R@g,H GQKT-@ AKK@YOISOCBN BPDUWJ.\n",
+    "output": "r@G,h gqkt-@ akk@yoisocbn bpduwj.\n"
+  },
+  {
+    "input": "R@g,H GQKT-@ AKK@YOISOCBN BPDUWJ/\n",
+    "output": "r@G,h gqkt-@ akk@yoisocbn bpduwj/\n"
+  },
+  {
+    "input": "R@g,H GQKT-@ AKK@YOISOCBN BPWUDJ/\n",
+    "output": "r@G,h gqkt-@ akk@yoisocbn bpwudj/\n"
+  },
+  {
+    "input": "R?g,H GQKT-@ AKK@YOISOCBN BPWUDJ/\n",
+    "output": "r?G,h gqkt-@ akk@yoisocbn bpwudj/\n"
+  },
+  {
+    "input": "R?g,H GQKT-@ AKK@YOISOCBN BPWUDK/\n",
+    "output": "r?G,h gqkt-@ akk@yoisocbn bpwudk/\n"
+  },
+  {
+    "input": "R?g,H GQKT-@ AKK@YOISOCBN B/WUDKP\n",
+    "output": "r?G,h gqkt-@ akk@yoisocbn b/wudkp\n"
+  },
+  {
+    "input": "R?g,H GQKT-@ NBCOSIOY@KKA B/WUDKP\n",
+    "output": "r?G,h gqkt-@ nbcosioy@kka b/wudkp\n"
+  },
+  {
+    "input": "R?g,H G-KTQ@ NBCOSIOY@KKA B/WUDKP\n",
+    "output": "r?G,h g-ktq@ nbcosioy@kka b/wudkp\n"
+  },
+  {
+    "input": "R,g?H G-KTQ@ NBCOSIOY@KKA B/WUDKP\n",
+    "output": "r,G?h g-ktq@ nbcosioy@kka b/wudkp\n"
+  },
+  {
+    "input": "R,g?H G-JTQ@ NBCOSIOY@KKA B/WUDKP\n",
+    "output": "r,G?h g-jtq@ nbcosioy@kka b/wudkp\n"
+  },
+  {
+    "input": "R,g?H G-ITQ@ NBCOSIOY@KKA B/WUDKP\n",
+    "output": "r,G?h g-itq@ nbcosioy@kka b/wudkp\n"
+  },
+  {
+    "input": "R,g@H G-ITQ@ NBCOSIOY@KKA B/WUDKP\n",
+    "output": "r,G@h g-itq@ nbcosioy@kka b/wudkp\n"
+  },
+  {
+    "input": "R,g@H G-ITQ@ NBCOSIOY@KKA PKDUW/B\n",
+    "output": "r,G@h g-itq@ nbcosioy@kka pkduw/b\n"
+  },
+  {
+    "input": "R,g@H G-ITQ@ AKK@YOISOCBN PKDUW/B\n",
+    "output": "r,G@h g-itq@ akk@yoisocbn pkduw/b\n"
+  },
+  {
+    "input": "R,g@H G-ITQ@ AKK@YOISODBN PKDUW/B\n",
+    "output": "r,G@h g-itq@ akk@yoisodbn pkduw/b\n"
+  },
+  {
+    "input": "R,g@H G-ITQ@ AKK@YOISODBN B/WUDKP\n",
+    "output": "r,G@h g-itq@ akk@yoisodbn b/wudkp\n"
+  },
+  {
+    "input": "R,g@H G-ITQ@ AKK@YPISODBN B/WUDKP\n",
+    "output": "r,G@h g-itq@ akk@ypisodbn b/wudkp\n"
+  },
+  {
+    "input": "R,g@H G-IQT@ AKK@YPISODBN B/WUDKP\n",
+    "output": "r,G@h g-iqt@ akk@ypisodbn b/wudkp\n"
+  },
+  {
+    "input": "R,g@H G-IQTA AKK@YPISODBN B/WUDKP\n",
+    "output": "r,G@h g-iqta akk@ypisodbn b/wudkp\n"
+  },
+  {
+    "input": "R,g@H G-IQSA AKK@YPISODBN B/WUDKP\n",
+    "output": "r,G@h g-iqsa akk@ypisodbn b/wudkp\n"
+  },
+  {
+    "input": "RHg@, G-IQTA AKK@YPISODBN B/WUDKP\n",
+    "output": "rhG@, g-iqta akk@ypisodbn b/wudkp\n"
+  },
+  {
+    "input": "RHg@, G-IQTA AKK@YPIRODBN B/WUDKP\n",
+    "output": "rhG@, g-iqta akk@ypirodbn b/wudkp\n"
+  },
+  {
+    "input": "RHg@, G-IQTA AKK@YPIRODBN B0WUDKP\n",
+    "output": "rhG@, g-iqta akk@ypirodbn b0wudkp\n"
+  },
+  {
+    "input": ",@gHR G-IQTA AKK@YPIRODBN B0WUDKP\n",
+    "output": ",@Ghr g-iqta akk@ypirodbn b0wudkp\n"
+  },
+  {
+    "input": ",@gHR G-IQTA AKK@YPIRODBN B0WUDKQ\n",
+    "output": ",@Ghr g-iqta akk@ypirodbn b0wudkq\n"
+  },
+  {
+    "input": ",@gHR H-IQTA AKK@YPIRODBN B0WUDKQ\n",
+    "output": ",@Ghr h-iqta akk@ypirodbn b0wudkq\n"
+  },
+  {
+    "input": ",@gHR H-IQTA AKK@YPIRODBN BKWUD0Q\n",
+    "output": ",@Ghr h-iqta akk@ypirodbn bkwud0q\n"
+  },
+  {
+    "input": "RHg@, H-IQTA AKK@YPIRODBN BKWUD0Q\n",
+    "output": "rhG@, h-iqta akk@ypirodbn bkwud0q\n"
+  },
+  {
+    "input": "RHg@, H-IQTA AKK@YPIRODBN BKWUD1Q\n",
+    "output": "rhG@, h-iqta akk@ypirodbn bkwud1q\n"
+  },
+  {
+    "input": "RHgA, H-IQTA AKK@YPIRODBN BKWUD1Q\n",
+    "output": "rhGa, h-iqta akk@ypirodbn bkwud1q\n"
+  },
+  {
+    "input": "R,gAH H-IQTA AKK@YPIRODBN BKWUD1Q\n",
+    "output": "r,Gah h-iqta akk@ypirodbn bkwud1q\n"
+  },
+  {
+    "input": "R,gAH H-IQTA AKK@YPIRODBN Q1DUWKB\n",
+    "output": "r,Gah h-iqta akk@ypirodbn q1duwkb\n"
+  },
+  {
+    "input": "R,gAH H-IQTA AKK@YPJRODBN Q1DUWKB\n",
+    "output": "r,Gah h-iqta akk@ypjrodbn q1duwkb\n"
+  },
+  {
+    "input": "R,gAH H-IQTA AKK@YPJRODBN BKWUD1Q\n",
+    "output": "r,Gah h-iqta akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "R,gAH A-IQTH AKK@YPJRODBN BKWUD1Q\n",
+    "output": "r,Gah a-iqth akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "S,gAH A-IQTH AKK@YPJRODBN BKWUD1Q\n",
+    "output": "s,Gah a-iqth akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "HAg,S A-IQTH AKK@YPJRODBN BKWUD1Q\n",
+    "output": "haG,s a-iqth akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "HAg-S A-IQTH AKK@YPJRODBN BKWUD1Q\n",
+    "output": "haG-s a-iqth akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "HAg,T A-IQTH AKK@YPJRODBN BKWUD1Q\n",
+    "output": "haG,t a-iqth akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "GAg,T A-IQTH AKK@YPJRODBN BKWUD1Q\n",
+    "output": "gaG,t a-iqth akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "GAg,T HTQI-A AKK@YPJRODBN BKWUD1Q\n",
+    "output": "gaG,t htqi-a akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "GAg,U HTQI-A AKK@YPJRODBN BKWUD1Q\n",
+    "output": "gaG,u htqi-a akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "GAg,U HAQI-T AKK@YPJRODBN BKWUD1Q\n",
+    "output": "gaG,u haqi-t akk@ypjrodbn bkwud1q\n"
+  },
+  {
+    "input": "GAg,U HAQI-T AKK@YBJRODPN BKWUD1Q\n",
+    "output": "gaG,u haqi-t akk@ybjrodpn bkwud1q\n"
+  },
+  {
+    "input": "GAg,U HAQI-T AKK@YBJRODPN BQWUD1K\n",
+    "output": "gaG,u haqi-t akk@ybjrodpn bqwud1k\n"
+  },
+  {
+    "input": "GAg,U HAQI-T AKK@YBJRODPN BQWUD0K\n",
+    "output": "gaG,u haqi-t akk@ybjrodpn bqwud0k\n"
+  },
+  {
+    "input": "fAIR, LATER, OCCASIONALLY CLOUDY.\n",
+    "output": "Fair, later, occasionally cloudy.\n"
+  },
+  {
+    "input": "fAIR, LATER, OCCASIONALLY CLOUDY.\n",
+    "output": "Fair, later, occasionally cloudy.\n"
+  }
+]

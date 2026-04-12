@@ -1,0 +1,414 @@
+[
+  {
+    "input": "deened\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "aoctder\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aocteer\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aectepp\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "defnfd\n",
+    "output": "3 5\n"
+  },
+  {
+    "input": "ndeedd\n",
+    "output": "2 4\n"
+  },
+  {
+    "input": "defned\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "fedned\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aocueer\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "efdned\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aocueeq\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "efnded\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aocueep\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "dendfe\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "peeucoa\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "peetcoa\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "aocteep\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aecteop\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aecsepp\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "neeedd\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "actoder\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "deenfd\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "aocuder\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aoctree\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "fedndd\n",
+    "output": "3 5\n"
+  },
+  {
+    "input": "aecueor\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "dfened\n",
+    "output": "3 5\n"
+  },
+  {
+    "input": "aocufeq\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "efndfd\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aecueop\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "deodfe\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aocveep\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "epetcoa\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "ancteep\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aceteop\n",
+    "output": "3 5\n"
+  },
+  {
+    "input": "aectfpp\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "aecsdpp\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "actoeer\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aocured\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "nedfdd\n",
+    "output": "3 5\n"
+  },
+  {
+    "input": "aebueor\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "dfenee\n",
+    "output": "3 5\n"
+  },
+  {
+    "input": "aoeufcq\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "effdnd\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "poeucea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "dfodee\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aobveep\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "epetcao\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "ancpeet\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "acetdop\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aebsepp\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "ednedd\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "abtoeer\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "aocuqed\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aeubeor\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "efenee\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "`oeufcq\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "efgdnd\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "poeubea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aoaveep\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "apetceo\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "bncpeet\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "abetdop\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aetober\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aocuqee\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "aeuceor\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "coeuf`q\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "dndgfe\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "podubea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aoavdep\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "apeocet\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "bncptee\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "podteca\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "rebotea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "roecuea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "cqeuf`o\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "efddng\n",
+    "output": "2 4\n"
+  },
+  {
+    "input": "pocubea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "pedvaoa\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "tecoepa\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "bocptee\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "padteco\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "reboaet\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "roectea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "cquef`o\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "efedng\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "qocubea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aoawdep\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "tecofpa\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "botpcee\n",
+    "output": "5 7\n"
+  },
+  {
+    "input": "padseco\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "reboate\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aetceor\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "c`uefqo\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "gndefe\n",
+    "output": "4 6\n"
+  },
+  {
+    "input": "qodubea\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "aoawdfp\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "secofpa\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "ocesdap\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "retoabe\n",
+    "output": "-1 -1\n"
+  },
+  {
+    "input": "needed\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "needed\n",
+    "output": "1 3\n"
+  },
+  {
+    "input": "atcoder\n",
+    "output": "-1 -1\n"
+  }
+]
