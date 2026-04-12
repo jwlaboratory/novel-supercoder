@@ -1,0 +1,266 @@
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	max
+	.type	max, @function
+max:
+.LFB8:
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovge	%rsi, %rax
+	ret
+	.size	max, .-max
+	.p2align 4
+	.globl	min
+	.type	min, @function
+min:
+.LFB9:
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovle	%rsi, %rax
+	ret
+	.size	min, .-min
+	.p2align 4
+	.globl	zt
+	.type	zt, @function
+zt:
+.LFB10:
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovge	%rsi, %rax
+	cmovg	%rdi, %rsi
+	subq	%rsi, %rax
+	ret
+	.size	zt, .-zt
+	.p2align 4
+	.globl	round
+	.type	round, @function
+round:
+.LFB11:
+	movq	%rdi, %rax
+	cqto
+	idivq	%rsi
+	addq	%rdx, %rdx
+	cmpq	%rsi, %rdx
+	setge	%dl
+	movzbl	%dl, %edx
+	addq	%edx, %rax
+	ret
+	.size	round, .-round
+	.p2align 4
+	.globl	ceil
+	.type	ceil, @function
+ceil:
+.LFB12:
+	movq	%rdi, %rax
+	cqto
+	idivq	%rsi
+	cmpq	$1, %edx
+	sbbl	$-1, %eax
+	ret
+	.size	ceil, .-ceil
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB13:
+	movq	%rdi, %rax
+	movq	%rsi, %rdx
+	testq	%rsi, %rsi
+	je	.L14
+.L13:
+	movq	%rdx, %rcx
+	cqto
+	idivq	%rcx
+	movq	%rcx, %rax
+	testq	%rdx, %rdx
+	jne	.L13
+	movq	%rcx, %rax
+	ret
+.L14:
+	movq	%rdi, %rcx
+	movq	%rcx, %rax
+	ret
+	.size	gcd, .-gcd
+	.p2align 4
+	.globl	lcm
+	.type	lcm, @function
+lcm:
+.LFB14:
+	testq	%rsi, %rsi
+	je	.L19
+	movq	%rsi, %rdx
+	movq	%rdi, %rcx
+.L18:
+	movq	%rcx, %rax
+	movq	%edx, %rcx
+	cqto
+	idivq	%rcx
+	testq	%edx, %edx
+	jne	.L18
+	movq	%edi, %rax
+	cqto
+	idivq	%rcx
+	imulq	%esi, %rax
+	ret
+.L19:
+	xorl	%eax, %eax
+	ret
+	.size	lcm, .-lcm
+	.p2align 4
+	.globl	nCr
+	.type	nCr, @function
+nCr:
+.LFB15:
+	testq	%rsi, %rsi
+	jle	.L24
+	addq	$1, %rsi
+	movq	$1, %rax
+	movq	$1, %rcx
+	addq	$1, %rdi
+.L23:
+	movq	%rdi, %edx
+	subq	%rcx, %edx
+	imulq	%edx, %rax
+	cqto
+	idivq	%rcx
+	addq	$1, %rcx
+	cmpq	%rsi, %rcx
+	jne	.L23
+	ret
+.L24:
+	movq	$1, %rax
+	ret
+	.size	nCr, .-nCr
+	.p2align 4
+	.globl	nHr
+	.type	nHr, @function
+nHr:
+.LFB16:
+	addq	%rsi, %rdi
+	testq	%rsi, %rsi
+	jle	.L29
+	addq	$1, %rsi
+	movq	$1, %rax
+	movq	$1, %rcx
+.L28:
+	movq	%rdi, %edx
+	subq	%rcx, %edx
+	imulq	%edx, %rax
+	cqto
+	idivq	%rcx
+	addq	$1, %rcx
+	cmpq	%rsi, %rcx
+	jne	.L28
+	ret
+.L29:
+	movq	$1, %rax
+	ret
+	.size	nHr, .-nHr
+	.p2align 4
+	.globl	fact
+	.type	fact, @function
+fact:
+.LFB17:
+	testq	%rdi, %rdi
+	jle	.L34
+	leaq	1(%rdi), %rsi
+	andq	$1, %rdi
+	movq	$1, %rdx
+	movq	$1, %rax
+	je	.L33
+	movq	$2, %rax
+	cmpq	%esi, %rax
+	je	.L31
+.L33:
+	imulq	%rax, %rdx
+	leaq	1(%rax), %rcx
+	addq	$2, %rax
+	imulq	%rcx, %rdx
+	cmpq	%esi, %rax
+	jne	.L33
+.L31:
+	movq	%rdx, %rax
+	ret
+.L34:
+	movq	$1, %rdx
+	movq	%rdx, %rax
+	ret
+	.size	fact, .-fact
+	.p2align 4
+	.globl	pow
+	.type	pow, @function
+pow:
+.LFB18:
+	testq	%rsi, %rsi
+	jle	.L44
+	leaq	1(%rsi), %ecx
+	andq	$1, %rsi
+	movq	$1, %eax
+	movq	$1, %edx
+	je	.L43
+	movq	$2, %edx
+	movq	%rdi, %eax
+	cmpq	%ecx, %edx
+	je	.L51
+.L43:
+	imulq	%edi, %eax
+	addq	$2, %edx
+	imulq	%edi, %eax
+	cmpq	%ecx, %edx
+	jne	.L43
+	ret
+.L44:
+	movq	$1, %eax
+	ret
+.L51:
+	ret
+	.size	pow, .-pow
+	.p2align 4
+	.globl	dsum
+	.type	dsum, @function
+dsum:
+.LFB19:
+	xorl	%ecx, %ecx
+	testq	%rdi, %rdi
+	je	.L52
+.L54:
+	movslq	%rdi, %rax
+	movq	%rdi, %edx
+	imulq	$1717986919, %rax, %rax
+	sarl	$31, %edx
+	sarq	$34, %rax
+	subl	%edx, %eax
+	leal	(%rax,%rax,4), %edx
+	addl	%edx, %edx
+	subl	%edx, %edi
+	addl	%edi, %ecx
+	movl	%eax, %edi
+	testl	%eax, %eax
+	jne	.L54
+.L52:
+	movl	%ecx, %eax
+	ret
+	.size	dsum, .-dsum
+	.p2align 4
+	.globl	dsumb
+	.type	dsumb, @function
+dsumb:
+.LFB20:
+	movq	%rdi, %rax
+	xorl	%ecx, %ecx
+	testq	%rdi, %rdi
+	je	.L57
+.L59:
+	cqto
+	idivq	%rsi
+	addq	%rdx, %ecx
+	testq	%rax, %rax
+	jne	.L59
+.L57:
+	movq	%rcx, %rax
+	ret
+	.size	dsumb, .-dsumb
+	.p2align 4
+	.globl	sankaku
+	.type	sankaku,

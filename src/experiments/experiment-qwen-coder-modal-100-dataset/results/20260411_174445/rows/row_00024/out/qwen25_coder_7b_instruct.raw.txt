@@ -1,6 +1,5 @@
-```
 ```assembly
-	.file	"inputC.c"
+	.file	"optimized_inputC.s"
 	.text
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
@@ -32,8 +31,6 @@ main:
 	movl	%edx, 4(%rsp)
 	testl	%eax, %eax
 	je	.L21
-	.p2align 4,,10
-	.p2align 3
 .L26:
 	leaq	8(%rsp), %rsi
 	leaq	12(%rsp), %rdx
@@ -47,8 +44,6 @@ main:
 	cmpl	12(%rsp), %esi
 	jne	.L4
 	jmp	.L5
-	.p2align 4,,10
-	.p2align 3
 .L25:
 	addl	%ebx, %esi
 	movl	%esi, 8(%rsp)
@@ -97,8 +92,6 @@ main:
 	.cfi_restore_state
 	cmpl	12(%rsp), %esi
 	je	.L5
-	.p2align 4,,10
-	.p2align 3
 .L8:
 	movl	$.LC2, %edi
 	xorl	%eax, %eax
@@ -112,8 +105,6 @@ main:
 	cmpl	%esi, %eax
 	jne	.L8
 	jmp	.L5
-	.p2align 4,,10
-	.p2align 3
 .L6:
 	subl	$1, %esi
 	movl	%esi, 8(%rsp)

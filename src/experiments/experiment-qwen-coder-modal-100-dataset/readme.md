@@ -17,13 +17,25 @@ cd /Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/experim
 ./2_generate_modal_all.sh \
   --run-dir ./results/20260411_174445 \
   --modal-model Qwen/Qwen2.5-Coder-7B-Instruct \
-  --modal-gpu h100
+  --modal-gpu h100 \
+  --modal-workers 4 \
+  --write-mode overwrite
 
 ./3_run_benchmark_all.sh \
-  --run-dir ./results/<run_id> \
+  --run-dir ./results/20260411_174445 \
   --runs 10 \
   --warmup 3
   ```
 
 
   20260411_174445
+
+
+
+  ok for some reason we are getting 0% compile rate
+  This is a valid benchmark data point -- qwen2.5-coder-7b-instruct scores 0% compilable on this assembly optimization task. Want to try a stronger model (e.g., a 32B or 70B variant, or a different model family) to see if compilation rates improve?
+
+
+  but.. the paper got like a 77% compile rate.
+  so lets try their appraoch 1:1
+  

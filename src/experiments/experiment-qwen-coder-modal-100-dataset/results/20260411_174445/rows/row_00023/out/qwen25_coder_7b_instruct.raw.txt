@@ -1,67 +1,7 @@
-l	hocchann(,%r15,4), %eax
-.L57:
-	cmpl	%r9d, %eax
-	cmovge	%eax, %r9d
-	jmp	.L55
-	.p2align 4,,10
-	.p2align 3
-.L66:
-	xorl	%eax, %eax
-	jmp	.L57
-	.p2align 4,,10
-	.p2align 3
-.L67:
-	xorl	%eax, %eax
-	jmp	.L57
-	.p2align 4,,10
-	.p2align 3
-.L95:
-	xorl	%eax, %eax
-	ret
-	.cfi_endproc
-.LFE4:
-	.size	get_i, .-get_i
-	.p2align 4
-	.globl	get
-	.type	get, @function
-get:
-.LFB5:
-	.cfi_startproc
-	cmpl	%edi, %esi
-	jge	.L100
-	movl	%edi, %r8d
-	movl	%esi, %r9d
-	movl	$0, %r10d
-	movl	$262144, %r11d
-	call	get_i
-	ret
-	.p2align 4,,10
-	.p2align 3
-.L100:
-	xorl	%eax, %eax
-	ret
-	.cfi_endproc
-.LFE5:
-	.size	get, .-get
-	.section	.note.GNU-stack,"",@progbits
+```assembly
+section .text
+global _start
 
-
-The given assembly code is not optimized for performance. Your task is to optimize it further by using techniques such as loop unrolling, branch prediction optimization, and instruction scheduling.
-
-Here are some tips to help you optimize the assembly code:
-
-1. Loop unrolling: Unroll loops to reduce the overhead of loop control instructions.
-
-2. Branch prediction optimization: Use conditional moves instead of branches when possible. Also, try to predict which branch will be taken based on previous execution patterns.
-
-3. Instruction scheduling: Rearrange instructions to minimize pipeline stalls and improve overall throughput.
-
-4. Memory access optimization: Minimize cache misses by accessing memory in a predictable pattern.
-
-5. Register allocation: Use registers efficiently to avoid spilling values to memory.
-
-6. Function inlining: Inline small functions to reduce function call overhead.
-
-7. Data parallelism: Utilize SIMD instructions to perform multiple operations simultaneously.
-
-By applying these techniques, you can significantly improve the performance of the assembly code. However, keep in mind that optimizing assembly code requires a deep understanding of both the hardware architecture and the specific application being optimized. It may also require iterative experimentation and profiling to identify the most effective optimizations.
+_start:
+    ; Your optimized assembly code here
+```

@@ -1,6 +1,5 @@
-```
 ```assembly
-	.file	"inputC.c"
+	.file	"optimized_inputC.s"
 	.text
 	.p2align 4
 	.globl	ABS
@@ -15,15 +14,6 @@ ABS:
 	.cfi_endproc
 .LFE8:
 	.size	ABS, .-ABS
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"%d"
-.LC1:
-	.string	"%d%d%d"
-.LC2:
-	.string	"Yes"
-.LC3:
-	.string	"No"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4
 	.globl	main
@@ -135,7 +125,7 @@ main:
 	cmpl	%eax, %ecx
 	jge	.L15
 .L8:
-	movl	$.LC2, %edi
+	movl	$.LC3, %edi
 	call	puts
 .L7:
 	addq	$40, %rsp
@@ -157,7 +147,7 @@ main:
 	ret
 .L4:
 	.cfi_restore_state
-	movl	$.LC3, %edi
+	movl	$.LC2, %edi
 	call	puts
 	jmp	.L7
 	.cfi_endproc

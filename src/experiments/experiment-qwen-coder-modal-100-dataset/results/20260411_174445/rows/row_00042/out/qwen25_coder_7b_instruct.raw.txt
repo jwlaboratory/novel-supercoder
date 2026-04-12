@@ -1,3 +1,55 @@
-```
-assembly code here
+```assembly
+section .text
+global main
+extern __isoc99_scanf, printf
+
+main:
+push rbp
+mov rbp, rsp
+sub rsp, 48
+
+lea rdi, [rbp-8]
+mov esi, 2
+call __isoc99_scanf
+cmp qword [rbp-8], 0
+jle .L6
+
+mov ebx, 1
+xor ebp, ebp
+xor eax, eax
+
+.L5:
+lea rsi, [rbp-24]
+mov edi, 1
+mov esi, 2
+call __isoc99_scanf
+mov rcx, qword [rbp-24]
+mov rdx, qword [rbp-8]
+add rax, rcx
+cmp rax, rdx
+jle .L3
+sub rax, rdx
+sub rcx, rbp
+inc ebx
+mov rbp, rcx
+add r12, rax
+jmp .L5
+
+.L3:
+inc ebx
+cmp ebx, qword [rbp-8]
+jl .L5
+
+mov rsi, r12
+mov edi, 1
+mov esi, 2
+call printf
+
+add rsp, 48
+pop rbp
+ret
+
+.L6:
+xor eax, eax
+ret
 ```

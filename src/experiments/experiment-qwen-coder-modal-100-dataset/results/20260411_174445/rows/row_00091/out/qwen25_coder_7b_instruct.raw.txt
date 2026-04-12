@@ -1,0 +1,177 @@
+```assembly
+section .text
+global UF_find
+global main
+
+UF_find:
+push rbp
+mov rbp, rsp
+sub rsp, 16
+mov [rbp-4], edi
+mov [rbp-8], esi
+mov eax, [rsi+rdi*4]
+cmp eax, edi
+je .L8
+mov ecx, eax
+call UF_find
+mov [rsi+rdi*4], eax
+mov eax, ecx
+.L8:
+mov [rbp-12], eax
+mov eax, [rbp-12]
+add rsp, 16
+pop rbp
+ret
+
+main:
+push rbp
+mov rbp, rsp
+sub rsp, 5600088
+mov ecx, 800000
+xor esi, esi
+mov rdi, rsp
+call memset
+mov rdx, rsp + 64
+mov rcx, rsp + 68
+xor eax, eax
+mov rsi, rsp + 60
+mov edi, LC1
+call __isoc99_scanf
+mov edx, [rsp + 60]
+test edx, edx
+jle .L23
+mov ecx, edx
+and ecx, -4
+mov rax, rsp + 800080
+mov rbx, rsp + 800080 + ecx
+mov ecx, edx
+shr ecx, 2
+mov ecx, ecx * 4
+mov rdi, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov rdx, rsp + 800080
+mov rax, rsp + 80
+mov rsi, rsp + 800080
+mov ecx, rsp + 800080 + ecx
+mov

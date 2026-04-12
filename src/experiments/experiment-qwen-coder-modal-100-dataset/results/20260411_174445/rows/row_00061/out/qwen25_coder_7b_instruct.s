@@ -1,1 +1,120 @@
+section .text
+global main
+extern printf, scanf
 
+section .data
+LC0 db "%s", 0
+LC1 db "%d", 0
+LC2 db "Unknown ", 0
+LC3 db "%s%s\n", 0
+
+section .bss
+id resb 257 * 11
+try resb 257 * 11
+ans resb 2 * 11
+
+section .text
+main:
+push rbp
+mov rbp, rsp
+sub rsp, 5712
+
+mov rdi, LC1
+call scanf
+cmp eax, -1
+je .L16
+
+mov eax, [rsp + 8]
+lea rsi, [rsp + 48]
+xor ebx, ebx
+test eax, eax
+jle .L13
+
+.L3:
+mov rsi, rbp
+mov edi, LC0
+xor eax, eax
+add ebx, 1
+call scanf
+add rbp, 11
+cmp ebx, eax
+jg .L3
+
+.L13:
+mov eax, [rsp + 12]
+lea rsi, [rsp + 2880]
+xor ebx, ebx
+test eax, eax
+jle .L2
+
+.L5:
+mov rsi, rbp
+mov edi, LC0
+xor eax, eax
+add ebx, 1
+call scanf
+mov eax, [rsp + 12]
+add rbp, 11
+cmp ebx, eax
+jg .L5
+test eax, eax
+jle .L2
+
+xor r13d, r13d
+xor r14d, r14d
+
+.L6:
+lea rdx, [r13 + r13*4]
+movslq eax, [rsp + 8]
+lea rcx, [rsp + 2880]
+lea rbp, [r13 + rdx*2]
+add rbp, rcx
+test eax, eax
+jle .L10
+
+lea rdx, [rax + rax*4]
+lea rbx, [rsp + 48]
+lea r12, [rax + rdx*2]
+add r12, rbx
+
+.L8:
+mov rsi, rbp
+mov rdi, rbx
+call strcmp
+test eax, eax
+jne .L23
+
+movslq r14d, rax
+mov edi, LC3
+add r14d, 1
+lea rdx, [r14 + r14*4]
+lea rsi, [r14 + rdx*2]
+lea rax, [rsp + 16]
+mov rdx, rbp
+add rax, rsi
+xor eax, eax
+call printf
+mov eax, r14d
+shrl $31, eax
+add eax, r14d
+and eax, 1
+sub r14d, eax
+
+.L14:
+inc r13
+cmp r13d, [rsp + 12]
+jg .L6
+jmp .L2
+
+.L10:
+mov rsi, rbp
+mov esi, LC2
+mov edi, LC3
+xor eax, eax
+call printf
+jmp .L14
+
+.L16:
+add rsp, 5712
+pop rbp
+ret

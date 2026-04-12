@@ -1,1 +1,78 @@
+section .data
+    LC0 db "%d\n", 0
+    LC1 db "%d", 0
 
+section .bss
+    t resd 65536
+    z resd 1
+    i resd 1
+
+section .text
+    global main
+    extern printf, scanf
+
+main:
+    mov [z], dword 256
+    mov [i], dword 0
+
+outer_loop:
+    cmp eax, [z]
+    jge end_outer_loop
+    mov ebx, eax
+
+inner_loop:
+    cmp ecx, [z]
+    jge outer_loop
+    mov edx, ecx
+
+mid_loop:
+    cmp edx, [z]
+    jge inner_loop
+    mov esi, edx
+
+innermost_loop:
+    cmp edi, [z]
+    jge mid_loop
+    imul eax, eax
+    add eax, ebx
+    imul ecx, ecx
+    add eax, ecx
+    imul edx, edx
+    add eax, edx
+    imul esi, esi
+    add eax, esi
+    cmp eax, [z]
+    jl increment_count
+    jmp next_innermost_loop
+
+increment_count:
+    lea rdx, [t + 4 * rax]
+    inc dword [rdx]
+
+next_innermost_loop:
+    inc edi
+    jmp innermost_loop
+
+next_mid_loop:
+    inc edx
+    jmp mid_loop
+
+next_inner_loop:
+    inc ecx
+    jmp inner_loop
+
+end_outer_loop:
+    xor eax, eax
+    call scanf
+    test eax, eax
+    jnz read_input
+
+print_result:
+    mov eax, [esp + 4]
+    lea rdi, [LC0]
+    xor eax, eax
+    call printf
+    jmp print_result
+
+read_input:
+    ret

@@ -1,149 +1,253 @@
-pmovmskb	%xmm0, %eax
-	movzbl	%al, %esi
-	movl	%esi, (%rbp)
-	movl	%esi, 4(%rbp)
-	movl	%esi, 8(%rbp)
-	movl	%esi, 12(%rbp)
-	movl	%esi, 16(%rbp)
-	movl	%esi, 20(%rbp)
-	movl	%esi, 24(%rbp)
-	movl	%esi, 28(%rbp)
-	movl	%esi, 32(%rbp)
-	movl	%esi, 36(%rbp)
-	movl	%esi, 40(%rbp)
-	movl	%esi, 44(%rbp)
-	movl	%esi, 48(%rbp)
-	movl	%esi, 52(%rbp)
-	movl	%esi, 56(%rbp)
-	movl	%esi, 60(%rbp)
-	movl	%esi, 64(%rbp)
-	movl	%esi, 68(%rbp)
-	movl	%esi, 72(%rbp)
-	movl	%esi, 76(%rbp)
-	movl	%esi, 80(%rbp)
-	movl	%esi, 84(%rbp)
-	movl	%esi, 88(%rbp)
-	movl	%esi, 92(%rbp)
-	movl	%esi, 96(%rbp)
-	movl	%esi, 100(%rbp)
-	movl	%esi, 104(%rbp)
-	movl	%esi, 108(%rbp)
-	movl	%esi, 112(%rbp)
-	movl	%esi, 116(%rbp)
-	movl	%esi, 120(%rbp)
-	movl	%esi, 124(%rbp)
-	movl	%esi, 128(%rbp)
-	movl	%esi, 132(%rbp)
-	movl	%esi, 136(%rbp)
-	movl	%esi, 140(%rbp)
-	movl	%esi, 144(%rbp)
-	movl	%esi, 148(%rbp)
-	movl	%esi, 152(%rbp)
-	movl	%esi, 156(%rbp)
-	movl	%esi, 160(%rbp)
-	movl	%esi, 164(%rbp)
-	movl	%esi, 168(%rbp)
-	movl	%esi, 172(%rbp)
-	movl	%esi, 176(%rbp)
-	movl	%esi, 180(%rbp)
-	movl	%esi, 184(%rbp)
-	movl	%esi, 188(%rbp)
-	movl	%esi, 192(%rbp)
-	movl	%esi, 196(%rbp)
-	movl	%esi, 200(%rbp)
-	movl	%esi, 204(%rbp)
-	movl	%esi, 208(%rbp)
-	movl	%esi, 212(%rbp)
-	movl	%esi, 216(%rbp)
-	movl	%esi, 220(%rbp)
-	movl	%esi, 224(%rbp)
-	movl	%esi, 228(%rbp)
-	movl	%esi, 232(%rbp)
-	movl	%esi, 236(%rbp)
-	movl	%esi, 240(%rbp)
-	movl	%esi, 244(%rbp)
-	movl	%esi, 248(%rbp)
-	movl	%esi, 252(%rbp)
-	movl	%esi, 256(%rbp)
-	movl	%esi, 260(%rbp)
-	movl	%esi, 264(%rbp)
-	movl	%esi, 268(%rbp)
-	movl	%esi, 272(%rbp)
-	movl	%esi, 276(%rbp)
-	movl	%esi, 280(%rbp)
-	movl	%esi, 284(%rbp)
-	movl	%esi, 288(%rbp)
-	movl	%esi, 292(%rbp)
-	movl	%esi, 296(%rbp)
-	movl	%esi, 300(%rbp)
-	movl	%esi, 304(%rbp)
-	movl	%esi, 308(%rbp)
-	movl	%esi, 312(%rbp)
-	movl	%esi, 316(%rbp)
-	movl	%esi, 320(%rbp)
-	movl	%esi, 324(%rbp)
-	movl	%esi, 328(%rbp)
-	movl	%esi, 332(%rbp)
-	movl	%esi, 336(%rbp)
-	movl	%esi, 340(%rbp)
-	movl	%esi, 344(%rbp)
-	movl	%esi, 348(%rbp)
-	movl	%esi, 352(%rbp)
-	movl	%esi, 356(%rbp)
-	movl	%esi, 360(%rbp)
-	movl	%esi, 364(%rbp)
-	movl	%esi, 368(%rbp)
-	movl	%esi, 372(%rbp)
-	movl	%esi, 376(%rbp)
-	movl	%esi, 380(%rbp)
-	movl	%esi, 384(%rbp)
-	movl	%esi, 388(%rbp)
-	movl	%esi, 392(%rbp)
-	movl	%esi, 396(%rbp)
-	movl	%esi, 400(%rbp)
-	movl	%esi, 404(%rbp)
-	movl	%esi, 408(%rbp)
-	movl	%esi, 412(%rbp)
-	movl	%esi, 416(%rbp)
-	movl	%esi, 420(%rbp)
-	movl	%esi, 424(%rbp)
-	movl	%esi, 428(%rbp)
-	movl	%esi, 432(%rbp)
-	movl	%esi, 436(%rbp)
-	movl	%esi, 440(%rbp)
-	movl	%esi, 444(%rbp)
-	movl	%esi, 448(%rbp)
-	movl	%esi, 452(%rbp)
-	movl	%esi, 456(%rbp)
-	movl	%esi, 460(%rbp)
-	movl	%esi, 464(%rbp)
-	movl	%esi, 468(%rbp)
-	movl	%esi, 472(%rbp)
-	movl	%esi, 476(%rbp)
-	movl	%esi, 480(%rbp)
-	movl	%esi, 484(%rbp)
-	movl	%esi, 488(%rbp)
-	movl	%esi, 492(%rbp)
-	movl	%esi, 496(%rbp)
-	movl	%esi, 500(%rbp)
-	movl	%esi, 504(%rbp)
-	movl	%esi, 508(%rbp)
-	movl	%esi, 512(%rbp)
-	movl	%esi, 516(%rbp)
-	movl	%esi, 520(%rbp)
-	movl	%esi, 524(%rbp)
-	movl	%esi, 528(%rbp)
-	movl	%esi, 532(%rbp)
-	movl	%esi, 536(%rbp)
-	movl	%esi, 540(%rbp)
-	movl	%esi, 544(%rbp)
-	movl	%esi, 548(%rbp)
-	movl	%esi, 552(%rbp)
-	movl	%esi, 556(%rbp)
-	movl	%esi, 560(%rbp)
-	movl	%esi, 564(%rbp)
-	movl	%esi, 568(%rbp)
-	movl	%esi, 572(%rbp)
-	movl	%esi, 576(%rbp)
-	movl	%esi, 580(%rbp)
-	movl	%esi, 584
+section .text
+global bomb
+global main
+
+bomb:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 32
+    mov [rbp-4], edi
+    mov [rbp-8], esi
+    mov [rbp-12], edx
+    mov [rbp-16], ecx
+    mov [rbp-20], ebx
+    mov [rbp-24], eax
+    mov rax, [rbp-4]
+    sal rax, 6
+    add rax, [rbp-8]
+    mov [rbp-28], rax
+    jmp .L27
+
+.L27:
+    mov rax, [rbp-28]
+    cmp rax, 64
+    jge .L3
+    lea rdx, [rbp-28+4]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L4
+    lea rdx, [rbp-28-4]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L5
+    lea rdx, [rbp-28-8]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L6
+    lea rdx, [rbp-28+8]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L7
+    jmp .L8
+
+.L8:
+    mov eax, [rbp-12]
+    dec eax
+    js .L9
+    lea rdx, [rbp-28-4]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L10
+    jmp .L11
+
+.L11:
+    mov eax, [rbp-16]
+    dec eax
+    js .L12
+    lea rdx, [rbp-28-8]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L13
+    jmp .L14
+
+.L14:
+    mov eax, [rbp-20]
+    dec eax
+    js .L15
+    lea rdx, [rbp-28+4]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L16
+    jmp .L17
+
+.L17:
+    mov eax, [rbp-24]
+    dec eax
+    js .L18
+    lea rdx, [rbp-28+8]
+    movzx eax, byte [rdx]
+    test al, al
+    je .L19
+    jmp .L20
+
+.L20:
+    jmp .L27
+
+.L19:
+    jmp .L27
+
+.L18:
+    jmp .L27
+
+.L16:
+    jmp .L27
+
+.L15:
+    jmp .L27
+
+.L13:
+    jmp .L27
+
+.L12:
+    jmp .L27
+
+.L10:
+    jmp .L27
+
+.L9:
+    jmp .L27
+
+.L7:
+    jmp .L27
+
+.L6:
+    jmp .L27
+
+.L5:
+    jmp .L27
+
+.L4:
+    jmp .L27
+
+.L3:
+    ret
+
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 288
+    lea rdi, [rbp-288]
+    xor eax, eax
+    call scanf
+    mov eax, [rbp-288]
+    test eax, eax
+    jle .L71
+    jmp .L70
+
+.L70:
+    lea rdi, [rbp-288+4]
+    xor eax, eax
+    call scanf
+    lea rsi, [rbp-288+16]
+    mov edi, 1
+    xor eax, eax
+    call scanf
+    mov eax, [rbp-288+16]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1
+    call bomb
+    mov eax, [rbp-288+12]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1
+    call printf
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+288]
+    jmp .L73
+
+.L73:
+    lea rdi, [rbp-288+32]
+    mov eax, 10
+    call putchar
+    jmp .L74
+
+.L74:
+    lea rdi, [rbp-288+32]
+    mov eax, 1
+    call scanf
+    lea rsi, [rbp-288+12]
+    mov edi, 1
+    xor eax, eax
+    call scanf
+    mov eax, [rbp-288+12]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1
+    call bomb
+    mov eax, [rbp-288+16]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1
+    call printf
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+288]
+    jmp .L73
+
+.L73:
+    lea rdi, [rbp-288+32]
+    mov eax, 10
+    call putchar
+    jmp .L74
+
+.L74:
+    lea rdi, [rbp-288+32]
+    mov eax, 1
+    call scanf
+    lea rsi, [rbp-288+12]
+    mov edi, 1
+    xor eax, eax
+    call scanf
+    mov eax, [rbp-288+12]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1
+    call bomb
+    mov eax, [rbp-288+16]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1
+    call printf
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+288]
+    jmp .L73
+
+.L73:
+    lea rdi, [rbp-288+32]
+    mov eax, 10
+    call putchar
+    jmp .L74
+
+.L74:
+    lea rdi, [rbp-288+32]
+    mov eax, 1
+    call scanf
+    lea rsi, [rbp-288+12]
+    mov edi, 1
+    xor eax, eax
+    call scanf
+    mov eax, [rbp-288+12]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1
+    call bomb
+    mov eax, [rbp-288+16]
+    lea rdi, [rbp-288+32]
+    lea rsi, [rbp-288+64]
+    lea rdx, [rbp-288+8]
+    mov ecx, eax
+    mov ebx, 1

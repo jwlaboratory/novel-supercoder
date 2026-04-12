@@ -1,0 +1,217 @@
+```assembly
+	.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	hexDistance
+	.type	hexDistance, @function
+hexDistance:
+.LFB3:
+	.cfi_startproc
+	movl	%ecx, %eax
+	movl	%edx, %ecx
+	subl	%edi, %ecx
+	movl	%ecx, %r8d
+	negl	%r8d
+	cmovs	%ecx, %r8d
+	cmpl	%edi, %edx
+	je	.L7
+	cmpl	%esi, %eax
+	je	.L1
+	cmpl	%edi, %edx
+	jge	.L8
+	andl	$1, %edx
+	cmpl	%esi, %eax
+	jg	.L5
+.L9:
+	leal	1(%r8), %ecx
+	subl	%edx, %ecx
+	sarl	%ecx
+	movl	%ecx, %edx
+	addl	%eax, %edx
+	movl	%esi, %eax
+	subl	%edx, %eax
+	addl	%r8d, %eax
+	cmpl	%edx, %esi
+	cmovge	%eax, %r8d
+.L1:
+	movl	%r8d, %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	addl	%r8d, %edx
+	movl	%edx, %ecx
+	shrl	$31, %ecx
+	addl	%ecx, %edx
+	sarl	%edx
+	subl	%edx, %eax
+	movl	%eax, %edx
+	subl	%esi, %edx
+	addl	%r8d, %edx
+	cmpl	%eax, %esi
+	cmovle	%edx, %r8d
+	movl	%r8d, %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movl	%eax, %edx
+	movl	%esi, %eax
+	movl	%edx, %esi
+	movl	%edi, %edx
+	andl	$1, %edx
+	cmpl	%esi, %eax
+	jg	.L5
+	jmp	.L9
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	subl	%esi, %eax
+	movl	%eax, %r8d
+	negl	%r8d
+	cmovs	%eax, %r8d
+	movl	%r8d, %eax
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	hexDistance, .-hexDistance
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d%d"
+.LC2:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB4:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$136, %rsp
+	.cfi_def_cfa_offset 192
+.L11:
+	xorl	%eax, %eax
+	movl	$R, %edx
+	movl	$C, %esi
+	movl	$.LC1, %edi
+	call	__isoc99_scanf
+	testl	%eax, %eax
+	je	.L43
+	movl	C(%rip), %eax
+	testl	%eax, %eax
+	je	.L43
+	movl	$S, %esi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	xorl	%ebx, %ebx
+	call	__isoc99_scanf
+	movl	S(%rip), %ecx
+	xorl	%eax, %eax
+	movl	$0, n(%rip)
+	testl	%ecx, %ecx
+	jle	.L15
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	cltq
+	movl	$.LC1, %edi
+	addl	$1, %ebx
+	leaq	(%rax,%rax,2), %rax
+	salq	$2, %rax
+	leaq	shop(%rax), %rdx
+	leaq	shop+4(%rax), %rsi
+	xorl	%eax, %eax
+	call	__isoc99_scanf
+	movslq	n(%rip), %rdx
+	cmpl	%ebx, S(%rip)
+	leal	1(%rdx), %eax
+	leaq	(%rdx,%rdx,2), %rdx
+	movl	%eax, n(%rip)
+	movl	$0, shop+8(,%rdx,4)
+	jg	.L12
+.L15:
+	movl	$N, %esi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	xorl	%ebx, %ebx
+	call	__isoc99_scanf
+	movl	N(%rip), %edx
+	movl	n(%rip), %r12d
+	testl	%edx, %edx
+	jle	.L17
+	.p2align 4,,10
+	.p2align 3
+.L16:
+	movslq	%r12d, %r12
+	movl	$.LC1, %edi
+	addl	$1, %ebx
+	leaq	(%r12,%r12,2), %rax
+	salq	$2, %rax
+	leaq	shop(%rax), %rdx
+	leaq	shop+4(%rax), %rsi
+	xorl	%eax, %eax
+	call	__isoc99_scanf
+	movslq	n(%rip), %rax
+	cmpl	%ebx, N(%rip)
+	leal	1(%rax), %r12d
+	leaq	(%rax,%rax,2), %rax
+	movl	%r12d, n(%rip)
+	movl	$0, shop+8(,%rax,4)
+	jg	.L16
+.L17:
+	movl	R(%rip), %eax
+	movl	S(%rip), %r13d
+	testl	%eax, %eax
+	jle	.L18
+	movl	C(%rip), %edi
+	testl	%edi, %edi
+	jle	.L18
+	leal	1(%rax), %edx
+	movslq	%r12d, %rax
+	leal	1(%rdi), %r14d
+	movl	$1, %r8d
+	leaq	16(%rsp,%rax,4), %rbp
+	movslq	%r13d, %rax
+	leaq	(%rax,%rax,2), %rsi
+	leaq	16(%rsp,%rax,4), %rcx
+	leaq	shop+8(,%rsi,4), %r15
+	movl	%r12d, %esi
+	subl	%r13d, %esi
+	addq	%rsi, %rax
+	movq	%r15, %rsi
+	leaq	16(%rsp,%rax,4), %rbx
+	.p2align 4,,10
+	.p2align 3
+.L20:
+	movl	$1, %r15d
+	.p2align 4,,10
+	.p2align 3
+.L32:
+	movl	$shop+4, %r9d
+	leaq	16(%rsp), %rdi
+	testl	%r12d, %r12d
+	jle	.L85
+	movl	%r12d, 8(%rsp)
+	movl	%r13d, 12(%rsp)
+	jmp	.L25
+	.p2align 

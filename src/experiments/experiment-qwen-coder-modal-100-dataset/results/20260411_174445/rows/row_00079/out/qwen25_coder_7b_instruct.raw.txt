@@ -1,0 +1,196 @@
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d%d"
+.LC1:
+	.string	"%d"
+.LC2:
+	.string	" %d"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB3:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 96
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rsi
+	movl	$.LC1, %edi
+	call	__isoc99_scanf
+	testl	%eax, %eax
+	je	.L91
+	movl	20(%rsp), %eax
+	testl	%eax, %eax
+	jle	.L91
+	movl	$40, %ecx
+	movl	$h, %edi
+	xorl	%eax, %eax
+	xorl	%r13d, %r13d
+	rep stosq
+	movl	$0, (%rdi)
+	jmp	.L43
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	leaq	(%rdi,%rdi,2), %rbx
+	leaq	0(,%r8,8), %rbp
+	salq	$4, %rbx
+	subq	%r8, %rbp
+	addq	%rdi, %rbx
+	movzbl	dice+3(%rbp,%rbx), %eax
+	cmpb	$6, %al
+	je	.L134
+.L10:
+	leaq	0(,%r8,8), %rbx
+	subq	%r8, %rbx
+	leaq	(%rdi,%rdi,2), %r8
+	salq	$4, %r8
+	addq	%r8, %rdi
+	leaq	dice(%rbp,%rdi), %rdi
+	movzbl	4(%rdi), %r14d
+	cmpb	$6, %r14b
+	je	.L135
+	movzbl	5(%rdi), %edi
+	cmpb	$6, %dil
+	je	.L13
+	cmpb	$5, %r9b
+	je	.L14
+	cmpb	$5, %al
+	je	.L19
+	cmpb	$5, %r14b
+	jne	.L16
+.L26:
+	movl	mv+32(%rip), %r12d
+	movl	mv+36(%rip), %ebx
+	addl	%ecx, %r12d
+	addl	%esi, %ebx
+	movslq	%r12d, %r8
+	movslq	%ebx, %rbp
+	leaq	(%r8,%r8,8), %r8
+	addq	%rbp, %r8
+	movl	h(,%r8,4), %r8d
+	cmpl	%r8d, %edx
+	jg	.L21
+	cmpb	$5, %dil
+	je	.L31
+	cmpb	$4, %r9b
+	je	.L22
+	cmpb	$4, %al
+	je	.L23
+	.p2align 4,,10
+	.p2align 3
+.L34:
+	cmpb	$4, %dil
+	je	.L40
+.L132:
+	movl	12(%rsp), %eax
+	testb	%r15b, %r15b
+	jne	.L136
+.L42:
+	addl	$1, %edx
+.L4:
+	leaq	(%rcx,%rcx,8), %rcx
+	addl	$1, %r13d
+	movb	%al, map(%rsi,%rcx)
+	addq	%rsi, %rcx
+	movl	%edx, h(,%rcx,4)
+	cmpl	%r13d, 20(%rsp)
+	jle	.L137
+.L43:
+	leaq	28(%rsp), %rdx
+	leaq	24(%rsp), %rsi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	call	__isoc99_scanf
+	movl	h+160(%rip), %edx
+	movl	24(%rsp), %eax
+	testl	%edx, %edx
+	je	.L138
+	movl	%eax, 12(%rsp)
+	movl	28(%rsp), %r11d
+	movl	%eax, %r10d
+	xorl	%r15d, %r15d
+	movl	$4, %esi
+	movl	$4, %ecx
+.L5:
+	movslq	%r10d, %rdi
+	movslq	%r11d, %r8
+	leaq	(%rdi,%rdi,2), %r9
+	leaq	0(,%r8,8), %rbx
+	salq	$4, %r9
+	subq	%r8, %rbx
+	addq	%rdi, %r9
+	movzbl	dice+2(%rbx,%r9), %r9d
+	cmpb	$6, %r9b
+	jne	.L8
+	movl	mv+16(%rip), %ebp
+	movl	mv+20(%rip), %r12d
+	addl	%ecx, %ebp
+	addl	%esi, %r12d
+	movslq	%ebp, %rbx
+	movslq	%r12d, %r14
+	leaq	(%rbx,%rbx,8), %rbx
+	addq	%r14, %rbx
+	movl	h(,%rbx,4), %ebx
+	cmpl	%edx, %ebx
+	jge	.L8
+	movl	%ebx, %edx
+	movslq	%r12d, %rsi
+	movslq	%ebp, %rcx
+.L9:
+	movl	$7, %edi
+	subl	%r11d, %edi
+	movl	%r10d, %r11d
+	movl	%edi, %r10d
+.L6:
+	movl	$1, %r15d
+	testl	%edx, %edx
+	jne	.L5
+	movl	%r10d, 24(%rsp)
+	movl	%r10d, %eax
+	movl	$1, %edx
+	movl	%r11d, 28(%rsp)
+	jmp	.L4
+	.p2align 4,,10
+	.p2align 3
+.L134:
+	movl	mv+24(%rip), %ebp
+	movl	mv+28(%rip), %r12d
+	addl	%ecx, %ebp
+	addl	%esi, %r12d
+	movslq	%ebp, %rbx
+	movslq	%r12d, %r14
+	leaq	(%rbx,%rbx,8), %rbx
+	addq	%r14, %rbx
+	movl	h(,%rbx,4), %ebx
+	cmpl	%edx, %ebx
+	jge	.L10
+	movl	%ebx, %edx
+	movslq	%r12d, %rsi
+	movslq	%ebp, %rcx
+	movl	$1, %r10d

@@ -1,6 +1,5 @@
-```
 ```assembly
-	.file	"inputC.c"
+	.file	"optimized_inputC.s"
 	.text
 	.p2align 4
 	.globl	upll

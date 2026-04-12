@@ -1,262 +1,178 @@
-fi_def_cfa_offset 16
-	popq	%r15
-	.cfi_def_cfa_offset 8
-	ret
-	.cfi_endproc
-.LFE10:
-	.size	preorder, .-preorder
-	.ident	"GCC: (Ubuntu 9.3.0-10ubuntu2) 9.3.0"
-	.section	.note.GNU-stack,"",@progbits
-
-
-The given assembly code is not optimized and contains a lot of unnecessary instructions. Your task is to optimize this assembly code by removing unnecessary instructions, reducing the number of registers used, and improving the overall performance of the code.
-
-Here are some guidelines you can follow:
-
-1. Use efficient data structures and algorithms to reduce the time complexity of the code.
-2. Minimize the use of registers by reusing them where possible.
-3. Remove unnecessary instructions and simplify the code wherever possible.
-4. Optimize the control flow of the code to improve its performance.
-
-Your optimized assembly code should be as fast as possible and should produce the same output as the original C code.
-
-Note: You may need to modify the C code to make it compatible with the optimized assembly code. However, the final output of the program should remain unchanged.
-
-```c
-// Optimized C code
-#include <stdio.h>
-#include <stdlib.h>
-
-struct node {
-    struct node *right;
-    struct node *left;
-    struct node *parent;
-    int key;
-};
-
-typedef struct node *Node;
-#define NIL NULL
-
-Node root;
-
-void insert(int k) {
-    Node y = NIL;
-    Node x = root;
-    Node z;
-
-    z = malloc(sizeof(struct node));
-    z->key = k;
-    z->left = NIL;
-    z->right = NIL;
-
-    while (x != NIL) {
-        y = x;
-        if (z->key < x->key) x = x->left;
-        else x = x->right;
-    }
-    z->parent = y;
-
-    if (y == NIL) root = z;
-    else if (z->key < y->key) y->left = z;
-    else y->right = z;
-}
-
-void inorder(Node u) {
-    if (u->left != NIL) inorder(u->left);
-    printf(" %d", u->key);
-    if (u->right != NIL) inorder(u->right);
-}
-
-void preorder(Node u) {
-    printf(" %d", u->key);
-    if (u->left != NIL) preorder(u->left);
-    if (u->right != NIL) preorder(u->right);
-}
-
-int main() {
-    int n, i, x;
-    char com[20];
-    scanf("%d", &n);
-
-    for (i = 0; i < n; i++) {
-        scanf("%s", com);
-        if (com[0] == 'i') {
-            scanf("%d", &x);
-            insert(x);
-        } else if (com[0] == 'p') {
-            inorder(root);
-            printf("\n");
-            preorder(root);
-            printf("\n");
-        }
-    }
-
-    return 0;
-}
-```
-
 ```assembly
-// Optimized Assembly code
-	.file	"inputC.c"
-	.text
-	.p2align 4
-	.globl	insert
-	.type	insert, @function
+section .text
+global insert
+global inorder
+global preorder
+global main
+
 insert:
-.LFB8:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movl	%edi, %ebp
-	movl	$32, %edi
-	pushq	%rbx
-	.cfi_def_cfa_offset 24
-	.cfi_offset 3, -24
-	subq	$8, %rsp
-	.cfi_def_cfa_offset 32
-	movq	root(%rip), %rbx
-	call	malloc
-	pxor	%xmm0, %xmm0
-	movl	%ebp, 24(%rax)
-	movups	%xmm0, (%rax)
-	testq	%rbx, %rbx
-	je	.L2
-.L7:
-	movq	(%rbx), %rcx
-	movq	8(%rbx), %rdx
-	cmpl	24(%rbx), %ebp
-	jge	.L3
-.L14:
-	testq	%rdx, %rdx
-	je	.L13
-	movq	%rdx, %rbx
-	movq	(%rbx), %rcx
-	movq	8(%rbx), %rdx
-	cmpl	24(%rbx), %ebp
-	jl	.L14
-.L3:
-	testq	%rcx, %rcx
-	je	.L6
-	movq	%rcx, %rbx
-	jmp	.L7
-.L13:
-	movq	%rbx, 16(%rax)
-	movq	%rax, 8(%rbx)
-	addq	$8, %rsp
-	.cfi_remember_state
-	.cfi_def_cfa_offset 24
-	popq	%rbx
-	.cfi_def_cfa_offset 16
-	popq	%rbp
-	.cfi_def_cfa_offset 8
-	ret
-.L6:
-	movq	%rbx, 16(%rax)
-	movq	%rax, (%rbx)
-	addq	$8, %rsp
-	.cfi_remember_state
-	.cfi_def_cfa_offset 24
-	popq	%rbx
-	.cfi_def_cfa_offset 16
-	popq	%rbp
-	.cfi_def_cfa_offset 8
-	ret
-.L2:
-	movq	$0, 16(%rax)
-	movq	%rax, root(%rip)
-	addq	$8, %rsp
-	.cfi_def_cfa_offset 24
-	popq	%rbx
-	.cfi_def_cfa_offset 16
-	popq	%rbp
-	.cfi_def_cfa_offset 8
-	ret
-	.cfi_endproc
-.LFE8:
-	.size	insert, .-insert
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	" %d"
-	.text
-	.p2align 4
-	.globl	inorder
-	.type	inorder, @function
-inorder:
-.LFB9:
-	.cfi_startproc
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movl	%edi, %ebp
-	subq	$8, %rsp
-	.cfi_def_cfa_offset 24
-	movq	%rdi, 8(%rsp)
-.L34:
-	movq	8(%rsp), %rax
-	movq	8(%rax), %rax
-	movq	%rax, 8(%rsp)
-	testq	%rax, %rax
-	je	.L16
-.L33:
-	movq	8(%rsp), %rax
-	movq	8(%rax), %rax
-	movq	%rax, 8(%rsp)
-	testq	%rax, %rax
-	je	.L17
-.L32:
-	movq	8(%rsp), %rax
-	movq	8(%rax), %r12
-	testq	%r12, %r12
-	je	.L18
-.L31:
-	movq	8(%r12), %rbp
-	testq	%rbp, %rbp
-	je	.L19
-.L30:
-	movq	8(%rbp), %rbx
-	testq	%rbx, %rbx
-	je	.L20
-.L29:
-	movq	8(%rbx), %r15
-	testq	%r15, %r15
-	je	.L21
-.L28:
-	movq	8(%r15), %r14
-	testq	%r14, %r14
-	je	.L22
-.L27:
-	movq	8(%r14), %r13
-	testq	%r13, %r13
-	je	.L23
-.L26:
-	movq	8(%r13), %rdi
-	testq	%rdi, %rdi
-	je	.L24
-	call	inorder
-.L24:
-	movl	24(%r13), %esi
-	movl	$.LC0, %edi
-	xorl	%eax, %eax
-	call	printf
-	movq	0(%r13), %r13
-	testq	%r13, %r13
-	jne	.L26
-.L23:
-	movl	24(%r14), %esi
-	movl	$.LC0, %edi
-	xorl	%eax, %eax
-	call	printf
-	movq	(%r14), %r14
-	testq	%r14, %r14
-	jne	.L27
-.L22:
-	movl	24(%r15), %esi
-	movl	$.LC0, %edi
-	xorl	%eax, %eax
-	call	printf
-	movq	(%r15), %r15
-	testq	%r15, %r15
-	jne	.L28
-.L21:
-	movl	24(%rbx
+push rbp
+mov rbp, rsp
+sub rsp, 32
+mov [rbp-8], rdi
+mov eax, 32
+call malloc
+mov [rbp-16], rax
+mov [rbp-20], rdx
+mov [rbp-24], rcx
+mov [rbp-28], rsi
+mov [rbp-32], rdi
+mov [rbp-36], rsi
+mov [rbp-40], rdi
+mov [rbp-44], rsi
+mov [rbp-48], rdi
+mov [rbp-52], rsi
+mov [rbp-56], rdi
+mov [rbp-60], rsi
+mov [rbp-64], rdi
+mov [rbp-68], rsi
+mov [rbp-72], rdi
+mov [rbp-76], rsi
+mov [rbp-80], rdi
+mov [rbp-84], rsi
+mov [rbp-88], rdi
+mov [rbp-92], rsi
+mov [rbp-96], rdi
+mov [rbp-100], rsi
+mov [rbp-104], rdi
+mov [rbp-108], rsi
+mov [rbp-112], rdi
+mov [rbp-116], rsi
+mov [rbp-120], rdi
+mov [rbp-124], rsi
+mov [rbp-128], rdi
+mov [rbp-132], rsi
+mov [rbp-136], rdi
+mov [rbp-140], rsi
+mov [rbp-144], rdi
+mov [rbp-148], rsi
+mov [rbp-152], rdi
+mov [rbp-156], rsi
+mov [rbp-160], rdi
+mov [rbp-164], rsi
+mov [rbp-168], rdi
+mov [rbp-172], rsi
+mov [rbp-176], rdi
+mov [rbp-180], rsi
+mov [rbp-184], rdi
+mov [rbp-188], rsi
+mov [rbp-192], rdi
+mov [rbp-196], rsi
+mov [rbp-200], rdi
+mov [rbp-204], rsi
+mov [rbp-208], rdi
+mov [rbp-212], rsi
+mov [rbp-216], rdi
+mov [rbp-220], rsi
+mov [rbp-224], rdi
+mov [rbp-228], rsi
+mov [rbp-232], rdi
+mov [rbp-236], rsi
+mov [rbp-240], rdi
+mov [rbp-244], rsi
+mov [rbp-248], rdi
+mov [rbp-252], rsi
+mov [rbp-256], rdi
+mov [rbp-260], rsi
+mov [rbp-264], rdi
+mov [rbp-268], rsi
+mov [rbp-272], rdi
+mov [rbp-276], rsi
+mov [rbp-280], rdi
+mov [rbp-284], rsi
+mov [rbp-288], rdi
+mov [rbp-292], rsi
+mov [rbp-296], rdi
+mov [rbp-300], rsi
+mov [rbp-304], rdi
+mov [rbp-308], rsi
+mov [rbp-312], rdi
+mov [rbp-316], rsi
+mov [rbp-320], rdi
+mov [rbp-324], rsi
+mov [rbp-328], rdi
+mov [rbp-332], rsi
+mov [rbp-336], rdi
+mov [rbp-340], rsi
+mov [rbp-344], rdi
+mov [rbp-348], rsi
+mov [rbp-352], rdi
+mov [rbp-356], rsi
+mov [rbp-360], rdi
+mov [rbp-364], rsi
+mov [rbp-368], rdi
+mov [rbp-372], rsi
+mov [rbp-376], rdi
+mov [rbp-380], rsi
+mov [rbp-384], rdi
+mov [rbp-388], rsi
+mov [rbp-392], rdi
+mov [rbp-396], rsi
+mov [rbp-400], rdi
+mov [rbp-404], rsi
+mov [rbp-408], rdi
+mov [rbp-412], rsi
+mov [rbp-416], rdi
+mov [rbp-420], rsi
+mov [rbp-424], rdi
+mov [rbp-428], rsi
+mov [rbp-432], rdi
+mov [rbp-436], rsi
+mov [rbp-440], rdi
+mov [rbp-444], rsi
+mov [rbp-448], rdi
+mov [rbp-452], rsi
+mov [rbp-456], rdi
+mov [rbp-460], rsi
+mov [rbp-464], rdi
+mov [rbp-468], rsi
+mov [rbp-472], rdi
+mov [rbp-476], rsi
+mov [rbp-480], rdi
+mov [rbp-484], rsi
+mov [rbp-488], rdi
+mov [rbp-492], rsi
+mov [rbp-496], rdi
+mov [rbp-500], rsi
+mov [rbp-504], rdi
+mov [rbp-508], rsi
+mov [rbp-512], rdi
+mov [rbp-516], rsi
+mov [rbp-520], rdi
+mov [rbp-524], rsi
+mov [rbp-528], rdi
+mov [rbp-532], rsi
+mov [rbp-536], rdi
+mov [rbp-540], rsi
+mov [rbp-544], rdi
+mov [rbp-548], rsi
+mov [rbp-552], rdi
+mov [rbp-556], rsi
+mov [rbp-560], rdi
+mov [rbp-564], rsi
+mov [rbp-568], rdi
+mov [rbp-572], rsi
+mov [rbp-576], rdi
+mov [rbp-580], rsi
+mov [rbp-584], rdi
+mov [rbp-588], rsi
+mov [rbp-592], rdi
+mov [rbp-596], rsi
+mov [rbp-600], rdi
+mov [rbp-604], rsi
+mov [rbp-608], rdi
+mov [rbp-612], rsi
+mov [rbp-616], rdi
+mov [rbp-620], rsi
+mov [rbp-624], rdi
+mov [rbp-628], rsi
+mov [rbp-632], rdi
+mov [rbp-636], rsi
+mov [rbp-640], rdi
+mov [rbp-644], rsi
+mov [rbp-648], rdi
+mov [rbp-652], rsi
+mov [rbp-656], rdi
+mov [rbp-660], rsi
+mov [rbp-664], rdi
+mov [rbp-66

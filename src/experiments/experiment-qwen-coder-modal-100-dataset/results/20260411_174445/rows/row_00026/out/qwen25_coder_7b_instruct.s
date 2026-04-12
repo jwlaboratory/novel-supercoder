@@ -1,3 +1,8 @@
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	pilehigh
+	.type	pilehigh, @function
 pilehigh:
 .LFB8:
 	.cfi_startproc
@@ -31,3 +36,195 @@ pilehigh:
 	.cfi_endproc
 .LFE8:
 	.size	pilehigh, .-pilehigh
+	.p2align 4
+	.globl	takeoff
+	.type	takeoff, @function
+takeoff:
+.LFB9:
+	.cfi_startproc
+	movl	n(%rip), %r8d
+	leal	-1(%r8), %eax
+	cmpl	%esi, %eax
+	jle	.L8
+	movslq	%edi, %rax
+	leaq	(%rax,%rax,4), %rax
+	leaq	(%rax,%rax,4), %rdx
+	movslq	%r8d, %rax
+	leaq	(%rax,%rdx,4), %rax
+	leal	-2(%r8), %edx
+	subl	%esi, %edx
+	leaq	map(,%rax,4), %rcx
+	subq	%rdx, %rax
+	leaq	map-4(,%rax,4), %rdi
+	jmp	.L14
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	subq	$4, %rcx
+	cmpq	%rdi, %rcx
+	je	.L8
+.L14:
+	movl	-4(%rcx), %esi
+	testl	%esi, %esi
+	je	.L10
+	testl	%r8d, %r8d
+	jle	.L10
+.L13:
+	movl	$map, %edx
+	xorl	%eax, %eax
+	jmp	.L12
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	addl	$1, %eax
+	addq	$400, %rdx
+	cmpl	%eax, %r8d
+	je	.L21
+.L12:
+	movl	(%rdx), %r9d
+	testl	%r9d, %r9d
+	jne	.L11
+	cltq
+	subq	$4, %rcx
+	leaq	(%rax,%rax,4), %rax
+	leaq	(%rax,%rax,4), %rax
+	salq	$4, %rax
+	movl	%esi, map(%rax)
+	movl	$0, (%rcx)
+	cmpq	%rdi, %rcx
+	jne	.L14
+.L8:
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L21:
+	subq	$4, %rcx
+	cmpq	%rdi, %rcx
+	je	.L8
+	movl	-4(%rcx), %esi
+	testl	%esi, %esi
+	je	.L10
+	jmp	.L13
+	.cfi_endproc
+.LFE9:
+	.size	takeoff, .-takeoff
+	.p2align 4
+	.globl	puton
+	.type	puton, @function
+puton:
+.LFB10:
+	.cfi_startproc
+	movslq	%edi, %rdi
+	movslq	%esi, %rsi
+	movslq	%edx, %rdx
+	addl	$1, %ecx
+	leaq	(%rdi,%rdi,4), %rax
+	leaq	(%rdx,%rdx,4), %rdx
+	movslq	%ecx, %rcx
+	leaq	(%rax,%rax,4), %rax
+	leaq	(%rdx,%rdx,4), %rdx
+	leaq	(%rsi,%rax,4), %rax
+	leaq	(%rcx,%rdx,4), %rdx
+	movl	map(,%rax,4), %esi
+	movl	%esi, map(,%rdx,4)
+	movl	$0, map(,%rax,4)
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	puton, .-puton
+	.p2align 4
+	.globl	pileup
+	.type	pileup, @function
+pileup:
+.LFB11:
+	.cfi_startproc
+	movl	%esi, %r8d
+	cmpl	%esi, %edi
+	je	.L23
+	movl	n(%rip), %esi
+	testl	%esi, %esi
+	jle	.L26
+	movl	$map, %ecx
+	xorl	%r9d, %r9d
+	.p2align 4,,10
+	.p2align 3
+.L27:
+	movq	%rcx, %rax
+	xorl	%edx, %edx
+	jmp	.L29
+	.p2align 4,,10
+	.p2align 3
+.L87:
+	addl	$1, %edx
+	addq	$4, %rax
+	cmpl	%esi, %edx
+	je	.L86
+.L29:
+	cmpl	%edi, (%rax)
+	jne	.L87
+.L28:
+	movl	$map, %edi
+	xorl	%r10d, %r10d
+	.p2align 4,,10
+	.p2align 3
+.L32:
+	movq	%rdi, %rcx
+	xorl	%eax, %eax
+	jmp	.L34
+	.p2align 4,,10
+	.p2align 3
+.L89:
+	addl	$1, %eax
+	addq	$4, %rcx
+	cmpl	%esi, %eax
+	je	.L88
+.L34:
+	cmpl	%r8d, (%rcx)
+	jne	.L89
+.L33:
+	testl	%r8d, %r8d
+	je	.L30
+	cmpl	%r10d, %r9d
+	jne	.L41
+.L31:
+	cmpl	%edx, %eax
+	jge	.L90
+.L23:
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L86:
+	addl	$1, %r9d
+	addq	$400, %rcx
+	cmpl	%edx, %r9d
+	jne	.L27
+	jmp	.L28
+	.p2align 4,,10
+	.p2align 3
+.L88:
+	addl	$1, %r10d
+	addq	$400, %rdi
+	cmpl	%eax, %r10d
+	jne	.L32
+	jmp	.L33
+.L26:
+	xorl	%r10d, %r10d
+	testl	%r8d, %r8d
+	jne	.L31
+	xorl	%r9d, %r9d
+.L30:
+	testl	%edx, %edx
+	je	.L23
+	cmpl	%esi, %edx
+	jge	.L23
+	movslq	%r9d, %r9
+	leal	-1(%rsi), %edi
+	leaq	(%r9,%r9,4), %rax
+	subl	%edx, %edi
+	leaq	(%rax,%rax,4), %rcx
+	movslq	%esi, %rax
+	leaq	(%rax,%rcx,4), %rax
+	leaq	map(,%rax,4), %rcx
+	subq	%rdi, %rax
+	leaq	map-4(,%rax,4), %r8
+	jmp	.L40

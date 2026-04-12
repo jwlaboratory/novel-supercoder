@@ -1,156 +1,291 @@
-cqto
-	idivq	%rcx
-	addq	$1, %rcx
-	cmpq	%rsi, %rcx
-	jne	.L68
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	max
+	.type	max, @function
+max:
+.LFB8:
+	.cfi_startproc
+	cmpl	%esi, %edi
+	movl	%esi, %eax
+	cmovge	%edi, %eax
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	max, .-max
+	.p2align 4
+	.globl	min
+	.type	min, @function
+min:
+.LFB9:
+	.cfi_startproc
+	cmpl	%esi, %edi
+	movl	%esi, %eax
+	cmovle	%edi, %eax
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	min, .-min
+	.p2align 4
+	.globl	zt
+	.type	zt, @function
+zt:
+.LFB10:
+	.cfi_startproc
+	cmpl	%esi, %edi
+	movl	%esi, %eax
+	cmovge	%edi, %eax
+	cmovg	%esi, %edi
+	subl	%edi, %eax
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	zt, .-zt
+	.p2align 4
+	.globl	round
+	.type	round, @function
+round:
+.LFB11:
+	.cfi_startproc
+	movl	%edi, %eax
+	cltd
+	idivl	%esi
+	addl	%edx, %edx
+	cmpl	%esi, %edx
+	setge	%dl
+	movzbl	%dl, %edx
+	addl	%edx, %eax
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	round, .-round
+	.p2align 4
+	.globl	ceil
+	.type	ceil, @function
+ceil:
+.LFB12:
+	.cfi_startproc
+	movl	%edi, %eax
+	cltd
+	idivl	%esi
+	cmpl	$1, %edx
+	sbbl	$-1, %eax
+	ret
+	.cfi_endproc
+.LFE12:
+	.size	ceil, .-ceil
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB13:
+	.cfi_startproc
+	movl	%edi, %eax
+	movl	%esi, %edx
+	testl	%esi, %esi
+	je	.L14
+	.p2align 4,,10
+	.p2align 3
+.L13:
+	movl	%edx, %ecx
+	cltd
+	idivl	%ecx
+	movl	%ecx, %eax
+	testl	%edx, %edx
+	jne	.L13
+	movl	%ecx, %eax
 	ret
 	.p2align 4,,10
 	.p2align 3
-.L69:
+.L14:
+	movl	%edi, %ecx
+	movl	%ecx, %eax
+	ret
+	.cfi_endproc
+.LFE13:
+	.size	gcd, .-gcd
+	.p2align 4
+	.globl	lcm
+	.type	lcm, @function
+lcm:
+.LFB14:
+	.cfi_startproc
+	testl	%esi, %esi
+	je	.L19
+	movl	%esi, %edx
+	movl	%edi, %ecx
+	.p2align 4,,10
+	.p2align 3
+.L18:
+	movl	%ecx, %eax
+	movl	%edx, %ecx
+	cltd
+	idivl	%ecx
+	testl	%edx, %edx
+	jne	.L18
+	movl	%edi, %eax
+	cltd
+	idivl	%ecx
+	imull	%esi, %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L19:
+	xorl	%eax, %eax
+	ret
+	.cfi_endproc
+.LFE14:
+	.size	lcm, .-lcm
+	.p2align 4
+	.globl	nCr
+	.type	nCr, @function
+nCr:
+.LFB15:
+	.cfi_startproc
+	testl	%esi, %esi
+	jle	.L24
+	addl	$1, %esi
+	movl	$1, %eax
+	movl	$1, %ecx
+	addl	$1, %edi
+	.p2align 4,,10
+	.p2align 3
+.L23:
+	movl	%edi, %edx
+	subl	%ecx, %edx
+	imull	%edx, %eax
+	cltd
+	idivl	%ecx
+	addl	$1, %ecx
+	cmpl	%esi, %ecx
+	jne	.L23
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L24:
 	movl	$1, %eax
 	ret
 	.cfi_endproc
-.LFE25:
-	.size	llnCr, .-llnCr
+.LFE15:
+	.size	nCr, .-nCr
 	.p2align 4
-	.globl	llfact
-	.type	llfact, @function
-llfact:
-.LFB26:
+	.globl	fact
+	.type	fact, @function
+fact:
+.LFB16:
 	.cfi_startproc
-	testq	%rdi, %rdi
-	jle	.L74
-	leaq	1(%rdi), %rsi
-	andq	$1, %rdi
-	movq	$1, %rdx
-	movq	$1, %rax
-	je	.L73
-	movq	$2, %rax
-	cmpq	%rsi, %rax
-	je	.L71
+	testl	%edi, %edi
+	jle	.L29
+	leal	1(%rdi), %esi
+	andl	$1, %edi
+	movl	$1, %edx
+	movl	$1, %eax
+	je	.L28
+	movl	$2, %eax
+	cmpl	%esi, %eax
+	je	.L26
 	.p2align 4,,10
 	.p2align 3
-.L73:
-	imulq	%rax, %rdx
-	leaq	1(%rax), %rcx
-	addq	$2, %rax
-	imulq	%rcx, %rdx
-	cmpq	%rsi, %rax
-	jne	.L73
-.L71:
-	movq	%rdx, %rax
+.L28:
+	imull	%eax, %edx
+	leal	1(%rax), %ecx
+	addl	$2, %eax
+	imull	%ecx, %edx
+	cmpl	%esi, %eax
+	jne	.L28
+.L26:
+	movl	%edx, %eax
 	ret
 	.p2align 4,,10
 	.p2align 3
-.L74:
-	movq	$1, %rdx
-	movq	%rdx, %rax
+.L29:
+	movl	$1, %edx
+	movl	%edx, %eax
 	ret
 	.cfi_endproc
-.LFE26:
-	.size	llfact, .-llfact
+.LFE16:
+	.size	fact, .-fact
 	.p2align 4
-	.globl	llpow
-	.type	llpow, @function
-llpow:
-.LFB27:
+	.globl	pow
+	.type	pow, @function
+pow:
+.LFB17:
 	.cfi_startproc
-	testq	%rsi, %rsi
-	jle	.L84
-	leaq	1(%rsi), %rdx
-	andq	$1, %rsi
-	movq	$1, %rax
-	movq	$1, %rbx
-	je	.L83
-	movq	$2, %rbx
-	movq	%rdi, %rax
-	cmpq	%rdx, %rbx
-	je	.L90
+	testl	%esi, %esi
+	jle	.L39
+	leal	1(%rsi), %ecx
+	andl	$1, %esi
+	movl	$1, %eax
+	movl	$1, %edx
+	je	.L38
+	movl	$2, %edx
+	movl	%edi, %eax
+	cmpl	%ecx, %edx
+	je	.L46
 	.p2align 4,,10
 	.p2align 3
-.L83:
-	imulq	%rdi, %rax
-	addq	$2, %rbx
-	imulq	%rdi, %rax
-	cmpq	%rdx, %rbx
-	jne	.L83
+.L38:
+	imull	%edi, %eax
+	addl	$2, %edx
+	imull	%edi, %eax
+	cmpl	%ecx, %edx
+	jne	.L38
 	ret
 	.p2align 4,,10
 	.p2align 3
-.L84:
-	movq	$1, %rax
+.L39:
+	movl	$1, %eax
 	ret
-.L90:
+.L46:
 	ret
 	.cfi_endproc
-.LFE27:
-	.size	llpow, .-llpow
-	.section	.note.GNU-stack,"",@progbits
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-e
+.LFE17:
+	.size	pow, .-pow
+	.p2align 4
+	.globl	llmax
+	.type	llmax, @function
+llmax:
+.LFB18:
+	.cfi_startproc
+	cmpq	%rsi, %rdi
+	movq	%rsi, %rax
+	cmovge	%rdi, %rax
+	ret
+	.cfi_endproc
+.LFE18:
+	.size	llmax, .-llmax
+	.p2align 4
+	.globl	llmin
+	.type	llmin, @function
+llmin:
+.LFB19:
+	.cfi_startproc
+	cmpq	%rsi, %rdi
+	movq	%rsi, %rax
+	cmovle	%rdi, %rax
+	ret
+	.cfi_endproc
+.LFE19:
+	.size	llmin, .-llmin
+	.p2align 4
+	.globl	llzt
+	.type	llzt, @function
+llzt:
+.LFB20:
+	.cfi_startproc
+	cmpq	%rsi, %rdi
+	movq	%rsi, %rax
+	cmovge	%rdi, %rax
+	cmovg	%rsi, %rdi
+	subq	%rdi, %rax
+	ret
+	.cfi_endproc
+.LFE20:
+	.size	llzt, .-llzt
+	.p2align 4
+	.globl	llround
+	.type	llround, @function
+llround:
+.LFB21:
+	.cfi_startproc
+	movq	%rdi, %

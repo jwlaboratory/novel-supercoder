@@ -1,0 +1,221 @@
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	min
+	.type	min, @function
+min:
+.LFB8:
+	.cfi_startproc
+	cmpl	%esi, %edi
+	movl	%esi, %eax
+	cmovle	%edi, %eax
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	min, .-min
+	.p2align 4
+	.globl	calcnCr
+	.type	calcnCr, @function
+calcnCr:
+.LFB9:
+	.cfi_startproc
+	movl	$nCr+520, %r8d
+	xorl	%esi, %esi
+	movq	$-512, %rdi
+	movq	$1, nCr(%rip)
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movq	nCr+512(%rsi), %rdx
+	leaq	nCr+512(%rsi), %rax
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	leaq	(%rax,%rdi), %rcx
+	addq	$8, %rax
+	movq	(%rcx,%rsi), %rcx
+	addq	%rcx, %rdx
+	addq	(%rax), %rcx
+	movq	%rdx, -8(%rax)
+	movq	%rcx, %rdx
+	movq	%rcx, (%rax)
+	cmpq	%r8, %rax
+	jne	.L5
+	subq	$512, %rdi
+	addq	$512, %rsi
+	leaq	520(%rax), %r8
+	cmpq	$nCr+32760, %rax
+	jne	.L4
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	calcnCr, .-calcnCr
+	.p2align 4
+	.globl	rep
+	.type	rep, @function
+rep:
+.LFB10:
+	.cfi_startproc
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+	movl	%esi, %r14d
+	pushq	%r13
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
+	pushq	%rbp
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+	movslq	%ecx, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	subq	$512, %rsp
+	.cfi_def_cfa_offset 560
+	cmpl	$-1, %edi
+	je	.L30
+	leal	-1(%rdi), %r12d
+	movl	%edi, %r13d
+	movl	%ebp, %ecx
+	movq	%rdx, %rbx
+	movl	%r12d, %edi
+	call	rep
+	movl	$1, %edi
+	movl	%r13d, %ecx
+	movq	s(%rip), %rax
+	sall	%cl, %edi
+	xorq	t(%rip), %rax
+	movslq	%edi, %rdx
+	testq	%rdx, %rax
+	je	.L8
+	testl	%ebp, %ebp
+	jle	.L22
+	movq	%rbx, %rdx
+	leaq	(%rbx,%rbp,4), %rsi
+	xorl	%ecx, %ecx
+	xorl	%ebx, %ebx
+	jmp	.L19
+	.p2align 4,,10
+	.p2align 3
+.L31:
+	movslq	%ecx, %r8
+	addq	$4, %rdx
+	addl	$1, %ecx
+	movl	%eax, 256(%rsp,%r8,4)
+	cmpq	%rsi, %rdx
+	je	.L16
+.L19:
+	movl	(%rdx), %eax
+	testl	%eax, %edi
+	jne	.L31
+	movslq	%ebx, %r8
+	addq	$4, %rdx
+	addl	$1, %ebx
+	movl	%eax, (%rsp,%r8,4)
+	cmpq	%rsi, %rdx
+	jne	.L19
+.L16:
+	addl	$1, %r14d
+	leaq	256(%rsp), %rdx
+	movl	%r12d, %edi
+	movl	%r14d, %esi
+	call	rep
+	movl	%ebx, %ecx
+	movq	%rsp, %rdx
+	movl	%r14d, %esi
+	movl	%r12d, %edi
+	call	rep
+.L8:
+	addq	$512, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 48
+	popq	%rbx
+	.cfi_def_cfa_offset 40
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L30:
+	.cfi_restore_state
+	movl	k(%rip), %eax
+	cmpl	%eax, %ebp
+	cmovle	%ebp, %eax
+	andl	$1, %r14d
+	negl	%r14d
+	sbbq	%rsi, %rsi
+	movl	%eax, %ecx
+	orq	$1, %rsi
+	testl	%eax, %eax
+	jle	.L8
+	movq	%rbp, %rax
+	subl	$1, %ecx
+	salq	$6, %rbp
+	movq	res(%rip), %rdx
+	salq	$9, %rax
+	addq	%rbp, %rcx
+	addq	$nCr+8, %rax
+	leaq	nCr+16(,%rcx,8), %rdi
+	.p2align 4,,10
+	.p2align 3
+.L13:
+	movq	(%rax), %rcx
+	addq	$8, %rax
+	imulq	%rsi, %rcx
+	addq	%rcx, %rdx
+	cmpq	%rax, %rdi
+	jne	.L13
+	movq	%rdx, res(%rip)
+	addq	$512, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 48
+	popq	%rbx
+	.cfi_def_cfa_offset 40
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L22:
+	.cfi_restore_state
+	xorl	%ecx, %ecx
+	xorl	%ebx, %ebx
+	jmp	.L16
+	.cfi_endproc
+.LFE10:
+	.size	rep, .-rep
+	.p2align 4
+	.type	rep.constprop.5, @function
+rep.constprop.5:
+.LFB12:
+	.cfi_startproc
+	movslq	%edx, %r10
+	subq	$520, %rsp
+	.cfi_def_cfa_offset 528
+	movq	%rsi, %rdx
+	movl	%edi, %r11d
+	movq	%rsi, %r9
+	movl	%r10d, %ecx
+	movl	%edi, %esi
+	movl	$11, %edi
+	call	rep
+	movq	s(%rip), %rax
+	xorq	t(%rip), %rax
+	testb	$16, %ah
+	je	.L32
+	testl	%r10d, %r10d

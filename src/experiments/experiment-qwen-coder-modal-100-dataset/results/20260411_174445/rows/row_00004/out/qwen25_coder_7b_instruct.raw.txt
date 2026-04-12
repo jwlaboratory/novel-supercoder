@@ -1,3 +1,152 @@
-```
-assembly
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d\n"
+.LC2:
+	.string	"%d\n%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB3:
+	.cfi_startproc
+	pushq	%rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+	subq	$224, %rsp
+	.cfi_def_cfa_offset 240
+.L9:
+	movq	%rsp, %rsi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	call	__isoc99_scanf
+	movl	(%rsp), %ecx
+	testl	%ecx, %ecx
+	je	.L14
+	movdqa	.LC1(%rip), %xmm1
+	movaps	%xmm1, 192(%rsp)
+	movaps	%xmm1, 16(%rsp)
+	movaps	%xmm1, 32(%rsp)
+	movaps	%xmm1, 48(%rsp)
+	movaps	%xmm1, 64(%rsp)
+	movaps	%xmm1, 80(%rsp)
+	movaps	%xmm1, 96(%rsp)
+	movaps	%xmm1, 112(%rsp)
+	movaps	%xmm1, 128(%rsp)
+	movaps	%xmm1, 144(%rsp)
+	movaps	%xmm1, 160(%rsp)
+	movaps	%xmm1, 176(%rsp)
+	movups	%xmm1, 201(%rsp)
+	jle	.L11
+	leal	(%rcx,%rcx), %edx
+	movl	$1, %esi
+	leaq	17(%rsp), %rdi
+	movl	$1, %ebx
+	call	memset
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	leaq	4(%rsp), %rsi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	addl	$1, %ebx
+	call	__isoc99_scanf
+	movslq	4(%rsp), %rax
+	movl	(%rsp), %ecx
+	movb	$0, 16(%rsp,%rax)
+	cmpl	%ebx, %ecx
+	jge	.L4
+	movd	%ecx, %xmm6
+	pshufd	$0xe0, %xmm6, %xmm0
+	movq	%xmm0, 8(%rsp)
+	testl	%ecx, %ecx
+	jle	.L11
+	leal	(%rcx,%rcx), %esi
+	movl	$1, %eax
+	xorl	%edx, %edx
+	jmp	.L5
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	addq	$1, %rax
+	cmpl	%eax, %esi
+	jl	.L20
+.L5:
+	movsbl	16(%rsp,%rax), %ecx
+	cmpl	%edx, %ecx
+	jne	.L6
+	leal	7(%rdx), %ecx
+	movb	%cl, 16(%rsp,%rax)
+	movslq	%edx, %rcx
+	subl	$1, 8(%rsp,%rcx,4)
+	movl	8(%rsp), %ecx
+	movl	12(%rsp), %edi
+	testl	%ecx, %ecx
+	je	.L3
+	xorl	$1, %edx
+	testl	%edi, %edi
+	jne	.L6
+.L3:
+	movl	%edi, %esi
+	movl	%ecx, %edx
+	movl	$.LC2, %edi
+	xorl	%eax, %eax
+	call	printf
+	jmp	.L9
+	.p2align 4,,10
+	.p2align 3
+.L20:
+	movl	8(%rsp), %ecx
+	movl	12(%rsp), %edi
+	xorl	$1, %edx
+	testl	%ecx, %ecx
+	jle	.L3
+	testl	%edi, %edi
+	jle	.L3
+	movl	$1, %eax
+	jmp	.L5
+.L14:
+	addq	$224, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 16
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 8
+	ret
+.L11:
+	.cfi_restore_state
+	movl	%ecx, %edi
+	movl	%ecx, %edx
+	xorl	%eax, %eax
+	movl	%edi, %esi
+	movl	$.LC2, %edi
+	call	printf
+	jmp	.L9
+	.cfi_endproc
+.LFE3:
+	.size	main, .-main
+	.section	.rodata.cst16,"aM",@progbits,16
+	.align 16
+.LC1:
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.byte	9
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits
 ```

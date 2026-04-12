@@ -1,6 +1,5 @@
-```
 ```assembly
-	.file	"inputC.c"
+	.file	"optimized_inputC.s"
 	.text
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
@@ -38,6 +37,7 @@ main:
 	addsd	%xmm0, %xmm0
 	divsd	%xmm1, %xmm0
 .L8:
+	call	atan
 	movl	$.LC3, %edi
 	movl	$1, %eax
 	mulsd	.LC1(%rip), %xmm0
@@ -49,6 +49,7 @@ main:
 	.cfi_def_cfa_offset 8
 	ret
 .L6:
+	.cfi_restore_state
 	mulsd	%xmm3, %xmm1
 	mulsd	%xmm3, %xmm1
 	mulsd	.LC4(%rip), %xmm1
@@ -73,5 +74,4 @@ main:
 	.long	1071644672
 	.ident	"GCC: (GNU) 13.4.0"
 	.section	.note.GNU-stack,"",@progbits
-```
 ```

@@ -1,0 +1,98 @@
+```assembly
+	.file	"optimized_inputC.s"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%s"
+.LC1:
+	.string	"%d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB3:
+	.cfi_startproc
+	subq	$100024, %rsp
+	.cfi_def_cfa_offset 100032
+	xorl	%eax, %eax
+	movl	$.LC0, %edi
+	movq	%rsp, %rsi
+	call	__isoc99_scanf
+	cmpb	$0, (%rsp)
+	je	.L10
+	leaq	1(%rsp), %rax
+	xorl	%esi, %esi
+.L3:
+	addq	$1, %rax
+	movl	%esi, %ecx
+	addl	$1, %esi
+	cmpb	$0, -1(%rax)
+	jne	.L3
+.L2:
+	movl	%esi, %edx
+	sarl	%edx
+	movslq	%edx, %rax
+	addq	%rsp, %rax
+	jmp	.L5
+.L19:
+	movzbl	(%rax), %edi
+	subq	$1, %rax
+	leal	-1(%rdx), %r8d
+	cmpb	(%rax), %dil
+	jne	.L4
+	movl	%r8d, %edx
+.L5:
+	testl	%edx, %edx
+	jne	.L19
+.L4:
+	movl	%ecx, %eax
+	shrl	$31, %eax
+	addl	%ecx, %eax
+	sarl	%eax
+	cltq
+	jmp	.L7
+.L20:
+	movzbl	1(%rsp,%rax), %r9d
+	leaq	1(%rax), %rdi
+	cmpb	%r9b, (%rsp,%rax)
+	jne	.L6
+	movq	%rdi, %rax
+.L7:
+	cmpl	%eax, %ecx
+	jg	.L20
+.L6:
+	movl	%esi, %ecx
+	subl	%eax, %ecx
+	subl	$1, %ecx
+	cmpl	%edx, %ecx
+	jle	.L8
+	leal	1(%rax), %esi
+	movl	$.LC1, %edi
+	xorl	%eax, %eax
+	call	printf
+.L9:
+	movq	stdout(%rip), %rdi
+	call	fflush
+	xorl	%eax, %eax
+	addq	$100024, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L8:
+	.cfi_restore_state
+	subl	%edx, %esi
+	movl	$.LC1, %edi
+	xorl	%eax, %eax
+	call	printf
+	jmp	.L9
+.L10:
+	orl	$-1, %ecx
+	xorl	%esi, %esi
+	jmp	.L2
+	.cfi_endproc
+.LFE3:
+	.size	main, .-main
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits
+```

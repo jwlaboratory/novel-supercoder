@@ -1,0 +1,188 @@
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	cmp
+	.type	cmp, @function
+cmp:
+.LFB9:
+	.cfi_startproc
+	movl	8(%rsi), %eax
+	movl	8(%rdi), %edx
+	cmpl	%edx, %eax
+	je	.L2
+	subl	%edx, %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	movl	12(%rsi), %eax
+	subl	12(%rdi), %eax
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	cmp, .-cmp
+	.p2align 4
+	.globl	bitcount64
+	.type	bitcount64, @function
+bitcount64:
+.LFB8:
+	.cfi_startproc
+	movabsq	$24019198012642645, %rdx
+	movq	%rdi, %rax
+	movabsq	$4238682002231055, %rcx
+	sarq	%rax
+	andq	%rdx, %rdi
+	andq	%rdx, %rax
+	movabsq	$14411518807585587, %rdx
+	addq	%rax, %rdi
+	movq	%rdi, %rax
+	andq	%rdx, %rdi
+	sarq	$2, %rax
+	andq	%rdx, %rax
+	addq	%rdi, %rax
+	movq	%rax, %rdx
+	andq	%rcx, %rax
+	sarq	$4, %rdx
+	andq	%rcx, %rdx
+	movabsq	$1095233372415, %rcx
+	addq	%rax, %rdx
+	movq	%rdx, %rax
+	sarq	$8, %rax
+	andq	%rcx, %rax
+	movabsq	$71777214294589695, %rcx
+	andq	%rcx, %rdx
+	movabsq	$1095216726015, %rcx
+	addq	%rdx, %rax
+	movq	%rax, %rdx
+	sarq	$16, %rdx
+	andq	%rcx, %rdx
+	movabsq	$281470681808895, %rcx
+	andq	%rcx, %rax
+	addq	%rdx, %rax
+	movq	%rax, %rdx
+	sarq	$32, %rdx
+	addl	%edx, %eax
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	bitcount64, .-bitcount64
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB10:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	movl	$1, %r12d
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	xorl	%ebp, %ebp
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$88, %rsp
+	.cfi_def_cfa_offset 144
+	leaq	60(%rsp), %rsi
+	call	__isoc99_scanf
+	movl	60(%rsp), %eax
+	testl	%eax, %eax
+	jle	.L8
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	movq	%r12, %xmm1
+	xorl	%r13d, %r13d
+	punpcklqdq	%xmm1, %xmm1
+.L13:
+	leaq	72(%rsp), %rcx
+	leaq	68(%rsp), %rdx
+	xorl	%eax, %eax
+	movaps	%xmm1, (%rsp)
+	movl	$.LC1, %edi
+	leaq	76(%rsp), %r8
+	leaq	64(%rsp), %rsi
+	movl	%r13d, %ebx
+	call	__isoc99_scanf
+	movslq	64(%rsp), %rax
+	movslq	68(%rsp), %rdi
+	imull	$60, 72(%rsp), %edx
+	addl	76(%rsp), %edx
+	imull	$60, %eax, %ecx
+	movdqa	(%rsp), %xmm1
+	addl	%edi, %ecx
+	cmpl	%edx, %ecx
+	jg	.L9
+	leal	1(%rdx), %esi
+	subl	%ecx, %esi
+	cmpl	%edx, %ecx
+	je	.L10
+	movq	%rax, %rdx
+	salq	$4, %rdx
+	subq	%rax, %rdx
+	leaq	(%rdi,%rdx,4), %rax
+	imulq	$1440, %r13, %rdx
+	addq	%rdx, %rax
+	movl	%esi, %edx
+	shrl	%edx
+	leaq	a(,%rax,8), %rax
+	salq	$4, %rdx
+	addq	%rax, %rdx
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	movdqu	(%rax), %xmm0
+	addq	$16, %rax
+	por	%xmm1, %xmm0
+	movups	%xmm0, -16(%rax)
+	cmpq	%rax, %rdx
+	jne	.L11
+	testb	$1, %sil
+	je	.L9
+	andl	$-2, %esi
+	leal	(%rsi,%rcx), %edx
+.L10:
+	movslq	%ebx, %rax
+	movslq	%edx, %rdx
+	imulq	$1440, %rax, %rax
+	addq	%rdx, %rax
+	orq	%r12, a(,%rax,8)
+.L9:
+	addq	$1, %r13
+	cmpq	$3, %r13
+	jne	.L13
+	addl	$1, %ebp
+	addq	%r12, %r12
+	cmpl	%ebp, 60(%rsp)
+	jg	.L7
+.L8:
+	movl	$sz, %r14d
+	xorl	%r13d, %r13d
+	movabsq	$24019198012642645, %r12
+	movabsq	$14411518807585587, %rbp
+	movabsq	$4238682002231055, %rbx
+.L16:
+	leaq	tbl(%r13,%r13), %rdi
+	xorl	%edx, %edx
+	movabsq	$1095233372415, %r10
+	movabsq	$71777214294589695, %r9
+	movabsq	$1095216726015, %r8
+	movq	%rdi, %rcx
+	movabsq	$281470681808895, %rsi
+	.p2align 4,,10
+	.p2align 3
+.L

@@ -1,1 +1,174 @@
-assembly
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	MAX
+	.type	MAX, @function
+MAX:
+.LFB8:
+	.cfi_startproc
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovge	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	MAX, .-MAX
+	.p2align 4
+	.globl	MIN
+	.type	MIN, @function
+MIN:
+.LFB9:
+	.cfi_startproc
+	cmpq	%rsi, %rdi
+	movq	%rsi, %rax
+	cmovle	%rdi, %rax
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	MIN, .-MIN
+	.p2align 4
+	.globl	compare
+	.type	compare, @function
+compare:
+.LFB10:
+	.cfi_startproc
+	movl	(%rdi), %eax
+	subl	(%rsi), %eax
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	compare, .-compare
+	.p2align 4
+	.globl	digits
+	.type	digits, @function
+digits:
+.LFB11:
+	.cfi_startproc
+	movq	%rdi, %rdx
+	xorl	%esi, %esi
+	testq	%rdi, %rdi
+	jle	.L5
+	movabsq	$-3689348814741910323, %rdi
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	movq	%rdx, %rax
+	movq	%rdx, %rcx
+	addq	$1, %rsi
+	mulq	%rdi
+	shrq	$3, %rdx
+	cmpq	$9, %rcx
+	jg	.L7
+.L5:
+	movq	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	digits, .-digits
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%lld"
+.LC2:
+	.string	"%lld\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB12:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	xorl	%eax, %eax
+	movl	$.LC0, %edi
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf
+	movq	8(%rsp), %rbx
+	pxor	%xmm0, %xmm0
+	pxor	%xmm1, %xmm1
+	cvtsi2sdq	%rbx, %xmm0
+	ucomisd	%xmm0, %xmm1
+	ja	.L26
+	sqrtsd	%xmm0, %xmm0
+.L13:
+	movabsq	$1000000000000, %rbp
+	cvttsd2sil	%xmm0, %eax
+	testl	%eax, %eax
+	jle	.L14
+	leal	1(%rax), %r11d
+	movl	$1, %r8d
+	movabsq	$-3689348814741910323, %r10
+	jmp	.L19
+	.p2align 4,,10
+	.p2align 3
+.L15:
+	addq	$1, %r8
+	cmpq	%r8, %r11
+	je	.L14
+.L19:
+	movq	%rbx, %rax
+	movq	%r8, %rcx
+	cqto
+	idivq	%r8
+	movq	%rdx, %rsi
+	testq	%rdx, %rdx
+	jne	.L15
+	movq	%rax, %rdx
+	xorl	%r9d, %r9d
+	testq	%rax, %rax
+	jle	.L18
+	.p2align 4,,10
+	.p2align 3
+.L17:
+	movq	%rdx, %rax
+	movq	%rdx, %rdi
+	addq	$1, %r9
+	mulq	%r10
+	shrq	$3, %rdx
+	cmpq	$9, %rdi
+	jg	.L17
+	.p2align 4,,10
+	.p2align 3
+.L18:
+	movq	%rcx, %rax
+	addq	$1, %rsi
+	mulq	%r10
+	movq	%rdx, %rcx
+	shrq	$3, %rcx
+	jne	.L18
+	cmpq	%rsi, %r9
+	cmovl	%rsi, %r9
+	cmpq	%r9, %rbp
+	cmovg	%r9, %rbp
+	addq	$1, %r8
+	cmpq	%r8, %r11
+	jne	.L19
+.L14:
+	movq	%rbp, %rsi
+	movl	$.LC2, %edi
+	xorl	%eax, %eax
+	call	printf
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L26:
+	.cfi_restore_state
+	call	sqrt
+	jmp	.L13
+	.cfi_endproc
+.LFE12:
+	.size	main, .-main
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

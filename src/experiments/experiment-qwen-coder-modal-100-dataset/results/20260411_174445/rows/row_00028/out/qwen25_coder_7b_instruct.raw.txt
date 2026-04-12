@@ -1,6 +1,5 @@
-```
 ```assembly
-	.file	"inputC.c"
+	.file	"optimized_inputC.s"
 	.text
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
@@ -22,8 +21,6 @@ main:
 	xorl	%ebx, %ebx
 	subq	$8000032, %rsp
 	.cfi_def_cfa_offset 8000048
-	.p2align 4,,10
-	.p2align 3
 .L2:
 	leaq	6(%rsp), %rsi
 	movl	$.LC0, %edi
@@ -43,10 +40,7 @@ main:
 	popq	%rbx
 	.cfi_def_cfa_offset 8
 	ret
-	.p2align 4,,10
-	.p2align 3
 .L25:
-	.cfi_restore_state
 	movl	16(%rsp), %esi
 	movl	$.LC2, %edi
 	xorl	%eax, %eax
@@ -62,8 +56,6 @@ main:
 	leal	1(%rcx), %edx
 	cmpl	%ecx, %ebx
 	jl	.L9
-	.p2align 4,,10
-	.p2align 3
 .L26:
 	movslq	%ecx, %rsi
 	leaq	16(%rsp,%rsi,4), %rdi
@@ -98,8 +90,6 @@ main:
 	cmpl	%r8d, %esi
 	jg	.L12
 	jmp	.L2
-	.p2align 4,,10
-	.p2align 3
 .L24:
 	movl	$.LC1, %edi
 	movq	%rsp, %rsi
@@ -112,11 +102,9 @@ main:
 	testl	%ebx, %ebx
 	jg	.L4
 	jmp	.L6
-	.p2align 4,,10
-	.p2align 3
 .L7:
 	movl	%ecx, (%rdx)
-	movl	%edi, (%rsi)
+	movl	%esi, (%rsi)
 	testl	%eax, %eax
 	je	.L6
 .L4:
@@ -135,7 +123,6 @@ main:
 	movl	%r11d, %esi
 	movq	%r10, %rdi
 	jmp	.L12
-	.cfi_endproc
 .LFE3:
 	.size	main, .-main
 	.text
@@ -150,8 +137,6 @@ Insert:
 	testl	%edx, %edx
 	jg	.L28
 	ret
-	.p2align 4,,10
-	.p2align 3
 .L30:
 	movl	%ecx, (%rax)
 	movl	%esi, (%r8)
@@ -168,7 +153,6 @@ Insert:
 	jl	.L30
 .L27:
 	ret
-	.cfi_endproc
 .LFE4:
 	.size	Insert, .-Insert
 	.p2align 4
@@ -182,7 +166,6 @@ swap:
 	movl	%edx, (%rdi)
 	movl	%eax, (%rsi)
 	ret
-	.cfi_endproc
 .LFE5:
 	.size	swap, .-swap
 	.p2align 4
@@ -216,8 +199,6 @@ ExtractMax:
 	leal	1(%rcx), %edx
 	cmpl	%ecx, %esi
 	jl	.L37
-	.p2align 4,,10
-	.p2align 3
 .L46:
 	movslq	%ecx, %rdi
 	leaq	0(%rbp,%rdi,4), %r8
@@ -232,3 +213,13 @@ ExtractMax:
 	cmpl	%ebx, %edi
 	jl	.L44
 .L43:
+	movl	%ecx, %edx
+.L41:
+	cmpl	%edx, %eax
+	je	.L36
+	movl	%edi, 0(%rbp,%rax,4)
+	movslq	%edx, %rax
+	leal	(%rax,%rax), %ecx
+	movl	%r10d, (%r8)
+	leal	1(%rcx), %edx
+	cmpl	%

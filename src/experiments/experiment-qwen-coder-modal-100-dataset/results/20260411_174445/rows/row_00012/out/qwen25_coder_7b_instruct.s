@@ -1,195 +1,221 @@
-leaq	(%r8,%r10,4), %r12
-	movl	(%r12), %edi
-	cmpl	%edi, %eax
-	je	.L59
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl	%edi, (%r8)
-	movl	%edi, (%r9)
-	movl	%edi, (%r12)
-	movl	%edi, (%r11)
-	movl	%edi, (%rsi)
-	movl	%edi, (%r10)
-	movl
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.type	union_find_root, @function
+union_find_root:
+.LFB21:
+	.cfi_startproc
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	movslq	%esi, %rdx
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	movq	%rdx, %rax
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 48
+	movq	(%rdi), %rcx
+	leaq	(%rcx,%rdx,4), %rbx
+	movl	(%rbx), %edx
+	cmpl	%eax, %edx
+	jne	.L8
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	.cfi_restore_state
+	movslq	%edx, %rax
+	leaq	(%rcx,%rax,4), %rbp
+	movl	0(%rbp), %eax
+	cmpl	%eax, %edx
+	je	.L3
+	movslq	%eax, %rdx
+	leaq	(%rcx,%rdx,4), %r12
+	movl	(%r12), %edx
+	cmpl	%edx, %eax
+	jne	.L9
+	movl	%edx, 0(%rbp)
+	movl	%edx, %eax
+.L3:
+	movl	%eax, (%rbx)
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	.cfi_restore_state
+	movslq	%edx, %rax
+	leaq	(%rcx,%rax,4), %r13
+	movl	0(%r13), %esi
+	cmpl	%esi, %edx
+	je	.L5
+	call	union_find_root
+	movl	%eax, 0(%r13)
+	movl	%eax, %esi
+.L5:
+	movl	%esi, %edx
+	movl	%esi, (%rbx)
+	movl	%edx, %eax
+	movl	%edx, 0(%rbp)
+	jmp	.L3
+	.cfi_endproc
+.LFE21:
+	.size	union_find_root, .-union_find_root
+	.p2align 4
+	.type	union_find_size, @function
+union_find_size:
+.LFB22:
+	.cfi_startproc
+	movq	(%rdi), %rdx
+	movslq	%esi, %rax
+	movq	16(%rdi), %r9
+	leaq	(%rdx,%rax,4), %r8
+	movslq	(%r8), %rax
+	cmpl	%eax, %esi
+	jne	.L25
+	movl	(%r9,%rax,4), %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L25:
+	movslq	%eax, %rcx
+	leaq	(%rdx,%rcx,4), %r10
+	movl	(%r10), %ecx
+	cmpl	%ecx, %eax
+	je	.L21
+	movslq	%ecx, %rax
+	leaq	(%rdx,%rax,4), %r11
+	movl	(%r11), %eax
+	cmpl	%eax, %ecx
+	jne	.L26
+	movl	%eax, (%r10)
+	movl	%eax, %ecx
+.L21:
+	movslq	%ecx, %rax
+	movl	%ecx, (%r8)
+	movl	(%r9,%rax,4), %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L26:
+	movslq	%eax, %rcx
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+	pushq	%r13
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
+	pushq	%rbp
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	leaq	(%rdx,%rcx,4), %rbx
+	movl	(%rbx), %ecx
+	cmpl	%ecx, %eax
+	je	.L14
+	movslq	%ecx, %rax
+	leaq	(%rdx,%rax,4), %rbp
+	movl	0(%rbp), %eax
+	cmpl	%eax, %ecx
+	jne	.L27
+.L15:
+	movl	%eax, (%rbx)
+	movl	%eax, %ecx
+.L14:
+	movslq	%ecx, %rax
+	movl	%ecx, (%r11)
+	movl	%ecx, (%r10)
+	movl	%ecx, (%r8)
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	movl	(%r9,%rax,4), %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L27:
+	.cfi_restore_state
+	movslq	%eax, %rcx
+	leaq	(%rdx,%rcx,4), %r12
+	movl	(%r12), %ecx
+	cmpl	%ecx, %eax
+	je	.L16
+	movslq	%ecx, %rax
+	leaq	(%rdx,%rax,4), %r13
+	movl	0(%r13), %esi
+	cmpl	%esi, %ecx
+	je	.L17
+	movslq	%esi, %rax
+	leaq	(%rdx,%rax,4), %r14
+	movl	(%r14), %eax
+	cmpl	%eax, %esi
+	je	.L18
+	movl	%eax, %esi
+	call	union_find_root
+	movl	%eax, (%r14)
+	movl	%eax, 0(%r13)
+	movl	%eax, %esi
+.L18:
+	movl	%esi, (%r12)
+	movl	%esi, %ecx
+.L17:
+	movl	%ecx, 0(%rbp)
+	movl	%ecx, %eax
+	jmp	.L15
+	.p2align 4,,10
+	.p2align 3
+.L16:
+	movl	%ecx, 0(%rbp)
+	movl	%ecx, %eax
+	jmp	.L15
+	.cfi_endproc
+.LFE22:
+	.size	union_find_size, .-union_find_size
+	.p2align 4
+	.type	union_find_unite, @function
+union_find_unite:
+.LFB23:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def

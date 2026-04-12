@@ -1,22 +1,176 @@
-.p2align 3
-.L28:
-	testb	$1, %cl
-	je	.L29
-	movq	%r9, %rax
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	phwllABcomp
+	.type	phwllABcomp, @function
+phwllABcomp:
+.LFB24:
+	.cfi_startproc
+	movq	(%rsi), %rcx
+	movl	$-1, %eax
+	cmpq	%rcx, (%rdi)
+	jl	.L1
+	movl	$1, %eax
+	jg	.L1
+	movq	8(%rsi), %rax
+	cmpq	%rax, 8(%rdi)
+	movl	$-1, %edx
+	setg	%al
+	movzbl	%al, %eax
+	cmovl	%edx, %eax
+.L1:
+	ret
+	.cfi_endproc
+.LFE24:
+	.size	phwllABcomp, .-phwllABcomp
+	.p2align 4
+	.globl	umin
+	.type	umin, @function
+umin:
+.LFB8:
+	.cfi_startproc
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovbe	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	umin, .-umin
+	.p2align 4
+	.globl	umax
+	.type	umax, @function
+umax:
+.LFB9:
+	.cfi_startproc
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovnb	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	umax, .-umax
+	.p2align 4
+	.globl	smin
+	.type	smin, @function
+smin:
+.LFB10:
+	.cfi_startproc
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovle	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	smin, .-smin
+	.p2align 4
+	.globl	smax
+	.type	smax, @function
+smax:
+.LFB11:
+	.cfi_startproc
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovge	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	smax, .-smax
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB12:
+	.cfi_startproc
+	movq	%rdi, %rdx
+	jmp	.L12
+	.p2align 4,,10
+	.p2align 3
+.L16:
+	xorl	%edx, %edx
+	divq	%rsi
+.L13:
+	movq	%rdx, %rax
+	movq	%rsi, %rdx
+	movq	%rax, %rsi
+.L12:
+	cmpq	%rsi, %rdx
+	jb	.L13
+	movq	%rdx, %rax
+	testq	%rsi, %rsi
+	jne	.L16
+	ret
+	.cfi_endproc
+.LFE12:
+	.size	gcd, .-gcd
+	.p2align 4
+	.globl	bitpow
+	.type	bitpow, @function
+bitpow:
+.LFB13:
+	.cfi_startproc
+	movq	%rdx, %rcx
+	movl	$1, %r8d
+	testq	%rsi, %rsi
+	je	.L17
+	.p2align 4,,10
+	.p2align 3
+.L20:
+	testb	$1, %sil
+	je	.L19
+	movq	%r8, %rax
 	xorl	%edx, %edx
 	imulq	%rdi, %rax
 	divq	%rcx
-	movq	%rdx, %r9
-.L29:
+	movq	%rdx, %r8
+.L19:
 	imulq	%rdi, %rdi
 	xorl	%edx, %edx
 	movq	%rdi, %rax
 	divq	%rcx
-	shrq	%cl
+	shrq	%rsi
 	movq	%rdx, %rdi
-	jne	.L28
-.L27:
+	jne	.L20
+.L17:
+	movq	%r8, %rax
+	ret
+	.cfi_endproc
+.LFE13:
+	.size	bitpow, .-bitpow
+	.p2align 4
+	.globl	divide
+	.type	divide, @function
+divide:
+.LFB14:
+	.cfi_startproc
+	movq	%rdx, %rcx
+	movq	%rdx, %r8
+	subq	$2, %rcx
+	je	.L27
+	movl	$1, %r9d
+	.p2align 4,,10
+	.p2align 3
+.L29:
+	testb	$1, %cl
+	je	.L28
 	movq	%r9, %rax
+	xorl	%edx, %edx
+	imulq	%rsi, %rax
+	divq	%r8
+	movq	%rdx, %r9
+.L28:
+	imulq	%rsi, %rsi
+	xorl	%edx, %edx
+	movq	%rsi, %rax
+	divq	%r8
+	shrq	%rcx
+	movq	%rdx, %rsi
+	jne	.L29
+	imulq	%r9, %rdi
+.L27:
+	movq	%rdi, %rax
+	xorl	%edx, %edx
+	divq	%r8
+	movq	%rdx, %rax
 	ret
 	.cfi_endproc
 .LFE14:
@@ -27,9 +181,12 @@
 udiff:
 .LFB15:
 	.cfi_startproc
-	cmpq	%rdi, %rsi
-	movq	%rdi, %rax
-	cmovge	%rsi, %rax
+	movq	%rdi, %rdx
+	movq	%rsi, %rax
+	subq	%rsi, %rdx
+	subq	%rdi, %rax
+	cmpq	%rsi, %rdi
+	cmovnb	%rdx, %rax
 	ret
 	.cfi_endproc
 .LFE15:
@@ -40,9 +197,12 @@ udiff:
 sdiff:
 .LFB16:
 	.cfi_startproc
-	cmpq	%rdi, %rsi
-	movq	%rdi, %rax
-	cmovge	%rsi, %rax
+	movq	%rdi, %rdx
+	movq	%rsi, %rax
+	subq	%rsi, %rdx
+	subq	%rdi, %rax
+	cmpq	%rsi, %rdi
+	cmovge	%rdx, %rax
 	ret
 	.cfi_endproc
 .LFE16:
@@ -53,19 +213,21 @@ sdiff:
 bitcount:
 .LFB17:
 	.cfi_startproc
-	movl	$0, %eax
+	xorl	%eax, %eax
 	testq	%rdi, %rdi
-	je	.L32
+	je	.L47
 	.p2align 4,,10
 	.p2align 3
-.L31:
-	testb	$1, %dil
-	je	.L33
-	addl	$1, %eax
-.L33:
-	shrl	%edi
-	jnz	.L31
-.L32:
+.L46:
+	movq	%rdi, %rdx
+	andl	$1, %edx
+	addl	%edx, %eax
+	shrq	%rdi
+	jne	.L46
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L47:
 	ret
 	.cfi_endproc
 .LFE17:
@@ -74,174 +236,30 @@ bitcount:
 	.globl	pullcomp
 	.type	pullcomp, @function
 pullcomp:
-.LFB25:
+.LFB18:
 	.cfi_startproc
+	movq	(%rdi), %rdx
 	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
 	movl	$-1, %eax
-	cmovl	%rcx, %rax
+	cmpq	%rcx, %rdx
+	jb	.L51
+	xorl	%eax, %eax
+	cmpq	%rdx, %rcx
+	setb	%al
+.L51:
 	ret
 	.cfi_endproc
-.LFE25:
+.LFE18:
 	.size	pullcomp, .-pullcomp
 	.p2align 4
 	.globl	prevcomp
 	.type	prevcomp, @function
 prevcomp:
-.LFB26:
+.LFB19:
 	.cfi_startproc
-	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
+	movq	(%rdi), %rcx
+	movq	(%rsi), %rdx
 	movl	$-1, %eax
-	cmovg	%rcx, %rax
-	ret
-	.cfi_endproc
-.LFE26:
-	.size	prevcomp, .-prevcomp
-	.p2align 4
-	.globl	psllcomp
-	.type	psllcomp, @function
-psllcomp:
-.LFB27:
-	.cfi_startproc
-	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
-	movl	$-1, %eax
-	cmovl	%rcx, %rax
-	ret
-	.cfi_endproc
-.LFE27:
-	.size	psllcomp, .-psllcomp
-	.p2align 4
-	.globl	pcharcomp
-	.type	pcharcomp, @function
-pcharcomp:
-.LFB28:
-	.cfi_startproc
-	movb	(%rsi), %cl
-	movb	(%rdi), %dl
-	cmpb	%cl, %dl
-	movl	$-1, %eax
-	cmovl	%cl, %dl
-	ret
-	.cfi_endproc
-.LFE28:
-	.size	pcharcomp, .-pcharcomp
-	.p2align 4
-	.globl	pdoublecomp
-	.type	pdoublecomp, @function
-pdoublecomp:
-.LFB29:
-	.cfi_startproc
-	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
-	movl	$-1, %eax
-	cmovl	%rcx, %rax
-	ret
-	.cfi_endproc
-.LFE29:
-	.size	pdoublecomp, .-pdoublecomp
-	.p2align 4
-	.globl	pstrcomp
-	.type	pstrcomp, @function
-pstrcomp:
-.LFB30:
-	.cfi_startproc
-	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
-	movl	$-1, %eax
-	cmovl	%rcx, %rax
-	ret
-	.cfi_endproc
-.LFE30:
-	.size	pstrcomp, .-pstrcomp
-	.p2align 4
-	.globl	ptriplecomp
-	.type	ptriplecomp, @function
-ptriplecomp:
-.LFB31:
-	.cfi_startproc
-	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
-	movl	$-1, %eax
-	cmovl	%rcx, %rax
-	ret
-	.cfi_endproc
-.LFE31:
-	.size	ptriplecomp, .-ptriplecomp
-	.p2align 4
-	.globl	ptripleREVcomp
-	.type	ptripleREVcomp, @function
-ptripleREVcomp:
-.LFB32:
-	.cfi_startproc
-	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
-	movl	$-1, %eax
-	cmovl	%rcx, %rax
-	ret
-	.cfi_endproc
-.LFE32:
-	.size	ptripleREVcomp, .-ptripleREVcomp
-	.p2align 4
-	.globl	pquadcomp
-	.type	pquadcomp, @function
-pquadcomp:
-.LFB33:
-	.cfi_startproc
-	movq	(%rsi), %rcx
-	movq	(%rdi), %rax
-	cmpq	%rcx, %rax
-	movl	$-1, %eax
-	cmovl	%rcx, %rax
-	ret
-	.cfi_endproc
-.LFE33:
-	.size	pquadcomp, .-pquadcomp
-	.ident	"GCC: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
-
-The given assembly code is already optimized for the functions `umin`, `umax`, `smin`, `smax`, `gcd`, `bitpow`, `divide`, `udiff`, `sdiff`, `bitcount`, `pullcomp`, `prevcomp`, `psllcomp`, `pcharcomp`, `pdoublecomp`, `pstrcomp`, `ptriplecomp`, `ptripleREVcomp`, and `pquadcomp`. However, there are still some opportunities to optimize the remaining parts of the code.
-
-Here's an optimized version of the remaining parts of the code:
-
-.section .text
-.global main
-.type main, @function
-main:
-    pushq   %rbp
-    movq    %rsp, %rbp
-    subq    $160, %rsp
-    leaq    16(%rsp), %rdi
-    call    read_int
-    movq    %rax, %rsi
-    leaq    24(%rsp), %rdi
-    call    read_int
-    movq    %rax, %rdx
-    leaq    32(%rsp), %rdi
-    call    read_int
-    movq    %rax, %rcx
-    leaq    40(%rsp), %rdi
-    call    read_int
-    movq    %rax, %r8
-    leaq    48(%rsp), %rdi
-    call    read_int
-    movq    %rax, %r9
-    leaq    56(%rsp), %rdi
-    call    read_int
-    movq    %rax, %r10
-    leaq    64(%rsp), %rdi
-    call    read_int
-    movq    %rax, %r11
-    leaq    72(%rsp), %rdi
-    call    read_int
-    movq    %rax, %r12
-    leaq    80(%rsp), %rdi
-    call    read_int
-    movq    %rax, %r13
+	cmpq	%rcx, %rdx
+	jb	.L54
+	xor

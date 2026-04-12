@@ -1,159 +1,224 @@
- %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r8d, %edx
-	movb	$2, (%rdi,%rsi,%rdx,8)
-	movl	%r8d, %edi
-	movl	%r10d, %esi
-	movl	%r
+```assembly
+	.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	check
+	.type	check, @function
+check:
+.LFB3:
+	.cfi_startproc
+	movl	%edi, %eax
+	xorl	%edx, %edx
+	orl	%esi, %eax
+	js	.L1
+	movl	w(%rip), %eax
+	addl	$1, %eax
+	cmpl	%edi, %eax
+	jge	.L6
+.L1:
+	movl	%edx, %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	movl	h(%rip), %eax
+	xorl	%edx, %edx
+	addl	$1, %eax
+	cmpl	%eax, %esi
+	setle	%dl
+	movl	%edx, %eax
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	check, .-check
+	.p2align 4
+	.globl	getWay
+	.type	getWay, @function
+getWay:
+.LFB4:
+	.cfi_startproc
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movl	%esi, %r12d
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	movl	%edi, %ebp
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+.L14:
+	movslq	%ebp, %rdx
+	movslq	%r12d, %rax
+	leal	1(%r12), %ebx
+	movl	%ebp, %edi
+	leaq	(%rdx,%rdx,2), %rcx
+	leaq	(%rdx,%rcx,4), %rdx
+	movb	$2, map(%rax,%rdx,8)
+	movl	%ebx, %eax
+	shrl	$31, %eax
+	addl	%eax, %ebx
+	andl	$1, %ebx
+	subl	%eax, %ebx
+	movslq	%ebx, %rbx
+	leaq	(%rbx,%rbx,2), %rax
+	addl	dx(,%rax,8), %edi
+	js	.L8
+	movl	dy(,%rax,8), %esi
+	movl	w(%rip), %eax
+	addl	$1, %eax
+	addl	%r12d, %esi
+	cmpl	%edi, %eax
+	jl	.L8
+	testl	%esi, %esi
+	jns	.L35
+.L8:
+	leaq	(%rbx,%rbx,2), %rax
+	movl	%ebp, %edi
+	salq	$3, %rax
+	addl	dx+4(%rax), %edi
+	js	.L9
+	movl	dy+4(%rax), %esi
+	movl	w(%rip), %eax
+	addl	$1, %eax
+	addl	%r12d, %esi
+	cmpl	%eax, %edi
+	jg	.L9
+	testl	%esi, %esi
+	jns	.L36
+.L9:
+	leaq	(%rbx,%rbx,2), %rax
+	movl	%ebp, %edi
+	salq	$3, %rax
+	addl	dx+8(%rax), %edi
+	js	.L10
+	movl	dy+8(%rax), %esi
+	movl	w(%rip), %eax
+	addl	$1, %eax
+	addl	%r12d, %esi
+	cmpl	%eax, %edi
+	jg	.L10
+	testl	%esi, %esi
+	jns	.L37
+.L10:
+	leaq	(%rbx,%rbx,2), %rax
+	movl	%ebp, %edi
+	salq	$3, %rax
+	addl	dx+12(%rax), %edi
+	js	.L11
+	movl	dy+12(%rax), %esi
+	movl	w(%rip), %eax
+	addl	$1, %eax
+	addl	%r12d, %esi
+	cmpl	%eax, %edi
+	jg	.L11
+	testl	%esi, %esi
+	jns	.L38
+.L11:
+	leaq	(%rbx,%rbx,2), %rax
+	movl	%ebp, %edi
+	salq	$3, %rax
+	addl	dx+16(%rax), %edi
+	js	.L12
+	movl	dy+16(%rax), %esi
+	movl	w(%rip), %eax
+	addl	$1, %eax
+	addl	%r12d, %esi
+	cmpl	%eax, %edi
+	jg	.L12
+	testl	%esi, %esi
+	jns	.L39
+.L12:
+	leaq	(%rbx,%rbx,2), %rax
+	movl	%ebp, %edi
+	salq	$3, %rax
+	addl	dx+20(%rax), %ebp
+	js	.L7
+	addl	dy+20(%rax), %r12d
+	movl	w(%rip), %eax
+	addl	$1, %eax
+	cmpl	%eax, %ebp
+	jg	.L7
+	testl	%r12d, %r12d
+	jns	.L40
+.L7:
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L35:
+	.cfi_restore_state
+	movl	h(%rip), %eax
+	addl	$1, %eax
+	cmpl	%eax, %esi
+	jg	.L8
+	movslq	%edi, %rdx
+	movslq	%esi, %rax
+	leaq	(%rdx,%rdx,2), %rcx
+	leaq	(%rdx,%rcx,4), %rdx
+	cmpb	$0, map(%rax,%rdx,8)
+	jne	.L8
+	call	getWay
+	jmp	.L8
+	.p2align 4,,10
+	.p2align 3
+.L36:
+	movl	h(%rip), %eax
+	addl	$1, %eax
+	cmpl	%eax, %esi
+	jg	.L9
+	movslq	%edi, %rdx
+	movslq	%esi, %rax
+	leaq	(%rdx,%rdx,2), %rcx
+	leaq	(%rdx,%rcx,4), %rdx
+	cmpb	$0, map(%rax,%rdx,8)
+	jne	.L9
+	call	getWay
+	jmp	.L9
+	.p2align 4,,10
+	.p2align 3
+.L37:
+	movl	h(%rip), %eax
+	addl	$1, %eax
+	cmpl	%eax, %esi
+	jg	.L10
+	movslq	%edi, %rdx
+	movslq	%esi, %rax
+	leaq	(%rdx,%rdx,2), %rcx
+	leaq	(%rdx,%rcx,4), %rdx
+	cmpb	$0, map(%rax,%rdx,8)
+	jne	.L10
+	call	getWay
+	jmp	.L10
+	.p2align 4,,10
+	.p2align 3
+.L38:
+	movl	h(%rip), %eax
+	addl	$1, %eax
+	cmpl	%eax, %esi
+	jg	.L11
+	movslq	%edi, %rdx
+	movslq	%esi, %rax
+	leaq	(%rdx,%rdx,2), %rcx
+	leaq	(%rdx,%rcx,4), %rdx
+	cmpb	$0, map(%rax,%rdx,8)
+	jne	.L11
+	call	getWay
+	jmp	.L11
+	.p2align 4,,10
+	.p2align 3
+.L39:
+	movl	h(%rip), %eax
+	addl	$1, %eax
+	cmpl	%eax, %esi
+	jg	.L12
+	movslq	%edi, %rdx
+	movslq	%esi, %rax
+	leaq	(%rdx,%rdx

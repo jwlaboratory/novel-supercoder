@@ -1,0 +1,191 @@
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	MAX
+	.type	MAX, @function
+MAX:
+.LFB3:
+	.cfi_startproc
+	cmpl	%esi, %edi
+	movl	%esi, %eax
+	cmovge	%edi, %eax
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	MAX, .-MAX
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB4:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	xorl	%eax, %eax
+	movl	$505, %ecx
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$5720, %rsp
+	.cfi_def_cfa_offset 5776
+	leaq	1664(%rsp), %rdi
+	leaq	48(%rsp), %rsi
+	rep stosq
+	movl	$.LC0, %edi
+	movl	$1, 1664(%rsp)
+	call	__isoc99_scanf
+	movl	48(%rsp), %eax
+	leal	-1(%rax), %edx
+	movl	%edx, 48(%rsp)
+	testl	%eax, %eax
+	je	.L4
+	leaq	52(%rsp), %rax
+	movl	$1, %r15d
+	movq	%rax, 40(%rsp)
+.L17:
+	movq	40(%rsp), %rsi
+	leaq	60(%rsp), %rcx
+	leaq	56(%rsp), %rdx
+	xorl	%eax, %eax
+	movl	$.LC1, %edi
+	call	__isoc99_scanf
+	movl	56(%rsp), %r9d
+	movslq	52(%rsp), %rax
+	leaq	1664(%rsp), %rdi
+	movl	60(%rsp), %ecx
+	movl	%r9d, %esi
+	leal	1(%rax), %r8d
+	leaq	4(,%rax,4), %r11
+	movq	%rax, %r10
+	subl	%eax, %esi
+	addq	%r11, %rdi
+	movl	%r8d, %r13d
+	movl	%esi, %r12d
+	leal	-1(%rsi), %r14d
+	addq	%rax, %r12
+	leaq	1664(%rsp), %rax
+	salq	$2, %r12
+	subq	%rax, %r12
+	movl	%esi, %eax
+	shrl	$2, %eax
+	addq	$4, %r12
+	salq	$4, %rax
+	movq	%rax, 16(%rsp)
+	movl	%esi, %eax
+	andl	$3, %esi
+	andl	$-4, %eax
+	movl	%esi, 24(%rsp)
+	leal	-1(%r9), %esi
+	addl	%r8d, %eax
+	movl	%esi, %ebx
+	leal	1(%rax), %edx
+	movl	%eax, 28(%rsp)
+	addl	$2, %eax
+	subl	%r10d, %ebx
+	movl	%eax, 36(%rsp)
+	leaq	1664(%rsp), %rax
+	subq	%rax, %r11
+	movl	%edx, 32(%rsp)
+	xorl	%edx, %edx
+	movq	%r11, (%rsp)
+	movq	%rbx, 8(%rsp)
+	jmp	.L16
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movq	%rsi, %rdx
+	addq	$4, %rax
+	addl	$1, %r8d
+	addq	$4, %rdi
+	cmpq	$400, %rsi
+	je	.L15
+	movl	(%rax), %r15d
+.L16:
+	leaq	1(%rdx), %rsi
+	testl	%r15d, %r15d
+	je	.L5
+	cmpl	%r9d, %r10d
+	jg	.L5
+	leal	(%r10,%rdx), %r11d
+	leal	(%rcx,%r15), %ebx
+	movslq	%r11d, %r11
+	movl	1664(%rsp,%r11,4), %ebp
+	cmpl	%ebp, %ebx
+	cmovl	%ebp, %ebx
+	movl	%ebx, 1664(%rsp,%r11,4)
+	cmpl	%r9d, %r13d
+	jg	.L5
+	cmpl	$2, %r14d
+	jbe	.L11
+	leaq	0(,%rsi,4), %r11
+	leaq	(%r12,%rax), %rbp
+	leaq	-4(%r11), %rbx
+	cmpq	%rbx, %rbp
+	jle	.L28
+	movq	(%rsp), %rbx
+	addq	%rax, %rbx
+	cmpq	%rbx, %r11
+	jle	.L28
+.L11:
+	movq	8(%rsp), %rbx
+	movslq	%r8d, %r11
+	leaq	1664(%rsp,%r11,4), %rdx
+	addq	%rbx, %r11
+	leaq	1668(%rsp,%r11,4), %rbp
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	movl	(%rax), %r11d
+	movl	(%rdx), %ebx
+	addl	%ecx, %r11d
+	cmpl	%ebx, %r11d
+	cmovl	%ebx, %r11d
+	addq	$4, %rdx
+	movl	%r11d, -4(%rdx)
+	cmpq	%rbp, %rdx
+	jne	.L9
+	jmp	.L5
+	.p2align 4,,10
+	.p2align 3
+.L28:
+	movl	(%rax), %r15d
+	movq	16(%rsp), %rbx
+	movq	%rdi, %r11
+	addl	%ecx, %r15d
+	addq	%rdi, %rbx
+	movd	%r15d, %xmm2
+	pshufd	$0, %xmm2, %xmm2
+	.p2align 4,,10
+	.p2align 3
+.L13:
+	movdqu	(%r11), %xmm1
+	addq	$16, %r11
+	movdqa	%xmm1, %xmm0
+	pcmpgtd	%xmm2, %xmm0
+	pand	%xmm0, %xmm1
+	pandn	%xmm2, %xmm0
+	por	%xmm1, %xmm0
+	movups	%xmm0, -16(%r11)
+	cmpq	%rbx, %r11
+	jne	.L13
+	movl	24(%rsp), %r11d
+	testl	%r11d, %r11d
+	je	.L5
+	movl	28(%rsp), %ebx
+	movl	(%rax), %ebp
+	movl	%edx, %r11d
+	addl	%edx, %

@@ -1,0 +1,278 @@
+section .text
+global main
+extern __isoc99_scanf, printf, putchar, stdout
+
+main:
+push rbp
+mov rbp, rsp
+sub rsp, 40
+
+lea rdi, [rbp-40]
+mov eax, 5
+call __isoc99_scanf
+
+mov ecx, [rbp-40]
+mov edx, [rbp-36]
+cmp ecx, edx
+jle .L2
+mov [rbp-40], edx
+mov [rbp-36], ecx
+
+.L2:
+mov ecx, [rbp-36]
+mov edx, [rbp-32]
+cmp ecx, edx
+jge .L10
+mov [rbp-36], edx
+mov [rbp-32], ecx
+
+.L10:
+mov ecx, [rbp-32]
+mov edx, [rbp-28]
+cmp ecx, edx
+jge .L9
+mov [rbp-32], edx
+mov [rbp-28], ecx
+
+.L9:
+mov ecx, [rbp-28]
+mov edx, [rbp-24]
+cmp ecx, edx
+jl .L5
+jmp .L8
+
+.L5:
+mov ecx, [rbp-24]
+mov edx, [rbp-20]
+cmp ecx, edx
+jle .L7
+mov [rbp-24], edx
+mov [rbp-20], ecx
+
+.L7:
+mov ecx, [rbp-20]
+mov edx, [rbp-16]
+cmp ecx, edx
+jge .L16
+mov [rbp-20], edx
+mov [rbp-16], ecx
+
+.L16:
+mov ecx, [rbp-16]
+mov edx, [rbp-12]
+cmp ecx, edx
+jl .L12
+jmp .L15
+
+.L12:
+mov ecx, [rbp-12]
+mov edx, [rbp-8]
+cmp ecx, edx
+jge .L19
+mov [rbp-12], edx
+mov [rbp-8], ecx
+
+.L19:
+mov ecx, [rbp-8]
+mov edx, [rbp-4]
+cmp ecx, edx
+jl .L18
+jmp .L15
+
+.L18:
+mov ecx, [rbp-4]
+mov edx, [rbp-8]
+mov [rbp-4], edx
+mov [rbp-8], ecx
+
+.L15:
+mov ecx, [rbp-8]
+mov edx, [rbp-12]
+mov [rbp-8], edx
+mov [rbp-12], ecx
+
+.L12:
+mov ecx, [rbp-12]
+mov edx, [rbp-16]
+mov [rbp-12], edx
+mov [rbp-16], ecx
+
+.L16:
+mov ecx, [rbp-16]
+mov edx, [rbp-20]
+mov [rbp-16], edx
+mov [rbp-20], ecx
+
+.L20:
+mov ecx, [rbp-20]
+mov edx, [rbp-24]
+mov [rbp-20], edx
+mov [rbp-24], ecx
+
+.L24:
+mov ecx, [rbp-24]
+mov edx, [rbp-28]
+mov [rbp-24], edx
+mov [rbp-28], ecx
+
+.L28:
+mov ecx, [rbp-28]
+mov edx, [rbp-32]
+mov [rbp-28], edx
+mov [rbp-32], ecx
+
+.L32:
+mov ecx, [rbp-32]
+mov edx, [rbp-36]
+mov [rbp-32], edx
+mov [rbp-36], ecx
+
+.L36:
+mov ecx, [rbp-36]
+mov edx, [rbp-40]
+mov [rbp-36], edx
+mov [rbp-40], ecx
+
+.L40:
+mov ecx, [rbp-40]
+mov edx, [rbp-44]
+mov [rbp-40], edx
+mov [rbp-44], ecx
+
+.L44:
+mov ecx, [rbp-44]
+mov edx, [rbp-48]
+mov [rbp-44], edx
+mov [rbp-48], ecx
+
+.L48:
+mov ecx, [rbp-48]
+mov edx, [rbp-52]
+mov [rbp-48], edx
+mov [rbp-52], ecx
+
+.L52:
+mov ecx, [rbp-52]
+mov edx, [rbp-56]
+mov [rbp-52], edx
+mov [rbp-56], ecx
+
+.L56:
+mov ecx, [rbp-56]
+mov edx, [rbp-60]
+mov [rbp-56], edx
+mov [rbp-60], ecx
+
+.L60:
+mov ecx, [rbp-60]
+mov edx, [rbp-64]
+mov [rbp-60], edx
+mov [rbp-64], ecx
+
+.L64:
+mov ecx, [rbp-64]
+mov edx, [rbp-68]
+mov [rbp-64], edx
+mov [rbp-68], ecx
+
+.L68:
+mov ecx, [rbp-68]
+mov edx, [rbp-72]
+mov [rbp-68], edx
+mov [rbp-72], ecx
+
+.L72:
+mov ecx, [rbp-72]
+mov edx, [rbp-76]
+mov [rbp-72], edx
+mov [rbp-76], ecx
+
+.L76:
+mov ecx, [rbp-76]
+mov edx, [rbp-80]
+mov [rbp-76], edx
+mov [rbp-80], ecx
+
+.L80:
+mov ecx, [rbp-80]
+mov edx, [rbp-84]
+mov [rbp-80], edx
+mov [rbp-84], ecx
+
+.L84:
+mov ecx, [rbp-84]
+mov edx, [rbp-88]
+mov [rbp-84], edx
+mov [rbp-88], ecx
+
+.L88:
+mov ecx, [rbp-88]
+mov edx, [rbp-92]
+mov [rbp-88], edx
+mov [rbp-92], ecx
+
+.L92:
+mov ecx, [rbp-92]
+mov edx, [rbp-96]
+mov [rbp-92], edx
+mov [rbp-96], ecx
+
+.L96:
+mov ecx, [rbp-96]
+mov edx, [rbp-100]
+mov [rbp-96], edx
+mov [rbp-100], ecx
+
+.L100:
+mov ecx, [rbp-100]
+mov edx, [rbp-104]
+mov [rbp-100], edx
+mov [rbp-104], ecx
+
+.L104:
+mov ecx, [rbp-104]
+mov edx, [rbp-108]
+mov [rbp-104], edx
+mov [rbp-108], ecx
+
+.L108:
+mov ecx, [rbp-108]
+mov edx, [rbp-112]
+mov [rbp-108], edx
+mov [rbp-112], ecx
+
+.L112:
+mov ecx, [rbp-112]
+mov edx, [rbp-116]
+mov [rbp-112], edx
+mov [rbp-116], ecx
+
+.L116:
+mov ecx, [rbp-116]
+mov edx, [rbp-120]
+mov [rbp-116], edx
+mov [rbp-120], ecx
+
+.L120:
+mov ecx, [rbp-120]
+mov edx, [rbp-124]
+mov [rbp-120], edx
+mov [rbp-124], ecx
+
+.L124:
+mov ecx, [rbp-124]
+mov edx, [rbp-128]
+mov [rbp-124], edx
+mov [rbp-128], ecx
+
+.L128:
+mov ecx, [rbp-128]
+mov edx, [rbp-132]
+mov [rbp-128], edx
+mov [rbp-132], ecx
+
+.L132:
+mov ecx, [rbp-132]
+mov edx, [rbp-136]
+mov [rbp-132], edx
+mov [rbp-1

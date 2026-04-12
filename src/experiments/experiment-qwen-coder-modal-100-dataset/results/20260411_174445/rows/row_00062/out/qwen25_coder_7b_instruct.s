@@ -1,65 +1,209 @@
-.cfi_def_cfa_offset 8
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	insert
+	.type	insert, @function
+insert:
+.LFB8:
+	.cfi_startproc
+	movslq	%esi, %rax
+	salq	$32, %rdi
+	movl	%edx, %r8d
+	movq	hashend(%rip), %rcx
+	leaq	(%rdi,%rax), %rsi
+	movabsq	$-6357652102577862929, %rax
+	imulq	%rsi
+	movq	%rsi, %rax
+	sarq	$63, %rax
+	addq	%rsi, %rdx
+	sarq	$19, %rdx
+	subq	%rax, %rdx
+	movq	%rsi, %rax
+	imulq	$800011, %rdx, %rdx
+	subq	%rdx, %rax
+	salq	$4, %rax
+	addq	$hash, %rax
+	jmp	.L4
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	cmpq	%rsi, %rdx
+	je	.L3
+	addq	$16, %rax
+	movl	$hash, %edx
+	cmpq	%rax, %rcx
+	cmove	%rdx, %rax
+.L4:
+	movq	(%rax), %rdx
+	testq	%rdx, %rdx
+	jne	.L5
+	movq	%rsi, (%rax)
+.L3:
+	addl	8(%rax), %r8d
+	cmpl	ans(%rip), %r8d
+	movl	%r8d, 8(%rax)
+	jle	.L1
+	movl	%r8d, ans(%rip)
+.L1:
 	ret
 	.cfi_endproc
-.LFE10:
-	.size	main, .-main
-	.ident	"GCC: (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0"
-	.section	.note.GNU-stack,"",@progbits
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-s
+.LFE8:
+	.size	insert, .-insert
+	.p2align 4
+	.globl	getint
+	.type	getint, @function
+getint:
+.LFB9:
+	.cfi_startproc
+	movq	p(%rip), %rax
+	movzbl	(%rax), %ecx
+	cmpb	$45, %cl
+	je	.L10
+	addq	$1, %rax
+	xorl	%edx, %edx
+	cmpb	$47, %cl
+	jle	.L9
+	.p2align 4,,10
+	.p2align 3
+.L15:
+	movq	%rax, p(%rip)
+	leal	(%rdx,%rdx,4), %ecx
+	movzbl	-1(%rax), %edx
+	addq	$1, %rax
+	andl	$15, %edx
+	cmpb	$47, -1(%rax)
+	leal	(%rdx,%rcx,2), %edx
+	jg	.L15
+.L9:
+	movl	%edx, %eax
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	leaq	1(%rax), %rdx
+	movq	%rdx, p(%rip)
+	cmpb	$47, 1(%rax)
+	jle	.L16
+	leaq	2(%rax), %rdx
+	xorl	%eax, %eax
+	.p2align 4,,10
+	.p2align 3
+.L14:
+	movq	%rdx, p(%rip)
+	leal	(%rax,%rax,4), %ecx
+	movzbl	-1(%rdx), %eax
+	addq	$1, %rdx
+	andl	$15, %eax
+	cmpb	$47, -1(%rdx)
+	leal	(%rax,%rcx,2), %eax
+	jg	.L14
+	negl	%eax
+	movl	%eax, %edx
+	movl	%edx, %eax
+	ret
+.L16:
+	xorl	%edx, %edx
+	jmp	.L9
+	.cfi_endproc
+.LFE9:
+	.size	getint, .-getint
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d / 1\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB10:
+	.cfi_startproc
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movl	$10, %esi
+	movl	$buf, %edi
+	movq	stdin(%rip), %rdx
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	movq	$buf, p(%rip)
+	call	fgets
+	call	getint
+	movl	$0, ans(%rip)
+	testl	%eax, %eax
+	jle	.L59
+	movabsq	$-6357652102577862929, %rbp
+	movl	%eax, %ebx
+	xorl	%r12d, %r12d
+	.p2align 4,,10
+	.p2align 3
+.L58:
+	movq	stdin(%rip), %rdx
+	movl	$35, %esi
+	movl	$buf, %edi
+	movq	$buf, p(%rip)
+	call	fgets
+	movq	p(%rip), %rdx
+	movzbl	(%rdx), %eax
+	cmpb	$45, %al
+	je	.L22
+	xorl	%r10d, %r10d
+	cmpb	$47, %al
+	jle	.L80
+	.p2align 4,,10
+	.p2align 3
+.L23:
+	addq	$1, %rdx
+	leal	(%r10,%r10,4), %ecx
+	movq	%rdx, p(%rip)
+	movzbl	-1(%rdx), %eax
+	andl	$15, %eax
+	cmpb	$47, (%rdx)
+	leal	(%rax,%rcx,2), %r10d
+	jg	.L23
+	leal	1000000001(%r10), %r9d
+	addl	$1000000000, %r10d
+	salq	$32, %r9
+	salq	$32, %r10
+.L24:
+	leaq	1(%rdx), %rax
+	movq	%rax, p(%rip)
+	movzbl	1(%rdx), %ecx
+	cmpb	$45, %cl
+	je	.L27
+	xorl	%r11d, %r11d
+	cmpb	$47, %cl
+	jle	.L81
+	.p2align 4,,10
+	.p2align 3
+.L28:
+	addq	$1, %rax
+	leal	(%r11,%r11,4), %ecx
+	movq	%rax, p(%rip)
+	movzbl	-1(%rax), %edx
+	andl	$15, %edx
+	cmpb	$47, (%rax)
+	leal	(%rdx,%rcx,2), %r11d
+	jg	.L28
+	leal	1000000001(%r11), %r8d
+	addl	$1000000000, %r11d
+	movslq	%r8d, %r8
+	movslq	%r11d, %r11
+.L29:
+	leaq	1(%rax), %rdx
+	movq	%rdx, p(%rip)
+	movzbl	1(%rax), %edx
+	cmpb	$45, %dl
+	je	.L32
+	addq	$2, %rax
+	xorl	%esi, %esi
+	cmpb	$47, %dl
+	jle	.L34
+	.p2align 4,,10
+	.p2align 3
+.L37:
+	movq	%rax, p(%rip)
+	movzbl	-1(%rax), %

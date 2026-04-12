@@ -1,261 +1,121 @@
-```
 ```assembly
 section .text
 global main
+extern scanf, printf, fmin
+
 main:
-push rbp
-mov rbp, rsp
-sub rsp, 48
-mov ecx, [rbp + 16]
-mov edx, [rbp + 20]
-xor eax, eax
-call scanf
-mov ecx, [rbp + 16]
-test ecx, ecx
-jle .L5
-.L4:
-mov esi, [rbp + 24]
-add esi, 4 * rax
-mov eax, [esi]
-inc dword [cnt + 4 * rax]
-cmp eax, [rbp + 16]
-jl .L4
-.L5:
-mov ebx, [rbp + 20]
-mov edi, 1
-xor ebp, ebp
-.L3:
-mov eax, edi
-mov ecx, [cnt + 4 * rdi]
-add edi, 1
-cdqe
-idiv ebx
-mov esi, ecx
-mov eax, ecx
-sar eax, 31
-shr esi, 31
-add ecx, esi
-add eax, ecx
-sar esi, 1
-and ecx, 1
-sub eax, ecx
-add ebp, esi
-mov esi, [rbp + 21]
-add esi, 4 * rdx
-mov [mcnt + 4 * rsi], ecx
-add [p + 4 * rsi], eax
-cmp rdi, 131072
-jl .L3
-mov esi, [rbp + 20]
-sar esi, 31
-add esi, [rbp + 20]
-sar esi, 1
-mov [rbp + 28], esi
-cmp esi, -1
-jl .L6
-mov esi, [rbp + 20]
-xor eax, eax
-xor ebx, ebx
-xor ecx, ecx
-sal esi, 2
-.L9:
-mov eax, [rbp + 20]
-sub ebx, eax
-cdqe
-idiv esi
-cmp ebx, edx
-je .L16
-xorpd xmm0, xmm0
-xorpd xmm1, xmm1
-inc ebx
-add rcx, 4
-mov eax, [mcnt + 4 * rcx]
-sub rcx, 4
-cvtsi2sd xmm0, qword [mcnt + 4 * rcx]
-cvtsi2sd xmm1, eax
-call fmin
-mov eax, eax
-pxorpd xmm1, xmm1
-cvttsd2si eax, xmm0
-pxorpd xmm0, xmm0
-cvtsi2sd xmm1, qword [p + 4 * rcx]
-sub eax, eax
-mov [rcx + 4], eax
-mov eax, [rcx + 4]
-mov [mcnt + 4 * rcx], eax
-mov eax, [rcx + 4]
-shrl eax, 31
-add eax, [rcx + 4]
-sar eax, 1
-cvtsi2sd xmm0, eax
-call fmin
-mov eax, [rbp + 28]
-movapd xmm1, xmm0
-pxorpd xmm0, xmm0
-add eax, ebp
-cvtsi2sd xmm0, eax
-mov eax, [rcx + 4]
-shrl eax, 31
-add eax, [rcx + 4]
-sar eax, 1
-addsdp xmm1, xmm0
-pxorpd xmm1, xmm1
-cvtsi2sd xmm0, eax
-call fmin
-movaps xmm2, xmm1
-cvttsd2si eax, xmm2
-movapd xmm1, xmm0
-pxorpd xmm0, xmm0
-cvtsi2sd xmm0, eax
-mov eax, [rbp + 28]
-addsdp xmm1, xmm0
-cvttsd2si eax, xmm1
-cmp eax, ebx
-jle .L9
- jmp .L6
-.L16:
-mov eax, ebp
-mov [rbp + 24], eax
-mov eax, [rbp + 21]
-mov [rbp + 25], eax
-mov eax, [rbp + 20]
-sar eax, 31
-add eax, [rbp + 20]
-sar eax, 1
-mov [rbp + 28], eax
-cmp esi, -1
-jl .L6
-mov esi, [rbp + 20]
-xor eax, eax
-xor ebx, ebx
-xor ecx, ecx
-sal esi, 2
-.L9:
-mov eax, [rbp + 20]
-sub ebx, eax
-cdqe
-idiv esi
-cmp ebx, edx
-je .L16
-xorpd xmm0, xmm0
-xorpd xmm1, xmm1
-inc ebx
-add rcx, 4
-mov eax, [mcnt + 4 * rcx]
-sub rcx, 4
-cvtsi2sd xmm0, qword [mcnt + 4 * rcx]
-cvtsi2sd xmm1, eax
-call fmin
-mov eax, eax
-pxorpd xmm1, xmm1
-cvttsd2si eax, xmm0
-pxorpd xmm0, xmm0
-cvtsi2sd xmm1, qword [p + 4 * rcx]
-sub eax, eax
-mov [rcx + 4], eax
-mov eax, [rcx + 4]
-mov [mcnt + 4 * rcx], eax
-mov eax, [rcx + 4]
-shrl eax, 31
-add eax, [rcx + 4]
-sar eax, 1
-cvtsi2sd xmm0, eax
-call fmin
-mov eax, [rbp + 28]
-movapd xmm1, xmm0
-pxorpd xmm0, xmm0
-add eax, ebp
-cvtsi2sd xmm0, eax
-mov eax, [rcx + 4]
-shrl eax, 31
-add eax, [rcx + 4]
-sar eax, 1
-addsdp xmm1, xmm0
-pxorpd xmm1, xmm1
-cvtsi2sd xmm0, eax
-call fmin
-movaps xmm2, xmm1
-cvttsd2si eax, xmm2
-movapd xmm1, xmm0
-pxorpd xmm0, xmm0
-cvtsi2sd xmm0, eax
-mov eax, [rbp + 28]
-addsdp xmm1, xmm0
-cvttsd2si eax, xmm1
-cmp eax, ebx
-jle .L9
- jmp .L6
-.L16:
-mov eax, ebp
-mov [rbp + 24], eax
-mov eax, [rbp + 21]
-mov [rbp + 25], eax
-mov eax, [rbp + 20]
-sar eax, 31
-add eax, [rbp + 20]
-sar eax, 1
-mov [rbp + 28], eax
-cmp esi, -1
-jl .L6
-mov esi, [rbp + 20]
-xor eax, eax
-xor ebx, ebx
-xor ecx, ecx
-sal esi, 2
-.L9:
-mov eax, [rbp + 20]
-sub ebx, eax
-cdqe
-idiv esi
-cmp ebx, edx
-je .L16
-xorpd xmm0, xmm0
-xorpd xmm1, xmm1
-inc ebx
-add rcx, 4
-mov eax, [mcnt + 4 * rcx]
-sub rcx, 4
-cvtsi2sd xmm0, qword [mcnt + 4 * rcx]
-cvtsi2sd xmm1, eax
-call fmin
-mov eax, eax
-pxorpd xmm1, xmm1
-cvttsd2si eax, xmm0
-pxorpd xmm0, xmm0
-cvtsi2sd xmm1, qword [p + 4 * rcx]
-sub eax, eax
-mov [rcx + 4], eax
-mov eax, [rcx + 4]
-mov [mcnt + 4 * rcx], eax
-mov eax, [rcx + 4]
-shrl eax, 31
-add eax, [rcx + 4]
-sar eax, 1
-cvtsi2sd xmm0, eax
-call fmin
-mov eax, [rbp + 28]
-movapd xmm1, xmm0
-pxorpd xmm0, xmm0
-add eax, ebp
-cvtsi2sd xmm0, eax
-mov eax, [rcx + 4]
-shrl eax, 31
-add eax, [rcx + 4]
-sar eax, 1
-addsdp xmm1, xmm0
-pxorpd xmm1, xmm1
-cvtsi2sd xmm0, eax
-call fmin
-movaps xmm2, xmm1
-cvttsd2si eax, xmm2
-movapd xmm1, xmm0
-pxorpd xmm0, xmm0
-cvtsi2sd xmm0, eax
-mov eax, [rbp + 28]
-addsdp xmm1, xmm0
-cvttsd2si eax, xmm1
-cmp eax, ebx
-jle .L9
- jmp .L6
-.L16:
-mov eax, ebp
+    push rbp
+    mov rbp, rsp
+    sub rsp, 24
+
+    lea rdi, [LC0]
+    lea rsi, [N]
+    call scanf
+    lea rdi, [LC0]
+    lea rsi, [M]
+    call scanf
+
+    lea rdi, [X]
+    xor ecx, ecx
+count_loop:
+    cmp ecx, [N]
+    jge count_done
+    lea rsi, [X + ecx * 4]
+    call scanf
+    mov eax, [rsi]
+    add dword [cnt + eax * 4], 1
+    inc ecx
+    jmp count_loop
+count_done:
+
+    xor eax, eax
+    xor ebx, ebx
+    xor ecx, ecx
+    xor edx, edx
+    xor esi, esi
+    xor edi, edi
+    xor ebp, ebp
+    xor r8d, r8d
+    xor r9d, r9d
+    xor r10d, r10d
+    xor r11d, r11d
+    xor r12d, r12d
+    xor r13d, r13d
+    xor r14d, r14d
+    xor r15d, r15d
+
+    lea rdi, [cnt]
+    lea rsi, [mcnt]
+    lea rdx, [p]
+    xor ecx, ecx
+sum_loop:
+    cmp ecx, 131072
+    jge sum_done
+    mov eax, [rdi + ecx * 4]
+    cdq
+    idiv dword [M]
+    mov ebx, eax
+    sar eax, 31
+    sar ebx, 31
+    add eax, ebx
+    sar ebx
+    and eax, 1
+    sub ebx, eax
+    add ebx, eax
+    add ecx, ebx
+    mov [rsi + rdx * 4], ecx
+    mov [rsi + rdx * 4 + 4], ebx
+    add ecx, [rdi + ecx * 4]
+    mov [rdx + r15 * 4], ecx
+    inc rdx
+    inc ecx
+    jmp sum_loop
+sum_done:
+
+    lea rdi, [mcnt]
+    xor ecx, ecx
+    xor edx, edx
+    xor ebx, ebx
+    xor eax, eax
+    xor esi, esi
+    xor r8d, r8d
+    xor r9d, r9d
+    xor r10d, r10d
+    xor r11d, r11d
+    xor r12d, r12d
+    xor r13d, r13d
+    xor r14d, r14d
+    xor r15d, r15d
+
+balance_loop:
+    cmp ecx, [M / 2]
+    jge balance_done
+    cmp ecx, [M - ecx]
+    je balance_equal
+    lea rdi, [mcnt + ecx * 4]
+    lea rsi, [mcnt + (M - ecx) * 4]
+    call fmin
+    mov eax, eax
+    add [rdi], eax
+    sub [rsi], eax
+    lea rdi, [p + ecx * 4]
+    lea rsi, [p + (M - ecx) * 4]
+    call fmin
+    mov eax, eax
+    add [rdi], eax
+    add [rsi], eax
+    jmp balance_loop
+balance_equal:
+    lea rdi, [mcnt + ecx * 4]
+    call fmin
+    add [rdi], eax
+    jmp balance_loop
+balance_done:
+
+    lea rdi, [LC2]
+    xor eax, eax
+    call printf
+
+    leave
+    ret
+```

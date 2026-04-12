@@ -28,5 +28,11 @@ env/
 **/codenet_c_dataset.parquet
 **/codenet_c_dataset.csv
 
+# Benchmark result files (can be large due to runaway stdout capture)
+*.bench.json
+
 # Cursor
 .cursorignore
+.env
+
+.env*

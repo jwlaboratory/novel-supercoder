@@ -1,154 +1,194 @@
-movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	3(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	4(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	5(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	6(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	7(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	8(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	9(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	10(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272(%rsp,%r10,4)
-	leal	11(%r11), %esi
-	cmpl	%esi, %edx
-	jle	.L9
-	movslq	%esi, %rsi
-	addq	%rsi, %rax
-	addq	%rsi, %r9
-	movl	272(%rsp,%r9,4), %r10d
-	movslq	%r10d, %rsi
-	movl	%r10d, %ebx
-	imulq	$1757988013, %rsi, %rsi
-	sarl	$31, %ebx
-	sarq	$44, %rsi
-	subl	%ebx, %esi
-	imull	$10007, %esi, %esi
-	subl	%esi, %r10d
-	movl	%r10d, 272
+section .text
+global main
+
+main:
+push rbp
+mov rbp, rsp
+sub rsp, 5827624
+mov ecx, 643204
+xor esi, esi
+call memset
+mov ecx, 5184128
+xor esi, esi
+lea rdi, [rsp+5827624]
+call memset
+mov eax, 1
+mov ecx, 1
+mov [rsp+5827624], eax
+mov [rsp+5827628], ecx
+mov ecx, -1
+xor edx, edx
+movdqa xmm3, [LC0]
+movdqa xmm4, [LC0]
+lea rax, [rsp-1328]
+pcmpeqd xmm5, xmm5
+pcmpgtd xmm3, xmm5
+.L3:
+mov dword [rsp+272], 1
+mov dword [rax+1600], 1
+cmp edx, 1
+jle .L93
+leal -2(%rdx), %esi
+cmp edx, 2
+jbe .L35
+mov ecx, ecx
+leaq -4(%rax), %r8
+leaq 1604(%rax), %r13
+xor esi, esi
+shr ecx, 2
+sal edi, 4
+.L5:
+movdqu [rax+rsi*4], xmm7
+movdqu [r8+rsi*4], xmm2
+movdqa xmm0, [LC0]
+movdqa xmm5, [LC0]
+paddd [rax+rsi*4], [r8+rsi*4]
+movdqa xmm2, [rax+rsi*4]
+pmuludq [rax+rsi*4], [r8+rsi*4]
+movdqa xmm1, [rax+rsi*4]
+pmuludq [rax+rsi*4], [rax+rsi*4]
+paddq [rax+rsi*4], [rax+rsi*4]
+movdqa xmm4, [rax+rsi*4]
+psllq $32, [rax+rsi*4]
+paddq [rax+rsi*4], [rax+rsi*4]
+movdqa xmm2, [rax+rsi*4]
+psrlq $32, [rax+rsi*4]
+pcmpgtd [rax+rsi*4], [rax+rsi*4]
+pmuludq [rax+rsi*4], [rax+rsi*4]
+pmuludq [rax+rsi*4], [rax+rsi*4]
+paddq [rax+rsi*4], [rax+rsi*4]
+psllq $32, [rax+rsi*4]
+paddq [rax+rsi*4], [rax+rsi*4]
+shufps $221, [rax+rsi*4], [rax+rsi*4]
+movdqa [r13+rsi*4], [rax+rsi*4]
+add rsi, 16
+cmp rdi, rsi
+jne .L5
+mov ecx, ecx
+and ecx, -4
+add ecx, 1
+test cl, 3
+je .L9
+.L4:
+movslq ecx, rsi
+leal 1(%rsi), ebx
+leaq (%r8,r14), rax
+leaq (-1336+rsp+rax*4), rbp
+cmp ecx, ecx
+jge .L36
+cmp edx, esi
+jge .L36
+movslq ecx, rax
+movslq ebx, rbx
+imulq $401, rax, r10
+leaq (%r10,r8), rdi
+mov eax, [rsp+272+rax*4]
+movslq edx, rdi
+imulq $401, rdi, r9
+addq r9, r8
+mov qword r8, rsp
+mov ebp, [rbp]
+add eax, ebp
+mov ebp, eax
+movslq ebp, rbp
+imulq $1757988013, rbp, rbp
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 31
+sarq $44, r8
+sub ebp, r8d
+imull $10007, ebp, ebp
+sub ebp, ebp
+mov qword r8, rsp
+mov ebp, 272+rsp+r8*4
+movslq r8d, r8
+imulq $1757988013, r8, r8
+sar ebp, 3

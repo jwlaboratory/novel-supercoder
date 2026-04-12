@@ -1,5 +1,135 @@
-ret
-	.cfi_endproc
+.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	umin
+	.type	umin, @function
+umin:
+.LFB8:
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovbe	%rsi, %rax
+	ret
+.LFE8:
+	.size	umin, .-umin
+	.p2align 4
+	.globl	umax
+	.type	umax, @function
+umax:
+.LFB9:
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovnb	%rsi, %rax
+	ret
+.LFE9:
+	.size	umax, .-umax
+	.p2align 4
+	.globl	smin
+	.type	smin, @function
+smin:
+.LFB10:
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovle	%rsi, %rax
+	ret
+.LFE10:
+	.size	smin, .-smin
+	.p2align 4
+	.globl	smax
+	.type	smax, @function
+smax:
+.LFB11:
+	cmpq	%rdi, %rsi
+	movq	%rdi, %rax
+	cmovge	%rsi, %rax
+	ret
+.LFE11:
+	.size	smax, .-smax
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB12:
+	movq	%rdi, %rdx
+	jmp	.L7
+.L11:
+	xorl	%edx, %edx
+	divq	%rsi
+.L8:
+	movq	%rdx, %rax
+	movq	%rsi, %rdx
+	movq	%rax, %rsi
+.L7:
+	cmpq	%rsi, %rdx
+	jb	.L8
+	movq	%rdx, %rax
+	testq	%rsi, %rsi
+	jne	.L11
+	ret
+.LFE12:
+	.size	gcd, .-gcd
+	.p2align 4
+	.globl	bitpow
+	.type	bitpow, @function
+bitpow:
+.LFB13:
+	movq	%rdx, %rcx
+	movl	$1, %r8d
+	testq	%rsi, %rsi
+	je	.L12
+.L15:
+	testb	$1, %sil
+	je	.L14
+	movq	%r8, %rax
+	xorl	%edx, %edx
+	imulq	%rdi, %rax
+	divq	%rcx
+	movq	%rdx, %r8
+.L14:
+	imulq	%rdi, %rdi
+	xorl	%edx, %edx
+	movq	%rdi, %rax
+	divq	%rcx
+	shrq	%rsi
+	movq	%rdx, %rdi
+	jne	.L15
+.L12:
+	movq	%r8, %rax
+	ret
+.LFE13:
+	.size	bitpow, .-bitpow
+	.p2align 4
+	.globl	divide
+	.type	divide, @function
+divide:
+.LFB14:
+	movq	%rdx, %rcx
+	movq	%rdx, %r8
+	subq	$2, %rcx
+	je	.L22
+	movl	$1, %r9d
+.L24:
+	testb	$1, %cl
+	je	.L23
+	movq	%r9, %rax
+	xorl	%edx, %edx
+	imulq	%rsi, %rax
+	divq	%r8
+	movq	%rdx, %r9
+.L23:
+	imulq	%rsi, %rsi
+	xorl	%edx, %edx
+	movq	%rsi, %rax
+	divq	%r8
+	shrq	%rcx
+	movq	%rdx, %rsi
+	jne	.L24
+	imulq	%r9, %rdi
+.L22:
+	movq	%rdi, %rax
+	xorl	%edx, %edx
+	divq	%r8
+	movq	%rdx, %rax
+	ret
 .LFE14:
 	.size	divide, .-divide
 	.p2align 4
@@ -7,12 +137,13 @@ ret
 	.type	udiff, @function
 udiff:
 .LFB15:
-	.cfi_startproc
-	cmpq	%rdi, %rsi
-	movq	%rdi, %rax
-	cmovge	%rsi, %rax
+	movq	%rdi, %rdx
+	movq	%rsi, %rax
+	subq	%rsi, %rdx
+	subq	%rdi, %rax
+	cmpq	%rsi, %rdi
+	cmovnb	%rdx, %rax
 	ret
-	.cfi_endproc
 .LFE15:
 	.size	udiff, .-udiff
 	.p2align 4
@@ -20,12 +151,13 @@ udiff:
 	.type	sdiff, @function
 sdiff:
 .LFB16:
-	.cfi_startproc
-	cmpq	%rdi, %rsi
-	movq	%rdi, %rax
-	cmovge	%rsi, %rax
+	movq	%rdi, %rdx
+	movq	%rsi, %rax
+	subq	%rsi, %rdx
+	subq	%rdi, %rax
+	cmpq	%rsi, %rdi
+	cmovge	%rdx, %rax
 	ret
-	.cfi_endproc
 .LFE16:
 	.size	sdiff, .-sdiff
 	.p2align 4
@@ -33,22 +165,18 @@ sdiff:
 	.type	bitcount, @function
 bitcount:
 .LFB17:
-	.cfi_startproc
-	movl	$0, %eax
+	xorl	%eax, %eax
 	testq	%rdi, %rdi
-	je	.L25
-	.p2align 4,,10
-	.p2align 3
-.L27:
-	testb	$1, %al
-	je	.L26
-	addl	$1, %eax
-.L26:
-	shrl	%edi
-	jne	.L27
-.L25:
+	je	.L42
+.L41:
+	movq	%rdi, %rdx
+	andl	$1, %edx
+	addl	%edx, %eax
+	shrq	%rdi
+	jne	.L41
 	ret
-	.cfi_endproc
+.L42:
+	ret
 .LFE17:
 	.size	bitcount, .-bitcount
 	.p2align 4
@@ -56,12 +184,16 @@ bitcount:
 	.type	pullcomp, @function
 pullcomp:
 .LFB18:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	cmpq	%rax, %rdx
+	movq	(%rdi), %rdx
+	movq	(%rsi), %rcx
+	movl	$-1, %eax
+	cmpq	%rcx, %rdx
+	jb	.L46
+	xorl	%eax, %eax
+	cmpq	%rdx, %rcx
+	setb	%al
+.L46:
 	ret
-	.cfi_endproc
 .LFE18:
 	.size	pullcomp, .-pullcomp
 	.p2align 4
@@ -69,12 +201,16 @@ pullcomp:
 	.type	prevcomp, @function
 prevcomp:
 .LFB19:
-	.cfi_startproc
-	movq	(%rdi), %rax
+	movq	(%rdi), %rcx
 	movq	(%rsi), %rdx
-	cmpq	%rdx, %rax
+	movl	$-1, %eax
+	cmpq	%rcx, %rdx
+	jb	.L49
+	xorl	%eax, %eax
+	cmpq	%rdx, %rcx
+	setb	%al
+.L49:
 	ret
-	.cfi_endproc
 .LFE19:
 	.size	prevcomp, .-prevcomp
 	.p2align 4
@@ -82,12 +218,13 @@ prevcomp:
 	.type	psllcomp, @function
 psllcomp:
 .LFB20:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	cmpq	%rax, %rdx
+	movq	(%rsi), %rax
+	cmpq	%rax, (%rdi)
+	movl	$-1, %edx
+	setg	%al
+	movzbl	%al, %eax
+	cmovl	%edx, %eax
 	ret
-	.cfi_endproc
 .LFE20:
 	.size	psllcomp, .-psllcomp
 	.p2align 4
@@ -95,12 +232,13 @@ psllcomp:
 	.type	pcharcomp, @function
 pcharcomp:
 .LFB21:
-	.cfi_startproc
-	movb	(%rdi), %al
-	movb	(%rsi), %dl
-	cmpb	%al, %dl
+	movzbl	(%rsi), %eax
+	cmpb	%al, (%rdi)
+	movl	$-1, %edx
+	setg	%al
+	movzbl	%al, %eax
+	cmovl	%edx, %eax
 	ret
-	.cfi_endproc
 .LFE21:
 	.size	pcharcomp, .-pcharcomp
 	.p2align 4
@@ -108,96 +246,19 @@ pcharcomp:
 	.type	pdoublecomp, @function
 pdoublecomp:
 .LFB22:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	cmpq	%rax, %rdx
+	movsd	(%rdi), %xmm1
+	movsd	(%rsi), %xmm0
+	movl	$-1, %eax
+	comisd	%xmm1, %xmm0
+	ja	.L58
+	xorl	%eax, %eax
+	comisd	%xmm0, %xmm1
+	seta	%al
+.L58:
 	ret
-	.cfi_endproc
 .LFE22:
 	.size	pdoublecomp, .-pdoublecomp
 	.p2align 4
 	.globl	pstrcomp
 	.type	pstrcomp, @function
-pstrcomp:
-.LFB23:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	movq	(%rax), %rax
-	movq	(%rdx), %rdx
-	cmpq	%rax, %rdx
-	ret
-	.cfi_endproc
-.LFE23:
-	.size	pstrcomp, .-pstrcomp
-	.p2align 4
-	.globl	phwllABcomp
-	.type	phwllABcomp, @function
-phwllABcomp:
-.LFB24:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	cmpq	%rax, %rdx
-	ret
-	.cfi_endproc
-.LFE24:
-	.size	phwllABcomp, .-phwllABcomp
-	.p2align 4
-	.globl	phwllREVcomp
-	.type	phwllREVcomp, @function
-phwllREVcomp:
-.LFB25:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	cmpq	%rdx, %rax
-	ret
-	.cfi_endproc
-.LFE25:
-	.size	phwllREVcomp, .-phwllREVcomp
-	.p2align 4
-	.globl	ptriplecomp
-	.type	ptriplecomp, @function
-ptriplecomp:
-.LFB26:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	cmpq	%rax, %rdx
-	ret
-	.cfi_endproc
-.LFE26:
-	.size	ptriplecomp, .-ptriplecomp
-	.p2align 4
-	.globl	ptripleREVcomp
-	.type	ptripleREVcomp, @function
-ptripleREVcomp:
-.LFB27:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	cmpq	%rdx, %rax
-	ret
-	.cfi_endproc
-.LFE27:
-	.size	ptripleREVcomp, .-ptripleREVcomp
-	.p2align 4
-	.globl	pquadcomp
-	.type	pquadcomp, @function
-pquadcomp:
-.LFB28:
-	.cfi_startproc
-	movq	(%rdi), %rax
-	movq	(%rsi), %rdx
-	movq	(%rax), %rax
-	movq	(%rdx), %rdx
-	movq	(%rax), %rax
-	movq	(%rdx), %rdx
-	cmpq	%rax, %rdx
-	ret
-	.cfi_endproc
-.LFE28:
-	.size	pquadcomp, .-pquadcomp
-:
+p

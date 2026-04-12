@@ -1,188 +1,218 @@
-, %ebx
-	movq	%r12, 8(%rsp)
-	movq	%r13, %r12
-	movq	%rbp, %r13
-.L44:
-	movl	cross(,%r14,4), %edi
-	testl	%edi, %edi
-	jne	.L33
-	cmpb	$0, rel(%r15,%r12)
-	jne	.L34
-	cmpb	$0, rel(%r13,%r14)
-	je	.L33
-.L34:
-	movl	%r8d, cross(,%r14,4)
+```assembly
+	.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	insert
+	.type	insert, @function
+insert:
+.LFB8:
+	.cfi_startproc
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	movslq	%esi, %rax
+	imull	$107, %esi, %esi
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	movl	%edx, %r12d
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movq	%rdi, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 48
+	movsbl	-1(%rdi,%rax), %ebx
+	movsbl	(%rdi), %eax
+	movq	hashend(%rip), %r13
+	imull	$101, %eax, %eax
+	imull	$103, %ebx, %ebx
+	addl	%eax, %ebx
+	addl	%esi, %ebx
+	movslq	%ebx, %rax
+	movl	%ebx, %edx
+	imulq	$-2109059487, %rax, %rax
+	sarl	$31, %edx
+	shrq	$32, %rax
+	addl	%ebx, %eax
+	sarl	$8, %eax
+	subl	%edx, %eax
+	imull	$503, %eax, %eax
+	subl	%eax, %ebx
+	movslq	%ebx, %rbx
+	salq	$4, %rbx
+	addq	$hash, %rbx
+	jmp	.L5
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	movq	%rbp, %rsi
+	call	strcmp
+	testl	%eax, %eax
+	je	.L10
+	addq	$16, %rbx
+	movl	$hash, %eax
+	cmpq	%rbx, %r13
+	cmove	%rax, %rbx
+.L5:
+	movq	(%rbx), %rdi
+	testq	%rdi, %rdi
+	jne	.L6
+	movq	%rbp, (%rbx)
+	movl	$-1, %eax
+	movl	%r12d, 8(%rbx)
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L10:
+	.cfi_restore_state
+	movl	8(%rbx), %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 40
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	insert, .-insert
+	.p2align 4
+	.globl	lookup
+	.type	lookup, @function
+lookup:
+.LFB9:
+	.cfi_startproc
+	movslq	%esi, %rax
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	imull	$107, %esi, %esi
+	movq	hashend(%rip), %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	movq	%rdi, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	movsbl	-1(%rdi,%rax), %ebx
+	movsbl	(%rdi), %eax
+	imull	$103, %ebx, %ebx
+	imull	$101, %eax, %eax
+	addl	%eax, %ebx
+	addl	%esi, %ebx
+	movslq	%ebx, %rax
+	movl	%ebx, %edx
+	imulq	$-2109059487, %rax, %rax
+	sarl	$31, %edx
+	shrq	$32, %rax
+	addl	%ebx, %eax
+	sarl	$8, %eax
+	subl	%edx, %eax
+	imull	$503, %eax, %eax
+	subl	%eax, %ebx
+	movslq	%ebx, %rbx
+	salq	$4, %rbx
+	addq	$hash, %rbx
+	jmp	.L15
+	.p2align 4,,10
+	.p2align 3
+.L16:
+	movq	%rbp, %rsi
+	call	strcmp
+	testl	%eax, %eax
+	je	.L19
+	addq	$16, %rbx
+	movl	$hash, %eax
+	cmpq	%rbx, %r12
+	cmove	%rax, %rbx
+.L15:
+	movq	(%rbx), %rdi
+	testq	%rdi, %rdi
+	jne	.L16
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	movl	$-1, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L19:
+	.cfi_restore_state
+	movl	8(%rbx), %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	lookup, .-lookup
+	.p2align 4
+	.globl	found
+	.type	found, @function
+found:
+.LFB10:
+	.cfi_startproc
+	pushq	%r15
+	.cfi_def_cfa_offset 16
+	.cfi_offset 15, -16
+	pushq	%r14
+	.cfi_def_cfa_offset 24
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	movslq	%edi, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$136, %rsp
+	.cfi_def_cfa_offset 192
+	movl	sz(%rip), %edx
+	movl	%esi, cross(,%rbp,4)
 	testl	%edx, %edx
-	jle	.L63
-	movq	%r13, 0(%rsp)
-	xorl	%r10d, %r10d
+	jle	.L20
+	imulq	$202, %rbp, %r14
+	movl	%esi, %ecx
+	xorl	%eax, %eax
 	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r14, 8(%rsp)
-	movq	%r15, %r13
-	movq	%r12, %r14
-.L43:
-	movl	cross(,%r15,4), %edi
-	testl	%edi, %edi
-	jne	.L35
-	cmpb	$0, rel(%r12,%r13)
-	jne	.L36
-	cmpb	$0, rel(%r14,%r15)
-	je	.L35
-.L36:
-	movl	%r8d, cross(,%r15,4)
-	testl	%edx, %edx
-	jle	.L64
-	movq	%r14, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 0(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L42:
-	movl	cross(,%r12,4), %edi
-	testl	%edi, %edi
-	jne	.L37
-	cmpb	$0, rel(%r13,%r12)
-	jne	.L38
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L37
-.L38:
-	movl	%r8d, cross(,%r12,4)
-	testl	%edx, %edx
-	jle	.L65
-	movq	%r15, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 8(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L41:
-	movl	cross(,%r13,4), %edi
-	testl	%edi, %edi
-	jne	.L39
-	cmpb	$0, rel(%r14,%r12)
-	jne	.L40
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L39
-.L40:
-	movl	%r8d, cross(,%r13,4)
-	testl	%edx, %edx
-	jle	.L66
-	movq	%r14, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 8(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L41:
-	movl	cross(,%r12,4), %edi
-	testl	%edi, %edi
-	jne	.L39
-	cmpb	$0, rel(%r14,%r12)
-	jne	.L40
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L39
-.L40:
-	movl	%r8d, cross(,%r12,4)
-	testl	%edx, %edx
-	jle	.L66
-	movq	%r14, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 8(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L41:
-	movl	cross(,%r12,4), %edi
-	testl	%edi, %edi
-	jne	.L39
-	cmpb	$0, rel(%r14,%r12)
-	jne	.L40
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L39
-.L40:
-	movl	%r8d, cross(,%r12,4)
-	testl	%edx, %edx
-	jle	.L66
-	movq	%r14, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 8(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L41:
-	movl	cross(,%r12,4), %edi
-	testl	%edi, %edi
-	jne	.L39
-	cmpb	$0, rel(%r14,%r12)
-	jne	.L40
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L39
-.L40:
-	movl	%r8d, cross(,%r12,4)
-	testl	%edx, %edx
-	jle	.L66
-	movq	%r14, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 8(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L41:
-	movl	cross(,%r12,4), %edi
-	testl	%edi, %edi
-	jne	.L39
-	cmpb	$0, rel(%r14,%r12)
-	jne	.L40
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L39
-.L40:
-	movl	%r8d, cross(,%r12,4)
-	testl	%edx, %edx
-	jle	.L66
-	movq	%r14, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 8(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L41:
-	movl	cross(,%r12,4), %edi
-	testl	%edi, %edi
-	jne	.L39
-	cmpb	$0, rel(%r14,%r12)
-	jne	.L40
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L39
-.L40:
-	movl	%r8d, cross(,%r12,4)
-	testl	%edx, %edx
-	jle	.L66
-	movq	%r14, 8(%rsp)
-	xorl	%r10d, %r10d
-	xorl	%ebx, %ebx
-	movq	%rbp, %r12
-	movq	%r15, 8(%rsp)
-	movq	%r13, %r12
-	movq	%r14, %r13
-.L41:
-	movl	cross(,%r12,4), %edi
-	testl	%edi, %edi
-	jne	.L39
-	cmpb	$0, rel(%r14,%r12)
-	jne	.L40
-	cmpb	$0, rel(%r15,%rbp)
-	je	.L39
-.L40:
-	movl	%r8d, cross(,%r12,4)
-	testl	%edx, %edx
-	jle	.L66
-	movq	%
+	negl	%esi
+.L49:
+	movl	cross(,%rbx,4), %r11d
+	testl	%r11d, %r11d
+	jne	.L22
+	cmpb	$0, rel(%rbp,%rax)
+	jne	.L23
+	cmpb	$0, rel

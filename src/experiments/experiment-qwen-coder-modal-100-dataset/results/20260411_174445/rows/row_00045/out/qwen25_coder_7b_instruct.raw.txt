@@ -1,6 +1,5 @@
-```
 ```assembly
-	.file	"inputC.c"
+	.file	"optimized_inputC.s"
 	.text
 	.p2align 4
 	.globl	MAX
@@ -15,11 +14,6 @@ MAX:
 	.cfi_endproc
 .LFE3:
 	.size	MAX, .-MAX
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"%lld"
-.LC1:
-	.string	"%lld\n"
 	.section	.text.startup,"ax",@progbits
 	.p2align 4
 	.globl	main
@@ -88,8 +82,6 @@ main:
 	xorl	%r10d, %r10d
 	xorl	%ecx, %ecx
 	movl	$1000, %edi
-	.p2align 4,,10
-	.p2align 3
 .L8:
 	movq	(%rbx,%rdi,8), %r9
 	movq	%rsi, %r8
@@ -98,8 +90,6 @@ main:
 	subq	%r9, %r8
 	testq	%r9, %r9
 	jle	.L12
-	.p2align 4,,10
-	.p2align 3
 .L9:
 	movq	%rax, %rsi
 	imulq	%rdx, %rsi

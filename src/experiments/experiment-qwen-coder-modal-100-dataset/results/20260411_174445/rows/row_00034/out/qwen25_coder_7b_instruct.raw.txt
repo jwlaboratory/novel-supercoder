@@ -1,183 +1,218 @@
-
-.L34:
-	testw	%cx, %cx
-	jle	.L49
-	movq	to(,%r14,8), %r12
-	movq	no(,%r14,8), %r15
-	xorl	%r11d, %r11d
-	addl	$1, %ebx
-	jmp	.L41
+```assembly
+	.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	min_heapify
+	.type	min_heapify, @function
+min_heapify:
+.LFB8:
+	.cfi_startproc
+	pushq	%rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+	movl	qsize(%rip), %r8d
+	movl	%edi, %esi
 	.p2align 4,,10
 	.p2align 3
-.L52:
-	movl	%r13d, %eax
-	movl	%r14d, %edx
-	popq	%rbp
-	.cfi_def_cfa_offset 48
-	.cfi_restore_state
+.L11:
+	leal	(%rsi,%rsi), %edx
+	leal	1(%rdx), %ecx
+	cmpl	%edx, %r8d
+	jle	.L2
+	movslq	%edx, %r9
+	leaq	(%r9,%r9,2), %rax
+	addq	%rax, %rax
+	movzwl	que(%rax), %r10d
+	leaq	que(%rax), %rbx
+	movslq	%esi, %rax
+	leaq	(%rax,%rax,2), %rdi
+	addq	%rdi, %rdi
+	leaq	que(%rdi), %r11
+	cmpw	que(%rdi), %r10w
+	jl	.L3
+	je	.L4
+.L2:
+	cmpl	%ecx, %r8d
+	jle	.L1
+	movslq	%esi, %rax
+	movslq	%ecx, %rdi
+	leaq	(%rdi,%rdi,2), %rdx
+	leaq	(%rax,%rax,2), %r9
+	movzwl	que+4(%rdi,%rdi), %ebx
+	cmpw	%bx, que+4(%r9,%r9)
+	jg	.L8
+	je	.L15
+.L1:
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
 	ret
-.L51:
-	movl	$-1, %eax
-	popq	%rbp
-	.cfi_def_cfa_offset 48
+	.p2align 4,,10
+	.p2align 3
+.L15:
 	.cfi_restore_state
+	movl	%esi, %edx
+	movq	%rax, %r9
+.L9:
+	leaq	(%rdi,%rdi,2), %r10
+	leaq	(%r9,%r9,2), %rdi
+	movzwl	que+4(%rdi,%rdi), %ebx
+	cmpw	%bx, que+4(%r10,%r10)
+	jge	.L10
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	cmpl	%esi, %ecx
+	je	.L1
+	leaq	(%rax,%rax,2), %rdx
+	movslq	%ecx, %rax
+	movl	%ecx, %esi
+	leaq	(%rax,%rax,2), %rax
+	addq	%rdx, %rdx
+	addq	%rax, %rax
+	movl	que(%rdx), %r10d
+	movzwl	que+4(%rdx), %r9d
+	leaq	que(%rdx), %rdi
+	movl	que(%rax), %r11d
+	movl	%r11d, que(%rdx)
+	movzwl	que+4(%rax), %edx
+	movw	%dx, 4(%rdi)
+	movl	%r10d, que(%rax)
+	movw	%r9w, que+4(%rax)
+	jmp	.L11
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movzwl	4(%r11), %edi
+	cmpw	%di, 4(%rbx)
+	jge	.L2
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	cmpl	%ecx, %r8d
+	jle	.L10
+	movslq	%ecx, %rdi
+	leaq	(%rdi,%rdi,2), %r11
+	cmpw	que(%r11,%r11), %r10w
+	jg	.L8
+	je	.L9
+.L10:
+	movl	%edx, %ecx
+	jmp	.L8
+	.cfi_endproc
+.LFE8:
+	.size	min_heapify, .-min_heapify
+	.p2align 4
+	.globl	deq
+	.type	deq, @function
+deq:
+.LFB9:
+	.cfi_startproc
+	movl	qsize(%rip), %eax
+	xorl	%edi, %edi
+	subl	$1, %eax
+	movl	%eax, qsize(%rip)
+	cltq
+	leaq	(%rax,%rax,2), %rax
+	addq	%rax, %rax
+	movl	que(%rax), %edx
+	movl	%edx, que(%rip)
+	movzwl	que+4(%rax), %eax
+	movw	%ax, que+4(%rip)
+	jmp	min_heapify
+	.cfi_endproc
+.LFE9:
+	.size	deq, .-deq
+	.p2align 4
+	.globl	enq
+	.type	enq, @function
+enq:
+.LFB10:
+	.cfi_startproc
+	movl	qsize(%rip), %ecx
+	leal	1(%rcx), %eax
+	movl	%eax, qsize(%rip)
+	movslq	%ecx, %rax
+	leaq	(%rax,%rax,2), %rax
+	addq	%rax, %rax
+	movw	%di, que+2(%rax)
+	movw	%si, que(%rax)
+	movw	%dx, que+4(%rax)
+	testl	%ecx, %ecx
+	jle	.L25
+	.p2align 4,,10
+	.p2align 3
+.L18:
+	movslq	%ecx, %rax
+	sarl	%ecx
+	movslq	%ecx, %rdi
+	leaq	(%rax,%rax,2), %rdx
+	leaq	(%rdi,%rdi,2), %rsi
+	addq	%rdx, %rdx
+	addq	%rsi, %rsi
+	leaq	que(%rdx), %r8
+	movzwl	que(%rdx), %edx
+	leaq	que(%rsi), %r9
+	cmpw	%dx, que(%rsi)
+	jg	.L20
+	jne	.L17
+	movzwl	4(%r8), %esi
+	cmpw	%si, 4(%r9)
+	jle	.L17
+.L20:
+	leaq	(%rax,%rax,2), %rdx
+	leaq	(%rdi,%rdi,2), %rax
+	addq	%rax, %rax
+	addq	%rdx, %rdx
+	movl	que(%rax), %edi
+	movl	que(%rdx), %r10d
+	leaq	que(%rdx), %r8
+	movzwl	que+4(%rdx), %r9d
+	movl	%edi, que(%rdx)
+	movzwl	que+4(%rax), %edx
+	movw	%dx, 4(%r8)
+	movl	%r10d, que(%rax)
+	movw	%r9w, que+4(%rax)
+	testl	%ecx, %ecx
+	jne	.L18
+.L17:
+	ret
+.L25:
 	ret
 	.cfi_endproc
-.LFE12:
-	.size	dijkstra, .-dijkstra
+.LFE10:
+	.size	enq, .-enq
 	.p2align 4
-	.globl	main
-	.type	main, @function
-main:
-.LFB13:
+	.globl	in
+	.type	in, @function
+in:
+.LFB11:
 	.cfi_startproc
-	pushq	%rbp
+	pushq	%rbx
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	subq	$16, %rsp
-	.cfi_def_cfa_offset 24
-	movl	$0, -4(%rbp)
-.L100:
-	movl	-4(%rbp), %eax
-	call	in
-	testl	%eax, %eax
-	je	.L101
-	addl	$1, %eax
-	movl	%eax, -4(%rbp)
-	movl	-4(%rbp), %eax
-	call	in
-	movl	%eax, -8(%rbp)
-	movl	-4(%rbp), %eax
-	call	in
-	movl	%eax, -12(%rbp)
-	movl	-4(%rbp), %eax
-	movl	-8(%rbp), %edx
-	movl	-12(%rbp), %esi
-	movl	-16(%rbp), %edi
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl	-16(%rbp), %esi
-	movl	-12(%rbp), %edi
-	movl	-8(%rbp), %edx
-	movl	-4(%rbp), %eax
-	movl
+	.cfi_offset 3, -16
+	xorl	%eax, %eax
+	xorl	%ebx, %ebx
+	call	getchar_unlocked
+	.p2align 4,,10
+	.p2align 3
+.L27:
+	andl	$15, %eax
+	leal	(%rbx,%rbx,4), %edx
+	leal	(%rax,%rdx,2), %ebx
+	xorl	%eax, %eax
+	call	getchar_unlocked
+	cmpl	$47, %eax
+	jg	.L27
+	movl	%ebx, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	in, .-in
+	.p2align 4
+	.globl	dijkstra
+	.type	dijkstra, @function
+dijkstra:
+.L

@@ -1,3 +1,185 @@
-```
-assembly
+```assembly
+section .text
+global main
+
+main:
+push rbp
+mov rbp, rsp
+sub rsp, 128
+
+mov ecx, 20046
+mov edx, 21248
+mov byte [rbp-12], 0
+movaps xmm0, [rel LC0]
+
+mov rsi, rsp
+mov edi, LC1
+xor eax, eax
+call __isoc99_scanf
+
+mov rsi, rsp+4
+mov edi, LC1
+xor eax, eax
+xor ebx, ebx
+call __isoc99_scanf
+
+mov eax, [rsp+4]
+test eax, eax
+jg .L3
+jmp .L48
+
+.L58:
+cmp al, 69
+je .L10
+cmp al, 78
+jne .L13
+mov eax, [rbp-12]
+mov ecx, [rsp+84]
+mov edx, [rsp+80]
+mov [rsp+88], eax
+punpckldq xmm0, xmm3
+mov esi, 1
+mov [rsp+100], ecx
+test al, al
+je .L49
+.L12:
+cmp al, 83
+je .L18
+jg .L19
+cmp al, 69
+je .L20
+cmp al, 78
+jne .L22
+mov eax, [rbp-12]
+mov ecx, [rsp+88]
+mov edx, [rsp+80]
+mov [rsp+88], eax
+punpckldq xmm0, xmm6
+mov [rsp+100], ecx
+.L17:
+mov ecx, [rsp+84]
+.L7:
+mov eax, [rsp+12]
+cmp eax, [rsp+88]
+je .L38
+cmp eax, [rsp+92]
+je .L39
+cmp eax, [rsp+100]
+je .L40
+cmp eax, [rsp+96]
+setne al
+movzx eax, al
+add eax, 3
+ jmp .L25
+.L24:
+mov esi, [rsp+80+rax*4]
+mov edi, LC3
+xor eax, eax
+add ebx, 1
+call printf
+cmp ebx, [rsp+4]
+jle .L48
+.L3:
+mov rsi, rsp+12
+mov rdi, rsp+8
+mov edi, LC2
+xor eax, eax
+call __isoc99_scanf
+
+mov ecx, [rsp+84]
+mov eax, [rsp+8]
+cmp eax, ecx
+je .L7
+mov edx, [rsp+92]
+cmp eax, edx
+je .L28
+cmp eax, [rsp+96]
+je .L29
+cmp eax, [rsp+100]
+setne al
+movzx eax, al
+add eax, 5
+ jmp .L5
+.L38:
+mov eax, 3
+ jmp .L24
+.L39:
+mov eax, 1
+ jmp .L25
+.L28:
+mov eax, 2
+ jmp .L5
+.L8:
+mov eax, [rsp+96]
+mov ecx, [rsp+92]
+mov edx, [rsp+80]
+mov [rsp+88], eax
+punpckldq xmm0, xmm5
+ jmp .L17
+.L19:
+cmp al, 87
+jne .L22
+mov eax, [rsp+92]
+mov ecx, [rsp+80]
+mov edx, [rsp+88]
+mov [rsp+88], eax
+punpckldq xmm0, xmm2
+ mov [rsp+100], ecx
+ jmp .L17
+.L13:
+movzx eax, al
+mov ecx, [rsp+80]
+xor esi, esi
+test al, al
+je .L12
+mov ecx, [rsp+80]
+ jmp .L7
+.L10:
+mov eax, [rsp+96]
+mov ecx, [rsp+92]
+mov edx, [rsp+80]
+mov [rsp+88], eax
+punpckldq xmm0, xmm4
+ jmp .L55
+.L40:
+mov eax, 2
+ jmp .L25
+.L48:
+add rsp, 128
+pop rbp
+ret
+
+.L29:
+mov eax, 3
+ jmp .L5
+.L30:
+mov eax, 4
+ jmp .L5
+.L18:
+mov eax, [rsp+92]
+mov ecx, [rsp+80]
+mov edx, [rsp+88]
+mov [rsp+88], eax
+punpckldq xmm0, xmm7
+ jmp .L17
+.L22:
+mov ecx, [rsp+80]
+test sil, sil
+je .L7
+mov ecx, [rsp+80]
+ jmp .L17
+.L20:
+mov eax, [rsp+92]
+mov ecx, [rsp+80]
+mov edx, [rsp+88]
+mov [rsp+88], eax
+punpckldq xmm0, xmm5
+ jmp .L17
+
+section .rodata
+LC0:
+dd 3, 5, 4, 2
+LC1 db "%d", 0
+LC2 db "%d%d", 0
+LC3 db "%d\n", 0
 ```

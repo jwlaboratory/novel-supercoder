@@ -1,1 +1,134 @@
-assembly code here
+.file	"inputC.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%d\n%d"
+.LC1:
+	.string	" %d"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB8:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movl	$20002, %esi
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$180056, %rsp
+	.cfi_def_cfa_offset 180080
+	movq	stdin(%rip), %rdx
+	movq	%rsp, %rdi
+	call	fgets
+	testq	%rax, %rax
+	je	.L2
+	movzbl	(%rsp), %edx
+	testb	%dl, %dl
+	je	.L24
+	xorl	%eax, %eax
+	xorl	%r10d, %r10d
+	xorl	%ebx, %ebx
+	xorl	%edi, %edi
+	jmp	.L3
+	.p2align 4,,10
+	.p2align 3
+.L26:
+	cmpb	$92, %dl
+	jne	.L6
+	movslq	%edi, %rdx
+	addl	$1, %edi
+	movl	%eax, 20016(%rsp,%rdx,4)
+.L6:
+	addq	$1, %rax
+	movzbl	(%rsp,%rax), %edx
+	testb	%dl, %dl
+	je	.L25
+.L3:
+	movl	%eax, %ecx
+	cmpb	$47, %dl
+	jne	.L26
+	testl	%edi, %edi
+	jle	.L6
+	subl	$1, %edi
+	leaq	100032(%rsp), %r11
+	movslq	%edi, %rdx
+	movl	20016(%rsp,%rdx,4), %r8d
+	movslq	%ebx, %rdx
+	leaq	(%r11,%rdx,8), %rdx
+	subl	%r8d, %ecx
+	addl	%ecx, %r10d
+	testl	%ebx, %ebx
+	jg	.L8
+	jmp	.L7
+	.p2align 4,,10
+	.p2align 3
+.L27:
+	addl	%esi, %ecx
+	subq	$8, %rdx
+	testl	%ebx, %ebx
+	je	.L7
+.L8:
+	movl	%ebx, %r9d
+	movl	-4(%rdx), %esi
+	subl	$1, %ebx
+	cmpl	%r8d, -8(%rdx)
+	jge	.L27
+	movl	%r9d, %ebx
+.L7:
+	movd	%r8d, %xmm0
+	movd	%ecx, %xmm1
+	movslq	%ebx, %rdx
+	addq	$1, %rax
+	punpckldq	%xmm1, %xmm0
+	addl	$1, %ebx
+	movq	%xmm0, (%r11,%rdx,8)
+	movzbl	(%rsp,%rax), %edx
+	testb	%dl, %dl
+	jne	.L3
+	.p2align 4,,10
+	.p2align 3
+.L25:
+	xorl	%eax, %eax
+	movl	%ebx, %edx
+	movl	%r10d, %esi
+	movl	$.LC0, %edi
+	call	printf
+	testl	%ebx, %ebx
+	jle	.L10
+	leaq	100032(%rsp), %rbp
+	movslq	%ebx, %rbx
+	leaq	0(%rbp,%rbx,8), %rbx
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	movl	4(%rbp), %esi
+	movl	$.LC1, %edi
+	xorl	%eax, %eax
+	addq	$8, %rbp
+	call	printf
+	cmpq	%rbx, %rbp
+	jne	.L12
+.L10:
+	movl	$10, %edi
+	call	putchar
+	xorl	%edi, %edi
+	call	exit
+.L2:
+	movl	$1, %edi
+	call	exit
+.L24:
+	xorl	%edx, %edx
+	xorl	%esi, %esi
+	movl	$.LC0, %edi
+	xorl	%eax, %eax
+	call	printf
+	jmp	.L10
+	.cfi_endproc
+.LFE8:
+	.size	main, .-main
+	.ident	"GCC: (GNU) 13.4.0"
+	.section	.note.GNU-stack,"",@progbits

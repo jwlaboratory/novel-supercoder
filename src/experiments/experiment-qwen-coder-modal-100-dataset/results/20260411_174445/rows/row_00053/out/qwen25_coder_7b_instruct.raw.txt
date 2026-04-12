@@ -1,6 +1,5 @@
-```
 ```assembly
-	.file	"inputC.c"
+	.file	"optimized_inputC.s"
 	.text
 	.p2align 4
 	.globl	cmp
@@ -30,14 +29,7 @@ cmp:
 	.cfi_endproc
 .LFE8:
 	.size	cmp, .-cmp
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.LC0:
-	.string	"%d"
-.LC1:
-	.string	"%lld %lld"
-.LC2:
-	.string	"%lld\n"
-	.section	.text.startup,"ax",@progbits
+	.section	.text.main,"ax",@progbits
 	.p2align 4
 	.globl	main
 	.type	main, @function
@@ -61,8 +53,6 @@ main:
 	jle	.L9
 	movl	$art, %ebx
 	xorl	%ebp, %ebp
-	.p2align 4,,10
-	.p2align 3
 .L10:
 	movq	%rbx, %rsi
 	leaq	8(%rbx), %rdx
@@ -90,8 +80,6 @@ main:
 	salq	$4, %r11
 	addq	$art+32, %r11
 	jmp	.L14
-	.p2align 4,,10
-	.p2align 3
 .L19:
 	cmpq	%rdx, %rsi
 	movq	%rdx, %rcx

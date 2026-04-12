@@ -1,1 +1,122 @@
+section .text
+global main
+extern printf, scanf
 
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 5784
+
+    lea rdi, [rsp+16]
+    xor eax, eax
+    rep stosb
+
+    mov ecx, 720
+    xor eax, eax
+    push r12
+    push rbp
+    push rbx
+    mov ebp, 2
+
+L4:
+    lea rsi, [rsp+4]
+    mov edi, LC0
+    xor eax, eax
+    call scanf
+    mov esi, [rsp+4]
+    test esi, esi
+    jle L2
+    xor ebx, ebx
+
+L3:
+    lea rdx, [rsp+12]
+    lea rsi, [rsp+8]
+    xor eax, eax
+    add ebx, 1
+    mov edi, LC1
+    call scanf
+    movslq rdx, [rsp+8]
+    movslq rcx, [rsp+12]
+    mov rax, rdx
+    sal rax, 4
+    sub rax, rdx
+    lea rax, [rcx+rax*4]
+    mov dword [rsp+16+rax*4], 1
+    cmp ebx, [rsp+4]
+    jg L3
+L2:
+    cmp ebp, 1
+    je L24
+    mov ebp, 1
+    jmp L4
+L24:
+    xor eax, eax
+    xor r13d, r13d
+
+L5:
+    xor ebx, ebx
+
+L14:
+    mov ecx, [rsp+r12+rbx*4]
+    test ecx, ecx
+    jle L6
+    mov ebp, ebx
+    test eax, eax
+    jne L10
+L7:
+    mov esi, r13d
+    mov edi, LC2
+    xor eax, eax
+    call printf
+    mov ebp, ebx
+    cmp ebx, 9
+    jle L25
+    mov edi, LC0
+    xor eax, eax
+    inc rbx
+    call printf
+    cmp rbx, 60
+    je L16
+    mov eax, [rsp+r12+rbx*4]
+    mov ebp, ebx
+    test eax, eax
+    jle L26
+L10:
+    mov edi, 32
+    call putchar
+    jmp L7
+L26:
+    mov eax, 1
+L6:
+    inc rbx
+    cmp rbx, 60
+    jne L14
+L12:
+    inc r13d
+    add rsp, 240
+    cmp r13d, 24
+    jne L5
+    mov edi, 10
+    call putchar
+    add rsp, 5784
+    leave
+    ret
+
+L25:
+    mov edi, LC3
+    xor eax, eax
+    call printf
+    mov edx, [rsp+r12+rbx*4]
+    lea rax, [rbx+1]
+    test edx, edx
+    jle L9
+    mov ebp, eax
+    mov rbx, rax
+    jmp L10
+L9:
+    add rbx, 2
+    mov eax, 1
+    jmp L14
+L16:
+    mov eax, 1
+    jmp L12

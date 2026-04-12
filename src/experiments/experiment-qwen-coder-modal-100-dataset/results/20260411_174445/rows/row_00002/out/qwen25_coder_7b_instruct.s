@@ -1,66 +1,177 @@
-struct node {
-    struct node *right;
-    struct node *left;
-    struct node *parent;
-    int key;
-};
+section .text
+global insert
+global inorder
+global preorder
+global main
 
-typedef struct node *Node;
-#define NIL NULL
-
-Node root;
-
-void insert(int k) {
-    Node y = NIL;
-    Node x = root;
-    Node z;
-
-    z = malloc(sizeof(struct node));
-    z->key = k;
-    z->left = NIL;
-    z->right = NIL;
-
-    while (x != NIL) {
-        y = x;
-        if (z->key < x->key) x = x->left;
-        else x = x->right;
-    }
-    z->parent = y;
-
-    if (y == NIL) root = z;
-    else if (z->key < y->key) y->left = z;
-    else y->right = z;
-}
-
-void inorder(Node u) {
-    if (u->left != NIL) inorder(u->left);
-    printf(" %d", u->key);
-    if (u->right != NIL) inorder(u->right);
-}
-
-void preorder(Node u) {
-    printf(" %d", u->key);
-    if (u->left != NIL) preorder(u->left);
-    if (u->right != NIL) preorder(u->right);
-}
-
-int main() {
-    int n, i, x;
-    char com[20];
-    scanf("%d", &n);
-
-    for (i = 0; i < n; i++) {
-        scanf("%s", com);
-        if (com[0] == 'i') {
-            scanf("%d", &x);
-            insert(x);
-        } else if (com[0] == 'p') {
-            inorder(root);
-            printf("\n");
-            preorder(root);
-            printf("\n");
-        }
-    }
-
-    return 0;
-}
+insert:
+push rbp
+mov rbp, rsp
+sub rsp, 32
+mov [rbp-8], rdi
+mov eax, 32
+call malloc
+mov [rbp-16], rax
+mov [rbp-20], rdx
+mov [rbp-24], rcx
+mov [rbp-28], rsi
+mov [rbp-32], rdi
+mov [rbp-36], rsi
+mov [rbp-40], rdi
+mov [rbp-44], rsi
+mov [rbp-48], rdi
+mov [rbp-52], rsi
+mov [rbp-56], rdi
+mov [rbp-60], rsi
+mov [rbp-64], rdi
+mov [rbp-68], rsi
+mov [rbp-72], rdi
+mov [rbp-76], rsi
+mov [rbp-80], rdi
+mov [rbp-84], rsi
+mov [rbp-88], rdi
+mov [rbp-92], rsi
+mov [rbp-96], rdi
+mov [rbp-100], rsi
+mov [rbp-104], rdi
+mov [rbp-108], rsi
+mov [rbp-112], rdi
+mov [rbp-116], rsi
+mov [rbp-120], rdi
+mov [rbp-124], rsi
+mov [rbp-128], rdi
+mov [rbp-132], rsi
+mov [rbp-136], rdi
+mov [rbp-140], rsi
+mov [rbp-144], rdi
+mov [rbp-148], rsi
+mov [rbp-152], rdi
+mov [rbp-156], rsi
+mov [rbp-160], rdi
+mov [rbp-164], rsi
+mov [rbp-168], rdi
+mov [rbp-172], rsi
+mov [rbp-176], rdi
+mov [rbp-180], rsi
+mov [rbp-184], rdi
+mov [rbp-188], rsi
+mov [rbp-192], rdi
+mov [rbp-196], rsi
+mov [rbp-200], rdi
+mov [rbp-204], rsi
+mov [rbp-208], rdi
+mov [rbp-212], rsi
+mov [rbp-216], rdi
+mov [rbp-220], rsi
+mov [rbp-224], rdi
+mov [rbp-228], rsi
+mov [rbp-232], rdi
+mov [rbp-236], rsi
+mov [rbp-240], rdi
+mov [rbp-244], rsi
+mov [rbp-248], rdi
+mov [rbp-252], rsi
+mov [rbp-256], rdi
+mov [rbp-260], rsi
+mov [rbp-264], rdi
+mov [rbp-268], rsi
+mov [rbp-272], rdi
+mov [rbp-276], rsi
+mov [rbp-280], rdi
+mov [rbp-284], rsi
+mov [rbp-288], rdi
+mov [rbp-292], rsi
+mov [rbp-296], rdi
+mov [rbp-300], rsi
+mov [rbp-304], rdi
+mov [rbp-308], rsi
+mov [rbp-312], rdi
+mov [rbp-316], rsi
+mov [rbp-320], rdi
+mov [rbp-324], rsi
+mov [rbp-328], rdi
+mov [rbp-332], rsi
+mov [rbp-336], rdi
+mov [rbp-340], rsi
+mov [rbp-344], rdi
+mov [rbp-348], rsi
+mov [rbp-352], rdi
+mov [rbp-356], rsi
+mov [rbp-360], rdi
+mov [rbp-364], rsi
+mov [rbp-368], rdi
+mov [rbp-372], rsi
+mov [rbp-376], rdi
+mov [rbp-380], rsi
+mov [rbp-384], rdi
+mov [rbp-388], rsi
+mov [rbp-392], rdi
+mov [rbp-396], rsi
+mov [rbp-400], rdi
+mov [rbp-404], rsi
+mov [rbp-408], rdi
+mov [rbp-412], rsi
+mov [rbp-416], rdi
+mov [rbp-420], rsi
+mov [rbp-424], rdi
+mov [rbp-428], rsi
+mov [rbp-432], rdi
+mov [rbp-436], rsi
+mov [rbp-440], rdi
+mov [rbp-444], rsi
+mov [rbp-448], rdi
+mov [rbp-452], rsi
+mov [rbp-456], rdi
+mov [rbp-460], rsi
+mov [rbp-464], rdi
+mov [rbp-468], rsi
+mov [rbp-472], rdi
+mov [rbp-476], rsi
+mov [rbp-480], rdi
+mov [rbp-484], rsi
+mov [rbp-488], rdi
+mov [rbp-492], rsi
+mov [rbp-496], rdi
+mov [rbp-500], rsi
+mov [rbp-504], rdi
+mov [rbp-508], rsi
+mov [rbp-512], rdi
+mov [rbp-516], rsi
+mov [rbp-520], rdi
+mov [rbp-524], rsi
+mov [rbp-528], rdi
+mov [rbp-532], rsi
+mov [rbp-536], rdi
+mov [rbp-540], rsi
+mov [rbp-544], rdi
+mov [rbp-548], rsi
+mov [rbp-552], rdi
+mov [rbp-556], rsi
+mov [rbp-560], rdi
+mov [rbp-564], rsi
+mov [rbp-568], rdi
+mov [rbp-572], rsi
+mov [rbp-576], rdi
+mov [rbp-580], rsi
+mov [rbp-584], rdi
+mov [rbp-588], rsi
+mov [rbp-592], rdi
+mov [rbp-596], rsi
+mov [rbp-600], rdi
+mov [rbp-604], rsi
+mov [rbp-608], rdi
+mov [rbp-612], rsi
+mov [rbp-616], rdi
+mov [rbp-620], rsi
+mov [rbp-624], rdi
+mov [rbp-628], rsi
+mov [rbp-632], rdi
+mov [rbp-636], rsi
+mov [rbp-640], rdi
+mov [rbp-644], rsi
+mov [rbp-648], rdi
+mov [rbp-652], rsi
+mov [rbp-656], rdi
+mov [rbp-660], rsi
+mov [rbp-664], rdi
+mov [rbp-66

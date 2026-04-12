@@ -1,161 +1,241 @@
-8(%rsp)
-	movapd	-32(%rsp), %xmm4
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	addpd	-24(%rsp), %xmm4
-	movaps	%xmm4, %xmm0
+```assembly
+	.file	"optimized_inputC.s"
+	.text
+	.p2align 4
+	.globl	cmp
+	.type	cmp, @function
+cmp:
+.LFB21:
+	.cfi_startproc
+	movl	(%rsi), %eax
+	subl	(%rdi), %eax
 	ret
 	.cfi_endproc
-.LFE14:
-	.size	vadd, .-vadd
+.LFE21:
+	.size	cmp, .-cmp
 	.p2align 4
-	.globl	vsub
-	.type	vsub, @function
-vsub:
-.LFB15:
+	.globl	init
+	.type	init, @function
+init:
+.LFB8:
+	.cfi_startproc
+	testl	%edi, %edi
+	jle	.L3
+	leal	-1(%rdi), %eax
+	cmpl	$2, %eax
+	jbe	.L8
+	movdqa	.LC0(%rip), %xmm0
+	movl	%edi, %eax
+	shrl	$2, %eax
+	movaps	%xmm0, id(%rip)
+	movdqa	.LC1(%rip), %xmm0
+	movaps	%xmm0, size(%rip)
+	cmpl	$1, %eax
+	je	.L6
+	movdqa	.LC2(%rip), %xmm1
+	movaps	%xmm0, size+16(%rip)
+	movaps	%xmm1, id+16(%rip)
+.L6:
+	movl	%edi, %eax
+	andl	$-4, %eax
+	testb	$3, %dil
+	je	.L12
+.L5:
+	movslq	%eax, %rdx
+	movl	%eax, id(,%rdx,4)
+	movl	$1, size(,%rdx,4)
+	leal	1(%rax), %edx
+	cmpl	%edx, %edi
+	jle	.L3
+	movslq	%edx, %rcx
+	addl	$2, %eax
+	movl	%edx, id(,%rcx,4)
+	movl	$1, size(,%rcx,4)
+	cmpl	%eax, %edi
+	jle	.L3
+	movslq	%eax, %rdx
+	movl	%eax, id(,%rdx,4)
+	movl	$1, size(,%rdx,4)
+.L3:
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	ret
+.L8:
+	xorl	%eax, %eax
+	jmp	.L5
+	.cfi_endproc
+.LFE8:
+	.size	init, .-init
+	.p2align 4
+	.globl	root
+	.type	root, @function
+root:
+.LFB9:
+	.cfi_startproc
+	movslq	%edi, %rax
+	movslq	id(,%rax,4), %rax
+	cmpl	%eax, %edi
+	je	.L13
+	.p2align 4,,10
+	.p2align 3
+.L15:
+	movslq	id(,%rax,4), %rax
+	movslq	%edi, %rdx
+	movl	%eax, id(,%rdx,4)
+	movq	%rax, %rdi
+	movslq	id(,%rax,4), %rax
+	cmpl	%eax, %edi
+	jne	.L15
+.L13:
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	root, .-root
+	.p2align 4
+	.globl	connected
+	.type	connected, @function
+connected:
+.LFB10:
+	.cfi_startproc
+	movslq	%edi, %rax
+	movslq	id(,%rax,4), %rax
+	cmpl	%eax, %edi
+	je	.L18
+	.p2align 4,,10
+	.p2align 3
+.L19:
+	movl	%edi, %edx
+	movl	id(,%rax,4), %edi
+	movslq	%edx, %rax
+	movl	%edi, id(,%rax,4)
+	movslq	%edi, %rax
+	movslq	id(,%rax,4), %rax
+	cmpl	%edi, %eax
+	jne	.L19
+.L18:
+	movslq	%esi, %rax
+	movslq	id(,%rax,4), %rax
+	cmpl	%eax, %esi
+	je	.L20
+	.p2align 4,,10
+	.p2align 3
+.L21:
+	movl	%esi, %edx
+	movl	id(,%rax,4), %esi
+	movslq	%edx, %rax
+	movl	%esi, id(,%rax,4)
+	movslq	%esi, %rax
+	movslq	id(,%rax,4), %rax
+	cmpl	%esi, %eax
+	jne	.L21
+.L20:
+	xorl	%eax, %eax
+	cmpl	%edi, %esi
+	sete	%al
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	connected, .-connected
+	.p2align 4
+	.globl	unite
+	.type	unite, @function
+unite:
+.LFB11:
+	.cfi_startproc
+	movslq	%edi, %rdi
+	movslq	id(,%rdi,4), %rdx
+	movq	%rdi, %rax
+	cmpl	%edx, %edi
+	je	.L27
+	.p2align 4,,10
+	.p2align 3
+.L28:
+	movslq	id(,%rdx,4), %rdi
+	movl	%eax, %ecx
+	movslq	%ecx, %rdx
+	movl	%edi, id(,%rdx,4)
+	movslq	id(,%rdi,4), %rdx
+	movq	%rdi, %rax
+	cmpl	%edi, %edx
+	jne	.L28
+.L27:
+	movslq	%esi, %rcx
+	movslq	id(,%rcx,4), %rdx
+	cmpl	%edx, %esi
+	je	.L29
+	.p2align 4,,10
+	.p2align 3
+.L30:
+	movl	%esi, %ecx
+	movl	id(,%rdx,4), %esi
+	movslq	%ecx, %rdx
+	movq	%esi, id(,%rdx,4)
+	movslq	%esi, %rcx
+	movl	%esi, id(,%rdx,4)
+	movslq	id(,%rcx,4), %rdx
+	cmpl	%esi, %edx
+	jne	.L30
+.L29:
+	cmpl	%eax, %esi
+	je	.L26
+	movl	size(,%rdi,4), %r8d
+	movl	size(,%rcx,4), %edx
+	leal	(%r8,%rdx), %r9d
+	cmpl	%edx, %r8d
+	jge	.L32
+	movl	%esi, id(,%rdi,4)
+	movl	%r9d, size(,%rcx,4)
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L32:
+	movl	%eax, id(,%rcx,4)
+	movl	%r9d, size(,%rdi,4)
+.L26:
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	unite, .-unite
+	.p2align 4
+	.globl	dcmp
+	.type	dcmp, @function
+dcmp:
+.LFB12:
+	.cfi_startproc
+	movsd	.LC4(%rip), %xmm2
+	movapd	%xmm0, %xmm1
+	xorl	%eax, %eax
+	andpd	.LC3(%rip), %xmm1
+	comisd	%xmm1, %xmm2
+	ja	.L37
+	pxor	%xmm1, %xmm1
+	comisd	%xmm0, %xmm1
+	sbbl	%eax, %eax
+	andl	$2, %eax
+	subl	$1, %eax
+.L37:
+	ret
+	.cfi_endproc
+.LFE12:
+	.size	dcmp, .-dcmp
+	.p2align 4
+	.globl	vset
+	.type	vset, @function
+vset:
+.LFB13:
+	.cfi_startproc
+	ret
+	.cfi_endproc
+.LFE13:
+	.size	vset, .-vset
+	.p2align 4
+	.globl	vadd
+	.type	vadd, @function
+vadd:
+.LFB14:
 	.cfi_startproc
 	movq	%xmm0, -40(%rsp)
 	movq	%xmm1, -32(%rsp)
-	movapd	-40(%rsp), %xmm4
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	subpd	-24(%rsp), %xmm4
-	movaps	%xmm4, -8(%rsp)
-	movapd	-32(%rsp), %xmm4
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	subpd	-24(%rsp), %xmm4
-	movaps	%xmm4, %xmm0
-	ret
-	.cfi_endproc
-.LFE15:
-	.size	vsub, .-vsub
-	.p2align 4
-	.globl	vsmul
-	.type	vsmul, @function
-vsmul:
-.LFB16:
-	.cfi_startproc
-	movq	%xmm0, -40(%rsp)
-	movq	%xmm1, -32(%rsp)
-	movapd	-40(%rsp), %xmm4
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	mulpd	-24(%rsp), %xmm4
-	movaps	%xmm4, -8(%rsp)
-	movapd	-32(%rsp), %xmm4
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	mulpd	-24(%rsp), %xmm4
-	movaps	%xmm4, %xmm0
-	ret
-	.cfi_endproc
-.LFE16:
-	.size	vsmul, .-vsmul
-	.p2align 4
-	.globl	vmul
-	.type	vmul, @function
-vmul:
-.LFB17:
-	.cfi_startproc
-	movq	%xmm0, -40(%rsp)
-	movq	%xmm1, -32(%rsp)
-	movapd	-40(%rsp), %xmm4
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	movapd	-32(%rsp), %xmm5
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	movapd	-32(%rsp), %xmm6
-	movq	%xmm2, -24(%rsp)
-	movq	%xmm3, -16(%rsp)
-	movapd	-32(%rsp), %xmm7
-	movapd	-40(%rsp), %xmm8
-	movapd	-32(%rsp), %xmm9
-	movapd	-40(%rsp), %xmm10
-	movapd	-32(%rsp), %xmm11
-	movapd	-40(%rsp), %xmm12
-	movapd	-32(%rsp), %xmm13
-	movapd	-40(%rsp), %xmm14
-	movapd	-32(%rsp), %xmm15
-	movapd	-40(%rsp), %xmm16
-	movapd	-32(%rsp), %xmm17
-	movapd	-40(%rsp), %xmm18
-	movapd	-32(%rsp), %xmm19
-	movapd	-40(%rsp), %xmm20
-	movapd	-32(%rsp), %xmm21
-	movapd	-40(%rsp), %xmm22
-	movapd	-32(%rsp), %xmm23
-	movapd	-40(%rsp), %xmm24
-	movapd	-32(%rsp), %xmm25
-	movapd	-40(%rsp), %xmm26
-	movapd	-32(%rsp), %xmm27
-	movapd	-40(%rsp), %xmm28
-	movapd	-32(%rsp), %xmm29
-	movapd	-40(%rsp), %xmm30
-	movapd	-32(%rsp), %xmm31
-	movapd	-40(%rsp), %xmm32
-	movapd	-32(%rsp), %xmm33
-	movapd	-40(%rsp), %xmm34
-	movapd	-32(%rsp), %xmm35
-	movapd	-40(%rsp), %xmm36
-	movapd	-32(%rsp), %xmm37
-	movapd	-40(%rsp), %xmm38
-	movapd	-32(%rsp), %xmm39
-	movapd	-40(%rsp), %xmm40
-	movapd	-32(%rsp), %xmm41
-	movapd	-40(%rsp), %xmm42
-	movapd	-32(%rsp), %xmm43
-	movapd	-40(%rsp), %xmm44
-	movapd	-32(%rsp), %xmm45
-	movapd	-40(%rsp), %xmm46
-	movapd	-32(%rsp), %xmm47
-	movapd	-40(%rsp), %xmm48
-	movapd	-32(%rsp), %xmm49
-	movapd	-40(%rsp), %xmm50
-	movapd	-32(%rsp), %xmm51
-	movapd	-40(%rsp), %xmm52
-	movapd	-32(%rsp), %xmm53
-	movapd	-40(%rsp), %xmm54
-	movapd	-32(%rsp), %xmm55
-	movapd	-40(%rsp), %xmm56
-	movapd	-32(%rsp), %xmm57
-	movapd	-40(%rsp), %xmm58
-	movapd	-32(%rsp), %xmm59
-	movapd	-40(%rsp), %xmm60
-	movapd	-32(%rsp), %xmm61
-	movapd	-40(%rsp), %xmm62
-	movapd	-32(%rsp), %xmm63
-	movapd	-40(%rsp), %xmm64
-	movapd	-32(%rsp), %xmm65
-	movapd	-40(%rsp), %xmm66
-	movapd	-32(%rsp), %xmm67
-	movapd	-40(%rsp), %xmm68
-	movapd	-32(%rsp), %xmm69
-	movapd	-40(%rsp), %xmm70
-	movapd	-32(%rsp), %xmm71
-	movapd	-40(%rsp), %xmm72
-	movapd	-32(%rsp), %xmm73
-	movapd	-40(%rsp), %xmm74
-	movapd	-32(%rsp), %xmm75
-	movapd	-40(%rsp), %xmm76
-	movapd	-32(%rsp), %xmm77
-	movapd	-40(%rsp), %xmm78
-	movapd	-32(%rsp), %xmm79
-	movapd	-40(%rsp), %xmm80
-	movapd	-32(%rsp), %xmm81
-	movapd	-40(%rsp), %xmm82
-	movapd	-32(%rsp), %xmm83
-	movapd	-40(%rsp), %xmm84
-	movapd	-32(%rsp), %xmm85
-	movapd	-40(%rsp), %xmm86
-	movapd	-32(%rsp), %xmm87
-	movapd	-40(%rsp), %xmm88
-	movapd	-32(%rsp), %xmm89
-	movapd	-40(%rsp), %xmm90
-	movapd	-32(%rsp), %xmm91
-	movapd	-40(%rsp), %xmm92
-	movapd	-32(%rsp), %xmm93
-	movapd	-40(%rsp), %xmm94
-	movapd	-32(%rsp), %xmm95
-	movapd	-40(%rsp), %
+	movapd	-40(%rsp), %xmm
