@@ -1,0 +1,42 @@
+[
+  {
+    "input": "426\n",
+    "output": "444\n\n"
+  },
+  {
+    "input": "101\n",
+    "output": "111\n\n"
+  },
+  {
+    "input": "638\n",
+    "output": "666\n\n"
+  },
+  {
+    "input": "268\n",
+    "output": "333\n\n"
+  },
+  {
+    "input": "457\n",
+    "output": "555\n\n"
+  },
+  {
+    "input": "000\n",
+    "output": "0\n\n"
+  },
+  {
+    "input": "985\n",
+    "output": "999\n\n"
+  },
+  {
+    "input": "846\n",
+    "output": "888\n\n"
+  },
+  {
+    "input": "198\n",
+    "output": "222\n\n"
+  },
+  {
+    "input": "706\n",
+    "output": "777\n\n"
+  }
+]

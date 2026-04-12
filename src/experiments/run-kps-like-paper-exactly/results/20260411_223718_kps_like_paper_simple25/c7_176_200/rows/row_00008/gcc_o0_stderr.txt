@@ -1,0 +1,19 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:1: warning: data definition has no type or storage class
+    1 | i;main(j){for(;i++<9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);return 0;}
+      | ^
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:1: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:3: warning: return type defaults to 'int' [-Wimplicit-int]
+    1 | i;main(j){for(;i++<9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);return 0;}
+      |   ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:3: warning: type of 'j' defaults to 'int' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:37: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    1 | i;main(j){for(;i++<9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);return 0;}
+      |                                     ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | i;main(j){for(;i++<9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);return 0;}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:37: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+    1 | i;main(j){for(;i++<9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);return 0;}
+      |                                     ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00183/inputC.c:1:37: note: include '<stdio.h>' or provide a declaration of 'printf'

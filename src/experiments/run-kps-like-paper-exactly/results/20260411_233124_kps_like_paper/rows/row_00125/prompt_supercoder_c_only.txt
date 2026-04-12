@@ -1,0 +1,41 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    unsigned long n,a,b;
+    scanf("%lu%lu%lu", &n,&a,&b);
+    if(a==0){
+        printf("0");
+        return 0;
+    }else if(b==0){
+        printf("%lu",n);
+        return 0;
+    }else if(n>(a+b)){
+        unsigned long tmp=n/(a+b);
+        unsigned long blue=tmp*a;
+        if(n%(a+b)>a){
+            blue+=a;
+            printf("%lu",blue);
+            return 0;
+        }else{
+            blue+=n%(a+b);
+            printf("%lu",blue);
+            return 0;
+        }
+    }else if(n>=a){
+        printf("%lu",a);
+        return 0;
+    }else if(n<a){
+        printf("%lu",n);
+        return 0;
+    }
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

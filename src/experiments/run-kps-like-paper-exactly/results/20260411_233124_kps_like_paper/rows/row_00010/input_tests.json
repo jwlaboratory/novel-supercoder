@@ -1,0 +1,42 @@
+[
+  {
+    "input": "123\n55\n1001\n0\n",
+    "output": "6\n10\n2\n\n"
+  },
+  {
+    "input": "123\n69\n1000\n0\n",
+    "output": "6\n15\n1\n\n"
+  },
+  {
+    "input": "123\n69\n1010\n0\n",
+    "output": "6\n15\n2\n\n"
+  },
+  {
+    "input": "123\n69\n1110\n0\n",
+    "output": "6\n15\n3\n\n"
+  },
+  {
+    "input": "123\n55\n0001\n0\n",
+    "output": "6\n10\n1\n\n"
+  },
+  {
+    "input": "123\n55\n1101\n0\n",
+    "output": "6\n10\n3\n\n"
+  },
+  {
+    "input": "123\n69\n1111\n0\n",
+    "output": "6\n15\n4\n\n"
+  },
+  {
+    "input": "123\n23\n1001\n0\n",
+    "output": "6\n5\n2\n\n"
+  },
+  {
+    "input": "123\n65\n0001\n0\n",
+    "output": "6\n11\n1\n\n"
+  },
+  {
+    "input": "123\n151\n1101\n0\n",
+    "output": "6\n7\n3\n\n"
+  }
+]

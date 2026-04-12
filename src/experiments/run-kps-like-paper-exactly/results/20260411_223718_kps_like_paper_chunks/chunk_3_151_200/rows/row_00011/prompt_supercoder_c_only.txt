@@ -1,0 +1,21 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+
+int main(){
+	int dansu=1;
+	int cnt=1;
+	
+	for(;dansu<10;dansu++){
+		for(cnt=1;cnt<10;cnt++){
+			printf("%dx%d=%d\n",dansu,cnt,dansu*cnt);
+		}
+	}
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

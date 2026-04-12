@@ -1,0 +1,10 @@
+[
+  {
+    "input": "4\n1 3 2 3 0\n0 0\n3 0\n2 0\n",
+    "output": "node 0: parent = 1, depth = 1, leaf, []\nnode 1: parent = -1, depth = 0, root, [2, 3, 0]\nnode 2: parent = 1, depth = 1, leaf, []\nnode 3: parent = 1, depth = 1, leaf, []\n\n"
+  },
+  {
+    "input": "4\n1 3 2 3 0\n0 0\n3 0\n2 0\n",
+    "output": "node 0: parent = 1, depth = 1, leaf, []\nnode 1: parent = -1, depth = 0, root, [2, 3, 0]\nnode 2: parent = 1, depth = 1, leaf, []\nnode 3: parent = 1, depth = 1, leaf, []\n\n"
+  }
+]

@@ -1,0 +1,34 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+int main(void){
+    int a, b, c;
+    int sum_1 = 0; 
+    int sum_2 = 0;
+
+    scanf("%d %d %d", &a, &b, &c);
+
+    sum_1 = a - b;
+    sum_2 = c - sum_1;
+
+
+    if (sum_2 > 0)
+    {
+        printf ("%d\n", sum_2);
+    }
+
+    else
+    {
+        printf ("%d\n", 0);
+    }
+    
+  
+    return 0;
+    
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

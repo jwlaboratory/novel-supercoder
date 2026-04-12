@@ -1,0 +1,54 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:1:1: warning: data definition has no type or storage class
+    1 | a[1<<18];
+      | ^
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:1:1: warning: type defaults to 'int' in declaration of 'a' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:2:1: warning: data definition has no type or storage class
+    2 | n=1<<18;
+      | ^
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:2:1: warning: type defaults to 'int' in declaration of 'n' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:3:1: warning: data definition has no type or storage class
+    3 | cnt;
+      | ^~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:3:1: warning: type defaults to 'int' in declaration of 'cnt' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:5:1: warning: return type defaults to 'int' [-Wimplicit-int]
+    5 | main(i,j) {
+      | ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:5:1: warning: type of 'i' defaults to 'int' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:5:1: warning: type of 'j' defaults to 'int' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:6:9: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+    6 |         memset(a,-1,sizeof a);
+      |         ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:1:1: note: include '<string.h>' or provide a declaration of 'memset'
+  +++ |+#include <string.h>
+    1 | a[1<<18];
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:6:9: warning: incompatible implicit declaration of built-in function 'memset' [-Wbuiltin-declaration-mismatch]
+    6 |         memset(a,-1,sizeof a);
+      |         ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:6:9: note: include '<string.h>' or provide a declaration of 'memset'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:13:14: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+   13 |         for(;scanf("%d",&n),n;){
+      |              ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
+  +++ |+#include <stdio.h>
+    1 | a[1<<18];
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:13:14: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+   13 |         for(;scanf("%d",&n),n;){
+      |              ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:13:14: note: include '<stdio.h>' or provide a declaration of 'scanf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:18:17: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   18 |                 printf("%d\n",cnt);
+      |                 ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:18:17: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:18:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:18:17: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:20:9: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+   20 |         exit(0);
+      |         ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:1:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+  +++ |+#include <stdlib.h>
+    1 | a[1<<18];
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:20:9: warning: incompatible implicit declaration of built-in function 'exit' [-Wbuiltin-declaration-mismatch]
+   20 |         exit(0);
+      |         ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00188/inputC.c:20:9: note: include '<stdlib.h>' or provide a declaration of 'exit'

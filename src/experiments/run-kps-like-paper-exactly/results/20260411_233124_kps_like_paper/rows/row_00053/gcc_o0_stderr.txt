@@ -1,0 +1,8 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00053/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00053/inputC.c:7:7: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+    7 |     s=abs(a-k);
+      |       ^~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00053/inputC.c:2:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+    1 | #include<stdio.h>
+  +++ |+#include <stdlib.h>
+    2 | int main()

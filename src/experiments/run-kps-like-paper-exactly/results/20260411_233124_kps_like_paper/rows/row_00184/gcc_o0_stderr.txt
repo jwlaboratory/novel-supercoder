@@ -1,0 +1,4 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00184/inputC.c: In function 'serch':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00184/inputC.c:19:6: warning: type of 'key' defaults to 'int' [-Wimplicit-int]
+   19 |  int serch(key){
+      |      ^~~~~

@@ -1,0 +1,125 @@
+	.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%d %d"
+.LC1:
+	.string	"%d\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	leaq	-77824(%rsp), %r11
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	subq	$2224, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-80032(%rbp), %rdx
+	leaq	-80036(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-80032(%rbp), %eax
+	movl	%eax, -80024(%rbp)
+	movl	-80024(%rbp), %eax
+	movl	%eax, -80020(%rbp)
+	leaq	-80016(%rbp), %rax
+	movl	$80000, %edx
+	movl	$0, %esi
+	movq	%rax, %rdi
+	call	memset@PLT
+	movl	$0, -80028(%rbp)
+	jmp	.L2
+.L6:
+	leaq	-80016(%rbp), %rdx
+	movl	-80028(%rbp), %eax
+	cltq
+	salq	$3, %rax
+	addq	$4, %rax
+	addq	%rax, %rdx
+	leaq	-80016(%rbp), %rcx
+	movl	-80028(%rbp), %eax
+	cltq
+	salq	$3, %rax
+	addq	%rcx, %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-80028(%rbp), %eax
+	cltq
+	movl	-80016(%rbp,%rax,8), %eax
+	addl	%eax, -80024(%rbp)
+	movl	-80028(%rbp), %eax
+	cltq
+	movl	-80012(%rbp,%rax,8), %eax
+	subl	%eax, -80024(%rbp)
+	cmpl	$0, -80024(%rbp)
+	jns	.L3
+	movl	$0, -80020(%rbp)
+	jmp	.L4
+.L3:
+	movl	-80020(%rbp), %eax
+	cmpl	-80024(%rbp), %eax
+	jge	.L5
+	movl	-80024(%rbp), %eax
+	movl	%eax, -80020(%rbp)
+.L5:
+	addl	$1, -80028(%rbp)
+.L2:
+	movl	-80036(%rbp), %eax
+	cmpl	%eax, -80028(%rbp)
+	jl	.L6
+.L4:
+	movl	-80020(%rbp), %eax
+	movl	%eax, %esi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L8
+	call	__stack_chk_fail@PLT
+.L8:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

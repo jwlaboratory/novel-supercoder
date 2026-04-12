@@ -1,0 +1,380 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct a{
+    int num;
+	struct a *next,*before;
+}Node;
+
+void insert(int n,Node* nil){
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->num=n;
+    nil->next->before = node;
+    node->next = nil->next;
+    node->before = nil;
+    nil->next = node;
+}
+
+void delete(Node* node){
+    node->next->before = node->before;
+    node->before->next = node->next;
+    free(node);
+}
+
+void dsearch(Node* nil,int x){
+    Node* node;
+    for(node=nil->next;node!=nil;node = node->next){
+        if(node->num==x){
+            delete(node);
+            break;
+        }
+    }
+}
+
+int main(void){
+    int n,i,x;
+    char str[16];
+    Node *nil;
+    Node *aa;
+    nil = (Node*)malloc(sizeof(Node));
+    nil->next = nil;
+    nil->before = nil;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%s",str);
+        if(strcmp(str,"deleteFirst")==0){
+            delete(nil->next);
+        }else if(strcmp(str,"deleteLast")==0){
+            delete(nil->before);
+        }else if(strcmp(str,"insert")==0){
+            scanf("%d",&x);
+            insert(x,nil);
+        }else if(strcmp(str,"delete")==0){
+            scanf("%d",&x);
+            dsearch(nil,x);
+        }
+    }
+    for(aa=nil->next;aa!=nil;aa=aa->next){
+        printf("%d",aa->num);
+        if(aa->next!=nil){
+            printf(" ");
+        }
+    }
+    printf("\n");
+	return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.globl	insert
+	.type	insert, @function
+insert:
+.LFB6:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movl	%edi, -20(%rbp)
+	movq	%rsi, -32(%rbp)
+	movl	$24, %edi
+	call	malloc@PLT
+	movq	%rax, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movl	-20(%rbp), %edx
+	movl	%edx, (%rax)
+	movq	-32(%rbp), %rax
+	movq	8(%rax), %rax
+	movq	-8(%rbp), %rdx
+	movq	%rdx, 16(%rax)
+	movq	-32(%rbp), %rax
+	movq	8(%rax), %rdx
+	movq	-8(%rbp), %rax
+	movq	%rdx, 8(%rax)
+	movq	-8(%rbp), %rax
+	movq	-32(%rbp), %rdx
+	movq	%rdx, 16(%rax)
+	movq	-32(%rbp), %rax
+	movq	-8(%rbp), %rdx
+	movq	%rdx, 8(%rax)
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	insert, .-insert
+	.globl	delete
+	.type	delete, @function
+delete:
+.LFB7:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movq	%rdi, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movq	8(%rax), %rax
+	movq	-8(%rbp), %rdx
+	movq	16(%rdx), %rdx
+	movq	%rdx, 16(%rax)
+	movq	-8(%rbp), %rax
+	movq	16(%rax), %rax
+	movq	-8(%rbp), %rdx
+	movq	8(%rdx), %rdx
+	movq	%rdx, 8(%rax)
+	movq	-8(%rbp), %rax
+	movq	%rax, %rdi
+	call	free@PLT
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	delete, .-delete
+	.globl	dsearch
+	.type	dsearch, @function
+dsearch:
+.LFB8:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movq	-24(%rbp), %rax
+	movq	8(%rax), %rax
+	movq	%rax, -8(%rbp)
+	jmp	.L4
+.L7:
+	movq	-8(%rbp), %rax
+	movl	(%rax), %eax
+	cmpl	%eax, -28(%rbp)
+	jne	.L5
+	movq	-8(%rbp), %rax
+	movq	%rax, %rdi
+	call	delete
+	jmp	.L6
+.L5:
+	movq	-8(%rbp), %rax
+	movq	8(%rax), %rax
+	movq	%rax, -8(%rbp)
+.L4:
+	movq	-8(%rbp), %rax
+	cmpq	-24(%rbp), %rax
+	jne	.L7
+	nop
+.L6:
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	dsearch, .-dsearch
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%s"
+.LC2:
+	.string	"deleteFirst"
+.LC3:
+	.string	"deleteLast"
+.LC4:
+	.string	"insert"
+.LC5:
+	.string	"delete"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB9:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$64, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movl	$24, %edi
+	call	malloc@PLT
+	movq	%rax, -40(%rbp)
+	movq	-40(%rbp), %rax
+	movq	-40(%rbp), %rdx
+	movq	%rdx, 8(%rax)
+	movq	-40(%rbp), %rax
+	movq	-40(%rbp), %rdx
+	movq	%rdx, 16(%rax)
+	leaq	-60(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -52(%rbp)
+	jmp	.L9
+.L14:
+	leaq	-32(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	leaq	-32(%rbp), %rax
+	leaq	.LC2(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L10
+	movq	-40(%rbp), %rax
+	movq	8(%rax), %rax
+	movq	%rax, %rdi
+	call	delete
+	jmp	.L11
+.L10:
+	leaq	-32(%rbp), %rax
+	leaq	.LC3(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L12
+	movq	-40(%rbp), %rax
+	movq	16(%rax), %rax
+	movq	%rax, %rdi
+	call	delete
+	jmp	.L11
+.L12:
+	leaq	-32(%rbp), %rax
+	leaq	.LC4(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L13
+	leaq	-56(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-56(%rbp), %eax
+	movq	-40(%rbp), %rdx
+	movq	%rdx, %rsi
+	movl	%eax, %edi
+	call	insert
+	jmp	.L11
+.L13:
+	leaq	-32(%rbp), %rax
+	leaq	.LC5(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L11
+	leaq	-56(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-56(%rbp), %edx
+	movq	-40(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+	call	dsearch
+.L11:
+	addl	$1, -52(%rbp)
+.L9:
+	movl	-60(%rbp), %eax
+	cmpl	%eax, -52(%rbp)
+	jl	.L14
+	movq	-40(%rbp), %rax
+	movq	8(%rax), %rax
+	movq	%rax, -48(%rbp)
+	jmp	.L15
+.L17:
+	movq	-48(%rbp), %rax
+	movl	(%rax), %eax
+	movl	%eax, %esi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movq	-48(%rbp), %rax
+	movq	8(%rax), %rax
+	cmpq	%rax, -40(%rbp)
+	je	.L16
+	movl	$32, %edi
+	call	putchar@PLT
+.L16:
+	movq	-48(%rbp), %rax
+	movq	8(%rax), %rax
+	movq	%rax, -48(%rbp)
+.L15:
+	movq	-48(%rbp), %rax
+	cmpq	-40(%rbp), %rax
+	jne	.L17
+	movl	$10, %edi
+	call	putchar@PLT
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L19
+	call	__stack_chk_fail@PLT
+.L19:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

@@ -1,0 +1,11 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper_chunks/chunk_0_1_50/paper_dataset.csv",
+  "total_rows": 50,
+  "source": {
+    "chunk": [
+      1,
+      50
+    ],
+    "parent": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper"
+  }
+}

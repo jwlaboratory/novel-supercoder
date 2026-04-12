@@ -1,0 +1,21 @@
+{
+  "generated_note": "C LOC = line count (splitlines). Paper uses extra_info.c_code; KPS uses code.",
+  "kps_sequential_head_warning": "KPS train rows 0–199 are sequential HF order: often same problem, short C, single test — do not treat as random KPS. Use shuffle(seed) for representative stats.",
+  "kps_train_rows_0_199_sequential": {
+    "c_code_lines": {"n": 200, "mean": 12.11, "median": 12, "p25": 10, "p75": 13, "p90": 15, "max": 90},
+    "test_cases_json_len": {"n": 200, "mean": 1, "median": 1, "max": 1},
+    "caveat": "HF train order clusters many single-test, short submissions at the start; not representative of all KPS."
+  },
+  "kps_train_shuffle_seed42_n200": {
+    "c_code_lines": {"n": 200, "mean": 32.64, "median": 22.5, "p25": 13.75, "p75": 39.25, "max": 475},
+    "test_cases_json_len": {"n": 200, "mean": 84.77, "median": 103, "p25": 102, "p75": 104, "max": 106}
+  },
+  "paper_val_n200": {
+    "c_code_lines": {"n": 200, "mean": 22.88, "median": 22, "p25": 16, "p75": 28, "p90": 37.1, "max": 65},
+    "unoptimized_asm_lines": {"n": 200, "mean": 134.25, "median": 126.5, "p25": 90, "p75": 174.25, "max": 250},
+    "io_pairs_stored": {"n": 200, "mean": 89.58, "median": 103, "p25": 102, "p75": 104, "max": 106}
+  },
+  "paper_train_rows_0_199": {
+    "c_code_lines": {"n": 200, "mean": 23.71, "median": 21, "p25": 15, "p75": 30, "max": 104}
+  }
+}

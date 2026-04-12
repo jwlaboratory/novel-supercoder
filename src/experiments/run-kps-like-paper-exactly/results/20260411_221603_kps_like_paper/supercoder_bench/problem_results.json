@@ -1,0 +1,56 @@
+{
+  "summary": {
+    "total_problems": 5,
+    "correct_problems": 0,
+    "compiled_problems": 0,
+    "compilation_failures": 5,
+    "compilation_rate": 0.0,
+    "accuracy": 0.0,
+    "avg_speedup": 0.0,
+    "median_speedup": 0.0,
+    "max_speedup": 0.0,
+    "p25_speedup": 0.0,
+    "p75_speedup": 0.0,
+    "std_speedup": 0.0,
+    "best_of": 1,
+    "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "dataset": "KrishPS/codenet-accepted-c"
+  },
+  "problems": {
+    "0": {
+      "compilation_failed": true,
+      "unoptimized_assembly": "\t.file\t\"inputC.c\"\n\t.text\n\t.section\t.rodata\n.LC0:\n\t.string\t\"%dx%d=%d\\n\"\n\t.text\n\t.globl\tmain\n\t.type\tmain, @function\nmain:\n.LFB0:\n\t.cfi_startproc\n\tendbr64\n\tpushq\t%rbp\n\t.cfi_def_cfa_offset 16\n\t.cfi_offset 6, -16\n\tmovq\t%rsp, %rbp\n\t.cfi_def_cfa_register 6\n\tsubq\t$16, %rsp\n\tmovl\t$1, -8(%rbp)\n\tjmp\t.L2\n.L5:\n\tmovl\t$1, -4(%rbp)\n\tjmp\t.L3\n.L4:\n\tmovl\t-8(%rbp), %eax\n\timull\t-4(%rbp), %eax\n\tmovl\t%eax, %ecx\n\tmovl\t-4(%rbp), %edx\n\tmovl\t-8(%rbp), %eax\n\tmovl\t%eax, %esi\n\tleaq\t.LC0(%rip), %rax\n\tmovq\t%rax, %rdi\n\tmovl\t$0, %eax\n\tcall\tprintf@PLT\n\taddl\t$1, -4(%rbp)\n.L3:\n\tcmpl\t$9, -4(%rbp)\n\tjle\t.L4\n\taddl\t$1, -8(%rbp)\n.L2:\n\tcmpl\t$9, -8(%rbp)\n\tjle\t.L5\n\tmovl\t$0, %eax\n\tleave\n\t.cfi_def_cfa 7, 8\n\tret\n\t.cfi_endproc\n.LFE0:\n\t.size\tmain, .-main\n\t.ident\t\"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\"\n\t.section\t.note.GNU-stack,\"\",@progbits\n\t.section\t.note.gnu.property,\"a\"\n\t.align 8\n\t.long\t1f - 0f\n\t.long\t4f - 1f\n\t.long\t5\n0:\n\t.string\t\"GNU\"\n1:\n\t.align 8\n\t.long\t0xc0000002\n\t.long\t3f - 2f\n2:\n\t.long\t0x3\n3:\n\t.align 8\n4:\n",
+      "samples": {},
+      "overall_correct": false,
+      "best_speedup": 1.0
+    },
+    "1": {
+      "compilation_failed": true,
+      "unoptimized_assembly": "\t.file\t\"inputC.c\"\n\t.text\n\t.section\t.rodata\n.LC0:\n\t.string\t\"%dx%d=%d\\n\"\n\t.text\n\t.globl\tmain\n\t.type\tmain, @function\nmain:\n.LFB0:\n\t.cfi_startproc\n\tendbr64\n\tpushq\t%rbp\n\t.cfi_def_cfa_offset 16\n\t.cfi_offset 6, -16\n\tmovq\t%rsp, %rbp\n\t.cfi_def_cfa_register 6\n\tsubq\t$16, %rsp\n\tmovl\t$1, -8(%rbp)\n\tjmp\t.L2\n.L5:\n\tmovl\t$1, -4(%rbp)\n\tjmp\t.L3\n.L4:\n\tmovl\t-8(%rbp), %eax\n\timull\t-4(%rbp), %eax\n\tmovl\t%eax, %ecx\n\tmovl\t-4(%rbp), %edx\n\tmovl\t-8(%rbp), %eax\n\tmovl\t%eax, %esi\n\tleaq\t.LC0(%rip), %rax\n\tmovq\t%rax, %rdi\n\tmovl\t$0, %eax\n\tcall\tprintf@PLT\n\taddl\t$1, -4(%rbp)\n.L3:\n\tcmpl\t$9, -4(%rbp)\n\tjle\t.L4\n\taddl\t$1, -8(%rbp)\n.L2:\n\tcmpl\t$9, -8(%rbp)\n\tjle\t.L5\n\tmovl\t$0, %eax\n\tleave\n\t.cfi_def_cfa 7, 8\n\tret\n\t.cfi_endproc\n.LFE0:\n\t.size\tmain, .-main\n\t.ident\t\"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\"\n\t.section\t.note.GNU-stack,\"\",@progbits\n\t.section\t.note.gnu.property,\"a\"\n\t.align 8\n\t.long\t1f - 0f\n\t.long\t4f - 1f\n\t.long\t5\n0:\n\t.string\t\"GNU\"\n1:\n\t.align 8\n\t.long\t0xc0000002\n\t.long\t3f - 2f\n2:\n\t.long\t0x3\n3:\n\t.align 8\n4:\n",
+      "samples": {},
+      "overall_correct": false,
+      "best_speedup": 1.0
+    },
+    "2": {
+      "compilation_failed": true,
+      "unoptimized_assembly": "\t.file\t\"inputC.c\"\n\t.text\n\t.section\t.rodata\n.LC0:\n\t.string\t\"%dx%d=%d\\n\"\n\t.text\n\t.globl\tmain\n\t.type\tmain, @function\nmain:\n.LFB0:\n\t.cfi_startproc\n\tendbr64\n\tpushq\t%rbp\n\t.cfi_def_cfa_offset 16\n\t.cfi_offset 6, -16\n\tmovq\t%rsp, %rbp\n\t.cfi_def_cfa_register 6\n\tsubq\t$16, %rsp\n\tmovl\t$1, -8(%rbp)\n\tjmp\t.L2\n.L5:\n\tmovl\t$1, -4(%rbp)\n\tjmp\t.L3\n.L4:\n\tmovl\t-8(%rbp), %eax\n\timull\t-4(%rbp), %eax\n\tmovl\t%eax, %ecx\n\tmovl\t-4(%rbp), %edx\n\tmovl\t-8(%rbp), %eax\n\tmovl\t%eax, %esi\n\tleaq\t.LC0(%rip), %rax\n\tmovq\t%rax, %rdi\n\tmovl\t$0, %eax\n\tcall\tprintf@PLT\n\taddl\t$1, -4(%rbp)\n.L3:\n\tcmpl\t$9, -4(%rbp)\n\tjle\t.L4\n\taddl\t$1, -8(%rbp)\n.L2:\n\tcmpl\t$9, -8(%rbp)\n\tjle\t.L5\n\tmovl\t$0, %eax\n\tleave\n\t.cfi_def_cfa 7, 8\n\tret\n\t.cfi_endproc\n.LFE0:\n\t.size\tmain, .-main\n\t.ident\t\"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\"\n\t.section\t.note.GNU-stack,\"\",@progbits\n\t.section\t.note.gnu.property,\"a\"\n\t.align 8\n\t.long\t1f - 0f\n\t.long\t4f - 1f\n\t.long\t5\n0:\n\t.string\t\"GNU\"\n1:\n\t.align 8\n\t.long\t0xc0000002\n\t.long\t3f - 2f\n2:\n\t.long\t0x3\n3:\n\t.align 8\n4:\n",
+      "samples": {},
+      "overall_correct": false,
+      "best_speedup": 1.0
+    },
+    "3": {
+      "compilation_failed": true,
+      "unoptimized_assembly": "\t.file\t\"inputC.c\"\n\t.text\n\t.globl\tj\n\t.bss\n\t.align 4\n\t.type\tj, @object\n\t.size\tj, 4\nj:\n\t.zero\t4\n\t.section\t.rodata\n.LC0:\n\t.string\t\"%dx%d=%d\\n\"\n\t.text\n\t.globl\tmain\n\t.type\tmain, @function\nmain:\n.LFB0:\n\t.cfi_startproc\n\tendbr64\n\tpushq\t%rbp\n\t.cfi_def_cfa_offset 16\n\t.cfi_offset 6, -16\n\tmovq\t%rsp, %rbp\n\t.cfi_def_cfa_register 6\n\tsubq\t$16, %rsp\n\tmovl\t%edi, -4(%rbp)\n\tjmp\t.L2\n.L3:\n\tmovl\tj(%rip), %eax\n\timull\t-4(%rbp), %eax\n\tmovl\t%eax, %ecx\n\tmovl\tj(%rip), %edx\n\tmovl\t-4(%rbp), %eax\n\tmovl\t%eax, %esi\n\tleaq\t.LC0(%rip), %rax\n\tmovq\t%rax, %rdi\n\tmovl\t$0, %eax\n\tcall\tprintf@PLT\n.L2:\n\tmovl\tj(%rip), %eax\n\tleal\t1(%rax), %edx\n\tmovl\t%edx, j(%rip)\n\tcmpl\t$8, %eax\n\tjle\t.L3\n\tmovl\t-4(%rbp), %eax\n\tleal\t1(%rax), %edx\n\tmovl\t%edx, -4(%rbp)\n\tcmpl\t$8, %eax\n\tsetle\t%al\n\tmovzbl\t%al, %eax\n\tmovl\t%eax, j(%rip)\n\tmovl\tj(%rip), %eax\n\ttestl\t%eax, %eax\n\tjne\t.L3\n\tmovl\t$0, %edi\n\tcall\texit@PLT\n\t.cfi_endproc\n.LFE0:\n\t.size\tmain, .-main\n\t.ident\t\"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\"\n\t.section\t.note.GNU-stack,\"\",@progbits\n\t.section\t.note.gnu.property,\"a\"\n\t.align 8\n\t.long\t1f - 0f\n\t.long\t4f - 1f\n\t.long\t5\n0:\n\t.string\t\"GNU\"\n1:\n\t.align 8\n\t.long\t0xc0000002\n\t.long\t3f - 2f\n2:\n\t.long\t0x3\n3:\n\t.align 8\n4:\n",
+      "samples": {},
+      "overall_correct": false,
+      "best_speedup": 1.0
+    },
+    "4": {
+      "compilation_failed": true,
+      "unoptimized_assembly": "\t.file\t\"inputC.c\"\n\t.text\n\t.section\t.rodata\n.LC0:\n\t.string\t\"%dx%d=%d\\n\"\n\t.text\n\t.globl\tmain\n\t.type\tmain, @function\nmain:\n.LFB0:\n\t.cfi_startproc\n\tendbr64\n\tpushq\t%rbp\n\t.cfi_def_cfa_offset 16\n\t.cfi_offset 6, -16\n\tmovq\t%rsp, %rbp\n\t.cfi_def_cfa_register 6\n\tsubq\t$16, %rsp\n\tmovl\t$1, -8(%rbp)\n\tjmp\t.L2\n.L5:\n\tmovl\t$1, -4(%rbp)\n\tjmp\t.L3\n.L4:\n\taddl\t$1, -4(%rbp)\n.L3:\n\tcmpl\t$9, -4(%rbp)\n\tjle\t.L4\n\taddl\t$1, -8(%rbp)\n.L2:\n\tcmpl\t$9, -8(%rbp)\n\tjle\t.L5\n\tmovl\t$1, -8(%rbp)\n\tjmp\t.L6\n.L9:\n\tmovl\t$1, -4(%rbp)\n\tjmp\t.L7\n.L8:\n\tmovl\t-8(%rbp), %eax\n\timull\t-4(%rbp), %eax\n\tmovl\t%eax, %ecx\n\tmovl\t-4(%rbp), %edx\n\tmovl\t-8(%rbp), %eax\n\tmovl\t%eax, %esi\n\tleaq\t.LC0(%rip), %rax\n\tmovq\t%rax, %rdi\n\tmovl\t$0, %eax\n\tcall\tprintf@PLT\n\taddl\t$1, -4(%rbp)\n.L7:\n\tcmpl\t$9, -4(%rbp)\n\tjle\t.L8\n\taddl\t$1, -8(%rbp)\n.L6:\n\tcmpl\t$9, -8(%rbp)\n\tjle\t.L9\n\tmovl\t$0, %eax\n\tleave\n\t.cfi_def_cfa 7, 8\n\tret\n\t.cfi_endproc\n.LFE0:\n\t.size\tmain, .-main\n\t.ident\t\"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\"\n\t.section\t.note.GNU-stack,\"\",@progbits\n\t.section\t.note.gnu.property,\"a\"\n\t.align 8\n\t.long\t1f - 0f\n\t.long\t4f - 1f\n\t.long\t5\n0:\n\t.string\t\"GNU\"\n1:\n\t.align 8\n\t.long\t0xc0000002\n\t.long\t3f - 2f\n2:\n\t.long\t0x3\n3:\n\t.align 8\n4:\n",
+      "samples": {},
+      "overall_correct": false,
+      "best_speedup": 1.0
+    }
+  }
+}

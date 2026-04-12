@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+int road[20][20] = {}, count = 0;
+
+int sroad(int x, int y){
+	if( road[x][y] == 2 ) count++;
+	if( road[x+1][y] != 0 ) sroad(x+1,y);
+	if( road[x][y+1] != 0 ) sroad(x,y+1);
+	return count;
+}
+int main(void){
+	
+	int a, b, n, i, j;
+	
+	while(1){
+		scanf("%d %d", &a, &b);
+		if(a == 0 && b == 0) break;
+		
+		for(i = 0; i < 20; i++){
+			for(j = 0; j < 20;j++){
+				road[i][j] = 0;
+			}
+		}
+		
+		scanf("%d",&n);
+		
+		for( i = 1; i < a+1; i++ ){
+			for( j = 1; j < b+1; j++ ){
+				road[i][j] = 1;
+			}
+		}
+		
+		road[a][b] = 2;
+		
+		for( i = 0; i < n; i++ ){
+			scanf("%d %d", &a, &b);
+			road[a][b] = 0;
+		}
+		
+		count = 0;
+		printf("%d\n", sroad(1,1));
+	}
+	return 0;
+}

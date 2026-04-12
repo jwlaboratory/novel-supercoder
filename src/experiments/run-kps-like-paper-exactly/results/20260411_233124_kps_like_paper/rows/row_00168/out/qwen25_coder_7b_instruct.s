@@ -1,0 +1,227 @@
+.file	"inputC.c"
+	.text
+	.globl	M
+	.bss
+	.align 32
+	.type	M, @object
+	.size	M, 40000
+M:
+	.zero	40000
+	.globl	color
+	.align 32
+	.type	color, @object
+	.size	color, 400
+color:
+	.zero	400
+	.globl	d
+	.align 32
+	.type	d, @object
+	.size	d, 400
+d:
+	.zero	400
+	.globl	f
+	.align 32
+	.type	f, @object
+	.size	f, 400
+f:
+	.zero	400
+	.globl	cnt
+	.align 4
+	.type	cnt, @object
+	.size	cnt, 4
+cnt:
+	.zero	4
+	.globl	num
+	.align 4
+	.type	num, @object
+	.size	num, 4
+num:
+	.zero	4
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d %d"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	num(%rip), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -16(%rbp)
+	jmp	.L2
+.L5:
+	movl	$0, -12(%rbp)
+	jmp	.L3
+.L4:
+	movl	-12(%rbp), %eax
+	movslq	%eax, %rcx
+	movl	-16(%rbp), %eax
+	movslq	%eax, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	addq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	M(%rip), %rax
+	movl	$0, (%rdx,%rax)
+	addl	$1, -12(%rbp)
+.L3:
+	movl	num(%rip), %eax
+	cmpl	%eax, -12(%rbp)
+	jl	.L4
+	addl	$1, -16(%rbp)
+.L2:
+	movl	num(%rip), %eax
+	cmpl	%eax, -16(%rbp)
+	jl	.L5
+	movl	$0, -16(%rbp)
+	jmp	.L6
+.L9:
+	leaq	-20(%rbp), %rdx
+	leaq	-28(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-28(%rbp), %eax
+	subl	$1, %eax
+	movl	%eax, -28(%rbp)
+	movl	$0, -12(%rbp)
+	jmp	.L7
+.L8:
+	leaq	-24(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-24(%rbp), %eax
+	subl	$1, %eax
+	movl	%eax, -24(%rbp)
+	movl	-28(%rbp), %eax
+	movl	-24(%rbp), %edx
+	movslq	%edx, %rcx
+	movslq	%eax, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	addq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	M(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	addl	$1, -12(%rbp)
+.L7:
+	movl	-20(%rbp), %eax
+	cmpl	%eax, -12(%rbp)
+	jl	.L8
+	addl	$1, -16(%rbp)
+.L6:
+	movl	num(%rip), %eax
+	cmpl	%eax, -16(%rbp)
+	jl	.L9
+	movl	$0, %eax
+	call	dfs_1
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L11
+	call	__stack_chk_fail@PLT
+.L11:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	dfs_2
+	.type	dfs_2, @function
+dfs_2:
+.LFB1:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movl	%edi, -20(%rbp)
+	movl	-20(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	color(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	movl	cnt(%rip), %eax
+	addl	$1, %eax
+	movl	%eax, cnt(%rip)
+	movl	cnt(%rip), %eax
+	movl	-20(%rbp), %edx
+	movslq	%edx, %rdx
+	leaq	0(,%rdx,4), %rcx
+	leaq	d(%rip), %rdx
+	movl	%eax, (%rcx,%rdx)
+	movl	$0, -4(%rbp)
+	jmp	.L13
+.L16:
+	movl	-4(%rbp), %eax
+	movslq	%eax, %rcx
+	movl	-20(%rbp), %eax
+	movslq	%eax, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	addq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	M(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	testl	%eax, %eax
+	je	.L17
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	color(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	testl	%eax, %eax
+	jne	.L15
+	movl	-4(%rbp), %eax
+	movl	%eax, %edi
+	call	dfs_2
+	jmp	.L15
+.L17:
+	nop
+.L15:
+	addl	$1, -4(%rbp)
+.L13:
+	movl	num(%rip), %eax
+	cmpl	%eax, -4(%rbp)
+	jl	.L16
+	movl	-20(%rbp), %eax
+	cltq
+	leaq

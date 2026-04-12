@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int top=0, stac[101];
+char s[100];
+
+void push(int x){
+    top++;
+    stac[top]=x;
+}
+
+int pop(){
+    top--;
+    return stac[top+1];
+}
+
+int main(void){
+    int a, b, result;
+    while(scanf("%s", s) != EOF){
+        if(s[0] == '+')     push(pop() + pop());
+        else if(s[0] == '-'){
+            a=pop(); b=pop();
+            push(b-a);
+        }
+        else if(s[0] == '*')push(pop() * pop());
+        else push(atoi(s)); //atoiは数値変換
+    }
+    printf("%d\n", pop());
+
+    return 0;
+}
+

@@ -1,0 +1,4 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00010/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00010/inputC.c:21:4: warning: assignment to 'char *' from incompatible pointer type 'char (*)[1001]' [-Wincompatible-pointer-types]
+   21 | str=&number;
+      |    ^

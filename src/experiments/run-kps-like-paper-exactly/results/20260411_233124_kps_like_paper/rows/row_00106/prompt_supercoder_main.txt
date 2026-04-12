@@ -1,0 +1,367 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+#define INF 1000000000
+
+int matrixChainOrder(int *,int);
+int min(int,int);
+int p[101];
+int m[101][101];
+int main(){
+  int n,i,cos,b;
+  scanf("%d",&n);
+  for(i=1;i<=n;i++){
+    scanf("%d %d",&p[i-1],&p[i]);
+  }
+  cos=matrixChainOrder(p,n);
+  printf("%d\n",cos);
+  return 0;
+}
+int matrixChainOrder(int *p,int n){
+  int i,j,l,k,q;
+  for(i=1;i<=n;i++)m[i][i]=0;
+  for(l=2;l<=n;l++){
+    for(i=1;i<=n-l+1;i++){
+
+      j=i+l-1;
+      m[i][j]=INF;
+      for(k=i;k<=j-1;k++){
+	m[i][j]=min(m[i][j],m[i][k]+m[k+1][j]+p[i-1]*p[k]*p[j]);
+      }
+    }
+  }
+  return m[1][j];
+}
+int min(int m,int q){
+  if(m>=q){
+    return q;
+  }
+  else if(m<=q)return m;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.globl	p
+	.bss
+	.align 32
+	.type	p, @object
+	.size	p, 404
+p:
+	.zero	404
+	.globl	m
+	.align 32
+	.type	m, @object
+	.size	m, 40804
+m:
+	.zero	40804
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d %d"
+.LC2:
+	.string	"%d\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-20(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$1, -16(%rbp)
+	jmp	.L2
+.L3:
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	p(%rip), %rax
+	addq	%rax, %rdx
+	movl	-16(%rbp), %eax
+	subl	$1, %eax
+	cltq
+	leaq	0(,%rax,4), %rcx
+	leaq	p(%rip), %rax
+	addq	%rcx, %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	addl	$1, -16(%rbp)
+.L2:
+	movl	-20(%rbp), %eax
+	cmpl	%eax, -16(%rbp)
+	jle	.L3
+	movl	-20(%rbp), %eax
+	movl	%eax, %esi
+	leaq	p(%rip), %rax
+	movq	%rax, %rdi
+	call	matrixChainOrder
+	movl	%eax, -12(%rbp)
+	movl	-12(%rbp), %eax
+	movl	%eax, %esi
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L5
+	call	__stack_chk_fail@PLT
+.L5:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	matrixChainOrder
+	.type	matrixChainOrder, @function
+matrixChainOrder:
+.LFB1:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	$1, -16(%rbp)
+	jmp	.L7
+.L8:
+	movl	-16(%rbp), %eax
+	cltq
+	imulq	$408, %rax, %rax
+	leaq	m(%rip), %rdx
+	movl	$0, (%rax,%rdx)
+	addl	$1, -16(%rbp)
+.L7:
+	movl	-16(%rbp), %eax
+	cmpl	-28(%rbp), %eax
+	jle	.L8
+	movl	$2, -8(%rbp)
+	jmp	.L9
+.L14:
+	movl	$1, -16(%rbp)
+	jmp	.L10
+.L13:
+	movl	-16(%rbp), %edx
+	movl	-8(%rbp), %eax
+	addl	%edx, %eax
+	subl	$1, %eax
+	movl	%eax, -12(%rbp)
+	movl	-12(%rbp), %eax
+	movslq	%eax, %rcx
+	movl	-16(%rbp), %eax
+	movslq	%eax, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rsi
+	addq	%rsi, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	addq	%rcx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	m(%rip), %rax
+	movl	$1000000000, (%rdx,%rax)
+	movl	-16(%rbp), %eax
+	movl	%eax, -4(%rbp)
+	jmp	.L11
+.L12:
+	movl	-4(%rbp), %eax
+	movslq	%eax, %rcx
+	movl	-16(%rbp), %eax
+	movslq	%eax, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rsi
+	addq	%rsi, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	addq	%rcx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	m(%rip), %rax
+	movl	(%rdx,%rax), %ecx
+	movl	-4(%rbp), %eax
+	leal	1(%rax), %edx
+	movl	-12(%rbp), %eax
+	movslq	%eax, %rsi
+	movslq	%edx, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdi
+	addq	%rdi, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	m(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	addl	%eax, %ecx
+	movl	-16(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	leaq	-4(%rax), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %edx
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rsi
+	movq	-24(%rbp), %rax
+	addq	%rsi, %rax
+	movl	(%rax), %eax
+	imull	%eax, %edx
+	movl	-12(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rsi
+	movq	-24(%rbp), %rax
+	addq	%rsi, %rax
+	movl	(%rax), %eax
+	imull	%edx, %eax
+	addl	%eax, %ecx
+	movl	-12(%rbp), %eax
+	movslq	%eax, %rsi
+	movl	-16(%rbp), %eax
+	movslq	%eax, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdi
+	addq	%rdi, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	m(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	movl	%ecx, %esi
+	movl	%eax, %edi
+	call	min
+	movl	%eax, %ecx
+	movl	-12(%rbp), %eax
+	movslq	%eax, %rsi
+	movl	-16(%rbp), %eax
+	movslq	%eax, %rdx
+	movq	%rdx, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdi
+	addq	%rdi, %rax
+	salq	$2, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	m(%rip), %rax
+	movl	%ecx, (%rdx,%rax)
+	addl	$1, -4(%rbp)
+.L11:
+	movl	-12(%rbp), %eax
+	cmpl	-4(%rbp), %eax
+	jg	.L12
+	addl	$1, -16(%rbp)
+.L10:
+	movl	-28(%rbp), %eax
+	subl	-8(%rbp), %eax
+	addl	$1, %eax
+	cmpl	%eax, -16(%rbp)
+	jle	.L13
+	addl	$1, -8(%rbp)
+.L9:
+	movl	-8(%rbp), %eax
+	cmpl	-28(%rbp), %eax
+	jle	.L14
+	movl	-12(%rbp), %eax
+	cltq
+	addq	$101, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	m(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	matrixChainOrder, .-matrixChainOrder
+	.globl	min
+	.type	min, @function
+min:
+.LFB2:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -4(%rbp)
+	movl	%esi, -8(%rbp)
+	movl	-4(%rbp), %eax
+	cmpl	-8(%rbp), %eax
+	jl	.L17
+	movl	-8(%rbp), %eax
+	jmp	.L16
+.L17:
+	movl	-4(%rbp), %eax
+	cmpl	-8(%rbp), %eax
+	jg	.L19
+	movl	-4(%rbp), %eax
+	jmp	.L16
+.L19:
+.L16:
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2:
+	.size	min, .-min
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

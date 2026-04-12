@@ -1,0 +1,17 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:5:3: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+    5 |   scanf("%d%d%d",&a,&b,&t);
+      |   ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
+  +++ |+#include <stdio.h>
+    1 | int main(void)
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:5:3: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+    5 |   scanf("%d%d%d",&a,&b,&t);
+      |   ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:5:3: note: include '<stdio.h>' or provide a declaration of 'scanf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:10:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   10 |   printf("%d",sum);
+      |   ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:10:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:10:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00020/inputC.c:10:3: note: include '<stdio.h>' or provide a declaration of 'printf'

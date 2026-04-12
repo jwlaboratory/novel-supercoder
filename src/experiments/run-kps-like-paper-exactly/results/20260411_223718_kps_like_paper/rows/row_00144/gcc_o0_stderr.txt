@@ -1,0 +1,29 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:1: warning: data definition has no type or storage class
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+      | ^
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:1: warning: type defaults to 'int' in declaration of 'i' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:3: warning: return type defaults to 'int' [-Wimplicit-int]
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+      |   ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:3: warning: type of 'j' defaults to 'int' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:38: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+      |                                      ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:38: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+      |                                      ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:38: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:69: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+      |                                                                     ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+  +++ |+#include <stdlib.h>
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:69: warning: incompatible implicit declaration of built-in function 'exit' [-Wbuiltin-declaration-mismatch]
+    1 | i;main(j){for(;++i<=9;)for(j=1;j<=9;)printf("%dx%d=%d\n",i,j++,i*j);exit(0);}
+      |                                                                     ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00144/inputC.c:1:69: note: include '<stdlib.h>' or provide a declaration of 'exit'

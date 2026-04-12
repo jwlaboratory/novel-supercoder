@@ -1,0 +1,16 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c:1:1: warning: return type defaults to 'int' [-Wimplicit-int]
+    1 | main(i,j){for(j=1;j<10;j++)printf("%dx%d=%d\n",i,j,i*j);return(i<9?main(i+1,j):0);}
+      | ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c:1:1: warning: type of 'i' defaults to 'int' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c:1:1: warning: type of 'j' defaults to 'int' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c:1:28: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    1 | main(i,j){for(j=1;j<10;j++)printf("%dx%d=%d\n",i,j,i*j);return(i<9?main(i+1,j):0);}
+      |                            ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | main(i,j){for(j=1;j<10;j++)printf("%dx%d=%d\n",i,j,i*j);return(i<9?main(i+1,j):0);}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c:1:28: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+    1 | main(i,j){for(j=1;j<10;j++)printf("%dx%d=%d\n",i,j,i*j);return(i<9?main(i+1,j):0);}
+      |                            ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00060/inputC.c:1:28: note: include '<stdio.h>' or provide a declaration of 'printf'

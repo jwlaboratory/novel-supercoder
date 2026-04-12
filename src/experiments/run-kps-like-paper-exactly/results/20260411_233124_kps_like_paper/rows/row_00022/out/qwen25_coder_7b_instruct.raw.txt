@@ -1,0 +1,201 @@
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d %d %d %d"
+.LC2:
+	.string	" %d"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB6:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$528, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-528(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -508(%rbp)
+.L2:
+	movl	-508(%rbp), %eax
+	cmpl	$3, %eax
+	jg	.L19
+	movl	$0, -504(%rbp)
+.L3:
+	movl	-504(%rbp), %eax
+	cmpl	$2, %eax
+	jg	.L16
+	movl	$0, -500(%rbp)
+.L4:
+	movl	-500(%rbp), %eax
+	cmpl	$9, %eax
+	jg	.L13
+	movl	-508(%rbp), %edi
+	movl	-504(%rbp), %esi
+	movl	-500(%rbp), %edx
+	movslq	%edi, %rsi
+	movslq	%esi, %rax
+	movslq	%edx, %rcx
+	movq	%rax, %rdx
+	salq	$4, %rdx
+	subq	%rax, %rdx
+	leaq	(%rdx,%rdx), %rax
+	movq	%rax, %rdx
+	movq	%rcx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	movl	$0, -496(%rbp,%rax,4)
+	addl	$1, -500(%rbp)
+	jmp	.L4
+.L13:
+	addl	$1, -504(%rbp)
+	jmp	.L3
+.L16:
+	addl	$1, -508(%rbp)
+	jmp	.L2
+.L19:
+	movl	$0, -508(%rbp)
+.L5:
+	movl	-508(%rbp), %eax
+	cmpl	$3, %eax
+	jg	.L25
+	movl	$0, -504(%rbp)
+.L6:
+	movl	-504(%rbp), %eax
+	cmpl	$2, %eax
+	jg	.L22
+	movl	$0, -500(%rbp)
+.L7:
+	movl	-500(%rbp), %eax
+	cmpl	$9, %eax
+	jg	.L18
+	movl	-508(%rbp), %edi
+	movl	-504(%rbp), %esi
+	movl	-500(%rbp), %edx
+	movslq	%edi, %rsi
+	movslq	%esi, %rax
+	movslq	%edx, %rcx
+	movq	%rax, %rdx
+	salq	$4, %rdx
+	subq	%rax, %rdx
+	leaq	(%rdx,%rdx), %rax
+	movq	%rax, %rdx
+	movq	%rcx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	movl	-496(%rbp,%rax,4), %edi
+	leaq	.LC1(%rip), %rsi
+	movq	%rsi, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-508(%rbp), %edi
+	movl	-504(%rbp), %esi
+	movl	-500(%rbp), %edx
+	movslq	%edi, %rsi
+	movslq	%esi, %rax
+	movslq	%edx, %rcx
+	movq	%rax, %rdx
+	salq	$4, %rdx
+	subq	%rax, %rdx
+	leaq	(%rdx,%rdx), %rax
+	movq	%rax, %rdx
+	movq	%rcx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	movl	-496(%rbp,%rax,4), %esi
+	movl	-508(%rbp), %edi
+	movl	-504(%rbp), %esi
+	movl	-500(%rbp), %edx
+	movslq	%edi, %rsi
+	movslq	%esi, %rax
+	movslq	%edx, %rcx
+	movq	%rax, %rdx
+	salq	$4, %rdx
+	subq	%rax, %rdx
+	leaq	(%rdx,%rdx), %rax
+	movq	%rax, %rdx
+	movq	%rcx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	movl	%esi, -496(%rbp,%rax,4)
+	addl	$1, -500(%rbp)
+	jmp	.L7
+.L18:
+	addl	$1, -504(%rbp)
+	jmp	.L6
+.L22:
+	addl	$1, -508(%rbp)
+	jmp	.L5
+.L25:
+	movl	$0, -508(%rbp)
+.L8:
+	movl	-508(%rbp), %eax
+	cmpl	$3, %eax
+	jg	.L31
+	movl	$0, -504(%rbp)
+.L9:
+	movl	-504(%rbp), %eax
+	cmpl	$2, %eax
+	jg	.L28
+	movl	$0, -500(%rbp)
+.L10:
+	movl	-500(%rbp), %eax
+	cmpl	$9, %eax
+	jg	.L19
+	movl	-508(%rbp), %edi
+	movl	-504(%rbp), %esi
+	movl	-500(%rbp), %edx
+	movslq	%edi, %rsi
+	movslq	%esi, %rax
+	movslq	%edx, %rcx
+	movq	%rax, %rdx
+	salq	$4, %rdx
+	subq	%rax, %rdx
+	leaq	(%rdx,%rdx), %rax
+	movq	%rax, %rdx
+	movq	%rcx, %rax
+	salq	$2, %rax
+	addq	%rcx, %rax
+	addq	%rax, %rax
+	addq	%rdx, %rax
+	addq	%rsi, %rax
+	movl	-496(%rbp,%rax,4), %eax
+	movl	%eax, %esi
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	addl	$1, -500(%rbp)
+	jmp	.L10
+.L19:
+	addl	$1, -504(%rbp)
+	jmp	.L9
+.L28:
+	addl	$1,

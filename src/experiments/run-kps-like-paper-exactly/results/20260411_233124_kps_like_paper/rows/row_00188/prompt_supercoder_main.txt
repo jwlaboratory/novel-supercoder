@@ -1,0 +1,181 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+a[1<<18];
+n=1<<18;
+cnt;
+
+main(i,j) {
+	memset(a,-1,sizeof a);
+	a[0]=a[1]=0;
+	for(i=2;i<n;i++)
+		if(a[i])
+			for(j=2*i;j<n;j+=i)
+				a[j] = 0;
+
+	for(;scanf("%d",&n),n;){
+		cnt=0;
+		for(i=n+1;i<=2*n;i++)
+			if(a[i])
+				cnt++;
+		printf("%d\n",cnt);
+	}
+	exit(0);
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.globl	a
+	.bss
+	.align 32
+	.type	a, @object
+	.size	a, 1048576
+a:
+	.zero	1048576
+	.globl	n
+	.data
+	.align 4
+	.type	n, @object
+	.size	n, 4
+n:
+	.long	262144
+	.globl	cnt
+	.bss
+	.align 4
+	.type	cnt, @object
+	.size	cnt, 4
+cnt:
+	.zero	4
+	.section	.rodata
+.LC0:
+	.string	"%d\n"
+.LC1:
+	.string	"%d"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movl	%edi, -4(%rbp)
+	movl	%esi, -8(%rbp)
+	movl	$1048576, %edx
+	movl	$-1, %esi
+	leaq	a(%rip), %rax
+	movq	%rax, %rdi
+	call	memset@PLT
+	movl	$0, 4+a(%rip)
+	movl	4+a(%rip), %eax
+	movl	%eax, a(%rip)
+	movl	$2, -4(%rbp)
+	jmp	.L2
+.L6:
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	a(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	testl	%eax, %eax
+	je	.L3
+	movl	-4(%rbp), %eax
+	addl	%eax, %eax
+	movl	%eax, -8(%rbp)
+	jmp	.L4
+.L5:
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	a(%rip), %rax
+	movl	$0, (%rdx,%rax)
+	movl	-4(%rbp), %eax
+	addl	%eax, -8(%rbp)
+.L4:
+	movl	n(%rip), %eax
+	cmpl	%eax, -8(%rbp)
+	jl	.L5
+.L3:
+	addl	$1, -4(%rbp)
+.L2:
+	movl	n(%rip), %eax
+	cmpl	%eax, -4(%rbp)
+	jl	.L6
+	jmp	.L7
+.L11:
+	movl	$0, cnt(%rip)
+	movl	n(%rip), %eax
+	addl	$1, %eax
+	movl	%eax, -4(%rbp)
+	jmp	.L8
+.L10:
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	a(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	testl	%eax, %eax
+	je	.L9
+	movl	cnt(%rip), %eax
+	addl	$1, %eax
+	movl	%eax, cnt(%rip)
+.L9:
+	addl	$1, -4(%rbp)
+.L8:
+	movl	n(%rip), %eax
+	addl	%eax, %eax
+	cmpl	%eax, -4(%rbp)
+	jle	.L10
+	movl	cnt(%rip), %eax
+	movl	%eax, %esi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+.L7:
+	leaq	n(%rip), %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	scanf@PLT
+	movl	n(%rip), %eax
+	testl	%eax, %eax
+	jne	.L11
+	movl	$0, %edi
+	call	exit@PLT
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

@@ -1,0 +1,42 @@
+[
+  {
+    "input": "snuke\nsnelee\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "b\nba\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "a\nba\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "choktdai\nchokudaiz\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "nsuke\nsnelee\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "choktdai\nbhokudaiz\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "nuske\nsnelee\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "b\nab\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "iadtkohc\nbhokudaiz\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "nurke\nsnelee\n",
+    "output": "No\n\n"
+  }
+]

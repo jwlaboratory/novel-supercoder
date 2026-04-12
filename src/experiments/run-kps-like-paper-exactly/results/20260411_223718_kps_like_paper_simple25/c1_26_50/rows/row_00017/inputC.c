@@ -1,0 +1,90 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i, n;
+	int a, b, c, d, e, f, g, h, j;
+	
+	n = 1;
+	a = 1;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 1, n, a);
+		n++;
+		a += 1;
+	}
+	
+	n = 1;
+	b = 2;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 2, n, b);
+		n++;
+		b += 2;
+	}
+	
+	n = 1;
+	c = 3;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 3, n, c);
+		n++;
+		c += 3;
+	}
+	
+	n = 1;
+	d = 4;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 4, n, d);
+		n++;
+		d += 4;
+	}
+	
+	n = 1;
+	e = 5;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 5, n, e);
+		n++;
+		e += 5;
+	}
+	
+	n = 1;
+	f = 6;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 6, n, f);
+		n++;
+		f += 6;
+	}
+	
+	n = 1;
+	g = 7;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 7, n, g);
+		n++;
+		g += 7;
+	}
+	
+	n = 1;
+	h = 8;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 8, n, h);
+		n++;
+		h += 8;
+	}
+	
+	n = 1;
+	j = 9;
+	
+	for (i = 0; i < 9; i++){
+		printf("%dx%d=%d\n", 9, n, j);
+		n++;
+		j += 9;
+	}
+	
+	return (0);
+}

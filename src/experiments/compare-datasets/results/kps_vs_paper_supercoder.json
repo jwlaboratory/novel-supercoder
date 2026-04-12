@@ -1,0 +1,71 @@
+{
+  "generated_at_utc": "2026-04-12T02:48:14.743481+00:00",
+  "kps_dataset": "KrishPS/codenet-accepted-c",
+  "paper_dataset": "random1123anonymized/supercoder",
+  "kps": {
+    "split": "train",
+    "num_rows": 313360,
+    "column_names": [
+      "problem_id",
+      "submission_id",
+      "code",
+      "test_cases",
+      "num_test_cases"
+    ],
+    "example_keys_non_empty": [
+      "code",
+      "num_test_cases",
+      "problem_id",
+      "submission_id",
+      "test_cases"
+    ]
+  },
+  "paper": {
+    "splits": {
+      "val": {
+        "num_rows": 200,
+        "column_names": [
+          "data_source",
+          "prompt",
+          "ability",
+          "reward_model",
+          "extra_info"
+        ]
+      },
+      "train": {
+        "num_rows": 7872,
+        "column_names": [
+          "data_source",
+          "prompt",
+          "ability",
+          "reward_model",
+          "extra_info"
+        ]
+      }
+    },
+    "extra_info_keys": [
+      "answer",
+      "c_code",
+      "c_only_question",
+      "index",
+      "inputs",
+      "outputs",
+      "question",
+      "split",
+      "unoptimized_assembly",
+      "unoptimized_compiled"
+    ],
+    "val_row_index_field": 0
+  },
+  "overlap_kps_train_vs_paper_c_code": {
+    "val_rows_matched_byte_identical": 0,
+    "val_rows_matched_whitespace_normalized": 0,
+    "train_hashes_matched_byte_identical": 0,
+    "train_hashes_matched_whitespace_normalized": 0,
+    "note": "Counts KPS train submissions whose C source equals a paper split c_code (exact or whitespace-collapsed)."
+  },
+  "semantic_notes": [
+    "KPS rows are CodeNet accepted submissions (many per problem_id); paper rows are SuperCoder benchmark instances with prompts and assembly fields.",
+    "prepare_supercoder_run.py reads paper extra_info (c_code, question, inputs/outputs, assembly); the 100-dataset experiment uses CSV from a different pipeline (KPS / local sampling)."
+  ]
+}

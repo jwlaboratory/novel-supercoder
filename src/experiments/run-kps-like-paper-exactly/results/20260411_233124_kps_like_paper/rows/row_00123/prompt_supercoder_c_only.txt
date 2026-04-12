@@ -1,0 +1,35 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#define N 13
+#define pi M_PI
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    int count;
+    for(int i=0;i<n;i++){
+        int p;
+        int check = 1;
+        scanf("%d",&p);
+        for(int j=2;j*j<=p;j++){
+            if(p%j==0){
+                check=0;
+                break;
+            }
+        }
+        if(check==1){
+            count++;
+        }
+    }
+    printf("%d\n",count);
+   return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

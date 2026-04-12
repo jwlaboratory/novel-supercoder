@@ -1,0 +1,37 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:10: warning: return type defaults to 'int' [-Wimplicit-int]
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |          ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:26: warning: initialization of 'double *' from incompatible pointer type 'char *' [-Wincompatible-pointer-types]
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |                          ^
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:36: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |                                    ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
+  +++ |+#include <stdio.h>
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:36: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |                                    ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:36: note: include '<stdio.h>' or provide a declaration of 'scanf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:50: warning: implicit declaration of function 'getchar' [-Wimplicit-function-declaration]
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |                                                  ^~~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:50: note: 'getchar' is defined in header '<stdio.h>'; did you forget to '#include <stdio.h>'?
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:63: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |                                                               ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:63: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:63: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:63: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:81: warning: implicit declaration of function 'sscanf' [-Wimplicit-function-declaration]
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |                                                                                 ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:81: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:81: warning: incompatible implicit declaration of built-in function 'sscanf' [-Wbuiltin-declaration-mismatch]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:81: note: include '<stdio.h>' or provide a declaration of 'sscanf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c: At top level:
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00189/inputC.c:1:6: warning: array 's' assumed to have one element
+    1 | char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}
+      |      ^

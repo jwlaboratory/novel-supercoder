@@ -1,0 +1,25 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#define BUF 4
+int main(void) {
+  char num[BUF];
+  scanf("%s", num);
+  if (num[0] == '7' || num[1] == '7' || num[2] == '7') {
+    printf("Yes\n");
+  } else {
+    printf("No\n");
+  }
+
+  return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

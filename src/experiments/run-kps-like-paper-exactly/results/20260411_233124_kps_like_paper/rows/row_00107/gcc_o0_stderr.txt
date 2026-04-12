@@ -1,0 +1,3 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00107/inputC.c:6:1: warning: return type defaults to 'int' [-Wimplicit-int]
+    6 | main(){
+      | ^~~~

@@ -1,0 +1,42 @@
+[
+  {
+    "input": "xoxoxoxoxoxoxo\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "oxoxowoxoxoxox\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "oxoxowoooxoxxx\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "xxxoxooowoxoxo\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "xoxoxooxwoxoxo\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "xoxoyoxoxoxoxo\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "xxxoxoooooxwxo\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "xoxowooxwoxoxo\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "oxoxoxoxoyoxox\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "xoxoxoxoxoyoxo\n",
+    "output": "YES\n\n"
+  }
+]

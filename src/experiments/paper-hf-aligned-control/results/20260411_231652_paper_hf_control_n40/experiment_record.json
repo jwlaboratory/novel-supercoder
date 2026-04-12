@@ -1,0 +1,13 @@
+{
+  "experiment": "paper-hf-aligned-control",
+  "dataset": "random1123anonymized/supercoder",
+  "split": "val",
+  "n_rows": 40,
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "run_dir": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/paper-hf-aligned-control/results/20260411_231652_paper_hf_control_n40",
+  "problem_results_json": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/paper-hf-aligned-control/results/20260411_231652_paper_hf_control_n40/supercoder_bench/problem_results.json",
+  "compilation_rate_pct": 85.0,
+  "accuracy_pct": 62.5,
+  "compiled_problems": 34,
+  "correct_problems": 25
+}

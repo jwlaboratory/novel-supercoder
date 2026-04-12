@@ -1,0 +1,12 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00172/inputC.c:7:1: warning: data definition has no type or storage class
+    7 | num=1;
+      | ^~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00172/inputC.c:7:1: warning: type defaults to 'int' in declaration of 'num' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00172/inputC.c:8:1: warning: data definition has no type or storage class
+    8 | a=1;
+      | ^
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00172/inputC.c:8:1: warning: type defaults to 'int' in declaration of 'a' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00172/inputC.c:9:1: warning: data definition has no type or storage class
+    9 | b=0;
+      | ^
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00172/inputC.c:9:1: warning: type defaults to 'int' in declaration of 'b' [-Wimplicit-int]

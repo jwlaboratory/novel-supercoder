@@ -1,0 +1,15 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00031/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00031/inputC.c:21:33: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'long long int *' [-Wformat=]
+   21 |                         scanf("%d", &a[i][j]);
+      |                                ~^   ~~~~~~~~
+      |                                 |   |
+      |                                 |   long long int *
+      |                                 int *
+      |                                %lld
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00031/inputC.c:28:33: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'long long int *' [-Wformat=]
+   28 |                         scanf("%d", &b[i][j]);
+      |                                ~^   ~~~~~~~~
+      |                                 |   |
+      |                                 |   long long int *
+      |                                 int *
+      |                                %lld

@@ -1,0 +1,10 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/paper-hf-aligned-control/results/20260411_231652_paper_hf_control_n40/paper_dataset.csv",
+  "total_rows": 40,
+  "source": {
+    "dataset": "random1123anonymized/supercoder",
+    "split": "val",
+    "offset": 0,
+    "limit": 40
+  }
+}

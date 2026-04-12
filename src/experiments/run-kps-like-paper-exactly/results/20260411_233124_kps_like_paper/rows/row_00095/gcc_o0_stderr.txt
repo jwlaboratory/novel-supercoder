@@ -1,0 +1,21 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:1: warning: return type defaults to 'int' [-Wimplicit-int]
+    1 | main(a){scanf("%d",&a);printf("%d",a>63?64:a>31?32:a>15?16:a>7?8:a>3?4:a>1?2:1);}
+      | ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:1: warning: type of 'a' defaults to 'int' [-Wimplicit-int]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:9: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+    1 | main(a){scanf("%d",&a);printf("%d",a>63?64:a>31?32:a>15?16:a>7?8:a>3?4:a>1?2:1);}
+      |         ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
+  +++ |+#include <stdio.h>
+    1 | main(a){scanf("%d",&a);printf("%d",a>63?64:a>31?32:a>15?16:a>7?8:a>3?4:a>1?2:1);}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:9: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+    1 | main(a){scanf("%d",&a);printf("%d",a>63?64:a>31?32:a>15?16:a>7?8:a>3?4:a>1?2:1);}
+      |         ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:9: note: include '<stdio.h>' or provide a declaration of 'scanf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:24: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    1 | main(a){scanf("%d",&a);printf("%d",a>63?64:a>31?32:a>15?16:a>7?8:a>3?4:a>1?2:1);}
+      |                        ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:24: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:24: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00095/inputC.c:1:24: note: include '<stdio.h>' or provide a declaration of 'printf'

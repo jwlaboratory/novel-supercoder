@@ -1,0 +1,42 @@
+[
+  {
+    "input": "-1 100\n",
+    "output": "0\n\n"
+  },
+  {
+    "input": "15 100\n",
+    "output": "100\n\n"
+  },
+  {
+    "input": "6 111\n",
+    "output": "55\n\n"
+  },
+  {
+    "input": "9 100\n",
+    "output": "50\n\n"
+  },
+  {
+    "input": "16 110\n",
+    "output": "110\n\n"
+  },
+  {
+    "input": "17 101\n",
+    "output": "101\n\n"
+  },
+  {
+    "input": "25 111\n",
+    "output": "111\n\n"
+  },
+  {
+    "input": "59 011\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "89 001\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "30 010\n",
+    "output": "10\n\n"
+  }
+]

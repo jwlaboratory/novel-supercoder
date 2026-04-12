@@ -1,0 +1,225 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char s[100001] = "";
+  char *p;
+  int f = 0;
+  scanf("%s", s);
+  
+  p = s;
+  
+  while ( strlen(p) != 0 ) {
+    //puts(p);
+    if ( strncmp(p, "dreameraser", 11) == 0 ) {
+      p += 11;
+    } else if ( strncmp(p, "dreamerase", 10) == 0 ) {
+      p += 10;
+    } else if ( strncmp(p, "eraser", 6) == 0 ) {
+      p += 6;
+    } else if ( strncmp(p, "dreamer", 7) == 0 ) {
+      p += 7;
+    } else if ( strncmp(p, "dream", 5) == 0 ) {
+      p += 5;
+    } else if ( strncmp(p, "erase", 5) == 0 ) {
+      p += 5;
+    } else {
+      f = 1;
+      puts("NO");
+      break;
+    }
+  }
+  if ( ! f ) {
+    puts("YES");
+  }
+  
+  return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%s"
+.LC1:
+	.string	"dreameraser"
+.LC2:
+	.string	"dreamerase"
+.LC3:
+	.string	"eraser"
+.LC4:
+	.string	"dreamer"
+.LC5:
+	.string	"dream"
+.LC6:
+	.string	"erase"
+.LC7:
+	.string	"NO"
+.LC8:
+	.string	"YES"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	leaq	-98304(%rsp), %r11
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	subq	$1728, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movq	$0, -100016(%rbp)
+	movq	$0, -100008(%rbp)
+	leaq	-100000(%rbp), %rax
+	movl	$99985, %edx
+	movl	$0, %esi
+	movq	%rax, %rdi
+	call	memset@PLT
+	movl	$0, -100028(%rbp)
+	leaq	-100016(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	leaq	-100016(%rbp), %rax
+	movq	%rax, -100024(%rbp)
+	jmp	.L2
+.L10:
+	movq	-100024(%rbp), %rax
+	movl	$11, %edx
+	leaq	.LC1(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	strncmp@PLT
+	testl	%eax, %eax
+	jne	.L3
+	addq	$11, -100024(%rbp)
+	jmp	.L2
+.L3:
+	movq	-100024(%rbp), %rax
+	movl	$10, %edx
+	leaq	.LC2(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	strncmp@PLT
+	testl	%eax, %eax
+	jne	.L4
+	addq	$10, -100024(%rbp)
+	jmp	.L2
+.L4:
+	movq	-100024(%rbp), %rax
+	movl	$6, %edx
+	leaq	.LC3(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	strncmp@PLT
+	testl	%eax, %eax
+	jne	.L5
+	addq	$6, -100024(%rbp)
+	jmp	.L2
+.L5:
+	movq	-100024(%rbp), %rax
+	movl	$7, %edx
+	leaq	.LC4(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	strncmp@PLT
+	testl	%eax, %eax
+	jne	.L6
+	addq	$7, -100024(%rbp)
+	jmp	.L2
+.L6:
+	movq	-100024(%rbp), %rax
+	movl	$5, %edx
+	leaq	.LC5(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	strncmp@PLT
+	testl	%eax, %eax
+	jne	.L7
+	addq	$5, -100024(%rbp)
+	jmp	.L2
+.L7:
+	movq	-100024(%rbp), %rax
+	movl	$5, %edx
+	leaq	.LC6(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	strncmp@PLT
+	testl	%eax, %eax
+	jne	.L8
+	addq	$5, -100024(%rbp)
+	jmp	.L2
+.L8:
+	movl	$1, -100028(%rbp)
+	leaq	.LC7(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+	jmp	.L9
+.L2:
+	movq	-100024(%rbp), %rax
+	movzbl	(%rax), %eax
+	testb	%al, %al
+	jne	.L10
+.L9:
+	cmpl	$0, -100028(%rbp)
+	jne	.L11
+	leaq	.LC8(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+.L11:
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L13
+	call	__stack_chk_fail@PLT
+.L13:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

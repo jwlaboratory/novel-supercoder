@@ -1,0 +1,142 @@
+.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"\n%d\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$448, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movl	$0, -424(%rbp)
+	leaq	-440(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -436(%rbp)
+.L2:
+	leaq	-416(%rbp), %rdx
+	movl	-436(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	addq	%rdx, %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	addl	$1, -436(%rbp)
+	cmpl	%eax, -440(%rbp)
+	jl	.L2
+	movl	$0, -436(%rbp)
+.L3:
+	movl	-436(%rbp), %eax
+	movl	%eax, -428(%rbp)
+	movl	-436(%rbp), %eax
+	movl	%eax, -432(%rbp)
+.L4:
+	movl	-432(%rbp), %eax
+	cltq
+	movl	-416(%rbp,%rax,4), %edx
+	movl	-428(%rbp), %eax
+	cltq
+	movl	-416(%rbp,%rax,4), %eax
+	cmpl	%eax, %edx
+	jge	.L5
+	movl	-432(%rbp), %eax
+	movl	%eax, -428(%rbp)
+.L5:
+	addl	$1, -432(%rbp)
+	cmpl	%eax, -440(%rbp)
+	jl	.L4
+	movl	-428(%rbp), %eax
+	cmpl	-436(%rbp), %eax
+	je	.L6
+	addl	$1, -424(%rbp)
+.L6:
+	movl	-436(%rbp), %eax
+	cltq
+	movl	-416(%rbp,%rax,4), %eax
+	movl	%eax, -420(%rbp)
+	movl	-428(%rbp), %eax
+	cltq
+	movl	-416(%rbp,%rax,4), %edx
+	movl	-436(%rbp), %eax
+	cltq
+	movl	%edx, -416(%rbp,%rax,4)
+	movl	-428(%rbp), %eax
+	cltq
+	movl	-420(%rbp), %edx
+	movl	%edx, -416(%rbp,%rax,4)
+	addl	$1, -436(%rbp)
+.L7:
+	movl	-440(%rbp), %eax
+	cmpl	%eax, -436(%rbp)
+	jl	.L7
+	movl	-424(%rbp), %eax
+	movl	%eax, %esi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movl	-440(%rbp), %eax
+	subl	$1, %eax
+	cmpl	%eax, -436(%rbp)
+	je	.L8
+	movl	$32, %edi
+	call	putchar@PLT
+.L8:
+	addl	$1, -436(%rbp)
+	cmpl	%eax, -440(%rbp)
+	jl	.L8
+	movl	-424(%rbp), %eax
+	movl	%eax, %esi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L10
+	call	__stack_chk_fail@PLT
+.L10:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

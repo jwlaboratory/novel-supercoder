@@ -1,0 +1,507 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+#define N 8
+#define NFR -1
+#define FR 1
+
+int row[N], col[N], dpos[2 * N - 1], dneg[2 * N - 1];
+bool A[N][N];
+
+void initialize()
+{
+    int i; //
+    for (i = 0; i < N; i++)
+    {
+        row[i] = FR;
+        col[i] = FR;
+    }
+    for (i = 0; i < 2 * N - 1; i++)
+    {
+        dpos[i] = FR;
+        dneg[i] = FR;
+    }
+}
+
+void print()
+{
+    int i, j;
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            if (A[i][j])
+            {
+                if (row[i] != j)
+                    return;
+            }
+        }
+    }
+
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            if (row[i] != j)
+                printf(".");
+            else
+                printf("Q");
+        }
+        printf("\n");
+    }
+}
+
+void qeen(int i)
+{
+    int j;
+    if (i == N)
+    {
+        print();
+        return;
+    }
+    for (j = 0; j < N; j++)
+    {
+        if (col[j] == NFR || dpos[i + j] == NFR || dneg[i - j + (N - 1)] == NFR)
+            continue;
+        row[i] = j;
+        col[j] = NFR;
+        dpos[i + j] = NFR;
+        dneg[i - j + (N - 1)] = NFR;
+        
+        qeen(i + 1);
+        row[i] = FR;
+        col[j] = FR;
+        dpos[i + j] = FR;
+        dneg[i - j + (N - 1)] = FR;
+    }
+}
+
+int main()
+{
+    int i, j, k, r, c;
+
+    initialize();
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            A[i][j] = false;
+        }
+    }
+    scanf("%d", &k);
+    for (i = 0; i < k; i++)
+    {
+        scanf("%d%d", &r, &c);
+        A[r][c] = true;
+    }
+    qeen(0);
+
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.globl	row
+	.bss
+	.align 32
+	.type	row, @object
+	.size	row, 32
+row:
+	.zero	32
+	.globl	col
+	.align 32
+	.type	col, @object
+	.size	col, 32
+col:
+	.zero	32
+	.globl	dpos
+	.align 32
+	.type	dpos, @object
+	.size	dpos, 60
+dpos:
+	.zero	60
+	.globl	dneg
+	.align 32
+	.type	dneg, @object
+	.size	dneg, 60
+dneg:
+	.zero	60
+	.globl	A
+	.align 32
+	.type	A, @object
+	.size	A, 64
+A:
+	.zero	64
+	.text
+	.globl	initialize
+	.type	initialize, @function
+initialize:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	$0, -4(%rbp)
+	jmp	.L2
+.L3:
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	row(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	col(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	addl	$1, -4(%rbp)
+.L2:
+	cmpl	$7, -4(%rbp)
+	jle	.L3
+	movl	$0, -4(%rbp)
+	jmp	.L4
+.L5:
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dpos(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dneg(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	addl	$1, -4(%rbp)
+.L4:
+	cmpl	$14, -4(%rbp)
+	jle	.L5
+	nop
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	initialize, .-initialize
+	.globl	print
+	.type	print, @function
+print:
+.LFB1:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movl	$0, -8(%rbp)
+	jmp	.L7
+.L12:
+	movl	$0, -4(%rbp)
+	jmp	.L8
+.L11:
+	movl	-4(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-8(%rbp), %eax
+	cltq
+	salq	$3, %rax
+	addq	%rax, %rdx
+	leaq	A(%rip), %rax
+	addq	%rdx, %rax
+	movzbl	(%rax), %eax
+	testb	%al, %al
+	je	.L9
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	row(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cmpl	%eax, -4(%rbp)
+	jne	.L19
+.L9:
+	addl	$1, -4(%rbp)
+.L8:
+	cmpl	$7, -4(%rbp)
+	jle	.L11
+	addl	$1, -8(%rbp)
+.L7:
+	cmpl	$7, -8(%rbp)
+	jle	.L12
+	movl	$0, -8(%rbp)
+	jmp	.L13
+.L18:
+	movl	$0, -4(%rbp)
+	jmp	.L14
+.L17:
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	row(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cmpl	%eax, -4(%rbp)
+	je	.L15
+	movl	$46, %edi
+	call	putchar@PLT
+	jmp	.L16
+.L15:
+	movl	$81, %edi
+	call	putchar@PLT
+.L16:
+	addl	$1, -4(%rbp)
+.L14:
+	cmpl	$7, -4(%rbp)
+	jle	.L17
+	movl	$10, %edi
+	call	putchar@PLT
+	addl	$1, -8(%rbp)
+.L13:
+	cmpl	$7, -8(%rbp)
+	jle	.L18
+	jmp	.L6
+.L19:
+	nop
+.L6:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	print, .-print
+	.globl	qeen
+	.type	qeen, @function
+qeen:
+.LFB2:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movl	%edi, -20(%rbp)
+	cmpl	$8, -20(%rbp)
+	jne	.L21
+	movl	$0, %eax
+	call	print
+	jmp	.L20
+.L21:
+	movl	$0, -4(%rbp)
+	jmp	.L23
+.L27:
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	col(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cmpl	$-1, %eax
+	je	.L28
+	movl	-20(%rbp), %edx
+	movl	-4(%rbp), %eax
+	addl	%edx, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dpos(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cmpl	$-1, %eax
+	je	.L28
+	movl	-20(%rbp), %eax
+	subl	-4(%rbp), %eax
+	addl	$7, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dneg(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cmpl	$-1, %eax
+	je	.L28
+	movl	-20(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rcx
+	leaq	row(%rip), %rdx
+	movl	-4(%rbp), %eax
+	movl	%eax, (%rcx,%rdx)
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	col(%rip), %rax
+	movl	$-1, (%rdx,%rax)
+	movl	-20(%rbp), %edx
+	movl	-4(%rbp), %eax
+	addl	%edx, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dpos(%rip), %rax
+	movl	$-1, (%rdx,%rax)
+	movl	-20(%rbp), %eax
+	subl	-4(%rbp), %eax
+	addl	$7, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dneg(%rip), %rax
+	movl	$-1, (%rdx,%rax)
+	movl	-20(%rbp), %eax
+	addl	$1, %eax
+	movl	%eax, %edi
+	call	qeen
+	movl	-20(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	row(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	col(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	movl	-20(%rbp), %edx
+	movl	-4(%rbp), %eax
+	addl	%edx, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dpos(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	movl	-20(%rbp), %eax
+	subl	-4(%rbp), %eax
+	addl	$7, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	dneg(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	jmp	.L26
+.L28:
+	nop
+.L26:
+	addl	$1, -4(%rbp)
+.L23:
+	cmpl	$7, -4(%rbp)
+	jle	.L27
+.L20:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2:
+	.size	qeen, .-qeen
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d%d"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB3:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movl	$0, %eax
+	call	initialize
+	movl	$0, -16(%rbp)
+	jmp	.L30
+.L33:
+	movl	$0, -12(%rbp)
+	jmp	.L31
+.L32:
+	movl	-12(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-16(%rbp), %eax
+	cltq
+	salq	$3, %rax
+	addq	%rax, %rdx
+	leaq	A(%rip), %rax
+	addq	%rdx, %rax
+	movb	$0, (%rax)
+	addl	$1, -12(%rbp)
+.L31:
+	cmpl	$7, -12(%rbp)
+	jle	.L32
+	addl	$1, -16(%rbp)
+.L30:
+	cmpl	$7, -16(%rbp)
+	jle	.L33
+	leaq	-28(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -16(%rbp)
+	jmp	.L34
+.L35:
+	leaq	-20(%rbp), %rdx
+	leaq	-24(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-24(%rbp), %eax
+	movl	-20(%rbp), %edx
+	movslq	%edx, %rdx
+	cltq
+	salq	$3, %rax
+	addq	%rax, %rdx
+	leaq	A(%rip), %rax
+	addq	%rdx, %rax
+	movb	$1, (%rax)
+	addl	$1, -16(%rbp)
+.L34:
+	movl	-28(%rbp), %eax
+	cmpl	%eax, -16(%rbp)
+	jl	.L35
+	movl	$0, %edi
+	call	qeen
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L37
+	call	__stack_chk_fail@PLT
+.L37:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

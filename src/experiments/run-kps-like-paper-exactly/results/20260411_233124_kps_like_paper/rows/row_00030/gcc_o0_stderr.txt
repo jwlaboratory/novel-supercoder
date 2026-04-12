@@ -1,0 +1,7 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00030/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00030/inputC.c:9:17: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char (*)[100]' [-Wformat=]
+    9 |         scanf("%s %d",&s,&num);
+      |                ~^     ~~
+      |                 |     |
+      |                 |     char (*)[100]
+      |                 char *

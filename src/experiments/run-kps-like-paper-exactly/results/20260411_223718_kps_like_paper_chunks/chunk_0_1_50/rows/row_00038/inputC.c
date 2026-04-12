@@ -1,0 +1,1 @@
+main(i,j){if(j==0)while(1);for(i=0;i++<9;)for(j=0;j++<9;printf("%dx%d=%d\n",i,j,i*j));exit(0);}

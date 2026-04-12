@@ -1,0 +1,178 @@
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC1:
+	.string	"YES"
+.LC2:
+	.string	"NO"
+	.align 8
+.LC3:
+	.string	"%lf %lf %lf %lf %lf %lf %lf %lf"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$192, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+.L2:
+	leaq	-160(%rbp), %r8
+	leaq	-168(%rbp), %rdi
+	leaq	-176(%rbp), %rcx
+	leaq	-184(%rbp), %rdx
+	leaq	-192(%rbp), %rax
+	subq	$8, %rsp
+	leaq	-136(%rbp), %rsi
+	pushq	%rsi
+	leaq	-144(%rbp), %rsi
+	pushq	%rsi
+	leaq	-152(%rbp), %rsi
+	pushq	%rsi
+	movq	%r8, %r9
+	movq	%rdi, %r8
+	movq	%rax, %rsi
+	leaq	.LC3(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	addq	$32, %rsp
+	cmpl	$-1, %eax
+	je	.L11
+	movsd	-176(%rbp), %xmm0
+	movsd	-192(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -128(%rbp)
+	movsd	-168(%rbp), %xmm0
+	movsd	-184(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -120(%rbp)
+	movsd	-144(%rbp), %xmm0
+	movsd	-192(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -112(%rbp)
+	movsd	-136(%rbp), %xmm0
+	movsd	-184(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -104(%rbp)
+	movsd	-128(%rbp), %xmm0
+	mulsd	-104(%rbp), %xmm0
+	movsd	-120(%rbp), %xmm1
+	mulsd	-112(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -96(%rbp)
+	movsd	-160(%rbp), %xmm0
+	movsd	-176(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -88(%rbp)
+	movsd	-152(%rbp), %xmm0
+	movsd	-168(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -80(%rbp)
+	movsd	-144(%rbp), %xmm0
+	movsd	-176(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -72(%rbp)
+	movsd	-136(%rbp), %xmm0
+	movsd	-168(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -64(%rbp)
+	movsd	-88(%rbp), %xmm0
+	mulsd	-64(%rbp), %xmm0
+	movsd	-80(%rbp), %xmm1
+	mulsd	-72(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -56(%rbp)
+	movsd	-192(%rbp), %xmm0
+	movsd	-160(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -48(%rbp)
+	movsd	-184(%rbp), %xmm0
+	movsd	-152(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -40(%rbp)
+	movsd	-144(%rbp), %xmm0
+	movsd	-160(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -32(%rbp)
+	movsd	-136(%rbp), %xmm0
+	movsd	-152(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -24(%rbp)
+	movsd	-48(%rbp), %xmm0
+	mulsd	-24(%rbp), %xmm0
+	movsd	-40(%rbp), %xmm1
+	mulsd	-32(%rbp), %xmm1
+	subsd	%xmm1, %xmm0
+	movsd	%xmm0, -16(%rbp)
+	pxor	%xmm0, %xmm0
+	comisd	-96(%rbp), %xmm0
+	jbe	.L3
+	pxor	%xmm0, %xmm0
+	comisd	-56(%rbp), %xmm0
+	jbe	.L3
+	pxor	%xmm0, %xmm0
+	comisd	-16(%rbp), %xmm0
+	ja	.L6
+.L3:
+	movsd	-96(%rbp), %xmm0
+	pxor	%xmm1, %xmm1
+	comisd	%xmm1, %xmm0
+	jbe	.L7
+	movsd	-56(%rbp), %xmm0
+	pxor	%xmm1, %xmm1
+	comisd	%xmm1, %xmm0
+	jbe	.L7
+	movsd	-16(%rbp), %xmm0
+	pxor	%xmm1, %xmm1
+	comisd	%xmm1, %xmm0
+	jbe	.L7
+.L6:
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+	jmp	.L2
+.L7:
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+.L2:
+	leaq	-160(%rbp), %r8
+	leaq	-168(%rbp), %rdi
+	leaq	-176(%rbp), %rcx
+	leaq	-184(%rbp), %rdx
+	leaq	-192(%rbp), %rax
+	subq	$8, %rsp
+	leaq	-136(%rbp), %rsi
+	pushq	%rsi
+	leaq	-144(%rbp), %rsi
+	pushq	%rsi
+	leaq	-152(%rbp), %rsi
+	pushq	%rsi
+	movq	%r8, %r9
+	movq	%rdi, %r8
+	movq	%rax, %rsi
+	leaq	.LC3(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	addq	$32, %rsp
+	cmpl	$-1, %eax
+	jne	.L11
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L13
+	call	__stack_chk_fail@PLT
+.L13:
+	leave
+	.cfi

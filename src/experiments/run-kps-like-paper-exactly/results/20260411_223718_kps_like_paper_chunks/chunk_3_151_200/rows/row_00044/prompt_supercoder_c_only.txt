@@ -1,0 +1,36 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main(void)
+{
+	int i,k;
+	char x[81][12];
+	FILE *kuku;
+
+	kuku=fopen("kuku.txt","w");
+
+	if(kuku==NULL)exit(0);
+
+	for(i=1;i<=9;i++)
+		for(k=1;k<=9;k++)
+			fprintf(kuku,"%dx%d=%d\n",i,k,i*k);
+
+	fclose(kuku);
+
+	kuku=fopen("kuku.txt","r");
+
+	for(i=0;i<81;i++){
+		fgets(x[i],sizeof(x[i]),kuku);
+		printf(x[i]);
+	}
+
+	fclose(kuku);
+
+	return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

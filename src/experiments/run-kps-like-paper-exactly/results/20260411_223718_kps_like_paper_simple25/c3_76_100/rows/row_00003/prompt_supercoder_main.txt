@@ -1,0 +1,93 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+
+int main ()
+{
+    long long n, i;
+
+    for(n=1; n<=9; n++){
+    for(i=1; i<=9; i++){
+        printf("%lldx%lld=%lld\n", n, i, n*i);
+    }
+    }
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%lldx%lld=%lld\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movq	$1, -16(%rbp)
+	jmp	.L2
+.L5:
+	movq	$1, -8(%rbp)
+	jmp	.L3
+.L4:
+	movq	-16(%rbp), %rax
+	imulq	-8(%rbp), %rax
+	movq	%rax, %rcx
+	movq	-8(%rbp), %rdx
+	movq	-16(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	addq	$1, -8(%rbp)
+.L3:
+	cmpq	$9, -8(%rbp)
+	jle	.L4
+	addq	$1, -16(%rbp)
+.L2:
+	cmpq	$9, -16(%rbp)
+	jle	.L5
+	movl	$0, %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

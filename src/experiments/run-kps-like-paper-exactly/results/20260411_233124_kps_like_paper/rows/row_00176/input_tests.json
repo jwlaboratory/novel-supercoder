@@ -1,0 +1,42 @@
+[
+  {
+    "input": "5 10\n",
+    "output": "a < b\n\n"
+  },
+  {
+    "input": "1 1\n",
+    "output": "a == b\n\n"
+  },
+  {
+    "input": "2 0\n",
+    "output": "a > b\n\n"
+  },
+  {
+    "input": "2 3\n",
+    "output": "a < b\n\n"
+  },
+  {
+    "input": "5 6\n",
+    "output": "a < b\n\n"
+  },
+  {
+    "input": "0 1\n",
+    "output": "a < b\n\n"
+  },
+  {
+    "input": "2 5\n",
+    "output": "a < b\n\n"
+  },
+  {
+    "input": "5 12\n",
+    "output": "a < b\n\n"
+  },
+  {
+    "input": "-1 1\n",
+    "output": "a < b\n\n"
+  },
+  {
+    "input": "2 8\n",
+    "output": "a < b\n\n"
+  }
+]

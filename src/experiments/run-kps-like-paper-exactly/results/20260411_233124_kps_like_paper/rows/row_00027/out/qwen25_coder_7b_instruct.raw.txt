@@ -1,0 +1,218 @@
+```assembly
+	.file	"inputC.c"
+	.text
+	.globl	push
+	.type	push, @function
+push:
+.LFB6:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	$16, %edi
+	call	malloc@PLT
+	movq	%rax, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movl	-28(%rbp), %edx
+	movl	%edx, (%rax)
+	movq	-24(%rbp), %rax
+	movq	(%rax), %rdx
+	movq	-8(%rbp), %rax
+	movq	%rdx, 8(%rax)
+	movq	-24(%rbp), %rax
+	movq	-8(%rbp), %rdx
+	movq	%rdx, (%rax)
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	push, .-push
+	.globl	pop
+	.type	pop, @function
+pop:
+.LFB7:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%rdi, -24(%rbp)
+	movq	-24(%rbp), %rax
+	movq	(%rax), %rax
+	movq	%rax, -8(%rbp)
+	cmpq	$0, -8(%rbp)
+	je	.L3
+	movq	-8(%rbp), %rax
+	movl	(%rax), %eax
+	movl	%eax, -12(%rbp)
+	movq	-8(%rbp), %rax
+	movq	8(%rax), %rdx
+	movq	-24(%rbp), %rax
+	movq	%rdx, (%rax)
+	movq	-8(%rbp), %rax
+	movq	%rax, %rdi
+	call	free@PLT
+	movl	-12(%rbp), %eax
+	jmp	.L4
+.L3:
+	movl	$0, %eax
+.L4:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	pop, .-pop
+	.section	.rodata
+.LC0:
+	.string	" "
+.LC1:
+	.string	"+"
+.LC2:
+	.string	"-"
+.LC3:
+	.string	"*"
+.LC4:
+	.string	"/"
+.LC5:
+	.string	" ."
+.LC6:
+	.string	"%d\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB8:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$1040, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movq	$0, -1024(%rbp)
+	movq	stdin(%rip), %rdx
+	leaq	-1008(%rbp), %rax
+	movl	$999, %esi
+	movq	%rax, %rdi
+	call	fgets@PLT
+	leaq	-1008(%rbp), %rax
+	movq	%rax, %rdi
+	call	strlen@PLT
+	subq	$1, %rax
+	movb	$0, -1008(%rbp,%rax)
+	leaq	-1008(%rbp), %rax
+	leaq	.LC0(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strtok@PLT
+	movq	%rax, -1016(%rbp)
+	jmp	.L6
+.L12:
+	movq	-1016(%rbp), %rax
+	leaq	.LC1(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L7
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1028(%rbp)
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1032(%rbp)
+	movl	-1032(%rbp), %edx
+	movl	-1028(%rbp), %eax
+	addl	%eax, %edx
+	leaq	-1024(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+	call	push
+	jmp	.L8
+.L7:
+	movq	-1016(%rbp), %rax
+	leaq	.LC2(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L9
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1028(%rbp)
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1032(%rbp)
+	movl	-1032(%rbp), %eax
+	subl	-1028(%rbp), %eax
+	movl	%eax, %edx
+	leaq	-1024(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+	call	push
+	jmp	.L8
+.L9:
+	movq	-1016(%rbp), %rax
+	leaq	.LC3(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L10
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1028(%rbp)
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1032(%rbp)
+	movl	-1032(%rbp), %eax
+	imull	-1028(%rbp), %eax
+	movl	%eax, %edx
+	leaq	-1024(%rbp), %rax
+	movl	%edx, %esi
+	movq	%rax, %rdi
+	call	push
+	jmp	.L8
+.L10:
+	movq	-1016(%rbp), %rax
+	leaq	.LC4(%rip), %rdx
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L11
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1028(%rbp)
+	leaq	-1024(%rbp), %rax
+	movq	%rax, %rdi
+	call	pop
+	movl	%eax, -1032(%rbp)
+	movl	-1032(%rbp), %eax
+	cltd
+	idivl	-1028(%rbp)
+	movl	%eax, %edx
+	leaq

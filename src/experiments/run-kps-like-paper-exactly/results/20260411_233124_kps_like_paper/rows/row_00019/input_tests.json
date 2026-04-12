@@ -1,0 +1,42 @@
+[
+  {
+    "input": "2\n) 1\n' 1\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "3\n( 5\n* 4\n) 1\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "5\n( 2\n) 2\n( 3\n) 1\n) 4\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "2\n) 1\n' 2\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "3\n( 5\n* 4\n) 2\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "5\n( 2\n) 0\n( 3\n) 1\n) 4\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "2\n) 1\n' 4\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "3\n) 5\n* 4\n) 2\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "5\n( 2\n) 0\n( 2\n) 1\n) 4\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "2\n* 1\n' 4\n",
+    "output": "NO\n\n"
+  }
+]

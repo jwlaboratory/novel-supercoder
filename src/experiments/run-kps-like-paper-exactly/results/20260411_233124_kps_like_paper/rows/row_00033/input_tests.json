@@ -1,0 +1,42 @@
+[
+  {
+    "input": "5 100\np1 150\np2 80\np3 200\np4 350\np5 14\n",
+    "output": "p2 180\np5 394\np1 444\np3 544\np4 794\n\n"
+  },
+  {
+    "input": "5 100\np1 150\n2p 80\np3 200\np4 350\np5 14\n",
+    "output": "2p 180\np5 394\np1 444\np3 544\np4 794\n\n"
+  },
+  {
+    "input": "4 100\np1 150\n2p 80\np3 200\np4 350\np5 14\n",
+    "output": "2p 180\np1 430\np3 530\np4 780\n\n"
+  },
+  {
+    "input": "3 100\np1 150\n2p 80\np3 200\np4 350\np5 14\n",
+    "output": "2p 180\np1 330\np3 430\n\n"
+  },
+  {
+    "input": "5 100\np1 150\np2 125\np3 200\np4 350\np5 20\n",
+    "output": "p5 420\np1 470\np2 495\np3 595\np4 845\n\n"
+  },
+  {
+    "input": "4 100\np1 150\np2 80\np3 200\np4 350\np5 14\n",
+    "output": "p2 180\np1 430\np3 530\np4 780\n\n"
+  },
+  {
+    "input": "5 100\np1 150\n2p 80\n3p 200\np4 350\np5 14\n",
+    "output": "2p 180\np5 394\np1 444\n3p 544\np4 794\n\n"
+  },
+  {
+    "input": "4 100\np1 150\n2p 80\np2 200\np4 350\np5 14\n",
+    "output": "2p 180\np1 430\np2 530\np4 780\n\n"
+  },
+  {
+    "input": "3 100\np1 150\np2 80\np3 200\np4 350\np5 14\n",
+    "output": "p2 180\np1 330\np3 430\n\n"
+  },
+  {
+    "input": "5 100\np1 150\np2 216\np3 200\np4 350\np5 20\n",
+    "output": "p5 420\np1 470\np3 670\np2 786\np4 936\n\n"
+  }
+]

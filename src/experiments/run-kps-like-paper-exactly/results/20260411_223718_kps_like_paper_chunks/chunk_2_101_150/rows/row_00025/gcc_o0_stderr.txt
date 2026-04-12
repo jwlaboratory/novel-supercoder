@@ -1,0 +1,11 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00125/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00125/inputC.c:6:1: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    6 | printf("%dx%d=%d\n", a, b, a*b);
+      | ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00125/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | int main()
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00125/inputC.c:6:1: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+    6 | printf("%dx%d=%d\n", a, b, a*b);
+      | ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00125/inputC.c:6:1: note: include '<stdio.h>' or provide a declaration of 'printf'

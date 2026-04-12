@@ -1,0 +1,42 @@
+[
+  {
+    "input": "10\n17\n",
+    "output": "117\n\n"
+  },
+  {
+    "input": "4\n4\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "10\n15\n",
+    "output": "106\n\n"
+  },
+  {
+    "input": "4\n7\n",
+    "output": "15\n\n"
+  },
+  {
+    "input": "10\n11\n",
+    "output": "82\n\n"
+  },
+  {
+    "input": "4\n2\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "10\n14\n",
+    "output": "100\n\n"
+  },
+  {
+    "input": "4\n0\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "10\n24\n",
+    "output": "152\n\n"
+  },
+  {
+    "input": "4\n-1\n",
+    "output": "-4\n\n"
+  }
+]

@@ -1,0 +1,12 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00194/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00194/inputC.c:23:19: warning: implicit declaration of function 'sqrt' [-Wimplicit-function-declaration]
+   23 |             ans+=(sqrt((a[i].x-a[j].x)*(a[i].x-a[j].x)+(a[i].y-a[j].y)*(a[i].y-a[j].y)))*frac;
+      |                   ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00194/inputC.c:5:1: note: include '<math.h>' or provide a declaration of 'sqrt'
+    4 | #include <stdlib.h>
+  +++ |+#include <math.h>
+    5 | typedef struct{
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00194/inputC.c:23:19: warning: incompatible implicit declaration of built-in function 'sqrt' [-Wbuiltin-declaration-mismatch]
+   23 |             ans+=(sqrt((a[i].x-a[j].x)*(a[i].x-a[j].x)+(a[i].y-a[j].y)*(a[i].y-a[j].y)))*frac;
+      |                   ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00194/inputC.c:23:19: note: include '<math.h>' or provide a declaration of 'sqrt'

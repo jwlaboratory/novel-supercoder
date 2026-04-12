@@ -1,0 +1,15 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00041/inputC.c: In function 'is_op':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00041/inputC.c:22:51: warning: implicit declaration of function 'isdigit' [-Wimplicit-function-declaration]
+   22 |   return(((*c=='*'||*c=='+'||*c=='-'||*c=='/')&&(!isdigit(c[1]))));
+      |                                                   ^~~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00041/inputC.c:13:1: note: include '<ctype.h>' or provide a declaration of 'isdigit'
+   12 | #include <float.h>
+  +++ |+#include <ctype.h>
+   13 | //#include <math.h>
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00041/inputC.c: At top level:
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00041/inputC.c:41:1: warning: return type defaults to 'int' [-Wimplicit-int]
+   41 | print()
+      | ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00041/inputC.c:49:1: warning: return type defaults to 'int' [-Wimplicit-int]
+   49 | main()
+      | ^~~~

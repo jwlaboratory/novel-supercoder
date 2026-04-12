@@ -1,0 +1,42 @@
+[
+  {
+    "input": "abcb\naabb\nbccc\n",
+    "output": "B\n\n"
+  },
+  {
+    "input": "caa\naccc\nca\n",
+    "output": "A\n\n"
+  },
+  {
+    "input": "aaca\naabb\ncccc\n",
+    "output": "C\n\n"
+  },
+  {
+    "input": "abcb\nbbaa\nbccc\n",
+    "output": "B\n\n"
+  },
+  {
+    "input": "aacb\nbbaa\nbccc\n",
+    "output": "A\n\n"
+  },
+  {
+    "input": "aacb\nbbaa\ncccb\n",
+    "output": "A\n\n"
+  },
+  {
+    "input": "aaca\nbbaa\ncccb\n",
+    "output": "A\n\n"
+  },
+  {
+    "input": "aaca\naabb\ncccb\n",
+    "output": "A\n\n"
+  },
+  {
+    "input": "acaa\naabb\ncccc\n",
+    "output": "C\n\n"
+  },
+  {
+    "input": "acaa\nabab\ncccc\n",
+    "output": "C\n\n"
+  }
+]

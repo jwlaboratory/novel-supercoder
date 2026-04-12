@@ -1,0 +1,15 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00194/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00194/inputC.c:10:23: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+   10 |         if(kuku==NULL)exit(0);
+      |                       ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00194/inputC.c:2:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+    1 | #include<stdio.h>
+  +++ |+#include <stdlib.h>
+    2 | int main(void)
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00194/inputC.c:10:23: warning: incompatible implicit declaration of built-in function 'exit' [-Wbuiltin-declaration-mismatch]
+   10 |         if(kuku==NULL)exit(0);
+      |                       ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00194/inputC.c:10:23: note: include '<stdlib.h>' or provide a declaration of 'exit'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00194/inputC.c:22:25: warning: format not a string literal and no format arguments [-Wformat-security]
+   22 |                 printf(x[i]);
+      |                        ~^~~

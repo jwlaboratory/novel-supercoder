@@ -1,0 +1,52 @@
+{
+  "summary": {
+    "total_problems": 1,
+    "correct_problems": 0,
+    "compiled_problems": 1,
+    "compilation_failures": 0,
+    "compilation_rate": 100.0,
+    "accuracy": 0.0,
+    "avg_speedup": 1.0,
+    "median_speedup": 1.0,
+    "max_speedup": 1.0,
+    "p25_speedup": 1.0,
+    "p75_speedup": 1.0,
+    "std_speedup": 0.0,
+    "best_of": 1,
+    "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "dataset": "KrishPS/codenet-accepted-c"
+  },
+  "problems": {
+    "0": {
+      "compilation_failed": false,
+      "samples": {
+        "0": {
+          "is_best": true,
+          "correct": false,
+          "speedup": 1.0,
+          "test_cases": [
+            {
+              "problem_idx": 0,
+              "test_case_idx": 0,
+              "status": "failed",
+              "error_msg": "Output mismatch\nExpected: \n\nActual: 1x1=1431658500\n1x2=1431658500\n1x3=1431658500\n1x4=1431658500\n1x5=1431658500\n1x6=1431658500\n1x7=1431658500\n1x8=1431658500\n1x9=1431658500\n2x1=1431658500\n2x2=1431658500\n2x3=1431658500\n2x4=1431658500\n2x5=1431658500\n2x6=1431658500\n2x7=1431658500\n2x8=1431658500\n2x9=1431658500\n3x1=1431658500\n3x2=1431658500\n3x3=1431658500\n3x4=1431658500\n3x5=1431658500\n3x6=1431658500\n3x7=1431658500\n3x8=1431658500\n3x9=1431658500\n4x1=1431658500\n4x2=1431658500\n4x3=1431658500\n4x4=1431658500\n4x5=1431658500\n4x6=1431658500\n4x7=1431658500\n4x8=1431658500\n4x9=1431658500\n5x1=1431658500\n5x2=1431658500\n5x3=1431658500\n5x4=1431658500\n5x5=1431658500\n5x6=1431658500\n5x7=1431658500\n5x8=1431658500\n5x9=1431658500\n6x1=1431658500\n6x2=1431658500\n6x3=1431658500\n6x4=1431658500\n6x5=1431658500\n6x6=1431658500\n6x7=1431658500\n6x8=1431658500\n6x9=1431658500\n7x1=1431658500\n7x2=1431658500\n7x3=1431658500\n7x4=1431658500\n7x5=1431658500\n7x6=1431658500\n7x7=1431658500\n7x8=1431658500\n7x9=1431658500\n8x1=1431658500\n8x2=1431658500\n8x3=1431658500\n8x4=1431658500\n8x5=1431658500\n8x6=1431658500\n8x7=1431658500\n8x8=1431658500\n8x9=1431658500\n9x1=1431658500\n9x2=1431658500\n9x3=1431658500\n9x4=1431658500\n9x5=1431658500\n9x6=1431658500\n9x7=1431658500\n9x8=1431658500\n9x9=1431658500\n",
+              "speedup": 1.0,
+              "unopt_time": null,
+              "opt_time": null,
+              "sample_id": 0,
+              "identical_to_unoptimized": false
+            }
+          ],
+          "num_test_cases": 1,
+          "generated_assembly": ".file\t\"inputC.c\"\n\t.text\n\t.section\t.rodata\n.LC0:\n\t.string\t\"%dx%d=%d\\n\"\n\t.text\n\t.globl\tmain\n\t.type\tmain, @function\nmain:\n.LFB0:\n\t.cfi_startproc\n\tendbr64\n\tpushq\t%rbp\n\t.cfi_def_cfa_offset 16\n\t.cfi_offset 6, -16\n\tmovq\t%rsp, %rbp\n\t.cfi_def_cfa_register 6\n\tsubq\t$16, %rsp\n\tmovl\t$1, -8(%rbp)\n.L2:\n\tmovl\t-8(%rbp), %eax\n\tcmpl\t$9, %eax\n\tjg\t.L6\n\tmovl\t$1, -4(%rbp)\n.L3:\n\tmovl\t-4(%rbp), %edx\n\tmovl\t-8(%rbp), %eax\n\tmovl\t%eax, %esi\n\tleaq\t.LC0(%rip), %rcx\n\tmovq\t%rcx, %rdi\n\tmovl\t$0, %eax\n\tcall\tprintf@PLT\n\taddl\t$1, -4(%rbp)\n\tcmpl\t$9, -4(%rbp)\n\tjle\t.L3\n\taddl\t$1, -8(%rbp)\n\tjmp\t.L2\n.L6:\n\tmovl\t$0, %eax\n\tleave\n\t.cfi_def_cfa 7, 8\n\tret\n\t.cfi_endproc\n.LFE0:\n\t.size\tmain, .-main\n\t.ident\t\"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\"\n\t.section\t.note.GNU-stack,\"\",@progbits\n\t.section\t.note.gnu.property,\"a\"\n\t.align 8\n\t.long\t1f - 0f\n\t.long\t4f - 1f\n\t.long\t5\n0:\n\t.string\t\"GNU\"\n1:\n\t.align 8\n\t.long\t0xc0000002\n\t.long\t3f - 2f\n2:\n\t.long\t0x3\n3:\n\t.align 8\n4:\n",
+          "num_successful": 0,
+          "identical_to_unoptimized": false
+        }
+      },
+      "unoptimized_assembly": "\t.file\t\"inputC.c\"\n\t.text\n\t.section\t.rodata\n.LC0:\n\t.string\t\"%dx%d=%d\\n\"\n\t.text\n\t.globl\tmain\n\t.type\tmain, @function\nmain:\n.LFB0:\n\t.cfi_startproc\n\tendbr64\n\tpushq\t%rbp\n\t.cfi_def_cfa_offset 16\n\t.cfi_offset 6, -16\n\tmovq\t%rsp, %rbp\n\t.cfi_def_cfa_register 6\n\tsubq\t$16, %rsp\n\tmovl\t$1, -8(%rbp)\n\tjmp\t.L2\n.L5:\n\tmovl\t$1, -4(%rbp)\n\tjmp\t.L3\n.L4:\n\tmovl\t-8(%rbp), %eax\n\timull\t-4(%rbp), %eax\n\tmovl\t%eax, %ecx\n\tmovl\t-4(%rbp), %edx\n\tmovl\t-8(%rbp), %eax\n\tmovl\t%eax, %esi\n\tleaq\t.LC0(%rip), %rax\n\tmovq\t%rax, %rdi\n\tmovl\t$0, %eax\n\tcall\tprintf@PLT\n\taddl\t$1, -4(%rbp)\n.L3:\n\tcmpl\t$9, -4(%rbp)\n\tjle\t.L4\n\taddl\t$1, -8(%rbp)\n.L2:\n\tcmpl\t$9, -8(%rbp)\n\tjle\t.L5\n\tmovl\t$0, %eax\n\tleave\n\t.cfi_def_cfa 7, 8\n\tret\n\t.cfi_endproc\n.LFE0:\n\t.size\tmain, .-main\n\t.ident\t\"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\"\n\t.section\t.note.GNU-stack,\"\",@progbits\n\t.section\t.note.gnu.property,\"a\"\n\t.align 8\n\t.long\t1f - 0f\n\t.long\t4f - 1f\n\t.long\t5\n0:\n\t.string\t\"GNU\"\n1:\n\t.align 8\n\t.long\t0xc0000002\n\t.long\t3f - 2f\n2:\n\t.long\t0x3\n3:\n\t.align 8\n4:\n",
+      "best_sample_id": 0,
+      "overall_correct": false,
+      "best_speedup": 1.0
+    }
+  }
+}

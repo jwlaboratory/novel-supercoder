@@ -1,0 +1,42 @@
+[
+  {
+    "input": "1 2 3 1\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "13 1 4 540\n",
+    "output": "2898\n\n"
+  },
+  {
+    "input": "1 2 3 2\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "17 1 4 540\n",
+    "output": "2232\n\n"
+  },
+  {
+    "input": "13 2 4 3000\n",
+    "output": "43732\n\n"
+  },
+  {
+    "input": "13 1 4 97\n",
+    "output": "108\n\n"
+  },
+  {
+    "input": "18 1 4 540\n",
+    "output": "2116\n\n"
+  },
+  {
+    "input": "13 2 1 3000\n",
+    "output": "174001\n\n"
+  },
+  {
+    "input": "13 1 4 62\n",
+    "output": "48\n\n"
+  },
+  {
+    "input": "13 1 4 92\n",
+    "output": "98\n\n"
+  }
+]

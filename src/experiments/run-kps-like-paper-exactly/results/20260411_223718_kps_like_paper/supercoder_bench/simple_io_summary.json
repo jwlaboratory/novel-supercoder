@@ -1,0 +1,24 @@
+{
+  "run_dir": "20260411_223718_kps_like_paper",
+  "kps_sampling": "sequential_hf_train_rows_0_199_no_shuffle",
+  "kps_sampling_caveat": "Train order clusters submissions (often same problem_id). Not representative of random KPS; run_autonomous.sh now defaults SHUFFLE_SEED=42.",
+  "dataset": "KrishPS/codenet-accepted-c",
+  "split": "train",
+  "offset": 0,
+  "limit": 200,
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "modal_generation": "completed_all_200_rows",
+  "evaluation": {
+    "tool": "bench_correctness_simple.py",
+    "description": "Single-threaded gcc of generated .s, then up to 10 KPS tests per row; stdout written to a temp file (avoids PIPE deadlock on very chatty binaries). No hyperfine speedup. Identical-to-O0 assembly counts as correct without running tests.",
+    "total_problems": 200,
+    "compiled_problems": 193,
+    "compilation_rate_pct": 96.5,
+    "correct_problems": 2,
+    "accuracy_pct": 1.0
+  },
+  "notes": [
+    "Official SuperCoder test_benchmark.py run (parallel + hyperfine) was OOM/SIGKILL in the automation environment on this 200-row run; simple_io_summary reflects the same compile+I/O semantics without speedup metrics.",
+    "Sequential docker gcc scan matched 193 compilable .s files."
+  ]
+}

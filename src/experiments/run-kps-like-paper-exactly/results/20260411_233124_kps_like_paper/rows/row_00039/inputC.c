@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX 101
+#define PEOPLE 3
+int main(void) {
+	char card[PEOPLE][MAX], player;
+	int ai, bi = 0, ci = 0, alen, blen, clen, i;
+	for (i = 0; i < PEOPLE; i++) {
+		if (scanf("%s", card[i]) < 1) {
+			return 1;
+		}
+	}
+	alen = strlen(card[0]);
+	blen = strlen(card[1]);
+	clen = strlen(card[2]);
+	player = card[0][0];
+	ai = 1;
+	while (1) {
+		switch (player) {
+			case 'a':
+				player = card[0][ai];
+				ai++;
+				if (player == '\0') {
+					printf("A\n");
+				}
+				break;
+			case 'b':
+				player = card[1][bi];
+				bi++;
+				if (player == '\0') {
+					printf("B\n");
+				}
+				break;
+			case 'c':
+				player = card[2][ci];
+				ci++;
+				if (player == '\0') {
+					printf("C\n");
+				}
+				break;
+			default:
+				goto end;
+		}
+	}
+end:
+	fflush(stdout);
+	return 0;
+}

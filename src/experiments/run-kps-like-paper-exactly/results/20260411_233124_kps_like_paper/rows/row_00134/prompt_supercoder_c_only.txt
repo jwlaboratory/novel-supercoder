@@ -1,0 +1,17 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+ 
+int main()
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("%d %d %.5f\n", a / b, a % b, 1.0 * a / b);
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

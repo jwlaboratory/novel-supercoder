@@ -1,0 +1,74 @@
+/*
+AizuOnline A0087
+Title: Strange Mathematical Expression
+
+13/02/09 WA
+13/02/10 unary operator - 
+*/
+#include <stdio.h>
+// Select Below
+//#include <stdlib.h>
+#include <string.h>
+#include <float.h>
+//#include <math.h>
+//#include <limits.h>
+//Global data section
+double STACK[100];
+int SP;
+char wk[100];
+//
+int is_op(char * c)
+{
+  return(((*c=='*'||*c=='+'||*c=='-'||*c=='/')&&(!isdigit(c[1]))));
+}
+void operate(char op)
+{
+  double res;
+  //printf("OP\n");
+  if(op=='+')
+    res = STACK[SP-2]+STACK[SP-1];
+  if(op=='-')
+    res = STACK[SP-2]-STACK[SP-1];
+  if(op=='*')
+    res = STACK[SP-2]*STACK[SP-1];
+  if(op=='/')
+    res = STACK[SP-2]/STACK[SP-1];
+
+  STACK[SP-2]=res;
+  SP--;
+}
+
+print()
+{
+  int i;
+  for(i=0;i<=5;i++)
+    printf("%f:",STACK[i]);
+  printf("\n");
+}
+
+main()
+{
+  char *tp;
+
+  SP = 0;
+  while(NULL != fgets(wk,100,stdin))
+    {
+      tp = strtok(wk," ");
+      while(tp != NULL)
+	{
+	  if(is_op(tp))
+	    operate(tp[0]);
+	  else
+	    {
+	      sscanf(tp,"%lf",&(STACK[SP]));
+	      SP++;
+	    }
+	  //print();
+	  tp=strtok(NULL," ");
+	}
+      printf("%lf\n",STACK[0]);
+      SP=0;
+    }
+
+return(0);
+}

@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char s[100001] = "";
+  char *p;
+  int f = 0;
+  scanf("%s", s);
+  
+  p = s;
+  
+  while ( strlen(p) != 0 ) {
+    //puts(p);
+    if ( strncmp(p, "dreameraser", 11) == 0 ) {
+      p += 11;
+    } else if ( strncmp(p, "dreamerase", 10) == 0 ) {
+      p += 10;
+    } else if ( strncmp(p, "eraser", 6) == 0 ) {
+      p += 6;
+    } else if ( strncmp(p, "dreamer", 7) == 0 ) {
+      p += 7;
+    } else if ( strncmp(p, "dream", 5) == 0 ) {
+      p += 5;
+    } else if ( strncmp(p, "erase", 5) == 0 ) {
+      p += 5;
+    } else {
+      f = 1;
+      puts("NO");
+      break;
+    }
+  }
+  if ( ! f ) {
+    puts("YES");
+  }
+  
+  return 0;
+}

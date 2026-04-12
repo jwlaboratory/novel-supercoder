@@ -1,0 +1,15 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+b,r,g,c,s,t;
+main(){
+	for(;scanf("%d%d%d%d%d%d",&b,&r,&g,&c,&s,&t),b|r|g|c|s|t;){
+		printf("%d\n",100+b*(15+5*(1+15))+r*(15+3*(1+15))+g*7+c*2+s*3-t*3);
+	}
+	exit(0);
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

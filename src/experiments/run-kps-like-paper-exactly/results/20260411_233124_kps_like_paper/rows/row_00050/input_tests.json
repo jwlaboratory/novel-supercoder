@@ -1,0 +1,42 @@
+[
+  {
+    "input": "4\n3 5 5 1\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "10\n1 0 10 5 8 12 34 100 11 3\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "4\n3 3 4 1\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "4\n3 5 6 1\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "4\n4 3 4 1\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "10\n1 0 10 10 8 12 34 100 11 3\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "4\n3 5 0 1\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "4\n4 1 4 1\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "10\n1 0 10 10 8 12 34 110 11 3\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "4\n3 5 0 0\n",
+    "output": "No\n\n"
+  }
+]

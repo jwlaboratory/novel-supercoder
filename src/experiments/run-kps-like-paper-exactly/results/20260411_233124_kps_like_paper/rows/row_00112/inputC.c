@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main(void){
+   int n, count = 0, i, s, key, so;
+   long a;
+   scanf("%d", &n);
+   while ( n ) {
+   count = so = 0;
+   for ( a = 1;  count < n; a++ ) {
+      s = key = 2;
+      if ( a == 1 ) ;
+      else if ( a == 2 ) {/*printf("sosuu\n")*/;count++; so += a;}
+      else {
+         while ( s < sqrt(a) + 2 && key != 0) {
+            if ( a % s == 0 ) key = 0;
+            else key = 1;
+            s++;
+         }
+      }
+      if ( a != 1 && s > sqrt(a) + 1) {/*printf("sosuu\n")*/;count++; so += a;}
+   }
+   printf("%d\n", so);
+   scanf("%d", &n);
+   }
+   return 0;
+}

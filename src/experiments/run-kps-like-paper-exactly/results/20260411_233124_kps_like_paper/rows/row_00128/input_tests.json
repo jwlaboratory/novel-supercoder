@@ -1,0 +1,42 @@
+[
+  {
+    "input": "1 5\n",
+    "output": "unsafe\n\n"
+  },
+  {
+    "input": "101 2\n",
+    "output": "safe\n\n"
+  },
+  {
+    "input": "5 10\n",
+    "output": "unsafe\n\n"
+  },
+  {
+    "input": "1 6\n",
+    "output": "unsafe\n\n"
+  },
+  {
+    "input": "111 2\n",
+    "output": "safe\n\n"
+  },
+  {
+    "input": "8 10\n",
+    "output": "unsafe\n\n"
+  },
+  {
+    "input": "0 6\n",
+    "output": "unsafe\n\n"
+  },
+  {
+    "input": "111 0\n",
+    "output": "safe\n\n"
+  },
+  {
+    "input": "11 10\n",
+    "output": "safe\n\n"
+  },
+  {
+    "input": "-1 6\n",
+    "output": "unsafe\n\n"
+  }
+]

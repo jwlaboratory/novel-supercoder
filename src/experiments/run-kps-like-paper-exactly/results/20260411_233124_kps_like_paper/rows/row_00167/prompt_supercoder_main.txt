@@ -1,0 +1,574 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+int descending_compare(const void *a, const void *b){
+    if (*(int*)a > *(int*)b){
+        return -1;
+    }else if (*(int*)a == *(int*)b){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+int ascending_compare(const void *a, const void *b){
+    if (*(int*)a < *(int*)b){
+        return -1;
+    }else if (*(int*)a == *(int*)b){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+
+int lower_bound(int *a, int n, int key){
+    int left, mid, right;
+    left = 0, right = n;
+    mid = (left + right)/2;
+    while ((left+1 != mid || mid+1 != right) && mid != left){
+        if (key > a[mid]){
+            left = mid;
+        }else{
+            right = mid+1;
+        }
+        mid = (left + right)/2;
+    }
+    if (a[left] >= key)return left;
+    if (a[mid] >= key)return mid;
+    if (a[right] >= key)return right;
+    return n;
+}
+
+int c[505];
+int s[505];
+int f[505];
+unsigned long answer[505] ={0};
+
+int main(void){
+    int n;
+    int i, j;
+    scanf("%d", &n);
+    for (i = 0; i < n-1; i++){
+        scanf("%d %d %d", &c[i], &s[i], &f[i]);
+    }
+
+    for (i = 0; i < n-1; i++){
+        answer[i] += s[i];
+        answer[i] += c[i];
+        for (j = i+1; j < n-1 ; j++){
+            if (answer[i] < s[j]){
+                answer[i] += s[j] - answer[i];
+            }else
+            if ((answer[i]-s[j]) % f[j] != 0){
+                answer[i] += f[j] - (answer[i]-s[j])%f[j];
+            }
+            answer[i] += c[j];
+        }
+    }
+
+    answer[n-1] = 0;
+
+    for (i = 0; i < n; i++){
+        printf("%lu\n", answer[i]);
+    }
+    
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.globl	descending_compare
+	.type	descending_compare, @function
+descending_compare:
+.LFB6:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -8(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	-8(%rbp), %rax
+	movl	(%rax), %edx
+	movq	-16(%rbp), %rax
+	movl	(%rax), %eax
+	cmpl	%eax, %edx
+	jle	.L2
+	movl	$-1, %eax
+	jmp	.L3
+.L2:
+	movq	-8(%rbp), %rax
+	movl	(%rax), %edx
+	movq	-16(%rbp), %rax
+	movl	(%rax), %eax
+	cmpl	%eax, %edx
+	jne	.L4
+	movl	$0, %eax
+	jmp	.L3
+.L4:
+	movl	$1, %eax
+.L3:
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	descending_compare, .-descending_compare
+	.globl	ascending_compare
+	.type	ascending_compare, @function
+ascending_compare:
+.LFB7:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -8(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	-8(%rbp), %rax
+	movl	(%rax), %edx
+	movq	-16(%rbp), %rax
+	movl	(%rax), %eax
+	cmpl	%eax, %edx
+	jge	.L6
+	movl	$-1, %eax
+	jmp	.L7
+.L6:
+	movq	-8(%rbp), %rax
+	movl	(%rax), %edx
+	movq	-16(%rbp), %rax
+	movl	(%rax), %eax
+	cmpl	%eax, %edx
+	jne	.L8
+	movl	$0, %eax
+	jmp	.L7
+.L8:
+	movl	$1, %eax
+.L7:
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	ascending_compare, .-ascending_compare
+	.globl	lower_bound
+	.type	lower_bound, @function
+lower_bound:
+.LFB8:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	%edx, -32(%rbp)
+	movl	$0, -12(%rbp)
+	movl	-28(%rbp), %eax
+	movl	%eax, -4(%rbp)
+	movl	-12(%rbp), %edx
+	movl	-4(%rbp), %eax
+	addl	%edx, %eax
+	movl	%eax, %edx
+	shrl	$31, %edx
+	addl	%edx, %eax
+	sarl	%eax
+	movl	%eax, -8(%rbp)
+	jmp	.L10
+.L15:
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %eax
+	cmpl	%eax, -32(%rbp)
+	jle	.L11
+	movl	-8(%rbp), %eax
+	movl	%eax, -12(%rbp)
+	jmp	.L12
+.L11:
+	movl	-8(%rbp), %eax
+	addl	$1, %eax
+	movl	%eax, -4(%rbp)
+.L12:
+	movl	-12(%rbp), %edx
+	movl	-4(%rbp), %eax
+	addl	%edx, %eax
+	movl	%eax, %edx
+	shrl	$31, %edx
+	addl	%edx, %eax
+	sarl	%eax
+	movl	%eax, -8(%rbp)
+.L10:
+	movl	-12(%rbp), %eax
+	addl	$1, %eax
+	cmpl	%eax, -8(%rbp)
+	jne	.L13
+	movl	-8(%rbp), %eax
+	addl	$1, %eax
+	cmpl	%eax, -4(%rbp)
+	je	.L14
+.L13:
+	movl	-8(%rbp), %eax
+	cmpl	-12(%rbp), %eax
+	jne	.L15
+.L14:
+	movl	-12(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %eax
+	cmpl	%eax, -32(%rbp)
+	jg	.L16
+	movl	-12(%rbp), %eax
+	jmp	.L17
+.L16:
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %eax
+	cmpl	%eax, -32(%rbp)
+	jg	.L18
+	movl	-8(%rbp), %eax
+	jmp	.L17
+.L18:
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %eax
+	cmpl	%eax, -32(%rbp)
+	jg	.L19
+	movl	-4(%rbp), %eax
+	jmp	.L17
+.L19:
+	movl	-28(%rbp), %eax
+.L17:
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	lower_bound, .-lower_bound
+	.globl	c
+	.bss
+	.align 32
+	.type	c, @object
+	.size	c, 2020
+c:
+	.zero	2020
+	.globl	s
+	.align 32
+	.type	s, @object
+	.size	s, 2020
+s:
+	.zero	2020
+	.globl	f
+	.align 32
+	.type	f, @object
+	.size	f, 2020
+f:
+	.zero	2020
+	.globl	answer
+	.align 32
+	.type	answer, @object
+	.size	answer, 4040
+answer:
+	.zero	4040
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d %d %d"
+.LC2:
+	.string	"%lu\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB9:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-20(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -16(%rbp)
+	jmp	.L21
+.L22:
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	f(%rip), %rax
+	leaq	(%rdx,%rax), %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	s(%rip), %rax
+	addq	%rax, %rdx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rsi
+	leaq	c(%rip), %rax
+	addq	%rsi, %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	addl	$1, -16(%rbp)
+.L21:
+	movl	-20(%rbp), %eax
+	subl	$1, %eax
+	cmpl	%eax, -16(%rbp)
+	jl	.L22
+	movl	$0, -16(%rbp)
+	jmp	.L23
+.L28:
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	s(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cltq
+	addq	%rax, %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	%rcx, (%rdx,%rax)
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	c(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cltq
+	addq	%rax, %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	%rcx, (%rdx,%rax)
+	movl	-16(%rbp), %eax
+	addl	$1, %eax
+	movl	%eax, -12(%rbp)
+	jmp	.L24
+.L27:
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rdx
+	movl	-12(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rcx
+	leaq	s(%rip), %rax
+	movl	(%rcx,%rax), %eax
+	cltq
+	cmpq	%rax, %rdx
+	jnb	.L25
+	movl	-12(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	s(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cltq
+	movl	-16(%rbp), %edx
+	movslq	%edx, %rdx
+	leaq	0(,%rdx,8), %rcx
+	leaq	answer(%rip), %rdx
+	movq	%rax, (%rcx,%rdx)
+	jmp	.L26
+.L25:
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rax
+	movl	-12(%rbp), %edx
+	movslq	%edx, %rdx
+	leaq	0(,%rdx,4), %rcx
+	leaq	s(%rip), %rdx
+	movl	(%rcx,%rdx), %edx
+	movslq	%edx, %rdx
+	subq	%rdx, %rax
+	movl	-12(%rbp), %edx
+	movslq	%edx, %rdx
+	leaq	0(,%rdx,4), %rcx
+	leaq	f(%rip), %rdx
+	movl	(%rcx,%rdx), %edx
+	movslq	%edx, %rcx
+	movl	$0, %edx
+	divq	%rcx
+	movq	%rdx, %rax
+	testq	%rax, %rax
+	je	.L26
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rdi
+	movl	-12(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	f(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	movslq	%eax, %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rax
+	movl	-12(%rbp), %edx
+	movslq	%edx, %rdx
+	leaq	0(,%rdx,4), %rsi
+	leaq	s(%rip), %rdx
+	movl	(%rsi,%rdx), %edx
+	movslq	%edx, %rdx
+	subq	%rdx, %rax
+	movl	-12(%rbp), %edx
+	movslq	%edx, %rdx
+	leaq	0(,%rdx,4), %rsi
+	leaq	f(%rip), %rdx
+	movl	(%rsi,%rdx), %edx
+	movslq	%edx, %rsi
+	movl	$0, %edx
+	divq	%rsi
+	movq	%rcx, %rax
+	subq	%rdx, %rax
+	leaq	(%rdi,%rax), %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	%rcx, (%rdx,%rax)
+.L26:
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rcx
+	movl	-12(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	c(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	cltq
+	addq	%rax, %rcx
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	%rcx, (%rdx,%rax)
+	addl	$1, -12(%rbp)
+.L24:
+	movl	-20(%rbp), %eax
+	subl	$1, %eax
+	cmpl	%eax, -12(%rbp)
+	jl	.L27
+	addl	$1, -16(%rbp)
+.L23:
+	movl	-20(%rbp), %eax
+	subl	$1, %eax
+	cmpl	%eax, -16(%rbp)
+	jl	.L28
+	movl	-20(%rbp), %eax
+	subl	$1, %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	$0, (%rdx,%rax)
+	movl	$0, -16(%rbp)
+	jmp	.L29
+.L30:
+	movl	-16(%rbp), %eax
+	cltq
+	leaq	0(,%rax,8), %rdx
+	leaq	answer(%rip), %rax
+	movq	(%rdx,%rax), %rax
+	movq	%rax, %rsi
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	addl	$1, -16(%rbp)
+.L29:
+	movl	-20(%rbp), %eax
+	cmpl	%eax, -16(%rbp)
+	jl	.L30
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L32
+	call	__stack_chk_fail@PLT
+.L32:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

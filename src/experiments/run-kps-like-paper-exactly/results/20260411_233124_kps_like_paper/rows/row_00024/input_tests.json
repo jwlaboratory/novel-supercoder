@@ -1,0 +1,42 @@
+[
+  {
+    "input": "86 20\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "147 6\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "9 20\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "9 9\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "268 8\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "14 7\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "8 24\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "12 12\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "624 18\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "48 64\n",
+    "output": "16\n\n"
+  }
+]

@@ -1,0 +1,107 @@
+.file	"inputC.c"
+	.text
+	.globl	a
+	.bss
+	.align 32
+	.type	a, @object
+	.size	a, 4000000
+a:
+	.zero	4000000
+	.section	.rodata
+.LC0:
+	.string	"%d\n"
+.LC1:
+	.string	"%d"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+.L2:
+	leaq	.LC1(%rip), %rdi
+	movl	$0, %esi
+	call	__isoc99_scanf@PLT
+	cmpl	$-1, %eax
+	jne	.L10
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L12
+	call	__stack_chk_fail@PLT
+.L12:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+.L10:
+	movl	$0, -12(%rbp)
+	movl	$2, -20(%rbp)
+.L3:
+	movl	-20(%rbp), %eax
+	cmpl	-24(%rbp), %eax
+	jg	.L5
+	movl	-20(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	a(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	testl	%eax, %eax
+	jne	.L6
+	addl	$1, -12(%rbp)
+.L6:
+	movl	$2, -16(%rbp)
+.L7:
+	movl	-20(%rbp), %eax
+	imull	-16(%rbp), %eax
+	movl	%eax, %edx
+	movl	-24(%rbp), %eax
+	cmpl	%eax, %edx
+	jle	.L8
+	movl	-20(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	leaq	a(%rip), %rax
+	movl	$1, (%rdx,%rax)
+	addl	$1, -16(%rbp)
+	jmp	.L7
+.L8:
+	addl	$1, -20(%rbp)
+	jmp	.L3
+.L5:
+	movl	-12(%rbp), %eax
+	movl	%eax, %esi
+	leaq	.LC0(%rip), %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	jmp	.L2
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

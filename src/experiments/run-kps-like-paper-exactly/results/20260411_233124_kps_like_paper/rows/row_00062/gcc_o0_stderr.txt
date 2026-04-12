@@ -1,0 +1,7 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00062/inputC.c: In function 'merge':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00062/inputC.c:16:11: warning: overflow in conversion from 'float' to 'int' changes value from '+Inff' to '2147483647' [-Woverflow]
+   16 |   L[n1] = INFINITY;
+      |           ^~~~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00062/inputC.c:17:11: warning: overflow in conversion from 'float' to 'int' changes value from '+Inff' to '2147483647' [-Woverflow]
+   17 |   R[n2] = INFINITY;
+      |           ^~~~~~~~

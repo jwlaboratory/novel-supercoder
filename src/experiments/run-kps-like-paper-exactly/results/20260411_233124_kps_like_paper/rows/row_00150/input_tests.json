@@ -1,0 +1,42 @@
+[
+  {
+    "input": "20\nxxzaffeeeeedfkkkkllq\n",
+    "output": "10\n\n"
+  },
+  {
+    "input": "5\naaaab\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "10\naabbcbaaca\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "20\nxfzaffeeeeedxkkkkllq\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "20\nxfzaffeeeeedxkkkkmlq\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "5\naa`ab\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "10\nacaaacbbaa\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "20\nxfzaffedeeedxkkkkmlq\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "5\naa``b\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "20\nxfzaefedeeedxkkkkmlq\n",
+    "output": "15\n\n"
+  }
+]

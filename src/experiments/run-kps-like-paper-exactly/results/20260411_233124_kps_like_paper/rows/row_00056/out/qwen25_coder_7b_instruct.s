@@ -1,0 +1,126 @@
+.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"%d %d %d"
+.LC2:
+	.string	"YES"
+.LC3:
+	.string	"NO"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-28(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -12(%rbp)
+.L2:
+	leaq	-16(%rbp), %rcx
+	leaq	-20(%rbp), %rdx
+	leaq	-24(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-24(%rbp), %edx
+	movl	-24(%rbp), %eax
+	movl	%edx, %ecx
+	imull	%eax, %ecx
+	movl	-20(%rbp), %edx
+	movl	-20(%rbp), %eax
+	imull	%edx, %eax
+	addl	%eax, %ecx
+	movl	-16(%rbp), %edx
+	movl	-16(%rbp), %eax
+	imull	%edx, %eax
+	cmpl	%eax, %ecx
+	je	.L3
+	movl	-16(%rbp), %edx
+	movl	-16(%rbp), %eax
+	movl	%edx, %ecx
+	imull	%eax, %ecx
+	movl	-20(%rbp), %edx
+	movl	-20(%rbp), %eax
+	imull	%edx, %eax
+	addl	%eax, %ecx
+	movl	-24(%rbp), %edx
+	movl	-24(%rbp), %eax
+	imull	%edx, %eax
+	cmpl	%eax, %ecx
+	je	.L3
+	movl	-24(%rbp), %edx
+	movl	-24(%rbp), %eax
+	movl	%edx, %ecx
+	imull	%eax, %ecx
+	movl	-16(%rbp), %edx
+	movl	-16(%rbp), %eax
+	imull	%edx, %eax
+	addl	%eax, %ecx
+	movl	-20(%rbp), %edx
+	movl	-20(%rbp), %eax
+	imull	%edx, %eax
+	cmpl	%eax, %ecx
+	jne	.L4
+.L3:
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+	jmp	.L5
+.L4:
+	leaq	.LC3(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+.L5:
+	addl	$1, -12(%rbp)
+	cmpl	%eax, -12(%rbp)
+	jl	.L2
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L8
+	call	__stack_chk_fail@PLT
+.L8:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+	.long	0x4
+4:

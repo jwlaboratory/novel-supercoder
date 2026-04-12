@@ -1,0 +1,1 @@
+main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}

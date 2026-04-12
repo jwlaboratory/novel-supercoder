@@ -1,0 +1,121 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include <assert.h>
+
+int main(void){
+		long long int a,b = 100,c = 0;
+    //int ans;
+		scanf("%lld",&a);
+
+    while(1){
+    b = b*1.01;
+    c++;
+    if(b >= a){
+      break;
+    }
+  }
+  printf("%lld\n",c);
+
+
+		return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%lld"
+.LC2:
+	.string	"%lld\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB6:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movq	$100, -24(%rbp)
+	movq	$0, -16(%rbp)
+	leaq	-32(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+.L4:
+	pxor	%xmm1, %xmm1
+	cvtsi2sdq	-24(%rbp), %xmm1
+	movsd	.LC1(%rip), %xmm0
+	mulsd	%xmm1, %xmm0
+	cvttsd2siq	%xmm0, %rax
+	movq	%rax, -24(%rbp)
+	addq	$1, -16(%rbp)
+	movq	-32(%rbp), %rax
+	cmpq	%rax, -24(%rbp)
+	jge	.L8
+	jmp	.L4
+.L8:
+	nop
+	movq	-16(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L6
+	call	__stack_chk_fail@PLT
+.L6:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	main, .-main
+	.section	.rodata
+	.align 8
+.LC1:
+	.long	-1030792151
+	.long	1072703733
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

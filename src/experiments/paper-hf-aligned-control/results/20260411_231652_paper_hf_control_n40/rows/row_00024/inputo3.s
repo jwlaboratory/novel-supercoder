@@ -1,0 +1,248 @@
+.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC1:
+	.string	"%d"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC1(%rip), %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	movq	%rbp, %rdi
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	leaq	12(%rsp), %rsi
+	movq	%rbp, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	leaq	16(%rsp), %rsi
+	movq	%rbp, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	leaq	20(%rsp), %rsi
+	movq	%rbp, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movl	8(%rsp), %esi
+	testl	%esi, %esi
+	jle	.L14
+	movl	12(%rsp), %ecx
+	movl	20(%rsp), %edi
+	movl	16(%rsp), %r8d
+	testl	%ecx, %ecx
+	jle	.L15
+	cmpl	%esi, %ecx
+	movl	$1, %r9d
+	cmovg	%esi, %ecx
+	testl	%ecx, %ecx
+	cmovg	%ecx, %r9d
+	cmpl	$4, %ecx
+	jle	.L16
+	leal	(%r8,%r8), %eax
+	movd	%r8d, %xmm6
+	movl	%r9d, %edx
+	movdqa	.LC0(%rip), %xmm3
+	leal	(%rax,%r8), %r10d
+	movd	%eax, %xmm1
+	pxor	%xmm0, %xmm0
+	shrl	$2, %edx
+	movd	%r10d, %xmm5
+	punpckldq	%xmm6, %xmm0
+	pshufd	$0, %xmm6, %xmm7
+	movdqa	.LC2(%rip), %xmm6
+	leal	0(,%r8,4), %eax
+	punpckldq	%xmm5, %xmm1
+	movdqa	.LC3(%rip), %xmm5
+	movd	%eax, %xmm4
+	punpcklqdq	%xmm1, %xmm0
+	xorl	%eax, %eax
+	pshufd	$0, %xmm4, %xmm4
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movdqa	%xmm3, %xmm2
+	movdqa	%xmm0, %xmm1
+	paddd	%xmm6, %xmm3
+	addl	$1, %eax
+	paddd	%xmm4, %xmm0
+	paddd	%xmm7, %xmm1
+	paddd	%xmm5, %xmm2
+	cmpl	%edx, %eax
+	jne	.L5
+	movl	%r9d, %r11d
+	pshufd	$255, %xmm2, %xmm2
+	pshufd	$255, %xmm1, %xmm1
+	movl	%r8d, %ebx
+	andl	$-4, %r11d
+	movd	%xmm2, %eax
+	movd	%xmm1, %edx
+	imull	%r11d, %ebx
+	leal	1(%r11), %r10d
+	cmpl	%r11d, %r9d
+	je	.L7
+.L4:
+	leal	1(%r10), %eax
+	leal	(%r8,%rbx), %edx
+	cmpl	%eax, %ecx
+	jl	.L7
+	leal	2(%r10), %eax
+	addl	%r8d, %edx
+	cmpl	%eax, %ecx
+	jl	.L7
+	leal	3(%r10), %eax
+	addl	%r8d, %edx
+	cmpl	%eax, %ecx
+	jl	.L7
+	addl	%r8d, %edx
+	leal	4(%r10), %eax
+.L7:
+	cmpl	%eax, %esi
+	jl	.L2
+.L3:
+	movl	%esi, %ecx
+	movl	$1, %r8d
+	subl	%eax, %ecx
+	cmpl	%eax, %esi
+	leal	1(%rcx), %r9d
+	cmovl	%r8d, %r9d
+	jl	.L8
+	cmpl	$2, %ecx
+	jbe	.L8
+	leal	(%rdi,%rdx), %r10d
+	movd	%edx, %xmm1
+	movd	%edi, %xmm6
+	movl	%r9d, %r8d
+	leal	(%rdi,%r10), %ecx
+	movd	%r10d, %xmm5
+	leal	0(,%rdi,4), %ebx
+	shrl	$2, %r8d
+	leal	(%rdi,%rcx), %r11d
+	movd	%ecx, %xmm0
+	punpckldq	%xmm5, %xmm1
+	xorl	%ecx, %ecx
+	movd	%r11d, %xmm4
+	movd	%ebx, %xmm2
+	pshufd	$0, %xmm6, %xmm3
+	punpckldq	%xmm4, %xmm0
+	pshufd	$0, %xmm2, %xmm2
+	punpcklqdq	%xmm0, %xmm1
+	.p2align 4,,10
+	.p2align 3
+.L9:
+	movdqa	%xmm1, %xmm0
+	addl	$1, %ecx
+	paddd	%xmm2, %xmm1
+	paddd	%xmm3, %xmm0
+	cmpl	%r8d, %ecx
+	jne	.L9
+	movl	%r9d, %r8d
+	movl	%edi, %r10d
+	pshufd	$255, %xmm0, %xmm0
+	andl	$-4, %r8d
+	movd	%xmm0, %ecx
+	imull	%r8d, %r10d
+	addl	%r8d, %eax
+	addl	%r10d, %edx
+	cmpl	%r8d, %r9d
+	je	.L17
+.L8:
+	leal	1(%rax), %ecx
+	addl	%edi, %edx
+	cmpl	%esi, %ecx
+	jg	.L2
+	addl	$2, %eax
+	addl	%edi, %edx
+	cmpl	%eax, %esi
+	jl	.L2
+	addl	%edi, %edx
+.L2:
+	xorl	%eax, %eax
+	movq	%rbp, %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L24
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L15:
+	.cfi_restore_state
+	movl	$1, %eax
+	xorl	%edx, %edx
+	jmp	.L3
+.L17:
+	movl	%ecx, %edx
+	jmp	.L2
+.L14:
+	xorl	%edx, %edx
+	jmp	.L2
+.L16:
+	movl	$1, %r10d
+	xorl	%ebx, %ebx
+	jmp	.L4
+.L24:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.section	.rodata.cst16,"aM",@progbits,16
+	.align 16
+.LC0:
+	.long	1
+	.long	2
+	.long	3
+	.long	4
+	.align 16
+.LC2:
+	.long	4
+	.long	4
+	.long	4
+	.long	4
+	.align 16
+.LC3:
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

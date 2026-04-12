@@ -1,0 +1,42 @@
+[
+  {
+    "input": "dre`merer\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "maerdesare\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "resaremaerd\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "dre`meqer\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "er`sedream\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "ersaremaerd\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "reqem`erd\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "eq`sedream\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "ersaremadrd\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "reqem`erc\n",
+    "output": "NO\n\n"
+  }
+]

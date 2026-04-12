@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(void){
+  int tramp[13][4]={0};//S=[x][0] H=[x][1] C=[x][2] D=[x][3]
+  int n,i,num;
+  char pic;
+  scanf("%d\n",&n);
+  for(i=0;i<n;i++){
+    scanf("\n%c %d",&pic,&num);//改行も含まないと値がおかしくなる
+    switch(pic){
+    case 'S':tramp[num-1][0]=1;break;
+    case 'H':tramp[num-1][1]=1;break;
+    case 'C':tramp[num-1][2]=1;break;
+    case 'D':tramp[num-1][3]=1;break;
+    default:break;
+    }
+  }
+  for(i=0;i<4;i++){
+    for(n=0;n<13;n++){
+      if(tramp[n][i] == 0){
+	switch(i){
+	case 0:printf("S %d\n",n+1);break;
+	case 1:printf("H %d\n",n+1);break;
+	case 2:printf("C %d\n",n+1);break;
+	case 3:printf("D %d\n",n+1);break;
+	default:break;
+	}
+      }
+    }
+  }
+  return 0;
+}

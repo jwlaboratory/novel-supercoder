@@ -1,0 +1,20 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:1: warning: return type defaults to 'int' [-Wimplicit-int]
+    1 | main(){int N;scanf("%d",&N);int i=N/111;if(N % 111 != 0){i++;}printf("%d\n", i*111);}
+      | ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:14: warning: implicit declaration of function 'scanf' [-Wimplicit-function-declaration]
+    1 | main(){int N;scanf("%d",&N);int i=N/111;if(N % 111 != 0){i++;}printf("%d\n", i*111);}
+      |              ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'scanf'
+  +++ |+#include <stdio.h>
+    1 | main(){int N;scanf("%d",&N);int i=N/111;if(N % 111 != 0){i++;}printf("%d\n", i*111);}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:14: warning: incompatible implicit declaration of built-in function 'scanf' [-Wbuiltin-declaration-mismatch]
+    1 | main(){int N;scanf("%d",&N);int i=N/111;if(N % 111 != 0){i++;}printf("%d\n", i*111);}
+      |              ^~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:14: note: include '<stdio.h>' or provide a declaration of 'scanf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:63: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    1 | main(){int N;scanf("%d",&N);int i=N/111;if(N % 111 != 0){i++;}printf("%d\n", i*111);}
+      |                                                               ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:63: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:63: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_233124_kps_like_paper/rows/row_00104/inputC.c:1:63: note: include '<stdio.h>' or provide a declaration of 'printf'

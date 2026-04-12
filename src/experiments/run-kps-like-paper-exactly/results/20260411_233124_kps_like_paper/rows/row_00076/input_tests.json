@@ -1,0 +1,42 @@
+[
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nlu\n10\nru lu ld rd ru rd ru lu rd ld\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n0\nlu ld lu ru\n0\nul\n10\nvr lu ld rd rv rd ru lu rc kd\n0\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nul\n10\nru lu ld rd ru rd ru lu rd ld\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nlu\n10\nru lu ld rd su rd ru lu rd ld\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nul\n10\nru lu ld rd rt rd ru lu rd ld\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nlu\n10\nru lu ld rd su rd ru lu sd ld\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nul\n10\nru lu ld rd rt dr ru lu rd ld\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nlu\n10\nru lu ld dr su rd ru lu sd ld\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nul\n10\nru lu ld rd rt dr ru lu rd dl\n0\n",
+    "output": "2\n1\n\n"
+  },
+  {
+    "input": "4\nlu ru ld rd\n4\nlu ld lu ru\n0\nlu\n10\nru lu ld rd ru rd ru lu rc ld\n0\n",
+    "output": "2\n1\n\n"
+  }
+]

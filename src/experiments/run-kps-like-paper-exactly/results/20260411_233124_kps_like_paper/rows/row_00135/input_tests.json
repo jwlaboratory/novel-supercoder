@@ -1,0 +1,42 @@
+[
+  {
+    "input": "10\n3\n5\n",
+    "output": "4\n2\n3\n\n"
+  },
+  {
+    "input": "10\n3\n9\n",
+    "output": "4\n2\n4\n\n"
+  },
+  {
+    "input": "10\n3\n2\n",
+    "output": "4\n2\n1\n\n"
+  },
+  {
+    "input": "10\n6\n2\n",
+    "output": "4\n3\n1\n\n"
+  },
+  {
+    "input": "10\n6\n11\n",
+    "output": "4\n3\n5\n\n"
+  },
+  {
+    "input": "10\n1\n5\n",
+    "output": "4\n0\n3\n\n"
+  },
+  {
+    "input": "10\n1\n2\n",
+    "output": "4\n0\n1\n\n"
+  },
+  {
+    "input": "10\n2\n2\n",
+    "output": "4\n1\n1\n\n"
+  },
+  {
+    "input": "10\n3\n4\n",
+    "output": "4\n2\n2\n\n"
+  },
+  {
+    "input": "10\n6\n3\n",
+    "output": "4\n3\n2\n\n"
+  }
+]

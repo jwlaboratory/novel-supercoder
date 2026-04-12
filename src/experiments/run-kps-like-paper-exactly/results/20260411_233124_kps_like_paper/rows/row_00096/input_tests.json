@@ -1,0 +1,42 @@
+[
+  {
+    "input": "2\n4\n5\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "2\n4\n9\n",
+    "output": "13\n\n"
+  },
+  {
+    "input": "2\n2\n9\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "2\n3\n11\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "2\n0\n21\n",
+    "output": "21\n\n"
+  },
+  {
+    "input": "2\n1\n21\n",
+    "output": "22\n\n"
+  },
+  {
+    "input": "2\n2\n21\n",
+    "output": "23\n\n"
+  },
+  {
+    "input": "2\n4\n21\n",
+    "output": "25\n\n"
+  },
+  {
+    "input": "2\n4\n13\n",
+    "output": "17\n\n"
+  },
+  {
+    "input": "2\n4\n23\n",
+    "output": "27\n\n"
+  }
+]

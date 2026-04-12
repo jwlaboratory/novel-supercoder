@@ -1,0 +1,187 @@
+.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%d"
+.LC1:
+	.string	"YES"
+.LC2:
+	.string	"NO"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movq	$0, -20(%rbp)
+	movl	$0, -12(%rbp)
+	movl	$0, -24(%rbp)
+	movl	$0, -28(%rbp)
+	jmp	.L2
+.L3:
+	leaq	-20(%rbp), %rdx
+	movl	-28(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	addq	%rdx, %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	addl	$1, -28(%rbp)
+.L2:
+	cmpl	$2, -28(%rbp)
+	jle	.L3
+	leaq	-20(%rbp), %rax
+	movl	$3, %esi
+	movq	%rax, %rdi
+	call	bubbleSort
+	movl	-20(%rbp), %eax
+	cmpl	$7, %eax
+	je	.L4
+	movl	$1, -24(%rbp)
+.L4:
+	movl	$1, -28(%rbp)
+	jmp	.L5
+.L7:
+	movl	-28(%rbp), %eax
+	cltq
+	movl	-20(%rbp,%rax,4), %eax
+	cmpl	$5, %eax
+	je	.L6
+	movl	$1, -24(%rbp)
+.L6:
+	addl	$1, -28(%rbp)
+.L5:
+	cmpl	$2, -28(%rbp)
+	jle	.L7
+	cmpl	$0, -24(%rbp)
+	jne	.L8
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+	jmp	.L9
+.L8:
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+.L9:
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L11
+	call	__stack_chk_fail@PLT
+.L11:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	bubbleSort
+	.type	bubbleSort, @function
+bubbleSort:
+.LFB1:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -24(%rbp)
+	movl	%esi, -28(%rbp)
+	movl	$0, -12(%rbp)
+	jmp	.L13
+.L17:
+	movl	-28(%rbp), %eax
+	subl	$1, %eax
+	movl	%eax, -8(%rbp)
+	jmp	.L14
+.L16:
+	movl	-8(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	leaq	-4(%rax), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %edx
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rcx
+	movq	-24(%rbp), %rax
+	addq	%rcx, %rax
+	movl	(%rax), %eax
+	cmpl	%eax, %edx
+	jge	.L15
+	movl	-8(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	leaq	-4(%rax), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %eax
+	movl	%eax, -4(%rbp)
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rax, %rdx
+	movl	-4(%rbp), %eax
+	movl	%eax, (%rdx)
+	movl	-8(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	-4(%rbp), %eax
+	movl	%eax, (%rdx)
+.L15:
+	subl	$1, -8(%rbp)
+.L14:
+	movl	-8(%rbp), %eax
+	cmpl	-12(%rbp), %eax
+	jg	.L16
+	addl	$1, -12(%rbp)
+.L13:
+	movl	-28(%rbp), %eax
+	subl	$1, %eax
+	cmpl	%eax, -12(%rbp)
+	jl	.L17
+	nop
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	bubbleSort, .-bubbleSort
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

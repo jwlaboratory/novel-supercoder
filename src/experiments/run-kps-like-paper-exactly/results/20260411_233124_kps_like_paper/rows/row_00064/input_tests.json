@@ -1,0 +1,42 @@
+[
+  {
+    "input": "a a `\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "baaaa`aaaa aabaaaaaaa aaaaa`aaab\n",
+    "output": "YES\n\n"
+  },
+  {
+    "input": "rnh gorilla apple\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "aaaaaaaaab aaaaaaaaaa aaaaa`aaab\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "ybkiniku unagi sushi\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "a b a\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "rng gorilla paple\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "aaaaaaaaab aaaaaaaaaa baaa`aaaaa\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "ybkiniku inagu sushi\n",
+    "output": "NO\n\n"
+  },
+  {
+    "input": "a b `\n",
+    "output": "NO\n\n"
+  }
+]

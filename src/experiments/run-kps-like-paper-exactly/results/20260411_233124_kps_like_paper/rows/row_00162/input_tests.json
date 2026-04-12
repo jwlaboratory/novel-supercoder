@@ -1,0 +1,42 @@
+[
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 12\ninsert 1\ninsert 29\nfind 12\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "yes\nno\n 1 12 17 25 29 30 88\n 30 12 1 29 17 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 12\ninsert 2\ninsert 20\nfind 12\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "yes\nno\n 2 12 17 20 25 30 88\n 30 12 2 20 17 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 12\ninsert 1\ninsert 29\nfind 15\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "no\nno\n 1 12 17 25 29 30 88\n 30 12 1 29 17 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 12\ninsert 1\ninsert 20\nfind 13\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "no\nno\n 1 12 17 20 25 30 88\n 30 12 1 20 17 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 19\ninsert 1\ninsert 20\nfind 13\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "no\nno\n 1 17 19 20 25 30 88\n 30 19 1 17 20 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 12\ninsert 0\ninsert 29\nfind 12\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "yes\nno\n 0 12 17 25 29 30 88\n 30 12 0 29 17 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 12\ninsert 2\ninsert 20\nfind 12\ninsert 1\ninsert 25\nfind 16\nprint\n",
+    "output": "yes\nno\n 1 2 12 20 25 30 88\n 30 12 2 1 20 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 19\ninsert 1\ninsert 20\nfind 13\ninsert 17\ninsert 25\nfind 25\nprint\n",
+    "output": "no\nyes\n 1 17 19 20 25 30 88\n 30 19 1 17 20 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 30\ninsert 88\ninsert 7\ninsert 0\ninsert 29\nfind 12\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "no\nno\n 0 7 17 25 29 30 88\n 30 7 0 29 17 25 88\n\n"
+  },
+  {
+    "input": "10\ninsert 35\ninsert 88\ninsert 12\ninsert 2\ninsert 20\nfind 12\ninsert 17\ninsert 25\nfind 16\nprint\n",
+    "output": "yes\nno\n 2 12 17 20 25 35 88\n 35 12 2 20 17 25 88\n\n"
+  }
+]

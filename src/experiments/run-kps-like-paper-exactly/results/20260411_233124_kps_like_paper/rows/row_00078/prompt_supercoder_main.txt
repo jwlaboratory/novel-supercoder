@@ -1,0 +1,107 @@
+Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main()
+{
+  long long int i,j,k,n,a,b,c;
+   scanf("%lld %lld %lld",&a,&b,&c);
+   k=a+b+c;
+   if(k==17){
+    printf("YES\n");
+   }
+   else{
+    printf("NO\n");
+   }
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	"inputC.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"%lld %lld %lld"
+.LC1:
+	.string	"YES"
+.LC2:
+	.string	"NO"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$48, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-24(%rbp), %rcx
+	leaq	-32(%rbp), %rdx
+	leaq	-40(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movq	-40(%rbp), %rdx
+	movq	-32(%rbp), %rax
+	addq	%rax, %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movq	%rax, -16(%rbp)
+	cmpq	$17, -16(%rbp)
+	jne	.L2
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+	jmp	.L3
+.L2:
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	call	puts@PLT
+.L3:
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L5
+	call	__stack_chk_fail@PLT
+.L5:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

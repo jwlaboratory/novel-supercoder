@@ -1,0 +1,28 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+
+#include<stdio.h>
+int main()
+{
+  long long  int N,K,i,s=0,k,l,a[100000];
+    scanf("%lld %lld",&N,&K);
+    for(i=0;i<N;i++)
+    {
+      scanf("%lld",&a[i]);
+    }
+    for(i=0;i<N;i++)
+    {
+        if(a[i]>=K)
+        {
+            s=s+1;
+        }
+    }
+    printf("%lld",s);
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

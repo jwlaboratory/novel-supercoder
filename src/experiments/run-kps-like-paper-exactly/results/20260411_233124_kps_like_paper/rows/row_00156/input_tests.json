@@ -1,0 +1,42 @@
+[
+  {
+    "input": "2 4 2 2 1\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 8 2 0 0\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "5 4 2 0 1\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 4 2 2 2\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "5 8 2 0 1\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 6 2 2 2\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 8 2 0 1\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "3 6 2 2 2\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "0 6 2 2 2\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "2 8 1 0 0\n",
+    "output": "Yes\n\n"
+  }
+]

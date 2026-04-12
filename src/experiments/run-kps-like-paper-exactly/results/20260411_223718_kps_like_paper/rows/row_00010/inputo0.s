@@ -1,0 +1,114 @@
+	.file	"inputC.c"
+	.text
+	.globl	i
+	.data
+	.align 4
+	.type	i, @object
+	.size	i, 4
+i:
+	.long	81
+	.section	.rodata
+.LC0:
+	.string	"%dx%d=%d\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	jmp	.L2
+.L3:
+	movl	i(%rip), %eax
+	movslq	%eax, %rdx
+	imulq	$954437177, %rdx, %rdx
+	shrq	$32, %rdx
+	sarl	%edx
+	movl	%eax, %esi
+	sarl	$31, %esi
+	movl	%edx, %ecx
+	subl	%esi, %ecx
+	movl	%ecx, %edx
+	sall	$3, %edx
+	addl	%ecx, %edx
+	subl	%edx, %eax
+	movl	%eax, %ecx
+	movl	$9, %eax
+	subl	%ecx, %eax
+	movl	%eax, %esi
+	movl	i(%rip), %eax
+	movslq	%eax, %rdx
+	imulq	$954437177, %rdx, %rdx
+	shrq	$32, %rdx
+	sarl	%edx
+	sarl	$31, %eax
+	subl	%edx, %eax
+	addl	$9, %eax
+	imull	%eax, %esi
+	movl	i(%rip), %eax
+	movslq	%eax, %rdx
+	imulq	$954437177, %rdx, %rdx
+	shrq	$32, %rdx
+	sarl	%edx
+	movl	%eax, %edi
+	sarl	$31, %edi
+	movl	%edx, %ecx
+	subl	%edi, %ecx
+	movl	%ecx, %edx
+	sall	$3, %edx
+	addl	%ecx, %edx
+	subl	%edx, %eax
+	movl	%eax, %ecx
+	movl	$9, %eax
+	subl	%ecx, %eax
+	movl	%eax, %edx
+	movl	i(%rip), %eax
+	movslq	%eax, %rcx
+	imulq	$954437177, %rcx, %rcx
+	shrq	$32, %rcx
+	sarl	%ecx
+	sarl	$31, %eax
+	subl	%ecx, %eax
+	addl	$9, %eax
+	movl	%esi, %ecx
+	movl	%eax, %esi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+.L2:
+	movl	i(%rip), %eax
+	leal	-1(%rax), %edx
+	movl	%edx, i(%rip)
+	testl	%eax, %eax
+	jne	.L3
+	movl	$0, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

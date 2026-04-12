@@ -1,0 +1,1 @@
+j,k;main(i){for(;k=i-10;i+=!(j%=9))printf("%dx%d=%d\n",i,j,++j*i);}

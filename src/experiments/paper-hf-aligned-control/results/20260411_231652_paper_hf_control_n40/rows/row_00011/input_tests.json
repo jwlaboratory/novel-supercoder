@@ -1,0 +1,422 @@
+[
+  {
+    "input": "a a `\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaaa`aaaa aabaaaaaaa aaaaa`aaab\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "rnh gorilla apple\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "aaaaaaaaab aaaaaaaaaa aaaaa`aaab\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ybkiniku unagi sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a b a\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "rng gorilla paple\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "aaaaaaaaab aaaaaaaaaa baaa`aaaaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ybkiniku inagu sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a b `\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "rnh gorilla paple\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "aaaaaaaaab aabaaaaaaa baaa`aaaaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ukinikby inagu sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "b a a\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "rnh gorilla pepla\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "aaaa`aaaab aabaaaaaaa baaa`aaaaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ukinhkby inagu sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "b a b\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "rnh allirog pepla\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "aaaa`aaaab aaaaaaabaa baaa`aaaaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ukinhkby inagt sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "c a b\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "roh allirog pepla\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "aaaa`aaaab aabaaaaaaa aaaaa`aaab\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ukhnikby inagt sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "c b b\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "roh `llirog pepla\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ukhnikby in`gt sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "c b a\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "roh `llirog plpea\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaaaaaaa` aabaaaaaaa aaaaa`aaab\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ukhnikby in`gt svshi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "d b a\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "roh `glirol plpea\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaaaaaa`` aabaaaaaaa aaaaa`aaab\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ukhnikby in`gt svsgi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "d c a\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "roh `glirol aeplp\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaaaaaa`` aabaaaaaa` aaaaa`aaab\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ykhnikbu in`gt svsgi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "d c `\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "roh `glirok aeplp\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaaaaaa`` `aaaaaabaa aaaaa`aaab\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "ykhnikbu in`gt svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "c c `\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "roh `glirok `eplp\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` `aaaaaabaa aaaaa`aaab\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "ubkinhky in`gt svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "b c `\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "rph `glirok `eplp\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` `aaabaabaa aaaaa`aaab\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "ubkinhky in`gu svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "b c _\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "rph `gilrok `eplp\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` `aaaba`baa aaaaa`aaab\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "ubkhnhky in`gu svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a c _\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hpr `gilrok `eplp\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` `aaaba`baa baaa`aaaaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ubkhnhjy in`gu svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a c ^\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hpr `gilrok lep`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` `aaaba`baa baba`aaaaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "ubkhnhjy in`fu svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a b ^\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hpr `gimrok lep`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` `aaaba`baa aaaaa`abab\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "ubkhnhjy in`fv svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "` b ^\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "hps `gimrok lep`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` `aaaba`baa aabaa`abaa\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "ubkhnhjy jn`fv svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "` a ^\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "gps `gimrok lep`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` _aaaba`baa aabaa`abaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yjhnhkbu jn`fv svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "` a ]\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "gps `gjmrok lep`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` _aaab`abaa aabaa`abaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yjhnhkbu j`nfv svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "_ a ]\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "gps `gmjrok lep`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "``aaabaaab _aaab`abaa aabaa`abaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yjhnhkbu jn`fu svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "` a \\\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "gps agmjrok lep`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "``aaabaaab _aabb`abaa aabaa`abaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yjhnhkau jn`fu svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a a \\\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "gps agmjrok lfp`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` _aabb`abaa aabaa`abaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yjinhkau jn`fu svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a ` \\\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "gps agnjrok lfp`p\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` _aabb`abaa aabba`abaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yjinhkau jnf`u svsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "` ` \\\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "gps agnjrok p`pfl\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "baaabaaa`` _aabb`abaa aabba`baaa\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yjinhkau jnf`u rvsgh\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "yakiniku unagi sushi\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "a a a\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "rng gorilla apple\n",
+    "output": "YES\n"
+  },
+  {
+    "input": "aaaaaaaaab aaaaaaaaaa aaaaaaaaab\n",
+    "output": "NO\n"
+  },
+  {
+    "input": "rng gorilla apple\n",
+    "output": "YES\n"
+  }
+]

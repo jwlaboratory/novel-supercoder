@@ -1,0 +1,42 @@
+[
+  {
+    "input": "aaaccacabaababb\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "a`bbaa\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "abbccacabaababa\n",
+    "output": "13\n\n"
+  },
+  {
+    "input": "abbccaaabaababc\n",
+    "output": "12\n\n"
+  },
+  {
+    "input": "b`aba`\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "b``aaa\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "`abab`cbbba`c`b\n",
+    "output": "14\n\n"
+  },
+  {
+    "input": "`_b`ab`_babcdba\n",
+    "output": "15\n\n"
+  },
+  {
+    "input": "aabccacabaababb\n",
+    "output": "11\n\n"
+  },
+  {
+    "input": "a`bcaa\n",
+    "output": "5\n\n"
+  }
+]

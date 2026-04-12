@@ -1,0 +1,12 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/smoke_prepare/paper_dataset.csv",
+  "total_rows": 3,
+  "source": {
+    "dataset": "KrishPS/codenet-accepted-c",
+    "split": "train",
+    "offset": 0,
+    "limit": 3,
+    "shuffle_seed": null,
+    "compile_o0_docker": true
+  }
+}

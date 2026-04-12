@@ -1,0 +1,133 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define M 500000
+#define END NULL
+
+struct node{
+  int key;
+  struct node *left;
+  struct node *right;
+  struct node *parent;
+};
+
+typedef struct node *nodepointer;
+
+nodepointer root;
+
+void insert(int sample){
+  nodepointer y,x,z;
+  
+  y = END;
+  x = root;
+
+  z = malloc(sizeof(struct node));
+  z -> key = sample;
+  z -> left = z -> right = END;
+
+  while(x != END){
+    y = x;
+    if(z->key < x->key){
+      x = x->left;
+    }else{
+      x = x->right;
+    }
+  }
+
+  z->parent = y;
+
+  if(y == END) root = z;
+  else if(z->key < y->key)y->left = z;
+  else y->right = z;
+}
+
+
+
+/* int find(nodepointer n,int sample2){  2. WA  error
+
+  if(n == END)return 0;
+  
+  while(n->key != sample2){
+    if(n->key == sample2)return 1;
+    return find(n->left,sample2) || find(n->right,sample2);
+  }
+
+ 
+  }*/
+
+
+/* int find(nodepointer n,int sample2){  5. TLE error
+
+  if(n == END)return 0;
+  if(n->key == sample2)return 1;
+  
+  while(n->key != sample2){
+    return find(n->left,sample2) || find(n->right,sample2);
+  }
+
+ 
+  }*/
+
+
+int  find(nodepointer n,int sample2){ //correction
+ 
+   while (n != END && n->key != sample2 ){
+      if (sample2 < n->key) n = n->left;
+      else n = n->right;   
+    }
+  
+  if(n != END) return 1;
+  return 0;
+   
+}
+
+
+void in(nodepointer n){
+  if(n != END){
+    in(n->left);
+    printf(" %d",n->key);
+    in(n->right);
+  }
+}
+
+void pre(nodepointer n){
+  if(n != END){
+    printf(" %d",n->key);
+    pre(n->left);
+    pre(n->right);
+  }
+}
+   
+int main(){
+  int command,thing,i;
+  char direct[7];
+
+  scanf("%d",&command);
+  
+  for(i=0;i<command;i++){
+    scanf("%s",direct);
+    
+    if(direct[0] == 'i'){
+      
+      scanf("%d",&thing);
+      insert(thing);
+      
+    }else if(direct[0] == 'f') {
+
+      scanf("%d",&thing);
+      if (find(root,thing)) printf("yes\n");
+      else printf("no\n");
+      
+    }else if(direct[0] == 'p'){
+        in(root);
+	printf("\n");
+	pre(root);
+	printf("\n");
+    }
+  }
+  return 0;
+}
+      
+      
+  
+

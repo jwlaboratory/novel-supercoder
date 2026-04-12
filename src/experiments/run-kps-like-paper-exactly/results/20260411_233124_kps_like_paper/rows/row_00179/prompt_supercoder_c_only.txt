@@ -1,0 +1,56 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int N,B[10][10],i,j;
+
+int Ix[3][14]={{0,-1,0,1,-2,-1,0,1,2,-1,0,1,0,-9},{0,1,2,0,1,2,0,1,2,-9},{0,-1,0,1,0,-9}};
+int Iy[3][14]={{0, 1,1,1, 2, 2,2,2,2, 3,3,3,4,-9},{0,0,0,1,1,1,2,2,2,-9},{0, 1,1,1,2,-9}};
+
+int ch(int x,int y){return (x>=0&&x<10&&y>=0&&y<10&&B[y][x]>0);}
+void dbg(){
+	int i,j;
+	for(i=0;i<10;i++,puts(""))for(j=0;j<10;j++)printf("%d ",B[i][j]);
+	puts("----------------------------------------");
+}
+int dfs(int i,int j,int n)
+{
+	int k,p;
+	if(n>N)return 0;
+	if(i==10)return n==N;
+	if(B[i][j]==0)return dfs(i+((j+1)/10),(j+1)%10,n);
+	//dbg();
+	for(k=0;k<3;k++)
+	{
+		for(p=0;Ix[k][p]!=-9;p++)
+			if(!ch(j+Ix[k][p],i+Iy[k][p]))break;
+		if(Ix[k][p]!=-9)continue;
+		for(p=0;Ix[k][p]!=-9;p++)
+			B[i+Iy[k][p]][j+Ix[k][p]]--;
+		if(dfs(i,j,n+1))
+		{
+			printf("%d %d %d\n",j+(k==1?1:0),i+(k==0?2:1),3-k);
+			return 1;
+		}
+		for(p=0;Ix[k][p]!=-9;p++)
+			B[i+Iy[k][p]][j+Ix[k][p]]++;
+	}
+	return 0;
+}
+
+int main()
+{
+	scanf("%d",&N);
+	for(i=0;i<10;i++)
+		for(j=0;j<10;j++)
+			scanf("%d",&B[i][j]);
+	return !dfs(0,0,0);
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

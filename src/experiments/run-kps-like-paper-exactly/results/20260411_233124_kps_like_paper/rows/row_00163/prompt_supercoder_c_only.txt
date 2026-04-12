@@ -1,0 +1,33 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int iInputM, iInputF, iInputR;
+    int iSum;
+    int i;
+
+    for (i = 0; i < 60; i++) {
+        scanf("%d %d %d", &iInputM, &iInputF, &iInputR);
+        if (iInputM == -1 && iInputF == -1 && iInputR == -1) break;
+        iSum = iInputM + iInputF;
+        if (iInputM == -1 || iInputF == -1) printf("F\n");
+        else if (iSum >= 80) printf("A\n");
+        else if (iSum >= 65) printf("B\n");
+        else if (iSum >= 50) printf("C\n");
+        else if (iSum >= 30) {
+            if (iInputR >= 50) printf("C\n");
+            else printf("D\n");
+        }
+        else printf("F\n");
+    }
+
+    return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

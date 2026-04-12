@@ -78,7 +78,8 @@ def _build_synthetic_dataset_from_run(run_dir: Path) -> list[dict]:
                 continue
             rec = json.loads(line)
             row_index = int(rec["row_index"])
-            row_dir = Path(rec["row_dir"])
+            primary = Path(rec["row_dir"])
+            row_dir = primary if primary.is_dir() else (run_dir / "rows" / f"row_{row_index:05d}")
             tests = []
             tests_path = row_dir / "input_tests.json"
             if tests_path.exists():
@@ -111,6 +112,11 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--model-name", default="Qwen/Qwen2.5-Coder-7B-Instruct")
     parser.add_argument("--num-workers", type=int, default=4)
+    parser.add_argument(
+        "--from-manifest-only",
+        action="store_true",
+        help="Do not load Hugging Face; build the problem list from run-dir (manifest + input_tests.json + inputo0.s) only.",
+    )
     args = parser.parse_args()
 
     run_dir = Path(args.run_dir).resolve()
@@ -122,17 +128,21 @@ def main() -> None:
         raise SystemExit(f"Could not find SuperCoder benchmark code under {supercoder_src}")
 
     synthetic_mode = False
-    try:
-        ds = _load_split(args.ds_name, args.split)
-        if args.offset > 0:
-            ds = ds.select(range(args.offset, len(ds)))
-        if args.limit > 0:
-            ds = ds.select(range(0, min(args.limit, len(ds))))
-        ds = ds.map(lambda example, idx: {"idx": idx}, with_indices=True)
-    except Exception as exc:  # noqa: BLE001
-        print(f"Warning: failed to load HF dataset ({exc}); falling back to run-dir dataset.", flush=True)
+    if args.from_manifest_only:
         ds = _build_synthetic_dataset_from_run(run_dir)
         synthetic_mode = True
+    else:
+        try:
+            ds = _load_split(args.ds_name, args.split)
+            if args.offset > 0:
+                ds = ds.select(range(args.offset, len(ds)))
+            if args.limit > 0:
+                ds = ds.select(range(0, min(args.limit, len(ds))))
+            ds = ds.map(lambda example, idx: {"idx": idx}, with_indices=True)
+        except Exception as exc:  # noqa: BLE001
+            print(f"Warning: failed to load HF dataset ({exc}); falling back to run-dir dataset.", flush=True)
+            ds = _build_synthetic_dataset_from_run(run_dir)
+            synthetic_mode = True
 
     _install_supercoder_import_stubs()
     sys.path.insert(0, str(supercoder_src))
@@ -159,6 +169,9 @@ def main() -> None:
         compilation_failures,
         identical_samples,
     )
+    summary = output_data.setdefault("summary", {})
+    summary["synthetic_dataset_fallback"] = synthetic_mode
+    summary["from_manifest_only"] = bool(args.from_manifest_only)
 
     out_dir = run_dir / "supercoder_bench"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -195,10 +208,8 @@ def main() -> None:
                 + "\n"
             )
 
-    summary = output_data.get("summary", {})
-    summary["synthetic_dataset_fallback"] = synthetic_mode
     print("SuperCoder benchmark summary:")
-    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(json.dumps(output_data.get("summary", {}), ensure_ascii=False, indent=2))
     print(f"Wrote: {out_dir / 'problem_results.json'}")
     print(f"Wrote: {out_dir / 'row_summary.jsonl'}")
 

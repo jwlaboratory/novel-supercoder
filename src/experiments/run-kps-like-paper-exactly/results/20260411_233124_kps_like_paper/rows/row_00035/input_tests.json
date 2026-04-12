@@ -1,0 +1,42 @@
+[
+  {
+    "input": "6 7\n",
+    "output": "error\n\n"
+  },
+  {
+    "input": "6 0\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "7 0\n",
+    "output": "7\n\n"
+  },
+  {
+    "input": "5 0\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "1 1\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "1 0\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "2 1\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "3 1\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "1 -1\n",
+    "output": "0\n\n"
+  },
+  {
+    "input": "0 -1\n",
+    "output": "-1\n\n"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/paper_dataset.csv",
+  "total_rows": 200,
+  "source": {
+    "dataset": "KrishPS/codenet-accepted-c",
+    "split": "train",
+    "offset": 0,
+    "limit": 200,
+    "shuffle_seed": null,
+    "sampling_note": "sequential train head (biased; see simple_io_summary.json kps_sampling_caveat)",
+    "compile_o0_docker": true
+  }
+}

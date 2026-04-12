@@ -1,0 +1,1 @@
+char s[];main(){double*q=s,b;for(;~scanf("%s",s);getchar()&2&&printf("%f\n",*q))sscanf(s,"%lf",q+1)-1?b=*q--,*q=*s&1?*s-47?*q+=*s-45?b:-b:*q/b:*q*b:*++q;}

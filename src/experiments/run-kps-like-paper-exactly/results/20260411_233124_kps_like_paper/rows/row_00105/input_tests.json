@@ -1,0 +1,18 @@
+[
+  {
+    "input": "C\n",
+    "output": "G\n\n"
+  },
+  {
+    "input": "T\n",
+    "output": "A\n\n"
+  },
+  {
+    "input": "C\n",
+    "output": "G\n\n"
+  },
+  {
+    "input": "T\n",
+    "output": "A\n\n"
+  }
+]

@@ -1,0 +1,108 @@
+.file	"temp.c"
+	.text
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"%s %s"
+.LC1:
+	.string	"%d %d"
+.LC2:
+	.string	"%s"
+.LC3:
+	.string	"%d %d\n"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB25:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	.LC0(%rip), %rdi
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	subq	$64, %rsp
+	.cfi_def_cfa_offset 96
+	movq	%fs:40, %rax
+	movq	%rax, 56(%rsp)
+	xorl	%eax, %eax
+	leaq	11(%rsp), %r12
+	leaq	26(%rsp), %r13
+	movq	%r13, %rdx
+	movq	%r12, %rsi
+	leaq	41(%rsp), %rbp
+	call	__isoc99_scanf@PLT
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	xorl	%eax, %eax
+	leaq	.LC1(%rip), %rdi
+	call	__isoc99_scanf@PLT
+	movq	%rbp, %rsi
+	leaq	.LC2(%rip), %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movq	%rbp, %rsi
+	movq	%r12, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L2
+	subl	$1, (%rsp)
+.L3:
+	movl	4(%rsp), %ecx
+	movl	(%rsp), %edx
+	xorl	%eax, %eax
+	leaq	.LC3(%rip), %rsi
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	56(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	addq	$64, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L2:
+	.cfi_restore_state
+	movq	%rbp, %rsi
+	movq	%r13, %rdi
+	call	strcmp@PLT
+	testl	%eax, %eax
+	jne	.L3
+	subl	$1, 4(%rsp)
+	jmp	.L3
+.L7:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE25:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

@@ -1,0 +1,42 @@
+[
+  {
+    "input": "60\n",
+    "output": "0\n\n"
+  },
+  {
+    "input": "1134\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "656396080\n",
+    "output": "20434\n\n"
+  },
+  {
+    "input": "1260308870\n",
+    "output": "26484\n\n"
+  },
+  {
+    "input": "251112438\n",
+    "output": "8334\n\n"
+  },
+  {
+    "input": "3669\n",
+    "output": "13\n\n"
+  },
+  {
+    "input": "4753\n",
+    "output": "18\n\n"
+  },
+  {
+    "input": "3412\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "5825\n",
+    "output": "30\n\n"
+  },
+  {
+    "input": "471776498\n",
+    "output": "14384\n\n"
+  }
+]

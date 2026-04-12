@@ -1,0 +1,42 @@
+[
+  {
+    "input": "gumu humu\n",
+    "output": "humugumu\n\n"
+  },
+  {
+    "input": "oder atb\n",
+    "output": "atboder\n\n"
+  },
+  {
+    "input": "gumt humu\n",
+    "output": "humugumt\n\n"
+  },
+  {
+    "input": "redo atb\n",
+    "output": "atbredo\n\n"
+  },
+  {
+    "input": "gums humu\n",
+    "output": "humugums\n\n"
+  },
+  {
+    "input": "redp atb\n",
+    "output": "atbredp\n\n"
+  },
+  {
+    "input": "gums muhu\n",
+    "output": "muhugums\n\n"
+  },
+  {
+    "input": "redp bta\n",
+    "output": "btaredp\n\n"
+  },
+  {
+    "input": "gums luhu\n",
+    "output": "luhugums\n\n"
+  },
+  {
+    "input": "redo bta\n",
+    "output": "btaredo\n\n"
+  }
+]

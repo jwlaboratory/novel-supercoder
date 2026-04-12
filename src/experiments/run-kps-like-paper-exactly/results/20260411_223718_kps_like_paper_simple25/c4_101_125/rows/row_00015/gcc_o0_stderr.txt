@@ -1,0 +1,24 @@
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:1: warning: return type defaults to 'int' [-Wimplicit-int]
+    1 | main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}
+      | ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:49: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    1 | main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}
+      |                                                 ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+  +++ |+#include <stdio.h>
+    1 | main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:49: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+    1 | main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}
+      |                                                 ^~~~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:49: note: include '<stdio.h>' or provide a declaration of 'printf'
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:79: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+    1 | main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}
+      |                                                                               ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:1: note: include '<stdlib.h>' or provide a declaration of 'exit'
+  +++ |+#include <stdlib.h>
+    1 | main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:79: warning: incompatible implicit declaration of built-in function 'exit' [-Wbuiltin-declaration-mismatch]
+    1 | main(){int j=0;while(9>j++){int i=0;while(9>i++)printf("%dx%d=%d\n",j,i,i*j);}exit(0);}
+      |                                                                               ^~~~
+/workspace/novel-supercoder/src/experiments/run-kps-like-paper-exactly/results/20260411_223718_kps_like_paper/rows/row_00115/inputC.c:1:79: note: include '<stdlib.h>' or provide a declaration of 'exit'

@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int n,l,i,a[200],b[200];
+  int temp=0,min=100000,sum=0;
+  scanf("%d %d",&n,&l);
+  
+  for(i=0;i<n;i++) a[i]=l+i;
+  for(i=0;i<n;i++) b[i]= abs(a[i]);
+  for(i=0;i<n;i++){
+    if(b[i]<min){
+      temp = i;
+      min = b[i];
+    }
+  }
+  
+  a[temp]=0;
+  for(i=0;i<n;i++) sum+=a[i];
+  printf("%d\n",sum);
+  return 0;
+}

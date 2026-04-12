@@ -1,0 +1,26 @@
+Given the following C code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+	int p[16384] = {0};
+	int i,j,n;
+	for(i = 2;i <= 16000;i++){
+		if(p[i]){continue;}
+		for(j = 2*i;j <= 16000;j+=i){
+			p[j] = 1;
+		}
+	}
+	while(scanf("%d",&n) , n != 0){
+		for(i = n;i >= 5;i--){
+			if(!(p[i]) && !(p[i-2])){printf("%d %d\n",i-2,i);break;}
+		}
+	}
+	return 0;
+}
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:

@@ -1,0 +1,1 @@
+X;main(Y){for(;++X<10;)for(Y=0;Y<9;)printf("%dx%d=%d\n",X,Y,X*++Y);exit(0);}

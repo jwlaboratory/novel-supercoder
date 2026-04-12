@@ -1,0 +1,42 @@
+[
+  {
+    "input": "1\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "69\n",
+    "output": "Yes\n\n"
+  },
+  {
+    "input": "115\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "84\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "0\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "181\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "168\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "174\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "304\n",
+    "output": "No\n\n"
+  },
+  {
+    "input": "143\n",
+    "output": "No\n\n"
+  }
+]
