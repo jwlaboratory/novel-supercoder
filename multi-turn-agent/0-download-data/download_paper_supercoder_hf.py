@@ -12,9 +12,10 @@ Where files go
    - Else usually ~/.cache/huggingface/
    - If HF_CACHE is set, `datasets` passes it as cache_dir for this script.
 
-2) CSV exports (this script): default directory is the multi-turn-agent folder. One file per
-   split: {csv_prefix}_train.csv, {csv_prefix}_val.csv, {csv_prefix}_fewshot.csv (default
-   prefix: supercoder). Same columns as `prepare_supercoder_run.py` → paper_dataset.csv.
+2) CSV exports: default directory is the multi-turn-agent folder. Writes only **train** and
+   **val**: {csv_prefix}_train.csv, {csv_prefix}_val.csv. The **fewshot** split is still
+   downloaded into the HF cache with the full dataset load, but no fewshot CSV is written.
+   Columns: idx, answer, test_cases, question (no c_only_question).
 
 Usage (from repo root):
   uv run python multi-turn-agent/0-download-data/download_paper_supercoder_hf.py
@@ -27,6 +28,7 @@ import argparse
 import csv
 import json
 import os
+import sys
 from pathlib import Path
 
 from datasets import load_dataset
@@ -52,33 +54,19 @@ def _safe_get_extra(item: dict) -> dict:
     return {}
 
 
-def _extract_asm_from_fenced(text: str) -> str:
-    if not text:
-        return ""
-    start = text.rfind("```assembly")
-    if start == -1:
-        return ""
-    chunk = text[start + len("```assembly") :]
-    end = chunk.rfind("```")
-    if end != -1:
-        chunk = chunk[:end]
-    return chunk.strip()
-
-
 def _write_paper_csv_for_table(ds, out_path: Path, ds_name: str, split_name: str) -> None:
-    """Same row shape as prepare_supercoder_run.py paper_dataset.csv (no per-row dirs)."""
+    """Paper-style rows for multi-turn-agent (no c_only_question, no fewshot file)."""
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8", newline="") as f_csv:
         writer = csv.DictWriter(
             f_csv,
-            fieldnames=["idx", "answer", "test_cases", "question", "c_only_question"],
+            fieldnames=["idx", "answer", "test_cases", "question"],
         )
         writer.writeheader()
         for row_index, item in enumerate(ds, start=1):
             extra = _safe_get_extra(item)
             c_code = extra.get("c_code", "") or ""
             question = extra.get("question", "") or ""
-            c_only_question = extra.get("c_only_question", "") or ""
             inputs = list(extra.get("inputs", []) or [])
             outputs = list(extra.get("outputs", []) or [])
             tests = [{"input": inp, "output": out} for inp, out in zip(inputs, outputs)]
@@ -88,7 +76,6 @@ def _write_paper_csv_for_table(ds, out_path: Path, ds_name: str, split_name: str
                     "answer": c_code,
                     "test_cases": json.dumps(tests, ensure_ascii=False),
                     "question": question,
-                    "c_only_question": c_only_question,
                 }
             )
     print(f"Wrote {len(ds)} rows: {out_path}  (split={split_name!r}, ds={ds_name!r})")
@@ -111,7 +98,7 @@ def main() -> None:
         "--split",
         default=None,
         metavar="NAME",
-        help="If set, only this split (one CSV). Otherwise every split (one CSV each).",
+        help="If set, only this split. CSV written for train|val only; fewshot loads but no CSV.",
     )
     parser.add_argument(
         "--out-dir",
@@ -149,13 +136,19 @@ def main() -> None:
         ds = _load_split(args.ds_name, args.split, cache_dir)
         print(f"{args.ds_name} split={args.split!r}: n={len(ds)} (cached)")
         if not args.no_csv:
-            csv_path = out_dir / f"{prefix}_{args.split}.csv"
-            _write_paper_csv_for_table(ds, csv_path, args.ds_name, args.split)
+            if args.split == "fewshot":
+                print("Fewshot: not writing CSV (in-context examples only).", file=sys.stderr)
+            else:
+                csv_path = out_dir / f"{prefix}_{args.split}.csv"
+                _write_paper_csv_for_table(ds, csv_path, args.ds_name, args.split)
     else:
         ds_dict = _load_split(args.ds_name, None, cache_dir)
         for name, table in ds_dict.items():
             print(f"{args.ds_name} split={name!r}: n={len(table)} (cached)")
             if not args.no_csv:
+                if name == "fewshot":
+                    print("Fewshot: skip CSV (in-context examples only).")
+                    continue
                 csv_path = out_dir / f"{prefix}_{name}.csv"
                 _write_paper_csv_for_table(table, csv_path, args.ds_name, name)
 
