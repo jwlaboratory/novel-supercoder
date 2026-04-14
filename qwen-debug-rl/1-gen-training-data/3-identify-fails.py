@@ -314,7 +314,15 @@ def main() -> None:
             n_fail += 1
 
     total = len(rows)
-    print(f"\n{n_fail}/{total} rows failed → {out_path.name}")
+    n_compiled = sum(1 for r in results.values() if r.get("compile_passed"))
+    n_test_passed = sum(1 for r in results.values() if r.get("test_passed"))
+
+    print(f"\n{'='*50}")
+    print(f"  Total rows:      {total}")
+    print(f"  Compiled:        {n_compiled}/{total} ({n_compiled*100/max(total,1):.1f}%)")
+    print(f"  Passed tests:    {n_test_passed}/{total} ({n_test_passed*100/max(total,1):.1f}%)")
+    print(f"  Failed rows:     {n_fail}/{total} ({n_fail*100/max(total,1):.1f}%)")
+    print(f"{'='*50}")
     print(f"Output: {out_path}")
 
 
