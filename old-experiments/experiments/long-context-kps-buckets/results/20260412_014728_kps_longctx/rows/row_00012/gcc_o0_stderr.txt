@@ -1,0 +1,11 @@
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00012/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00012/inputC.c:350:19: warning: format '%lld' expects argument of type 'long long int *', but argument 2 has type 'sll *' {aka 'long int *'} [-Wformat=]
+  350 |         scanf("%lld", &va, &vb, &vc, &vd);
+      |                ~~~^   ~~~
+      |                   |   |
+      |                   |   sll * {aka long int *}
+      |                   long long int *
+      |                %ld
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00012/inputC.c:350:15: warning: too many arguments for format [-Wformat-extra-args]
+  350 |         scanf("%lld", &va, &vb, &vc, &vd);
+      |               ^~~~~~

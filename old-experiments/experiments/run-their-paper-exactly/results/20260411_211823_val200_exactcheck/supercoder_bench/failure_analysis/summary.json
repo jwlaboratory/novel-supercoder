@@ -1,0 +1,25 @@
+{
+  "run_dir": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/run-their-paper-exactly/results/20260411_211823_val200_exactcheck",
+  "run_dir_container": "/workspace/novel-supercoder/src/experiments/run-their-paper-exactly/results/20260411_211823_val200_exactcheck",
+  "source_problem_results": "/workspace/novel-supercoder/src/experiments/run-their-paper-exactly/results/20260411_211823_val200_exactcheck/supercoder_bench/problem_results.json",
+  "totals": {
+    "total_problems": 200,
+    "correct_problems": 123,
+    "compiled_problems": 158,
+    "compilation_failures": 42,
+    "compiled_but_wrong": 35
+  },
+  "compile_failure_bucket_counts": {
+    "assembler_error": 40,
+    "link_or_undefined_ref": 2
+  },
+  "io_failure_bucket_counts": {
+    "runtime_nonzero_or_signal": 12,
+    "output_mismatch": 23
+  },
+  "io_subcounts": {
+    "runtime_empty_stderr": 11,
+    "has_expected_actual": 23,
+    "runtime_with_stderr": 1
+  }
+}

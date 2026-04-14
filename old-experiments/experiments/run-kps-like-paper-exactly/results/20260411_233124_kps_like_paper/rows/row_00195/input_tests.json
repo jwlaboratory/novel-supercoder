@@ -1,0 +1,42 @@
+[
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(p-q)/q/d\na+b*c=d-e\nt+t+t+t+t\ns=s=s=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|f+g^h&i<j>k\n",
+    "output": "((a+(b*c))-c)\n(((p-q)/q)/d)\n((a+(b*c))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(s=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>k)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-d\n(p-q)/q/d\na+b*c=d-e\nt+t+t+t+t\ns=s=s=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + . * /\n1\na>b*c=d<e|f+g^h&i<j>k\n",
+    "output": "((a+(b*c))-d)\n(((p-q)/q)/d)\n((a+(b*c))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(s=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>k)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(p-q)/q/d\na+b*c=d-e\nt+t+t+t+t\ns=s=s=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|f+g^h&i<j>j\n",
+    "output": "((a+(b*c))-c)\n(((p-q)/q)/d)\n((a+(b*c))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(s=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>j)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(p-q)/q/d\na+b*c=d-e\nt+t+t*t+t\ns=s=s=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|f+g^h&i<j>j\n",
+    "output": "((a+(b*c))-c)\n(((p-q)/q)/d)\n((a+(b*c))=(d-e))\n(((t+t)+(t*t))+t)\n(s=(s=(s=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>j)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(p-q)/q/d\na+b*c=d-e\nt+t+t+t+t\ns=s=r=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|f+g^h&i<j>k\n",
+    "output": "((a+(b*c))-c)\n(((p-q)/q)/d)\n((a+(b*c))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(r=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>k)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(o-q)/q/d\na+b*c=d-e\nt+t+t+t+t\ns=s=r=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|f+g^h&i<j>k\n",
+    "output": "((a+(b*c))-c)\n(((o-q)/q)/d)\n((a+(b*c))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(r=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>k)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-d\n(p-q)/q/d\na+b*c=d-e\nt+t+t+t+t\ns=s=s=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|g+g^h&i<j>k\n",
+    "output": "((a+(b*c))-d)\n(((p-q)/q)/d)\n((a+(b*c))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(s=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(g+g))^h)&i)<(j>k)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(p-q)/q/d\na+b*b=d-e\nt+t+t*t+t\ns=s=s=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|f+g^h&i<j>j\n",
+    "output": "((a+(b*c))-c)\n(((p-q)/q)/d)\n((a+(b*b))=(d-e))\n(((t+t)+(t*t))+t)\n(s=(s=(s=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>j)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(o-q)/q/d\na+c*b=d-e\nt+t+t+t+t\ns=s=r=s=s\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * .\n1\na>b*c=d<e|f+g^h&i<j>k\n",
+    "output": "((a+(b*c))-c)\n(((o-q)/q)/d)\n((a+(c*b))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(r=(s=s))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>k)))))\n\n"
+  },
+  {
+    "input": "2\n3\nR 1 =\nL 2 + -\nL 2 * /\n6\na+b*c-c\n(p-q)/q/d\na+b*c=d-e\nt+t+t+t+t\ns=s=s=s=r\n(((((z)))))\n3\nR 3 = < >\nL 3 & | ^\nL 4 + - * /\n1\na>b*c=d<e|f+g^h&i<j>k\n",
+    "output": "((a+(b*c))-c)\n(((p-q)/q)/d)\n((a+(b*c))=(d-e))\n((((t+t)+t)+t)+t)\n(s=(s=(s=(s=r))))\nz\n\n(a>((b*c)=(d<((((e|(f+g))^h)&i)<(j>k)))))\n\n"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "data_csv": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/paper_dataset.csv",
+  "total_rows": 16,
+  "source": {
+    "dataset": "KrishPS/codenet-accepted-c",
+    "split": "train",
+    "offset": 0,
+    "limit": 200,
+    "shuffle_seed": 42,
+    "compile_o0_docker": true,
+    "length_bucket_edges": [
+      800,
+      2500,
+      8000
+    ],
+    "length_stratify_per_bucket": 4,
+    "length_stratify_bucket_counts": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "sampling": "length_stratified_scan",
+    "offset_limit_ignored": true,
+    "limit_effective_rows": 16
+  }
+}

@@ -1,0 +1,459 @@
+	.file	"inputC.c"
+	.text
+	.globl	ans
+	.bss
+	.align 4
+	.type	ans, @object
+	.size	ans, 4
+ans:
+	.zero	4
+	.globl	d
+	.align 32
+	.type	d, @object
+	.size	d, 163216
+d:
+	.zero	163216
+	.text
+	.globl	solve
+	.type	solve, @function
+solve:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$176, %rsp
+	movq	%rdi, -152(%rbp)
+	movq	%rsi, -160(%rbp)
+	movl	%edx, -164(%rbp)
+	movl	%ecx, -168(%rbp)
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	cmpl	$0, -168(%rbp)
+	jne	.L2
+	movl	$0, -132(%rbp)
+	movl	$0, -128(%rbp)
+	jmp	.L3
+.L4:
+	movl	-128(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-152(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %eax
+	movl	-128(%rbp), %edx
+	movslq	%edx, %rdx
+	addq	$1, %rdx
+	leaq	0(,%rdx,4), %rcx
+	movq	-152(%rbp), %rdx
+	addq	%rcx, %rdx
+	movl	(%rdx), %edx
+	movslq	%edx, %rdx
+	cltq
+	imulq	$202, %rax, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	d(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	addl	%eax, -132(%rbp)
+	addl	$1, -128(%rbp)
+.L3:
+	movl	-164(%rbp), %eax
+	subl	$1, %eax
+	cmpl	%eax, -128(%rbp)
+	jl	.L4
+	movl	ans(%rip), %eax
+	cmpl	%eax, -132(%rbp)
+	jge	.L15
+	movl	-132(%rbp), %eax
+	movl	%eax, ans(%rip)
+	jmp	.L15
+.L2:
+	movl	$0, -124(%rbp)
+	jmp	.L6
+.L12:
+	movl	$0, -116(%rbp)
+	movl	$0, -120(%rbp)
+	jmp	.L7
+.L9:
+	movl	-124(%rbp), %eax
+	cmpl	-120(%rbp), %eax
+	je	.L8
+	movl	-120(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-160(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %edx
+	movl	-116(%rbp), %eax
+	cltq
+	movl	%edx, -112(%rbp,%rax,4)
+	addl	$1, -116(%rbp)
+.L8:
+	addl	$1, -120(%rbp)
+.L7:
+	movl	-120(%rbp), %eax
+	cmpl	-168(%rbp), %eax
+	jl	.L9
+	movl	$0, -120(%rbp)
+	jmp	.L10
+.L11:
+	movl	-120(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-152(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %edx
+	movl	-120(%rbp), %eax
+	cltq
+	movl	%edx, -64(%rbp,%rax,4)
+	addl	$1, -120(%rbp)
+.L10:
+	movl	-120(%rbp), %eax
+	cmpl	-164(%rbp), %eax
+	jl	.L11
+	movl	-124(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-160(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %edx
+	movl	-164(%rbp), %eax
+	cltq
+	movl	%edx, -64(%rbp,%rax,4)
+	movl	-168(%rbp), %eax
+	leal	-1(%rax), %ecx
+	movl	-164(%rbp), %eax
+	leal	1(%rax), %edx
+	leaq	-112(%rbp), %rsi
+	leaq	-64(%rbp), %rax
+	movq	%rax, %rdi
+	call	solve
+	addl	$1, -124(%rbp)
+.L6:
+	movl	-124(%rbp), %eax
+	cmpl	-168(%rbp), %eax
+	jl	.L12
+	nop
+.L15:
+	nop
+	movq	-8(%rbp), %rax
+	subq	%fs:40, %rax
+	je	.L14
+	call	__stack_chk_fail@PLT
+.L14:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	solve, .-solve
+	.section	.rodata
+.LC0:
+	.string	"%d %d %d"
+.LC1:
+	.string	"%d"
+.LC2:
+	.string	"%d\n"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB1:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	leaq	-237568(%rsp), %r11
+.LPSRL0:
+	subq	$4096, %rsp
+	orq	$0, (%rsp)
+	cmpq	%r11, %rsp
+	jne	.LPSRL0
+	subq	$2624, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	leaq	-240176(%rbp), %rcx
+	leaq	-240180(%rbp), %rdx
+	leaq	-240184(%rbp), %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	$0, -240172(%rbp)
+	jmp	.L17
+.L18:
+	leaq	-240160(%rbp), %rdx
+	movl	-240172(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	addq	%rdx, %rax
+	movq	%rax, %rsi
+	leaq	.LC1(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-240172(%rbp), %eax
+	cltq
+	movl	-240160(%rbp,%rax,4), %eax
+	leal	-1(%rax), %edx
+	movl	-240172(%rbp), %eax
+	cltq
+	movl	%edx, -240160(%rbp,%rax,4)
+	addl	$1, -240172(%rbp)
+.L17:
+	movl	-240176(%rbp), %eax
+	cmpl	%eax, -240172(%rbp)
+	jl	.L18
+	movl	$0, -240172(%rbp)
+	jmp	.L19
+.L20:
+	leaq	-80032(%rbp), %rdx
+	movl	-240172(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	leaq	(%rdx,%rax), %rcx
+	leaq	-160048(%rbp), %rdx
+	movl	-240172(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	addq	%rax, %rdx
+	leaq	-240064(%rbp), %rsi
+	movl	-240172(%rbp), %eax
+	cltq
+	salq	$2, %rax
+	addq	%rsi, %rax
+	movq	%rax, %rsi
+	leaq	.LC0(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	__isoc99_scanf@PLT
+	movl	-240172(%rbp), %eax
+	cltq
+	movl	-240064(%rbp,%rax,4), %eax
+	leal	-1(%rax), %edx
+	movl	-240172(%rbp), %eax
+	cltq
+	movl	%edx, -240064(%rbp,%rax,4)
+	movl	-240172(%rbp), %eax
+	cltq
+	movl	-160048(%rbp,%rax,4), %eax
+	leal	-1(%rax), %edx
+	movl	-240172(%rbp), %eax
+	cltq
+	movl	%edx, -160048(%rbp,%rax,4)
+	addl	$1, -240172(%rbp)
+.L19:
+	movl	-240180(%rbp), %eax
+	cmpl	%eax, -240172(%rbp)
+	jl	.L20
+	movl	$0, -240172(%rbp)
+	jmp	.L21
+.L24:
+	movl	$0, -240168(%rbp)
+	jmp	.L22
+.L23:
+	movl	-240168(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-240172(%rbp), %eax
+	cltq
+	imulq	$202, %rax, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	d(%rip), %rax
+	movl	$1000000000, (%rdx,%rax)
+	addl	$1, -240168(%rbp)
+.L22:
+	movl	-240184(%rbp), %eax
+	cmpl	%eax, -240168(%rbp)
+	jl	.L23
+	addl	$1, -240172(%rbp)
+.L21:
+	movl	-240184(%rbp), %eax
+	cmpl	%eax, -240172(%rbp)
+	jl	.L24
+	movl	$0, -240172(%rbp)
+	jmp	.L25
+.L26:
+	movl	-240172(%rbp), %eax
+	cltq
+	movl	-160048(%rbp,%rax,4), %eax
+	movl	-240172(%rbp), %edx
+	movslq	%edx, %rdx
+	movl	-240064(%rbp,%rdx,4), %edx
+	movl	-240172(%rbp), %ecx
+	movslq	%ecx, %rcx
+	movl	-80032(%rbp,%rcx,4), %ecx
+	movslq	%edx, %rdi
+	movslq	%eax, %rsi
+	imulq	$202, %rsi, %rsi
+	addq	%rdi, %rsi
+	leaq	0(,%rsi,4), %rdi
+	leaq	d(%rip), %rsi
+	movl	%ecx, (%rdi,%rsi)
+	movl	-240172(%rbp), %ecx
+	movslq	%ecx, %rcx
+	movl	-240064(%rbp,%rcx,4), %esi
+	movl	-240172(%rbp), %ecx
+	movslq	%ecx, %rcx
+	movl	-160048(%rbp,%rcx,4), %ecx
+	movslq	%edx, %rdx
+	cltq
+	imulq	$202, %rax, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	d(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	movslq	%ecx, %rcx
+	movslq	%esi, %rdx
+	imulq	$202, %rdx, %rdx
+	addq	%rcx, %rdx
+	leaq	0(,%rdx,4), %rcx
+	leaq	d(%rip), %rdx
+	movl	%eax, (%rcx,%rdx)
+	addl	$1, -240172(%rbp)
+.L25:
+	movl	-240180(%rbp), %eax
+	cmpl	%eax, -240172(%rbp)
+	jl	.L26
+	movl	$0, -240164(%rbp)
+	jmp	.L27
+.L33:
+	movl	$0, -240172(%rbp)
+	jmp	.L28
+.L32:
+	movl	$0, -240168(%rbp)
+	jmp	.L29
+.L31:
+	movl	-240168(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-240172(%rbp), %eax
+	cltq
+	imulq	$202, %rax, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	d(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	movl	-240164(%rbp), %edx
+	movslq	%edx, %rcx
+	movl	-240172(%rbp), %edx
+	movslq	%edx, %rdx
+	imulq	$202, %rdx, %rdx
+	addq	%rcx, %rdx
+	leaq	0(,%rdx,4), %rcx
+	leaq	d(%rip), %rdx
+	movl	(%rcx,%rdx), %esi
+	movl	-240168(%rbp), %edx
+	movslq	%edx, %rcx
+	movl	-240164(%rbp), %edx
+	movslq	%edx, %rdx
+	imulq	$202, %rdx, %rdx
+	addq	%rcx, %rdx
+	leaq	0(,%rdx,4), %rcx
+	leaq	d(%rip), %rdx
+	movl	(%rcx,%rdx), %edx
+	addl	%esi, %edx
+	cmpl	%edx, %eax
+	jle	.L30
+	movl	-240164(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-240172(%rbp), %eax
+	cltq
+	imulq	$202, %rax, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	d(%rip), %rax
+	movl	(%rdx,%rax), %ecx
+	movl	-240168(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-240164(%rbp), %eax
+	cltq
+	imulq	$202, %rax, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	d(%rip), %rax
+	movl	(%rdx,%rax), %eax
+	addl	%eax, %ecx
+	movl	-240168(%rbp), %eax
+	movslq	%eax, %rdx
+	movl	-240172(%rbp), %eax
+	cltq
+	imulq	$202, %rax, %rax
+	addq	%rdx, %rax
+	leaq	0(,%rax,4), %rdx
+	leaq	d(%rip), %rax
+	movl	%ecx, (%rdx,%rax)
+.L30:
+	addl	$1, -240168(%rbp)
+.L29:
+	movl	-240184(%rbp), %eax
+	cmpl	%eax, -240168(%rbp)
+	jl	.L31
+	addl	$1, -240172(%rbp)
+.L28:
+	movl	-240184(%rbp), %eax
+	cmpl	%eax, -240172(%rbp)
+	jl	.L32
+	addl	$1, -240164(%rbp)
+.L27:
+	movl	-240184(%rbp), %eax
+	cmpl	%eax, -240164(%rbp)
+	jl	.L33
+	movl	$1000000000, ans(%rip)
+	movq	$0, -240112(%rbp)
+	movq	$0, -240104(%rbp)
+	movq	$0, -240096(%rbp)
+	movq	$0, -240088(%rbp)
+	movq	$0, -240080(%rbp)
+	movl	-240176(%rbp), %edx
+	leaq	-240160(%rbp), %rsi
+	leaq	-240112(%rbp), %rax
+	movl	%edx, %ecx
+	movl	$0, %edx
+	movq	%rax, %rdi
+	call	solve
+	movl	ans(%rip), %eax
+	movl	%eax, %esi
+	leaq	.LC2(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
+	movl	$0, %eax
+	movq	-8(%rbp), %rdx
+	subq	%fs:40, %rdx
+	je	.L35
+	call	__stack_chk_fail@PLT
+.L35:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

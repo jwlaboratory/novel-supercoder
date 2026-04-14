@@ -1,0 +1,42 @@
+[
+  {
+    "input": "100 50 2\n",
+    "output": "25\n\n"
+  },
+  {
+    "input": "16 12 2\n",
+    "output": "2\n\n"
+  },
+  {
+    "input": "12 12 2\n",
+    "output": "6\n\n"
+  },
+  {
+    "input": "100 45 2\n",
+    "output": "1\n\n"
+  },
+  {
+    "input": "27 12 1\n",
+    "output": "3\n\n"
+  },
+  {
+    "input": "16 24 1\n",
+    "output": "8\n\n"
+  },
+  {
+    "input": "110 50 2\n",
+    "output": "5\n\n"
+  },
+  {
+    "input": "12 12 3\n",
+    "output": "4\n\n"
+  },
+  {
+    "input": "27 18 1\n",
+    "output": "9\n\n"
+  },
+  {
+    "input": "100 50 3\n",
+    "output": "10\n\n"
+  }
+]

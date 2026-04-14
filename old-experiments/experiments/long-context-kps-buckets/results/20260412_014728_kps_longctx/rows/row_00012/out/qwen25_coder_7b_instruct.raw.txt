@@ -1,0 +1,282 @@
+```assembly
+	.file	"inputC.c"
+	.text
+	.globl	n
+	.bss
+	.align 8
+	.type	n, @object
+	.size	n, 8
+n:
+	.zero	8
+	.globl	m
+	.align 8
+	.type	m, @object
+	.size	m, 8
+m:
+	.zero	8
+	.globl	h
+	.align 8
+	.type	h, @object
+	.size	h, 8
+h:
+	.zero	8
+	.globl	w
+	.align 8
+	.type	w, @object
+	.size	w, 8
+w:
+	.zero	8
+	.globl	k
+	.align 8
+	.type	k, @object
+	.size	k, 8
+k:
+	.zero	8
+	.globl	q
+	.align 8
+	.type	q, @object
+	.size	q, 8
+q:
+	.zero	8
+	.globl	va
+	.align 8
+	.type	va, @object
+	.size	va, 8
+va:
+	.zero	8
+	.globl	vb
+	.align 8
+	.type	vb, @object
+	.size	vb, 8
+vb:
+	.zero	8
+	.globl	vc
+	.align 8
+	.type	vc, @object
+	.size	vc, 8
+vc:
+	.zero	8
+	.globl	vd
+	.align 8
+	.type	vd, @object
+	.size	vd, 8
+vd:
+	.zero	8
+	.globl	ve
+	.align 8
+	.type	ve, @object
+	.size	ve, 8
+ve:
+	.zero	8
+	.globl	vf
+	.align 8
+	.type	vf, @object
+	.size	vf, 8
+vf:
+	.zero	8
+	.globl	vra
+	.align 16
+	.type	vra, @object
+	.size	vra, 16
+vra:
+	.zero	16
+	.globl	vrb
+	.align 16
+	.type	vrb, @object
+	.size	vrb, 16
+vrb:
+	.zero	16
+	.globl	vrc
+	.align 16
+	.type	vrc, @object
+	.size	vrc, 16
+vrc:
+	.zero	16
+	.globl	vda
+	.align 8
+	.type	vda, @object
+	.size	vda, 8
+vda:
+	.zero	8
+	.globl	vdb
+	.align 8
+	.type	vdb, @object
+	.size	vdb, 8
+vdb:
+	.zero	8
+	.globl	vdc
+	.align 8
+	.type	vdc, @object
+	.size	vdc, 8
+vdc:
+	.zero	8
+	.globl	ch
+	.type	ch, @object
+	.size	ch, 1
+ch:
+	.zero	1
+	.globl	dh
+	.type	dh, @object
+	.size	dh, 1
+dh:
+	.zero	1
+	.text
+	.globl	umin
+	.type	umin, @function
+umin:
+.LFB6:
+	.cfi_startproc
+	endbr64
+	movq	%rdi, %rax
+	cmpq	%rsi, %rax
+	cmovbe	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	umin, .-umin
+	.globl	umax
+	.type	umax, @function
+umax:
+.LFB7:
+	.cfi_startproc
+	endbr64
+	movq	%rdi, %rax
+	cmpq	%rsi, %rax
+	cmovnb	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	umax, .-umax
+	.globl	smin
+	.type	smin, @function
+smin:
+.LFB8:
+	.cfi_startproc
+	endbr64
+	movq	%rdi, %rax
+	cmpq	%rsi, %rax
+	cmovle	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE8:
+	.size	smin, .-smin
+	.globl	smax
+	.type	smax, @function
+smax:
+.LFB9:
+	.cfi_startproc
+	endbr64
+	movq	%rdi, %rax
+	cmpq	%rsi, %rax
+	cmovge	%rsi, %rax
+	ret
+	.cfi_endproc
+.LFE9:
+	.size	smax, .-smax
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB10:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movq	%rdi, -8(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	-8(%rbp), %rax
+	cmpq	-16(%rbp), %rax
+	jnb	.L10
+	movq	-8(%rbp), %rdx
+	movq	-16(%rbp), %rax
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	gcd
+	jmp	.L11
+.L10:
+	cmpq	$0, -16(%rbp)
+	jne	.L12
+	movq	-8(%rbp), %rax
+	jmp	.L11
+.L12:
+	movq	-8(%rbp), %rax
+	movl	$0, %edx
+	divq	-16(%rbp)
+	movq	%rdx, %rsi
+	movq	%rax, %rdi
+	call	gcd
+.L11:
+	leave
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	gcd, .-gcd
+	.globl	bitpow
+	.type	bitpow, @function
+bitpow:
+.LFB11:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -24(%rbp)
+	movq	%rsi, -32(%rbp)
+	movq	%rdx, -40(%rbp)
+	movq	$1, -8(%rbp)
+	jmp	.L14
+.L16:
+	movq	-32(%rbp), %rax
+	andl	$1, %eax
+	testq	%rax, %rax
+	je	.L15
+	movq	-8(%rbp), %rax
+	imulq	-24(%rbp), %rax
+	movq	%rax, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movl	$0, %edx
+	divq	-40(%rbp)
+	movq	%rdx, -8(%rbp)
+.L15:
+	movq	-32(%rbp), %rax
+	shrq	%rax
+	movq	%rax, -32(%rbp)
+	movq	-24(%rbp), %rax
+	imulq	%rax, %rax
+	movl	$0, %edx
+	divq	-40(%rbp)
+	movq	%rdx, -24(%rbp)
+.L14:
+	cmpq	$0, -32(%rbp)
+	jne	.L16
+	movq	-8(%rbp), %rax
+	popq	%rbp
+	ret
+	.cfi_endproc
+.LFE11:
+	.size	bitpow, .-bitpow
+	.globl	divide
+	.type	divide, @function
+divide:
+.LFB12:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$24, %rsp
+	movq	%rdi, -8(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	%rdx, -24(%rbp)
+	movq	-24(%rbp), %rax
+	leaq	-2(%rax), %rcx
+	movq	-24(%rbp), %rdx
+	movq	-16(%rbp), %rax
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	bitpow
+	imulq	-8(%rbp),

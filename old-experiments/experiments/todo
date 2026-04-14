@@ -1,0 +1,9 @@
+1. need to check how it does with longer context
+2. need to create a dataset with only longer context stuff
+3. need to benchmark and save results with long context
+4. 
+
+
+1. need to check exactly why it is failing on current tasks
+2. need to write up a reasoning argument pros and cons of having multi agent to solve above problems
+

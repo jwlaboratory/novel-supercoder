@@ -1,0 +1,19 @@
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:18:5: warning: conflicting types for built-in function 'round'; expected 'double(double)' [-Wbuiltin-declaration-mismatch]
+   18 | int round(int a,int b){if((a%b)*2 >= b){return (a/b)+1;}return a/b;}
+      |     ^~~~~
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:8:1: note: 'round' is declared in header '<math.h>'
+    7 | #include<time.h>
+  +++ |+#include <math.h>
+    8 | #define inf 1072114514
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:19:5: warning: conflicting types for built-in function 'ceil'; expected 'double(double)' [-Wbuiltin-declaration-mismatch]
+   19 | int ceil(int a,int b){if(a%b==0){return a/b;}return (a/b)+1;}
+      |     ^~~~
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:19:5: note: 'ceil' is declared in header '<math.h>'
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:25:5: warning: conflicting types for built-in function 'pow'; expected 'double(double,  double)' [-Wbuiltin-declaration-mismatch]
+   25 | int pow(int a,int b){int i,r=1;for(i=1;i<=b;i++){r*=a;}return r;}
+      |     ^~~
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:25:5: note: 'pow' is declared in header '<math.h>'
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:32:11: warning: conflicting types for built-in function 'llround'; expected 'long long int(double)' [-Wbuiltin-declaration-mismatch]
+   32 | long long llround(long long a,long long b){if((a%b)*2 >= b){return (a/b)+1;}return a/b;}
+      |           ^~~~~~~
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00013/inputC.c:32:11: note: 'llround' is declared in header '<math.h>'

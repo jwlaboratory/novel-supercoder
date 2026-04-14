@@ -1,0 +1,67 @@
+{
+  "run_dir": "/Users/shreybirmiwal/projects/jwlabs/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx",
+  "meta_edges": [
+    800,
+    2500,
+    8000
+  ],
+  "length_stratify": {
+    "per_bucket_target": 4,
+    "bucket_counts_at_prepare": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "buckets": [
+    {
+      "c_len_bucket_label": "[0,800)",
+      "n": 4,
+      "compiled": 1,
+      "correct": 0,
+      "compiled_pct": 25.0,
+      "correct_pct": 0.0
+    },
+    {
+      "c_len_bucket_label": "[2500,8000)",
+      "n": 4,
+      "compiled": 1,
+      "correct": 1,
+      "compiled_pct": 25.0,
+      "correct_pct": 25.0
+    },
+    {
+      "c_len_bucket_label": "[800,2500)",
+      "n": 4,
+      "compiled": 0,
+      "correct": 0,
+      "compiled_pct": 0.0,
+      "correct_pct": 0.0
+    },
+    {
+      "c_len_bucket_label": "[8000,inf)",
+      "n": 4,
+      "compiled": 0,
+      "correct": 0,
+      "compiled_pct": 0.0,
+      "correct_pct": 0.0
+    }
+  ],
+  "failure_tag_counts_by_bucket": {
+    "[0,800)": {
+      "compile_fail": 3,
+      "io_or_timeout": 1
+    },
+    "[2500,8000)": {
+      "compile_fail": 3
+    },
+    "[800,2500)": {
+      "compile_fail": 4
+    },
+    "[8000,inf)": {
+      "compile_fail": 4
+    }
+  },
+  "interpretation_note": "Lower correct% in longer C buckets (with similar compile%) supports investing in long-context handling (prompt truncation, larger window, retrieval, or chunking). This is correlational: KPS mixes problem difficulty with length."
+}

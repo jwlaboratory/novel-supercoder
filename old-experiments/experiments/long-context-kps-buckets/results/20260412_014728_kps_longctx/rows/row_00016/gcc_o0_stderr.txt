@@ -1,0 +1,40 @@
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c: In function 'printUquotient':
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c:360:20: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 2 has type 'ull' {aka 'long unsigned int'} [-Wformat=]
+  360 |         printf("%llu.", left / right);
+      |                 ~~~^    ~~~~~~~~~~~~
+      |                    |         |
+      |                    |         ull {aka long unsigned int}
+      |                    long long unsigned int
+      |                 %lu
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c:364:27: warning: format '%d' expects argument of type 'int', but argument 2 has type 'ull' {aka 'long unsigned int'} [-Wformat=]
+  364 |                 printf("%1d", left / right);
+      |                         ~~^   ~~~~~~~~~~~~
+      |                           |        |
+      |                           int      ull {aka long unsigned int}
+      |                         %1ld
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c: In function 'solve':
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c:485:20: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 2 has type 'ull' {aka 'long unsigned int'} [-Wformat=]
+  485 |         printf("%llu\n", result);
+      |                 ~~~^     ~~~~~~
+      |                    |     |
+      |                    |     ull {aka long unsigned int}
+      |                    long long unsigned int
+      |                 %lu
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c: In function 'main':
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c:510:19: warning: format '%llu' expects argument of type 'long long unsigned int *', but argument 2 has type 'ull *' {aka 'long unsigned int *'} [-Wformat=]
+  510 |         scanf("%llu", &n, &m);
+      |                ~~~^   ~~
+      |                   |   |
+      |                   |   ull * {aka long unsigned int *}
+      |                   long long unsigned int *
+      |                %lu
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c:510:15: warning: too many arguments for format [-Wformat-extra-args]
+  510 |         scanf("%llu", &n, &m);
+      |               ^~~~~~
+/workspace/novel-supercoder/src/experiments/long-context-kps-buckets/results/20260412_014728_kps_longctx/rows/row_00016/inputC.c:518:27: warning: format '%llu' expects argument of type 'long long unsigned int *', but argument 2 has type 'ull *' {aka 'long unsigned int *'} [-Wformat=]
+  518 |                 scanf("%llu", &a[i]);
+      |                        ~~~^   ~~~~~
+      |                           |   |
+      |                           |   ull * {aka long unsigned int *}
+      |                           long long unsigned int *
+      |                        %lu

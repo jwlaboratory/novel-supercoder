@@ -1,0 +1,24 @@
+{
+  "run_dir": "20260412_014728_kps_longctx",
+  "kps_sampling": "shuffled_train_seed_42_offset_0_limit_200",
+  "kps_sampling_caveat": "Train split shuffled with fixed seed before offset/limit; broader problem mix than sequential head.",
+  "dataset": "KrishPS/codenet-accepted-c",
+  "split": "train",
+  "offset": 0,
+  "limit": 200,
+  "shuffle_seed": 42,
+  "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+  "evaluation": {
+    "tool": "bench_correctness_simple.py",
+    "description": "Single-threaded gcc of generated .s, then up to 10 KPS tests per row; stdout to temp files (avoids PIPE deadlock). No hyperfine. Identical-to-O0 assembly counts as correct without running tests.",
+    "total_problems": 16,
+    "compiled_problems": 2,
+    "compilation_rate_pct": 12.5,
+    "correct_problems": 1,
+    "accuracy_pct": 6.25
+  },
+  "notes": [
+    "I/O-only, no hyperfine; identical-to-O0 counts as correct without running tests.",
+    "Prefer full SuperCoder test_benchmark when the Docker environment has enough RAM (BENCH_MODE=full)."
+  ]
+}
