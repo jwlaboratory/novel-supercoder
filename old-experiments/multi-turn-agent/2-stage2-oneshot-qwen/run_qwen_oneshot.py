@@ -17,7 +17,8 @@ from pathlib import Path
 
 import modal
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "3-stage3-infer-improvements"))
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(_REPO_ROOT / "qwen-debug-rl" / "1-gen-training-data"))
 from modal_inference import app, VllmEngine  # noqa: E402
 
 QWEN_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"

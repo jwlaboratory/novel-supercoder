@@ -16,7 +16,12 @@ from pathlib import Path
 
 import modal
 
-from modal_inference import app, VllmEngine
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(
+    0,
+    str(_REPO_ROOT / "qwen-debug-rl" / "1-gen-training-data"),
+)
+from modal_inference import app, VllmEngine  # noqa: E402
 
 SYSTEM_PROMPT = (
     "You are an expert x86-64 assembly programmer and performance engineer. "
