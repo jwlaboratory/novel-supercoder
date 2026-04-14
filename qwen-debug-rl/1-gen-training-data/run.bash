@@ -12,7 +12,8 @@ usage() {
   echo "  $0 --1                         # stage 1: download dataset" >&2
   echo "  $0 --2                         # stage 2: run Qwen inference" >&2
   echo "  $0 --3                         # stage 3: identify fails, build debug CSV" >&2
-  echo "  $0 --1,2,3                     # full pipeline" >&2
+  echo "  $0 --4                         # stage 4: backfill test_cases into all CSVs" >&2
+  echo "  $0 --1,2,3,4                   # full pipeline" >&2
   echo "  $0 --split=val --2             # stage 2: val only" >&2
   echo "" >&2
   echo "env:  DOCKER_IMAGE  (default: supercoder-x86-bench)" >&2
@@ -56,6 +57,11 @@ run_identify_fails() {
   (cd "$REPO" && uv run python "$ROOT/3-identify-fails.py" --split "$split" --docker-image "$DOCKER_IMAGE")
 }
 
+run_add_io_test_cases() {
+  local split="$1"
+  (cd "$REPO" && uv run python "$ROOT/4-add-io-test-cases.py" --split "$split" --csv-dir "$ROOT")
+}
+
 for s in "${STAGES[@]}"; do
   s="${s//[[:space:]]/}"
   [[ -z "$s" ]] && continue
@@ -89,6 +95,16 @@ for s in "${STAGES[@]}"; do
       if [[ "$SPLIT" == "train" || "$SPLIT" == "both" ]]; then
         echo "--- stage 3: identify fails + build debug CSV (train) ---"
         run_identify_fails train
+      fi
+      ;;
+    4)
+      if [[ "$SPLIT" == "val" || "$SPLIT" == "both" ]]; then
+        echo "--- stage 4: backfill test_cases into CSVs (val) ---"
+        run_add_io_test_cases val
+      fi
+      if [[ "$SPLIT" == "train" || "$SPLIT" == "both" ]]; then
+        echo "--- stage 4: backfill test_cases into CSVs (train) ---"
+        run_add_io_test_cases train
       fi
       ;;
     *)
