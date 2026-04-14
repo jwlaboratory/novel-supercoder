@@ -1,0 +1,119 @@
+"""Stage 1: Infer potential optimizations using Qwen2.5-Coder-7B.
+
+Reads supercoder_{split}.csv (which already has a prompt_infer_improvement
+column built in stage 0), sends each row to Qwen on a Modal GPU,
+and writes supercoder_{split}_post_infer.csv with an added `improvements` column.
+
+Usage:
+    modal run run_qwen_inference.py --split val
+    modal run run_qwen_inference.py --split train --batch-size 64 --workers 2
+"""
+from __future__ import annotations
+
+import csv
+import sys
+from pathlib import Path
+
+import modal
+
+from modal_inference import app, VllmEngine
+
+SYSTEM_PROMPT = (
+    "You are an expert x86-64 assembly programmer and performance engineer. "
+    "When given assembly code, you analyze it instruction-by-instruction and identify "
+    "specific inefficiencies by referencing exact labels and instructions. "
+    "You never give generic advice. You never write code. "
+    "You output only a numbered list of specific observations about the given assembly. "
+    "If you cannot find a real, concrete inefficiency, output NOTHING. "
+    "Do not fabricate or stretch observations just to have something to say."
+)
+
+CSV_DIR = Path(__file__).resolve().parent.parent
+
+INPUT_COLUMNS = [
+    "idx",
+    "c_code",
+    "assembly",
+    "test_cases",
+    "prompt_one_shot",
+    "prompt_infer_improvement",
+]
+
+
+def load_csv(split: str) -> list[dict]:
+    path = CSV_DIR / f"supercoder_{split}.csv"
+    if not path.exists():
+        raise FileNotFoundError(f"CSV not found: {path}")
+
+    csv.field_size_limit(sys.maxsize)
+    rows = []
+    with path.open("r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            rows.append(row)
+    return rows
+
+
+def write_csv(split: str, rows: list[dict], results: dict[int, str]) -> Path:
+    out_path = CSV_DIR / f"supercoder_{split}_post_infer.csv"
+    out_fields = INPUT_COLUMNS + ["improvements"]
+    with out_path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=out_fields)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({
+                **{col: row[col] for col in INPUT_COLUMNS},
+                "improvements": results.get(int(row["idx"]), ""),
+            })
+    return out_path
+
+
+@app.local_entrypoint()
+def main(
+    split: str = "val",
+    batch_size: int = 32,
+    workers: int = 1,
+):
+    if split not in {"train", "val"}:
+        raise ValueError("--split must be 'train' or 'val'")
+
+    rows = load_csv(split)
+    print(f"Loaded {len(rows)} rows from supercoder_{split}.csv")
+
+    items = [
+        {"id": int(r["idx"]), "prompt": r["prompt_infer_improvement"]}
+        for r in rows
+    ]
+
+    batches = [items[i : i + batch_size] for i in range(0, len(items), batch_size)]
+    engines = [VllmEngine() for _ in range(workers)]
+
+    jobs = []
+    for i, batch in enumerate(batches):
+        engine = engines[i % workers]
+        jobs.append((batch, engine.generate_batch.spawn(batch, SYSTEM_PROMPT)))
+
+    done = 0
+    total = len(rows)
+    results: dict[int, str] = {}
+
+    for batch, call in jobs:
+        try:
+            batch_results = call.get()
+        except Exception as exc:
+            for item in batch:
+                results[item["id"]] = f"ERROR: {exc}"
+                done += 1
+                print(f"[{done}/{total}] idx={item['id']} ERROR", flush=True)
+            continue
+
+        for result in batch_results:
+            results[result["id"]] = result["output"]
+            done += 1
+            print(
+                f"[{done}/{total}] idx={result['id']} ({result['status']})",
+                flush=True,
+            )
+
+    out_path = write_csv(split, rows, results)
+    print(f"\nDone. Results written to {out_path}")
