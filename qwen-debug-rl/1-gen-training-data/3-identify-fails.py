@@ -15,6 +15,7 @@ Requires:
 Usage:
     uv run python 3-identify-fails.py --split val
     uv run python 3-identify-fails.py --split train --docker-image supercoder-x86-bench
+    uv run python 3-identify-fails.py --split val --batch-size 100
 """
 from __future__ import annotations
 
@@ -31,6 +32,7 @@ from datasets import load_dataset
 CSV_DIR = Path(__file__).resolve().parent
 DOCKER_IMAGE_DEFAULT = "supercoder-x86-bench"
 MAX_TESTS_DEFAULT = 10
+BATCH_SIZE_DEFAULT = 200
 
 # ---------------------------------------------------------------------------
 # Debug prompt template for RL training data
@@ -198,6 +200,65 @@ def load_inference_csv(path: Path) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 
+def _run_batch(
+    batch_rows: list[dict],
+    docker_image: str,
+    max_tests: int,
+) -> dict[str, dict]:
+    """Run a single batch of rows inside Docker; return partial results dict."""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        work = Path(tmpdir)
+
+        for row in batch_rows:
+            idx = row["problem_idx"]
+            row_dir = work / f"row_{idx}"
+            row_dir.mkdir()
+
+            asm = clean_assembly(row.get("qwen_assembly", ""))
+            if asm.startswith("ERROR:"):
+                asm = ""
+            (row_dir / "gen.s").write_text(asm, encoding="utf-8")
+
+            tests = json.loads(row.get("test_cases", "[]"))
+            (row_dir / "tests.json").write_text(
+                json.dumps(tests[:max_tests], ensure_ascii=False),
+                encoding="utf-8",
+            )
+
+        (work / "runner.py").write_text(_DOCKER_RUNNER, encoding="utf-8")
+
+        proc = subprocess.run(
+            [
+                "docker", "run", "--rm", "--platform", "linux/amd64",
+                "-v", f"{work}:/work",
+                docker_image,
+                "python3", "/work/runner.py", "/work",
+            ],
+        )
+
+        results_file = work / "results.json"
+        if results_file.exists():
+            return json.loads(results_file.read_text(encoding="utf-8"))
+
+        if proc.returncode != 0:
+            print(
+                f"  WARNING: Docker exited {proc.returncode} and no results.json "
+                f"(OOM kill if 137). Marking batch rows as unknown failures.",
+                file=sys.stderr,
+            )
+            partial: dict[str, dict] = {}
+            for row in batch_rows:
+                idx = str(row["problem_idx"])
+                partial[idx] = {
+                    "compile_passed": False,
+                    "test_passed": False,
+                    "error": f"Docker container killed (exit {proc.returncode})",
+                }
+            return partial
+
+        return {}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Identify failed assembly generations and build debug RL training CSV."
@@ -210,6 +271,10 @@ def main() -> None:
     parser.add_argument(
         "--max-tests", type=int, default=MAX_TESTS_DEFAULT,
         help=f"Max test cases per row (default: {MAX_TESTS_DEFAULT}).",
+    )
+    parser.add_argument(
+        "--batch-size", type=int, default=BATCH_SIZE_DEFAULT,
+        help=f"Rows per Docker invocation (default: {BATCH_SIZE_DEFAULT}).",
     )
     args = parser.parse_args()
 
@@ -227,46 +292,24 @@ def main() -> None:
         c_code_map[i] = extra.get("c_code", "")
     print(f"  {len(c_code_map)} c_code entries loaded")
 
-    # 3. Prepare work directory ----------------------------------------------
-    with tempfile.TemporaryDirectory() as tmpdir:
-        work = Path(tmpdir)
+    # 3. Run compile + test in batched Docker containers ---------------------
+    results: dict[str, dict] = {}
+    n_batches = (len(rows) + args.batch_size - 1) // args.batch_size
 
-        for row in rows:
-            idx = row["problem_idx"]
-            row_dir = work / f"row_{idx}"
-            row_dir.mkdir()
-
-            asm = clean_assembly(row.get("qwen_assembly", ""))
-            if asm.startswith("ERROR:"):
-                asm = ""
-            (row_dir / "gen.s").write_text(asm, encoding="utf-8")
-
-            tests = json.loads(row.get("test_cases", "[]"))
-            (row_dir / "tests.json").write_text(
-                json.dumps(tests[: args.max_tests], ensure_ascii=False),
-                encoding="utf-8",
-            )
-
-        (work / "runner.py").write_text(_DOCKER_RUNNER, encoding="utf-8")
-
-        # 4. Run compile + test inside Docker --------------------------------
-        print(f"\nRunning compile & test in Docker ({args.docker_image}) …")
-        subprocess.run(
-            [
-                "docker", "run", "--rm", "--platform", "linux/amd64",
-                "-v", f"{work}:/work",
-                args.docker_image,
-                "python3", "/work/runner.py", "/work",
-            ],
-            check=True,
+    for batch_num in range(n_batches):
+        start = batch_num * args.batch_size
+        end = min(start + args.batch_size, len(rows))
+        batch = rows[start:end]
+        print(
+            f"\n--- Batch {batch_num + 1}/{n_batches} "
+            f"(rows {start}–{end - 1}, n={len(batch)}) "
+            f"[Docker: {args.docker_image}] ---"
         )
+        batch_results = _run_batch(batch, args.docker_image, args.max_tests)
+        results.update(batch_results)
+        print(f"  Batch done — {len(batch_results)} results collected")
 
-        # 5. Read results ----------------------------------------------------
-        results: dict[str, dict] = json.loads(
-            (work / "results.json").read_text(encoding="utf-8")
-        )
-
-    # 6. Build fails CSV -----------------------------------------------------
+    # 4. Build fails CSV -----------------------------------------------------
     out_fields = [
         "problem_idx",
         "compile_passed",

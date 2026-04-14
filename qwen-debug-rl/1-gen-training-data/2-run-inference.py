@@ -1,9 +1,14 @@
 """Stage 2: Generate optimized assembly using Qwen2.5-Coder-7B-Instruct.
 
 Reads supercoder_{split}.csv (produced by 1-download-supercoder-dataset.py),
-sends each row's question + test cases to Qwen2.5-Coder-7B-Instruct on a
-Modal GPU, and writes supercoder_{split}_with_inference.csv with an added
-`qwen_assembly` column containing the model's generated assembly.
+sends each row's `question` column — the paper's original prompt containing
+C code + unoptimized assembly — to Qwen on Modal, and writes
+supercoder_{split}_with_inference.csv with the model's generated assembly.
+
+Matches the inference approach from run-their-paper-exactly:
+- No system prompt (just user message with the paper question)
+- apply_chat_template → llm.generate (SGLang-style)
+- Assembly extracted from ```assembly ... ``` fenced blocks
 
 Usage:
     modal run 2-run-inference.py --split val
@@ -17,49 +22,25 @@ from pathlib import Path
 
 import modal
 
-sys.path.insert(
-    0,
-    str(
-        Path(__file__).resolve().parents[2]
-        / "old-experiments"
-        / "multi-turn-agent"
-        / "3-stage3-infer-improvements"
-    ),
-)
-from modal_inference import app, VllmEngine  # noqa: E402
-
-QWEN_MODEL = "Qwen/Qwen2.5-Coder-7B-Instruct"
+from modal_inference import app, VllmEngine
 
 CSV_DIR = Path(__file__).resolve().parent
 
 INPUT_COLUMNS = ["problem_idx", "test_cases", "question"]
 
-SYSTEM_PROMPT = (
-    "You are an expert x86-64 assembly programmer who writes highly optimized "
-    "assembly solutions for competitive programming problems. Your output must "
-    "be a complete, self-contained x86-64 Linux assembly program that reads "
-    "from stdin and writes to stdout. Output ONLY the assembly code — no "
-    "explanations, no markdown fences."
-)
 
-USER_PROMPT_TEMPLATE = """\
-Write an optimized x86-64 assembly program for the following problem.
-The program must read input from stdin and write output to stdout.
+def extract_assembly(raw: str) -> str:
+    """Extract assembly from ```assembly ... ``` fenced blocks.
 
-## Problem
-{question}
-
-## Test Cases
-{test_cases}
-
-Respond with the complete x86-64 assembly source code only."""
-
-
-def build_prompt(row: dict) -> str:
-    return USER_PROMPT_TEMPLATE.format(
-        question=row["question"],
-        test_cases=row["test_cases"],
-    )
+    Same logic as run-their-paper-exactly/modal_generate_supercoder_prompt_sglang_style.py.
+    """
+    text = raw
+    if "```assembly" in text:
+        text = text[text.rfind("```assembly") + len("```assembly") :]
+    if "```" in text:
+        text = text[: text.rfind("```")]
+    clean = text.strip()
+    return clean + "\n" if clean else "\n"
 
 
 def load_csv(split: str) -> list[dict]:
@@ -83,10 +64,11 @@ def write_csv(split: str, rows: list[dict], results: dict[int, str]) -> Path:
         writer = csv.DictWriter(f, fieldnames=out_fields)
         writer.writeheader()
         for row in rows:
+            raw = results.get(int(row["problem_idx"]), "")
             writer.writerow(
                 {
                     **{col: row[col] for col in INPUT_COLUMNS},
-                    "qwen_assembly": results.get(int(row["problem_idx"]), ""),
+                    "qwen_assembly": extract_assembly(raw),
                 }
             )
     return out_path
@@ -105,7 +87,7 @@ def main(
     print(f"Loaded {len(rows)} rows from supercoder_{split}.csv")
 
     items = [
-        {"id": int(r["problem_idx"]), "prompt": build_prompt(r)}
+        {"id": int(r["problem_idx"]), "prompt": r["question"]}
         for r in rows
     ]
 
@@ -115,7 +97,7 @@ def main(
     jobs = []
     for i, batch in enumerate(batches):
         engine = engines[i % workers]
-        jobs.append((batch, engine.generate_batch.spawn(batch, system_prompt=SYSTEM_PROMPT)))
+        jobs.append((batch, engine.generate_batch.spawn(batch)))
 
     done = 0
     total = len(rows)
