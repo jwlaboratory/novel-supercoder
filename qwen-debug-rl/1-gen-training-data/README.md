@@ -3,9 +3,10 @@
 Generate debug RL training data: download SuperCoder, run Qwen inference, identify failures.
 
 ```bash
-./run.bash --1,2,3,4 --split=val   # full pipeline (download → inference → identify fails → backfill I/O)
+./run.bash --1,2,3,4,5             # full pipeline
+./run.bash --5                     # just stage 5: add unoptimized_compiled to existing fails CSVs
+./run.bash --5 --split=val         # stage 5: val only
 ./run.bash --3 --split=val         # just stage 3 (needs inference CSV + Docker supercoder-x86-bench)
-./run.bash --4 --split=both        # just stage 4: backfill missing test_cases into all downstream CSVs
 ```
 
 | Stage | Script | Description |
@@ -14,9 +15,8 @@ Generate debug RL training data: download SuperCoder, run Qwen inference, identi
 | 2 | `2-run-inference.py` (Modal) | Run Qwen, write `supercoder_{split}_with_inference.csv` |
 | 3 | `3-identify-fails.py` | Compile + test in Docker, write `supercoder_{split}_fails.csv` |
 | 4 | `4-add-io-test-cases.py` | Backfill missing `test_cases` column into any downstream CSV |
+| 5 | `5-add-unoptimized-compiled.py` | Add `unoptimized_assembly` + `unoptimized_compiled_b64` from HF dataset |
 
 Stage 3 compiles/tests assembly inside `supercoder-x86-bench` Docker (Linux x86-64 gcc) — **do not** run gcc on macOS/ARM, results will be wrong.
 
-Stage 4 is a post-hoc fix: if `test_cases` (input/output pairs) were accidentally dropped from a downstream CSV, run stage 4 to re-join them from the base `supercoder_{split}.csv`. It is idempotent — CSVs that already have the column are skipped.
-
-TODO: Update to use our benchmarks
+Stage 5 joins back the precompiled unoptimized binary from the HF dataset (by `problem_idx`). This is required for the supercoder reward function to compute speedup during RL training. It is idempotent — CSVs that already have both columns are skipped.

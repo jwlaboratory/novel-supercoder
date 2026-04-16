@@ -1,0 +1,5061 @@
+idx,status,compiled,tests_pass,correctness,reward,raw_speedup,response_tokens,has_closing_fence,is_copy,n_inputs,compile_stderr,runtime_stderr,speedup_detail,asm_first_200,prompt,response
+1,ALL_PASS,True,True,1.0,0.0,1.0267,927,True,False,10,,,"  input0: unopt=4.041ms  sol=3.471ms  speedup=1.164x
+  input1: unopt=3.332ms  sol=3.789ms  speedup=0.879x
+  input2: unopt=3.751ms  sol=3.619ms  speedup=1.037x",".file	""temp.c""
+	.text
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	xorl	%eax, %eax
+	xorl	%edx, %edx
+	cmpl	%edi, %esi
+	jge	.L3
+	movl	%edi, %eax
+	movl	%esi, %edi
+","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int gcd(int a,int b){
+    if(a<b){
+        int t=b;
+        b=a;
+        a=t;
+    }
+    int c=1;
+    while(c!=0){
+        c=a%b;
+        a=b;
+        b=c;
+    }
+    return a;
+}
+int main(void){
+    int w,h,c,g;
+    scanf(""%d %d %d"",&w,&h,&c);
+    g=gcd(w,h);
+    printf(""%d\n"",(w/g)*(h/g)*c);
+	return 0;		
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	movl	%edi, %eax
+	movl	%esi, %edx
+	cmpl	%esi, %edi
+	jge	.L3
+	movl	%esi, %eax
+	movl	%edi, %edx
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movl	%edx, %ecx
+	cltd
+	idivl	%ecx
+	movl	%ecx, %eax
+	testl	%edx, %edx
+	jne	.L3
+	ret
+	.cfi_endproc
+.LFE23:
+	.size	gcd, .-gcd
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB24:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rcx
+	leaq	16(%rsp), %rdx
+	leaq	12(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	16(%rsp), %r8d
+	movl	12(%rsp), %edi
+	cmpl	%edi, %r8d
+	jle	.L10
+	movl	%edi, %edx
+	movl	%r8d, %ecx
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movl	%ecx, %eax
+	movl	%edx, %ecx
+	cltd
+	idivl	%ecx
+	testl	%edx, %edx
+	jne	.L8
+	movl	%edi, %eax
+	leaq	.LC1(%rip), %rsi
+	cltd
+	idivl	%ecx
+	movl	%eax, %edi
+	movl	%r8d, %eax
+	cltd
+	idivl	%ecx
+	imull	%eax, %edi
+	xorl	%eax, %eax
+	imull	20(%rsp), %edi
+	movl	%edi, %edx
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L13
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L10:
+	.cfi_restore_state
+	movl	%r8d, %edx
+	movl	%edi, %ecx
+	jmp	.L8
+.L13:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE24:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	gcd
+	.type	gcd, @function
+gcd:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	xorl	%eax, %eax
+	xorl	%edx, %edx
+	cmpl	%edi, %esi
+	jge	.L3
+	movl	%edi, %eax
+	movl	%esi, %edi
+	movl	%eax, %esi
+.L3:
+	movl	%esi, %ecx
+	cltd
+	idivl	%ecx
+	movl	%edx, %eax
+	testl	%edx, %edx
+	jne	.L3
+	ret
+	.cfi_endproc
+.LFE23:
+	.size	gcd, .-gcd
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB24:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rcx
+	leaq	16(%rsp), %rdx
+	leaq	12(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	16(%rsp), %r8d
+	movl	12(%rsp), %edi
+	cmpl	%edi, %r8d
+	jle	.L10
+	movl	%edi, %edx
+	movl	%r8d, %ecx
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movl	%ecx, %eax
+	movl	%edx, %ecx
+	cltd
+	idivl	%ecx
+	testl	%edx, %edx
+	jne	.L8
+	movl	%edi, %eax
+	leaq	.LC1(%rip), %rsi
+	cltd
+	idivl	%ecx
+	movl	%eax, %edi
+	movl	%r8d, %eax
+	cltd
+	idivl	%ecx
+	imull	%eax, %edi
+	xorl	%eax, %eax
+	imull	20(%rsp), %edi
+	movl	%edi, %edx
+	movl	$1, %edi
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L13
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L10:
+	.cfi_restore_state
+	movl	%r8d, %edx
+	movl	%edi, %ecx
+	jmp	.L8
+.L13:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE24:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+2,COMPILE_FAIL,False,False,-1.0,0.0,,320,True,False,10,"/usr/bin/ld: /tmp/ccg7rnxs.o: warning: relocation against `.LC0' in read-only section `.text'
+/usr/bin/ld: /tmp/ccg7rnxs.o: in function `main':
+(.text+0xd): undefined reference to `.LC0'
+/usr/bin/ld: (.text+0x5a): undefined reference to `.LC1'
+/usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+collect2: error: ld returned 1 exit status
+",,,".section .text
+.global main
+main:
+    pushq %rbp
+    movq %rsp, %rbp
+    subq $112, %rsp
+    xorl %eax, %eax
+    leaq .LC0(%rip), %rdi
+    call __isoc99_scanf@PLT
+    movq %rbp, %rdi
+    call strlen@P","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+int main(){
+  char s[100+1]={0};
+  scanf(""%s"",s);
+  int cnt=0, len=strlen(s);
+  for(int i=0; i<len/2; i++){
+    if( s[i] != s[len-1-i] ){ cnt++; }
+  }
+  printf(""%d"",cnt);
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+.LC1:
+	.string	""%d""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startproc
+	endbr64
+	pushq	%rbx
+	.cfi_def_cfa_offset 16
+	.cfi_offset 3, -16
+	pxor	%xmm0, %xmm0
+	leaq	.LC0(%rip), %rdi
+	subq	$112, %rsp
+	.cfi_def_cfa_offset 128
+	movq	%fs:40, %rax
+	movq	%rax, 104(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rbx
+	movaps	%xmm0, (%rsp)
+	movq	%rbx, %rsi
+	movaps	%xmm0, 16(%rsp)
+	movaps	%xmm0, 32(%rsp)
+	movaps	%xmm0, 48(%rsp)
+	movaps	%xmm0, 64(%rsp)
+	movaps	%xmm0, 80(%rsp)
+	movl	$0, 96(%rsp)
+	movb	$0, 100(%rsp)
+	call	__isoc99_scanf@PLT
+	movq	%rbx, %rdi
+	call	strlen@PLT
+	movl	%eax, %r8d
+	sarl	%r8d
+	je	.L2
+	leal	-1(%r8), %ecx
+	cltq
+	movq	%rbx, %rdx
+	xorl	%r8d, %r8d
+	addq	%rbx, %rax
+	leaq	1(%rsp,%rcx), %rsi
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movzbl	-1(%rax), %ebx
+	xorl	%ecx, %ecx
+	cmpb	%bl, (%rdx)
+	setne	%cl
+	addq	$1, %rdx
+	subq	$1, %rax
+	addl	%ecx, %r8d
+	cmpq	%rsi, %rdx
+	jne	.L4
+.L2:
+	xorl	%eax, %eax
+	movl	%r8d, %edx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	104(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L12
+	addq	$112, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 16
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 8
+	ret
+.L12:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE35:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+.section .text
+.global main
+main:
+    pushq %rbp
+    movq %rsp, %rbp
+    subq $112, %rsp
+    xorl %eax, %eax
+    leaq .LC0(%rip), %rdi
+    call __isoc99_scanf@PLT
+    movq %rbp, %rdi
+    call strlen@PLT
+    movl %eax, %r8d
+    sarl %r8d
+    je .L2
+    leal -1(%r8), %ecx
+    cltq
+    leaq 1(%rsp,%rcx), %rsi
+    xorl %r8d, %r8d
+.L4:
+    movzbl -1(%rsp,%rax), %ebx
+    xorl %ecx, %ecx
+    cmpb %bl, (%rdi,%rax)
+    setne %cl
+    addq $1, %rax
+    addl %ecx, %r8d
+    cmpq %rsi, %rax
+    jne .L4
+.L2:
+    xorl %eax, %eax
+    movl %r8d, %edx
+    movl $1, %edi
+    leaq .LC1(%rip), %rsi
+    call __printf_chk@PLT
+    movq %rbp, %rsp
+    popq %rbp
+    ret
+```"
+3,COMPILE_FAIL,False,False,-1.0,0.0,,439,True,False,10,"/tmp/tmp5pca5c0o/sol.s: Assembler messages:
+/tmp/tmp5pca5c0o/sol.s:1: Error: unknown pseudo-op: `.endbr64'
+",,,".endbr64
+pushq %r13
+pushq %r12
+pushq %rbp
+pushq %rbx
+subq $24, %rsp
+movq %fs:40, %rax
+movq %rax, 8(%rsp)
+xorl %eax, %eax
+movq %rsp, %rsi
+call __isoc99_scanf@PLT
+movl (%rsp), %eax
+testl %eax, %eax
+jle ","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int L,i,a,b;
+    a=0;
+    scanf(""%d"" ,&L);
+    for (i=1; i<=L; i++) {
+        scanf(""%d"" ,&b);
+        if (i%2==1 && b%2==1) {
+            a++;
+        }
+    }
+    printf(""%d\n"" ,a);
+    return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	xorl	%r13d, %r13d
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	leaq	.LC0(%rip), %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	movq	%rbp, %rdi
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	testl	%eax, %eax
+	jle	.L2
+	movl	$1, %ebx
+	leaq	4(%rsp), %r12
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	xorl	%eax, %eax
+	movq	%r12, %rsi
+	movq	%rbp, %rdi
+	call	__isoc99_scanf@PLT
+	testb	$1, %bl
+	je	.L3
+	movl	4(%rsp), %eax
+	movl	%eax, %edx
+	shrl	$31, %edx
+	addl	%edx, %eax
+	andl	$1, %eax
+	subl	%edx, %eax
+	cmpl	$1, %eax
+	sete	%al
+	movzbl	%al, %eax
+	addl	%eax, %r13d
+.L3:
+	addl	$1, %ebx
+	cmpl	%ebx, (%rsp)
+	jge	.L4
+.L2:
+	xorl	%eax, %eax
+	movl	%r13d, %edx
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L13
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L13:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+.endbr64
+pushq %r13
+pushq %r12
+pushq %rbp
+pushq %rbx
+subq $24, %rsp
+movq %fs:40, %rax
+movq %rax, 8(%rsp)
+xorl %eax, %eax
+movq %rsp, %rsi
+call __isoc99_scanf@PLT
+movl (%rsp), %eax
+testl %eax, %eax
+jle .L2
+movl $1, %ebx
+leaq 4(%rsp), %r12
+.L4:
+xorl %eax, %eax
+movq %r12, %rsi
+movq %rbp, %rdi
+call __isoc99_scanf@PLT
+testb $1, %bl
+je .L3
+movl 4(%rsp), %eax
+movl %eax, %edx
+shrl $31, %edx
+addl %edx, %eax
+andl $1, %eax
+subl %edx, %eax
+cmpl $1, %eax
+sete %al
+movzbl %al, %eax
+addl %eax, %r13d
+.L3:
+addl $1, %ebx
+cmpl %ebx, (%rsp)
+jge .L4
+.L2:
+xorl %eax, %eax
+movl %r13d, %edx
+movl $1, %edi
+leaq .LC1(%rip), %rsi
+call __printf_chk@PLT
+movq 8(%rsp), %rax
+subq %fs:40, %rax
+jne .L13
+addq $24, %rsp
+xorl %eax, %eax
+popq %rbx
+popq %rbp
+popq %r12
+popq %r13
+ret
+.L13:
+call __stack_chk_fail@PLT
+```"
+4,COMPILE_FAIL,False,False,-1.0,0.0,,87,True,False,10,"/tmp/tmppb832_kg/sol.s: Assembler messages:
+/tmp/tmppb832_kg/sol.s:1: Error: no such instruction: `section .text'
+/tmp/tmppb832_kg/sol.s:2: Error: no such instruction: `global main'
+/tmp/tmppb832_kg/sol.s:4: Error: too many memory references for `sub'
+/tmp/tmppb832_kg/sol.s:5: Error: too many memory references for `lea'
+/tmp/tmppb832_kg/sol.s:7: Error: too many memory references for `lea'
+/tmp/tmp",,,"section .text
+global main
+main:
+    sub rsp, 24
+    lea rdi, [LC0]
+    call scanf
+    lea rdi, [LC1]
+    mov eax, [rsp+4]
+    sub eax, 2
+    imul eax, 180
+    call printf
+    add rsp, 24
+    ret","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
+
+#define _CRT_SECURE_NO_WARNINGS
+#define TLong long long
+#define TBMod 1000000007
+
+int main(int argc, char const *argv[])
+{
+	int n;
+	scanf(""%d"",&n);
+	printf(""%d\n"", 180 * (n - 2));
+	return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	leal	-2(%rax), %edx
+	xorl	%eax, %eax
+	imull	$180, %edx, %edx
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L5
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L5:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+section .text
+global main
+main:
+    sub rsp, 24
+    lea rdi, [LC0]
+    call scanf
+    lea rdi, [LC1]
+    mov eax, [rsp+4]
+    sub eax, 2
+    imul eax, 180
+    call printf
+    add rsp, 24
+    ret
+```"
+5,ALL_PASS,True,True,1.0,0.0,0.9963,1308,True,False,10,,,"  input0: unopt=4.565ms  sol=4.500ms  speedup=1.014x
+  input1: unopt=4.496ms  sol=4.717ms  speedup=0.953x
+  input2: unopt=4.679ms  sol=4.581ms  speedup=1.021x",".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+	.string	""%d\n""
+.LC2:
+	.string	""%d""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+A[2001],B[4001];main(a,b){
+	for(a=0;a<1001;a++)for(b=0;b<1001;b++)A[a+b]++;
+	for(a=0;a<2001;a++)for(b=0;b<2001;b++)B[a+b]+=A[a]*A[b];
+	for(;~scanf(""%d"",&a);)printf(""%d\n"",B[a]);
+exit(0);}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+	.string	""%d\n""
+.LC2:
+	.string	""%d""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	4000+A(%rip), %rax
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	leaq	-4000(%rax), %rcx
+	leaq	4004(%rax), %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movq	%rcx, %r8
+	movq	%rcx, %rdx
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 64
+	movdqa	.LC0(%rip), %xmm1
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movq	%rdx, %rsi
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	movdqu	(%rsi), %xmm0
+	addq	$16, %rsi
+	paddd	%xmm1, %xmm0
+	movups	%xmm0, -16(%rsi)
+	cmpq	%rsi, %rax
+	jne	.L2
+	addl	$1, (%rax)
+	addq	$4, %rax
+	addq	$4, %rdx
+	cmpq	%rax, %rdi
+	jne	.L3
+	leaq	B(%rip), %rbx
+	movq	%rbx, %rax
+	leaq	8004(%rbx), %rdi
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movl	(%rcx), %edx
+	xorl	%esi, %esi
+	movd	%edx, %xmm5
+	pshufd	$0, %xmm5, %xmm2
+	movdqa	%xmm2, %xmm3
+	psrlq	$32, %xmm3
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movdqa	(%r8,%rsi), %xmm1
+	movdqu	(%rax,%rsi), %xmm4
+	movdqa	%xmm2, %xmm0
+	pmuludq	(%r8,%rsi), %xmm0
+	pshufd	$8, %xmm0, %xmm0
+	psrlq	$32, %xmm1
+	pmuludq	%xmm3, %xmm1
+	pshufd	$8, %xmm1, %xmm1
+	punpckldq	%xmm1, %xmm0
+	paddd	%xmm4, %xmm0
+	movups	%xmm0, (%rax,%rsi)
+	addq	$16, %rsi
+	cmpq	$8000, %rsi
+	jne	.L4
+	imull	8000+A(%rip), %edx
+	addl	%edx, 8000(%rax)
+	addq	$4, %rax
+	addq	$4, %rcx
+	cmpq	%rdi, %rax
+	jne	.L5
+	movl	$2001, 12(%rsp)
+	leaq	12(%rsp), %r12
+	leaq	.LC2(%rip), %rbp
+	leaq	.LC1(%rip), %r13
+	jmp	.L6
+.L7:
+	movslq	12(%rsp), %rax
+	movq	%r13, %rdi
+	movl	(%rbx,%rax,4), %esi
+	xorl	%eax, %eax
+	call	printf@PLT
+.L6:
+	xorl	%eax, %eax
+	movq	%r12, %rsi
+	movq	%rbp, %rdi
+	call	scanf@PLT
+	cmpl	$-1, %eax
+	jne	.L7
+	xorl	%edi, %edi
+	call	exit@PLT
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	B
+	.bss
+	.align 32
+	.type	B, @object
+	.size	B, 16004
+B:
+	.zero	16004
+	.globl	A
+	.align 32
+	.type	A, @object
+	.size	A, 8004
+A:
+	.zero	8004
+	.section	.rodata.cst16,""aM"",@progbits,16
+	.align 16
+.LC0:
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+	.string	""%d\n""
+.LC2:
+	.string	""%d""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	4000+A(%rip), %rax
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	leaq	-4000(%rax), %rcx
+	leaq	4004(%rax), %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movq	%rcx, %r8
+	movq	%rcx, %rdx
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 64
+	movdqa	.LC0(%rip), %xmm1
+.L3:
+	movq	%rdx, %rsi
+.L2:
+	movdqu	(%rsi), %xmm0
+	addq	$16, %rsi
+	paddd	%xmm1, %xmm0
+	movups	%xmm0, -16(%rsi)
+	cmpq	%rsi, %rax
+	jne	.L2
+	addl	$1, (%rax)
+	addq	$4, %rax
+	addq	$4, %rdx
+	cmpq	%rax, %rdi
+	jne	.L3
+	leaq	B(%rip), %rbx
+	movq	%rbx, %rax
+	leaq	8004(%rbx), %rdi
+.L5:
+	movl	(%rcx), %edx
+	xorl	%esi, %esi
+	movd	%edx, %xmm5
+	pshufd	$0, %xmm5, %xmm2
+	movdqa	%xmm2, %xmm3
+	psrlq	$32, %xmm3
+.L4:
+	movdqa	(%r8,%rsi), %xmm1
+	movdqu	(%rax,%rsi), %xmm4
+	movdqa	%xmm2, %xmm0
+	pmuludq	(%r8,%rsi), %xmm0
+	pshufd	$8, %xmm0, %xmm0
+	psrlq	$32, %xmm1
+	pmuludq	%xmm3, %xmm1
+	pshufd	$8, %xmm1, %xmm1
+	punpckldq	%xmm1, %xmm0
+	paddd	%xmm4, %xmm0
+	movups	%xmm0, (%rax,%rsi)
+	addq	$16, %rsi
+	cmpq	$8000, %rsi
+	jne	.L4
+	imull	8000+A(%rip), %edx
+	addl	%edx, 8000(%rax)
+	addq	$4, %rax
+	addq	$4, %rcx
+	cmpq	%rdi, %rax
+	jne	.L5
+	movl	$2001, 12(%rsp)
+	leaq	12(%rsp), %r12
+	leaq	.LC2(%rip), %rbp
+	leaq	.LC1(%rip), %r13
+	jmp	.L6
+.L7:
+	movslq	12(%rsp), %rax
+	movq	%r13, %rdi
+	movl	(%rbx,%rax,4), %esi
+	xorl	%eax, %eax
+	call	printf@PLT
+.L6:
+	xorl	%eax, %eax
+	movq	%r12, %rsi
+	movq	%rbp, %rdi
+	call	scanf@PLT
+	cmpl	$-1, %eax
+	jne	.L7
+	xorl	%edi, %edi
+	call	exit@PLT
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	B
+	.bss
+	.align 32
+	.type	B, @object
+	.size	B, 16004
+B:
+	.zero	16004
+	.globl	A
+	.align 32
+	.type	A, @object
+	.size	A, 8004
+A:
+	.zero	8004
+	.section	.rodata.cst16,""aM"",@progbits,16
+	.align 16
+.LC0:
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+6,PARTIAL_0%,True,False,0.0,0.0,,807,True,False,10,,,,".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%lf%lf%lf""
+.LC3:
+	.string	""%f\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <math.h>
+
+int main(void){
+    double n,m,d;
+    scanf(""%lf%lf%lf"",&n,&m,&d);
+    double ans;
+    if (d!=0){
+        ans=((n-d)*2)*(m-1)/(n*n);
+    }   else {
+        ans=(n-d)*(m-1)/(n*n);
+    }
+    
+    printf(""%f\n"",ans);
+	return 0 ;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%lf%lf%lf""
+.LC3:
+	.string	""%f\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rcx
+	leaq	8(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movsd	16(%rsp), %xmm2
+	movsd	(%rsp), %xmm1
+	ucomisd	.LC1(%rip), %xmm2
+	jp	.L6
+	jne	.L6
+	movapd	%xmm1, %xmm3
+	movsd	8(%rsp), %xmm0
+	subsd	.LC2(%rip), %xmm0
+	subsd	%xmm2, %xmm3
+	mulsd	%xmm1, %xmm1
+	mulsd	%xmm3, %xmm0
+	divsd	%xmm1, %xmm0
+.L4:
+	leaq	.LC3(%rip), %rsi
+	movl	$1, %edi
+	movl	$1, %eax
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L9
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L6:
+	.cfi_restore_state
+	movapd	%xmm1, %xmm0
+	subsd	%xmm2, %xmm0
+	movsd	8(%rsp), %xmm2
+	mulsd	%xmm1, %xmm1
+	subsd	.LC2(%rip), %xmm2
+	addsd	%xmm0, %xmm0
+	mulsd	%xmm2, %xmm0
+	divsd	%xmm1, %xmm0
+	jmp	.L4
+.L9:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.section	.rodata.cst8,""aM"",@progbits,8
+	.align 8
+.LC1:
+	.long	0
+	.long	0
+	.align 8
+.LC2:
+	.long	0
+	.long	1072693248
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%lf%lf%lf""
+.LC3:
+	.string	""%f\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rcx
+	leaq	8(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movsd	16(%rsp), %xmm2
+	movsd	(%rsp), %xmm1
+	ucomisd	.LC1(%rip), %xmm2
+	je	.L6
+	movapd	%xmm1, %xmm3
+	movsd	8(%rsp), %xmm0
+	subsd	.LC2(%rip), %xmm0
+	subsd	%xmm2, %xmm3
+	mulsd	%xmm1, %xmm1
+	mulsd	%xmm3, %xmm0
+	divsd	%xmm1, %xmm0
+	jmp	.L4
+.L6:
+	movapd	%xmm1, %xmm0
+	subsd	%xmm2, %xmm0
+	movsd	8(%rsp), %xmm2
+	mulsd	%xmm1, %xmm1
+	subsd	.LC2(%rip), %xmm2
+	addsd	%xmm0, %xmm0
+	mulsd	%xmm2, %xmm0
+	divsd	%xmm1, %xmm0
+.L4:
+	leaq	.LC3(%rip), %rsi
+	movl	$1, %edi
+	movl	$1, %eax
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L9
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L9:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.section	.rodata.cst8,""aM"",@progbits,8
+	.align 8
+.LC1:
+	.long	0
+	.long	0
+	.align 8
+.LC2:
+	.long	0
+	.long	1072693248
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+7,PARTIAL_10%,True,False,0.1,0.0,,1491,True,False,10,,,,".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%lld""
+.LC2:
+	.string	""%lld\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.typ","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#define ll long long
+#define rep(i,l,r)for(ll i=(l);i<(r);i++)
+
+ll ans;
+ll d[100010];
+int main(){
+	int n;
+	scanf(""%d"",&n);
+	rep(i,0,n)scanf(""%lld"",d+i);
+	rep(i,0,n)if(d[i]>=3){
+		ans+=(d[i]-1)/2;
+		d[i]-=(d[i]-1)/2*2;
+	}
+	rep(i,0,n){
+		if(d[i]==2){
+			ans++;
+		}else if(d[i]&&d[i+1]){
+			ans++;
+			d[i+1]--;
+		}
+	}
+	printf(""%lld\n"",ans);
+	return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%lld""
+.LC2:
+	.string	""%lld\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	.LC0(%rip), %rdi
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	movq	ans(%rip), %r8
+	testl	%eax, %eax
+	jle	.L11
+	leaq	d(%rip), %rbx
+	xorl	%ebp, %ebp
+	leaq	.LC1(%rip), %r13
+	movq	%rbx, %r12
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movq	%r12, %rsi
+	movq	%r13, %rdi
+	xorl	%eax, %eax
+	addq	$1, %rbp
+	call	__isoc99_scanf@PLT
+	movslq	4(%rsp), %rax
+	addq	$8, %r12
+	cmpq	%rbp, %rax
+	jg	.L3
+	movq	ans(%rip), %r8
+	movq	%r8, %rdi
+	testq	%rax, %rax
+	jle	.L11
+	leaq	(%rbx,%rax,8), %rsi
+	xorl	%ecx, %ecx
+	leaq	d(%rip), %rax
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movq	(%rax), %rdx
+	cmpq	$2, %rdx
+	jle	.L4
+	leaq	-1(%rdx), %rcx
+	sarq	%rcx
+	addq	%rcx, %rdi
+	addq	%rcx, %rcx
+	subq	%rcx, %rdx
+	movl	$1, %ecx
+	movq	%rdx, (%rax)
+.L4:
+	addq	$8, %rax
+	cmpq	%rax, %rsi
+	jne	.L5
+	testb	%cl, %cl
+	je	.L6
+	movq	%rdi, ans(%rip)
+	movq	%rdi, %r8
+.L6:
+	movq	%r8, %rdx
+	xorl	%ecx, %ecx
+	jmp	.L9
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	testq	%rax, %rax
+	je	.L8
+	movq	8(%rbx), %rax
+	testq	%rax, %rax
+	je	.L8
+	subq	$1, %rax
+	addq	$1, %rdx
+	movl	$1, %ecx
+	movq	%rax, 8(%rbx)
+.L8:
+	addq	$8, %rbx
+	cmpq	%rbx, %rsi
+	je	.L32
+.L9:
+	movq	(%rbx), %rax
+	cmpq	$2, %rax
+	jne	.L7
+	addq	$8, %rbx
+	addq	$1, %rdx
+	movl	$1, %ecx
+	cmpq	%rbx, %rsi
+	jne	.L9
+.L32:
+	testb	%cl, %cl
+	je	.L11
+	movq	%rdx, ans(%rip)
+	movq	%rdx, %r8
+.L11:
+	xorl	%eax, %eax
+	movq	%r8, %rdx
+	movl	$1, %edi
+	leaq	.LC2(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L33
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L33:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE39:
+	.size	main, .-main
+	.globl	d
+	.bss
+	.align 32
+	.type	d, @object
+	.size	d, 800080
+d:
+	.zero	800080
+	.globl	ans
+	.align 8
+	.type	ans, @object
+	.size	ans, 8
+ans:
+	.zero	8
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%lld""
+.LC2:
+	.string	""%lld\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	.LC0(%rip), %rdi
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	movq	ans(%rip), %r8
+	testl	%eax, %eax
+	jle	.L11
+	leaq	d(%rip), %rbx
+	xorl	%ebp, %ebp
+	leaq	.LC1(%rip), %r13
+	movq	%rbx, %r12
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movq	%r12, %rsi
+	movq	%r13, %rdi
+	xorl	%eax, %eax
+	addq	$1, %rbp
+	call	__isoc99_scanf@PLT
+	movslq	4(%rsp), %rax
+	addq	$8, %r12
+	cmpq	%rbp, %rax
+	jg	.L3
+	movq	ans(%rip), %r8
+	movq	%r8, %rdi
+	testq	%rax, %rax
+	jle	.L11
+	leaq	(%rbx,%rax,8), %rsi
+	xorl	%ecx, %ecx
+	leaq	d(%rip), %rax
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movq	(%rax), %rdx
+	cmpq	$2, %rdx
+	jle	.L4
+	leaq	-1(%rdx), %rcx
+	sarq	%rcx
+	addq	%rcx, %rdi
+	addq	%rcx, %rcx
+	subq	%rcx, %rdx
+	movl	$1, %ecx
+	movq	%rdx, (%rax)
+.L4:
+	addq	$8, %rax
+	cmpq	%rax, %rsi
+	jne	.L5
+	testb	%cl, %cl
+	je	.L6
+	movq	%rdi, ans(%rip)
+	movq	%rdi, %r8
+.L6:
+	movq	%r8, %rdx
+	xorl	%ecx, %ecx
+.L9:
+	movq	(%rbx), %rax
+	cmpq	$2, %rax
+	jne	.L7
+	addq	$8, %rbx
+	addq	$1, %rdx
+	movl	$1, %ecx
+	cmpq	%rbx, %rsi
+	jne	.L9
+.L7:
+	movq	8(%rbx), %rax
+	testq	%rax, %rax
+	je	.L8
+	subq	$1, %rax
+	addq	$1, %rdx
+	movl	$1, %ecx
+	movq	%rax, 8(%rbx)
+.L8:
+	addq	$8, %rbx
+	cmpq	%rbx, %rsi
+	je	.L32
+.L32:
+	testb	%cl, %cl
+	je	.L11
+	movq	%rdx, ans(%rip)
+	movq	%rdx, %r8
+.L11:
+	xorl	%eax, %eax
+	movq	%r8, %rdx
+	movl	$1, %edi
+	leaq	.LC2(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L33
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L33:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE39:
+	.size	main, .-main
+	.globl	d
+	.bss
+	.align 32
+	.type	d, @object
+	.size	d, 800080
+d:
+	.zero	800080
+	.globl	ans
+	.align 8
+	.type	ans, @object
+	.size	ans, 8
+ans:
+	.zero	8
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+8,COMPILE_FAIL,False,False,-1.0,0.0,,1070,True,False,10,"/tmp/tmpcnauqnn2/sol.s: Assembler messages:
+/tmp/tmpcnauqnn2/sol.s:68: Error: symbol `.L8' is already defined
+",,,".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+	.string	""%s%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startp","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void){
+   char o[51],e[51];
+   int ol,el,i;
+   double l;
+
+   scanf(""%s%s"",o,e);
+   ol=strlen(o); el=strlen(e);
+
+   for(l=0;l<el;l+=0){
+      i=(int)l;
+      if(l-i==0){printf(""%c"",o[i]);l+=0.5;}
+      else {printf(""%c"",e[i]);l+=0.5;}
+   }
+
+   if(ol-l>=0.5) printf(""%c"",o[(int)l]);
+   printf(""\n"");
+
+   return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+	.string	""%s%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	leaq	.LC1(%rip), %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	subq	$144, %rsp
+	.cfi_def_cfa_offset 176
+	movq	%fs:40, %rax
+	movq	%rax, 136(%rsp)
+	xorl	%eax, %eax
+	leaq	80(%rsp), %rbp
+	leaq	16(%rsp), %r12
+	movq	%rbp, %rdx
+	movq	%r12, %rsi
+	call	__isoc99_scanf@PLT
+	movq	%r12, %rdi
+	call	strlen@PLT
+	movq	%rbp, %rdi
+	movq	%rax, %rbx
+	call	strlen@PLT
+	testq	%rax, %rax
+	je	.L11
+	pxor	%xmm6, %xmm6
+	pxor	%xmm0, %xmm0
+	cvtsi2sdl	%eax, %xmm6
+	movq	%xmm6, %rbp
+	movsd	.LC2(%rip), %xmm6
+	movsd	%xmm6, (%rsp)
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	cvttsd2sil	%xmm0, %eax
+	pxor	%xmm2, %xmm2
+	movapd	%xmm0, %xmm1
+	movsd	%xmm0, 8(%rsp)
+	pxor	%xmm3, %xmm3
+	cvtsi2sdl	%eax, %xmm2
+	cltq
+	subsd	%xmm2, %xmm1
+	ucomisd	%xmm3, %xmm1
+	jp	.L3
+	jne	.L3
+	movsbl	16(%rsp,%rax), %edi
+	call	putchar@PLT
+	movsd	8(%rsp), %xmm0
+	addsd	(%rsp), %xmm0
+	pxor	%xmm5, %xmm5
+	movq	%rbp, %xmm6
+	addsd	%xmm5, %xmm0
+	comisd	%xmm0, %xmm6
+	ja	.L7
+.L2:
+	pxor	%xmm1, %xmm1
+	cvtsi2sdl	%ebx, %xmm1
+	subsd	%xmm0, %xmm1
+	comisd	(%rsp), %xmm1
+	jnb	.L16
+.L8:
+	movl	$10, %edi
+	call	putchar@PLT
+	movq	136(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L17
+	addq	$144, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	.cfi_restore_state
+	movsbl	80(%rsp,%rax), %edi
+	call	putchar@PLT
+	movsd	8(%rsp), %xmm0
+	addsd	(%rsp), %xmm0
+	pxor	%xmm4, %xmm4
+	movq	%rbp, %xmm5
+	addsd	%xmm4, %xmm0
+	comisd	%xmm0, %xmm5
+	ja	.L7
+	jmp	.L2
+.L16:
+	cvttsd2sil	%xmm0, %eax
+	cltq
+	movsbl	16(%rsp,%rax), %edi
+	call	putchar@PLT
+	jmp	.L8
+.L11:
+	movsd	.LC2(%rip), %xmm7
+	pxor	%xmm0, %xmm0
+	movsd	%xmm7, (%rsp)
+	jmp	.L2
+.L17:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE35:
+	.size	main, .-main
+	.section	.rodata.cst8,""aM"",@progbits,8
+	.align 8
+.LC2:
+	.long	0
+	.long	1071644672
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+	.string	""%s%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	leaq	.LC1(%rip), %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	pushq	%rbx
+	.cfi_def_cfa_offset 32
+	.cfi_offset 3, -32
+	subq	$144, %rsp
+	.cfi_def_cfa_offset 176
+	movq	%fs:40, %rax
+	movq	%rax, 136(%rsp)
+	xorl	%eax, %eax
+	leaq	80(%rsp), %rbp
+	leaq	16(%rsp), %r12
+	movq	%rbp, %rdx
+	movq	%r12, %rsi
+	call	__isoc99_scanf@PLT
+	movq	%r12, %rdi
+	call	strlen@PLT
+	movq	%rbp, %rdi
+	movq	%rax, %rbx
+	call	strlen@PLT
+	testq	%rax, %rax
+	je	.L11
+	pxor	%xmm6, %xmm6
+	pxor	%xmm0, %xmm0
+	cvtsi2sdl	%eax, %xmm6
+	movq	%xmm6, %rbp
+	movsd	.LC2(%rip), %xmm6
+	movsd	%xmm6, (%rsp)
+.L7:
+	cvttsd2sil	%xmm0, %eax
+	movsbl	16(%rsp,%rax), %edi
+	movsbl	80(%rsp,%rax), %esi
+	cmpb	%dl, %cl
+	jne	.L8
+	call	putchar@PLT
+.L8:
+	movsd	8(%rsp), %xmm0
+	addsd	(%rsp), %xmm0
+	pxor	%xmm5, %xmm5
+	movq	%rbp, %xmm6
+	addsd	%xmm5, %xmm0
+	comisd	%xmm0, %xmm6
+	ja	.L7
+.L2:
+	pxor	%xmm1, %xmm1
+	cvtsi2sdl	%ebx, %xmm1
+	subsd	%xmm0, %xmm1
+	comisd	(%rsp), %xmm1
+	jnb	.L16
+.L8:
+	movl	$10, %edi
+	call	putchar@PLT
+	movq	136(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L17
+	addq	$144, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 32
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 24
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+.L11:
+	movsd	.LC2(%rip), %xmm7
+	pxor	%xmm0, %xmm0
+	movsd	%xmm7, (%rsp)
+	jmp	.L2
+.L17:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE35:
+	.size	main, .-main
+	.section	.rodata.cst8,""aM"",@progbits,8
+	.align 8
+.LC2:
+	.long	0
+	.long	1071644672
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+9,ALL_PASS,True,True,1.0,1.0083,1.1617,649,True,False,10,,,"  input0: unopt=4.322ms  sol=4.366ms  speedup=0.990x
+  input1: unopt=4.797ms  sol=4.553ms  speedup=1.054x
+  input2: unopt=4.349ms  sol=3.016ms  speedup=1.442x",".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startpro","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+int main(void){
+  char s[100];
+  scanf(""%s"",s);
+
+  int a=strlen(s);
+
+  for(int i=0;i<a;i++)
+   printf(""x"");
+   
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rdi
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$120, %rsp
+	.cfi_def_cfa_offset 144
+	movq	%fs:40, %rax
+	movq	%rax, 104(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rbp
+	movq	%rbp, %rsi
+	call	__isoc99_scanf@PLT
+	movq	%rbp, %rdi
+	call	strlen@PLT
+	testq	%rax, %rax
+	je	.L2
+	movl	%eax, %ebp
+	xorl	%ebx, %ebx
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movl	$120, %edi
+	addl	$1, %ebx
+	call	putchar@PLT
+	cmpl	%ebx, %ebp
+	jne	.L3
+.L2:
+	movq	104(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L11
+	addq	$120, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L11:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE35:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB35:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rdi
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	subq	$120, %rsp
+	.cfi_def_cfa_offset 144
+	movq	%fs:40, %rax
+	movq	%rax, 104(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %rbp
+	movq	%rbp, %rsi
+	call	__isoc99_scanf@PLT
+	movq	%rbp, %rdi
+	call	strlen@PLT
+	testq	%rax, %rax
+	je	.L2
+	movl	%eax, %ebp
+	xorl	%ebx, %ebx
+.L3:
+	movl	$120, %edi
+	addl	$1, %ebx
+	call	putchar@PLT
+	cmpl	%ebx, %ebp
+	jne	.L3
+.L2:
+	movq	104(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L11
+	addq	$120, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L11:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE35:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+10,COMPILE_FAIL,False,False,-1.0,0.0,,1124,True,False,10,"/usr/bin/ld: /tmp/cc76GLPQ.o: warning: relocation against `.LC2' in read-only section `.text.startup'
+/usr/bin/ld: /tmp/cc76GLPQ.o: in function `main':
+(.text.startup+0x1b): undefined reference to `.LC0'
+/usr/bin/ld: (.text.startup+0x44): undefined reference to `.LC1'
+/usr/bin/ld: (.text.startup+0xaa): undefined reference to `.LC3'
+/usr/bin/ld: (.text.startup+0xc3): undefined reference to `.LC2'
+/",,,".section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	W(%rip), %rd","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int H,W;
+
+char field[10][10];
+
+int main(){
+  scanf(""%d %d"",&H,&W);
+  int i,j;
+  for (i = 0; i < H; i++) {
+    scanf(""%s"",field[i]);
+  }
+  int ans = 0;
+  for ( i = 0; i < H; i++) {
+    for ( j = 0; j < W; j++) {
+      if (field[i][j] == '#') ans+=1;
+    }
+  }
+  if (ans == H+W-1) printf(""Possible\n"");
+  else printf(""Impossible\n"" );
+
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC1:
+	.string	""%s""
+.LC2:
+	.string	""Possible""
+.LC3:
+	.string	""Impossible""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	W(%rip), %rdx
+	leaq	H(%rip), %rsi
+	xorl	%eax, %eax
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	leaq	.LC0(%rip), %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 48
+	call	__isoc99_scanf@PLT
+	movl	H(%rip), %ecx
+	testl	%ecx, %ecx
+	jle	.L2
+	leaq	field(%rip), %rbx
+	xorl	%ebp, %ebp
+	leaq	.LC1(%rip), %r13
+	movq	%rbx, %r12
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movq	%r12, %rsi
+	movq	%r13, %rdi
+	xorl	%eax, %eax
+	addl	$1, %ebp
+	call	__isoc99_scanf@PLT
+	movl	H(%rip), %ecx
+	addq	$10, %r12
+	cmpl	%ebp, %ecx
+	jg	.L3
+	movl	W(%rip), %edx
+	testl	%ecx, %ecx
+	jle	.L21
+	leal	-1(%rcx), %eax
+	leaq	(%rax,%rax,4), %rsi
+	leaq	10+field(%rip), %rax
+	leaq	(%rax,%rsi,2), %rdi
+	xorl	%eax, %eax
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	testl	%edx, %edx
+	jle	.L18
+	xorl	%esi, %esi
+	cmpb	$35, (%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$1, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 1(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$2, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 2(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$3, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 3(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$4, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 4(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$5, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 5(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$6, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 6(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$7, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 7(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$8, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 8(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+	cmpl	$9, %edx
+	je	.L18
+	xorl	%esi, %esi
+	cmpb	$35, 9(%rbx)
+	sete	%sil
+	addl	%esi, %eax
+.L18:
+	addq	$10, %rbx
+	cmpq	%rdi, %rbx
+	jne	.L5
+.L4:
+	leal	-1(%rcx,%rdx), %edx
+	cmpl	%eax, %edx
+	je	.L52
+	leaq	.LC3(%rip), %rdi
+	call	puts@PLT
+.L20:
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L52:
+	.cfi_restore_state
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+	jmp	.L20
+.L2:
+	movl	W(%rip), %edx
+	xorl	%eax, %eax
+	jmp	.L4
+.L21:
+	xorl	%eax, %eax
+	jmp	.L4
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.globl	field
+	.bss
+	.align 32
+	.type	field, @object
+	.size	field, 100
+field:
+	.zero	100
+	.globl	W
+	.align 4
+	.type	W, @object
+	.size	W, 4
+W:
+	.zero	4
+	.globl	H
+	.align 4
+	.type	H, @object
+	.size	H, 4
+H:
+	.zero	4
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	leaq	W(%rip), %rdx
+	leaq	H(%rip), %rsi
+	xorl	%eax, %eax
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	leaq	.LC0(%rip), %rdi
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 48
+	call	__isoc99_scanf@PLT
+	movl	H(%rip), %ecx
+	testl	%ecx, %ecx
+	jle	.L2
+	leaq	field(%rip), %rbx
+	xorl	%ebp, %ebp
+	leaq	.LC1(%rip), %r13
+	movq	%rbx, %r12
+.L3:
+	movq	%r12, %rsi
+	movq	%r13, %rdi
+	xorl	%eax, %eax
+	addl	$1, %ebp
+	call	__isoc99_scanf@PLT
+	movl	H(%rip), %ecx
+	addq	$10, %r12
+	cmpl	%ebp, %ecx
+	jg	.L3
+	movl	W(%rip), %edx
+	testl	%ecx, %ecx
+	jle	.L21
+	leal	-1(%rcx), %eax
+	leaq	(%rax,%rax,4), %rsi
+	leaq	10+field(%rip), %rax
+	leaq	(%rax,%rsi,2), %rdi
+	xorl	%eax, %eax
+.L5:
+	testl	%edx, %edx
+	jle	.L18
+	xorl	%esi, %esi
+	cmpb	$35, (%rbx)
+	sete	%sil
+	addl	%esi, %eax
+.L18:
+	addq	$10, %rbx
+	cmpq	%rdi, %rbx
+	jne	.L5
+.L4:
+	leal	-1(%rcx,%rdx), %edx
+	cmpl	%eax, %edx
+	je	.L52
+	leaq	.LC3(%rip), %rdi
+	call	puts@PLT
+.L20:
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L52:
+	.cfi_restore_state
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+	jmp	.L20
+.L2:
+	movl	W(%rip), %edx
+	xorl	%eax, %eax
+	jmp	.L4
+.L21:
+	xorl	%eax, %eax
+	jmp	.L4
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.globl	field
+	.bss
+	.align 32
+	.type	field, @object
+	.size	field, 100
+field:
+	.zero	100
+	.globl	W
+	.align 4
+	.type	W, @object
+	.size	W, 4
+W:
+	.zero	4
+	.globl	H
+	.align 4
+	.type	H, @object
+	.size	H, 4
+H:
+	.zero	4
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+11,ALL_PASS,True,True,1.0,1.0895,0.9239,691,True,False,10,,,"  input0: unopt=3.994ms  sol=4.823ms  speedup=0.828x
+  input1: unopt=4.135ms  sol=4.131ms  speedup=1.001x
+  input2: unopt=4.175ms  sol=4.429ms  speedup=0.943x",".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%lld %lld""
+.LC1:
+	.string	""%lld""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    long long s, c, sum;
+    scanf(""%lld %lld"", &s, &c);
+    if(c<=2*s)//c不够
+        printf(""%lld"", c/2);
+    else//s不够
+    {
+        sum=s;
+        if(c<2)
+        {
+         sum=sum;
+        }
+        else
+        {
+            c=c-2*s;
+            sum+=c/4;
+
+        }
+         printf(""%lld"", sum);
+    }
+
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%lld %lld""
+.LC1:
+	.string	""%lld""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rdx
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movq	8(%rsp), %rdx
+	movq	16(%rsp), %rax
+	leaq	(%rdx,%rdx), %rcx
+	cmpq	%rax, %rcx
+	jge	.L8
+	cmpq	$1, %rax
+	jle	.L4
+	subq	%rcx, %rax
+	movq	%rax, 16(%rsp)
+	sarq	$2, %rax
+	addq	%rax, %rdx
+.L4:
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+.L3:
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L9
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L8:
+	.cfi_restore_state
+	movl	$2, %ecx
+	cqto
+	movl	$1, %edi
+	idivq	%rcx
+	leaq	.LC1(%rip), %rsi
+	movq	%rax, %rdx
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	jmp	.L3
+.L9:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE39:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%lld %lld""
+.LC1:
+	.string	""%lld""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 48
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	16(%rsp), %rdx
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	movq	8(%rsp), %rdx
+	movq	16(%rsp), %rax
+	leaq	(%rdx,%rdx), %rcx
+	cmpq	%rax, %rcx
+	jge	.L8
+	cmpq	$1, %rax
+	jle	.L4
+	subq	%rcx, %rax
+	movq	%rax, 16(%rsp)
+	sarq	$2, %rax
+	addq	%rax, %rdx
+.L4:
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+.L3:
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L9
+	xorl	%eax, %eax
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L8:
+	cqto
+	movl	$2, %edx
+	idivq	%rdx
+	leaq	.LC1(%rip), %rsi
+	movq	%rax, %rdx
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	jmp	.L3
+.L9:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE39:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+12,RUNTIME_ERR,True,False,-0.5,0.0,,712,True,False,10,,,,".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+int main(void){
+    int r, D, x, i;
+    scanf(""%d %d %d"", &r, &D, &x);  
+    for(i = 0; i < 10; i++){
+        x = (r * x) - D;
+        printf(""%d\n"", x);
+    }
+  return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rdi
+	leaq	.LC1(%rip), %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	movl	$10, %ebx
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rcx
+	leaq	16(%rsp), %rdx
+	leaq	12(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	movl	12(%rsp), %edx
+	xorl	%eax, %eax
+	imull	20(%rsp), %edx
+	movq	%rbp, %rsi
+	subl	16(%rsp), %edx
+	movl	$1, %edi
+	movl	%edx, 20(%rsp)
+	call	__printf_chk@PLT
+	subl	$1, %ebx
+	jne	.L2
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L7:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rdi
+	leaq	.LC1(%rip), %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	movl	$10, %ebx
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rcx
+	leaq	16(%rsp), %rdx
+	leaq	12(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+.L2:
+	movl	12(%rsp), %edx
+	xorl	%eax, %eax
+	imull	20(%rsp), %edx
+	subl	16(%rsp), %edx
+	movl	%edx, 20(%rsp)
+	movl	$1, %edi
+	movl	20(%rsp), %esi
+	movq	%rbp, %rdx
+	call	__printf_chk@PLT
+	subl	$1, %ebx
+	jne	.L2
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L7:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+13,COMPILE_FAIL,False,False,-1.0,0.0,,330,True,False,10,"/tmp/tmp1yexm3v4/sol.s: Assembler messages:
+/tmp/tmp1yexm3v4/sol.s:1: Error: unknown pseudo-op: `.endbr64'
+/tmp/tmp1yexm3v4/sol.s:20: Error: incorrect register `%rax' used with `l' suffix
+/tmp/tmp1yexm3v4/sol.s:31: Error: incorrect register `%rax' used with `l' suffix
+",,,".endbr64
+pushq %rbp
+movq %rsp, %rbp
+subq $16, %rsp
+movq %fs:40, %rax
+movq %rax, -8(%rbp)
+xorl %eax, %eax
+movl -4(%rbp), %edi
+movl -8(%rbp), %esi
+call __isoc99_scanf@PLT
+movl -12(%rbp), %edi
+movl -16(%","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include<stdio.h>
+int main(){
+  
+  int a, b, c, d;
+  scanf(""%d%d"",&a, &b);
+  scanf(""%d%d"",&c, &d);
+  
+  if(d==1){
+    printf(""1\n"");
+    return 0;
+  }
+  printf(""0\n"");
+  return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d%d""
+.LC1:
+	.string	""1""
+.LC2:
+	.string	""0""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rbp
+	movq	%rbp, %rdi
+	subq	$32, %rsp
+	.cfi_def_cfa_offset 48
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	leaq	12(%rsp), %rdx
+	leaq	8(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	xorl	%eax, %eax
+	leaq	20(%rsp), %rdx
+	movq	%rbp, %rdi
+	leaq	16(%rsp), %rsi
+	call	__isoc99_scanf@PLT
+	cmpl	$1, 20(%rsp)
+	je	.L7
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+.L3:
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L8
+	addq	$32, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 16
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L7:
+	.cfi_restore_state
+	leaq	.LC1(%rip), %rdi
+	call	puts@PLT
+	jmp	.L3
+.L8:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+.endbr64
+pushq %rbp
+movq %rsp, %rbp
+subq $16, %rsp
+movq %fs:40, %rax
+movq %rax, -8(%rbp)
+xorl %eax, %eax
+movl -4(%rbp), %edi
+movl -8(%rbp), %esi
+call __isoc99_scanf@PLT
+movl -12(%rbp), %edi
+movl -16(%rbp), %esi
+call __isoc99_scanf@PLT
+cmpl $1, -16(%rbp)
+je .L7
+movl $0, %eax
+movl %eax, -20(%rbp)
+movl $0, %eax
+movl %eax, -24(%rbp)
+movl %fs:40, %rax
+subq %rax, -28(%rbp)
+xorl %eax, %eax
+movq %rbp, %rsp
+popq %rbp
+ret
+.L7:
+movl $1, %eax
+movl %eax, -20(%rbp)
+movl $1, %eax
+movl %eax, -24(%rbp)
+movl %fs:40, %rax
+subq %rax, -28(%rbp)
+xorl %eax, %eax
+movq %rbp, %rsp
+popq %rbp
+ret
+```"
+14,ALL_PASS,True,True,1.0,0.0,0.94,742,True,True,10,,,"  input0: unopt=3.890ms  sol=3.906ms  speedup=0.996x
+  input1: unopt=3.764ms  sol=4.748ms  speedup=0.793x
+  input2: unopt=4.540ms  sol=4.402ms  speedup=1.031x",".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC1:
+	.string	""%d""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+
+    int a, b;
+    scanf(""%d %d"", &a, &b);
+
+    if (b == 1) {
+        printf(""0"");
+    } else if (a >= b) {
+        printf(""1"");
+    } else {
+        //b = b - (a-1);
+        b -= a;
+        //printf(""%d\n"", b);
+        if (b % (a - 1) == 0) {
+            printf(""%d"", 1 + (b / (a - 1)));
+        } else {
+            printf(""%d"", 2 + (b / (a - 1)));
+        }
+    }
+
+    return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC1:
+	.string	""%d""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	cmpl	$1, %eax
+	je	.L9
+	movl	(%rsp), %edx
+	cmpl	%edx, %eax
+	jle	.L10
+	subl	%edx, %eax
+	leal	-1(%rdx), %ecx
+	cltd
+	movl	%eax, 4(%rsp)
+	idivl	%ecx
+	testl	%edx, %edx
+	je	.L11
+	leal	2(%rax), %edx
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+.L3:
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L12
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L11:
+	.cfi_restore_state
+	leal	1(%rax), %edx
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	jmp	.L3
+.L10:
+	movl	$49, %edi
+	call	putchar@PLT
+	jmp	.L3
+.L9:
+	movl	$48, %edi
+	call	putchar@PLT
+	jmp	.L3
+.L12:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC1:
+	.string	""%d""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	4(%rsp), %eax
+	cmpl	$1, %eax
+	je	.L9
+	movl	(%rsp), %edx
+	cmpl	%edx, %eax
+	jle	.L10
+	subl	%edx, %eax
+	leal	-1(%rdx), %ecx
+	cltd
+	movl	%eax, 4(%rsp)
+	idivl	%ecx
+	testl	%edx, %edx
+	je	.L11
+	leal	2(%rax), %edx
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+.L3:
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L12
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L11:
+	.cfi_restore_state
+	leal	1(%rax), %edx
+	leaq	.LC1(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	jmp	.L3
+.L10:
+	movl	$49, %edi
+	call	putchar@PLT
+	jmp	.L3
+.L9:
+	movl	$48, %edi
+	call	putchar@PLT
+	jmp	.L3
+.L12:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+15,ALL_PASS,True,True,1.0,0.0,1.0743,1782,False,False,10,,,"  input0: unopt=3.595ms  sol=3.359ms  speedup=1.070x
+  input1: unopt=3.553ms  sol=3.430ms  speedup=1.036x
+  input2: unopt=3.544ms  sol=3.172ms  speedup=1.117x",".file	""temp.c""
+	.text
+	.p2align 4
+	.globl	cmp
+	.type	cmp, @function
+cmp:
+.LFB40:
+	.cfi_startproc
+	endbr64
+	movl	(%rdi), %eax
+	subl	(%rsi), %eax
+	je	.L4
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movl	4(%r","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+// AOJ 2923: Ravage
+// 2019.2.18 bal4u
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define gc() getchar()
+
+int in()
+{
+	int n = 0, c = gc();
+	do n = 10*n + (c & 0xf), c = gc(); while (c >= '0');
+	return n;
+}
+
+typedef struct { int v; int f; } S;
+S s[200002];
+
+int cmp(const void *a, const void *b)
+{
+	int r = ((S *)a)->v - ((S *)b)->v;
+	if (r == 0) return ((S *)b)->f - ((S *)a)->f;
+	return r;
+}
+
+int main()
+{
+	int N, i, j, max, cnt;
+
+	N = in();
+	for (i = N, j = 0; i--; j++) {
+		s[j].v = in(), s[j].f = 1;
+		s[++j].v = in();
+	}
+	N <<= 1;
+	qsort(s, N, sizeof(S), cmp);
+	max = cnt = 0;
+	for (i = 0; i < N; i++) {
+		if (s[i].f) {
+			if (++cnt > max) max = cnt;
+		} else cnt--;
+	}
+	printf(""%d\n"", max);
+	return 0;
+}
+
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	cmp
+	.type	cmp, @function
+cmp:
+.LFB40:
+	.cfi_startproc
+	endbr64
+	movl	(%rdi), %eax
+	subl	(%rsi), %eax
+	je	.L4
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movl	4(%rsi), %eax
+	subl	4(%rdi), %eax
+	ret
+	.cfi_endproc
+.LFE40:
+	.size	cmp, .-cmp
+	.p2align 4
+	.globl	in
+	.type	in, @function
+in:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movq	stdin(%rip), %rdi
+	xorl	%r12d, %r12d
+	call	getc@PLT
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	movq	stdin(%rip), %rdi
+	andl	$15, %eax
+	leal	(%r12,%r12,4), %edx
+	leal	(%rax,%rdx,2), %r12d
+	call	getc@PLT
+	cmpl	$47, %eax
+	jg	.L6
+	movl	%r12d, %eax
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE39:
+	.size	in, .-in
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB41:
+	.cfi_startproc
+	endbr64
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+	xorl	%eax, %eax
+	pushq	%r13
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
+	pushq	%rbp
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	call	in
+	movl	%eax, %r12d
+	testl	%eax, %eax
+	je	.L10
+	leal	-1(%rax), %ebp
+	leaq	16+s(%rip), %rax
+	salq	$4, %rbp
+	leaq	-16(%rax), %r13
+	addq	%rax, %rbp
+	movq	%r13, %rbx
+	.p2align 4,,10
+	.p2align 3
+.L13:
+	movq	stdin(%rip), %rdi
+	xorl	%r14d, %r14d
+	call	getc@PLT
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	movq	stdin(%rip), %rdi
+	andl	$15, %eax
+	leal	(%r14,%r14,4), %edx
+	leal	(%rax,%rdx,2), %r14d
+	call	getc@PLT
+	cmpl	$47, %eax
+	jg	.L11
+	movl	%r14d, (%rbx)
+	movq	stdin(%rip), %rdi
+	xorl	%r14d, %r14d
+	movl	$1, 4(%rbx)
+	call	getc@PLT
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	movq	stdin(%rip), %rdi
+	andl	$15, %eax
+	leal	(%r14,%r14,4), %edx
+	leal	(%rax,%rdx,2), %r14d
+	call	getc@PLT
+	cmpl	$47, %eax
+	jg	.L12
+	movl	%r14d, 8(%rbx)
+	addq	$16, %rbx
+	cmpq	%rbp, %rbx
+	jne	.L13
+	addl	%r12d, %r12d
+	leaq	cmp(%rip), %rcx
+	movl	$8, %edx
+	movq	%r13, %rdi
+	movslq	%r12d, %rsi
+	call	qsort@PLT
+	testl	%r12d, %r12d
+	jle	.L18
+	leaq	4+s(%rip), %rax
+	leal	-1(%r12), %ecx
+	xorl	%r12d, %r12d
+	leaq	8(%rax), %rdx
+	leaq	(%rdx,%rcx,8), %rcx
+	xorl	%edx, %edx
+	jmp	.L17
+	.p2align 4,,10
+	.p2align 3
+.L25:
+	addl	$1, %edx
+	cmpl	%edx, %r12d
+	cmovl	%edx, %r12d
+	addq	$8, %rax
+	cmpq	%rcx, %rax
+	je	.L14
+.L17:
+	movl	(%rax), %esi
+	testl	%esi, %esi
+	jne	.L25
+	addq	$8, %rax
+	subl	$1, %edx
+	cmpq	%rcx, %rax
+	jne	.L17
+.L14:
+	movl	%r12d, %edx
+	leaq	.LC0(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	ret
+.L10:
+	.cfi_restore_state
+	leaq	cmp(%rip), %rcx
+	movl	$8, %edx
+	xorl	%esi, %esi
+	leaq	s(%rip), %rdi
+	call	qsort@PLT
+	jmp	.L14
+.L18:
+	xorl	%r12d, %r12d
+	jmp	.L14
+	.cfi_endproc
+.LFE41:
+	.size	main, .-main
+	.globl	s
+	.bss
+	.align 32
+	.type	s, @object
+	.size	s, 1600016
+s:
+	.zero	1600016
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.p2align 4
+	.globl	cmp
+	.type	cmp, @function
+cmp:
+.LFB40:
+	.cfi_startproc
+	endbr64
+	movl	(%rdi), %eax
+	subl	(%rsi), %eax
+	je	.L4
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movl	4(%rsi), %eax
+	subl	4(%rdi), %eax
+	ret
+	.cfi_endproc
+.LFE40:
+	.size	cmp, .-cmp
+	.p2align 4
+	.globl	in
+	.type	in, @function
+in:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	movq	stdin(%rip), %rdi
+	xorl	%r12d, %r12d
+	call	getc@PLT
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	movq	stdin(%rip), %rdi
+	andl	$15, %eax
+	leal	(%r12,%r12,4), %edx
+	leal	(%rax,%rdx,2), %r12d
+	call	getc@PLT
+	cmpl	$47, %eax
+	jg	.L6
+	movl	%r12d, %eax
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE39:
+	.size	in, .-in
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB41:
+	.cfi_startproc
+	endbr64
+	pushq	%r14
+	.cfi_def_cfa_offset 16
+	.cfi_offset 14, -16
+	xorl	%eax, %eax
+	pushq	%r13
+	.cfi_def_cfa_offset 24
+	.cfi_offset 13, -24
+	pushq	%r12
+	.cfi_def_cfa_offset 32
+	.cfi_offset 12, -32
+	pushq	%rbp
+	.cfi_def_cfa_offset 40
+	.cfi_offset 6, -40
+	pushq	%rbx
+	.cfi_def_cfa_offset 48
+	.cfi_offset 3, -48
+	call	in
+	movl	%eax, %r12d
+	testl	%eax, %eax
+	je	.L10
+	leal	-1(%rax), %ebp
+	leaq	16+s(%rip), %rax
+	salq	$4, %rbp
+	leaq	-16(%rax), %r13
+	addq	%rax, %rbp
+	movq	%r13, %rbx
+	.p2align 4,,10
+	.p2align 3
+.L13:
+	movq	stdin(%rip), %rdi
+	xorl	%r14d, %r14d
+	call	getc@PLT
+	.p2align 4,,10
+	.p2align 3
+.L11:
+	movq	stdin(%rip), %rdi
+	andl	$15, %eax
+	leal	(%r14,%r14,4), %edx
+	leal	(%rax,%rdx,2), %r14d
+	call	getc@PLT
+	cmpl	$47, %eax
+	jg	.L11
+	movl	%r14d, (%rbx)
+	movq	stdin(%rip), %rdi
+	xorl	%r14d, %r14d
+	movl	$1, 4(%rbx)
+	call	getc@PLT
+	.p2align 4,,10
+	.p2align 3
+.L12:
+	movq	stdin(%rip), %rdi
+	andl	$15, %eax
+	leal	(%r14,%r14,4), %edx
+	leal	(%rax,%rdx,2), %r14d
+	call	getc@PLT
+	cmpl	$47, %eax
+	jg	.L12
+	movl	%r14d, 8(%rbx)
+	addq	$16, %rbx
+	cmpq	%rbp, %rbx
+	jne	.L13
+	addl	%r12d, %r12d
+	leaq	cmp(%rip), %rcx
+	movl	$8, %edx
+	movq	%r13, %rdi
+	movslq	%r12d, %rsi
+	call	qsort@PLT
+	testl	%r12d, %r12d
+	jle	.L18
+	leaq	4+s(%rip), %rax
+	leal	-1(%r12), %ecx
+	xorl	%r12d, %r12d
+	leaq	8(%rax), %rdx
+	leaq	(%rdx,%rcx,8), %rcx
+	xorl	%edx, %edx
+	jmp	.L17
+	.p2align 4,,10
+	.p2align 3
+.L25:
+	addl	$1, %edx
+	cmpl	%edx, %r12d
+	cmovl	%edx, %r12d
+	addq	$8, %rax
+	cmpq	%rcx, %rax
+	je	.L14
+.L17:
+	movl	(%rax), %esi
+	testl	%esi, %esi
+	jne	.L25
+	addq	$8, %rax
+	subl	$1, %edx
+	cmpq	%rcx, %rax
+	jne	.L17
+.L14:
+	movl	%r12d, %edx
+	leaq	.LC0(%rip), %rsi
+	movl	$1, %edi
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	popq	%rbx
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 32
+	popq	%r12
+	.cfi_def_cfa_offset 24
+	popq	%r13
+	.cfi_def_cfa_offset 16
+	popq	%r14
+	.cfi_def_cfa_offset 8
+	ret
+.L10:
+	.cfi_restore_state
+	leaq	cmp(%rip), %rcx
+	movl	$8, %edx
+	xorl	%esi, %esi
+	leaq	s(%rip), %rdi
+	call	qsort@PLT
+	jmp	.L14
+.L18:
+	xorl	%r12d, %r12d
+	jmp	.L14
+	.cfi_endproc
+.LFE41:
+	.size	main, .-main
+	.globl	s
+	.bss
+	.align 32
+	.type	s, @object
+	.size	s, 1600016
+s:
+	.zero	1600016
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~"
+16,ALL_PASS,True,True,1.0,0.0,0.9445,1401,True,True,10,,,"  input0: unopt=3.474ms  sol=3.803ms  speedup=0.914x
+  input1: unopt=4.118ms  sol=4.342ms  speedup=0.948x
+  input2: unopt=4.081ms  sol=4.201ms  speedup=0.971x",".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d%d%d""
+.LC1:
+	.string	""%d""
+.LC2:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.typ","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+        int n,d,x,i,j,c;
+
+        scanf(""%d%d%d"",&n,&d,&x);
+
+        int a[n];
+
+        for(i=0;i<n;i++)
+                scanf(""%d"",&a[i]);
+
+        c=0;
+        for(i=0;i<n;i++){
+                for(j=0;a[i]*j+1<=d;j++){
+                        c++;
+                }
+        }
+        printf(""%d\n"",c+x);
+        return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d%d%d""
+.LC1:
+	.string	""%d""
+.LC2:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rdi
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	pushq	%r15
+	pushq	%r14
+	leaq	-60(%rbp), %rcx
+	leaq	-64(%rbp), %rdx
+	pushq	%r13
+	leaq	-68(%rbp), %rsi
+	pushq	%r12
+	pushq	%rbx
+	subq	$40, %rsp
+	.cfi_offset 15, -24
+	.cfi_offset 14, -32
+	.cfi_offset 13, -40
+	.cfi_offset 12, -48
+	.cfi_offset 3, -56
+	movq	%fs:40, %rax
+	movq	%rax, -56(%rbp)
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movslq	-68(%rbp), %rax
+	movq	%rsp, %rsi
+	movq	%rax, %rcx
+	leaq	15(,%rax,4), %rax
+	movq	%rax, %rdx
+	andq	$-4096, %rax
+	subq	%rax, %rsi
+	andq	$-16, %rdx
+	cmpq	%rsi, %rsp
+	je	.L3
+.L21:
+	subq	$4096, %rsp
+	orq	$0, 4088(%rsp)
+	cmpq	%rsi, %rsp
+	jne	.L21
+.L3:
+	andl	$4095, %edx
+	subq	%rdx, %rsp
+	testq	%rdx, %rdx
+	jne	.L22
+.L4:
+	movq	%rsp, %r14
+	testl	%ecx, %ecx
+	jle	.L5
+	movq	%r14, %rbx
+	movq	%r14, %r13
+	leaq	.LC1(%rip), %r15
+	xorl	%r12d, %r12d
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	movq	%r13, %rsi
+	movq	%r15, %rdi
+	xorl	%eax, %eax
+	addl	$1, %r12d
+	call	__isoc99_scanf@PLT
+	movl	-68(%rbp), %eax
+	addq	$4, %r13
+	cmpl	%r12d, %eax
+	jg	.L6
+	testl	%eax, %eax
+	jle	.L5
+	movl	-64(%rbp), %edi
+	leaq	(%r14,%rax,4), %r8
+	xorl	%edx, %edx
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	movl	(%rbx), %esi
+	movl	%esi, %eax
+	testl	%edi, %edi
+	jle	.L11
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movl	%eax, %ecx
+	addl	$1, %edx
+	addl	%esi, %eax
+	cmpl	%edi, %ecx
+	jl	.L8
+.L11:
+	addq	$4, %rbx
+	cmpq	%r8, %rbx
+	jne	.L7
+.L9:
+	addl	-60(%rbp), %edx
+	xorl	%eax, %eax
+	movl	$1, %edi
+	leaq	.LC2(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	-56(%rbp), %rax
+	subq	%fs:40, %rax
+	jne	.L23
+	leaq	-40(%rbp), %rsp
+	xorl	%eax, %eax
+	popq	%rbx
+	popq	%r12
+	popq	%r13
+	popq	%r14
+	popq	%r15
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa 7, 8
+	ret
+.L22:
+	.cfi_restore_state
+	orq	$0, -8(%rsp,%rdx)
+	jmp	.L4
+.L5:
+	xorl	%edx, %edx
+	jmp	.L9
+.L23:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d%d%d""
+.LC1:
+	.string	""%d""
+.LC2:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	leaq	.LC0(%rip), %rdi
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	pushq	%r15
+	pushq	%r14
+	leaq	-60(%rbp), %rcx
+	leaq	-64(%rbp), %rdx
+	pushq	%r13
+	leaq	-68(%rbp), %rsi
+	pushq	%r12
+	pushq	%rbx
+	subq	$40, %rsp
+	.cfi_offset 15, -24
+	.cfi_offset 14, -32
+	.cfi_offset 13, -40
+	.cfi_offset 12, -48
+	.cfi_offset 3, -56
+	movq	%fs:40, %rax
+	movq	%rax, -56(%rbp)
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movslq	-68(%rbp), %rax
+	movq	%rsp, %rsi
+	movq	%rax, %rcx
+	leaq	15(,%rax,4), %rax
+	movq	%rax, %rdx
+	andq	$-4096, %rax
+	subq	%rax, %rsi
+	andq	$-16, %rdx
+	cmpq	%rsi, %rsp
+	je	.L3
+.L21:
+	subq	$4096, %rsp
+	orq	$0, 4088(%rsp)
+	cmpq	%rsi, %rsp
+	jne	.L21
+.L3:
+	andl	$4095, %edx
+	subq	%rdx, %rsp
+	testq	%rdx, %rdx
+	jne	.L22
+.L4:
+	movq	%rsp, %r14
+	testl	%ecx, %ecx
+	jle	.L5
+	movq	%r14, %rbx
+	movq	%r14, %r13
+	leaq	.LC1(%rip), %r15
+	xorl	%r12d, %r12d
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	movq	%r13, %rsi
+	movq	%r15, %rdi
+	xorl	%eax, %eax
+	addl	$1, %r12d
+	call	__isoc99_scanf@PLT
+	movl	-68(%rbp), %eax
+	addq	$4, %r13
+	cmpl	%r12d, %eax
+	jg	.L6
+	testl	%eax, %eax
+	jle	.L5
+	movl	-64(%rbp), %edi
+	leaq	(%r14,%rax,4), %r8
+	xorl	%edx, %edx
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	movl	(%rbx), %esi
+	movl	%esi, %eax
+	testl	%edi, %edi
+	jle	.L11
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	movl	%eax, %ecx
+	addl	$1, %edx
+	addl	%esi, %eax
+	cmpl	%edi, %ecx
+	jl	.L8
+.L11:
+	addq	$4, %rbx
+	cmpq	%r8, %rbx
+	jne	.L7
+.L9:
+	addl	-60(%rbp), %edx
+	xorl	%eax, %eax
+	movl	$1, %edi
+	leaq	.LC2(%rip), %rsi
+	call	__printf_chk@PLT
+	movq	-56(%rbp), %rax
+	subq	%fs:40, %rax
+	jne	.L23
+	leaq	-40(%rbp), %rsp
+	xorl	%eax, %eax
+	popq	%rbx
+	popq	%r12
+	popq	%r13
+	popq	%r14
+	popq	%r15
+	popq	%rbp
+	.cfi_remember_state
+	.cfi_def_cfa 7, 8
+	ret
+.L22:
+	.cfi_restore_state
+	orq	$0, -8(%rsp,%rdx)
+	jmp	.L4
+.L5:
+	xorl	%edx, %edx
+	jmp	.L9
+.L23:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+17,RUNTIME_ERR,True,False,-0.5,0.0,,462,True,False,10,,,,".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startpro","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+        char s[20];
+        scanf(""%s"",s);
+        s[5]=' ';
+        s[13]=' ';
+        printf(""%s"",s);
+        return 0;
+}
+```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r12
+	.cfi_def_cfa_offset 16
+	.cfi_offset 12, -16
+	pushq	%rbp
+	.cfi_def_cfa_offset 24
+	.cfi_offset 6, -24
+	leaq	.LC0(%rip), %rbp
+	movq	%rbp, %rdi
+	subq	$40, %rsp
+	.cfi_def_cfa_offset 64
+	movq	%fs:40, %rax
+	movq	%rax, 24(%rsp)
+	xorl	%eax, %eax
+	movq	%rsp, %r12
+	movq	%r12, %rsi
+	call	__isoc99_scanf@PLT
+	xorl	%eax, %eax
+	movq	%r12, %rdx
+	movq	%rbp, %rsi
+	movl	$1, %edi
+	movb	$32, 5(%rsp)
+	movb	$32, 13(%rsp)
+	call	__printf_chk@PLT
+	movq	24(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L5
+	addq	$40, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	xorl	%eax, %eax
+	popq	%rbp
+	.cfi_def_cfa_offset 16
+	popq	%r12
+	.cfi_def_cfa_offset 8
+	ret
+.L5:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%s""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$40, %rsp
+	leaq	.LC0(%rip), %rsi
+	movq	%rbp, %rdi
+	call	__isoc99_scanf@PLT
+	movb	$32, 5(%rbp)
+	movb	$32, 13(%rbp)
+	lea	(%rbp,%rax), %rdi
+	movl	$1, %esi
+	movl	$1, %edx
+	movl	$16, %ecx
+	movl	$0, %eax
+	call	__printf_chk@PLT
+	movq	%rbp, %rdi
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+18,RUNTIME_ERR,True,False,-0.5,0.0,,570,True,False,10,,,,".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d%d""
+.LC1:
+	.string	""Yes""
+.LC2:
+	.string	""No""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	m","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <math.h>
+
+int main(void){
+
+    int N, A;
+
+    scanf(""%d%d"", &N, &A);
+
+    if(N % 500 <= A){
+        printf(""Yes\n"");
+    }else{
+        printf(""No\n"");
+    }
+
+    return 0;
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d%d""
+.LC1:
+	.string	""Yes""
+.LC2:
+	.string	""No""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movslq	(%rsp), %rax
+	movq	%rax, %rdx
+	imulq	$274877907, %rax, %rax
+	movl	%edx, %ecx
+	sarl	$31, %ecx
+	sarq	$37, %rax
+	subl	%ecx, %eax
+	imull	$500, %eax, %eax
+	subl	%eax, %edx
+	cmpl	4(%rsp), %edx
+	jg	.L2
+	leaq	.LC1(%rip), %rdi
+	call	puts@PLT
+.L3:
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L2:
+	.cfi_restore_state
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+	jmp	.L3
+.L7:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d%d""
+.LC1:
+	.string	""Yes""
+.LC2:
+	.string	""No""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB51:
+	.cfi_startproc
+	endbr64
+	subq	$16, %rsp
+	.cfi_def_cfa_offset 24
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movslq	(%rsp), %rax
+	movq	%rax, %rdx
+	imulq	$500, %rax, %rax
+	cmpq	%rdx, %rax
+	jg	.L2
+	leaq	.LC1(%rip), %rdi
+	call	puts@PLT
+.L3:
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L7
+	xorl	%eax, %eax
+	addq	$16, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L2:
+	.cfi_restore_state
+	leaq	.LC2(%rip), %rdi
+	call	puts@PLT
+	jmp	.L3
+.L7:
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE51:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```"
+19,COMPILE_FAIL,False,False,-1.0,0.0,,581,True,False,10,"/tmp/tmp_wy1oerg/sol.s: Assembler messages:
+/tmp/tmp_wy1oerg/sol.s: Error: local label `""4"" (instance number 1 of a fb label)' is not defined
+",,,".file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+mai","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+
+int main () {
+	int a, b, c;
+	scanf (""%d %d"", &a, &b);
+	c = a/b;
+	if (a % b != 0) {
+		c++;
+	}
+	printf (""%d\n"", c);
+}```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	cltd
+	idivl	4(%rsp)
+	cmpl	$1, %edx
+	sbbl	$-1, %eax
+	movl	%eax, %edx
+	xorl	%eax, %eax
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L8
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L8:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d %d""
+.LC1:
+	.string	""%d\n""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	subq	$24, %rsp
+	.cfi_def_cfa_offset 32
+	leaq	.LC0(%rip), %rdi
+	movq	%fs:40, %rax
+	movq	%rax, 8(%rsp)
+	xorl	%eax, %eax
+	leaq	4(%rsp), %rdx
+	movq	%rsp, %rsi
+	call	__isoc99_scanf@PLT
+	movl	(%rsp), %eax
+	movl	4(%rsp), %edx
+	movl	%eax, %esi
+	movl	%edx, %edi
+	cltd
+	idivl	%esi
+	cmpl	$1, %edx
+	sbbl	$-1, %eax
+	movl	%eax, %esi
+	movl	$1, %edi
+	leaq	.LC1(%rip), %rsi
+	movl	%esi, %eax
+	call	__printf_chk@PLT
+	movq	8(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L8
+	xorl	%eax, %eax
+	addq	$24, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 8
+	ret
+.L8:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+	.long	0x4
+```"
+20,COMPILE_FAIL,False,False,-1.0,0.0,,191,True,False,10,"/tmp/tmpjn15kl4r/sol.s: Assembler messages:
+/tmp/tmpjn15kl4r/sol.s:5: Error: too many memory references for `mov'
+/tmp/tmpjn15kl4r/sol.s:6: Error: too many memory references for `sub'
+/tmp/tmpjn15kl4r/sol.s:7: Error: too many memory references for `xor'
+/tmp/tmpjn15kl4r/sol.s:8: Error: too many memory references for `lea'
+/tmp/tmpjn15kl4r/sol.s:9: Error: too many memory references for `mov'
+/tmp/t",,,".section .text
+.global main
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 0x20
+    xor eax, eax
+    lea rdi, [rbp-0x20]
+    mov esi, 0x4
+    xor edx, edx
+    call __isoc99_scanf@PLT
+    cmp eax, 0
+","Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+C Code:
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+	int i,n;
+	char str[16];
+	
+	while(1)
+	{
+		scanf(""%d"",&n);
+		if(n==0)
+		{
+			break;
+		}
+		
+		sprintf(str,""%o"",n);
+		
+		for(i=0;str[i]!='\0';i++)
+		{
+			if(str[i]>='4')
+			{
+				str[i]++;
+			}
+			if(str[i]>='6')
+			{
+				str[i]++;
+			}
+		}
+		
+		printf(""%s\n"",str);
+	}
+	return 0;
+}
+
+
+//46が使えないので8進数
+//01234567ではなく01235789の8進数なので桁ごとに補正をかける```
+
+Assembly Code:
+
+```assembly
+	.file	""temp.c""
+	.text
+	.section	.rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+	.string	""%d""
+.LC1:
+	.string	""%o""
+	.section	.text.startup,""ax"",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB23:
+	.cfi_startproc
+	endbr64
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	leaq	.LC1(%rip), %r12
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	leaq	.LC0(%rip), %rbx
+	subq	$56, %rsp
+	.cfi_def_cfa_offset 96
+	movq	%fs:40, %rax
+	movq	%rax, 40(%rsp)
+	xorl	%eax, %eax
+	leaq	12(%rsp), %rbp
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movq	%rbp, %rsi
+	movq	%rbx, %rdi
+	xorl	%eax, %eax
+	call	__isoc99_scanf@PLT
+	movl	12(%rsp), %r8d
+	testl	%r8d, %r8d
+	je	.L2
+	leaq	16(%rsp), %r13
+	movl	$16, %edx
+	movq	%r12, %rcx
+	xorl	%eax, %eax
+	movl	$1, %esi
+	movq	%r13, %rdi
+	call	__sprintf_chk@PLT
+	movzbl	16(%rsp), %eax
+	movq	%r13, %rdx
+	testb	%al, %al
+	je	.L7
+	.p2align 4,,10
+	.p2align 3
+.L8:
+	cmpb	$51, %al
+	jle	.L5
+	leal	1(%rax), %ecx
+	movb	%cl, (%rdx)
+	cmpb	$53, %cl
+	jle	.L5
+	addl	$2, %eax
+	addq	$1, %rdx
+	movb	%al, -1(%rdx)
+	movzbl	(%rdx), %eax
+	testb	%al, %al
+	jne	.L8
+.L7:
+	movq	%r13, %rdi
+	call	puts@PLT
+	jmp	.L4
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	movzbl	1(%rdx), %eax
+	addq	$1, %rdx
+	testb	%al, %al
+	jne	.L8
+	movq	%r13, %rdi
+	call	puts@PLT
+	jmp	.L4
+	.p2align 4,,10
+	.p2align 3
+.L2:
+	movq	40(%rsp), %rax
+	subq	%fs:40, %rax
+	jne	.L16
+	addq	$56, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	xorl	%eax, %eax
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L16:
+	.cfi_restore_state
+	call	__stack_chk_fail@PLT
+	.cfi_endproc
+.LFE23:
+	.size	main, .-main
+	.ident	""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+	.section	.note.GNU-stack,"""",@progbits
+	.section	.note.gnu.property,""a""
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	""GNU""
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
+```
+
+Only output the optimized assembly code. Do not include any other text. Do not write any comments in the assembly code. Wrap the assembly code in ```assembly``` tags.
+Optimized Assembly Code:
+","```assembly
+.section .text
+.global main
+main:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 0x20
+    xor eax, eax
+    lea rdi, [rbp-0x20]
+    mov esi, 0x4
+    xor edx, edx
+    call __isoc99_scanf@PLT
+    cmp eax, 0
+    je .L2
+    lea rdi, [rbp-0x18]
+    mov ecx, 0x10
+    mov esi, 0x1
+    xor eax, eax
+    call __sprintf_chk@PLT
+    lea rdi, [rbp-0x18]
+    call puts@PLT
+    jmp main
+.L2:
+    mov rsp, rbp
+    pop rbp
+    ret
+```"

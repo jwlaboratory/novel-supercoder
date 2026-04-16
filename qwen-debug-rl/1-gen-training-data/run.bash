@@ -13,7 +13,8 @@ usage() {
   echo "  $0 --2                         # stage 2: run Qwen inference" >&2
   echo "  $0 --3                         # stage 3: identify fails, build debug CSV" >&2
   echo "  $0 --4                         # stage 4: backfill test_cases into all CSVs" >&2
-  echo "  $0 --1,2,3,4                   # full pipeline" >&2
+  echo "  $0 --5                         # stage 5: add unoptimized_assembly + unoptimized_compiled_b64" >&2
+  echo "  $0 --1,2,3,4,5                 # full pipeline" >&2
   echo "  $0 --split=val --2             # stage 2: val only" >&2
   echo "" >&2
   echo "env:  DOCKER_IMAGE  (default: supercoder-x86-bench)" >&2
@@ -62,6 +63,11 @@ run_add_io_test_cases() {
   (cd "$REPO" && uv run python "$ROOT/4-add-io-test-cases.py" --split "$split" --csv-dir "$ROOT")
 }
 
+run_add_unoptimized_compiled() {
+  local split="$1"
+  (cd "$REPO" && uv run python "$ROOT/5-add-unoptimized-compiled.py" --split "$split" --csv-dir "$ROOT")
+}
+
 for s in "${STAGES[@]}"; do
   s="${s//[[:space:]]/}"
   [[ -z "$s" ]] && continue
@@ -105,6 +111,16 @@ for s in "${STAGES[@]}"; do
       if [[ "$SPLIT" == "train" || "$SPLIT" == "both" ]]; then
         echo "--- stage 4: backfill test_cases into CSVs (train) ---"
         run_add_io_test_cases train
+      fi
+      ;;
+    5)
+      if [[ "$SPLIT" == "val" || "$SPLIT" == "both" ]]; then
+        echo "--- stage 5: add unoptimized_compiled (val) ---"
+        run_add_unoptimized_compiled val
+      fi
+      if [[ "$SPLIT" == "train" || "$SPLIT" == "both" ]]; then
+        echo "--- stage 5: add unoptimized_compiled (train) ---"
+        run_add_unoptimized_compiled train
       fi
       ;;
     *)

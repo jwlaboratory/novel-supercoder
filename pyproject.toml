@@ -5,6 +5,7 @@ description = "CodeNet accepted-C dataset tools: data pipeline, experiments, RL"
 requires-python = ">=3.11"
 dependencies = [
     "datasets",
+    "matplotlib>=3.10.8",
     "pandas",
     "pyarrow",
 ]

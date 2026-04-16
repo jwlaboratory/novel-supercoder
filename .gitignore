@@ -20,6 +20,13 @@ env/
 *.tar.bz2
 *.zip
 
+# Training data files (too large for GitHub)
+qwen-debug-rl/1-gen-training-data/supercoder_train_fails.csv
+qwen-debug-rl/1-gen-training-data/supercoder_train_with_inference.csv
+qwen-debug-rl/2-rl-model/data/supercoder_train.parquet
+qwen-debug-rl/2-rl-model/data/train.parquet
+qwen-debug-rl/2-rl-model/data/supercoder_train_fails.csv
+
 # Extracted / generated data (pipeline output — same layout under approach2/data or src/data)
 **/Project_CodeNet.tar.gz.download/
 **/merged_test_cases/
