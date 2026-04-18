@@ -1,16 +1,12 @@
-"""Exp 3 — Train debugging from scratch on Qwen2.5-Coder-7B-Instruct.
+"""Exp 2 — Train debugging on top of the pretrained supercoder model.
 
 Task:   broken assembly + error + C code → fixed assembly
 Reward: avg speedup if all tests pass, else 0  (same as supercoder)
 Data:   debug dataset (supercoder_fails CSVs)
-Base:   Qwen/Qwen2.5-Coder-7B-Instruct  (no supercoder pretraining)
+Base:   random1123anonymized/supercoder  (already knows how to optimize)
 
     modal run modal_train.py
     MODAL_TRAIN_GPU="h100:4" modal run modal_train.py
-
-NOTE: This was run once (258 steps) with an all-or-nothing reward and didn't learn.
-      Results in ../data/results/exp3-qwen-debug/
-      Re-running with the supercoder reward (speedup-based) for a fair comparison.
 """
 from __future__ import annotations
 import os, subprocess
@@ -23,8 +19,8 @@ SHARED   = (HERE / "../shared").resolve()
 DATA_DIR = (HERE / "../data").resolve()
 VERL_DIR = (HERE / "../../../SuperCoder-reference/verl").resolve()
 
-BASE_MODEL      = "Qwen/Qwen2.5-Coder-7B-Instruct"
-EXPERIMENT_NAME = "exp3-qwen-debug"
+BASE_MODEL      = "random1123anonymized/supercoder"
+EXPERIMENT_NAME = "exp2-supercoder-debug2"
 TRAIN_FILE      = "/data/debug_train.parquet"
 VAL_FILE        = "/data/debug_val.parquet"
 
@@ -49,7 +45,7 @@ image = (
         "pip install 'transformers>=4.40,<5'",
     )
     .env({"HF_XET_HIGH_PERFORMANCE": "1"})
-    .add_local_file(str(SHARED / "reward.py"), "/reward.py")
+    .add_local_file(str(HERE / "reward_debug.py"), "/reward.py")  
 )
 
 GPU = os.environ.get("MODAL_TRAIN_GPU", "h100:4")
@@ -94,7 +90,7 @@ def _verl_cmd(model_path: str) -> list[str]:
         "actor_rollout_ref.rollout.tensor_model_parallel_size=1",
         "actor_rollout_ref.rollout.temperature=0.5",
         "actor_rollout_ref.rollout.name=vllm",
-        "actor_rollout_ref.rollout.gpu_memory_utilization=0.6",
+        "actor_rollout_ref.rollout.gpu_memory_utilization=0.7",
         "+actor_rollout_ref.rollout.stop_token_ids=[151643,151645]",
         "critic.optim.lr=1e-5",
         f"critic.model.path={model_path}",
@@ -113,7 +109,7 @@ def _verl_cmd(model_path: str) -> list[str]:
         "trainer.save_freq=100",
         "trainer.test_freq=100",
         "trainer.total_epochs=3",
-        "trainer.resume_mode=resume",
+        "trainer.resume_mode=auto",
         f"trainer.default_local_dir=/checkpoints/{EXPERIMENT_NAME}",
         "custom_reward_function.path=/reward.py",
         "custom_reward_function.name=compute_score",

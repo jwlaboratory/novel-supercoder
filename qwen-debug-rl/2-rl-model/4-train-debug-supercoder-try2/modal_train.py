@@ -1,16 +1,15 @@
-"""Exp 3 — Train debugging from scratch on Qwen2.5-Coder-7B-Instruct.
+"""Exp 4 — Train supercoder on top of the debug-trained Qwen model.
 
-Task:   broken assembly + error + C code → fixed assembly
-Reward: avg speedup if all tests pass, else 0  (same as supercoder)
-Data:   debug dataset (supercoder_fails CSVs)
-Base:   Qwen/Qwen2.5-Coder-7B-Instruct  (no supercoder pretraining)
+Task:   C code + unoptimized assembly → generate faster assembly
+Reward: avg speedup if all tests pass, else 0
+Data:   random1123anonymized/supercoder (HF)
+Base:   checkpoint from exp3-qwen-debug  (pass via --model-path or set CHECKPOINT)
 
     modal run modal_train.py
-    MODAL_TRAIN_GPU="h100:4" modal run modal_train.py
+    modal run modal_train.py --model-path /checkpoints/exp3-qwen-debug/global_step_N
 
-NOTE: This was run once (258 steps) with an all-or-nothing reward and didn't learn.
-      Results in ../data/results/exp3-qwen-debug/
-      Re-running with the supercoder reward (speedup-based) for a fair comparison.
+CHECKPOINT env var overrides model path:
+    CHECKPOINT=/checkpoints/exp3-qwen-debug/global_step_258 modal run modal_train.py
 """
 from __future__ import annotations
 import os, subprocess
@@ -23,10 +22,15 @@ SHARED   = (HERE / "../shared").resolve()
 DATA_DIR = (HERE / "../data").resolve()
 VERL_DIR = (HERE / "../../../SuperCoder-reference/verl").resolve()
 
-BASE_MODEL      = "Qwen/Qwen2.5-Coder-7B-Instruct"
-EXPERIMENT_NAME = "exp3-qwen-debug"
-TRAIN_FILE      = "/data/debug_train.parquet"
-VAL_FILE        = "/data/debug_val.parquet"
+EXPERIMENT_NAME = "exp4-debug-supercoder-try2"
+TRAIN_FILE      = "/data/sc_train.parquet"
+VAL_FILE        = "/data/sc_val.parquet"
+
+# default: override with CHECKPOINT env var or --model-path arg
+DEFAULT_CHECKPOINT = os.environ.get(
+    "CHECKPOINT",
+    "/checkpoints/exp3-qwen-debug/global_step_258",  # update after exp3 finishes
+)
 
 app = modal.App(EXPERIMENT_NAME)
 hf_secret       = modal.Secret.from_name("huggingface", required_keys=["HF_TOKEN"])
@@ -52,7 +56,7 @@ image = (
     .add_local_file(str(SHARED / "reward.py"), "/reward.py")
 )
 
-GPU = os.environ.get("MODAL_TRAIN_GPU", "h100:4")
+GPU = os.environ.get("MODAL_TRAIN_GPU", "a100-80gb:2")
 
 
 @app.function(
@@ -65,7 +69,7 @@ GPU = os.environ.get("MODAL_TRAIN_GPU", "h100:4")
         "/root/.cache/vllm":        vllm_cache_vol,
     },
 )
-def train(model_path: str = BASE_MODEL) -> None:
+def train(model_path: str = DEFAULT_CHECKPOINT) -> None:
     subprocess.run(_verl_cmd(model_path), check=True)
     checkpoints_vol.commit()
 
@@ -108,12 +112,12 @@ def _verl_cmd(model_path: str) -> list[str]:
         "trainer.logger=['console','wandb']",
         "trainer.project_name=qwen-debug-rl",
         f"trainer.experiment_name={EXPERIMENT_NAME}",
-        "trainer.n_gpus_per_node=4",
+        "trainer.n_gpus_per_node=2",
         "trainer.nnodes=1",
         "trainer.save_freq=100",
         "trainer.test_freq=100",
-        "trainer.total_epochs=3",
-        "trainer.resume_mode=resume",
+        "trainer.total_epochs=1",
+        "trainer.resume_mode=disable",
         f"trainer.default_local_dir=/checkpoints/{EXPERIMENT_NAME}",
         "custom_reward_function.path=/reward.py",
         "custom_reward_function.name=compute_score",
@@ -121,22 +125,20 @@ def _verl_cmd(model_path: str) -> list[str]:
 
 
 @app.local_entrypoint()
-def main() -> None:
-    _ensure_debug_data()
-    train.remote()
+def main(model_path: str = DEFAULT_CHECKPOINT) -> None:
+    _ensure_sc_data()
+    train.remote(model_path=model_path)
 
 
-def _ensure_debug_data():
-    train_pq = DATA_DIR / "train.parquet"
-    val_pq   = DATA_DIR / "val.parquet"
+def _ensure_sc_data():
+    train_pq = DATA_DIR / "supercoder_train.parquet"
+    val_pq   = DATA_DIR / "supercoder_val.parquet"
     if not train_pq.exists():
-        subprocess.run(["uv", "run", "python", "debug_to_parquet.py", "--split", "train",
-                        "--input-csv", str(DATA_DIR / "supercoder_train_fails.csv"),
+        subprocess.run(["uv", "run", "python", "supercoder_to_parquet.py", "--split", "train",
                         "--output-parquet", str(train_pq)], cwd=SHARED, check=True)
     if not val_pq.exists():
-        subprocess.run(["uv", "run", "python", "debug_to_parquet.py", "--split", "val",
-                        "--input-csv", str(DATA_DIR / "supercoder_val_fails.csv"),
+        subprocess.run(["uv", "run", "python", "supercoder_to_parquet.py", "--split", "val",
                         "--output-parquet", str(val_pq)], cwd=SHARED, check=True)
     with data_vol.batch_upload(force=True) as u:
-        u.put_file(str(train_pq), "debug_train.parquet")
-        u.put_file(str(val_pq),   "debug_val.parquet")
+        u.put_file(str(train_pq), "sc_train.parquet")
+        u.put_file(str(val_pq),   "sc_val.parquet")

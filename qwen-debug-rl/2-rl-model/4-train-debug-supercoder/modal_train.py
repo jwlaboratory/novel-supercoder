@@ -112,7 +112,7 @@ def _verl_cmd(model_path: str) -> list[str]:
         "trainer.logger=['console','wandb']",
         "trainer.project_name=qwen-debug-rl",
         f"trainer.experiment_name={EXPERIMENT_NAME}",
-        "trainer.n_gpus_per_node=4",
+        "trainer.n_gpus_per_node=2",
         "trainer.nnodes=1",
         "trainer.save_freq=100",
         "trainer.test_freq=100",

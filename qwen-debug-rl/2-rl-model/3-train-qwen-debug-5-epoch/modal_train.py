@@ -24,7 +24,7 @@ DATA_DIR = (HERE / "../data").resolve()
 VERL_DIR = (HERE / "../../../SuperCoder-reference/verl").resolve()
 
 BASE_MODEL      = "Qwen/Qwen2.5-Coder-7B-Instruct"
-EXPERIMENT_NAME = "exp3-qwen-debug"
+EXPERIMENT_NAME = "exp3-qwen-debug-5-epoch"
 TRAIN_FILE      = "/data/debug_train.parquet"
 VAL_FILE        = "/data/debug_val.parquet"
 
@@ -52,7 +52,7 @@ image = (
     .add_local_file(str(SHARED / "reward.py"), "/reward.py")
 )
 
-GPU = os.environ.get("MODAL_TRAIN_GPU", "h100:4")
+GPU = os.environ.get("MODAL_TRAIN_GPU", "h200:4")
 
 
 @app.function(
@@ -94,7 +94,7 @@ def _verl_cmd(model_path: str) -> list[str]:
         "actor_rollout_ref.rollout.tensor_model_parallel_size=1",
         "actor_rollout_ref.rollout.temperature=0.5",
         "actor_rollout_ref.rollout.name=vllm",
-        "actor_rollout_ref.rollout.gpu_memory_utilization=0.6",
+        "actor_rollout_ref.rollout.gpu_memory_utilization=0.7",
         "+actor_rollout_ref.rollout.stop_token_ids=[151643,151645]",
         "critic.optim.lr=1e-5",
         f"critic.model.path={model_path}",
@@ -112,8 +112,8 @@ def _verl_cmd(model_path: str) -> list[str]:
         "trainer.nnodes=1",
         "trainer.save_freq=100",
         "trainer.test_freq=100",
-        "trainer.total_epochs=3",
-        "trainer.resume_mode=resume",
+        "trainer.total_epochs=5",
+        "trainer.resume_mode=disable",
         f"trainer.default_local_dir=/checkpoints/{EXPERIMENT_NAME}",
         "custom_reward_function.path=/reward.py",
         "custom_reward_function.name=compute_score",
