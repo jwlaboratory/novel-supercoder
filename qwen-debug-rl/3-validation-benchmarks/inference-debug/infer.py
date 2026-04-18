@@ -273,7 +273,7 @@ def eval_model(
             "n_inputs":        len(ei.get("inputs", [])),
             "compile_stderr":  compile_stderr,
             "prompt":          user_content[:500],
-            "response":        raw_response[:1000],
+            "response":        raw_response,  # full — needed for --speedup-only re-evaluation
         })
 
     n = len(results)
@@ -286,6 +286,109 @@ def eval_model(
 
     del llm; gc.collect()
     return tag, results
+
+
+# ── Speedup-only Modal function (CPU, no GPU) ─────────────────────────────────
+
+@app.function(
+    image=image,
+    cpu=4,
+    timeout=60 * MINUTES,
+    volumes={
+        "/data": data_vol,
+    },
+)
+def benchmark_speedup(
+    tag: str,
+    pass_rows: list[dict],  # rows from existing CSV where tests_pass=True
+    parquet: str = "debug_val",
+    random_seed: int = 42,
+    n_samples: int = 50,
+) -> list[dict]:
+    """Re-use saved responses from CSV, compile them, and run hyperfine.
+    Returns the same rows with raw_speedup filled in."""
+    import json, os, subprocess, sys, tempfile
+    import numpy as np
+    import pandas as pd
+    sys.path.insert(0, "/")
+
+    # Load parquet to get unoptimized_compiled and inputs by problem_idx
+    df = pd.read_parquet(f"/data/{parquet}.parquet")
+    sampled = df.sample(n=min(n_samples, len(df)), random_state=random_seed)
+    ei_by_idx = {
+        row["extra_info"]["problem_idx"]: row["extra_info"]
+        for _, row in sampled.iterrows()
+        if isinstance(row["extra_info"], dict)
+    }
+
+    def _bench(bp, inf, out_j):
+        r = subprocess.run(
+            f"hyperfine --warmup 3 --runs 10 --export-json {out_j}"
+            f" --time-unit millisecond '{bp} < {inf}'",
+            shell=True, capture_output=True, text=True, timeout=60,
+        )
+        if r.returncode != 0 or not os.path.exists(out_j):
+            return None
+        try:
+            return json.load(open(out_j))["results"][0]["mean"] * 1000
+        except Exception:
+            return None
+
+    updated = []
+    for row in pass_rows:
+        prob_idx = row.get("problem_idx", -1)
+        ei = ei_by_idx.get(prob_idx)
+        if not ei:
+            row["raw_speedup"] = None
+            updated.append(row)
+            continue
+
+        asm      = row["response"].replace("```assembly\n", "").replace("```", "")
+        _inputs  = list(ei.get("inputs",  []))[:3]
+        _precomp = bytes(ei.get("unoptimized_compiled", b""))
+
+        raw_speedup = None
+        if _inputs and _precomp:
+            try:
+                with tempfile.TemporaryDirectory() as d:
+                    asm_f     = os.path.join(d, "sol.s")
+                    sol_bin   = os.path.join(d, "sol.bin")
+                    unopt_bin = os.path.join(d, "unopt.bin")
+                    with open(asm_f,     "w") as f: f.write(asm)
+                    with open(unopt_bin, "wb") as f: f.write(_precomp)
+                    os.chmod(unopt_bin, 0o755)
+
+                    cr = subprocess.run(
+                        f"gcc {asm_f} -o {sol_bin} -lm",
+                        shell=True, capture_output=True, timeout=30,
+                    )
+                    if cr.returncode != 0:
+                        row["raw_speedup"] = None
+                        updated.append(row)
+                        continue
+                    os.chmod(sol_bin, 0o755)
+
+                    speedups = []
+                    for j, inp_text in enumerate(_inputs):
+                        inf   = os.path.join(d, f"in{j}.txt")
+                        out_j = os.path.join(d, f"b{j}.json")
+                        with open(inf, "w") as f: f.write(inp_text)
+                        u_ms = _bench(unopt_bin, inf, out_j)
+                        s_ms = _bench(sol_bin,   inf, out_j)
+                        if u_ms and s_ms and s_ms > 0:
+                            speedups.append(u_ms / s_ms)
+                    if speedups:
+                        raw_speedup = round(float(np.mean(speedups)), 4)
+            except Exception as e:
+                print(f"[{tag}] speedup error for idx={prob_idx}: {e}")
+
+        sp_str = f"{raw_speedup:.3f}x" if raw_speedup is not None else "N/A"
+        print(f"[{tag}] idx={prob_idx}  speedup={sp_str}")
+        row["raw_speedup"] = raw_speedup
+        row["reward"]      = raw_speedup or 0.0
+        updated.append(row)
+
+    return tag, updated
 
 
 # ── Local entrypoint — spawns all 4 containers in parallel ───────────────────
@@ -301,33 +404,80 @@ def main(
     debug1_ckpt: str   = "",
     debug2_ckpt: str   = "",
     out_dir: str       = "",
+    speedup_only: bool = False,   # skip LLM, re-use existing CSVs and just run hyperfine
 ) -> None:
     import numpy as np
 
-    shared = dict(
-        n_samples=n_samples, parquet=parquet,
-        temperature=temperature, random_seed=random_seed, do_speedup=do_speedup,
-    )
+    out_path = Path(out_dir) if out_dir else HERE
+    out_path.mkdir(parents=True, exist_ok=True)
 
-    # Spawn all 4 containers simultaneously
-    print("Spawning 4 model containers in parallel...")
-    calls = [
-        eval_model.spawn(tag="qwen-base",       model_path=QWEN_BASE,    exp_name="",       **shared),
-        eval_model.spawn(tag="supercoder-exp1", model_path=supercoder_ckpt, exp_name=EXP1_NAME, **shared),
-        eval_model.spawn(tag="debug1-exp3",     model_path=debug1_ckpt,  exp_name=EXP3_NAME, **shared),
-        eval_model.spawn(tag="debug2-exp5",     model_path=debug2_ckpt,  exp_name=EXP5_NAME, **shared),
-    ]
-
-    # Collect results as each finishes
-    print("Waiting for all containers to finish...\n")
     all_results: dict[str, list[dict]] = {}
-    for call in calls:
-        tag, results = call.get()
-        if results:
-            all_results[tag] = results
-            print(f"  [{tag}] finished — {len(results)} samples")
-        else:
-            print(f"  [{tag}] skipped (no checkpoint found)")
+
+    if speedup_only:
+        # ── Re-use existing CSVs, only run hyperfine on ALL_PASS rows ─────────
+        tags = ["qwen-base", "supercoder-exp1", "debug1-exp3", "debug2-exp5"]
+        calls = []
+        tag_order = []
+        for tag in tags:
+            csv_path = out_path / f"infer_results_{tag}.csv"
+            if not csv_path.exists():
+                print(f"  [{tag}] no CSV found — skipping")
+                continue
+            rows = list(csv.DictReader(open(csv_path, encoding="utf-8")))
+            # Convert string booleans back to proper types
+            for r in rows:
+                r["tests_pass"] = r["tests_pass"] == "True"
+                r["compiled"]   = r["compiled"]   == "True"
+                r["is_copy"]    = r["is_copy"]     == "True"
+                for f in ("correctness", "reward"):
+                    try: r[f] = float(r[f])
+                    except (ValueError, TypeError): r[f] = 0.0
+                for f in ("idx", "problem_idx", "response_tokens", "n_inputs"):
+                    try: r[f] = int(r[f])
+                    except (ValueError, TypeError): r[f] = -1
+                r["raw_speedup"] = None  # will be filled in
+
+            pass_rows = [r for r in rows if r["tests_pass"]]
+            all_rows  = rows
+            print(f"  [{tag}] {len(pass_rows)} ALL_PASS rows to benchmark out of {len(rows)}")
+            calls.append((tag, all_rows, pass_rows,
+                benchmark_speedup.spawn(tag=tag, pass_rows=pass_rows,
+                    parquet=parquet, random_seed=random_seed, n_samples=n_samples)))
+            tag_order.append(tag)
+
+        print("Waiting for speedup benchmarks...\n")
+        for tag, all_rows, pass_rows, call in calls:
+            _, updated_pass = call.get()
+            # Merge speedup back into full rows by idx
+            speedup_by_idx = {r["idx"]: r["raw_speedup"] for r in updated_pass}
+            for r in all_rows:
+                if r["idx"] in speedup_by_idx:
+                    r["raw_speedup"] = speedup_by_idx[r["idx"]]
+                    r["reward"]      = speedup_by_idx[r["idx"]] or 0.0
+            all_results[tag] = all_rows
+            print(f"  [{tag}] done")
+
+    else:
+        # ── Full inference run ─────────────────────────────────────────────────
+        shared = dict(
+            n_samples=n_samples, parquet=parquet,
+            temperature=temperature, random_seed=random_seed, do_speedup=do_speedup,
+        )
+        print("Spawning 4 model containers in parallel...")
+        calls = [
+            eval_model.spawn(tag="qwen-base",       model_path=QWEN_BASE,       exp_name="",        **shared),
+            eval_model.spawn(tag="supercoder-exp1", model_path=supercoder_ckpt, exp_name=EXP1_NAME, **shared),
+            eval_model.spawn(tag="debug1-exp3",     model_path=debug1_ckpt,     exp_name=EXP3_NAME, **shared),
+            eval_model.spawn(tag="debug2-exp5",     model_path=debug2_ckpt,     exp_name=EXP5_NAME, **shared),
+        ]
+        print("Waiting for all containers to finish...\n")
+        for call in calls:
+            tag, results = call.get()
+            if results:
+                all_results[tag] = results
+                print(f"  [{tag}] finished — {len(results)} samples")
+            else:
+                print(f"  [{tag}] skipped (no checkpoint found)")
 
     # Write CSVs
     out_path = Path(out_dir) if out_dir else HERE

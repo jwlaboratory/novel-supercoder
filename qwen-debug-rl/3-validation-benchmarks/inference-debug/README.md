@@ -13,8 +13,19 @@ modal run ../../2-rl-model/merge_checkpoint.py --exp exp5-debug-betterRL --step 
 
 **Run the comparison:**
 ```bash
-modal run infer.py                              # 50 samples, with speedup benchmarking
-modal run infer.py --n-samples 200 --no-do-speedup   # faster, skips hyperfine
+modal run infer.py --n-samples 200 --no-do-speedup   # fast: inference only, no hyperfine
+modal run infer.py --n-samples 200                   # full: inference + speedup benchmarking
+```
+
+**Already have CSVs? Just add speedup without re-running inference:**
+```bash
+modal run infer.py --speedup-only                    # reads existing CSVs, runs hyperfine on ALL_PASS rows
+```
+Note: `--speedup-only` requires that the CSVs were generated without `--no-do-speedup` truncation (i.e. after this fix). Re-run inference once to get full responses saved, then `--speedup-only` works on subsequent calls.
+
+**Plot results:**
+```bash
+python plot.py   # saves infer_comparison.png (9-panel chart including speedup)
 ```
 
 Outputs `infer_results_<model>.csv` per model and `infer_summary.csv` with a side-by-side comparison of compile rate, test-pass rate, mean correctness, and speedup.
