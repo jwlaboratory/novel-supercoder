@@ -11,7 +11,7 @@
 ./run.bash --split=val --0 --extended  # download val + KrishPS extended
 ./run.bash --1                         # one-shot SuperCoder PPO (both splits)
 ./run.bash --split=val --1             # one-shot SuperCoder PPO (val only)
-./run.bash --2                         # one-shot Qwen2.5 base (both splits)
+./run.bash --2                         # one-shot Qwen2.5 instruct (both splits)
 ./run.bash --3                         # infer improvements (both splits)
 ./run.bash --0,1,2                     # download then run both one-shots
 ./run.bash --split=val --0,1,2,3       # full pipeline val only
@@ -35,7 +35,6 @@ theory:
  lets try 
 3. - "if u cant find a mistake dont make one up, just say nothing"
 NOTHING for all
-
 
 
 The "Sycophancy" Trap (Experiment 2)
@@ -67,6 +66,7 @@ Actor-Critic Multi-Agent Setup: Let Agent A generate ideas (even if some are sli
 but supercoder did indeed oneshot generate better code
 
 Why might this thinkign stage i added perform worse then straight one shot?
+
 
 
 

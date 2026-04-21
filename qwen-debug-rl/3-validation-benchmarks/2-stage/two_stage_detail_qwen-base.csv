@@ -1,5 +1,5 @@
 idx,experiment,stage2_used,stage2_model,stage1_status,stage1_tests_pass,stage1_compile,stage1_correctness,stage1_effective_speedup,final_status,final_tests_pass,final_compile,final_correctness,raw_speedup,effective_speedup,prompt_preview,stage1_response,stage2_response
-1,nothing,False,,ALL_PASS,True,True,1.0,1.1508,ALL_PASS,True,True,1.0,1.1508,1.1508,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+1,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1508,ALL_PASS,True,True,1.0,1.1508,1.1508,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -205,7 +205,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-2,nothing,False,,ALL_PASS,True,True,1.0,1.201,ALL_PASS,True,True,1.0,1.201,1.201,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+2,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.201,ALL_PASS,True,True,1.0,1.201,1.201,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -304,7 +304,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-3,nothing,False,,ALL_PASS,True,True,1.0,1.2012,ALL_PASS,True,True,1.0,1.2012,1.2012,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+3,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.2012,ALL_PASS,True,True,1.0,1.2012,1.2012,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -421,7 +421,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-4,nothing,False,,ALL_PASS,True,True,1.0,1.116,ALL_PASS,True,True,1.0,1.116,1.116,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+4,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.116,ALL_PASS,True,True,1.0,1.116,1.116,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -529,7 +529,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-5,nothing,False,,ALL_PASS,True,True,1.0,0.754,ALL_PASS,True,True,1.0,0.754,0.754,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+5,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.754,ALL_PASS,True,True,1.0,0.754,0.754,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -603,7 +603,7 @@ ret
 .align 8
 4:
 ```",
-6,nothing,False,,ALL_PASS,True,True,1.0,0.9019,ALL_PASS,True,True,1.0,0.9019,0.9019,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+6,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9019,ALL_PASS,True,True,1.0,0.9019,0.9019,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -715,7 +715,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-7,nothing,False,,ALL_PASS,True,True,1.0,0.855,ALL_PASS,True,True,1.0,0.855,0.855,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+7,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.855,ALL_PASS,True,True,1.0,0.855,0.855,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -839,7 +839,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-8,nothing,False,,ALL_PASS,True,True,1.0,0.973,ALL_PASS,True,True,1.0,0.973,0.973,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+8,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.973,ALL_PASS,True,True,1.0,0.973,0.973,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -945,7 +945,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-9,nothing,False,,ALL_PASS,True,True,1.0,1.2106,ALL_PASS,True,True,1.0,1.2106,1.2106,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+9,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.2106,ALL_PASS,True,True,1.0,1.2106,1.2106,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -1110,7 +1110,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-10,nothing,False,,ALL_PASS,True,True,1.0,1.5297,ALL_PASS,True,True,1.0,1.5297,1.5297,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+10,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.5297,ALL_PASS,True,True,1.0,1.5297,1.5297,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -1286,7 +1286,7 @@ M:
 .align 8
 4:
 ```",
-11,nothing,False,,ALL_PASS,True,True,1.0,0.7605,ALL_PASS,True,True,1.0,0.7605,0.7605,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+11,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.7605,ALL_PASS,True,True,1.0,0.7605,0.7605,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -1407,7 +1407,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-12,nothing,False,,ALL_PASS,True,True,1.0,0.9663,ALL_PASS,True,True,1.0,0.9663,0.9663,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+12,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9663,ALL_PASS,True,True,1.0,0.9663,0.9663,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -1586,7 +1586,7 @@ a:
 .align 8
 4:
 ```",
-13,nothing,False,,ALL_PASS,True,True,1.0,0.9397,ALL_PASS,True,True,1.0,0.9397,0.9397,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+13,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9397,ALL_PASS,True,True,1.0,0.9397,0.9397,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -1738,7 +1738,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-14,nothing,False,,ALL_PASS,True,True,1.0,1.0809,ALL_PASS,True,True,1.0,1.0809,1.0809,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+14,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0809,ALL_PASS,True,True,1.0,1.0809,1.0809,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -1912,7 +1912,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-15,nothing,False,,ALL_PASS,True,True,1.0,1.2212,ALL_PASS,True,True,1.0,1.2212,1.2212,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+15,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.2212,ALL_PASS,True,True,1.0,1.2212,1.2212,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -2143,7 +2143,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-16,nothing,False,,ALL_PASS,True,True,1.0,1.0468,ALL_PASS,True,True,1.0,1.0468,1.0468,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+16,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0468,ALL_PASS,True,True,1.0,1.0468,1.0468,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -2271,7 +2271,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-17,nothing,False,,ALL_PASS,True,True,1.0,0.8607,ALL_PASS,True,True,1.0,0.8607,0.8607,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+17,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8607,ALL_PASS,True,True,1.0,0.8607,0.8607,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -2377,7 +2377,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-18,nothing,False,,ALL_PASS,True,True,1.0,1.0807,ALL_PASS,True,True,1.0,1.0807,1.0807,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+18,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0807,ALL_PASS,True,True,1.0,1.0807,1.0807,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -2509,7 +2509,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-19,nothing,False,,ALL_PASS,True,True,1.0,1.1019,ALL_PASS,True,True,1.0,1.1019,1.1019,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+19,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1019,ALL_PASS,True,True,1.0,1.1019,1.1019,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -2673,7 +2673,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-20,nothing,False,,ALL_PASS,True,True,1.0,1.0251,ALL_PASS,True,True,1.0,1.0251,1.0251,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+20,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0251,ALL_PASS,True,True,1.0,1.0251,1.0251,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -2793,7 +2793,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-21,nothing,False,,ALL_PASS,True,True,1.0,0.8473,ALL_PASS,True,True,1.0,0.8473,0.8473,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+21,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8473,ALL_PASS,True,True,1.0,0.8473,0.8473,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -2943,7 +2943,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-22,nothing,False,,ALL_PASS,True,True,1.0,0.8817,ALL_PASS,True,True,1.0,0.8817,0.8817,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+22,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8817,ALL_PASS,True,True,1.0,0.8817,0.8817,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -3150,7 +3150,7 @@ s:
 .align 8
 4:
 ```",
-23,nothing,False,,ALL_PASS,True,True,1.0,1.9864,ALL_PASS,True,True,1.0,1.9864,1.9864,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+23,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.9864,ALL_PASS,True,True,1.0,1.9864,1.9864,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -3286,7 +3286,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-24,nothing,False,,ALL_PASS,True,True,1.0,1.4343,ALL_PASS,True,True,1.0,1.4343,1.4343,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+24,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.4343,ALL_PASS,True,True,1.0,1.4343,1.4343,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -3452,7 +3452,7 @@ N:
 .align 8
 4:
 ```",
-25,nothing,False,,ALL_PASS,True,True,1.0,0.9277,ALL_PASS,True,True,1.0,0.9277,0.9277,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+25,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9277,ALL_PASS,True,True,1.0,0.9277,0.9277,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -3608,7 +3608,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-26,nothing,False,,ALL_PASS,True,True,1.0,0.9717,ALL_PASS,True,True,1.0,0.9717,0.9717,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+26,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9717,ALL_PASS,True,True,1.0,0.9717,0.9717,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -3715,7 +3715,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-27,nothing,False,,ALL_PASS,True,True,1.0,1.0747,ALL_PASS,True,True,1.0,1.0747,1.0747,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+27,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0747,ALL_PASS,True,True,1.0,1.0747,1.0747,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -3921,7 +3921,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-28,nothing,False,,ALL_PASS,True,True,1.0,0.6937,ALL_PASS,True,True,1.0,0.6937,0.6937,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+28,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.6937,ALL_PASS,True,True,1.0,0.6937,0.6937,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -4134,7 +4134,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-29,nothing,False,,ALL_PASS,True,True,1.0,1.0533,ALL_PASS,True,True,1.0,1.0533,1.0533,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+29,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0533,ALL_PASS,True,True,1.0,1.0533,1.0533,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -4322,7 +4322,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-30,nothing,False,,ALL_PASS,True,True,1.0,1.029,ALL_PASS,True,True,1.0,1.029,1.029,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+30,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.029,ALL_PASS,True,True,1.0,1.029,1.029,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -4421,7 +4421,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-31,nothing,False,,ALL_PASS,True,True,1.0,1.1192,ALL_PASS,True,True,1.0,1.1192,1.1192,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+31,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1192,ALL_PASS,True,True,1.0,1.1192,1.1192,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -4658,7 +4658,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-32,nothing,False,,ALL_PASS,True,True,1.0,0.8934,ALL_PASS,True,True,1.0,0.8934,0.8934,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+32,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8934,ALL_PASS,True,True,1.0,0.8934,0.8934,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -4765,7 +4765,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-33,nothing,False,,ALL_PASS,True,True,1.0,0.7913,ALL_PASS,True,True,1.0,0.7913,0.7913,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+33,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.7913,ALL_PASS,True,True,1.0,0.7913,0.7913,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -4944,7 +4944,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-34,nothing,False,,ALL_PASS,True,True,1.0,0.9643,ALL_PASS,True,True,1.0,0.9643,0.9643,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+34,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9643,ALL_PASS,True,True,1.0,0.9643,0.9643,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -5166,7 +5166,7 @@ s:
 .align 8
 4:
 ```",
-35,nothing,False,,ALL_PASS,True,True,1.0,0.9373,ALL_PASS,True,True,1.0,0.9373,0.9373,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+35,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9373,ALL_PASS,True,True,1.0,0.9373,0.9373,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -5291,7 +5291,7 @@ ans:
 .align 8
 4:
 ```",
-36,nothing,False,,ALL_PASS,True,True,1.0,1.1098,ALL_PASS,True,True,1.0,1.1098,1.1098,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+36,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1098,ALL_PASS,True,True,1.0,1.1098,1.1098,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -5405,7 +5405,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-37,nothing,False,,ALL_PASS,True,True,1.0,1.0718,ALL_PASS,True,True,1.0,1.0718,1.0718,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+37,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0718,ALL_PASS,True,True,1.0,1.0718,1.0718,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -5624,7 +5624,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-38,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+38,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -5818,8 +5818,228 @@ addl %ebx, %edx
 cmpl %ecx, %esi
 jl .L17
 leal 300(%r8,%rax), %ecx
-cmpl %ecx, %r9",
-39,nothing,False,,ALL_PASS,True,True,1.0,1.1858,ALL_PASS,True,True,1.0,1.1858,1.1858,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+cmpl %ecx, %r9","```assembly
+.file ""temp.c""
+.text
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+.string ""%d %d %d %d""
+.LC3:
+.string ""%d\n""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB39:
+.cfi_startproc
+endbr64
+pushq %r15
+.cfi_def_cfa_offset 16
+.cfi_offset 15, -16
+leaq .LC1(%rip), %rdi
+pushq %r14
+.cfi_def_cfa_offset 24
+.cfi_offset 14, -24
+pushq %r13
+.cfi_def_cfa_offset 32
+.cfi_offset 13, -32
+pushq %r12
+.cfi_def_cfa_offset 40
+.cfi_offset 12, -40
+pushq %rbp
+.cfi_def_cfa_offset 48
+.cfi_offset 6, -48
+pushq %rbx
+.cfi_def_cfa_offset 56
+.cfi_offset 3, -56
+subq $56, %rsp
+.cfi_def_cfa_offset 112
+movq %fs:40, %rax
+movq %rax, 40(%rsp)
+xorl %eax, %eax
+leaq 32(%rsp), %rcx
+leaq 28(%rsp), %rdx
+leaq 24(%rsp), %rsi
+leaq 36(%rsp), %r8
+call __isoc99_scanf@PLT
+movl 24(%rsp), %eax
+testl %eax, %eax
+js .L20
+movl 32(%rsp), %esi
+movl 36(%rsp), %r9d
+addl $1, %eax
+xorl %r14d, %r14d
+movl 28(%rsp), %r15d
+movl %eax, 12(%rsp)
+xorl %r13d, %r13d
+xorl %edx, %edx
+leal 1(%rsi), %r12d
+movd %r9d, %xmm7
+movdqa .LC2(%rip), %xmm5
+movl %r12d, %edi
+leal 1(%r15), %ebp
+pshufd $0, %xmm7, %xmm6
+movl %r12d, %r11d
+shrl $2, %edi
+andl $-4, %r11d
+.p2align 4,,10
+.p2align 3
+.L3:
+testl %r15d, %r15d
+js .L15
+movl %r14d, %eax
+xorl %r10d, %r10d
+.p2align 4,,10
+.p2align 3
+.L18:
+testl %esi, %esi
+js .L17
+cmpl $6, %esi
+jbe .L21
+movd %eax, %xmm7
+movdqa .LC0(%rip), %xmm3
+xorl %ecx, %ecx
+pxor %xmm2, %xmm2
+pshufd $0, %xmm7, %xmm4
+.p2align 4,,10
+.p2align 3
+.L5:
+movdqa %xmm3, %xmm1
+addl $1, %ecx
+paddd %xmm5, %xmm3
+movdqa %xmm1, %xmm0
+pslld $1, %xmm0
+paddd %xmm1, %xmm0
+pslld $3, %xmm0
+paddd %xmm1, %xmm0
+pslld $1, %xmm0
+paddd %xmm4, %xmm0
+pcmpeqd %xmm6, %xmm0
+psubd %xmm0, %xmm2
+cmpl %ecx, %edi
+jne .L5
+movdqa %xmm2, %xmm0
+psrldq $8, %xmm0
+paddd %xmm0, %xmm2
+movdqa %xmm2, %xmm0
+psrldq $4, %xmm0
+paddd %xmm0, %xmm2
+movd %xmm2, %ecx
+addl %ecx, %edx
+movl %r11d, %ecx
+cmpl %r11d, %r12d
+je .L17
+.L4:
+imull $50, %ecx, %r8d
+leal (%rax,%r8), %ebx
+cmpl %r9d, %ebx
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 1(%rcx), %ebx
+cmpl %esi, %ebx
+jg .L17
+leal 50(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 2(%rcx), %ebx
+cmpl %esi, %ebx
+jg .L17
+leal 100(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 3(%rcx), %ebx
+cmpl %ebx, %esi
+jl .L17
+leal 150(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl $6, %ecx
+movzbl %bl, %ebx
+addl %ebx, %edx
+cmpl %ecx, %esi
+jl .L17
+leal 300(%r8,%rax), %ecx
+cmpl %ecx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 4(%rcx), %ebx
+cmpl %ebx, %esi
+jl .L17
+leal 200(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 5(%rcx), %ebx
+cmpl %ebx, %esi
+jl .L17
+leal 250(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+addl $6, %ecx
+movzbl %bl, %ebx
+addl %ebx, %edx
+cmpl %ecx, %esi
+jl .L17
+leal 300(%r8,%rax), %ecx
+cmpl %ecx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 4(%rcx), %ebx
+cmpl %ebx, %esi
+jl .L17
+leal 200(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 5(%rcx), %ebx
+cmpl %ebx, %esi
+jl .L17
+leal 250(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl $6, %ecx
+movzbl %bl, %ebx
+addl %ebx, %edx
+cmpl %ecx, %esi
+jl .L17
+leal 300(%r8,%rax), %ecx
+cmpl %ecx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 4(%rcx), %ebx
+cmpl %ebx, %esi
+jl .L17
+leal 200(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl %ebx, %edx
+leal 5(%rcx), %ebx
+cmpl %ebx, %esi
+jl .L17
+leal 250(%r8,%rax), %ebx
+cmpl %ebx, %r9d
+sete %bl
+movzbl %bl, %ebx
+addl $6, %ecx
+movzbl %bl, %ebx
+addl %ebx, %edx
+cmpl %ecx, %esi
+"
+39,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1858,ALL_PASS,True,True,1.0,1.1858,1.1858,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -5999,7 +6219,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-40,nothing,False,,ALL_PASS,True,True,1.0,1.1421,ALL_PASS,True,True,1.0,1.1421,1.1421,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+40,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1421,ALL_PASS,True,True,1.0,1.1421,1.1421,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -6232,7 +6452,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-41,nothing,False,,ALL_PASS,True,True,1.0,0.8192,ALL_PASS,True,True,1.0,0.8192,0.8192,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+41,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8192,ALL_PASS,True,True,1.0,0.8192,0.8192,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -6389,7 +6609,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-42,nothing,False,,ALL_PASS,True,True,1.0,0.9597,ALL_PASS,True,True,1.0,0.9597,0.9597,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+42,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9597,ALL_PASS,True,True,1.0,0.9597,0.9597,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -6610,7 +6830,7 @@ ret
 .long 1073741824
 .long 1073741824
 .ident ""GCC",
-43,nothing,False,,ALL_PASS,True,True,1.0,0.805,ALL_PASS,True,True,1.0,0.805,0.805,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+43,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.805,ALL_PASS,True,True,1.0,0.805,0.805,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -6723,7 +6943,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-44,nothing,False,,ALL_PASS,True,True,1.0,0.8184,ALL_PASS,True,True,1.0,0.8184,0.8184,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+44,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8184,ALL_PASS,True,True,1.0,0.8184,0.8184,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -6896,7 +7116,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-45,nothing,False,,ALL_PASS,True,True,1.0,1.1236,ALL_PASS,True,True,1.0,1.1236,1.1236,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+45,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1236,ALL_PASS,True,True,1.0,1.1236,1.1236,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -7048,7 +7268,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-46,nothing,False,,ALL_PASS,True,True,1.0,0.9005,ALL_PASS,True,True,1.0,0.9005,0.9005,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+46,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9005,ALL_PASS,True,True,1.0,0.9005,0.9005,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -7234,7 +7454,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-47,nothing,False,,ALL_PASS,True,True,1.0,1.0666,ALL_PASS,True,True,1.0,1.0666,1.0666,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+47,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0666,ALL_PASS,True,True,1.0,1.0666,1.0666,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -7426,7 +7646,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-48,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+48,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -7619,8 +7839,195 @@ addq $456, %rsp
 .cfi_def_cfa_offset 56
 xorl %eax, %eax
 popq %rbx
-.cfi_def_c",
-49,nothing,False,,ALL_PASS,True,True,1.0,1.1481,ALL_PASS,True,True,1.0,1.1481,1.1481,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+.cfi_def_c","```assembly
+.file ""temp.c""
+.text
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+.string ""%d""
+.LC1:
+.string ""%ld\n""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB23:
+.cfi_startproc
+endbr64
+pushq %r15
+.cfi_def_cfa_offset 16
+.cfi_offset 15, -16
+pushq %r14
+.cfi_def_cfa_offset 24
+.cfi_offset 14, -24
+pushq %r13
+.cfi_def_cfa_offset 32
+.cfi_offset 13, -32
+leaq .LC0(%rip), %r13
+pushq %r12
+.cfi_def_cfa_offset 40
+.cfi_offset 12, -40
+movq %r13, %rdi
+pushq %rbp
+.cfi_def_cfa_offset 48
+.cfi_offset 6, -48
+pushq %rbx
+.cfi_def_cfa_offset 56
+.cfi_offset 3, -56
+subq $456, %rsp
+.cfi_def_cfa_offset 512
+movq %fs:40, %rax
+movq %rax, 440(%rsp)
+xorl %eax, %eax
+leaq 12(%rsp), %rsi
+call __isoc99_scanf@PLT
+xorl %eax, %eax
+leaq 16(%rsp), %rdi
+movl $52, %ecx
+rep stosq
+movl 12(%rsp), %eax
+movl $0, (%rdi)
+testl %eax, %eax
+jle .L5
+leaq 20(%rsp), %rbp
+movl $1, %r15d
+movl $-200, %r12d
+movl $200, %ebx
+movq %rbp, %r14
+.p2align 4,,10
+.p2align 3
+.L4:
+movq %r14, %rsi
+xorl %eax, %eax
+movq %r13, %rdi
+call __isoc99_scanf@PLT
+movl (%r14), %eax
+movl 12(%rsp), %ecx
+cmpl %eax, %ebx
+cmovg %eax, %ebx
+cmpl %eax, %r12d
+cmovl %eax, %r12d
+addl $1, %r15d
+addq $4, %r14
+cmpl %r15d, %ecx
+jge .L4
+cmpl %r12d, %ebx
+jg .L5
+movl %ecx, %eax
+movl %ecx, %edi
+leal -1(%rcx), %r9d
+movl $100000000, %r8d
+shrl $2, %eax
+andl $-4, %edi
+pxor %xmm5, %xmm5
+subl $1, %eax
+leal 1(%rdi), %r10d
+salq $4, %rax
+leaq 36(%rsp,%rax), %rsi
+.p2align 4,,10
+.p2align 3
+.L6:
+testl %ecx, %ecx
+jle .L20
+cmpl $2, %r9d
+jbe .L12
+movd %ebx, %xmm6
+movq %rbp, %rax
+pxor %xmm2, %xmm2
+pshufd $0, %xmm6, %xmm4
+.p2align 4,,10
+.p2align 3
+.L8:
+movdqu (%rax), %xmm0
+addq $16, %rax
+psubd %xmm4, %xmm0
+movdqa %xmm0, %xmm1
+pmuludq %xmm0, %xmm1
+psrlq $32, %xmm0
+pmuludq %xmm0, %xmm0
+pshufd $8, %xmm1, %xmm1
+pshufd $8, %xmm0, %xmm0
+punpckldq %xmm0, %xmm1
+movdqa %xmm5, %xmm0
+pcmpgtd %xmm1, %xmm0
+movdqa %xmm1, %xmm3
+punpckldq %xmm0, %xmm3
+punpckhdq %xmm0, %xmm1
+paddq %xmm3, %xmm2
+paddq %xmm1, %xmm2
+cmpq %rsi, %rax
+jne .L8
+movdqa %xmm2, %xmm0
+movl %r10d, %r11d
+psrldq $8, %xmm0
+paddq %xmm0, %xmm2
+movq %xmm2, %rax
+cmpl %ecx, %edi
+je .L9
+.L7:
+movslq %r11d, %rdx
+movl 16(%rsp,%rdx,4), %edx
+subl %ebx, %edx
+imull %edx, %edx
+movslq %edx, %rdx
+addq %rdx, %rax
+leal 1(%r11), %edx
+cmpl %edx, %ecx
+jl .L9
+movslq %edx, %rdx
+addl $2, %r11d
+movl 16(%rsp,%rdx,4), %edx
+subl %ebx, %edx
+imull %edx, %edx
+movslq %edx, %rdx
+addq %rdx, %rax
+cmpl %r11d, %ecx
+jl .L9
+movslq %r11d, %r11
+movl 16(%rsp,%r11,4), %edx
+subl %ebx, %edx
+imull %edx, %edx
+movslq %edx, %rdx
+addq %rdx, %rax
+.L9:
+cmpq %rax, %r8
+cmovg %rax, %r8
+testq %r8, %r8
+je .L3
+addl $1, %ebx
+cmpl %r12d, %ebx
+jle .L6
+.L3:
+xorl %eax, %eax
+movq %r8, %rdx
+movl $1, %edi
+leaq .LC1(%rip), %rsi
+call __printf_chk@PLT
+movq 440(%rsp), %rax
+subq %fs:40, %rax
+jne .L21
+addq $456, %rsp
+.cfi_def_cfa_offset 56
+xorl %eax, %eax
+popq %rbx
+.cfi_def_cfa_offset 52
+popq %rbp
+.cfi_def_cfa_offset 48
+popq %r12
+.cfi_def_cfa_offset 40
+popq %r13
+.cfi_def_cfa_offset 32
+popq %r14
+.cfi_def_cfa_offset 24
+popq %r15
+.cfi_def_cfa_offset 16
+retq
+.cfi_endproc
+.LFE23:
+.size main, .-main
+```"
+49,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1481,ALL_PASS,True,True,1.0,1.1481,1.1481,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -7783,7 +8190,7 @@ ret
 .align 8
 4:
 ```",
-50,nothing,False,,ALL_PASS,True,True,1.0,0.5929,ALL_PASS,True,True,1.0,0.5929,0.5929,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+50,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.5929,ALL_PASS,True,True,1.0,0.5929,0.5929,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -7907,7 +8314,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-51,nothing,False,,ALL_PASS,True,True,1.0,1.0678,ALL_PASS,True,True,1.0,1.0678,1.0678,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+51,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0678,ALL_PASS,True,True,1.0,1.0678,1.0678,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -8004,7 +8411,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-52,nothing,False,,ALL_PASS,True,True,1.0,0.8821,ALL_PASS,True,True,1.0,0.8821,0.8821,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+52,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8821,ALL_PASS,True,True,1.0,0.8821,0.8821,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -8161,7 +8568,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-53,nothing,False,,ALL_PASS,True,True,1.0,1.1505,ALL_PASS,True,True,1.0,1.1505,1.1505,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+53,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1505,ALL_PASS,True,True,1.0,1.1505,1.1505,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -8374,7 +8781,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-54,nothing,False,,ALL_PASS,True,True,1.0,1.0662,ALL_PASS,True,True,1.0,1.0662,1.0662,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+54,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0662,ALL_PASS,True,True,1.0,1.0662,1.0662,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -8513,7 +8920,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-55,nothing,False,,ALL_PASS,True,True,1.0,0.9529,ALL_PASS,True,True,1.0,0.9529,0.9529,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+55,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9529,ALL_PASS,True,True,1.0,0.9529,0.9529,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -8710,7 +9117,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-56,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+56,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -8937,8 +9344,224 @@ i:
 .section .note.GNU-stack,"""",@progbits
 .section .note.gnu.property,""a""
 .align 8
-.long 1f",
-57,nothing,False,,ALL_PASS,True,True,1.0,1.1661,ALL_PASS,True,True,1.0,1.1661,1.1661,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+.long 1f","```assembly
+.file ""temp.c""
+.text
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+.string ""%d""
+.LC1:
+.string ""%d%d%d""
+.LC5:
+.string ""%d\n""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB0:
+.cfi_startproc
+endbr64
+pushq %r13
+.cfi_def_cfa_offset 16
+.cfi_offset 13, -16
+pushq %r12
+.cfi_def_cfa_offset 24
+.cfi_offset 12, -24
+pushq %rbp
+.cfi_def_cfa_offset 32
+.cfi_offset 6, -32
+pushq %rbx
+.cfi_def_cfa_offset 40
+.cfi_offset 3, -40
+subq $4096, %rsp
+.cfi_def_cfa_offset 4136
+orq $0, (%rsp)
+subq $1944, %rsp
+.cfi_def_cfa_offset 6080
+movl %edi, 12(%rsp)
+leaq 12(%rsp), %rsi
+leaq .LC0(%rip), %rdi
+movq %fs:40, %rax
+movq %rax, 6024(%rsp)
+xorl %eax, %eax
+call scanf@PLT
+movl 12(%rsp), %eax
+leal -1(%rax), %ecx
+movl k(%rip), %eax
+cmpl %eax, %ecx
+jle .L2
+leaq 16(%rsp), %r13
+leaq 2016(%rsp), %rbp
+leaq 4016(%rsp), %r12
+leaq .LC1(%rip), %rbx
+.p2align 4,,10
+.p2align 3
+.L3:
+cltq
+movq %rbx, %rdi
+salq $2, %rax
+leaq 0(%r13,%rax), %rcx
+leaq 0(%rbp,%rax), %rdx
+leaq (%r12,%rax), %rsi
+xorl %eax, %eax
+call scanf@PLT
+movl k(%rip), %eax
+movl 12(%rsp), %ecx
+addl $1, %eax
+subl $1, %ecx
+movl %eax, k(%rip)
+cmpl %ecx, %eax
+jl .L3
+.L2:
+movl i(%rip), %eax
+leaq 2016(%rsp), %rbp
+leaq 4016(%rsp), %r12
+leaq .LC5(%rip), %rbx
+cmpl %ecx, %eax
+jge .L8
+movsd .LC2(%rip), %xmm5
+movsd .LC3(%rip), %xmm4
+.p2align 4,,10
+.p2align 3
+.L4:
+movsd .LC4(%rip), %xmm6
+cltq
+xorl %esi, %esi
+leaq 16(%rsp), %r8
+jmp .L7
+.p2align 4,,10
+.p2align 3
+.L20:
+pxor %xmm0, %xmm0
+pxor %xmm2, %xmm2
+pxor %xmm1, %xmm1
+cvtsi2sdl %edx, %xmm2
+cvtsi2sdl %esi, %xmm0
+cvtsi2sdl (%r8,%rax,4), %xmm1
+subsd %xmm2, %xmm0
+divsd %xmm1, %xmm0
+movapd %xmm0, %xmm2
+andpd %xmm4, %xmm2
+ucomisd %xmm2, %xmm5
+jbe .L6
+cvttsd2siq %xmm0, %rdx
+pxor %xmm2, %xmm2
+movapd %xmm0, %xmm3
+cvtsi2sdq %rdx, %xmm2
+cmpnlesd %xmm2, %xmm3
+andpd %xmm6, %xmm3
+addsd %xmm3, %xmm2
+movapd %xmm4, %xmm3
+andnpd %xmm0, %xmm3
+movapd %xmm2, %xmm0
+orpd %xmm3, %xmm0
+.L6:
+mulsd %xmm0, %xmm1
+pxor %xmm2, %xmm2
+addq $1, %rax
+cvtsi2sdl %edi, %xmm2
+addsd %xmm1, %xmm2
+cvttsd2sil %xmm2, %esi
+cmpl %eax, %ecx
+jle .L19
+.L7:
+movl 0(%rbp,%rax,4), %edx
+movl (%r12,%rax,4), %edi
+addl %edx, %edi
+cmpl %esi, %edx
+jl .L20
+addq $1, %rax
+movl %edi, %esi
+cmpl %eax, %ecx
+jg .L7
+.L19:
+xorl %eax, %eax
+movq %rbx, %rdi
+movl %esi, t(%rip)
+call printf@PLT
+movl i(%rip), %eax
+movq .LC2(%rip), %rsi
+movl 12(%rsp), %ecx
+addl $1, %eax
+movq %rsi, %xmm5
+movq .LC6(%rip), %rsi
+subl $1, %ecx
+movl %eax, i(%rip)
+cmpl %ecx, %eax
+movq %rsi, %xmm4
+jl .L4
+.L8:
+movl $48, %edi
+call putchar@PLT
+movq 6024(%rsp), %rax
+subq %fs:40, %rax
+jne .L21
+addq $6040, %rsp
+.cfi_remember_state
+.cfi_def_cfa_offset 40
+xorl %eax, %eax
+popq %rbx
+.cfi_def_cfa_offset 32
+popq %rbp
+.cfi_def_cfa_offset 24
+popq %r12
+.cfi_def_cfa_offset 16
+popq %r13
+.cfi_def_cfa_offset 8
+ret
+.L21:
+.cfi_restore_state
+call __stack_chk_fail@PLT
+.cfi_endproc
+.LFE0:
+.size main, .-main
+.globl t
+.bss
+.align 4
+.type t, @object
+.size t, 4
+t:
+.zero 4
+.globl k
+.align 4
+.type k, @object
+.size k, 4
+k:
+.zero 4
+.globl i
+.align 4
+.type i, @object
+.size i, 4
+i:
+.zero 4
+.section .rodata.cst8,""aM"",@progbits,8
+.align 8
+.LC2:
+.long 0
+.long 1127219200
+.section .rodata.cst16,""aM"",@progbits,16
+.align 16
+.LC3:
+.long -1
+.long 2147483647
+.long 0
+.long 0
+.section .rodata.cst8
+.align 8
+.LC4:
+.long 0
+.long 1072693248
+.set .LC6,.LC3
+.ident ""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+.section .note.GNU-stack,"""",@progbits
+.section .note.gnu.property,""a""
+.align 8
+.long 1f
+
+Generated, correct but still optimized assembly:
+```"
+57,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1661,ALL_PASS,True,True,1.0,1.1661,1.1661,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -9128,7 +9751,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-58,nothing,False,,ALL_PASS,True,True,1.0,1.0921,ALL_PASS,True,True,1.0,1.0921,1.0921,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+58,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0921,ALL_PASS,True,True,1.0,1.0921,1.0921,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -9234,7 +9857,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-59,nothing,False,,ALL_PASS,True,True,1.0,0.9541,ALL_PASS,True,True,1.0,0.9541,0.9541,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+59,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9541,ALL_PASS,True,True,1.0,0.9541,0.9541,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -9338,7 +9961,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-60,nothing,False,,ALL_PASS,True,True,1.0,0.906,ALL_PASS,True,True,1.0,0.906,0.906,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+60,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.906,ALL_PASS,True,True,1.0,0.906,0.906,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -9541,7 +10164,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-61,nothing,False,,ALL_PASS,True,True,1.0,0.9447,ALL_PASS,True,True,1.0,0.9447,0.9447,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+61,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9447,ALL_PASS,True,True,1.0,0.9447,0.9447,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -9648,7 +10271,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-62,nothing,False,,ALL_PASS,True,True,1.0,0.8437,ALL_PASS,True,True,1.0,0.8437,0.8437,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+62,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8437,ALL_PASS,True,True,1.0,0.8437,0.8437,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -9791,7 +10414,7 @@ d:
 .align 8
 4:
 ```",
-63,nothing,False,,ALL_PASS,True,True,1.0,1.0426,ALL_PASS,True,True,1.0,1.0426,1.0426,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+63,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0426,ALL_PASS,True,True,1.0,1.0426,1.0426,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -9914,7 +10537,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-64,nothing,False,,ALL_PASS,True,True,1.0,1.1855,ALL_PASS,True,True,1.0,1.1855,1.1855,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+64,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1855,ALL_PASS,True,True,1.0,1.1855,1.1855,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -10008,7 +10631,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-65,nothing,False,,ALL_PASS,True,True,1.0,0.9406,ALL_PASS,True,True,1.0,0.9406,0.9406,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+65,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9406,ALL_PASS,True,True,1.0,0.9406,0.9406,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -10115,7 +10738,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-66,nothing,False,,ALL_PASS,True,True,1.0,0.8619,ALL_PASS,True,True,1.0,0.8619,0.8619,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+66,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8619,ALL_PASS,True,True,1.0,0.8619,0.8619,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -10312,7 +10935,7 @@ a:
 .align 8
 4:
 ```",
-67,nothing,False,,ALL_PASS,True,True,1.0,1.3866,ALL_PASS,True,True,1.0,1.3866,1.3866,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+67,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.3866,ALL_PASS,True,True,1.0,1.3866,1.3866,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -10534,7 +11157,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-68,nothing,False,,ALL_PASS,True,True,1.0,1.285,ALL_PASS,True,True,1.0,1.285,1.285,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+68,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.285,ALL_PASS,True,True,1.0,1.285,1.285,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -10642,7 +11265,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-69,nothing,False,,ALL_PASS,True,True,1.0,0.8449,ALL_PASS,True,True,1.0,0.8449,0.8449,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+69,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8449,ALL_PASS,True,True,1.0,0.8449,0.8449,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -10813,7 +11436,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-70,nothing,False,,ALL_PASS,True,True,1.0,1.1788,ALL_PASS,True,True,1.0,1.1788,1.1788,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+70,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1788,ALL_PASS,True,True,1.0,1.1788,1.1788,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -10916,7 +11539,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-71,nothing,False,,ALL_PASS,True,True,1.0,0.859,ALL_PASS,True,True,1.0,0.859,0.859,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+71,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.859,ALL_PASS,True,True,1.0,0.859,0.859,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -11117,7 +11740,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-72,nothing,False,,ALL_PASS,True,True,1.0,0.8825,ALL_PASS,True,True,1.0,0.8825,0.8825,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+72,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8825,ALL_PASS,True,True,1.0,0.8825,0.8825,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -11309,7 +11932,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-73,nothing,False,,ALL_PASS,True,True,1.0,0.7854,ALL_PASS,True,True,1.0,0.7854,0.7854,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+73,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.7854,ALL_PASS,True,True,1.0,0.7854,0.7854,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -11456,7 +12079,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-74,nothing,False,,ALL_PASS,True,True,1.0,1.4582,ALL_PASS,True,True,1.0,1.4582,1.4582,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+74,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.4582,ALL_PASS,True,True,1.0,1.4582,1.4582,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -11635,7 +12258,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-75,nothing,False,,ALL_PASS,True,True,1.0,0.9983,ALL_PASS,True,True,1.0,0.9983,0.9983,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+75,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9983,ALL_PASS,True,True,1.0,0.9983,0.9983,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -11827,7 +12450,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-76,nothing,False,,ALL_PASS,True,True,1.0,0.9446,ALL_PASS,True,True,1.0,0.9446,0.9446,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+76,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9446,ALL_PASS,True,True,1.0,0.9446,0.9446,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -11964,7 +12587,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-77,nothing,False,,ALL_PASS,True,True,1.0,0.8887,ALL_PASS,True,True,1.0,0.8887,0.8887,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+77,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8887,ALL_PASS,True,True,1.0,0.8887,0.8887,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -12180,7 +12803,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-78,nothing,False,,ALL_PASS,True,True,1.0,0.937,ALL_PASS,True,True,1.0,0.937,0.937,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+78,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.937,ALL_PASS,True,True,1.0,0.937,0.937,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -12278,7 +12901,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-79,nothing,False,,ALL_PASS,True,True,1.0,1.1515,ALL_PASS,True,True,1.0,1.1515,1.1515,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+79,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1515,ALL_PASS,True,True,1.0,1.1515,1.1515,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -12401,7 +13024,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-80,nothing,False,,ALL_PASS,True,True,1.0,1.0355,ALL_PASS,True,True,1.0,1.0355,1.0355,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+80,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0355,ALL_PASS,True,True,1.0,1.0355,1.0355,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -12576,7 +13199,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-81,nothing,False,,ALL_PASS,True,True,1.0,0.9088,ALL_PASS,True,True,1.0,0.9088,0.9088,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+81,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9088,ALL_PASS,True,True,1.0,0.9088,0.9088,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -12730,7 +13353,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-82,nothing,False,,ALL_PASS,True,True,1.0,1.0882,ALL_PASS,True,True,1.0,1.0882,1.0882,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+82,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0882,ALL_PASS,True,True,1.0,1.0882,1.0882,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -12947,7 +13570,7 @@ x:
 .align 8
 4:
 ```",
-83,nothing,False,,ALL_PASS,True,True,1.0,1.0283,ALL_PASS,True,True,1.0,1.0283,1.0283,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+83,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0283,ALL_PASS,True,True,1.0,1.0283,1.0283,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -13096,7 +13719,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-84,nothing,False,,ALL_PASS,True,True,1.0,0.7976,ALL_PASS,True,True,1.0,0.7976,0.7976,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+84,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.7976,ALL_PASS,True,True,1.0,0.7976,0.7976,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -13192,7 +13815,7 @@ N:
 .align 8
 4:
 ```",
-85,nothing,False,,ALL_PASS,True,True,1.0,1.1526,ALL_PASS,True,True,1.0,1.1526,1.1526,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+85,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1526,ALL_PASS,True,True,1.0,1.1526,1.1526,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -13292,7 +13915,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-86,nothing,False,,ALL_PASS,True,True,1.0,1.0656,ALL_PASS,True,True,1.0,1.0656,1.0656,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+86,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0656,ALL_PASS,True,True,1.0,1.0656,1.0656,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -13452,7 +14075,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-87,nothing,False,,ALL_PASS,True,True,1.0,1.0789,ALL_PASS,True,True,1.0,1.0789,1.0789,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+87,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0789,ALL_PASS,True,True,1.0,1.0789,1.0789,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -13566,7 +14189,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-88,nothing,False,,ALL_PASS,True,True,1.0,0.9855,ALL_PASS,True,True,1.0,0.9855,0.9855,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+88,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9855,ALL_PASS,True,True,1.0,0.9855,0.9855,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -13682,7 +14305,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-89,nothing,False,,ALL_PASS,True,True,1.0,1.1422,ALL_PASS,True,True,1.0,1.1422,1.1422,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+89,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1422,ALL_PASS,True,True,1.0,1.1422,1.1422,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -13864,7 +14487,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-90,nothing,False,,ALL_PASS,True,True,1.0,1.0168,ALL_PASS,True,True,1.0,1.0168,1.0168,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+90,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0168,ALL_PASS,True,True,1.0,1.0168,1.0168,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -14007,7 +14630,7 @@ i:
 .align 8
 4:
 ```",
-91,nothing,False,,ALL_PASS,True,True,1.0,0.9947,ALL_PASS,True,True,1.0,0.9947,0.9947,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+91,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9947,ALL_PASS,True,True,1.0,0.9947,0.9947,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -14112,7 +14735,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-92,nothing,False,,ALL_PASS,True,True,1.0,1.1991,ALL_PASS,True,True,1.0,1.1991,1.1991,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+92,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1991,ALL_PASS,True,True,1.0,1.1991,1.1991,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -14375,7 +14998,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-93,nothing,False,,ALL_PASS,True,True,1.0,1.1444,ALL_PASS,True,True,1.0,1.1444,1.1444,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+93,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1444,ALL_PASS,True,True,1.0,1.1444,1.1444,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -14510,7 +15133,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-94,nothing,False,,ALL_PASS,True,True,1.0,0.9611,ALL_PASS,True,True,1.0,0.9611,0.9611,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+94,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9611,ALL_PASS,True,True,1.0,0.9611,0.9611,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -14774,7 +15397,7 @@ N:
 .align 8
 4:
 ```",
-95,nothing,False,,ALL_PASS,True,True,1.0,0.9503,ALL_PASS,True,True,1.0,0.9503,0.9503,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+95,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9503,ALL_PASS,True,True,1.0,0.9503,0.9503,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -14910,7 +15533,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-96,nothing,False,,ALL_PASS,True,True,1.0,1.0285,ALL_PASS,True,True,1.0,1.0285,1.0285,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+96,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0285,ALL_PASS,True,True,1.0,1.0285,1.0285,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -15042,7 +15665,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-97,nothing,False,,ALL_PASS,True,True,1.0,0.976,ALL_PASS,True,True,1.0,0.976,0.976,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+97,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.976,ALL_PASS,True,True,1.0,0.976,0.976,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -15148,7 +15771,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-98,nothing,False,,ALL_PASS,True,True,1.0,1.1986,ALL_PASS,True,True,1.0,1.1986,1.1986,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+98,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1986,ALL_PASS,True,True,1.0,1.1986,1.1986,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -15359,7 +15982,7 @@ ret
 .align 8
 4:
 ```",
-99,nothing,False,,ALL_PASS,True,True,1.0,0.8519,ALL_PASS,True,True,1.0,0.8519,0.8519,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+99,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8519,ALL_PASS,True,True,1.0,0.8519,0.8519,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -15505,7 +16128,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-100,nothing,False,,ALL_PASS,True,True,1.0,1.051,ALL_PASS,True,True,1.0,1.051,1.051,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+100,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.051,ALL_PASS,True,True,1.0,1.051,1.051,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -15669,7 +16292,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-101,nothing,False,,ALL_PASS,True,True,1.0,1.1177,ALL_PASS,True,True,1.0,1.1177,1.1177,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+101,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1177,ALL_PASS,True,True,1.0,1.1177,1.1177,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -15876,7 +16499,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-102,nothing,False,,ALL_PASS,True,True,1.0,0.9644,ALL_PASS,True,True,1.0,0.9644,0.9644,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+102,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9644,ALL_PASS,True,True,1.0,0.9644,0.9644,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -16033,7 +16656,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-103,nothing,False,,ALL_PASS,True,True,1.0,1.1625,ALL_PASS,True,True,1.0,1.1625,1.1625,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+103,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1625,ALL_PASS,True,True,1.0,1.1625,1.1625,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -16248,7 +16871,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-104,nothing,False,,ALL_PASS,True,True,1.0,1.0535,ALL_PASS,True,True,1.0,1.0535,1.0535,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+104,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0535,ALL_PASS,True,True,1.0,1.0535,1.0535,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -16417,7 +17040,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-105,nothing,False,,ALL_PASS,True,True,1.0,1.0347,ALL_PASS,True,True,1.0,1.0347,1.0347,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+105,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0347,ALL_PASS,True,True,1.0,1.0347,1.0347,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -16527,7 +17150,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-106,nothing,False,,ALL_PASS,True,True,1.0,1.0758,ALL_PASS,True,True,1.0,1.0758,1.0758,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+106,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0758,ALL_PASS,True,True,1.0,1.0758,1.0758,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -16758,7 +17381,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-107,nothing,False,,ALL_PASS,True,True,1.0,0.8303,ALL_PASS,True,True,1.0,0.8303,0.8303,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+107,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8303,ALL_PASS,True,True,1.0,0.8303,0.8303,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -16902,7 +17525,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-108,nothing,False,,ALL_PASS,True,True,1.0,1.146,ALL_PASS,True,True,1.0,1.146,1.146,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+108,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.146,ALL_PASS,True,True,1.0,1.146,1.146,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -17112,7 +17735,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-109,nothing,False,,ALL_PASS,True,True,1.0,0.7495,ALL_PASS,True,True,1.0,0.7495,0.7495,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+109,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.7495,ALL_PASS,True,True,1.0,0.7495,0.7495,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -17339,7 +17962,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-110,nothing,False,,ALL_PASS,True,True,1.0,1.2345,ALL_PASS,True,True,1.0,1.2345,1.2345,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+110,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.2345,ALL_PASS,True,True,1.0,1.2345,1.2345,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -17454,7 +18077,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-111,nothing,False,,ALL_PASS,True,True,1.0,1.0195,ALL_PASS,True,True,1.0,1.0195,1.0195,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+111,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0195,ALL_PASS,True,True,1.0,1.0195,1.0195,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -17579,7 +18202,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-112,nothing,False,,ALL_PASS,True,True,1.0,0.9129,ALL_PASS,True,True,1.0,0.9129,0.9129,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+112,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9129,ALL_PASS,True,True,1.0,0.9129,0.9129,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -17773,7 +18396,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-113,nothing,False,,ALL_PASS,True,True,1.0,1.1116,ALL_PASS,True,True,1.0,1.1116,1.1116,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+113,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1116,ALL_PASS,True,True,1.0,1.1116,1.1116,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -17923,7 +18546,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-114,nothing,False,,ALL_PASS,True,True,1.0,1.0405,ALL_PASS,True,True,1.0,1.0405,1.0405,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+114,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0405,ALL_PASS,True,True,1.0,1.0405,1.0405,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -18142,7 +18765,7 @@ a:
 .align 8
 4:
 ```",
-115,nothing,False,,ALL_PASS,True,True,1.0,1.0613,ALL_PASS,True,True,1.0,1.0613,1.0613,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+115,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0613,ALL_PASS,True,True,1.0,1.0613,1.0613,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -18326,7 +18949,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-116,nothing,False,,ALL_PASS,True,True,1.0,1.0928,ALL_PASS,True,True,1.0,1.0928,1.0928,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+116,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0928,ALL_PASS,True,True,1.0,1.0928,1.0928,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -18569,7 +19192,7 @@ T:
 .align 8
 4:
 ```",
-117,nothing,False,,ALL_PASS,True,True,1.0,0.9154,ALL_PASS,True,True,1.0,0.9154,0.9154,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+117,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9154,ALL_PASS,True,True,1.0,0.9154,0.9154,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -18744,7 +19367,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-118,nothing,False,,ALL_PASS,True,True,1.0,1.0671,ALL_PASS,True,True,1.0,1.0671,1.0671,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+118,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0671,ALL_PASS,True,True,1.0,1.0671,1.0671,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -18977,7 +19600,7 @@ s:
 .align 8
 4:
 ```",
-119,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+119,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -19224,8 +19847,226 @@ a:
 .section .note.gnu.property,""a""
 .align 8
 .long 1f - 0f
-",
-120,nothing,False,,ALL_PASS,True,True,1.0,1.0066,ALL_PASS,True,True,1.0,1.0066,1.0066,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+","```assembly
+.file ""temp.c""
+.text
+.section .text.unlikely,""ax"",@progbits
+.LCOLDB0:
+.text
+.LHOTB0:
+.p2align 4
+.globl solve
+.type solve, @function
+solve:
+.LFB25:
+.cfi_startproc
+endbr64
+movl n(%rip), %r9d
+xorl %eax, %eax
+xorl %ecx, %ecx
+xorl %edx, %edx
+movl S(%rip), %esi
+leaq a(%rip), %r10
+leal 1(%r9), %r8d
+.L2:
+cmpl %ecx, %r9d
+jle .L6
+.L17:
+cmpl %eax, %esi
+jle .L16
+movslq %ecx, %rdi
+addl $1, %ecx
+addl (%r10,%rdi,4), %eax
+cmpl %ecx, %r9d
+jg .L17
+.L6:
+cmpl %eax, %esi
+jg .L4
+movl %ecx, %edi
+leal 1(%rdx), %r10d
+subl %edx, %edi
+movslq %edx, %rdx
+cmpl %edi, %r8d
+cmovg %edi, %r8d
+leaq a(%rip), %rdi
+subl (%rdi,%rdx,4), %eax
+cmpl %eax, %esi
+jle .L12
+.L4:
+xorl %eax, %eax
+cmpl %r8d, %r9d
+cmovl %eax, %r8d
+movl %r8d, %eax
+ret
+.p2align 4,,10
+.p2align 3
+.L16:
+movl %ecx, %edi
+subl %edx, %edi
+cmpl %edi, %r8d
+cmovg %edi, %r8d
+movslq %edx, %rdi
+addl $1, %edx
+subl (%r10,%rdi,4), %eax
+jmp .L2
+.cfi_endproc
+.section .text.unlikely
+.cfi_startproc
+.type solve.cold, @function
+solve.cold:
+.LFSB25:
+.L12:
+subl %r10d, %ecx
+movslq %r10d, %r10
+leaq (%rdi,%r10,4), %rdx
+.L5:
+cmpl %ecx, %r8d
+cmovg %ecx, %r8d
+subl (%rdx), %eax
+subl $1, %ecx
+addq $4, %rdx
+cmpl %eax, %esi
+jle .L5
+jmp .L4
+.cfi_endproc
+.LFE25:
+.text
+.size solve, .-solve
+.section .text.unlikely
+.size solve.cold, .-solve.cold
+.LCOLDE0:
+.text
+.LHOTE0:
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+.string ""%d %d""
+.LC2:
+.string ""%d\n""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB26:
+.cfi_startproc
+endbr64
+pushq %r14
+.cfi_def_cfa_offset 16
+.cfi_offset 14, -16
+leaq S(%rip), %rdx
+leaq n(%rip), %rsi
+xorl %eax, %eax
+pushq %r13
+.cfi_def_cfa_offset 24
+.cfi_offset 13, -24
+leaq .LC1(%rip), %rdi
+pushq %r12
+.cfi_def_cfa_offset 32
+.cfi_offset 12, -32
+pushq %rbp
+.cfi_def_cfa_offset 40
+.cfi_offset 6, -40
+pushq %rbx
+.cfi_def_cfa_offset 48
+.cfi_offset 3, -48
+call __isoc99_scanf@PLT
+movq stdin(%rip), %rdi
+call getc@PLT
+movl n(%rip), %edx
+testl %edx, %edx
+jle .L19
+movl %eax, %ebx
+xorl %r12d, %r12d
+leaq a(%rip), %r13
+call __ctype_b_loc@PLT
+movq %rax, %rbp
+.p2align 4,,10
+.p2align 3
+.L20:
+cmpl $32, %ebx
+jne .L30
+.p2align 4,,10
+.p2align 3
+.L28:
+movq stdin(%rip), %rdi
+call getc@PLT
+movl %eax, %ebx
+cmpl $32, %eax
+je .L28
+.L30:
+cmpl $10, %ebx
+je .L28
+movq 0(%rbp), %rdx
+movslq %ebx, %rax
+xorl %r14d, %r14d
+testb $8, 1(%rdx,%rax,2)
+je .L22
+.p2align 4,,10
+.p2align 3
+.L23:
+movq stdin(%rip), %rdi
+leal (%r14,%r14,4), %eax
+leal -48(%rbx,%rax,2), %r14d
+call getc@PLT
+movslq %eax, %rdx
+movq 0(%rbp), %rax
+movq %rdx, %rbx
+testb $8, 1(%rax,%rdx,2)
+jne .L23
+.L22:
+movl %r14d, 0(%r13,%r12,4)
+addq $1, %r12
+cmpl %r12d, n(%rip)
+jg .L20
+.L19:
+xorl %eax, %eax
+call solve
+leaq .LC2(%rip), %rsi
+movl $1, %edi
+movl %eax, %edx
+xorl %eax, %eax
+call __printf_chk@PLT
+popq %rbx
+.cfi_def_cfa_offset 40
+xorl %eax, %eax
+popq %rbp
+.cfi_def_cfa_offset 32
+popq %r12
+.cfi_def_cfa_offset 24
+popq %r13
+.cfi_def_cfa_offset 16
+popq %r14
+.cfi_def_cfa_offset 8
+ret
+.cfi_endproc
+.LFE26:
+.size main, .-main
+.globl n
+.bss
+.align 4
+.type n, @object
+.size n, 4
+n:
+.zero 4
+.globl S
+.align 4
+.type S, @object
+.size S, 4
+S:
+.zero 4
+.globl a
+.align 32
+.type a, @object
+.size a, 400000
+a:
+.zero 400000
+.ident ""GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0""
+.section .note.GNU-stack,"""",@progbits
+.section .note.gnu.property,""a""
+.align 8
+.long 1f - 0f
+```"
+120,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0066,ALL_PASS,True,True,1.0,1.0066,1.0066,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -19453,7 +20294,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-121,nothing,False,,ALL_PASS,True,True,1.0,0.92,ALL_PASS,True,True,1.0,0.92,0.92,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+121,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.92,ALL_PASS,True,True,1.0,0.92,0.92,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -19599,7 +20440,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-122,nothing,False,,ALL_PASS,True,True,1.0,1.1994,ALL_PASS,True,True,1.0,1.1994,1.1994,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+122,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1994,ALL_PASS,True,True,1.0,1.1994,1.1994,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -19736,7 +20577,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-123,nothing,False,,ALL_PASS,True,True,1.0,1.0116,ALL_PASS,True,True,1.0,1.0116,1.0116,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+123,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0116,ALL_PASS,True,True,1.0,1.0116,1.0116,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -19911,7 +20752,7 @@ ud2
 .align 8
 4:
 ```",
-124,nothing,False,,ALL_PASS,True,True,1.0,1.0142,ALL_PASS,True,True,1.0,1.0142,1.0142,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+124,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0142,ALL_PASS,True,True,1.0,1.0142,1.0142,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -20010,7 +20851,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-125,nothing,False,,ALL_PASS,True,True,1.0,0.8625,ALL_PASS,True,True,1.0,0.8625,0.8625,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+125,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8625,ALL_PASS,True,True,1.0,0.8625,0.8625,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -20133,7 +20974,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-126,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+126,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -20318,8 +21159,208 @@ paddd %xmm3, %xmm0
 cmpl %r8d, %ecx
 jne .L9
 movl %r9d, %r8d
-movl %edi,",
-127,nothing,False,,ALL_PASS,True,True,1.0,1.1898,ALL_PASS,True,True,1.0,1.1898,1.1898,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+movl %edi,","```assembly
+.file ""temp.c""
+.text
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+.string ""%d""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB23:
+.cfi_startproc
+endbr64
+pushq %rbp
+.cfi_def_cfa_offset 16
+.cfi_offset 6, -16
+leaq .LC1(%rip), %rbp
+pushq %rbx
+.cfi_def_cfa_offset 24
+.cfi_offset 3, -24
+movq %rbp, %rdi
+subq $40, %rsp
+.cfi_def_cfa_offset 64
+movq %fs:40, %rax
+movq %rax, 24(%rsp)
+xorl %eax, %eax
+leaq 8(%rsp), %rsi
+call __isoc99_scanf@PLT
+leaq 12(%rsp), %rsi
+movq %rbp, %rdi
+xorl %eax, %eax
+call __isoc99_scanf@PLT
+leaq 16(%rsp), %rsi
+movq %rbp, %rdi
+xorl %eax, %eax
+call __isoc99_scanf@PLT
+leaq 20(%rsp), %rsi
+movq %rbp, %rdi
+xorl %eax, %eax
+call __isoc99_scanf@PLT
+movl 8(%rsp), %esi
+testl %esi, %esi
+jle .L14
+movl 12(%rsp), %ecx
+movl 20(%rsp), %edi
+movl 16(%rsp), %r8d
+testl %ecx, %ecx
+jle .L15
+cmpl %esi, %ecx
+movl $1, %r9d
+cmovg %esi, %ecx
+testl %ecx, %ecx
+cmovg %ecx, %r9d
+cmpl $4, %ecx
+jle .L16
+leal (%r8,%r8), %eax
+movd %r8d, %xmm6
+movl %r9d, %edx
+movdqa .LC0(%rip), %xmm3
+leal (%rax,%r8), %r10d
+movd %eax, %xmm1
+pxor %xmm0, %xmm0
+shrl $2, %edx
+movd %r10d, %xmm5
+punpckldq %xmm6, %xmm0
+pshufd $0, %xmm6, %xmm7
+movdqa .LC2(%rip), %xmm6
+leal 0(,%r8,4), %eax
+punpckldq %xmm5, %xmm1
+movdqa .LC3(%rip), %xmm5
+movd %eax, %xmm4
+punpcklqdq %xmm1, %xmm0
+xorl %eax, %eax
+pshufd $0, %xmm4, %xmm4
+.p2align 4,,10
+.p2align 3
+.L5:
+movdqa %xmm3, %xmm2
+movdqa %xmm0, %xmm1
+paddd %xmm6, %xmm3
+addl $1, %eax
+paddd %xmm4, %xmm0
+paddd %xmm7, %xmm1
+paddd %xmm5, %xmm2
+cmpl %edx, %eax
+jne .L5
+movl %r9d, %r11d
+pshufd $255, %xmm2, %xmm2
+pshufd $255, %xmm1, %xmm1
+movl %r8d, %ebx
+andl $-4, %r11d
+movd %xmm2, %eax
+movd %xmm1, %edx
+imull %r11d, %ebx
+leal 1(%r11), %r10d
+cmpl %r11d, %r9d
+je .L7
+.L4:
+leal 1(%r10), %eax
+leal (%r8,%rbx), %edx
+cmpl %eax, %ecx
+jl .L7
+leal 2(%r10), %eax
+addl %r8d, %edx
+cmpl %eax, %ecx
+jl .L7
+leal 3(%r10), %eax
+addl %r8d, %edx
+cmpl %eax, %ecx
+jl .L7
+addl %r8d, %edx
+leal 4(%r10), %eax
+.L7:
+cmpl %eax, %esi
+jl .L2
+.L3:
+movl %esi, %ecx
+movl $1, %r8d
+subl %eax, %ecx
+cmpl %eax, %esi
+leal 1(%rcx), %r9d
+cmovl %r8d, %r9d
+jl .L8
+cmpl $2, %ecx
+jbe .L8
+leal (%rdi,%rdx), %r10d
+movd %edx, %xmm1
+movd %edi, %xmm6
+movl %r9d, %r8d
+leal (%rdi,%r10), %ecx
+movd %r10d, %xmm5
+leal 0(,%rdi,4), %ebx
+shrl $2, %r8d
+leal (%rdi,%rcx), %r11d
+movd %ecx, %xmm0
+punpckldq %xmm5, %xmm1
+xorl %ecx, %ecx
+movd %r11d, %xmm4
+movd %ebx, %xmm2
+pshufd $0, %xmm6, %xmm3
+punpckldq %xmm4, %xmm0
+pshufd $0, %xmm2, %xmm2
+punpcklqdq %xmm0, %xmm1
+.p2align 4,,10
+.p2align 3
+.L9:
+movdqa %xmm1, %xmm0
+addl $1, %ecx
+paddd %xmm2, %xmm1
+paddd %xmm3, %xmm0
+cmpl %r8d, %ecx
+jne .L9
+movl %r9d, %r8d
+movl %edi, %r10d
+movd %r10d, %xmm1
+movdqa .LC0(%rip), %xmm0
+leal (%rdi,%r8), %r11d
+movd %r11d, %xmm5
+shrl $2, %r8d
+leal (%rdi,%r11d), %r11d
+movd %r11d, %xmm4
+pshufd $0, %xmm5, %xmm2
+punpckldq %xmm4, %xmm1
+.p2align 4,,10
+.p2align 3
+.L10:
+movdqa %xmm1, %xmm0
+addl $1, %ecx
+paddd %xmm2, %xmm1
+paddd %xmm3, %xmm0
+cmpl %r8d, %ecx
+jne .L10
+movl %r9d, %r10d
+movd %r10d, %xmm1
+movdqa .LC0(%rip), %xmm0
+leal (%rdi,%r8), %r11d
+movd %r11d, %xmm5
+shrl $2, %r8d
+leal (%rdi,%r11d), %r11d
+movd %r11d, %xmm4
+pshufd $0, %xmm5, %xmm2
+punpckldq %xmm4, %xmm1
+.p2align 4,,10
+.p2align 3
+.L11:
+movdqa %xmm1, %xmm0
+addl $1, %ecx
+paddd %xmm2, %xmm1
+paddd %xmm3, %xmm0
+cmpl %r8d, %ecx
+jne .L11
+movl %r9d, %r10d
+movd %r10d, %xmm1
+movdqa .LC0(%rip), %xmm0
+leal (%rdi,%r8), %r11d
+movd %r11d, %xmm5
+shrl $2, %r8d
+leal (%rdi,%r11d), %r11d
+movd %r11d, %xmm4
+psh"
+127,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1898,ALL_PASS,True,True,1.0,1.1898,1.1898,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -20435,7 +21476,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-128,nothing,False,,ALL_PASS,True,True,1.0,1.112,ALL_PASS,True,True,1.0,1.112,1.112,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+128,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.112,ALL_PASS,True,True,1.0,1.112,1.112,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -20544,7 +21585,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-129,nothing,False,,ALL_PASS,True,True,1.0,0.9479,ALL_PASS,True,True,1.0,0.9479,0.9479,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+129,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9479,ALL_PASS,True,True,1.0,0.9479,0.9479,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -20682,7 +21723,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-130,nothing,False,,ALL_PASS,True,True,1.0,0.8678,ALL_PASS,True,True,1.0,0.8678,0.8678,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+130,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8678,ALL_PASS,True,True,1.0,0.8678,0.8678,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -20890,7 +21931,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-131,nothing,False,,ALL_PASS,True,True,1.0,1.0723,ALL_PASS,True,True,1.0,1.0723,1.0723,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+131,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0723,ALL_PASS,True,True,1.0,1.0723,1.0723,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -21141,7 +22182,7 @@ D:
 .align 8
 4:
 ```",
-132,nothing,False,,ALL_PASS,True,True,1.0,1.0374,ALL_PASS,True,True,1.0,1.0374,1.0374,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+132,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0374,ALL_PASS,True,True,1.0,1.0374,1.0374,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -21378,7 +22419,7 @@ call __stack_chk_fail@PLT
 .LFE24:
 .size main, .-main
 .ident ""GCC:",
-133,nothing,False,,ALL_PASS,True,True,1.0,1.0081,ALL_PASS,True,True,1.0,1.0081,1.0081,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+133,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0081,ALL_PASS,True,True,1.0,1.0081,1.0081,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -21601,7 +22642,7 @@ top:
 .align 8
 4:
 ```",
-134,nothing,False,,ALL_PASS,True,True,1.0,0.9029,ALL_PASS,True,True,1.0,0.9029,0.9029,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+134,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9029,ALL_PASS,True,True,1.0,0.9029,0.9029,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -21743,7 +22784,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-135,nothing,False,,ALL_PASS,True,True,1.0,0.9898,ALL_PASS,True,True,1.0,0.9898,0.9898,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+135,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9898,ALL_PASS,True,True,1.0,0.9898,0.9898,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -21917,7 +22958,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-136,nothing,False,,ALL_PASS,True,True,1.0,0.9187,ALL_PASS,True,True,1.0,0.9187,0.9187,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+136,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9187,ALL_PASS,True,True,1.0,0.9187,0.9187,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -22143,7 +23184,7 @@ X:
 .align 8
 4:
 ```",
-137,nothing,False,,ALL_PASS,True,True,1.0,0.7769,ALL_PASS,True,True,1.0,0.7769,0.7769,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+137,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.7769,ALL_PASS,True,True,1.0,0.7769,0.7769,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -22278,7 +23319,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-138,nothing,False,,ALL_PASS,True,True,1.0,0.8567,ALL_PASS,True,True,1.0,0.8567,0.8567,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+138,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8567,ALL_PASS,True,True,1.0,0.8567,0.8567,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -22397,7 +23438,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-139,nothing,False,,ALL_PASS,True,True,1.0,1.0907,ALL_PASS,True,True,1.0,1.0907,1.0907,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+139,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0907,ALL_PASS,True,True,1.0,1.0907,1.0907,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -22501,7 +23542,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-140,nothing,False,,ALL_PASS,True,True,1.0,0.9478,ALL_PASS,True,True,1.0,0.9478,0.9478,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+140,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9478,ALL_PASS,True,True,1.0,0.9478,0.9478,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -22664,7 +23705,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-141,nothing,False,,ALL_PASS,True,True,1.0,1.003,ALL_PASS,True,True,1.0,1.003,1.003,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+141,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.003,ALL_PASS,True,True,1.0,1.003,1.003,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -22780,7 +23821,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-142,nothing,False,,ALL_PASS,True,True,1.0,1.0569,ALL_PASS,True,True,1.0,1.0569,1.0569,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+142,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0569,ALL_PASS,True,True,1.0,1.0569,1.0569,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -22954,7 +23995,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-143,nothing,False,,ALL_PASS,True,True,1.0,1.1761,ALL_PASS,True,True,1.0,1.1761,1.1761,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+143,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1761,ALL_PASS,True,True,1.0,1.1761,1.1761,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -23192,7 +24233,7 @@ s:
 .align 8
 4:
 ```",
-144,nothing,False,,ALL_PASS,True,True,1.0,0.9955,ALL_PASS,True,True,1.0,0.9955,0.9955,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+144,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9955,ALL_PASS,True,True,1.0,0.9955,0.9955,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -23355,7 +24396,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-145,nothing,False,,ALL_PASS,True,True,1.0,0.9379,ALL_PASS,True,True,1.0,0.9379,0.9379,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+145,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9379,ALL_PASS,True,True,1.0,0.9379,0.9379,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -23573,7 +24614,7 @@ t:
 .align 8
 4:
 ```",
-146,nothing,False,,ALL_PASS,True,True,1.0,0.9784,ALL_PASS,True,True,1.0,0.9784,0.9784,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+146,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9784,ALL_PASS,True,True,1.0,0.9784,0.9784,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -23693,7 +24734,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-147,nothing,False,,ALL_PASS,True,True,1.0,1.041,ALL_PASS,True,True,1.0,1.041,1.041,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+147,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.041,ALL_PASS,True,True,1.0,1.041,1.041,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -23829,7 +24870,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-148,nothing,False,,ALL_PASS,True,True,1.0,0.9593,ALL_PASS,True,True,1.0,0.9593,0.9593,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+148,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9593,ALL_PASS,True,True,1.0,0.9593,0.9593,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -24046,7 +25087,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-149,nothing,False,,ALL_PASS,True,True,1.0,0.9917,ALL_PASS,True,True,1.0,0.9917,0.9917,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+149,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9917,ALL_PASS,True,True,1.0,0.9917,0.9917,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -24152,7 +25193,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-150,nothing,False,,ALL_PASS,True,True,1.0,0.996,ALL_PASS,True,True,1.0,0.996,0.996,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+150,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.996,ALL_PASS,True,True,1.0,0.996,0.996,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -24324,7 +25365,7 @@ str:
 .align 8
 4:
 ```",
-151,nothing,False,,ALL_PASS,True,True,1.0,0.9212,ALL_PASS,True,True,1.0,0.9212,0.9212,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+151,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9212,ALL_PASS,True,True,1.0,0.9212,0.9212,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -24444,7 +25485,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-152,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+152,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -24634,8 +25675,235 @@ jge .L36
 xorl %eax, %eax
 movl %r8d, %edx
 movl $1, %edi
-leaq .LC6(%rip",
-153,nothing,False,,ALL_PASS,True,True,1.0,1.0956,ALL_PASS,True,True,1.0,1.0956,1.0956,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+leaq .LC6(%rip","```assembly
+.file ""temp.c""
+.text
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+.string ""%d %d""
+.LC6:
+.string ""%d""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB23:
+.cfi_startproc
+endbr64
+subq $24, %rsp
+.cfi_def_cfa_offset 32
+leaq .LC1(%rip), %rdi
+movq %fs:40, %rax
+movq %rax, 8(%rsp)
+xorl %eax, %eax
+movq %rsp, %rsi
+leaq 4(%rsp), %rdx
+call __isoc99_scanf@PLT
+movl 4(%rsp), %esi
+testl %esi, %esi
+jle .L13
+movl (%rsp), %r9d
+cmpl $1, %esi
+je .L13
+leal -2(%rsi), %eax
+leal -1(%rsi), %edi
+cmpl $2, %eax
+jbe .L4
+movl %edi, %eax
+movl %r9d, %ecx
+movl %edi, %edx
+movl %r9d, %ebx
+movl %edi, %ebp
+movl %r9d, %esi
+movl %edi, %edi
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl %edi, %ebp
+movl %r9d, %esp
+movl"
+153,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0956,ALL_PASS,True,True,1.0,1.0956,1.0956,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -24776,7 +26044,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-154,nothing,False,,ALL_PASS,True,True,1.0,0.9941,ALL_PASS,True,True,1.0,0.9941,0.9941,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+154,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9941,ALL_PASS,True,True,1.0,0.9941,0.9941,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -24886,7 +26154,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-155,nothing,False,,ALL_PASS,True,True,1.0,1.0498,ALL_PASS,True,True,1.0,1.0498,1.0498,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+155,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0498,ALL_PASS,True,True,1.0,1.0498,1.0498,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -25081,7 +26349,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-156,nothing,False,,ALL_PASS,True,True,1.0,0.9711,ALL_PASS,True,True,1.0,0.9711,0.9711,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+156,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9711,ALL_PASS,True,True,1.0,0.9711,0.9711,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -25194,7 +26462,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-157,nothing,False,,ALL_PASS,True,True,1.0,1.0295,ALL_PASS,True,True,1.0,1.0295,1.0295,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+157,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0295,ALL_PASS,True,True,1.0,1.0295,1.0295,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -25336,7 +26604,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-158,nothing,False,,ALL_PASS,True,True,1.0,0.9708,ALL_PASS,True,True,1.0,0.9708,0.9708,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+158,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9708,ALL_PASS,True,True,1.0,0.9708,0.9708,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -25457,7 +26725,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-159,nothing,False,,ALL_PASS,True,True,1.0,0.9236,ALL_PASS,True,True,1.0,0.9236,0.9236,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+159,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9236,ALL_PASS,True,True,1.0,0.9236,0.9236,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -25607,7 +26875,7 @@ a:
 .align 8
 4:
 ```",
-160,nothing,False,,ALL_PASS,True,True,1.0,1.2501,ALL_PASS,True,True,1.0,1.2501,1.2501,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+160,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.2501,ALL_PASS,True,True,1.0,1.2501,1.2501,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -25786,7 +27054,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-161,nothing,False,,ALL_PASS,True,True,1.0,1.0225,ALL_PASS,True,True,1.0,1.0225,1.0225,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+161,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0225,ALL_PASS,True,True,1.0,1.0225,1.0225,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -25968,7 +27236,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-162,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+162,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -26163,8 +27431,101 @@ je .L8
 movl $1, %eax
 jmp .L13
 .L37:
-movl 4",
-163,nothing,False,,ALL_PASS,True,True,1.0,0.8525,ALL_PASS,True,True,1.0,0.8525,0.8525,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+movl 4","```assembly
+.file ""temp.c""
+.text
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC1:
+.string ""%d %d""
+.LC5:
+.string ""Yes""
+.LC6:
+.string ""No""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB23:
+.cfi_startproc
+endbr64
+subq $24, %rsp
+.cfi_def_cfa_offset 32
+leaq .LC1(%rip), %rdi
+movq %fs:40, %rax
+movq %rax, 8(%rsp)
+xorl %eax, %eax
+movq %rsp, %rsi
+leaq 4(%rsp), %rdx
+call __isoc99_scanf@PLT
+movl (%rsp), %esi
+cmpl $2, %esi
+je .L37
+movl 4(%rsp), %ecx
+cmpl $2, %ecx
+je .L37
+movl $0, %ebx
+movl $0, %ecx
+movl $0, %edx
+.L3:
+cmpl $7, %ebx
+je .L4
+cmpl (%rsp,%rbx,4), %esi
+je .L5
+cmpl (%rsp,%rbx,4), %ecx
+je .L5
+addl $1, %ebx
+jmp .L3
+.L5:
+addl $1, %ecx
+.L4:
+cmpl $4, %ecx
+je .L6
+movl $0, %ebx
+.L7:
+cmpl $3, %ebx
+je .L8
+cmpl (%rsp,%rbx,4), %esi
+je .L9
+cmpl (%rsp,%rbx,4), %ecx
+je .L9
+addl $1, %ebx
+jmp .L7
+.L9:
+addl $1, %ecx
+.L8:
+cmpl $1, %ecx
+je .L10
+cmpl $1, %edx
+je .L10
+movl $1, %eax
+jmp .L11
+.L10:
+movl $0, %eax
+.L11:
+leaq .LC5(%rip), %rdi
+cmovne %rax, %rdi
+call puts@PLT
+.L12:
+movq 8(%rsp), %rax
+subq %fs:40, %rax
+jne .L13
+xorl %eax, %eax
+addq $24, %rsp
+.cfi_remember_state
+.cfi_def_cfa_offset 8
+ret
+.L13:
+xorl %eax, %eax
+addq $24, %rsp
+.cfi_remember_state
+.cfi_def_cfa_offset 8
+ret
+.L37:
+movl $0, %eax
+jmp .L12
+```"
+163,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8525,ALL_PASS,True,True,1.0,0.8525,0.8525,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -26372,7 +27733,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-164,nothing,False,,ALL_PASS,True,True,1.0,0.9593,ALL_PASS,True,True,1.0,0.9593,0.9593,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+164,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9593,ALL_PASS,True,True,1.0,0.9593,0.9593,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -26505,7 +27866,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-165,nothing,False,,ALL_PASS,True,True,1.0,1.0125,ALL_PASS,True,True,1.0,1.0125,1.0125,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+165,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0125,ALL_PASS,True,True,1.0,1.0125,1.0125,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -26761,7 +28122,7 @@ i:
 .align 8
 4:
 ```",
-166,nothing,False,,ALL_PASS,True,True,1.0,1.5768,ALL_PASS,True,True,1.0,1.5768,1.5768,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+166,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.5768,ALL_PASS,True,True,1.0,1.5768,1.5768,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27002,7 +28363,7 @@ N:
 .align 8
 4:
 ```",
-167,nothing,False,,ALL_PASS,True,True,1.0,0.8929,ALL_PASS,True,True,1.0,0.8929,0.8929,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+167,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8929,ALL_PASS,True,True,1.0,0.8929,0.8929,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27156,7 +28517,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-168,nothing,False,,ALL_PASS,True,True,1.0,1.0626,ALL_PASS,True,True,1.0,1.0626,1.0626,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+168,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0626,ALL_PASS,True,True,1.0,1.0626,1.0626,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27314,7 +28675,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-169,nothing,False,,ALL_PASS,True,True,1.0,1.0621,ALL_PASS,True,True,1.0,1.0621,1.0621,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+169,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0621,ALL_PASS,True,True,1.0,1.0621,1.0621,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27444,7 +28805,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-170,nothing,False,,ALL_PASS,True,True,1.0,0.9746,ALL_PASS,True,True,1.0,0.9746,0.9746,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+170,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9746,ALL_PASS,True,True,1.0,0.9746,0.9746,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27547,7 +28908,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-171,nothing,False,,ALL_PASS,True,True,1.0,1.0716,ALL_PASS,True,True,1.0,1.0716,1.0716,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+171,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0716,ALL_PASS,True,True,1.0,1.0716,1.0716,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27657,7 +29018,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-172,nothing,False,,ALL_PASS,True,True,1.0,1.0634,ALL_PASS,True,True,1.0,1.0634,1.0634,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+172,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0634,ALL_PASS,True,True,1.0,1.0634,1.0634,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27762,7 +29123,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-173,nothing,False,,ALL_PASS,True,True,1.0,1.0725,ALL_PASS,True,True,1.0,1.0725,1.0725,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+173,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0725,ALL_PASS,True,True,1.0,1.0725,1.0725,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -27946,7 +29307,7 @@ c:
 .align 8
 4:
 ```",
-174,nothing,False,,ALL_PASS,True,True,1.0,1.0904,ALL_PASS,True,True,1.0,1.0904,1.0904,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+174,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0904,ALL_PASS,True,True,1.0,1.0904,1.0904,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -28039,7 +29400,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-175,nothing,False,,ALL_PASS,True,True,1.0,1.0362,ALL_PASS,True,True,1.0,1.0362,1.0362,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+175,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0362,ALL_PASS,True,True,1.0,1.0362,1.0362,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -28146,7 +29507,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-176,nothing,False,,ALL_PASS,True,True,1.0,0.9524,ALL_PASS,True,True,1.0,0.9524,0.9524,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+176,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9524,ALL_PASS,True,True,1.0,0.9524,0.9524,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -28256,7 +29617,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-177,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+177,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -28482,8 +29843,217 @@ k:
 n:
 .zero 4
 .globl f
-.align 32",
-178,nothing,False,,ALL_PASS,True,True,1.0,0.9886,ALL_PASS,True,True,1.0,0.9886,0.9886,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+.align 32","```assembly
+.file ""temp.c""
+.text
+.section .rodata.str1.1,""aMS"",@progbits,1
+.LC0:
+.string ""%d%d""
+.LC3:
+.string ""%d\n""
+.section .text.startup,""ax"",@progbits
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB0:
+.cfi_startproc
+endbr64
+pushq %r14
+.cfi_def_cfa_offset 16
+.cfi_offset 14, -16
+leaq n(%rip), %rsi
+leaq k(%rip), %rdx
+xorl %eax, %eax
+pushq %r13
+.cfi_def_cfa_offset 24
+.cfi_offset 13, -24
+leaq .LC0(%rip), %rdi
+pushq %r12
+.cfi_def_cfa_offset 32
+.cfi_offset 12, -32
+pushq %rbp
+.cfi_def_cfa_offset 40
+.cfi_offset 6, -40
+pushq %rbx
+.cfi_def_cfa_offset 48
+.cfi_offset 3, -48
+call scanf@PLT
+movl n(%rip), %r8d
+leaq f(%rip), %rsi
+leal 1(%r8), %eax
+movl %r8d, %r10d
+subl k(%rip), %r10d
+cltq
+movl $1, (%rsi,%rax,4)
+cmpl %r10d, %r8d
+jle .L2
+movl M(%rip), %edi
+testl %r8d, %r8d
+jle .L2
+movslq %r8d, %rax
+movd %r8d, %xmm7
+movl %r8d, %r9d
+movl $1, %ebx
+leaq -12(%rsi,%rax,4), %r11
+movdqa .LC1(%rip), %xmm5
+leaq 4(%rsi), %rbp
+movdqa .LC2(%rip), %xmm4
+pshufd $0, %xmm7, %xmm6
+leaq -16(%r11), %r12
+pxor %xmm3, %xmm3
+pcmpeqd %xmm2, %xmm2
+.p2align 4,,10
+.p2align 3
+.L4:
+cmpl %r9d, %r8d
+jg .L11
+movl %r8d, %ecx
+.L10:
+movslq %ecx, %rcx
+movl 0(%rbp,%rcx,4), %edx
+.p2align 4,,10
+.p2align 3
+.L8:
+movl (%rsi,%rcx,4), %eax
+addl %edx, %eax
+cltd
+idivl %edi
+movl %edx, (%rsi,%rcx,4)
+subq $1, %rcx
+testl %ecx, %ecx
+jg .L8
+subl $1, %r9d
+cmpl %r10d, %r9d
+jne .L4
+.L2:
+movl 4+f(%rip), %edx
+cmpl $1, %r10d
+jle .L12
+movl M(%rip), %ecx
+.p2align 4,,10
+.p2align 3
+.L13:
+leal (%rdx,%rdx), %eax
+subl $1, %r10d
+cltd
+idivl %ecx
+cmpl $1, %r10d
+jne .L13
+movl %edx, 4+f(%rip)
+.L12:
+movl %edx, %esi
+leaq .LC3(%rip), %rdi
+xorl %eax, %eax
+call printf@PLT
+popq %rbx
+.cfi_remember_state
+.cfi_def_cfa_offset 40
+xorl %eax, %eax
+popq %rbp
+.cfi_def_cfa_offset 32
+popq %r12
+.cfi_def_cfa_offset 24
+popq %r13
+.cfi_def_cfa_offset 16
+popq %r14
+.cfi_def_cfa_offset 8
+ret
+.p2align 4,,10
+.p2align 3
+.L11:
+.cfi_restore_state
+xorl %edx, %edx
+testl %r9d, %r9d
+movl %r8d, %eax
+movl %ebx, %r13d
+cmovns %r9d, %edx
+subl %edx, %eax
+cmpl %edx, %r8d
+cmovg %eax, %r13d
+subl $1, %eax
+cmpl $2, %eax
+jbe .L14
+cmpl %edx, %r8d
+jle .L14
+movl %r13d, %eax
+movdqa %xmm6, %xmm1
+movq %r12, %rcx
+shrl $2, %eax
+paddd %xmm5, %xmm1
+subl $1, %eax
+salq $4, %rax
+subq %rax, %rcx
+movq %r11, %rax
+.p2align 4,,10
+.p2align 3
+.L6:
+movdqa %xmm1, %xmm0
+movups %xmm3, (%rax)
+subq $16, %rax
+paddd %xmm4, %xmm1
+paddd %xmm2, %xmm0
+cmpq %rax, %rcx
+jne .L6
+movl %r13d, %r14d
+pshufd $255, %xmm0, %xmm0
+movl %r8d, %eax
+andl $-4, %r14d
+movd %xmm0, %ecx
+subl %r14d, %eax
+cmpl %r14d, %r13d
+je .L7
+.L5:
+movslq %eax, %rcx
+movl $0, (%rsi,%rcx,4)
+leal -1(%rax), %ecx
+cmpl %ecx, %edx
+jge .L7
+movslq %ecx, %rcx
+movl $0, (%rsi,%rcx,4)
+leal -2(%rax), %ecx
+cmpl %ecx, %edx
+jge .L7
+movslq %ecx, %rcx
+movl $0, (%rsi,%rcx,4)
+leal -3(%rax), %ecx
+.L7:
+testl %ecx, %ecx
+jg .L10
+subl $1, %r9d
+cmpl %r10d, %r9d
+jne .L4
+jmp .L2
+.L14:
+movl %r8d, %eax
+jmp .L5
+.cfi_endproc
+.LFE0:
+.size main, .-main
+.globl M
+.data
+.align 4
+.type M, @object
+.size M, 4
+M:
+.long 1000000007
+.globl k
+.bss
+.align 4
+.type k, @object
+.size k, 4
+k:
+.zero 4
+.globl n
+.align 4
+.type n, @object
+.size n, 4
+n:
+.zero 4
+.globl f
+.align 32
+```"
+178,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9886,ALL_PASS,True,True,1.0,0.9886,0.9886,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -28617,7 +30187,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-179,nothing,False,,ALL_PASS,True,True,1.0,0.9368,ALL_PASS,True,True,1.0,0.9368,0.9368,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+179,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9368,ALL_PASS,True,True,1.0,0.9368,0.9368,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -28733,7 +30303,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-180,nothing,False,,ALL_PASS,True,True,1.0,1.1207,ALL_PASS,True,True,1.0,1.1207,1.1207,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+180,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1207,ALL_PASS,True,True,1.0,1.1207,1.1207,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -28931,7 +30501,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-181,nothing,False,,ALL_PASS,True,True,1.0,0.9656,ALL_PASS,True,True,1.0,0.9656,0.9656,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+181,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9656,ALL_PASS,True,True,1.0,0.9656,0.9656,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -29075,7 +30645,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-182,nothing,False,,ALL_PASS,True,True,1.0,1.1001,ALL_PASS,True,True,1.0,1.1001,1.1001,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+182,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1001,ALL_PASS,True,True,1.0,1.1001,1.1001,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -29235,7 +30805,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-183,nothing,False,,ALL_PASS,True,True,1.0,1.1066,ALL_PASS,True,True,1.0,1.1066,1.1066,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+183,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1066,ALL_PASS,True,True,1.0,1.1066,1.1066,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -29347,7 +30917,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-184,nothing,False,,ALL_PASS,True,True,1.0,0.994,ALL_PASS,True,True,1.0,0.994,0.994,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+184,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.994,ALL_PASS,True,True,1.0,0.994,0.994,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -29501,7 +31071,7 @@ s:
 .align 8
 4:
 ```",
-185,nothing,False,,ALL_PASS,True,True,1.0,0.796,ALL_PASS,True,True,1.0,0.796,0.796,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+185,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.796,ALL_PASS,True,True,1.0,0.796,0.796,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -29690,7 +31260,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-186,nothing,False,,ALL_PASS,True,True,1.0,0.9439,ALL_PASS,True,True,1.0,0.9439,0.9439,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+186,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9439,ALL_PASS,True,True,1.0,0.9439,0.9439,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -29882,7 +31452,7 @@ A:
 .align 8
 4:
 ```",
-187,nothing,False,,ALL_PASS,True,True,1.0,1.1213,ALL_PASS,True,True,1.0,1.1213,1.1213,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+187,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.1213,ALL_PASS,True,True,1.0,1.1213,1.1213,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -30052,7 +31622,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-188,nothing,False,,ALL_PASS,True,True,1.0,0.9905,ALL_PASS,True,True,1.0,0.9905,0.9905,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+188,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9905,ALL_PASS,True,True,1.0,0.9905,0.9905,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -30197,7 +31767,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-189,nothing,False,,ALL_PASS,True,True,1.0,1.0115,ALL_PASS,True,True,1.0,1.0115,1.0115,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+189,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0115,ALL_PASS,True,True,1.0,1.0115,1.0115,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -30342,7 +31912,7 @@ i:
 .align 8
 4:
 ```",
-190,nothing,False,,ALL_PASS,True,True,1.0,0.8923,ALL_PASS,True,True,1.0,0.8923,0.8923,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+190,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.8923,ALL_PASS,True,True,1.0,0.8923,0.8923,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -30533,7 +32103,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-191,nothing,False,,ALL_PASS,True,True,1.0,1.0053,ALL_PASS,True,True,1.0,1.0053,1.0053,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+191,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0053,ALL_PASS,True,True,1.0,1.0053,1.0053,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -30691,7 +32261,7 @@ n:
 .align 8
 4:
 ```",
-192,nothing,False,,ALL_PASS,True,True,1.0,0.9739,ALL_PASS,True,True,1.0,0.9739,0.9739,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+192,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.9739,ALL_PASS,True,True,1.0,0.9739,0.9739,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -30803,7 +32373,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-193,nothing,False,,ALL_PASS,True,True,1.0,1.056,ALL_PASS,True,True,1.0,1.056,1.056,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+193,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.056,ALL_PASS,True,True,1.0,1.056,1.056,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -30909,7 +32479,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-194,nothing,False,,ALL_PASS,True,True,1.0,1.0775,ALL_PASS,True,True,1.0,1.0775,1.0775,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+194,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0775,ALL_PASS,True,True,1.0,1.0775,1.0775,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -31035,7 +32605,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-195,nothing,False,,ALL_PASS,True,True,1.0,0.939,ALL_PASS,True,True,1.0,0.939,0.939,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+195,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.939,ALL_PASS,True,True,1.0,0.939,0.939,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -31158,7 +32728,7 @@ i:
 .align 8
 4:
 ```",
-196,nothing,False,,ALL_PASS,True,True,1.0,0.978,ALL_PASS,True,True,1.0,0.978,0.978,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+196,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,0.978,ALL_PASS,True,True,1.0,0.978,0.978,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -31361,7 +32931,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-197,nothing,False,,ALL_PASS,True,True,1.0,4.1394,ALL_PASS,True,True,1.0,4.1394,4.1394,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+197,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,4.1394,ALL_PASS,True,True,1.0,4.1394,4.1394,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -31469,7 +33039,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-198,nothing,False,,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+198,qwen-base,True,Qwen/Qwen2.5-Coder-7B-Instruct,COMPILE_FAIL,False,False,-1.0,1.0,COMPILE_FAIL,False,False,-1.0,,1.0,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -31623,8 +33193,198 @@ call __stack_chk_fail@PLT
 3:
 .align 8
 4:
-```",
-199,nothing,False,,ALL_PASS,True,True,1.0,1.0366,ALL_PASS,True,True,1.0,1.0366,1.0366,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+```","```assembly
+.file ""temp.c""
+.text
+.p2align 4
+.globl popcnt64
+.type popcnt64, @function
+popcnt64:
+.LFB0:
+.cfi_startproc
+endbr64
+movabsq $6148914691236517205, %rdx
+movq %rdi, %rax
+movabsq $1085102592571150095, %rcx
+shrq %rax
+andq %rdx, %rdi
+andq %rdx, %rax
+movabsq $3689348814741910323, %rdx
+addq %rax, %rdi
+movq %rdi, %rax
+andq %rdx, %rdi
+shrq $2, %rax
+andq %rdx, %rax
+addq %rdi, %rax
+movq %rax, %rdx
+andq %rcx, %rax
+shrq $4, %rdx
+andq %rcx, %rdx
+movabsq $71777214294589695, %rcx
+addq %rax, %rdx
+movq %rdx, %rax
+andq %rcx, %rax
+shrq $8, %rdx
+andq %rcx, %rdx
+movabsq $281470681808895, %rcx
+addq %rax, %rdx
+movq %rdx, %rax
+andq %rcx, %rax
+shrq $16, %rdx
+andq %rcx, %rdx
+addq %rax, %rdx
+movq %rdx, %rax
+movl %edx, %edx
+shrq $32, %rax
+addq %rdx, %rax
+ret
+.cfi_endproc
+.LFE0:
+.size popcnt64, .-popcnt64
+.p2align 4
+.globl clz64
+.type clz64, @function
+clz64:
+.LFB1:
+.cfi_startproc
+endbr64
+movabsq $6148914691236517205, %rcx
+movq %rdi, %rax
+shrq %rax
+orq %rdi, %rax
+movq %rax, %rdx
+shrq $2, %rdx
+orq %rax, %rdx
+movq %rdx, %rax
+shrq $4, %rax
+orq %rdx, %rax
+movq %rax, %rdx
+shrq $8, %rdx
+orq %rax, %rdx
+movq %rdx, %rax
+shrq $16, %rax
+orq %rdx, %rax
+movq %rax, %rdx
+shrq $32, %rdx
+orq %rax, %rdx
+movq %rdx, %rax
+andq %rcx, %rdx
+shrq %rax
+andq %rcx, %rax
+movabsq $3689348814741910323, %rcx
+addq %rdx, %rax
+movq %rax, %rdx
+andq %rcx, %rax
+shrq $2, %rdx
+andq %rcx, %rdx
+movabsq $1085102592571150095, %rcx
+addq %rax, %rdx
+movq %rdx, %rax
+andq %rcx, %rax
+shrq $4, %rax
+andq %rcx, %rax
+movabsq $71777214294589695, %rcx
+addq %rax, %rdx
+movq %rdx, %rax
+andq %rcx, %rax
+shrq $8, %rdx
+andq %rcx, %rdx
+movabsq $281470681808895, %rcx
+addq %rax, %rdx
+movq %rdx, %rax
+andq %rcx, %rax
+shrq $16, %rax
+andq %rcx, %rax
+addq %rdx, %rax
+movq %rax, %rdx
+movl %eax, %eax
+shrq $32, %rdx
+addq %rax, %rdx
+movl $64, %eax
+subq %rdx, %rax
+xorl %eax, %eax
+ret
+.cfi_endproc
+.LFE1:
+.size clz64, .-clz64
+.p2align 4
+.globl main
+.type main, @function
+main:
+.LFB2:
+.cfi_startproc
+endbr64
+pushq %rbp
+.cfi_def_cfa_offset 16
+.cfi_offset 6, -16
+movq %rsp, %rbp
+.cfi_def_cfa_register 6
+subq $32, %rsp
+movl $0, -4(%rbp)
+movl $0, -8(%rbp)
+movl $0, -12(%rbp)
+movl $0, -16(%rbp)
+movl $0, -20(%rbp)
+movl $0, -24(%rbp)
+movl $0, -28(%rbp)
+movl $0, -32(%rbp)
+movl $0, -36(%rbp)
+movl $0, -40(%rbp)
+movl $0, -44(%rbp)
+movl $0, -48(%rbp)
+movl $0, -52(%rbp)
+movl $0, -56(%rbp)
+movl $0, -60(%rbp)
+movl $0, -64(%rbp)
+movl $0, -68(%rbp)
+movl $0, -72(%rbp)
+movl $0, -76(%rbp)
+movl $0, -80(%rbp)
+movl $0, -84(%rbp)
+movl $0, -88(%rbp)
+movl $0, -92(%rbp)
+movl $0, -96(%rbp)
+movl $0, -100(%rbp)
+movl $0, -104(%rbp)
+movl $0, -108(%rbp)
+movl $0, -112(%rbp)
+movl $0, -116(%rbp)
+movl $0, -120(%rbp)
+movl $0, -124(%rbp)
+movl $0, -128(%rbp)
+movl $0, -132(%rbp)
+movl $0, -136(%rbp)
+movl $0, -140(%rbp)
+movl $0, -144(%rbp)
+movl $0, -148(%rbp)
+movl $0, -152(%rbp)
+movl $0, -156(%rbp)
+movl $0, -160(%rbp)
+movl $0, -164(%rbp)
+movl $0, -168(%rbp)
+movl $0, -172(%rbp)
+movl $0, -176(%rbp)
+movl $0, -180(%rbp)
+movl $0, -184(%rbp)
+movl $0, -188(%rbp)
+movl $0, -192(%rbp)
+movl $0, -196(%rbp)
+movl $0, -200(%rbp)
+movl $0, -204(%rbp)
+movl $0, -208(%rbp)
+movl $0, -212(%rbp)
+movl $0, -216(%rbp)
+movl $0, -220(%rbp)
+movl $0, -224(%rbp)
+movl $0, -228(%rbp)
+movl $0, -232(%rbp)
+movl $0, -236(%rbp)
+movl $0, -240(%rbp)
+movl $0, -244(%rbp)
+movl $0, -248(%rbp)
+movl $0, -252(%rbp)
+movl $0, -256(%"
+199,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0366,ALL_PASS,True,True,1.0,1.0366,1.0366,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
@@ -31831,7 +33591,7 @@ call __stack_chk_fail@PLT
 .align 8
 4:
 ```",
-200,nothing,False,,ALL_PASS,True,True,1.0,1.0308,ALL_PASS,True,True,1.0,1.0308,1.0308,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
+200,qwen-base,False,Qwen/Qwen2.5-Coder-7B-Instruct,ALL_PASS,True,True,1.0,1.0308,ALL_PASS,True,True,1.0,1.0308,1.0308,"Given the following C code and assembly code, your task is to generate highly optimized x86-64 assembly code.
 C Code:
 
 ```c
