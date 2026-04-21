@@ -1,0 +1,6 @@
+experiment,n_samples,stage1_pass_count,stage1_fail_count,final_compile_rate,final_test_pass_rate,final_fail_count,mean_final_correctness,mean_effective_speedup_1x_on_fail,n_speedup_measured,mean_raw_speedup_all_pass_only,notes
+_stage1_reference,200,191,9,,0.955,9,,,,,Stage1 only (before any fix). Same stage1 run for all experiments below.
+base-qwen-fix,200,,,0.955,0.955,9,0.91,0.9981,191,0.9981,
+debug1,200,,,0.955,0.955,9,0.91,0.9981,191,0.9981,
+debug2,200,,,0.955,0.955,9,0.91,0.9981,191,0.9981,
+nothing,200,,,0.955,0.955,9,0.91,0.9981,191,0.9981,
