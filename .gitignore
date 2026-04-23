@@ -26,6 +26,10 @@ qwen-debug-rl/1-gen-training-data/supercoder_train_with_inference.csv
 qwen-debug-rl/2-rl-model/data/supercoder_train.parquet
 qwen-debug-rl/2-rl-model/data/train.parquet
 qwen-debug-rl/2-rl-model/data/supercoder_train_fails.csv
+qwen-debug-rl/2-rl-supercoder-and-debug/data/*.parquet
+qwen-debug-rl/2-rl-supercoder-and-debug/data/*.csv
+qwen-debug-rl/3-rl-train-combined/data/*.parquet
+qwen-debug-rl/3-rl-train-combined/data/*.csv
 
 # Extracted / generated data (pipeline output — same layout under approach2/data or src/data)
 **/Project_CodeNet.tar.gz.download/
