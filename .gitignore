@@ -47,3 +47,5 @@ qwen-debug-rl/3-rl-train-combined/data/*.csv
 .env
 
 .env*
+# Large binary data files
+*.arrow

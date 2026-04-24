@@ -1,0 +1,4 @@
+model,n_samples,compile_rate,test_pass_rate,mean_correctness,n_speedup_measured,mean_speedup,max_speedup,mean_effective_speedup,geo_mean_speedup_floor1,p25_speedup_floor1,p50_speedup_floor1,p75_speedup_floor1,copy_rate,status_breakdown
+qwen-base,200,0.77,0.605,0.368,121,1.799,40.0318,1.4834,1.1033,1.0,1.0,1.0176,0.34,"{'ALL_PASS': 121, 'COMPILE_FAIL': 46, 'PARTIAL_20%': 3, 'PARTIAL_60%': 2, 'PARTIAL_70%': 1, 'PARTIAL_0%': 9, 'RUNTIME_ERR': 13, 'PARTIAL_90%': 1, 'PARTIAL_80%': 2, 'PARTIAL_10%': 2}"
+supercoder,200,0.955,0.955,0.91,191,1.0206,3.1855,1.0197,1.0247,1.0,1.0031,1.0243,0.0,"{'ALL_PASS': 191, 'COMPILE_FAIL': 9}"
+debug-supercoder,200,0.935,0.925,0.865,185,1.1104,15.2166,1.1021,1.0438,1.0,1.0,1.0196,0.0,"{'ALL_PASS': 185, 'COMPILE_FAIL': 13, 'PARTIAL_0%': 1, 'PARTIAL_90%': 1}"

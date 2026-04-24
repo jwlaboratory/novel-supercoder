@@ -1,0 +1,4 @@
+model,n_samples,compile_rate,test_pass_rate,mean_correctness,n_speedup_measured,mean_speedup,max_speedup,mean_effective_speedup,copy_rate,status_breakdown
+qwen-base,200,0.545,0.33,-0.169,66,0.9932,1.1627,0.9978,0.165,"{'ALL_PASS': 66, 'PARTIAL_0%': 8, 'COMPILE_FAIL': 91, 'RUNTIME_ERR': 25, 'PARTIAL_60%': 1, 'PARTIAL_10%': 5, 'PARTIAL_80%': 1, 'PARTIAL_20%': 1, 'PARTIAL_90%': 1, 'PARTIAL_70%': 1}"
+supercoder,200,0.955,0.955,0.91,191,0.995,1.4748,0.9952,0.0,"{'ALL_PASS': 191, 'COMPILE_FAIL': 9}"
+debug-supercoder,200,0.93,0.915,0.85,183,1.0262,2.472,1.024,0.0,"{'ALL_PASS': 183, 'COMPILE_FAIL': 14, 'PARTIAL_10%': 1, 'PARTIAL_0%': 1, 'PARTIAL_90%': 1}"
