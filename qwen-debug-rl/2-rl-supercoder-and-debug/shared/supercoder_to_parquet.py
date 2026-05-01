@@ -19,7 +19,19 @@ from datasets import load_dataset, Dataset
 HF_DATASET = "random1123anonymized/supercoder"
 
 
-def convert(split: str, out_path: Path, max_rows: int | None) -> None:
+def _print_prompts(examples: list[dict], count: int, label: str) -> None:
+    for idx, example in enumerate(examples[:count], start=1):
+        print(f"\n===== {label} prompt {idx} =====")
+        print(example["prompt"][0]["content"])
+
+
+def convert(
+    split: str,
+    out_path: Path,
+    max_rows: int | None,
+    print_prompts: int,
+    print_only: bool,
+) -> None:
     print(f"Loading {HF_DATASET} split={split} ...")
     ds = load_dataset(HF_DATASET, split=split)
 
@@ -59,6 +71,12 @@ def convert(split: str, out_path: Path, max_rows: int | None) -> None:
         })
 
     print(f"Converted {len(examples)} rows ({skipped} skipped)")
+    if print_prompts:
+        _print_prompts(examples, print_prompts, "normal")
+
+    if print_only:
+        return
+
     out = Dataset.from_list(examples)
     out.to_parquet(str(out_path))
     print(f"Saved → {out_path}  ({out_path.stat().st_size // 1024} KB)")
@@ -69,11 +87,25 @@ def main() -> None:
     parser.add_argument("--split", default="train", choices=["train", "val"])
     parser.add_argument("--output-parquet", type=Path, default=None)
     parser.add_argument("--max-rows", type=int, default=None)
+    parser.add_argument(
+        "--print-prompts",
+        type=int,
+        default=0,
+        metavar="N",
+        help="Print the first N user prompts written to the parquet.",
+    )
+    parser.add_argument(
+        "--print-only",
+        action="store_true",
+        help="Print prompts without writing a parquet file.",
+    )
     args = parser.parse_args()
+    if args.print_only and args.print_prompts == 0:
+        args.print_prompts = 1
 
     here = Path(__file__).resolve().parent
     out_path = args.output_parquet or (here / f"supercoder_{args.split}.parquet")
-    convert(args.split, out_path, args.max_rows)
+    convert(args.split, out_path, args.max_rows, args.print_prompts, args.print_only)
 
 
 if __name__ == "__main__":

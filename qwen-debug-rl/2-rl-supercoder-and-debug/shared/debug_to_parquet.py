@@ -46,7 +46,20 @@ def _parse_test_cases(raw: str) -> tuple[list[str], list[str]]:
     return inputs, outputs
 
 
-def convert(csv_path: Path, out_path: Path, split: str, max_rows: int | None) -> None:
+def _print_prompts(examples: list[dict], count: int, label: str) -> None:
+    for idx, example in enumerate(examples[:count], start=1):
+        print(f"\n===== {label} prompt {idx} =====")
+        print(example["prompt"][0]["content"])
+
+
+def convert(
+    csv_path: Path,
+    out_path: Path,
+    split: str,
+    max_rows: int | None,
+    print_prompts: int,
+    print_only: bool,
+) -> None:
     csv.field_size_limit(sys.maxsize)
 
     examples = []
@@ -94,6 +107,11 @@ def convert(csv_path: Path, out_path: Path, split: str, max_rows: int | None) ->
             })
 
     print(f"Converted {len(examples)} rows ({skipped} skipped — no test cases or no prompt)")
+    if print_prompts:
+        _print_prompts(examples, print_prompts, "debug")
+
+    if print_only:
+        return
 
     dataset = Dataset.from_list(examples)
     dataset.to_parquet(str(out_path))
@@ -121,7 +139,21 @@ def main() -> None:
         default=None,
         help="Only convert first N rows (useful for quick smoke tests).",
     )
+    parser.add_argument(
+        "--print-prompts",
+        type=int,
+        default=0,
+        metavar="N",
+        help="Print the first N user prompts written to the parquet.",
+    )
+    parser.add_argument(
+        "--print-only",
+        action="store_true",
+        help="Print prompts without writing a parquet file.",
+    )
     args = parser.parse_args()
+    if args.print_only and args.print_prompts == 0:
+        args.print_prompts = 1
 
     csv_path = args.input_csv or (HERE / f"supercoder_{args.split}_fails.csv")
     out_path = args.output_parquet or (HERE / f"{args.split}.parquet")
@@ -130,7 +162,7 @@ def main() -> None:
         print(f"ERROR: CSV not found: {csv_path}", file=sys.stderr)
         sys.exit(1)
 
-    convert(csv_path, out_path, args.split, args.max_rows)
+    convert(csv_path, out_path, args.split, args.max_rows, args.print_prompts, args.print_only)
 
 
 if __name__ == "__main__":
